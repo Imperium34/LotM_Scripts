@@ -1,0 +1,28 @@
+# ============================================================
+#  Tools/.gitignore
+#  Bu depo PRIVATE olmali. Istemler ve ses haritalari burada.
+# ============================================================
+
+# --- Uretilen raporlar: her calistirmada yenilenir, gecmisi gereksiz
+Reports/*.tsv
+Reports/*.txt
+Reports/*.log
+
+# --- SAVUNMA AMACLI: kaynak metin buraya da girmemeli
+*.epub
+LotM_Volumes/
+Volume_*.txt
+
+# --- Yedekler
+*.yedek.yml
+*.bak
+
+# --- Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- Sistem
+.DS_Store
+*.swp
