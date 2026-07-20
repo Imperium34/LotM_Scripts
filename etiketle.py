@@ -46,7 +46,14 @@ ALT_DIZE_RISKI = {"Alchemist", "Calamity", "Death", "Demon", "Hunter", "Warlock"
 
 # Elle belirlenmis bolum numaralari. Hunter'in gercek gecisi, Criminal /
 # Prisoner / Warrior / Hunter'in birlikte sayildigi pasaj.
-BOLUM_ELLE = {"Hunter": 279}
+BOLUM_ELLE = {
+    "Hunter": 279,
+    "Berzah Bekçisi": 19,
+    "İlahların Metruk Diyarı": 137,
+    "Kâhin": 21,
+    "Yağmacı": 21,
+    "Çırak": 21,
+}
 
 # Tazim ismi denetiminden gelen mudahale degerleri (girdi adina gore).
 MUDAHALE = {
@@ -90,6 +97,7 @@ TAZIM_KATEGORILERI = {"İlahlar ve Yüce Kadimler", "Tarot Kulübü"}
 
 # =====================================================================
 
+
 def ingilizce_ayikla(ham):
     m = re.search(r"\(([^)]*)\)", str(ham or ""))
     return m.group(1).strip() if m else None
@@ -124,7 +132,6 @@ def metinde_mi(eng, rapor):
     if k is None:
         return None  # raporda yok; karar verilemez
     return k["guven"] != "yok"
-
 
 
 def bosluk_duzelt(metin):
@@ -175,7 +182,11 @@ def bosluk_duzelt(metin):
     onceki_dolu = None
     for satir in metin.split("\n"):
         if satir.startswith("- terim:") and onceki_dolu is not None:
-            if not onceki_dolu.lstrip().startswith("#") and sonuc and sonuc[-1].strip() != "":
+            if (
+                not onceki_dolu.lstrip().startswith("#")
+                and sonuc
+                and sonuc[-1].strip() != ""
+            ):
                 sonuc.append("")
         sonuc.append(satir)
         if satir.strip() != "":
@@ -195,7 +206,7 @@ def main():
 
     yaml = YAML()
     yaml.preserve_quotes = True
-    yaml.width = 4096          # uzun dizeleri sarma
+    yaml.width = 4096  # uzun dizeleri sarma
     # Kok liste sifir girintide olmali; mertebeler bloklari ise kaynak
     # dosyadaki gibi 4 bosluk. ruamel tek bir kural uyguladigi icin ikisi
     # ayni anda ayarlanamaz -- mertebeler bloklari metin gecisinde kaydirilir.
@@ -293,6 +304,7 @@ def main():
             sayac["kanon_durumu_kaldirildi"] += 1
 
     import io
+
     tampon = io.StringIO()
     yaml.dump(veri, tampon)
 

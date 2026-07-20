@@ -1,4 +1,8 @@
 
+=== 0. ARTIK ISTEM/SABLON ISARETLERI ===
+    Bunlar okuyucuya GORUNUR. Once bunlar temizlenmeli.
+  temiz
+
 === 1. ESKIMIS KARSILIKLAR ===
   yok
 
@@ -77,6 +81,7 @@
   264 terim henuz hic kullanilmamis -- serbestce degistirilebilir.
 
 --- OZET ---
+  ARTIK ISARET      : 0   <- varsa ilk is bu
   eskimis           : 0
   sizinti           : 0
   kapi (yuksek)     : 8   <- bakilacaklar

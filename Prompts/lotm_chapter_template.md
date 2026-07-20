@@ -48,18 +48,6 @@ Bu bölümde geçen terimlerin Türkçe karşılıkları. Yalnızca bu bölümde
   bulunmasa dahi. Karşılaştırma hedefi sahnedeki bir karakter değil, başka
   ciltteki bir maskedir.
 
-- Sherlock aktifse → Diyalog satırına ekle: "Ayırt edici: maske AKTİF bir
-  performanstır; iç ses zaman zaman kendi tiyatrosundan keyif alır. Sözcük
-  alanı: zeka-gösterisi (bileşik fiiller, 'muhakeme', dedüksiyon teatrosu).
-  Yüzey uzun cümlelere yaslanır."
-
-- Dwayne aktifse → Diyalog satırına ekle: "Ayırt edici: maske ZAHMETSİZ bir
-  deridir; iç ses maskeyle değil hedefle meşguldür. Sözcük alanı: güven-kuran
-  dindarlık ('inayet', 'lütuf', 'Tanrıça', kızıl-ay jesti). Yüzey ölçülü ve
-  kısadır."
-  Bu bölümde konuşan veya iç sesi görünen karakterler ve mevcut aşamaları.
-  Bölümde geçmeyen karakterleri ekleme.
-
 [For each active character identified in the chapter, generate the following block:]
 
 ---

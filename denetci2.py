@@ -25,7 +25,7 @@ Metin ayni, gonderge farkli. Bu ayrimi regex yapamaz; arac adaylari
 daraltir, karari insan verir. Rapor bu yuzden "hata" degil "aday" der.
 
 Kullanim:
-    python3 denetci2.py --sozluk /_data/sozluk.yml --bolumler ./_chapters
+    python3 denetci2.py --sozluk sozluk.yml --bolumler ./_chapters
     python3 denetci2.py --sozluk sozluk.yml --bolumler ./_chapters --hepsi
 """
 
@@ -46,21 +46,17 @@ except ImportError:
 
 # Turkce isim cekim ekleri. Uzunlugu uzun olan once denenmeli.
 COGUL = r"(?:ler|lar)"
-IYELIK = (
-    r"(?:imiz|ımız|umuz|ümüz|iniz|ınız|unuz|ünüz|leri|ları"
-    r"|siz|sız|suz|süz|si|sı|su|sü|im|ım|um|üm|in|ın|un|ün|i|ı|u|ü|m|n)"
-)
-HAL = (
-    r"(?:nden|ndan|nde|nda|nin|nın|nun|nün|den|dan|ten|tan|de|da|te|ta"
-    r"|yle|yla|ile|le|la|ni|nı|nu|nü|ne|na|yi|yı|yu|yü|ye|ya|i|ı|u|ü|e|a)"
-)
+IYELIK = (r"(?:imiz|ımız|umuz|ümüz|iniz|ınız|unuz|ünüz|leri|ları"
+          r"|siz|sız|suz|süz|si|sı|su|sü|im|ım|um|üm|in|ın|un|ün|i|ı|u|ü|m|n)")
+HAL = (r"(?:nden|ndan|nde|nda|nin|nın|nun|nün|den|dan|ten|tan|de|da|te|ta"
+       r"|yle|yla|ile|le|la|ni|nı|nu|nü|ne|na|yi|yı|yu|yü|ye|ya|i|ı|u|ü|e|a)")
 
 # Kesme hem govdeden hemen sonra (Kâhin'in) hem iyelikten sonra
 # (Diyarı'nı) gelebilir. Sondaki (?![\w]) sart: eksiz de olsa eslesme
 # kelime sonunda bitmeli. Yoksa Haz -> Haz|iran, Zanaatkâr -> Zanaatkâr|lık
 # gibi kirpik eslesmeler gecerli sayiliyor.
 KESME = r"(?:['\u2019])?"
-EK = KESME + COGUL + r"?" + IYELIK + r"?" + KESME + HAL + r"?" + r"(?![\w])"
+EK = (KESME + COGUL + r"?" + IYELIK + r"?" + KESME + HAL + r"?" + r"(?![\w])")
 
 # Son sert unsuz yumusamasi
 YUMUSAMA = {"k": "[kğ]", "p": "[pb]", "t": "[td]", "ç": "[çc]"}
@@ -71,6 +67,23 @@ IPUCU_RE = re.compile(
 )
 
 CUMLE_BASI = re.compile(r'[.!?:;"\u201c\u201d\u2014\-]\s+$')
+
+# Sistem istemi ve bolum acilis sablonu, duzeltme sirasinda elle silinmesi
+# gereken isaretler uretir. Onda dokuzu yakalanir; yakalanmayan biri canli
+# sayfada gorunur. Ucuz kontrol, pahali hata.
+ARTIK_ISARETLER = [
+    (re.compile(r"\[BELİRSİZ\]"),            "çeviri belirsizlik etiketi (§7)"),
+    (re.compile(r"\[ÖNERİ[:\]]"),            "isteğe bağlı detay önerisi (§8)"),
+    (re.compile(r"\[DURUM NOTU\]"),          "durum notu bloğu (§9)"),
+    (re.compile(r"Biten kayıt\s*:"),          "durum notu alanı"),
+    (re.compile(r"Son duygusal vurgu\s*:"),   "durum notu alanı"),
+    (re.compile(r"\[END OF OUTPUT\]"),       "şablon sonu işareti"),
+    (re.compile(r"Bölüm Açılış Şablonu"),     "açılış şablonu başlığı"),
+    (re.compile(r"##\s*[ABC]\.\s*(AKTİF|BÖLÜME)"), "açılış şablonu bölüm başlığı"),
+    (re.compile(r"\[(Term|Translation|Karakter Adı)\s*\d*\]"), "doldurulmamış şablon alanı"),
+    (re.compile(r"\[Extract/adapt|\[Determine from|\[Tek paragraf"), "şablon yönergesi"),
+    (re.compile(r"^\s*\|\s*İngilizce\s*\|", re.M), "aktif terimler tablosu"),
+]
 FRONT_MATTER = re.compile(r"\A---\s*\n.*?\n---\s*\n", re.S)
 
 # Kisi adi kalibi: iki bas harfi buyuk kelime, aralarinda baglac yok
@@ -113,32 +126,26 @@ def sozluk_yukle(yol):
                 tr = parantezsiz(m.get("isim"))
                 if not tr:
                     continue
-                kayitlar.append(
-                    {
-                        "tr": tr,
-                        "en": ingilizce_al(m.get("isim")),
-                        "kapi": m.get("bolum_siniri"),
-                        "yer": f"{girdi['terim']} S{m.get('seviye')}",
-                        "kategori": girdi.get("kategori", ""),
-                        "kardesler": [
-                            k for k in kardesler if k != tr and len(k.split()) > 1
-                        ],
-                        "eski": m.get("eski_karsiliklar") or [],
-                    }
-                )
+                kayitlar.append({
+                    "tr": tr,
+                    "en": ingilizce_al(m.get("isim")),
+                    "kapi": m.get("bolum_siniri"),
+                    "yer": f"{girdi['terim']} S{m.get('seviye')}",
+                    "kategori": girdi.get("kategori", ""),
+                    "kardesler": [k for k in kardesler if k != tr and len(k.split()) > 1],
+                    "eski": m.get("eski_karsiliklar") or [],
+                })
         else:
             tr = parantezsiz(girdi.get("terim"))
-            kayitlar.append(
-                {
-                    "tr": tr,
-                    "en": parantezsiz(girdi.get("ingilizce")),
-                    "kapi": girdi.get("bolum_siniri"),
-                    "yer": girdi.get("kategori", ""),
-                    "kategori": girdi.get("kategori", ""),
-                    "kardesler": [],
-                    "eski": girdi.get("eski_karsiliklar") or [],
-                }
-            )
+            kayitlar.append({
+                "tr": tr,
+                "en": parantezsiz(girdi.get("ingilizce")),
+                "kapi": girdi.get("bolum_siniri"),
+                "yer": girdi.get("kategori", ""),
+                "kategori": girdi.get("kategori", ""),
+                "kardesler": [],
+                "eski": girdi.get("eski_karsiliklar") or [],
+            })
 
     for k in kayitlar:
         k["desen"] = desen_kur(k["tr"])
@@ -167,14 +174,13 @@ def bolum_oku(klasor):
         no = int(s[0]) if s else None
         ham = open(os.path.join(klasor, ad), encoding="utf-8").read()
         fm = FRONT_MATTER.match(ham)
-        govde = ham[fm.end() :] if fm else ham
+        govde = ham[fm.end():] if fm else ham
         if fm:
             try:
                 bilgi = yaml.safe_load(fm.group(0).strip("-\n")) or {}
                 for a in ("bolum", "chapter", "bolum_no", "number"):
                     if a in bilgi and str(bilgi[a]).isdigit():
-                        no = int(bilgi[a])
-                        break
+                        no = int(bilgi[a]); break
             except yaml.YAMLError:
                 pass
         cikti.append((no, govde, ad))
@@ -192,14 +198,28 @@ def guven_ver(kayit, metin, konum):
     for kardes in kayit["kardesler"]:
         if kardes in pencere:
             return YUKSEK
-    onceki = metin[max(0, konum - 40) : konum]
+    onceki = metin[max(0, konum - 40):konum]
     if CUMLE_BASI.search(onceki) or konum == 0:
         return DUSUK
     return DUSUK
 
 
 def baglam(metin, a, b, g=75):
-    return re.sub(r"\s+", " ", metin[max(0, a - g) : min(len(metin), b + g)]).strip()
+    return re.sub(r"\s+", " ", metin[max(0, a - g):min(len(metin), b + g)]).strip()
+
+
+def artik_tara(bolumler):
+    """Yayimlanmis bolumlerde kalmis istem/sablon isaretleri."""
+    bulgular = []
+    for no, metin, dosya in bolumler:
+        for satir_no, satir in enumerate(metin.split("\n"), 1):
+            for desen, aciklama in ARTIK_ISARETLER:
+                m = desen.search(satir)
+                if m:
+                    bulgular.append((dosya, satir_no, aciklama,
+                                     re.sub(r"\s+", " ", satir).strip()[:160]))
+                    break
+    return bulgular
 
 
 def denetle(kayitlar, bolumler):
@@ -221,7 +241,8 @@ def denetle(kayitlar, bolumler):
             # isaretlenirse "Gizem Avcısı" ikinci kez gectiginde o konum
             # bos kalir ve "Avcı" oraya yerlesir.
             for aday in k["desen"].finditer(metin):
-                if any(aday.start() < son and aday.end() > bas for bas, son in kapali):
+                if any(aday.start() < son and aday.end() > bas
+                       for bas, son in kapali):
                     continue
                 kapali.append((aday.start(), aday.end()))
                 if m is None:
@@ -233,6 +254,7 @@ def denetle(kayitlar, bolumler):
                     kapi.append((g, no, dosya, k, baglam(metin, m.start(), m.end())))
 
         for k in kayitlar:
+
             if k["en_desen"]:
                 me = k["en_desen"].search(metin)
                 if me:
@@ -241,14 +263,19 @@ def denetle(kayitlar, bolumler):
             for eski_ad, desen in k["eski_desen"]:
                 mo = desen.search(metin)
                 if mo:
-                    eskimis.append(
-                        (no, dosya, k, eski_ad, baglam(metin, mo.start(), mo.end()))
-                    )
+                    eskimis.append((no, dosya, k, eski_ad, baglam(metin, mo.start(), mo.end())))
 
     return sizinti, eskimis, kapi, envanter
 
 
-def rapor(sizinti, eskimis, kapi, envanter, kayitlar, hepsi, envanter_ister):
+def rapor(artiklar, sizinti, eskimis, kapi, envanter, kayitlar, hepsi, envanter_ister):
+    print("\n=== 0. ARTIK ISTEM/SABLON ISARETLERI ===")
+    print("    Bunlar okuyucuya GORUNUR. Once bunlar temizlenmeli.")
+    if not artiklar:
+        print("  temiz")
+    for dosya, satir_no, aciklama, ctx in artiklar:
+        print(f"  [{dosya}:{satir_no}] {aciklama}\n      {ctx}")
+
     print("\n=== 1. ESKIMIS KARSILIKLAR ===")
     print("  yok" if not eskimis else "")
     for no, dosya, k, eski_ad, ctx in eskimis:
@@ -257,9 +284,7 @@ def rapor(sizinti, eskimis, kapi, envanter, kayitlar, hepsi, envanter_ister):
     print("\n=== 2. CEVRILMEDEN KALMIS INGILIZCE TERIMLER ===")
     print("  yok" if not sizinti else "")
     for no, dosya, k, ctx in sizinti:
-        print(
-            f"  [{dosya}] '{k['en']}' -> beklenen '{k['tr']}' ({k['yer']})\n      {ctx}"
-        )
+        print(f"  [{dosya}] '{k['en']}' -> beklenen '{k['tr']}' ({k['yer']})\n      {ctx}")
 
     yuksek = [x for x in kapi if x[0] == YUKSEK]
     dusuk = [x for x in kapi if x[0] == DUSUK]
@@ -269,16 +294,12 @@ def rapor(sizinti, eskimis, kapi, envanter, kayitlar, hepsi, envanter_ister):
     print("    olabilir: 'Kara Imparator' hem Mertebe 0 hem tarihi bir unvandir.")
     print("  yok" if not yuksek else "")
     for g, no, dosya, k, ctx in sorted(yuksek, key=lambda x: x[1] or 0):
-        print(
-            f"  [{dosya}] '{k['tr']}' ({k['yer']}) kapi={k['kapi']} kullanim={no}\n      {ctx}"
-        )
+        print(f"  [{dosya}] '{k['tr']}' ({k['yer']}) kapi={k['kapi']} kullanim={no}\n      {ctx}")
 
     if hepsi:
         print("\n=== 3b. KAPI ADAYLARI (dusuk guven -- muhtemelen siradan kelime) ===")
         for g, no, dosya, k, ctx in sorted(dusuk, key=lambda x: x[1] or 0):
-            print(
-                f"  [{dosya}] '{k['tr']}' ({k['yer']}) kapi={k['kapi']} kullanim={no}\n      {ctx}"
-            )
+            print(f"  [{dosya}] '{k['tr']}' ({k['yer']}) kapi={k['kapi']} kullanim={no}\n      {ctx}")
 
     if envanter_ister:
         print("\n=== 4. ENVANTER (yayimlanmis yuzey) ===")
@@ -286,11 +307,10 @@ def rapor(sizinti, eskimis, kapi, envanter, kayitlar, hepsi, envanter_ister):
             bl = sorted(set(x for x in b if x is not None))
             print(f"    {terim}: {len(b)} kez, bolum {bl}")
         hic = [k["tr"] for k in kayitlar if k["tr"] not in envanter]
-        print(
-            f"\n  {len(hic)} terim henuz hic kullanilmamis -- serbestce degistirilebilir."
-        )
+        print(f"\n  {len(hic)} terim henuz hic kullanilmamis -- serbestce degistirilebilir.")
 
     print("\n--- OZET ---")
+    print(f"  ARTIK ISARET      : {len(artiklar)}   <- varsa ilk is bu")
     print(f"  eskimis           : {len(eskimis)}")
     print(f"  sizinti           : {len(sizinti)}")
     print(f"  kapi (yuksek)     : {len(yuksek)}   <- bakilacaklar")
@@ -309,8 +329,9 @@ def main():
     bolumler = bolum_oku(a.bolumler)
     print(f"{len(kayitlar)} terim, {len(bolumler)} bolum.", file=sys.stderr)
 
+    artiklar = artik_tara(bolumler)
     s, e, kp, env = denetle(kayitlar, bolumler)
-    rapor(s, e, kp, env, kayitlar, a.hepsi, a.envanter)
+    rapor(artiklar, s, e, kp, env, kayitlar, a.hepsi, a.envanter)
 
 
 if __name__ == "__main__":
