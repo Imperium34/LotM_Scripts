@@ -8,14 +8,14 @@ OUTPUT_DIR = "LotM_Volumes"
 
 # Official Lord of the Mysteries volume ranges (inclusive)
 VOLUME_RANGES = [
-    {"num": 1, "name": "Clown", "start": 1, "end": 210},
-    {"num": 2, "name": "Faceless", "start": 211, "end": 482},
+    {"num": 1, "name": "Clown", "start": 1, "end": 213},
+    {"num": 2, "name": "Faceless", "start": 214, "end": 482},
     {"num": 3, "name": "Traveler", "start": 483, "end": 732},
-    {"num": 4, "name": "The_Red_Priest", "start": 733, "end": 946},
-    {"num": 5, "name": "Red_Chaser", "start": 947, "end": 1149},
-    {"num": 6, "name": "Light_Seeker", "start": 1150, "end": 1266},
-    {"num": 7, "name": "The_Hanged_Man", "start": 1267, "end": 1348},
-    {"num": 8, "name": "Ordinary_Persons_Daily_Life", "start": 1349, "end": 9999},
+    {"num": 4, "name": "Undying", "start": 733, "end": 946},
+    {"num": 5, "name": "Red_Priest", "start": 947, "end": 1150},
+    {"num": 6, "name": "Light_Seeker", "start": 1151, "end": 1266},
+    {"num": 7, "name": "The_Hanged_Man", "start": 1267, "end": 1353},
+    {"num": 8, "name": "Ordinary_Persons_Daily_Life", "start": 1354, "end": 9999},
 ]
 # ---------------------
 

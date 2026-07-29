@@ -16,10 +16,12 @@
 
 ## Organizations & Systems
 
-- **Karadiken Güvenlik Şirketi** — front company name
+- **Karadiken Güvenlik Şirketi** — Blackthorn Security Company
 - **Yedinci Birim** — Seventh Unit
-- **Hususi Operasyonlar Dairesi** — Special Operations Bureau (official department name — locked)
-- **Mühürlü Eserler** — Sealed Artifacts, classification: Sınıf 0 (Son Derece Tehlikeli) → Sınıf 1 (Yüksek Tehlikeli) → Sınıf 2 (Tehlikeli) → Sınıf 3 (Dikkate Değer Ölçüde Tehlikeli); numbering format "2-125"
+- **Hususi Operasyonlar Dairesi** — Special Operations Bureau
+- **Mühürlü Eserler** — Sealed Artifacts
+  - **Classification:** Sınıf 0 (Son Derece Tehlikeli / Grade 0: Extremely Dangerous) → Sınıf 1 (Yüksek Tehlikeli / Grade 1: Highly Dangerous) → Sınıf 2 (Tehlikeli / Grade 2: Dangerous) → Sınıf 3 (Dikkate Değer Ölçüde Tehlikeli / Grade 3: Considerably Dangerous)
+  - Numbering format "2-125"
 
 ## Nations & Empires
 
@@ -47,33 +49,33 @@
 ## Tingen — Streets & Districts
 
 - **Demir Haç Sokağı** — Iron Cross Street
-- **Nergis Sokağı**
-- **Tuzdiyarı Sokağı**
-- **Kızıl Mehtap Sokağı**
-- **Besik Sokağı**
+- **Nergis Sokağı** — Daffodil Street
+- **Tuzdiyarı Sokağı** — Zouteland Street
+- **Kızıl Mehtap Sokağı** — Red Moon Street
+- **Besik Sokağı** — Besik Street
 - **Beyaz Gül Semti** — White Rose District
-- **Pelikan Sokağı**
+- **Pelikan Sokağı** — Pelican Street
 
 ## Tingen — Establishments
 
-- **Tuzdiyarı Atış Kulübü** — shooting club
-- **Savaşçı ve Deniz Tavernası** — tavern
-- **Gümüş Taç Restoranı** — restaurant
-- **Vahşi Yürek Barı** — bar
-- **Tazı Hanı** — inn (Wright's)
+- **Tuzdiyarı Atış Kulübü** — Zouteland Shooting Club
+- **Savaşçı ve Deniz Tavernası** — Warrior and Sea Tavern
+- **Gümüş Taç Restoranı** — Silver Crown Restaurant
+- **Vahşi Yürek Barı** — Bravehearts Bar / Wild Heart Bar
+- **Tazı Hanı** — Hound Tavern
 
 ## Institutions
 
-- **Khoy Üniversitesi**
-- **Tingen Teknik Okulu**
+- **Khoy Üniversitesi** — Khoy University
+- **Tingen Teknik Okulu** — Tingen Technical School
 
 ## Publications
 
-- **Tingen Sabah Postası**
-- **Tingen Şehri Dürüstlük Gazetesi**
-- **Akşam Postası**
-- **Backlund Günlük Tribünü**
-- **Tussock Times**
+- **Tingen Sabah Postası** — Tingen Morning Post
+- **Tingen Şehri Dürüstlük Gazetesi** — Tingen City Honest Paper
+- **Akşam Postası** — Evening Post
+- **Backlund Günlük Tribünü** — Backlund Daily Tribune
+- **Tussock Times** — Backlund Daily Tribune
 
 ## Language & Honorifics
 
@@ -94,4 +96,4 @@
 
 ## Miscellaneous
 
-- **Gurme İmparatorluğu** — Zhou's Earth-side reference (cooking-show/webnovel allusion)
+- **Gurme İmparatorluğu** — Gourmet Empire (Zhou's Earth-side reference, cooking-show/webnovel allusion)
