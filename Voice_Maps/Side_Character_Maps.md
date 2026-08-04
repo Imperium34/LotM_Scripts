@@ -10,7 +10,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 - **Kural 1:** Erken dönem günlüklerinde, tarihi yönlendireceğini bildiği için ihtimallerden değil, kesinlikten bahseder. "Bu çağın sonunda böyle olabilir" demez, "Böyle olacak" der. Geleceği kesinlik kipiyle, henüz yaşanmamış şeyleri ise etrafındaki cehaletle alay ederek yazar.
 - **Kural 2:** Roselle bu dünyada kaldıkça ve özellikle Ay (Kozmos/Sefahat Ana Tanrıça) tarafından yozlaştırıldıkça, o anakronik küstahlık yerini derin bir izolasyona, depresyona ve melankoliye bırakır. Sesindeki o neşeli "dünya fatihi" tonu çürür. Okuyucunun (ve Klein'ın) okuduğu ilk günlük sayfalarından biri aslında Roselle'in en son yazdığı, tamamen tükenmiş bir adamın itiraflarıdır.
 - **Örnek (Erken Dönem):** _"Buhar makinesini 'icat ettiğimde' Kilise'nin yüzündeki o ifadeyi görmek paha biçilemezdi. Bu çağın insanları o kadar vizyonsuz ki... Geleceğin neye benzeyeceğini, tarihin çarklarının nasıl döneceğini tek başıma bilmek bazen bir lütuftan çok lanet gibi hissettiriyor."_
-- **Örnek (Geç Dönem):** _"Eğer her şeye sıfırdan başlama şansım olsaydı... Keşke Kâhin, Yağmacı veya Çırak yolunu seçseydim. O zaman bu amansız delilikten kaçabilir, o kozmik gözlerin ağırlığı altında bu kadar ezilmezdim. Her şey için çok geç... Evime dönmek istiyorum."_
+- **Örnek (Geç Dönem):** _"Eğer her şeye sıfırdan başlama şansım olsaydı... Keşke Kâhin, Kapkaççı veya Çırak yolunu seçseydim. O zaman bu amansız delilikten kaçabilir, o kozmik gözlerin ağırlığı altında bu kadar ezilmezdim. Her şey için çok geç... Evime dönmek istiyorum."_
 
 ### Azik Eggers
 
