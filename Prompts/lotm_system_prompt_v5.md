@@ -241,7 +241,6 @@ Bunlar bölüme özgü olmadıkları için şablona bırakılamaz.
 - **Saat:** kesin saatler rakamla ve iki nokta ile ("11:55", "12:30"). Yaklaşık saatler yazıyla ("sabah dokuzda", "üçe bir dakika kala").
 - **Kesme işareti:** düz `'` kullanılır, eğri `’` değil. Tek bir bölüm içinde karışmaz.
 - **Kod adları ve persona adları:** tırnaksız yazılır (Soytarı, Adalet, Asılmış Adam, Dünya). Çince'nin bu adların etrafına koyduğu tırnak bir vurgu değil, özel ad işaretidir; Türkçeye taşınmaz. Kural anlatı için de hitap için de geçerlidir. **İstisna:** ad henüz bir ad değilse, yani anlatı onu bir sıfat ya da rol olarak kullanıyorsa, tırnak korunur.
-- **Yazar imlası:** replik sonundaki `~` düşürülür; neşe veya uzatma ünlemle ve sözcük seçimiyle taşınır.
 - **Ünlü uyumu:** özel adların ek uyumu telaffuza göre ("Klein'ın", "Klein'a").
 - **İngilizce metindeki çevirmen dipnotları** bölüm metni değildir; Türkçeye taşınmaz.
 - **Ses yansımaları** italik değil, düz ve tek satır: "Güm! Güm! Güm!"

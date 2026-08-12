@@ -10,6 +10,8 @@ Bu dosya, üretilecek şablonun **birebir yapısıdır**. Başlıklar, sıralama
 
 Bu şablon, Sabit Çekirdek'in altına eklenir ve o bölüm için **tek ek kaynaktır**. Burada bulunmayan hiçbir bilgiye ihtiyaç duyulmamalıdır.
 
+Şablonun tamamı **Latin harfleriyle** yazılır. Kaynak metindeki Çince ifadeler şablona kopyalanmaz; ¶ numarası ve Türkçe anlamıyla anılır. Bu, biçimsel bir tercih değil: şablon çevirmenin önündeki son belgedir ve içindeki her yazı sistemi çıktıya sızma ihtimali taşır.
+
 ---
 
 ## A. TERİMLER VE ÖZEL ADLAR
@@ -17,6 +19,8 @@ Bu şablon, Sabit Çekirdek'in altına eklenir ve o bölüm için **tek ek kayna
 ### A.1 Yerleşik terimler (değiştirilemez)
 
 Karşılığı **daha önce karara bağlanmış** ve bu bölümde fiilen geçen terimler; kaynağı sözlük, ses haritası, önceki bir bölüm şablonu veya yayımlanmış bir bölüm olabilir. Bu karşılıklar **aynen** kullanılır.
+
+Bu tablo aynı zamanda **denetim yüzeyidir**: sondaki liste yalnızca burada yazan terimi denetleyebilir. Türkçesi apaçık olsa bile birden fazla tabii eşanlamlısı bulunan ve bölüm içinde tekrarlanan terimler (toplantı, formül, mahzen) tabloya girer.
 
 | İngilizce | Türkçe     | Kullanım notu                       |
 | --------- | ---------- | ----------------------------------- |
@@ -134,10 +138,25 @@ Her madde, çevirmenin metinde karşılaşacağı somut bir kararla bağlantıl�
 - **Gotik sözcük tahsisi:** [gotik dağarcığın harcanacağı ¶ aralıkları ve **aç bırakılacak** bölge. Dönem dağarcığı kotasızdır, tahsise girmez. Bölümün duygusal doruğu varsa, oranın **sade** kalması gerektiğini ayrıca yaz.]
 - **Algı fiili yığılması:** [bölüm baştan sona görme/sezme/fark etme üzerine kuruluysa belirt ve stratejiyi ver: edimi düşürme, algıyı bedene kaydırma.]
 - **Chengyu ve kalıp ifadeler:** [bölümde geçen dört karakterli deyimler ve karara bağlanmış Türkçe çözümleri]
+- **Sürtünme noktaları:** [Kaynağın yapısı yüzünden kırılması beklenen üç ila beş cümle. Her biri için uyarı değil, **karara bağlanmış Türkçe cümle** yazılır. Tipik iki sınıf: "mesele şuydu ki" kabilinden menteşe cümleleri ve Türkçede ağdalı ama yanlış bir yakın karşılığı bulunan soyut isimler. Geri dönen bir müsveddede fiilen kırılmış cümle varsa, o cümlenin karşılığı zorunludur.]
+- **Sıcak noktalar:** [Türkçe sözdiziminde kırılacağı öngörülen cümleler ¶ numarasıyla verilir ve **karara bağlanmış Türkçe karşılığı** yazılır. Bu bölüm için dondurulmuş satır hükmündedir. Yoksa "yok" yaz.]
+- **İç ses sınırı:** [Kaynakta serbest dolaylı anlatımla yazılmış, yani iç ses gibi görünen ama üçüncü şahıs anlatı olan paragraflar ¶ numarasıyla listelenir ve **italik değildir** diye açıkça yazılır. Bu bölümde italiğe girecek ¶'lar da ayrıca sayılır. Ölçüt tektir ve şablonda yazılır: cümlenin başına "Ben" konabiliyorsa iç sestir; cümle düşünen kişinin adını yahut "kendisi" sözünü taşıyorsa anlatıdır. Persona adlarının tırnaklı mı tırnaksız mı yazıldığı da bu maddede tek satırla beyan edilir.]
 - **Yapısal ritim, lore düşüşleri, psikolojik kaymalar**
+
+---
+
+## DENETİM LİSTESİ
+
+Çeviri bittikten sonra, **ayrı bir geçişte** işletilir. Bu bir üslup turu değildir; hiçbir maddesi düzyazıyı yeniden yazmayı gerektirmez. Yaratıcı geçişle aynı anda yapılırsa ikisi de zayıflar.
+
+1. **Latin harfi.** Çıktıda Latin harfi dışında tek bir karakter kalmadığını doğrula.
+2. **İtalik.** E bölümündeki iki listeyle karşılaştır. İtaliğe alınmış her cümlenin başına "Ben" koyup oku; olmuyorsa italik kalkar.
+3. **Dondurulan satırlar.** B bölümündeki satırları metinde bul ve harfi harfine karşılaştır.
+4. **Terimler.** A.1 ve A.2'deki karşılıkların her geçişte aynı olduğunu doğrula. Tabloda olmayan bir terim bu maddeyle denetlenemez; bölüm boyunca birden fazla geçen her terimin satırı bulunmalıdır. [Bu bölümde kaymaya en müsait olanlar adıyla sayılır.]
+5. **Tırnak.** Persona adlarının tutarlı yazıldığını doğrula.
 
 ---
 
 **[ÇIKTI SONU]**
 
-Bölüm metnini yazma. E bölümünden sonra üretimi durdur.
+Bölüm metnini yazma. Denetim listesinden sonra üretimi durdur.
