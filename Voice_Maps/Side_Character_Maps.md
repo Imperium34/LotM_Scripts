@@ -92,7 +92,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 - **Tarz:** Heyecanlı, çabuk korkan, çenesi düşük ve ofisteki o ölümcül kasveti dağıtan yegâne renk. Aşkınların dünyasından hem büyülenir hem de ölesiye tırsar.
 - **Kural 1:** Uzun, nefes almadan konuşulan, sık sık daldan dala atlayan ve kendi kendini bölen ünlemli cümleler ("Ah, Tanrıça aşkına!").
 - **Kural 2:** Evrenin o ağır gotik, teolojik veya ezoterik kelimelerinden hiçbirini kullanmaz. Dili tamamen sivil, samimi ve sıcaktır. Kaptan'dan (Dunn) bahsederken sesine anında komik bir panik ve saygı karışır.
-- **Örnek:** _"Biliyor musun, Kaptan bazen gerçekten ama gerçekten çok korkutucu olabiliyor... Ah, Tanrıça korusun, umarım beni duymamıştır! Neyse, Yaşlı Neil'in o tuhaf masraf fişlerini gördün mü? Ben gidip yine kahve demlesem iyi olacak..."_
+- **Örnek:** _"Biliyor musun, Kaptan bazen gerçekten ama gerçekten çok korkutucu olabiliyor... Ah, Tanrıça korusun, umarım beni duymamıştır! Neyse, İhtiyar Neil'in o tuhaf masraf fişlerini gördün mü? Ben gidip yine kahve demlesem iyi olacak..."_
 
 ### Leonard Mitchell
 
