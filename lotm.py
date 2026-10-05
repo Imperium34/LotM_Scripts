@@ -6,8 +6,8 @@ lotm.py -- LotM ceviri projesi icin ortak temel.
 Uc sey bu projede birden fazla yerde tekrarlaniyordu ve zamanla birbirinden
 kaymaya basladi. Hepsi burada tek tanima indirildi:
 
-  1. BOLUME AYIRMA. chinese_lookup.py sirayla sayiyordu, searcher.py basliktaki
-     numarayi okuyordu, denetci2.py dosya adindan aliyordu. Ucu de "279. bolum"
+  1. BOLUME AYIRMA. chinese_lookup.py sirayla sayiyordu, kapi_denetle.py basliktaki
+     numarayi okuyordu, yayim_denetle.py dosya adindan aliyordu. Ucu de "279. bolum"
      derken farkli seyler kastediyordu.
 
   2. SOZLUK YUKLEME. terimleri_topla / sozluk_yukle / load_yaml_entries ayni
@@ -64,6 +64,8 @@ import sys
 from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
+
+from turkce import en_kucult, tr_buyut, tr_desen, tr_kucult  # noqa: F401 (disa verilir)
 
 try:
     import yaml
@@ -169,7 +171,20 @@ SOZLUK_YOLU = SITE / "_data/sozluk.yml"
 BOLUMLER_TR = SITE / "_chapters"
 KAYNAK_EN = KOK / "Source/LotM_Volumes"
 KAYNAK_ZH = KOK / "Source/Lord_of_the_Mysteries_Chinese.txt"
-KELIMELER = BETIK_KOK / "words.md"
+# words.md betiklerle AYNI klasorde olmayabilir: betikler Scripts/'e tasindi,
+# veri (words.md, Reports/, Voice_Maps/) KOK/Tools'ta kaldi. Tek sabit yol
+# ikisinden birini sessizce kaciriyordu (sozluk_ara "madde listesi yok"
+# diyordu). Sira: LOTM_KELIMELER, betik klasoru, KOK/Tools.
+def _kelimeler_yolu() -> Path:
+    if os.environ.get("LOTM_KELIMELER"):
+        return Path(os.environ["LOTM_KELIMELER"])
+    for aday in (BETIK_KOK / "words.md", KOK / "Tools" / "words.md"):
+        if aday.exists():
+            return aday
+    return BETIK_KOK / "words.md"
+
+
+KELIMELER = _kelimeler_yolu()
 
 
 # =====================================================================
@@ -348,7 +363,7 @@ def varyantlar(terim: str) -> set:
 # TURKCE CEKIM EKLERI
 # =====================================================================
 #
-# denetci2.py'den tasindi. Turkce terimler metinde cekim ekleriyle gecer
+# yayim_denetle.py'den tasindi. Turkce terimler metinde cekim ekleriyle gecer
 # ("Kâhin'in", "Yolda", "Gizem Avcısı'nı"), dolayisiyla duz altdize aramasi
 # ise yaramaz. Ama serbest bir "\w{0,12}" de olmaz: v1'de tam olarak o
 # yuzden Haz -> Haziran, Bard -> bardak esleiyordu. Yalnizca gercek isim
@@ -368,20 +383,206 @@ IYELIK = (
     r"|miz|mız|muz|müz|niz|nız|nuz|nüz"
     r"|siz|sız|suz|süz|si|sı|su|sü|im|ım|um|üm|in|ın|un|ün|i|ı|u|ü|m|n)"
 )
+
 HAL = (
     r"(?:nden|ndan|nde|nda|nin|nın|nun|nün|den|dan|ten|tan|de|da|te|ta"
-    r"|yle|yla|ile|le|la|ni|nı|nu|nü|ne|na|yi|yı|yu|yü|ye|ya|i|ı|u|ü|e|a)"
+    r"|yle|yla|ile|le|la|ni|nı|nu|nü|ne|na|yi|yı|yu|yü|ye|ya"
+    r"|in|ın|un|ün|i|ı|u|ü|e|a)"
 )
+
+# EK-FİİL. Unluyle biten govdeden sonra kaynastirma "y" alir: üyesi + (y)di
+# -> "üyesiydi", üye + (y)ken -> "üyeyken". Eskiden y'li bicimler, kisi
+# ekleri (-ydim, -ymişsin) ve -(y)sA / -(y)ken yoktu; "Babam Gece
+# Şahinleri'nin bir aslî üyesiydi" terimi iceriyor ama eslesmiyordu.
+EKFIIL = (
+    r"(?:y?[dt][ıiuü](?:m|n|k|n[ıiuü]z|l[ae]r)?"          # -(y)DI + kişi
+    r"|y?m[ıiuü]ş(?:[ıiuü]m|s[ıiuü]n|[ıiuü]z|l[ae]r)?"      # -(y)mIş + kişi
+    r"|y?s[ae](?:m|n|k|n[ıiuü]z|l[ae]r)?"                  # -(y)sA + kişi
+    r"|y?[ıiuü][mz]"                                        # -(y)Im / -(y)Iz
+    r"|s[ıiuü]n(?:[ıiuü]z)?"                                # -sIn / -sInIz
+    r"|[dt][ıiuü]r(?:l[ae]r)?"                              # -DIr
+    r"|y?ken)"                                              # -(y)ken
+)
+
+SIFAT = r"(?:l[iıuü])?"  # -li / -lı / -lu / -lü
+HAL_ILGI = r"(?:" + HAL + r"(?:ki)?)?"
 
 # Kesme hem govdeden hemen sonra (Kâhin'in) hem iyelikten sonra
 # (Diyarı'nı) gelebilir. Sondaki (?![\w]) sart: eksiz de olsa eslesme
 # kelime sonunda bitmeli. Yoksa Haz -> Haz|iran, Zanaatkâr -> Zanaatkâr|lık
 # gibi kirpik eslesmeler gecerli sayilir.
 KESME = r"(?:['\u2019])?"
-EK = KESME + COGUL + r"?" + IYELIK + r"?" + KESME + HAL + r"?" + r"(?![\w])"
-
+EK = (
+    KESME
+    + COGUL
+    + r"?"
+    + SIFAT
+    + IYELIK
+    + r"?"
+    + KESME
+    + HAL_ILGI
+    + EKFIIL
+    + r"?"
+    + r"(?![^\W_])"
+)
 # Son sert unsuz yumusamasi
 YUMUSAMA = {"k": "[kğ]", "p": "[pb]", "t": "[td]", "ç": "[çc]"}
+
+
+# tr_kucult / tr_buyut artik turkce.py'de; yukarida ice aktarilip buradan
+# disa veriliyor, yani lotm.tr_kucult cagiran her yer degismeden calisir.
+
+
+# Tamlama coguluna donuste sesli harf oncesi yumusamis unsuzun sert hali.
+# Sinif olarak yazilir ([pb]), yalniz sert degil: "ad -> adı -> adlar" gibi
+# hic yumusamayan kokler de var ve bu denetleyicinin isi imla degil.
+SERTLESME = {"b": "[pb]", "c": "[çc]", "d": "[td]", "ğ": "[kğ]"}
+_UNLU = "aeıioöuüâîû"
+
+
+# ÜNLÜ DÜŞMESİ. Ünlüyle başlayan ek gelince son hecenin dar ünlüsü düşer:
+# mühür -> mühre, mührü; şehir -> şehri; kayıt -> kaydı. KAPALI LİSTE:
+# düşmeyenler de çok ("kurum -> kurumu") ve kurala bağlanamaz; genel bir
+# kural "kurum" terimini "kurma" ile eşleştirirdi. Sözlüğe yeni bir terim
+# girip bölümde düşmüş biçimi kaçırırsa kelime buraya eklenir.
+DUSEN = frozenset({
+    "ağız", "akıl", "akis", "alın", "asıl", "azim", "beniz", "beyin", "boyun",
+    "burun", "cisim", "emir", "fasıl", "fetih", "fikir", "gönül", "göğüs",
+    "hapis", "hatır", "hüküm", "hüzün", "ilim", "isim", "kabir", "kahır",
+    "karın", "kayıp", "kayıt", "keşif", "kısım", "metin", "mühür", "nehir",
+    "nesil", "oğul", "ömür", "resim", "sabır", "şehir", "şekil", "vakit",
+    "zehir", "zihin",
+})
+_DUSMUS = {w[:-2] + w[-1]: w for w in DUSEN}          # "mühr" -> "mühür"
+_SOFT = {"t": "d", "p": "b", "k": "ğ", "ç": "c"}
+
+
+def _dusmus_desen(kelime: str) -> str | None:
+    """'mühür' -> 'mühr' (ardindan unlu gelmeli); 'kayıt' -> 'kay[td]'."""
+    if tr_kucult(kelime) not in DUSEN:
+        return None
+    kok = kelime[:-2] + kelime[-1]
+    if kok[-1] in YUMUSAMA:
+        return re.escape(kok[:-1]) + YUMUSAMA[kok[-1]]
+    return re.escape(kok)
+
+
+def _dusmusu_geri(kok: str) -> str | None:
+    """Iyelik atildiktan sonra kalan 'Şehr' / 'kayd' -> 'Şehir' / 'kayıt'."""
+    k = tr_kucult(kok)
+    for d, tam in _DUSMUS.items():
+        if k == d or (d[-1] in _SOFT and k == d[:-1] + _SOFT[d[-1]]):
+            return kok[:-1] + tam[-2] + tam[-1]
+    return None
+
+
+def _tamlama_koku(kelime: str) -> str | None:
+    """
+    Belirtisiz tamlamanin son kelimesinden 3. tekil iyelik ekini atar;
+    kalan kokun desenini, ek yoksa None doner.
+
+        mektebi -> mekte[pb]     (mektep + i, p yumusamis)
+        lambası -> lamba         (lamba + sı)
+        saati   -> saat          (saat + i)
+
+    Cogulda ek, cogul ekinden SONRA gelir: pazar mektebi -> pazar
+    mektep-ler-i. Terim eki zaten tasidigi icin EK deseni "mektebi"
+    arkasina "leri" ekleyip hic bulamiyordu; "pazar mektepleri", "gaz
+    lambaları", "cep saatleri" eslesmeyen sayiliyordu.
+    """
+    k = kelime
+    if len(k) < 3 or k[-1] not in "ıiuü":
+        return None
+    if k[-2] == "s" and len(k) > 3 and k[-3] in _UNLU:
+        return re.escape(k[:-2])
+    kok = k[:-1]
+    if kok[-1] in _UNLU:
+        return None
+    # "Rüzgâr Şehri" -> "Şehirleri": dusen unlu cogulda geri gelir.
+    tam = _dusmusu_geri(kok)
+    if tam:
+        return re.escape(tam)
+    if kok[-1] in SERTLESME:
+        return re.escape(kok[:-1]) + SERTLESME[kok[-1]]
+    return re.escape(kok)
+
+
+_HAFIF_FIILLER = {"etmek", "edilmek", "eylemek", "olmak", "olunmak", "kılmak", "kılınmak"}
+
+
+def _fiil_koku(kelime: str, cok_kelimeli: bool) -> str | None:
+    """
+    Mastar halindeki fiil terimi icin govde deseni: 'tevdi etmek' -> 'e[td]…'.
+
+    Terim mastarla yazilir ama metinde cekimli gecer: tevdi etti, tevdi
+    ettiği, tevdi edildi. EK deseni "etmek"in ARKASINA ek bekledigi icin
+    bunlarin hicbirini bulmuyordu (sozlukte "Şirazesini Yitirmek" icin
+    arama_adi: [şiraze] tam da bu yuzden yazilmisti).
+
+    Yalnizca guvenli oldugu yerde: kok en az dort harf olmali (damgala-,
+    görül-, yitir-). "ekmek", "yemek", "parmak", "çakmak" isimdir ve
+    kokleri (ek-, ye-, par-, çak-) her yere eslesirdi. Kisa koklu hafif
+    fiiller (et-, ol-, kıl-) yalnizca cok kelimeli terimin sonunda kabul
+    edilir; orada onlerindeki kelime baglami zaten daraltir.
+    """
+    if not re.search(r"m[ae]k$", kelime):
+        return None
+    kok = kelime[:-3]
+    if len(kok) < 4 and not (cok_kelimeli and kelime in _HAFIF_FIILLER):
+        return None
+    if kok[-1] in YUMUSAMA:
+        return re.escape(kok[:-1]) + YUMUSAMA[kok[-1]] + r"[^\W\d_]*"
+    return re.escape(kok) + r"[^\W\d_]*"
+
+
+# OLCU EKI -lIk. "altı librelik top", "iki yüz Sterlinlik ücret": sayidan
+# sonra gelen birim -lIk alir. Her terime acilamaz: "İmparator" ->
+# "İmparatorluk", "Aşkın" -> "Aşkınlık" baska kelimelerdir. Bu yuzden
+# yalnizca ONUNDE SAYI varken kabul edilir (rakam ya da sayi sozcugu).
+# Python'un lookbehind'i sabit genislik ister; her sozcuk ayri bir
+# lookbehind olur ve alternatifle baglanir.
+SAYI_SOZCUKLERI = (
+    "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz", "on",
+    "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan",
+    "yüz", "bin", "milyon", "yarım", "çeyrek", "buçuk", "birkaç", "kaç",
+)
+_SAYI_ONCESI = "(?:" + "|".join(
+    [r"(?<=\d\s)", r"(?<=\d)"]
+    + [rf"(?<=(?<![^\W_]){re.escape(w)}\s)" for w in SAYI_SOZCUKLERI]
+    + [rf"(?<=(?<![^\W_]){re.escape(tr_buyut(w))}\s)" for w in SAYI_SOZCUKLERI]
+) + ")"
+OLCU_EKI = r"l[iıuü][kğ]"
+
+
+def _govde(terim: str, olcu: bool = False) -> str:
+    parcalar = []
+    kelimeler = terim.split()
+    son = len(kelimeler) - 1
+    for i, kelime in enumerate(kelimeler):
+        g = re.escape(kelime)
+        if kelime and kelime[-1] in YUMUSAMA:
+            g = re.escape(kelime[:-1]) + YUMUSAMA[kelime[-1]]
+        if i < son:
+            parcalar.append(g + r"(?![^\W_])")
+            continue
+        if olcu:
+            # yalnizca -lIk'li bicim; cagiran (desen_kur) sayi sartini koyar
+            parcalar.append(g + OLCU_EKI + EK)
+            continue
+        g += EK
+        # Yalnizca cok kelimeli terimlerde: tek kelimede sondaki -i cogu
+        # zaman kokun kendisidir (idadi, Kabine degil ama benzerleri).
+        kok = _tamlama_koku(kelime) if son > 0 else None
+        if kok:
+            g = f"(?:{g}|{kok}l[ae]r{EK})"
+        fiil = _fiil_koku(kelime, son > 0)
+        if fiil:
+            g = f"(?:{g}|{fiil})"
+        dusmus = _dusmus_desen(kelime)
+        if dusmus:
+            g = f"(?:{g}|{dusmus}(?=[{_UNLU}]){EK})"
+        parcalar.append(g)
+    return r"\s+".join(parcalar)
 
 
 def desen_kur(terim: str, harf_duyarli: bool = True):
@@ -390,17 +591,29 @@ def desen_kur(terim: str, harf_duyarli: bool = True):
 
     Harf duyarliligi VARSAYILAN olarak aciktir ve oyle kalmalidir: Mertebe
     adlari ozel isimdir, cakismalari kucuk harflidir (Yol/yolu, Haz/hazine,
-    Maraz/marazi, San/sanslı).
+    Maraz/marazi, San/sansli).
+
+    HARF DUYARSIZ DALDA re.IGNORECASE KULLANILMAZ. Python'un IGNORECASE'i
+    denklik siniflarini upper() uzerinden kurar; Turkce'de 'ı'.upper() de
+    'i'.upper() de 'I' verdigi icin ı ile i AYNI SINIFA duser. Sonuc:
+        re.search("Ayin", "haziran ayının", re.IGNORECASE)  ->  eslesir
+    Bolum 9'da hic gecmeyen bir "Ayin" bu yuzden gorunuyordu. Bunun yerine
+    terimin kucuk ve bas harfi buyuk bicimleri ACIKCA uretilip alternatif
+    olarak baglanir; ı ile i boylece ayri kalir.
     """
-    parcalar = []
-    kelimeler = terim.split()
-    for i, kelime in enumerate(kelimeler):
-        govde = re.escape(kelime)
-        if kelime and kelime[-1] in YUMUSAMA:
-            govde = re.escape(kelime[:-1]) + YUMUSAMA[kelime[-1]]
-        parcalar.append(govde + (EK if i == len(kelimeler) - 1 else r"(?![\w])"))
-    kalip = r"(?<![\w'])" + r"\s+".join(parcalar)
-    return re.compile(kalip) if harf_duyarli else re.compile(kalip, re.IGNORECASE)
+    if harf_duyarli:
+        secenekler = [_govde(terim)]
+    else:
+        bicimler = dict.fromkeys([terim, tr_kucult(terim), tr_buyut(tr_kucult(terim))])
+        secenekler = [_govde(b) for b in bicimler]
+
+    # Olcu bicimi: sayidan sonra "librelik", "Sterlinlik" (bkz. OLCU_EKI).
+    bicimler_o = [terim] if harf_duyarli else list(dict.fromkeys(
+        [terim, tr_kucult(terim), tr_buyut(tr_kucult(terim))]))
+    secenekler += [_SAYI_ONCESI + _govde(b, olcu=True) for b in bicimler_o]
+
+    kalip = r"(?<![^\W_])(?:" + "|".join(secenekler) + r")"
+    return re.compile(kalip)
 
 
 # =====================================================================
@@ -420,12 +633,12 @@ class Terim:
                   uzerine yazmaz. Bir ad aciklanmadan once anilabilir,
                   bu yuzden kapi ilk gecisten sonra gelir.
     ilk_gecis     TURETILEN. Adin Ingilizce metinde ilk gectigi bolum.
-                  searcher.py bulur, etiketle.py yazar, her calistirmada
+                  kapi_denetle.py bulur, etiketle.py yazar, her calistirmada
                   serbestce guncellenir.
 
     Ikisi arasindaki aralik anlamlidir: orada ad GECER ama HENUZ
     ACIKLANMAMISTIR. O aralikta Turkce metnin adi kullanmasi sadakattir,
-    spoiler degil -- denetci2 bu ayrimi bu iki alanla yapar.
+    spoiler degil -- yayim_denetle bu ayrimi bu iki alanla yapar.
 
     Iki YAML sekli tek kayda indirgenir:
       ust duzey:  terim: X / ingilizce: Y      (ayri alanlar)
@@ -439,6 +652,10 @@ class Terim:
     en: str | None = None
     en_ham: str | None = None  # ayrilmamis Ingilizce etiket (bkz. arama_adaylari)
     zh: str | None = None
+    # Tek karakterlik Cince anahtar KASITLI mi? Varsayilan olarak tek karakter
+    # aranmaz (法 魔法'in, 令 命令'in icinde gecer). Sozlukte ya da words.md'de
+    # 「镑」 gibi kose parantezle yazilan karakter kasitlidir ve aranir.
+    zh_kesin: bool = False
     kategori: str = ""
     yol: str | None = None  # bagli oldugu Yol (mertebeler icin)
     yol_en: str | None = None
@@ -446,7 +663,14 @@ class Terim:
     bolum_siniri: int | None = None  # EDITORYAL kapi -- insan koyar
     ilk_gecis: int | None = None  # TURETILEN ilk gecis -- arac yazar
     eski_karsiliklar: list = field(default_factory=list)
-    arama_adi: list = field(default_factory=list)
+    # IKI AYRI ALAN, IKI AYRI DIL. Eskiden tek 'arama_adi' vardi ve iki
+    # betik onu iki ayri seyle okuyordu: toplu_denetle TURKCE karsilik
+    # bicimleri olarak, arama_adaylari() (-> kapi_denetle) INGILIZCE arama
+    # adi olarak. Sozlukteki butun kullanimlar Turkceydi ("gökkubbe",
+    # "şiraze", "El Yazması"); yani kapi_denetle bu uc terimin ilk gecisini
+    # Ingilizce metinde Turkce kelime arayarak bulmaya calisiyordu.
+    arama_adi: list = field(default_factory=list)      # TURKCE karsilik bicimleri
+    en_arama_adi: list = field(default_factory=list)   # INGILIZCE tarama adlari
     cevirmen_notu: str | None = None
     kardesler_tr: list = field(default_factory=list)
     kardesler_en: list = field(default_factory=list)
@@ -473,16 +697,35 @@ class Terim:
         Raporlarda ve betikler arasinda terimi tanimlayan KARARLI kimlik.
 
         Her zaman kanonik Ingilizce addir -- arama_adi DEGIL. Eskiden
-        searcher.py raporu arama_adi[0] ile anahtarliyor, etiketle.py ise
+        kapi_denetle.py raporu arama_adi[0] ile anahtarliyor, etiketle.py ise
         parantez icindeki adla ariyordu; arama_adi verilmis her terim
         sessizce eslesmiyordu ("raporda yok" sayilip etiketlenmiyordu).
         """
         return self.en or None
 
+    def tr_bicimleri(self) -> list:
+        """
+        Terimin GUNCEL Turkce karsilik bicimleri: once terimin kendisi,
+        sonra arama_adi; harf duyarsiz tekillestirilmis, sira korunur.
+
+        Iki denetleyici bunu eskiden farkli kuruyordu: toplu_denetle
+        "arama_adi verilmisse YALNIZCA o" diyordu (terimin kendisini
+        listeye yazmayi unutmak tuzakti), ceviri_denetle ise arama_adi'yi
+        hic okumuyordu. Ayni terim bir aracta temiz, digerinde eslesmeyen
+        cikiyordu ("El Yazması" kisaltmasi gibi).
+        """
+        out, gorulen = [], set()
+        for b in [self.tr, *self.arama_adi]:
+            if b and tr_kucult(b) not in gorulen:
+                gorulen.add(tr_kucult(b))
+                out.append(b)
+        return out
+
     def arama_adaylari(self) -> list:
         """
         Ingilizce tarama icin aday stringler, uzundan kisaya.
-        arama_adi verilmisse yalnizca o kullanilir.
+        en_arama_adi verilmisse yalnizca o kullanilir. (arama_adi DEGIL:
+        o alan Turkce karsilik bicimleridir, bkz. alan notu.)
 
         en_ham uzerinden calisir, en uzerinden degil: 'en' cok adli
         etiketlerde ilk ada indirgenmistir ("Mystery Pryer / Pugilist" ->
@@ -490,8 +733,8 @@ class Terim:
         ust duzey girdilerde parantez ici ad ("Blasphemer Amon (King of
         Angels)" -> "King of Angels") yalnizca en_ham'da vardir.
         """
-        if self.arama_adi:
-            kaynak = list(self.arama_adi)
+        if self.en_arama_adi:
+            kaynak = list(self.en_arama_adi)
         elif self.en_ham or self.en:
             kaynak = etiket_temizle(self.en_ham or self.en)
         else:
@@ -500,6 +743,12 @@ class Terim:
         for a in kaynak:
             tum |= varyantlar(a)
         return sorted(tum, key=lambda s: (-len(s), s))
+
+
+# Eski ad. Burada ikinci bir tanim vardi (lower() ile) ve yukaridaki
+# tr_kucult'tan (casefold() ile) farkli yazilmisti; ciktilari Turkce icin
+# ayni olsa da iki tanim iki ayri gelecek demekti. Artik ayni fonksiyon.
+_tr_kucult = tr_kucult
 
 
 class Sozluk:
@@ -519,13 +768,14 @@ class Sozluk:
 
     def ara(self, sorgu: str) -> list:
         """Iki yonlu arama: Turkce, Ingilizce veya Cince tarafinda."""
-        q = sorgu.lower()
+        # Turkce alan Turkce kucultmeyle, Ingilizce alan casefold ile. Tek
+        # bir kucultme ikisine birden uygulaninca Ingilizce bozuluyordu:
+        # tr_kucult("Iron Cross") = "ıron cross", yazilan "iron" bulunmuyordu.
+        q_tr, q_en = tr_kucult(sorgu), en_kucult(sorgu)
         return [
             t
             for t in self.terimler
-            if q in (t.tr or "").lower()
-            or q in (t.en or "").lower()
-            or q in (t.zh or "")
+            if q_tr in tr_kucult(t.tr) or q_en in en_kucult(t.en) or sorgu in (t.zh or "")
         ]
 
     def yaz(self, hedef=None, duzeltici=None):
@@ -570,7 +820,8 @@ def _terim_kur(ham_girdi, ham_mertebe=None, kardesler=None):
             tr=tr,
             en=en,
             en_ham=en_ham,
-            zh=ham_mertebe.get("cince"),
+            zh=zh_ayikla(ham_mertebe.get("cince"))[0],
+            zh_kesin=zh_ayikla(ham_mertebe.get("cince"))[1],
             kategori=ham_girdi.get("kategori", ""),
             yol=ham_girdi.get("terim"),
             yol_en=yol_en_list[0] if yol_en_list else None,
@@ -579,6 +830,7 @@ def _terim_kur(ham_girdi, ham_mertebe=None, kardesler=None):
             ilk_gecis=ham_mertebe.get("ilk_gecis"),
             eski_karsiliklar=list(ham_mertebe.get("eski_karsiliklar") or []),
             arama_adi=list(ham_mertebe.get("arama_adi") or []),
+            en_arama_adi=list(ham_mertebe.get("en_arama_adi") or []),
             cevirmen_notu=ham_mertebe.get("cevirmen_notu"),
             kardesler_tr=[k for k in kardesler if k != tr],
             kardesler_en=[],
@@ -592,25 +844,213 @@ def _terim_kur(ham_girdi, ham_mertebe=None, kardesler=None):
         tr=tr,
         en=parantezsiz(ham_girdi.get("ingilizce")) or None,
         en_ham=str(ham_girdi.get("ingilizce") or "") or None,
-        zh=ham_girdi.get("cince"),
+        zh=zh_ayikla(ham_girdi.get("cince"))[0],
+        zh_kesin=zh_ayikla(ham_girdi.get("cince"))[1],
         kategori=ham_girdi.get("kategori", ""),
         bolum_siniri=ham_girdi.get("bolum_siniri"),
         ilk_gecis=ham_girdi.get("ilk_gecis"),
         eski_karsiliklar=list(ham_girdi.get("eski_karsiliklar") or []),
         arama_adi=list(ham_girdi.get("arama_adi") or []),
+        en_arama_adi=list(ham_girdi.get("en_arama_adi") or []),
         cevirmen_notu=ham_girdi.get("cevirmen_notu"),
         ham=ham_girdi,
     )
 
 
-def sozluk_yukle(yol=None, bicim_koru=False) -> Sozluk:
+# --------------------------------------------------------------- words.md
+
+_KELIME_MADDE = re.compile(r"^\s*-\s*\*\*(.+?)\*\*\s*[—–-]\s*(.*?)\s*$")
+_MD_BASLIK = re.compile(r"^(#{1,6})\s+(.*?)\s*$")
+_CJK = re.compile(r"[\u3400-\u9fff]+")
+# Ad ayiricisi (·, ・) yalnizca iki CJK harfinin ARASINDAYSA korunur.
+_ZH_AD = re.compile(r"[\u3400-\u9fff](?:[\u3400-\u9fff·・]*[\u3400-\u9fff])?")
+_TR_OZEL = re.compile(r"[çğıöşüÇĞİÖŞÜâîûÂÎÛ]")
+_PARANTEZ_BLOK = re.compile(r"\(([^()]*)\)")
+KELIME_KATEGORI = "words.md"
+
+
+def kesin_gecisler(yol=None) -> dict:
+    """
+    lint-kurallari.yml'deki kesin_gecis kurallari:
+        {dogru (Turkce kucuk): (gecis_bolumu, {eski bicimler, kucuk})}
+
+    Lint, toplu_denetle ve yayim_denetle AYNI kurali buradan okur: gecisten
+    once eski kelime o donemin dogru karsiligidir. Dosya yoksa bos.
+    """
+    yol = Path(yol) if yol else BETIK_KOK / "lint" / "lint-kurallari.yml"
+    try:
+        import yaml
+        veri = yaml.safe_load(Path(yol).read_text(encoding="utf-8")) or {}
+    except Exception:
+        return {}
+    out = {}
+    for k in veri.get("varyantlar", []) or []:
+        if k.get("kesin_gecis") and k.get("ogrenme_bolumu") and k.get("dogru"):
+            out[tr_kucult(k["dogru"])] = (
+                int(k["ogrenme_bolumu"]), {tr_kucult(y) for y in k.get("yanlis", [])})
+    return out
+
+
+def zh_desen(sorgu: str, bilesikler=()) -> re.Pattern:
+    """
+    Cince sorgu, ama daha uzun bir bilesigin PARCASI oldugu yerde degil:
+    灵体 araninca 星灵体'nin icindekiler sayilmaz. Her bilesikteki her konum
+    bir negatif ileri bakisa donusur: 星灵体 -> (?!(?<=星)灵体). Duz bir
+    derlenmis desen olarak kalir (.search / .sub / .finditer calisir).
+    ceviri_denetle ve capa ayni desenle arar.
+    """
+    haric = []
+    for b in bilesikler:
+        bas = 0
+        while (i := b.find(sorgu, bas)) != -1:
+            on, son = b[:i], b[i + len(sorgu):]
+            ic = re.escape(sorgu + son)
+            haric.append(f"(?!(?<={re.escape(on)}){ic})" if on else f"(?!{ic})")
+            bas = i + 1
+    return re.compile("".join(haric) + re.escape(sorgu))
+
+
+_KOSE = re.compile(r"「([^」]+)」")
+
+
+def zh_ayikla(ham) -> tuple:
+    """
+    'cince' degeri ya da words.md parantezi -> (anahtar, kesin_mi).
+
+        "印章/盖章"      -> ("印章/盖章", False)
+        "「镑」"          -> ("镑", True)     tek karakter, kasitli
+    """
+    if not ham:
+        return None, False
+    ham = str(ham)
+    kesin = bool(_KOSE.search(ham))
+    temiz = _KOSE.sub(lambda m: m.group(1), ham).strip()
+    return (temiz or None), kesin
+
+
+def _parcala(s: str) -> list:
+    return [p.strip() for p in re.split(r"\s*[/,]\s*", s) if p.strip()]
+
+
+def _madde_zh(kalan: str) -> list:
+    """
+    Cince karsiliklar: CJK iceren ILK parantezin '/' ile ayrilmis
+    parcalari, her biri (anahtar, kesin_mi) olarak; parantez yoksa
+    satirdaki ilk CJK dizisi. 'Negan Dükü (尼根公爵). eşi Della
+    Hanımefendi (黛拉夫人)' -> 尼根公爵; ikincisi baska bir kisidir.
+
+        "(「镑」/苏勒/便士)"  -> [("镑", True), ("苏勒", False), ("便士", False)]
+    """
+    for ic in _PARANTEZ_BLOK.findall(kalan):
+        if not _CJK.search(ic):
+            continue
+        # Karsiliklar ilk ';' oncesindedir; sonrasi Turkce nottur. Iki eski
+        # hata burada: (1) yalniz '/' ayiriciydi, oysa cok terimli maddeler
+        # virgulle yaziliyor ("(褐星, 绯星, 蓝星; ...)"); tek parca sayilip
+        # uc gezegen de Cince anahtarsiz kaliyordu. (2) Parcadaki CJK
+        # harfleri birlestirilirken ad ayiricisi '·' atiliyordu:
+        # 罗塞尔·古斯塔夫 -> 罗塞尔古斯塔夫, metinde hic gecmeyen bir dize.
+        bas = re.split(r"[;；]", ic, maxsplit=1)[0]
+        if not _CJK.search(bas):
+            bas = ic
+        out = []
+        for parca in re.split(r"[/,，、]", bas):
+            kesin = bool(_KOSE.search(parca))
+            cjk = "".join(_ZH_AD.findall(parca))
+            if cjk:
+                out.append((cjk, kesin))
+        return out
+    m = _CJK.search(kalan)
+    return [(m.group(), False)] if m else []
+
+
+def _madde_en(kalan: str) -> list:
+    """Ingilizce karsilik(lar): ilk '(' ya da ';' oncesi. Turkce harf ya da
+    CJK iceriyorsa Ingilizce degildir (orn. 'kadim bir kaynak metin')."""
+    bas = re.split(r"[(;]", kalan, maxsplit=1)[0].strip().strip('"“”')
+    # Parca parca bakilir: "spirit body, varlık anlamında" -> ilk parca
+    # Ingilizce, ikincisi Turkce aciklama. Ilk Turkce parcada durulur.
+    out = []
+    for p in _parcala(bas):
+        if _CJK.search(p) or _TR_OZEL.search(p):
+            break
+        out.append(p.strip('"“”'))
+    return out
+
+
+def kelimeler_yukle(yol=None) -> list:
+    """
+    words.md'deki "- **Türkçe** — English (中文) ; not" maddelerini Terim'e
+    cevirir. Numarali satirlar (Dondurulmus Satirlar) ve kalin baslikli
+    aciklama satirlari ("**Epochs:** ...") madde degildir, atlanir.
+
+    Birden cok bicim:
+      "Başak, Yengeç, Akrep — Virgo, Cancer, Scorpio"   sayilar esit: ayri
+                                                        terimler, sirayla
+      "damga / damgalamak — stamp"                      esit degil: tek terim,
+                                                        ikincisi arama_adi
+    kategori "words.md › <bolum basligi>"dir; harf_duyarli_mi icin
+    'Temel Kavramlar' degildir, yani Ingilizce arama harf duyarlidir.
+    """
+    yol = Path(yol) if yol else KELIMELER
+    if not yol.exists():
+        return []
+    out, bolum = [], ""
+    for satir in yol.read_text(encoding="utf-8").splitlines():
+        h = _MD_BASLIK.match(satir)
+        if h:
+            bolum = h.group(2)
+            continue
+        m = _KELIME_MADDE.match(satir)
+        if not m:
+            continue
+        kalin, kalan = m.group(1).strip(), m.group(2)
+        # Iki nokta ile BITEN madde kendisinden sonraki listenin basligidir
+        # ("Şans artırma ayini çağrısı — 福生玄黄…, four steps:"), terim
+        # degil; metinde o ad degil, altindaki satirlar gecer.
+        if not kalan or kalin.endswith(":") or kalan.rstrip().endswith(":"):
+            continue
+        tr_list = _parcala(_PARANTEZ_BLOK.sub("", kalin))
+        if not tr_list:
+            continue
+        en_list = _madde_en(kalan)
+        zh_list = _madde_zh(kalan)
+        zh = "/".join(z for z, _k in zh_list) or None
+        zh_kesin = any(k for _z, k in zh_list)
+        kategori = f"{KELIME_KATEGORI} › {bolum}" if bolum else KELIME_KATEGORI
+        if len(tr_list) > 1 and len(en_list) == len(tr_list):
+            # Cince de ayni sayidaysa sirayla eslenir ("(「镑」/苏勒/便士)").
+            eslesir = len(zh_list) == len(tr_list)
+            for i, (tr, en) in enumerate(zip(tr_list, en_list)):
+                out.append(Terim(
+                    tr=tr, en=en, en_ham=en,
+                    zh=zh_list[i][0] if eslesir else None,
+                    zh_kesin=zh_list[i][1] if eslesir else False,
+                    kategori=kategori, cevirmen_notu=kalan))
+        else:
+            en = en_list[0] if en_list else None
+            out.append(Terim(
+                tr=tr_list[0], en=en, en_ham=en, zh=zh, zh_kesin=zh_kesin, kategori=kategori,
+                arama_adi=tr_list[1:], cevirmen_notu=kalan))
+    return out
+
+
+def sozluk_yukle(yol=None, bicim_koru=False, kelimeler=False) -> Sozluk:
     """
     sozluk.yml'i yukler.
+
+    kelimeler=True (ya da bir yol) ise words.md maddeleri de eklenir.
+    Yalnizca OKUYAN denetleyiciler icin: bu terimlerin 'ham'i yoktur,
+    yani etiketle/yaz() onlari yazmaz. bicim_koru ile birlikte verilemez.
 
     bicim_koru=True ise ruamel.yaml kullanilir ve Terim.ham canli referans
     olur; uzerine yazip .yaz() ile bicimi bozmadan kaydedebilirsiniz.
     Salt okuma yapan betikler icin varsayilan (PyYAML) daha hizlidir.
     """
+    if kelimeler and bicim_koru:
+        # Once kontrol edilir: yazmak icin yukleyen biri (etiketle) words.md
+        # terimlerini de agaca yazmaya calismasin.
+        raise ValueError("kelimeler bicim_koru ile kullanilamaz (words.md yazilmaz)")
     yol = Path(yol or SOZLUK_YOLU)
     if not yol.exists():
         raise FileNotFoundError(f"sozluk yok: {yol}")
@@ -671,6 +1111,9 @@ def sozluk_yukle(yol=None, bicim_koru=False) -> Sozluk:
             t = _terim_kur(girdi)
             if t:
                 terimler.append(t)
+
+    if kelimeler:
+        terimler += kelimeler_yukle(None if kelimeler is True else kelimeler)
 
     return Sozluk(terimler, veri, _yaml=y, _yol=yol)
 
@@ -869,6 +1312,7 @@ def bolumler_tr(klasor=None) -> list:
             continue
         s = re.findall(r"\d+", p.name)
         no = int(s[0]) if s else None
+        baslik = None
         ham = p.read_text(encoding="utf-8")
         fm = FRONT_MATTER.match(ham)
         govde = ham[fm.end() :] if fm else ham
@@ -883,6 +1327,13 @@ def bolumler_tr(klasor=None) -> list:
                     if a in bilgi and str(bilgi[a]).isdigit():
                         no = int(bilgi[a])
                         break
+                # title: "Bolum 41: Audrey ve Onun Susie'si" -- ZH/EN
+                # tarafinda ayni bilgi govde metninin ilk satirindan
+                # (Bolum.baslik) geliyor; TR'de govde baslik icermez,
+                # tek kaynak front matter'daki bu alandir.
+                ham_baslik = bilgi.get("title")
+                if ham_baslik and str(ham_baslik).strip():
+                    baslik = str(ham_baslik).strip()
             except yaml.YAMLError as e:
                 # Sessizce dosya adina dusmek cogu zaman DOGRU sonucu
                 # verir ve tam bu yuzden tehlikeli: bozuk front matter ile
@@ -894,7 +1345,12 @@ def bolumler_tr(klasor=None) -> list:
                 )
         if no is None:
             SAGLIK.kaydet("bolum_numarasi_bulunamadi", p.name)
-        cikti.append(Bolum(no, govde, p.name))
+        if baslik is None:
+            # Baslik da kapsam bilgisi: govdede yer almiyor, front
+            # matter'da da yoksa basliksiz kaliriz ama bunu sessizce
+            # atlamak "yok" ile "okunamadi"yi ayni gosterir.
+            SAGLIK.kaydet("tr_baslik_bulunamadi", p.name)
+        cikti.append(Bolum(no, govde, p.name, baslik))
     return cikti
 
 
@@ -1063,8 +1519,8 @@ def numaralari_dogrula(cikti=sys.stdout) -> bool:
                         file=cikti,
                     )
                     print(
-                        f"         metin muhtemelen kaynakta HIC yok "
-                        f"-- EPUB'da o bolum eksik olabilir",
+                        "         metin muhtemelen kaynakta HIC yok "
+                        "-- EPUB'da o bolum eksik olabilir",
                         file=cikti,
                     )
         bek = BEKLENEN.get(ad)
@@ -1263,8 +1719,8 @@ def _eksik_iz(no: int, kaynak: str = "en", cikti=sys.stdout):
         # Aradaki bolge: no'nun basligi burada OLMALIYDI.
         print(f"  --- {no - 1} ile {no + 1} arasindaki satirlar ---", file=cikti)
         print(
-            f"      (baslik burada olmali; repr ile basiliyor ki "
-            f"gorunmeyen karakterler gorunsun)\n",
+            "      (baslik burada olmali; repr ile basiliyor ki "
+            "gorunmeyen karakterler gorunsun)\n",
             file=cikti,
         )
         bolge = akis[onceki : sonraki + 1]
@@ -1339,8 +1795,8 @@ def _eksik_iz(no: int, kaynak: str = "en", cikti=sys.stdout):
     if sayi == 0:
         print(f"  yok -- '{no}' iceren baslik benzeri hicbir satir yok.", file=cikti)
         print(
-            f"      Bu, bolumun ham .txt'de HIC olmadigina isaret eder."
-            f" Kaynagi (EPUB -> .txt) yeniden uretmeyi deneyin.",
+            "      Bu, bolumun ham .txt'de HIC olmadigina isaret eder."
+            " Kaynagi (EPUB -> .txt) yeniden uretmeyi deneyin.",
             file=cikti,
         )
 

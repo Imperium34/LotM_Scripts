@@ -1,50 +1,44 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-translation_lookup.py -- sozlukte terim arar (Turkce / Ingilizce / Cince).
+sozluk_ara.py -- sozlukte terim arar (Turkce / Ingilizce / Cince).
+
+UST DUZEY SORU: "Bu terim icin NE KARAR VERDIM?"
+
+Dort "denetim/arama" betigi var ve dorderi de farkli seye bakiyor --
+karistirilmasinlar:
+    sozluk_ara.py       sozluk.yml'e bakar               -- ne karar verdim?
+    kapi_denetle.py      KAYNAK (EN) metne bakar          -- nerede ilk geciyor?
+    ceviri_denetle.py    YAYIMLANMIS metne bakar (hizali) -- ne yayimladim, tutarli mi?
+    yayim_denetle.py     YAYIMLANMIS (TR) metne bakar     -- yayimlanan GUVENLI mi?
 
 Artik YAML'i kendisi ayristirmiyor; lotm.sozluk_yukle() kullaniyor. Bu
 sayede 'mertebeler' icindeki "Turkce (English)" gomulu ciftler, arama_adi,
 cevirmen_notu ve yeni 'cince' alani otomatik olarak gelir.
 
-words.md (basit madde listesi) hâlâ burada okunur -- baska hicbir betik
-kullanmadigi icin lotm.py'ye tasinmadi.
+words.md artik lotm.kelimeler_yukle ile okunur; ayni maddeler
+ceviri_denetle ve toplu_denetle'ye de girer.
 
 Kullanim:
-    translation_lookup.py <sorgu>
-    translation_lookup.py --notes <sorgu>    # cevirmen notlarini da yaz
-    translation_lookup.py --eksik <sorgu>    # yalnizca Cincesi girilmemisler
+    sozluk_ara.py <sorgu>
+    sozluk_ara.py --notes <sorgu>    # cevirmen notlarini da yaz
+    sozluk_ara.py --eksik <sorgu>    # yalnizca Cincesi girilmemisler
 """
 
-import re
 import sys
+from pathlib import Path
 
 import lotm
 
-# "- **Turkce** — English"  (uzun tire yerine duz tire de kabul edilir)
-MADDE = re.compile(r"^\s*-\s*\*\*(.+?)\*\*\s*[—-]\s*(.+?)\s*$")
-
-
 def kelimeler_yukle(yol=None):
-    """words.md'deki madde listesini Terim kayitlarina cevirir."""
+    """words.md maddeleri -- artik lotm.kelimeler_yukle (tek ayristirici;
+    Cince ve Ingilizce alanlari da cikarir, butun denetleyiciler ayni
+    okumayi kullanir)."""
     yol = yol or lotm.KELIMELER
-    if not yol.exists():
+    if not Path(yol).exists():
         print(f"uyari: madde listesi yok: {yol}", file=sys.stderr)
         return []
-
-    terimler = []
-    with open(yol, "r", encoding="utf-8") as f:
-        for satir in f:
-            m = MADDE.match(satir)
-            if m:
-                terimler.append(
-                    lotm.Terim(
-                        tr=m.group(1).strip(),
-                        en=m.group(2).strip(),
-                        kategori="basit liste",
-                    )
-                )
-    return terimler
+    return lotm.kelimeler_yukle(yol)
 
 
 def yaz(t, notlar=False):
@@ -68,7 +62,7 @@ def main():
             args.remove(bayrak)
 
     if not args:
-        print("kullanim: translation_lookup.py [--notes] [--eksik] <sorgu>",
+        print("kullanim: sozluk_ara.py [--notes] [--eksik] <sorgu>",
               file=sys.stderr)
         sys.exit(1)
 

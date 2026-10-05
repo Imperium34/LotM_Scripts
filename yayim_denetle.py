@@ -1,7 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-denetci2.py -- Turkce bolumleri sozluge karsi denetler (ayarlanmis surum).
+yayim_denetle.py -- Turkce bolumleri sozluge karsi denetler (ayarlanmis surum).
+
+UST DUZEY SORU: "YAYIMLANMIS TR metin, sozluk kurallarina gore GUVENLI mi?"
+(artik sablon isareti / eskimis karsilik / cevrilmemis Ingilizce sizintisi /
+kapi -- yani spoiler -- ihlali)
+
+Dort "denetim/arama" betigi var ve dorderi de farkli seye bakiyor --
+karistirilmasinlar:
+    sozluk_ara.py       sozluk.yml'e bakar               -- ne karar verdim?
+    kapi_denetle.py      KAYNAK (EN) metne bakar          -- nerede ilk geciyor?
+    ceviri_denetle.py    YAYIMLANMIS metne bakar (hizali) -- ne yayimladim, tutarli mi?
+    yayim_denetle.py     YAYIMLANMIS (TR) metne bakar     -- yayimlanan GUVENLI mi?
+
+kapi_denetle.py kapiyi (bolum_siniri) KAYNAK metinden TURETIR. Bu betik o
+kapiya YAYIMLANMIS metnin UYUP UYMADIGINI denetler -- ikisi ters yonler.
 
 v1'de 146 bulgu vardi, bunlarin ~5'i gercekti. Sebep: Turkce karsiliklar
 gunluk Turkce kelimelerden secilmis (Haz, Yol, Ay, Sanli, Avci...) ve duz
@@ -27,8 +41,8 @@ daraltir, karari insan verir. Rapor bu yuzden "hata" degil "aday" der.
 Sozluk yukleme, bolum okuma ve Turkce ek deseni artik lotm.py'de.
 
 Kullanim:
-    python3 denetci2.py --sozluk sozluk.yml --bolumler ./_chapters
-    python3 denetci2.py --sozluk sozluk.yml --bolumler ./_chapters --hepsi
+    python3 yayim_denetle.py --sozluk sozluk.yml --bolumler ./_chapters
+    python3 yayim_denetle.py --sozluk sozluk.yml --bolumler ./_chapters --hepsi
 """
 
 import argparse
@@ -38,13 +52,42 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 
 import lotm
+from turkce import tr_desen, tr_kucult
 
-# Tek kelimelik terimleri "yuksek guven" yapan yakin isaretler
+# Tek kelimelik terimleri "yuksek guven" yapan yakin isaretler.
+#
+# "Yol" AYRI: [una] BIR KARAKTERLIK sinif demektir ("u" VEYA "n" VEYA "a"),
+# "u"/"un"/"una" ALTERNATIFI DEGIL -- yazim hatasi. .search() tam kelime
+# sinirina bakmadigi icin bu yanlislik "Yolu"/"Yolun"/"Yoluna"/"Yola"da
+# tesadufen calisiyordu (hepsi "Yol" + tek bir u/n/a harfiyle basliyor),
+# ama "Yolda"/"Yoldan" gibi COK YAYGIN durum ekleri hic yakalanmiyordu --
+# yani bu iki durumda gecen tek-kelimelik "Yol" ailesi terimleri, aslinda
+# guclu bir baglam ipucu varken sessizce DUSUK guvene dusuyordu. Duzeltme:
+# ayni amacla zaten var olan lotm.desen_kur kullanilir (tum durum eklerini
+# doğru kapsar), ozel-durum bir karakter sinifi degil.
+# Harf duyarsiz, ama re.IGNORECASE ile degil: IGNORECASE ı ile i'yi ayni
+# harf sayar ("Aşkın" deseni "aşkin"i, "Sıra" deseni "sira"yi bulurdu).
 IPUCU_RE = re.compile(
-    r"\bMertebe|\bYol[una]|\biksir|\bformül|\bAşkın|\bSıra\b|\bpotion", re.IGNORECASE
+    "|".join(
+        [r"\b" + tr_desen(k) for k in ("Mertebe", "iksir", "formül", "Aşkın")]
+        + [r"\b" + tr_desen("Sıra") + r"\b"]
+        + [r"\b(?i:potion)"]  # Ingilizce sozcuk: burada IGNORECASE dogru
+    )
 )
+_YOL_IPUCU = lotm.desen_kur("Yol", harf_duyarli=False)
 
-CUMLE_BASI = re.compile(r'[.!?:;"\u201c\u201d\u2014\-]\s+$')
+
+def _ipucu_var_mi(pencere: str) -> bool:
+    return bool(IPUCU_RE.search(pencere) or _YOL_IPUCU.search(pencere))
+
+# Cumle basi: noktalama ya da acilis isaretinden SONRA bosluk OLABILIR de
+# OLMAYABILIR de. Eski desen bosluk sart kosuyordu; tirnak kelimeye bitisik
+# yazildigi icin ('konuştu. "Kusura bakmayın') replik baslari cumle basi
+# sayilmiyordu. Paragraf basi (satir sonu), italik (_) ve tek tirnak da
+# acilis sayilir.
+CUMLE_BASI = re.compile(
+    r"(?:^|[.!?:;\u2026\"\u201c\u201d\u2018\u2019'\u00ab\u00bb\u2014\-_(\n])\s*$"
+)
 
 # Sistem istemi ve bolum acilis sablonu, duzeltme sirasinda elle silinmesi
 # gereken isaretler uretir. Onda dokuzu yakalanir; yakalanmayan biri canli
@@ -165,7 +208,7 @@ def guven_ver(kayit, metin, konum, cumle_ici_yuksek=False):
         return YUKSEK
     bas, son = max(0, konum - 200), min(len(metin), konum + 200)
     pencere = metin[bas:son]
-    if IPUCU_RE.search(pencere):
+    if _ipucu_var_mi(pencere):
         return YUKSEK
     for kardes in kayit.kardesler:
         if kardes in pencere:
@@ -197,9 +240,50 @@ def artik_tara(bolumler):
     return bulgular
 
 
-def denetle(kayitlar, bolumler, cumle_ici_yuksek=False):
+def siradan_kelime_desenleri(kayitlar, bolumler) -> dict:
+    """
+    Tek kelimelik terimlerden KUCUK HARFLE de gecenler: {terim: True}.
+
+    "kadın", "ölüm", "kusur" metinde siradan kelime olarak yasiyorsa, cumle
+    basinda buyuk harfle gecen "Kadın", "Ölümünün", "Kusura" terimin kendisi
+    DEGILDIR -- buyuk harfi konumdan gelir. Kucuk harfli desen harf duyarli
+    kurulur, yani yalnizca kucuk harfli gecisler sayilir.
+    """
+    metin = "\n".join(b.metin for b in bolumler)
+    out = {}
+    for k in kayitlar:
+        if k.tek_kelime and k.tr[:1].isupper():
+            out[k.tr] = bool(lotm.desen_kur(tr_kucult(k.tr), harf_duyarli=True).search(metin))
+    return out
+
+
+def siradan_mi(k, metin, aday, siradan: dict) -> bool:
+    """
+    Bu gecis terimin kendisi mi, cumle basinda buyuk harf almis siradan
+    bir kelime mi? Siradan sayilmasi icin UCU birden:
+      - tek kelimelik terim, metinde kucuk harfle de geciyor (siradan dict)
+      - gecis cumle basinda (CUMLE_BASI)
+      - terimin hemen ardinda kesme yok: "Ölüm'e" ozel ad isaretidir
+    """
+    if not siradan.get(k.tr):
+        return False
+    son = aday.start() + len(k.tr)
+    if son < len(metin) and metin[son] in "'\u2019":
+        return False
+    onceki = metin[max(0, aday.start() - 40):aday.start()]
+    return aday.start() == 0 or bool(CUMLE_BASI.search(onceki))
+
+
+def denetle(kayitlar, bolumler, cumle_ici_yuksek=False, maske=()):
+    """
+    maske: cok kelimeli words.md adlarinin desenleri. Glossary'nin kendi
+    "uzun ad once" kurali gibi, bunlarin icindeki kisa terimler sayilmaz:
+    "Savaşçı ve Deniz Tavernası"ndaki "Savaşçı" bir Mertebe adi degildir.
+    """
     sizinti, eskimis, kapi, sadik = [], [], [], []
     envanter = defaultdict(list)
+    siradan = siradan_kelime_desenleri(kayitlar, bolumler)
+    atlanan = defaultdict(int)
 
     # En uzun terim once denenir ve kapsadigi aralik isaretlenir. Boylece
     # "Gizem Avcısı" araligi tuketir ve "Avcı" o konumu goremez. Ayni sorun
@@ -210,9 +294,12 @@ def denetle(kayitlar, bolumler, cumle_ici_yuksek=False):
     for b in bolumler:
         no, metin, dosya = b.no, b.metin, b.kaynak
         kapali = []  # (bas, son) -- uzun bir terimin tuketip birakmadigi araliklar
+        for d in maske:
+            kapali.extend((x.start(), x.end()) for x in d.finditer(metin))
 
         for k in uzun_once:
-            m = None
+            m = None       # ilk gecis: envanter icin (her eslesme sayilir)
+            mk = None      # ilk KAPI gecisi: cumle basindaki siradan kelime degil
             # Uzun terimin TUM gecisleri isaretlenmeli. Yalnizca ilki
             # isaretlenirse "Gizem Avcısı" ikinci kez gectiginde o konum
             # bos kalir ve "Avcı" oraya yerlesir.
@@ -223,12 +310,22 @@ def denetle(kayitlar, bolumler, cumle_ici_yuksek=False):
                 kapali.append((aday.start(), aday.end()))
                 if m is None:
                     m = aday
+                # Envanter her gecisi sayar ("İksiri içti" de terimin
+                # kullanimidir); cumle basi eleme YALNIZCA kapi adayligini
+                # etkiler. Ilk surum ikisini birden eliyordu ve İksir, Kapı,
+                # Ay envanterden tamamen dusmustu.
+                if mk is None:
+                    if siradan_mi(k, metin, aday, siradan):
+                        atlanan[k.tr] += 1
+                    else:
+                        mk = aday
             if m:
-                g = guven_ver(k, metin, m.start(), cumle_ici_yuksek)
                 envanter[k.tr].append(no)
+            if mk:
+                g = guven_ver(k, metin, mk.start(), cumle_ici_yuksek)
                 esik = k.kapi or 0
                 if no and 0 < esik < SON_BOLUM and no < esik:
-                    ctx = baglam(metin, m.start(), m.end())
+                    ctx = baglam(metin, mk.start(), mk.end())
                     # Kapi ile ilk gecis arasindaki aralik: ad Ingilizce
                     # metinde GECIYOR ama henuz ACIKLANMAMIS. Orada Turkce
                     # metnin adi kullanmasi kaynaga SADAKATTIR, spoiler
@@ -253,11 +350,70 @@ def denetle(kayitlar, bolumler, cumle_ici_yuksek=False):
                     eskimis.append((no, dosya, k, eski_ad,
                                     baglam(metin, mo.start(), mo.end())))
 
+    if atlanan:
+        ornek = ", ".join(f"{t} ×{n}" for t, n in sorted(atlanan.items(), key=lambda x: -x[1])[:6])
+        print(f"  kapi: {sum(atlanan.values())} gecis kapi adayligindan cikti -- cumle "
+              f"basinda, metinde kucuk harfle de geciyor ({ornek}); envanter etkilenmez",
+              file=sys.stderr)
     return sizinti, eskimis, kapi, sadik, envanter
 
 
+def kelime_maskesi(sozluk) -> list:
+    """
+    words.md'deki cok kelimeli adlar, glossary'de AYNI ad yoksa. Aynisi
+    varsa maske glossary teriminin kendisini gizlerdi.
+    """
+    sozluk_adlari = {tr_kucult(t.tr) for t in sozluk.terimler if t.tr}
+    return [lotm.desen_kur(t.tr) for t in lotm.kelimeler_yukle()
+            if t.tr and len(t.tr.split()) > 1 and tr_kucult(t.tr) not in sozluk_adlari]
+
+
+# Eski yerel ad; turkce.tr_kucult ile ayni.
+_tr_kucult = tr_kucult
+
+
+def lint_kapsami(yol) -> set:
+    """
+    lint-kurallari.yml'nin ZATEN bildigi eskimis bicimler.
+
+    NEDEN: ayni karar iki yerde duruyor. sozluk.yml bir terimin terk
+    edilmis yazimlarini tutar (ceviri_denetle KULLANILAN KARSILIKLAR icin
+    buna muhtac -- silmek 'Olaganustu hala 2. bolumde' bulgusunu
+    oldurur). lint-kurallari.yml ayni yazimlari BAGLAM kurallariyla tutar:
+    ogrenme_bolumu, anlatici/ic ses ayrimi, istisna regexleri.
+
+    Ikisi de bildiginde lint'inki kesinlikle daha bilgilidir; bu betigin
+    duz listesi ayni bulgunun ikinci, nuanssiz kopyasidir. Veri yerinde
+    kalir, YALNIZCA RAPOR birakilir: kapsanan bulgular tek satira
+    indirilir, kapsanmayanlar tam listelenir.
+
+    Yon onemli: kurallar dosyasindaki bir eksik GURULTU uretir, SESSIZLIK
+    degil.
+    """
+    if not yol:
+        return set()
+    try:
+        import yaml
+
+        with open(yol, encoding="utf-8") as f:
+            k = yaml.safe_load(f) or {}
+    except (OSError, ImportError) as e:
+        print(f"  uyari: lint kurallari okunamadi ({e}); "
+              f"eskimis listesi tam yazilacak.", file=sys.stderr)
+        return set()
+
+    kapsam = set()
+    for v in k.get("varyantlar") or []:
+        for y in v.get("yanlis") or []:
+            kapsam.add(_tr_kucult(y))
+    for y in k.get("yasakli") or []:
+        if y.get("bicim"):
+            kapsam.add(_tr_kucult(y["bicim"]))
+    return kapsam
+
+
 def rapor(artiklar, sizinti, eskimis, kapi, sadik, envanter, kayitlar, hepsi,
-          envanter_ister):
+          envanter_ister, lint_kapsam=frozenset()):
     print("\n=== 0. ARTIK ISTEM/SABLON ISARETLERI ===")
     print("    Bunlar okuyucuya GORUNUR. Once bunlar temizlenmeli.")
     if not artiklar:
@@ -265,10 +421,25 @@ def rapor(artiklar, sizinti, eskimis, kapi, sadik, envanter, kayitlar, hepsi,
     for dosya, satir_no, aciklama, ctx in artiklar:
         print(f"  [{dosya}:{satir_no}] {aciklama}\n      {ctx}")
 
+    kapsanan, kalan = [], []
+    for v in eskimis:
+        (kapsanan if _tr_kucult(v[3]) in lint_kapsam else kalan).append(v)
+
     print("\n=== 1. ESKIMIS KARSILIKLAR ===")
     print("  yok" if not eskimis else "")
-    for no, dosya, k, eski_ad, ctx in eskimis:
+    for no, dosya, k, eski_ad, ctx in kalan:
         print(f"  [{dosya}] '{eski_ad}' -> '{k.tr}'\n      {ctx}")
+    if kapsanan:
+        gruplar = {}
+        for _no, _dosya, k, eski_ad, _ctx in kapsanan:
+            gruplar.setdefault((eski_ad, k.tr), 0)
+            gruplar[(eski_ad, k.tr)] += 1
+        print("  --- lint tarafindan baglamiyla bildirilenler ---")
+        print("      Burada duz listelenmez: sozluk_lint ayni bulgulari")
+        print("      ogrenme bolumu, anlatici/ic ses ve istisna kurallariyla")
+        print("      birlikte veriyor. './calistir.sh lint' ciktisina bakin.")
+        for (eski_ad, yeni), n in sorted(gruplar.items(), key=lambda x: -x[1]):
+            print(f"      '{eski_ad}' -> '{yeni}': {n} bulgu")
 
     print("\n=== 2. CEVRILMEDEN KALMIS INGILIZCE TERIMLER ===")
     print("  yok" if not sizinti else "")
@@ -308,16 +479,29 @@ def rapor(artiklar, sizinti, eskimis, kapi, sadik, envanter, kayitlar, hepsi,
 
     if envanter_ister:
         print("\n=== 4. ENVANTER (yayimlanmis yuzey) ===")
-        for terim, b in sorted(envanter.items(), key=lambda kv: -len(kv[1])):
-            bl = sorted(set(x for x in b if x is not None))
-            print(f"    {terim}: {len(b)} kez, bolum {bl}")
+        # denetle() her terim icin bolum basina EN FAZLA bir kez ekler
+        # (ilk gecerli gecis), yani ham 'b' listesinin uzunlugu GERCEK
+        # gecis SAYISI degil, terimin gectigi bolum SAYISIdir -- ama eski
+        # etiket "kez" (defa) buna aykiri okunuyordu. Ayrica bolumler_tr()
+        # burada bolum_sozlugu() UZERINDEN degil DOGRUDAN okunuyor, yani
+        # ayni numarali IKI dosya olsa (veri hatasi) o numara ham 'b'ye
+        # iki kez girer; set() + None filtresiyle hem bu cift-sayimi hem
+        # numarasi cozulemeyen (None) dosyalari ayikliyoruz.
+        goruntu = [
+            (terim, sorted(set(x for x in b if x is not None)))
+            for terim, b in envanter.items()
+        ]
+        for terim, bl in sorted(goruntu, key=lambda tb: -len(tb[1])):
+            print(f"    {terim}: {len(bl)} bolumde, bolum {bl}")
         hic = [k.tr for k in kayitlar if k.tr not in envanter]
         print(f"\n  {len(hic)} terim henuz hic kullanilmamis -- "
               f"serbestce degistirilebilir.")
 
     print("\n--- OZET ---")
     print(f"  ARTIK ISARET      : {len(artiklar)}   <- varsa ilk is bu")
-    print(f"  eskimis           : {len(eskimis)}")
+    _kapsanan = sum(1 for v in eskimis if _tr_kucult(v[3]) in lint_kapsam)
+    _ek = f"   ({_kapsanan} lint kapsaminda)" if _kapsanan else ""
+    print(f"  eskimis           : {len(eskimis)}{_ek}")
     print(f"  sizinti           : {len(sizinti)}")
     print(f"  kapi (yuksek)     : {len(yuksek)}   <- bakilacaklar")
     print(f"  kaynakta da var   : {len(sadik)}   (sorun degil)")
@@ -330,6 +514,9 @@ def main():
     ap.add_argument("--bolumler", default=None)
     ap.add_argument("--hepsi", action="store_true")
     ap.add_argument("--envanter", action="store_true")
+    ap.add_argument("--kurallar", default=None,
+                    help="lint-kurallari.yml; burada kapsanan eskimis "
+                         "bicimler tek satira indirilir (bkz. lint_kapsami)")
     ap.add_argument("--cumle-ici-yuksek", action="store_true",
                     dest="cumle_ici",
                     help="cumle ortasindaki tek kelimelik terimleri yuksek "
@@ -346,8 +533,15 @@ def main():
     print(f"{len(kayitlar)} terim, {len(bolumler)} bolum.", file=sys.stderr)
 
     artiklar = artik_tara(bolumler)
-    s, e, kp, sd, env = denetle(kayitlar, bolumler, a.cumle_ici)
-    rapor(artiklar, s, e, kp, sd, env, kayitlar, a.hepsi, a.envanter)
+    s, e, kp, sd, env = denetle(kayitlar, bolumler, a.cumle_ici, maske=kelime_maskesi(sozluk))
+    # Kesin gecis (lint-kurallari.yml): gecisten ONCEKI eski bicim o donemin
+    # dogru karsiligidir, eskimis sayilmaz. Lint ve toplu_denetle ile ayni kural.
+    kesit = {eski: bolum for bolum, eskiler in lotm.kesin_gecisler(a.kurallar).values()
+             for eski in eskiler}
+    e = [v for v in e if not (tr_kucult(v[3]) in kesit and v[0] is not None
+                              and v[0] < kesit[tr_kucult(v[3])])]
+    rapor(artiklar, s, e, kp, sd, env, kayitlar, a.hepsi, a.envanter,
+          lint_kapsami(a.kurallar))
 
 
 if __name__ == "__main__":

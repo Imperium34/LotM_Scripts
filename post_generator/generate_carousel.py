@@ -3,6 +3,7 @@ import sys
 import html
 import shutil
 import random
+import argparse
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -13,26 +14,43 @@ FONT_STEP = 2
 
 
 def parse_args():
-    """Handles an arbitrary number of quote chunks passed between the title
-    and the font size parameter."""
-    args = sys.argv[1:]
-    title = None
-    excerpts = []
-    font_size_arg = None
+    """Accepts the chapter title plus an unlimited number of excerpt/quote
+    strings as positional args. Font size moved to an explicit --font-size
+    flag so there's no ambiguity with excerpts (e.g. a quote that ends in a
+    bare number no longer risks being swallowed as the font size)."""
+    parser = argparse.ArgumentParser(
+        description="LotM Instagram carousel slide generator",
+        add_help=True,
+    )
+    parser.add_argument(
+        "title",
+        nargs="?",
+        default=None,
+        help="Bölüm başlığı (ör. 'Bölüm 35: Malumat Takası')",
+    )
+    parser.add_argument(
+        "excerpts",
+        nargs="*",
+        default=[],
+        help="İstediğiniz kadar alıntı/parça metni, her biri ayrı bir argüman olarak",
+    )
+    parser.add_argument(
+        "--font-size",
+        "-f",
+        dest="font_size",
+        default=None,
+        help=f"Font boyutu px cinsinden (varsayılan {DEFAULT_FONT_SIZE})",
+    )
 
-    if len(args) > 0:
-        title = args[0]
-    if len(args) > 1:
-        # Check if the very last argument is the font size
-        last_arg = args[-1].replace("px", "").strip()
-        if last_arg.isdigit():
-            font_size_arg = args[-1]
-            excerpts = args[1:-1]
-        else:
-            excerpts = args[1:]
+    ns = parser.parse_args()
+
+    title = ns.title
+    excerpts = list(ns.excerpts)
+    font_size_arg = ns.font_size
 
     if not title:
         title = input("Bölüm Başlığı (ör. Bölüm 35: Malumat Takası): ").strip()
+
     if not excerpts:
         print("Alıntı Metinleri (Bitirmek için boş bırakıp Enter'a basın):")
         while True:
@@ -52,7 +70,7 @@ def parse_args():
 
     font_size = DEFAULT_FONT_SIZE
     if font_size_arg:
-        cleaned = font_size_arg.replace("px", "").strip()
+        cleaned = str(font_size_arg).replace("px", "").strip()
         if cleaned.isdigit():
             font_size = int(cleaned)
         else:
@@ -63,38 +81,61 @@ def parse_args():
     return title, excerpts, font_size
 
 
-def pick_background(folder_name, fallback_name):
-    # (Remains unchanged - handles background selection perfectly)
+def pick_backgrounds(folder_name, fallback_name, count):
+    """Returns `count` background URIs, one per excerpt slide, drawn from
+    folder_name's PNGs without repeating a background back-to-back (within
+    this run, and across runs via the .last_bg state file) as long as more
+    than one PNG is available. If there are fewer PNGs than slides, the
+    pool is reshuffled and reused (still avoiding an immediate repeat at
+    the reshuffle boundary where possible)."""
     bg_folder = SCRIPT_DIR / folder_name
     png_files = list(bg_folder.glob("*.png")) if bg_folder.is_dir() else []
 
-    if png_files:
-        state_path = SCRIPT_DIR / f".last_bg_{folder_name}.txt"
-        last_used = None
-        if state_path.exists():
-            last_used = state_path.read_text(encoding="utf-8").strip()
+    if not png_files:
+        fallback = SCRIPT_DIR / fallback_name
+        if not fallback.exists():
+            raise FileNotFoundError(f"Fallback background not found: {fallback}")
+        print(
+            f"Uyarı: '{folder_name}' klasöründe png bulunamadı, varsayılan '{fallback_name}' kullanılıyor."
+        )
+        fallback_uri = fallback.resolve().as_uri()
+        return [fallback_uri] * count
 
-        candidates = [f for f in png_files if f.name != last_used]
-        if not candidates:
-            candidates = png_files
+    state_path = SCRIPT_DIR / f".last_bg_{folder_name}.txt"
+    last_used = None
+    if state_path.exists():
+        last_used = state_path.read_text(encoding="utf-8").strip()
 
-        chosen = random.choice(candidates)
-        print(f"Selected background: {chosen.name}")
+    chosen = []
+    prev_name = last_used
+    pool = []
 
-        try:
-            state_path.write_text(chosen.name, encoding="utf-8")
-        except OSError as e:
-            print(f"Uyarı: son kullanılan arka plan kaydedilemedi: {e}")
+    for _ in range(count):
+        if not pool:
+            pool = png_files.copy()
+            random.shuffle(pool)
+            # Avoid picking the same file that ended the previous batch
+            # (or the previous run) right at the start of a fresh shuffle.
+            if len(pool) > 1 and pool[0].name == prev_name:
+                pool[0], pool[1] = pool[1], pool[0]
 
-        return chosen.resolve().as_uri()
+        candidate = pool.pop(0)
+        # Avoid an immediate back-to-back repeat within this run when an
+        # alternative is available in the remaining pool.
+        if candidate.name == prev_name and pool:
+            candidate, pool[0] = pool[0], candidate
 
-    fallback = SCRIPT_DIR / fallback_name
-    if not fallback.exists():
-        raise FileNotFoundError(f"Fallback background not found: {fallback}")
-    print(
-        f"Uyarı: '{folder_name}' klasöründe png bulunamadı, varsayılan '{fallback_name}' kullanılıyor."
-    )
-    return fallback.resolve().as_uri()
+        chosen.append(candidate)
+        prev_name = candidate.name
+
+    print("Selected backgrounds: " + ", ".join(f.name for f in chosen))
+
+    try:
+        state_path.write_text(chosen[-1].name, encoding="utf-8")
+    except OSError as e:
+        print(f"Uyarı: son kullanılan arka plan kaydedilemedi: {e}")
+
+    return [f.resolve().as_uri() for f in chosen]
 
 
 ITALIC_PATTERN = re.compile(r"(?<!\w)_(\S(?:[^_\n]*\S)?)_(?!\w)")
@@ -105,6 +146,10 @@ def apply_italics(escaped_text):
 
 
 def paragraphs_to_html(text):
+    # CLI args typed without ANSI-C quoting ($'...') arrive with literal
+    # backslash-n (the two characters \ and n) instead of a real newline
+    # byte, so normalize those to actual newlines before splitting.
+    text = text.replace("\\r\\n", "\n").replace("\\n", "\n")
     text = text.strip()
     blocks = re.split(r"\n\s*\n", text)
     parts = []
@@ -155,15 +200,18 @@ def font_setup():
 
 
 def build_html(
-    title_upper_escaped, excerpts_html, font_size, bg_excerpt_uri, bg_cta_uri
+    title_upper_escaped, excerpts_html, font_size, bg_excerpt_uris, bg_cta_uri
 ):
     font_face_css, google_fonts_link = font_setup()
 
-    # Generate HTML divs dynamically based on number of chunks
+    # Generate HTML divs dynamically based on number of chunks. Each slide
+    # gets its own background image via an inline style, since the shared
+    # .excerpt-slide class no longer sets background-image.
     slides_html = []
     for i, exc_html in enumerate(excerpts_html):
+        bg_uri = bg_excerpt_uris[i]
         slides_html.append(f"""
-  <div id="slide_{i}" class="excerpt-slide">
+  <div id="slide_{i}" class="excerpt-slide" style="background-image: url('{bg_uri}');">
     <div class="excerpt-wrap" id="excerpt-wrap-{i}">{exc_html}</div>
   </div>""")
 
@@ -179,7 +227,6 @@ def build_html(
 
     .excerpt-slide {{
       width: 1080px; height: 1080px;
-      background-image: url('{bg_excerpt_uri}');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -261,8 +308,24 @@ def render_slides(html_content, font_size, num_excerpts, out_dir):
                     overflow = page.evaluate(
                         f"""() => {{
                             const el = document.getElementById('excerpt-wrap-{i}');
-                            return el.scrollHeight > el.parentElement.clientHeight
-                                || el.scrollWidth > el.parentElement.clientWidth;
+                            const parent = el.parentElement;
+                            // clientHeight/clientWidth include the parent's
+                            // OWN padding (100px/90px) -- comparing scroll
+                            // size against them treats the padding band as
+                            // usable text space, so borderline-long excerpts
+                            // get accepted as "fits" while visually
+                            // crowding out (or past) the intended margin.
+                            // Subtract the real padding to compare against
+                            // the actual available content box instead.
+                            const cs = getComputedStyle(parent);
+                            const availH = parent.clientHeight
+                                - parseFloat(cs.paddingTop)
+                                - parseFloat(cs.paddingBottom);
+                            const availW = parent.clientWidth
+                                - parseFloat(cs.paddingLeft)
+                                - parseFloat(cs.paddingRight);
+                            return el.scrollHeight > availH
+                                || el.scrollWidth > availW;
                         }}"""
                     )
                     if not overflow:
@@ -312,7 +375,9 @@ def main():
     # Process html for each chunk separately
     excerpts_html = [paragraphs_to_html(exc) for exc in excerpts]
 
-    bg_excerpt_uri = pick_background("backgrounds_slide1", "bg_victorian.png")
+    bg_excerpt_uris = pick_backgrounds(
+        "backgrounds_slide1", "bg_victorian.png", len(excerpts)
+    )
 
     bg_cta_path = SCRIPT_DIR / "bg_tarot_club.png"
     if not bg_cta_path.exists():
@@ -320,7 +385,7 @@ def main():
     bg_cta_uri = bg_cta_path.resolve().as_uri()
 
     html_content = build_html(
-        title_upper_escaped, excerpts_html, font_size, bg_excerpt_uri, bg_cta_uri
+        title_upper_escaped, excerpts_html, font_size, bg_excerpt_uris, bg_cta_uri
     )
 
     final_slides = render_slides(html_content, font_size, len(excerpts), SCRIPT_DIR)

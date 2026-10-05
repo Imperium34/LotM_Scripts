@@ -54,35 +54,43 @@ EK_ALT_DIZE_RISKI = set()
 
 # Elle belirlenmis bolum numaralari. Hunter'in gercek gecisi, Criminal /
 # Prisoner / Warrior / Hunter'in birlikte sayildigi pasaj.
-BOLUM_ELLE = {
-    "Hunter": 279,
-    "Berzah Bekçisi": 19,
-    "İlahların Metruk Diyarı": 137,
-    "Kâhin": 21,
-    "Yağmacı": 21,
-    "Çırak": 21,
-}
+BOLUM_ELLE = {}
 
 # Tazim ismi denetiminden gelen mudahale degerleri (girdi adina gore).
 MUDAHALE = {
-    "Ebedi Yanan Güneş": "birlestirme",
+    "Ebedî Yanan Güneş": "birlestirme",
     "Kotar": "tamamlama",
     "Hakiki Hâlık": "degistirme",
-    "Kadim Şeytaniçe": "degistirme",
+    "Kadim Şeytaniçe": "ozgun",
     "Kadim Şeytaniçe (Tam Tazim İsmi)": "degistirme",
     "İlim ve Hikmetin İlahı": "degistirme",
     "Batınî Bilge": "ozgun",
     "Prangalı İlah": "ozgun",
-    "Tahayyül Meleği Âdem (Melekler Kralı)": "ozgun",
+    "Tahayyül Meleği Âdem (Melekler Beyi)": "ozgun",
+    "Zeval Hâkimi": "tamamlama",
+    "Nizamın İnhilali": "tamamlama",
 }
 
 # Kaynagi LotM metni olmayan girdiler.
 KAYNAK_ELLE = {
     "Kadim Şeytaniçe (Tam Tazim İsmi)": "metin_coi",
     "Halas Meleği Amon": "metin_coi",
-    "Yarı Kadir-i Mutlak Âdem (Yarı Yüce Kadim)": "metin_coi",
+    "Halas Meleği Gehrman Sparrow": "metin_coi",
+    "Yarı Kadir-i Mutlak Âdem (Âdem ve Hakiki Hâlık'ın birleşimi sonrası)": "metin_coi",
     "Sihirli Ayna Arrodes": "metin_coi",
-    "Ebedi Gece Tanrıçası (Sermedi Zulmet)": "yazar_beyani",
+    "Ebedî Gece Tanrıçası (Sermedi Zulmet)": "yazar_beyani",
+    "Mukadderat Halkası": "metin",
+    "İstikbal Tanrıçası": "metin",
+    "Müphem Sis": "metin",
+    "Engizisyon": "metin",
+    "Ulûhiyet ve Beşeriyet": "metin",
+    "Aşkın Hasletlerin Korunumu Kanunu": "metin",
+    "Şirazesini Yitirmek (Şirazeden Çıkmak)": "metin",
+    "Yıldızlı Gökkubbe": "metin",
+    "Dimağ Beden": "metin",
+    "Sterlin, Soli ve Peni": "metin",
+    "Kara Kehanet": "metin",
+    "Ay Saati": "metin",
 }
 
 # Book 2 WeChat gonderisinden gelen Tarot Kulubu tazim isimleri.
@@ -203,18 +211,51 @@ def bosluk_duzelt(metin):
         kaydirilmis.append(satir)
     satirlar = kaydirilmis
 
-    cikti = []
-    yeni_alan = re.compile(r"^  (kaynak|mudahale|denetim):")
-    for i, satir in enumerate(satirlar):
-        if satir.strip() == "":
-            j = i + 1
-            while j < len(satirlar) and satirlar[j].strip() == "":
-                j += 1
-            if j < len(satirlar) and yeni_alan.match(satirlar[j]):
-                continue
-        cikti.append(satir)
+    # DIKKAT -- ayni yapiskanlik MERTEBE duzeyinde de olur: "metinde"/
+    # "kaynak" bir mertebeye eklendiginde, o mertebe bir Yol girdisinin SON
+    # mertebesiyse ve hemen ardindan bir bolum basligi yorumu geliyorsa
+    # (orn. "# --- Kavramlar ---"), ruamel o yorumu (ve etrafindaki bos
+    # satirlari) yine ESKI son anahtara yapistirir. Veri BOZULMAZ (YAML
+    # girinti agacina gore hala dogru mertebeye baglidir), ama ham metinde
+    # yeni alanlar yorumun ALTINDA, bir sonraki girdinin icine sizmis gibi
+    # kalir ve "DIFF'I OKUYUN" adimini anlamsizlastirir. Cozum tek bir
+    # SATIR SILME degil, YER DEGISTIRME: yeni-alan calisan satirlari,
+    # aralarina giren bos-satir/yorum blogunun ONUNE tasimak. Bu alan
+    # adlari YALNIZCA bir oncekinin devami olarak gecer, hicbir zaman
+    # kendi basina bir blok ACMAZ -- yani boyle bir blok bu satirlarin
+    # hemen ardindan geliyorsa bu HER ZAMAN yapiskanlik belirtisidir,
+    # mesru bir bicimlendirme degil; sabit 2 boslukla sinirlamak yerine
+    # herhangi bir girintide (mertebe ICI dahil) eslesir.
+    yeni_alan = re.compile(r"^\s*(kaynak|mudahale|denetim|metinde|ilk_gecis):")
+    ara_blok = re.compile(r"^\s*$|^\s*#")
 
-    metin = "\n".join(cikti)
+    cikti = []
+    i, n = 0, len(satirlar)
+    while i < n:
+        satir = satirlar[i]
+        if ara_blok.match(satir):
+            j = i
+            while j < n and ara_blok.match(satirlar[j]):
+                j += 1
+            k = j
+            while k < n and yeni_alan.match(satirlar[k]):
+                k += 1
+            if k > j:
+                # [j, k) yeni-alan satirlari [i, j) blogunun HEMEN
+                # ardindan geliyor -- yapiskanlik belirtisi. Once yeni
+                # alanlari, sonra bloklu (bos/yorum) kismi yaz.
+                cikti.extend(satirlar[j:k])
+                cikti.extend(satirlar[i:j])
+                i = k
+                continue
+            cikti.extend(satirlar[i:j])
+            i = j
+            continue
+        cikti.append(satir)
+        i += 1
+    satirlar = cikti
+
+    metin = "\n".join(satirlar)
 
     # her ust duzey girdiden once tam olarak bir bos satir; ama bolum
     # basligi yorumlari girdiye bitisik kalsin
@@ -284,6 +325,10 @@ def main():
     degisiklikler = []
     sayac = defaultdict(int)
     elle_gereksiz, elle_celiski, kapi_sonrasi = [], [], []
+    # bekleyen: turetilemedigi icin "bilinmiyor" yazilan alanlar -- is listesi.
+    # kullanilan_elle: elle tablolarda GERCEKTEN eslesen anahtarlar; eslesmeyen
+    # anahtar yeniden adlandirilmis bir girdiyi gosterir (bkz. rapor sonu).
+    bekleyen, kullanilan_elle = [], set()
 
     for girdi in sozluk.veri:
         ad = girdi["terim"]
@@ -299,6 +344,7 @@ def main():
                     continue
                 # cok adli mertebelerde ilk ad esas alinir
                 eng = eng.split("/")[0].strip()
+                tr = lotm.parantezsiz(m.get("isim"))
 
                 durum = metinde_mi(eng, rapor)
                 if durum is None:
@@ -318,8 +364,8 @@ def main():
                 mevcut = m.get("bolum_siniri")
                 tarayici = rapor.get(eng, {}).get("bolum")
 
-                if eng in BOLUM_ELLE:
-                    yeni = BOLUM_ELLE[eng]
+                if eng in BOLUM_ELLE or tr in BOLUM_ELLE:
+                    yeni = BOLUM_ELLE.get(eng, BOLUM_ELLE.get(tr))
                     if mevcut is None:
                         m["bolum_siniri"] = yeni
                         degisiklikler.append(
@@ -373,17 +419,83 @@ def main():
             continue
 
         # -------------------------------------------------- UST DUZEY GIRDI
+        # ust_durum: tarayici bu terimi Ingilizce metinde buldu mu.
+        # None = hic bakilamadi (Ingilizce ad yok ya da raporda yok).
+        # "metinde" alani YALNIZCA mertebe alt girdilerine yaziliyor
+        # (m["metinde"]), ust duzey girdiye degil -- kaynak karari bu
+        # yuzden girdi["metinde"]'ye degil buradaki yerel degere bakar.
+        ust_durum = None
+        eng = lotm.parantezsiz(girdi.get("ingilizce")) or None
+        if eng:
+            durum = metinde_mi(eng, rapor)
+            ust_durum = durum
+            if durum is None:
+                sayac["ust_raporda_yok"] += 1
+            else:
+                sayac["ust_etiketlendi"] += 1
+                tarayici = rapor.get(eng, {}).get("bolum")
+                guvenilir = rapor.get(eng, {}).get("guvenilir", True)
+                mevcut = girdi.get("bolum_siniri")
+
+                # KAPI: yalnizca BOLUM_ELLE'deki elle karar ve yalnizca
+                # deger BOSSA yazilir -- mertebe kolundakiyle ayni kural.
+                if eng in BOLUM_ELLE or ad in BOLUM_ELLE:
+                    yeni = BOLUM_ELLE.get(eng, BOLUM_ELLE.get(ad))
+                    if mevcut is None:
+                        girdi["bolum_siniri"] = yeni
+                        degisiklikler.append(f"  kapi(elle)     {ad}: {eng} -> {yeni}")
+                        sayac["kapi_elle_yazildi"] += 1
+                    elif mevcut == yeni:
+                        elle_gereksiz.append(f"{eng} ({yeni})")
+                    else:
+                        elle_celiski.append(
+                            f"{eng}: sozluk={mevcut}, BOLUM_ELLE={yeni}"
+                        )
+
+                # ilk_gecis: TURETILEN, serbestce guncellenir.
+                if (
+                    durum
+                    and tarayici
+                    and eng not in alt_dize
+                    and guvenilir
+                    and girdi.get("ilk_gecis") != tarayici
+                ):
+                    degisiklikler.append(
+                        f"  ilk_gecis      {ad}: {eng} "
+                        f"{girdi.get('ilk_gecis')} -> {tarayici}"
+                    )
+                    girdi["ilk_gecis"] = tarayici
+                    sayac["ilk_gecis_yazildi"] += 1
+
+                # KAPI'ya DOKUNULMAZ; yalnizca insana bildir.
+                if mevcut is not None and tarayici and tarayici > mevcut and guvenilir:
+                    kapi_sonrasi.append(
+                        f"{ad} {eng}: kapi={mevcut}, ilk_gecis={tarayici}"
+                    )
+        else:
+            sayac["ust_ingilizce_yok"] += 1
+
         if ad in KAYNAK_ELLE:
             girdi["kaynak"] = KAYNAK_ELLE[ad]
+            kullanilan_elle.add(ad)
         elif ad in TAROT_YAZAR_BEYANI:
             girdi["kaynak"] = "yazar_beyani"
         elif ad in TAROT_KARMA:
             girdi["kaynak"] = "karma"
-        else:
+        elif ust_durum is True:
+            # Tarayici terimi metinde buldu: "metin" TURETILMIS bir deger.
             girdi["kaynak"] = "metin"
+        else:
+            # Kanit yok. Eskiden yine "metin" yaziliyordu -- terimin LotM
+            # metninden geldigi iddiasi, hicbir sey dogrulamadan. Yanlis
+            # bir deger, dogru bir degerden ayirt edilemiyordu.
+            girdi["kaynak"] = "bilinmiyor"
+            sayac["kaynak_bilinmiyor"] += 1
+            bekleyen.append(f"  kaynak    {ad}")
 
         if ad in MUDAHALE:
             girdi["mudahale"] = MUDAHALE[ad]
+            kullanilan_elle.add(ad)
             girdi["denetim"] = "tamam"
             sayac["denetim_tamam"] += 1
         elif kategori in TAZIM_KATEGORILERI:
@@ -392,7 +504,14 @@ def main():
             girdi["denetim"] = "tamam"
             sayac["denetim_tamam"] += 1
         else:
-            # kavram/orgut girdileri: aciklama zaten cevirmenin kendi nesri
+            # Kavram/orgut girdisi: ortada uyarlanacak bir TAZIM ISMI yok,
+            # aciklama zaten cevirmenin kendi nesri. "ceviri" burada
+            # uydurma degil, girdinin turunden TURETILMIS bir deger.
+            #
+            # Celiski degerde degil sayacdaydi: denetim "tamam" yazilip
+            # sayac "bekliyor" artiriliyordu, yani dosya denetlendi derken
+            # ozet denetlenmedi diyordu. Alan sayaca uyduruldu; aciklama
+            # nesri hakikaten denetlenmedigi icin dogrusu BEKLIYOR.
             girdi["mudahale"] = "ceviri"
             girdi["denetim"] = "tamam"
             sayac["denetim_bekliyor"] += 1
@@ -448,6 +567,26 @@ def main():
     print("--- DEGISIKLIKLER ---")
     for s in degisiklikler:
         print(s)
+    if bekleyen:
+        print(f"\n--- TURETILEMEDI: ELLE KARAR BEKLIYOR ({len(bekleyen)}) ---")
+        print("  Bu alanlara deger YAZILMADI ('bilinmiyor'). Eskiden buraya")
+        print("  makul gorunen bir varsayilan konuyordu ve yanlis bir deger")
+        print("  dogru bir degerden ayirt edilemiyordu.")
+        for satir in sorted(bekleyen)[:40]:
+            print(satir)
+        if len(bekleyen) > 40:
+            print(f"  ... {len(bekleyen) - 40} tane daha")
+
+    oksuz = sorted((set(MUDAHALE) | set(KAYNAK_ELLE)) - kullanilan_elle)
+    if oksuz:
+        print(f"\n--- ELLE TABLODA KARSILIGI OLMAYAN ANAHTAR ({len(oksuz)}) ---")
+        print("  Bu adlar sozlukte YOK. Girdi yeniden adlandirildiysa karar")
+        print("  sessizce dusmus, girdi varsayilana kaymis demektir --")
+        print("  tablolar ada gore anahtarlaniyor. Adi guncelleyin ya da")
+        print("  satiri silin.")
+        for ad in oksuz:
+            print(f"  {ad}")
+
     print("\n--- SAYIM ---")
     for k in sorted(sayac):
         print(f"  {k}: {sayac[k]}")

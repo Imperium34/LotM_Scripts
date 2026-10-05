@@ -1,7 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-searcher.py -- "Bu ad metinde geciyor mu?" sorusunu yanitlar.
+kapi_denetle.py -- "Bu ad metinde geciyor mu?" sorusunu yanitlar.
+
+UST DUZEY SORU: "Bu terim KAYNAK (EN) metinde NEREDE ilk geciyor, kapi
+(bolum_siniri) dogru mu?"
+
+Dort "denetim/arama" betigi var ve dorderi de farkli seye bakiyor --
+karistirilmasinlar:
+    sozluk_ara.py       sozluk.yml'e bakar               -- ne karar verdim?
+    kapi_denetle.py      KAYNAK (EN) metne bakar          -- nerede ilk geciyor?
+    ceviri_denetle.py    YAYIMLANMIS metne bakar (hizali) -- ne yayimladim, tutarli mi?
+    yayim_denetle.py     YAYIMLANMIS (TR) metne bakar     -- yayimlanan GUVENLI mi?
 
 v1'e gore duzeltmeler:
   1. Parantez ve slash artik TUM girdilerden temizleniyor (v1 sadece
@@ -16,7 +26,9 @@ v1'e gore duzeltmeler:
      "advance" vardi; bu romanda bu kelimeler her yerde geciyor.
   5. Cins isim tespiti: terim metinde kucuk harfle de geciyorsa, bulunan
      bolum numarasi guvenilmez olarak isaretlenir.
-  6. sozluk.yml'de istege bagli 'arama_adi' alani destekleniyor.
+  6. sozluk.yml'de istege bagli 'en_arama_adi' alani destekleniyor
+     (Ingilizce tarama adlari). Eskiden 'arama_adi' okunuyordu, ama o alan
+     Turkce karsilik bicimlerini tasiyor; bkz. lotm.Terim.
 
 Terim uretimi, varyantlar ve bolume ayirma artik lotm.py'de.
 
@@ -36,7 +48,7 @@ Artik once en yuksek guven KATMANI secilir, sonra o katmandaki EN ERKEN
 bolum yazilir. Guven yine sonucu filtreler ama numarayi ileri itmez.
 
 Kullanim:
-    python3 searcher.py --sozluk sozluk.yml --kaynak ./LotM_Volumes \
+    python3 kapi_denetle.py --sozluk sozluk.yml --kaynak ./LotM_Volumes \
         --rapor rapor.tsv --yama yama.yml
 """
 
@@ -82,6 +94,10 @@ def terimleri_topla(sozluk_yolu=None):
     terimler = {}
     cakisma = defaultdict(list)
     for t in sozluk.terimler:
+        if t.kategori == "Aşkın Yolları" and not t.mertebe_mi:
+            continue  # yalnizca semsiye "X Pathway" adi; icindeki 10
+                      # Mertebe (Sequence) kendi mertebe_mi=True girdileri
+                      # olarak ayrica gelir, onlar taranmaya devam eder
         anahtar = t.anahtar
         adaylar = t.arama_adaylari()
         if not anahtar or not adaylar:
@@ -224,7 +240,15 @@ def tara(terimler, bolumler):
                         katman[g] = (no, baglam(metin, m.start(), len(aday)), aday)
                     if g == YUKSEK:
                         break
-                break
+                # Onceki aday'in ham alt dize kontrolu gecmis olmasi GERCEK
+                # bir eslesme bulundugu anlamina gelmez -- kelime siniri
+                # tutmayabilir ("Longcandx" icinde "Longcand" gibi). Boyle
+                # durumda yukaridaki dongu hic katman uretmez ve diger
+                # yazilis varyantlari hic denenmeden atlanirdi. Yalnizca
+                # zaten YUKSEK'e ulasildiysa diger adaylari denemeye
+                # deger yok; aksi halde bir sonraki aday'a devam.
+                if YUKSEK in sonuc[t]["katman"]:
+                    break
 
     # 2. tur: sadece hic bulunamayanlar icin harf duyarsiz
     kalan = [t for t in terimler if not sonuc[t]["katman"]]
@@ -299,16 +323,22 @@ def rapor_yaz(terimler, sonuc, yol):
                            key=lambda kv: (SIRA[sonuc[kv[0]]["en_iyi"]], kv[0])):
         s = sonuc[t]
         guvenilir = "hayir(cins_isim)" if s["kucuk_harf"] > 0 else "evet"
+        def sayi_ya_da_bos(v):
+            # v=0 gecerli bir bolum numarasidir (kapi bastan itibaren
+            # acik demektir); "or" ile yazilirsa 0 falsy oldugu icin
+            # bosa duser ve "hic kontrol edilmemis" gibi gorunur.
+            return str(v) if v is not None else ""
+
         satirlar.append("\t".join([
             s["en_iyi"],
-            str(s["bolum"] or ""),
-            str(s["kanit_bolum"] or ""),
+            sayi_ya_da_bos(s["bolum"]),
+            sayi_ya_da_bos(s["kanit_bolum"]),
             guvenilir,
             str(bilgi.get("seviye") if bilgi.get("seviye") is not None else ""),
             str(bilgi.get("yol") or bilgi.get("kategori") or ""),
             t,
             str(s["eslesen"] or ""),
-            str(bilgi.get("mevcut_bolum") or ""),
+            sayi_ya_da_bos(bilgi.get("mevcut_bolum")),
             (s["baglam"] or "")[:200],
         ]))
     with open(yol, "w", encoding="utf-8") as f:
@@ -363,7 +393,7 @@ def ozet(terimler, sonuc):
 
     print("\n--- BOLUM NUMARASI GUVENILMEZ (cins isim) ---")
     n = sum(1 for t in terimler
-            if sonuc[t]["kucuk_harf"] > 0 and sonuc[t]["bolum"])
+            if sonuc[t]["kucuk_harf"] > 0 and sonuc[t]["bolum"] is not None)
     print(f"  {n} terim metinde kucuk harfle de geciyor; bolum numaralarini")
     print("  'metinde' icin degil, sadece ipucu olarak kullanin.")
 
@@ -375,11 +405,12 @@ def ozet(terimler, sonuc):
         print("  Terimin BAGIMSIZ gecisleri varsa bolum numarasi yine yazilir;")
         print("  eskiden bu terimlere hic numara yazilmiyordu.")
         for t, n in sorted(golgeli, key=lambda x: -x[1])[:15]:
-            durum = sonuc[t]["bolum"] or "bagimsiz gecis yok"
+            b = sonuc[t]["bolum"]
+            durum = b if b is not None else "bagimsiz gecis yok"
             print(f"  {t}: {n} gecis elendi, kalan kapi {durum}")
 
     gec = [(t, sonuc[t]) for t in terimler
-           if sonuc[t]["bolum"] and sonuc[t]["kanit_bolum"]
+           if sonuc[t]["bolum"] is not None and sonuc[t]["kanit_bolum"] is not None
            and sonuc[t]["bolum"] < sonuc[t]["kanit_bolum"]]
     if gec:
         print("\n--- KAPI ILK GECISTE, KANIT DAHA GEC ---")

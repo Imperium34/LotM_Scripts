@@ -1,0 +1,177 @@
+# Tutarlılık denetleyicisi kural dosyası.
+# Sözlükten türetilemeyen, elle tanımlanması gereken kurallar burada durur.
+
+# ---------------------------------------------------------------
+# 1. VARYANT GRUPLARI
+# Aynı kavramın birden fazla yazımı. "dogru" alanı kanonik biçimdir;
+# "yanlis" listesindeki her eşleşme rapor edilir.
+# ---------------------------------------------------------------
+varyantlar:
+  - kavram: "Ritual (仪式)"
+    dogru: "ayin"
+    yanlis: ["ritüel"]
+    istisna: ["şans art[ıi]rma"]
+    harf_duyarsiz: true          # "Ritüel" ayrıca yazılmasın
+    ogrenme_bolumu: 28
+    not: "Temiz geçiş: 28'den önce her seste 'ritüel', 28'den itibaren her seste
+      'ayin'. Dunn 28'de Gizem Avcılarının bildiği ayinlerden söz eder; Neil 33'te
+      'Ayin İlmi'ni tanıtır. 'şans artırma ritüeli' bir ad olarak her yerde kalır."
+
+  - kavram: "Mysticism"
+    dogru: "İlm-i Esrar"
+    yanlis: ["mistisizm", "misitisizm"]
+    harf_duyarsiz: true
+    ogrenme_bolumu: 18
+    not: "Klein terimi Dunn'dan Bölüm 18'de duyar; öncesinde iç sesinde serbest."
+
+  - kavram: "Lord of Storms"
+    dogru: "Fırtınalar Hakimi"
+    yanlis: ["Fırtınaların Hakimi", "Fırtına Hakimi"]
+
+  - kavram: "God of Knowledge and Wisdom"
+    dogru: "İlim ve Hikmetin İlahı"
+    yanlis: ["İlim ve Hikmet İlahı"]
+
+  - kavram: "Chaos (çağ adı)"
+    dogru: "Hercümerç"
+    yanlis: ["Kaos Çağı", "kaos çağı"]
+
+  - kavram: "The Creator"
+    dogru: "Yaradan"
+    yanlis: ["Yaratıcı"]
+    not: "Aslî Yaradan girdisiyle hizalı. Ch18'de aynı bölümde ikisi birden geçiyor."
+
+  - kavram: "Intersea"
+    dogru: "Ortadeniz"
+    yanlis: ["Orta Deniz"]
+
+  - kavram: "pound / libre"
+    dogru: "libre"
+    yanlis: ["yarım kiloluk", "yarım kiloya", "yarım kilo", "kiloluk"]
+    istisna: ["olduğu .{0,30}tekabül"]   # Ch3'teki tek seferlik tanım cümlesi
+    not: "Ch3 libre = yarım kilo dönüşümünü bir kez kuruyor; sonrasında libre kullanılmalı."
+
+  - kavram: "lamb / kuzu"
+    dogru: "kuzu"
+    yanlis: ["koyun eti", "koyun yahnisi"]
+    not: "Çince 羔羊 = kuzu. 'Koyun' sahnenin 'ağızda dağılıyor' vurgusuna ters."
+
+# ---------------------------------------------------------------
+# 2. YASAKLI BİÇİMLER
+# Kelime hatası, uydurma biçim, terk edilmiş tercih.
+# ---------------------------------------------------------------
+yasakli:
+  - bicim: "cehliyet"
+    yerine: "cehalet"
+  - bicim: "Kukla Üstadı"
+    yerine: "Sır Kuklabazı"
+  - bicim: "Kaderin Meşalesi"
+    yerine: "Kaderin Mihenk Taşı"
+  - bicim: "Melekut Efendisi"
+    yerine: "Alem-i Misal Efendisi"
+  - bicim: "Zeval Dükü"
+    yerine: "İnhilal Dükü"
+  - bicim: "Kaos Getiren"
+    yerine: "Fitne Arıtan"
+  - bicim: "Yokluk"
+    yerine: "Hâviye"
+
+# ---------------------------------------------------------------
+# 3. ANLAM AYIRICI DİYAKRİTİKLER
+# Şapkasız yazıldığında başka bir kelimeye dönüşen çiftler.
+# ---------------------------------------------------------------
+diyakritik_ciftleri:
+  - a: "hâkim"
+    a_anlam: "hükmeden, yöneten"
+    b: "hakîm"
+    b_anlam: "bilge, filozof"
+    supheli: ["hakim", "Hakim", "hakimi", "Hakimi", "Hakimin", "hakiminin"]
+  - a: "âlim"
+    a_anlam: "bilgin, ulema"
+    b: "alîm"
+    b_anlam: "her şeyi bilen (esmâ)"
+    supheli: ["alim", "Alim", "alimi", "Alimi", "Alimin"]
+
+# ---------------------------------------------------------------
+# 4. ANAKRONİZM / DÜNYA DIŞI SÖZCÜKLER
+# Anlatıcı sesinde geçmemeli; Klein'ın iç sesinde serbest.
+# ---------------------------------------------------------------
+# "kaynak" verilirse: o karşılık bölümün ÇİNCESİNDE geçiyorsa bulgu
+# sayılmaz. Anakronizm kaynak dünyanın özelliğidir, çevirinin değil --
+# Bölüm 43'te Çince zaten "公里" diyor, "kilometresi dört peni" sadıktır.
+# Düz dize olarak yazılanlar kaynak denetimi olmadan, eskisi gibi çalışır.
+# Denetim yalnızca bölüm düzeyinde ortak geçişe bakar; hizalamaya bağlı
+# değildir. (sozluk_lint.py --kaynak)
+anakronizm:
+  sadece_ic_ses:
+    - kelime: "metre"
+      kaynak: ["米", "公尺", "公亩"]
+    - kelime: "metrekare"
+      kaynak: ["平方米", "公亩"]
+    - kelime: "kilometre"
+      kaynak: ["公里"]
+    - kelime: "santim"
+      kaynak: ["厘米", "公分"]
+    - kelime: "gram"
+      kaynak: ["克"]
+    - kelime: "kilogram"
+      kaynak: ["公斤", "千克"]
+    - kelime: "internet"
+      kaynak: ["网络", "互联网", "网上", "梗"]
+    - kelime: "telefon"
+      kaynak: ["电话", "手机"]
+    - kelime: "sosyal medya"
+      kaynak: ["社交媒体", "网络"]
+    - kelime: "platform"
+      kaynak: ["平台"]
+    - kelime: "VIP"
+
+# ---------------------------------------------------------------
+# 5. ARKAİK REGİSTER ÖLÇÜMÜ
+# Bölüm başına bin kelimedeki Osmanlıca sözcük yoğunluğu.
+# ---------------------------------------------------------------
+register:
+  # Ev içi/tasviri anlatım için hedef bant. Ayin, ilahi unvan ve
+  # kozmoloji sahneleri bu bandın üstüne çıkabilir.
+  hedef_alt: 3.0
+  hedef_ust: 15.0
+  sozcukler: >-
+    kesif zulmet marazi hasebiyle hasılıkelam mütemadiyen muvaffak tahsil
+    ehemmiyet maksadıyla müteşekkil zarfında addedilmek neşet tecessüm cümle
+    fevkinde namütenahi mefkûre salahiyet teferruat hususi münasip elzem
+    zikretmek izah ihtiva nail müşkil vaziyet meskun beka baki mukaddes
+    mukadder itikat ruhban mürit teyakkuz akabinde binaen nizam muhafaza
+    temaşa takriben kanaat suret mahiyet malumat lisan menşe meblağ cüzi
+    gaye istidat fıtri nezafet sükûnet sükût tezahür inkişaf müstakil kelam
+    bendeniz kâfi istirham lütuf celbetmek iştirak mutabakat farzımuhal
+    vuku ziyadesiyle ekseriyet münasebetsiz meşrep idrak tahayyül vesvese
+    zapt liyakat mukavele mahremiyet nüsha hakketmek heybet tahakküm
+    zındık sapkın musibet şeamet meşum hadise vaka tetkik noksan zaruri
+    hakikat kifayet
+
+# ---------------------------------------------------------------
+# 6. ÖZEL ADLARA GELEN EKLER
+# Ünlü uyumu telaffuza göre işler; çoğunluk her zaman doğru değildir.
+# "dogru_ekler" verilirse hata, verilmezse çoğunluğa bakılıp uyarı üretilir.
+# ---------------------------------------------------------------
+ozel_adlar:
+  Klein:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"]
+  Alger:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"]
+  Rozanne:
+    dogru_ekler: ["in", "e", "i", "den", "de"]
+  Dunn:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"]
+  Neil:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"]
+  Benson:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"]
+  Welch:
+    dogru_ekler: ["in", "e", "i", "den", "de"]
+  Melissa:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"]
+  Audrey:
+    dogru_ekler: ["in", "e", "i", "den", "de"]
+  Naya:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"]

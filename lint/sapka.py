@@ -1,0 +1,594 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+sapka.py -- şapkalı yazımı bölümler boyunca tekleştirir.
+
+sozluk_lint.py'nin diyakritik taraması ADAY üretir; bu betik adayların
+MEKANİK OLARAK GÜVENLİ olanlarını uygular ve geri kalanını elle bakılmak
+üzere ayırır.
+
+NEDEN İKİYE AYRILIYOR
+---------------------
+"Hepsine şapka koy" güvenli bir kural değil. Şapkanın Türkçede üç ayrı işi
+var ve yalnızca ikisi mekanik:
+
+  1. k/g/l DAMAKSILLAŞMASI  (kâğıt, mekân, imkân, rüzgâr, pekâlâ, yegâne)
+     Şapka uzunluk değil, ünsüzün inceliğini gösterir. Karşılığı olan
+     şapkasız bir kelime yok, dolayısıyla körlemesine değiştirilebilir.
+
+  2. ARAPÇA ALINTILARDA UZUNLUK  (âdeta, dâhil, hâdise, zât, hâl ailesi)
+     Kayıt tercihi. Şapkasız biçim çoğu zaman ayrı bir kelime değil, aynı
+     kelimenin sadeleşmiş yazımı. Birkaç istisna dışında güvenli.
+
+  3. NİSBET -î  (resmî, askerî, tarihî, hayalî, madenî, dinî)
+     GÜVENLİ DEĞİL. "resmî" resmi/official demek, "resmi" ise "onun resmi".
+     İkisi ayrı kelime; hangisinin kastedildiği ancak cümleye bakılarak
+     bilinir. Bu grup asla otomatik değiştirilmez, yalnızca listelenir.
+
+Ayrıca 1. ve 2. gruptaki birkaç kelime gerçek eşadlıdır ve elde bırakılır:
+    hala (teyze/hala)   ~ hâlâ (henüz)
+    hale (ayla/nur)     ~ hâle (hâl + yönelme)
+    alem (bayrak/sancak)~ âlem (dünya)
+    adet (sayı)         ~ âdet (görenek)
+    kar  (yağan)        ~ kâr  (kazanç)
+
+SÖZLÜK YÖNÜ BELİRLER
+--------------------
+Bazı kelimeler sözlükteki ÖZEL ADLARIN içinde de geçer: "Ruhani Âlem",
+"Ebedi Gece Tanrıçası", "Semavi Muazzez", "Kabus". Bir kelime sözlükte
+geçiyorsa, sözlükteki yazımı o kelimenin KİTAP BOYUNCA yazımıdır: listede
+"ebedi -> ebedî" yazsa bile sözlük "Ebedi" diyorsa değişiklik TERSİNE
+uygulanır ("ebedî" -> "ebedi"). Böylece "Semavî Muazzez" gibi sözlükle
+çelişen bir yazım da sözlüğe çekilir. Karar tek yerde verilir: bir
+kelimenin yazımını değiştirmek için sözlüğü değiştirin, betik gerisini
+yapar. Sözlükte aynı kelime iki yazımla geçiyorsa kelimeye dokunulmaz ve
+"önce sözlüğü tekleştirin" diye raporlanır.
+
+LİSTEYİ BÜYÜTMEK: --kesif
+------------------------
+Liste kapalı kalır, ama elle tahmin edilmez. --kesif bölümlerde AYNI
+kelimenin hem şapkalı hem şapkasız geçtiği çiftleri bulur ve yapıştırılmaya
+hazır satır olarak yazar. Hangi yöne gidileceğine (ve kelimenin hangi
+gruba girdiğine) insan karar verir.
+
+Kullanım:
+    python3 sapka.py bolumler/*.md            # kuru çalıştırma (yazmaz)
+    python3 sapka.py --uygula bolumler/*.md   # dosyaları değiştirir
+    python3 sapka.py --elle bolumler/*.md     # yalnızca elle bakılacaklar
+    python3 sapka.py --kesif bolumler/*.md    # listeye aday çiftler
+    python3 sapka.py --sozluk _data/sozluk.yml ...   # yönü sözlük belirler
+    python3 sapka.py --sozluk ... --kelimeler words.md ...   # words.md de
+    python3 sapka.py --sozluk-gocu --sozluk sozluk.yml --kelimeler words.md
+                                              # sözlüğün kendisini şapkalıya taşı
+
+SÖZLÜK GÖÇÜ
+-----------
+--sozluk-gocu listeyi (yalnız GÜVENLİ gruplar, ileri yönde) sözlük
+dosyalarının KENDİSİNE uygular. sozluk.yml'de yalnızca Türkçe ad alanları
+değişir (terim, isim, arama_adi); satırlar metin olarak düzenlenir, yani
+yorumlar, boş satırlar ve girinti aynen kalır ve diff yalnız o kelimeleri
+gösterir. eski_karsiliklar ASLA değişmez (bilerek eski biçimlerdir).
+--duzyazi ile aciklama / cevirmen_notu da taşınır. Yazmadan önce iki
+sürüm de ayrıştırılıp karşılaştırılır: izin verilen alanların dışında tek
+bir değer değişmişse hiçbir şey yazılmaz. words.md düz metin olarak baştan
+sona taşınır. Göçten sonra aynı komut bölümler için ileri yönde çalışır.
+"""
+
+from __future__ import annotations
+
+import argparse
+import re
+import sys
+from collections import Counter, defaultdict
+from pathlib import Path
+
+# turkce.py Tools/ kokunde; bu betik lint/ alt klasorunde.
+for _yol in (Path(__file__).resolve().parent, Path(__file__).resolve().parent.parent):
+    if (_yol / "turkce.py").exists():
+        sys.path.insert(0, str(_yol))
+        break
+from turkce import tr_buyut, tr_kucult  # noqa: E402
+
+# --------------------------------------------------------------------
+# GÜVENLİ: şapkasız biçim -> şapkalı biçim
+# Liste bilerek KAPALIDIR: yalnızca metinde fiilen geçtiği doğrulanmış
+# biçimler var. Açık uçlu bir kök+ek üretici, "halk" ya da "halı" gibi
+# alakasız kelimelere sıçrama riski taşır.
+# --------------------------------------------------------------------
+
+DAMAKSIL = {                       # k / g / l inceltmesi
+    "kağıt": "kâğıt",
+    "kağıdı": "kâğıdı",
+    "kağıda": "kâğıda",
+    "kağıtları": "kâğıtları",
+    "kağıdın": "kâğıdın",          # 46. bölümde şapkalı geçiyor
+    "mekan": "mekân",
+    "mekana": "mekâna",
+    "mekanı": "mekânı",
+    "mekanda": "mekânda",
+    "imkan": "imkân",
+    "imkanı": "imkânı",
+    "imkansız": "imkânsız",
+    "rüzgar": "rüzgâr",
+    "rüzgarla": "rüzgârla",
+    "rüzgarın": "rüzgârın",
+    "rüzgarı": "rüzgârı",
+    "pekala": "pekâlâ",
+    "yegane": "yegâne",
+    "sükunet": "sükûnet",
+    "sükunetin": "sükûnetin",
+    "sükunetini": "sükûnetini",
+    "sükunete": "sükûnete",
+    "sükuneti": "sükûneti",        # keşif
+    "hakim": "hâkim",              # keşif; â k'nin inceliğini gösterir
+    "kabus": "kâbus",              # keşif; sözlükte Mertebe adı "Kabus"
+    "ilaveten": "ilâveten",
+    "bekar": "bekâr",              # 46. bölüm
+    "eşkal": "eşkâl",              # 46. bölüm: "eşkâlini"
+    "eşkali": "eşkâli",
+    "eşkalini": "eşkâlini",
+}
+
+UZUNLUK = {                        # Arapça alıntılarda uzun ünlü
+    "adeta": "âdeta",
+    "dahil": "dâhil",
+    "dahili": "dâhilî",
+    "hadise": "hâdise",
+    "hadiseye": "hâdiseye",
+    "hadiseler": "hâdiseler",
+    "zat": "zât",
+    "zatı": "zâtı",
+    # hâl ailesi -- tek kelime, çok çekim
+    "hal": "hâl",
+    "hali": "hâli",
+    "halde": "hâlde",
+    "haldeydi": "hâldeydi",
+    "halinde": "hâlinde",
+    "halinden": "hâlinden",
+    "haline": "hâline",
+    "halini": "hâlini",
+    "halihazırda": "hâlihazırda",
+    "haliyle": "hâliyle",          # keşif
+    "heyula": "heyûlâ",            # keşif
+    "herhalde": "herhâlde",
+}
+
+# Şapkası Kubbealtı'na göre doğru ama kelimenin kendisi GÜNLÜK KONUŞMA
+# malzemesi olanlar. Otomatik uygulanmaz: bu sözlüğün asıl kaydı anlatıcıda
+# arkaik, Klein'ın iç sesinde modern. "lâzım" gibi bir kelime Melissa'nın
+# mutfak repliğine ya da Klein'ın argosuna şapka takarak tam da ayırmaya
+# çalıştığınız iki sesi birbirine karıştırır.
+KAYIT = {
+    "lazım": "lâzım",
+}
+
+# NİSBET -î, ama EŞADLISI OLMAYANLAR. Ölçüt: şapkasız "-i" biçimi aynı
+# kökün iyelik/belirtme hâli olarak okunabiliyor mu? "resmi" okunur (resm +
+# i), "esrari" okunamaz: "esrar"ın belirtme hâli ünlü uyumu gereği "esrarı"
+# olur. Kalın ünlülü kökler çoğunlukla bu yüzden güvenlidir; ama "hayal ->
+# hayali" gibi ince l ile biten kökler kuralı bozar, onun için her kelime
+# tek tek düşünülerek eklenir.
+NISBET_GUVENLI = {
+    "ruhani": "ruhanî",            # 32, 33, 37, 45 -- iki yazım karışık
+    "esrari": "esrarî",            # sözlük "Esrarî Müşahede" oldu
+    "mizahi": "mizahî",            # keşif; "mizah"ın belirtmesi "mizahı"
+    "asli": "aslî",                # keşif; "asıl"ın belirtmesi "aslı"
+    "semavi": "semavî",            # keşif; sözlükte "Semavi Muazzez"
+    "ebedi": "ebedî",              # keşif; sözlükte "Ebedi Gece Tanrıçası".
+                                   # "ebed"in belirtmesi "ebedi" olur ama
+                                   # o isim metinde fiilen kullanılmıyor
+}
+
+GUVENLI = {**DAMAKSIL, **UZUNLUK, **NISBET_GUVENLI}
+
+# --------------------------------------------------------------------
+# ELLE: değiştirilmez, yalnızca raporlanır
+# --------------------------------------------------------------------
+
+NISBET = {
+    "resmi": "resmî",     # resmî (official) ~ resmi (onun resmi)
+    "askeri": "askerî",   # askerî (military) ~ askeri (askeri gördü)
+    "tarihi": "tarihî",   # tarihî (historical) ~ tarihi (onun tarihi)
+    "hayali": "hayalî",   # hayalî (imaginary) ~ hayali (onun hayali)
+    "madeni": "madenî",   # madenî (metallic) ~ madeni (madeni işletti)
+    "dini": "dinî",       # dinî (religious) ~ dini (onun dini)
+    "milli": "millî",
+    "ilmi": "ilmî",
+}
+
+ESADLI = {
+    "hala": "hâlâ",   # hala = teyze/hala
+    "hale": "hâle",   # hale = ayla, nur halkası
+    "haleye": "hâleye",
+    "alem": "âlem",   # alem = bayrak/sancak tepeliği
+    "aleme": "âleme",
+    "alemin": "âlemin",            # keşif
+    "alemi": "âlemi",
+    "adet": "âdet",   # adet = sayı
+    "adeti": "âdeti",
+    "adetleri": "âdetleri",
+    "kar": "kâr",     # kar = yağan kar
+}
+
+# --------------------------------------------------------------------
+
+TR_HARF = "A-Za-zÇĞİÖŞÜçğıöşüÂÎÛâîûÊê"
+_KELIME = re.compile(rf"[{TR_HARF}]+")
+_SAPKA = str.maketrans("âîûÂÎÛ", "aiuAIU")
+
+# Her grubun birleşimi; bicimler() hedefi buradan okur. Eskiden KAYIT
+# bakılan gruplarda yoktu ve "lazım" için hedef None dönüyordu.
+TUM = {**GUVENLI, **NISBET, **ESADLI, **KAYIT}
+
+
+# --------------------------------------------------------------------
+# Sözlük koruması
+# --------------------------------------------------------------------
+
+_PARANTEZ = re.compile(r"\(([^)]*)\)")
+_MADDE = re.compile(r"^\s*-\s*\*\*(.+?)\*\*")
+
+
+def sozluk_adlari(yol=None, kelimeler=None) -> list:
+    """
+    Sözlükteki bütün Türkçe adlar: terim (parantez içi dahil, ayrı ad
+    olarak), arama_adi, mertebe adları; kelimeler verilirse words.md'nin
+    kalın yazılmış maddeleri de.
+    """
+    adlar = []
+    if yol:
+        try:
+            import yaml
+        except ImportError:
+            sys.exit("--sozluk için PyYAML gerekli:  pip install pyyaml")
+        veri = yaml.safe_load(Path(yol).read_text(encoding="utf-8")) or []
+        for g in veri:
+            if not isinstance(g, dict):
+                continue
+            adlar.append(str(g.get("terim") or ""))
+            adlar += [str(a) for a in g.get("arama_adi") or []]
+            for m in g.get("mertebeler") or []:
+                if isinstance(m, dict):
+                    adlar.append(str(m.get("isim") or ""))
+    if kelimeler:
+        for satir in Path(kelimeler).read_text(encoding="utf-8").splitlines():
+            m = _MADDE.match(satir)
+            if m:
+                adlar.append(m.group(1))
+    out = []
+    for ad in adlar:
+        out.append(_PARANTEZ.sub(" ", ad))
+        out += _PARANTEZ.findall(ad)
+    return [a for a in out if a.strip()]
+
+
+def sozluk_yazimlari(adlar) -> dict:
+    """{şapkasız küçük biçim: {sözlükteki küçük yazım(lar)}}"""
+    yazim = defaultdict(set)
+    for ad in adlar:
+        for k in _KELIME.findall(ad):
+            kk = tr_kucult(k)
+            yazim[kk.translate(_SAPKA)].add(kk)
+    return yazim
+
+
+def sozluge_gore(sozluk: dict, yazimlar: dict):
+    """
+    Listedeki (şapkasız -> şapkalı) çiftlerin YÖNÜNÜ sözlüğe göre belirler.
+
+    Doner: (ileri, geri, celisen)
+      ileri    sözlükte geçmiyor ya da sözlük şapkalı yazıyor: olduğu gibi
+      geri     sözlük ŞAPKASIZ yazıyor: {şapkalı: şapkasız}, tersine uygulanır
+      celisen  sözlük kelimeyi iki (ya da başka bir) yazımla yazıyor: dokunulmaz
+    """
+    ileri, geri, celisen = {}, {}, {}
+    for k, v in sozluk.items():
+        var = yazimlar.get(tr_kucult(k).translate(_SAPKA))
+        if not var or var == {tr_kucult(v)}:
+            ileri[k] = v
+        elif var == {tr_kucult(k)}:
+            geri[v] = k
+        else:
+            celisen[k] = v
+    return ileri, geri, celisen
+
+
+# --------------------------------------------------------------------
+# Sözlük göçü
+# --------------------------------------------------------------------
+
+AD_ALANLARI = {"terim", "isim", "arama_adi"}
+DUZYAZI_ALANLARI = {"aciklama", "cevirmen_notu", "cevirmen_notu_ek", "cevirmen_notu_sinir"}
+DOKUNULMAZ = {"eski_karsiliklar", "ingilizce", "cince"}
+_YML_ANAHTAR = re.compile(r"^(\s*)(-\s+)?([A-Za-z_]+):(\s*)(.*)$")
+_YML_OGE = re.compile(r"^(\s*)-\s+(.*)$")
+
+
+def sozluk_yml_gocu(metin: str, sozluk: dict, duzyazi: bool = False) -> tuple:
+    """
+    sozluk.yml METNİNİ satır satır taşır. Yalnızca izinli alanların değerleri
+    değişir; başka her karakter yerinde kalır.
+
+    İki çok satırlı biçim izlenir:
+      liste     "arama_adi:" ardından "- x" satırları. Sözlük offset=0 ile
+                yazıldığı için tire ANAHTARLA AYNI hizada olabilir.
+      blok dize "aciklama: >-" ardından daha içeride duran satırlar.
+
+    Doner: (yeni metin, [(satır no, eski satır, yeni satır)])
+    """
+    izinli = AD_ALANLARI | (DUZYAZI_ALANLARI if duzyazi else set())
+    out, degisen = [], []
+    blok = None  # (anahtar, anahtarın boşluk girintisi, "liste" | "dize")
+    for no, satir in enumerate(metin.split("\n"), 1):
+        yeni = satir
+        m = _YML_ANAHTAR.match(satir)
+        bosluk = len(satir) - len(satir.lstrip(" "))
+        if blok and satir.strip():
+            anahtar, kg, tur = blok
+            devam = (tur == "dize" and bosluk > kg) or (
+                tur == "liste" and m is None and _YML_OGE.match(satir) and bosluk >= kg)
+            if devam:
+                if anahtar in izinli:
+                    yeni = _cevir(satir, sozluk)[0]
+            else:
+                blok = None
+        if not (blok and satir.strip()) and m:
+            anahtar, deger = m.group(3), m.group(5)
+            if anahtar in izinli and deger and deger not in (">", ">-", "|", "|-"):
+                yeni = satir[: len(satir) - len(deger)] + _cevir(deger, sozluk)[0]
+            if deger in (">", ">-", "|", "|-", ">+", "|+"):
+                blok = (anahtar, bosluk, "dize")
+            elif not deger and anahtar in (AD_ALANLARI | DOKUNULMAZ | DUZYAZI_ALANLARI):
+                blok = (anahtar, bosluk, "liste")
+        if yeni != satir:
+            degisen.append((no, satir, yeni))
+        out.append(yeni)
+    return "\n".join(out), degisen
+
+
+def _yapi_farki(eski, yeni, izinli, yol=()):
+    """İki ayrıştırılmış YAML ağacı arasında İZİNSİZ farkların listesi."""
+    if isinstance(eski, dict) and isinstance(yeni, dict):
+        if list(eski) != list(yeni):
+            return [yol]
+        return [f for k in eski for f in _yapi_farki(eski[k], yeni[k], izinli, yol + (k,))]
+    if isinstance(eski, list) and isinstance(yeni, list):
+        if len(eski) != len(yeni):
+            return [yol]
+        return [f for i, (a, b) in enumerate(zip(eski, yeni))
+                for f in _yapi_farki(a, b, izinli, yol + (i,))]
+    if eski == yeni:
+        return []
+    anahtar = next((k for k in reversed(yol) if isinstance(k, str)), None)
+    return [] if anahtar in izinli and isinstance(eski, str) else [yol]
+
+
+def sozluk_gocu(yol, kelimeler, sozluk: dict, uygula_: bool, duzyazi: bool) -> int:
+    """sozluk.yml ve words.md'yi taşır; kuru çalıştırmada yalnız gösterir."""
+    toplam = 0
+    if yol:
+        import yaml
+        eski = Path(yol).read_text(encoding="utf-8")
+        yeni, degisen = sozluk_yml_gocu(eski, sozluk, duzyazi)
+        izinli = AD_ALANLARI | (DUZYAZI_ALANLARI if duzyazi else set())
+        fark = _yapi_farki(yaml.safe_load(eski), yaml.safe_load(yeni), izinli)
+        if fark:
+            print(f"DURDURULDU: {yol} izinli alanların dışında değişti: {fark[:5]}")
+            return 1
+        _goster(Path(yol).name, degisen)
+        toplam += len(degisen)
+        if uygula_ and degisen:
+            Path(yol).write_text(yeni, encoding="utf-8")
+    if kelimeler:
+        eski = Path(kelimeler).read_text(encoding="utf-8")
+        yeni_satirlar = [_cevir(s, sozluk)[0] for s in eski.split("\n")]
+        degisen = [(i, a, b) for i, (a, b) in enumerate(zip(eski.split("\n"), yeni_satirlar), 1)
+                   if a != b]
+        _goster(Path(kelimeler).name, degisen)
+        toplam += len(degisen)
+        if uygula_ and degisen:
+            Path(kelimeler).write_text("\n".join(yeni_satirlar), encoding="utf-8")
+    print(f"\n{'═' * 72}\n{toplam} satır "
+          + ("yazıldı. Diff'i okuyun:  git diff" if uygula_ else "değişecek. Yazmak için:  --uygula"))
+    return 0
+
+
+def _goster(ad, degisen):
+    if not degisen:
+        return
+    print(f"\n{'─' * 72}\n{ad}: {len(degisen)} satır\n{'─' * 72}")
+    for no, a, b in degisen:
+        print(f"  {no:>5}  - {a.strip()}\n         + {b.strip()}")
+
+
+# --------------------------------------------------------------------
+# Keşif
+# --------------------------------------------------------------------
+
+def kesfet(dosyalar: dict) -> list:
+    """
+    Aynı kelimenin hem şapkalı hem şapkasız geçtiği çiftler.
+
+    Doner: [(sapkasiz, sapkali, n_sapkasiz, n_sapkali, bolum_sayisi, listede)]
+    toplam geçişe göre büyükten küçüğe. Küçük harfe indirilmiş olarak
+    karşılaştırılır; bicimler() baş harfi büyük hâli zaten kapsar.
+    """
+    sayim, nerede = Counter(), defaultdict(set)
+    for ad, metin in dosyalar.items():
+        for k in _KELIME.findall(metin):
+            kk = tr_kucult(k)
+            sayim[kk] += 1
+            nerede[kk].add(ad)
+    out = []
+    for kk, n in sayim.items():
+        duz = kk.translate(_SAPKA)
+        if duz == kk or duz not in sayim:
+            continue
+        out.append((duz, kk, sayim[duz], n, len(nerede[duz] | nerede[kk]), duz in TUM))
+    return sorted(out, key=lambda t: -(t[2] + t[3]))
+
+
+def kesif_yaz(ciftler: list):
+    yeni = [c for c in ciftler if not c[5]]
+    eski = [c for c in ciftler if c[5]]
+    print(f"\n{'─' * 72}\nKEŞİF — aynı kelime iki yazımla ({len(ciftler)} çift)\n{'─' * 72}")
+    if yeni:
+        print("\n  Listede YOK (yön ve grup kararı sizin; -î ile bitenler eşadlı mı?):\n")
+        for duz, sapkali, nd, ns, nb, _ in yeni:
+            not_ = "   # nisbet: eşadlı mı?" if sapkali.endswith("î") else ""
+            print(f'    "{duz}": "{sapkali}",   # şapkalı×{ns}, şapkasız×{nd}, '
+                  f'{nb} bölüm{not_}')
+    if eski:
+        print("\n  Listede var, ikisi de hâlâ metinde:\n")
+        for duz, sapkali, nd, ns, nb, _ in eski:
+            print(f"    {duz} ×{nd}  /  {sapkali} ×{ns}   ({nb} bölüm)")
+
+
+def desen(kelime: str) -> re.Pattern:
+    """
+    Tam kelime eşleşmesi.
+
+    '\\b' KULLANILMAZ: Python'da '_' bir kelime karakteridir, dolayısıyla
+    markdown italik işaretine bitişik bir kelime ('_hâlâ') '\\b' ile
+    yakalanmaz. Klein'ın iç sesi baştan sona italik olduğu için bu, tam da
+    en çok geçtiği yerde kör kalmak demekti.
+    """
+    return re.compile(rf"(?<![^\W_]){re.escape(kelime)}(?![^\W_])")
+
+
+def _cevir(metin: str, sozluk: dict) -> tuple:
+    """Listeyi bir metne uygular; (yeni metin, değişiklik sayısı)."""
+    toplam = 0
+    for kelime in sozluk:
+        for aranan, yazilacak in bicimler(kelime, sozluk[kelime]):
+            metin, n = desen(aranan).subn(yazilacak, metin)
+            toplam += n
+    return metin, toplam
+
+
+def bicimler(kelime: str, hedef: str | None = None) -> list[tuple[str, str]]:
+    """(aranan, yazılacak) çiftleri -- küçük ve baş harfi büyük hâlleriyle."""
+    hedef = hedef or TUM[kelime]
+    return [(kelime, hedef), (tr_buyut(kelime), tr_buyut(hedef))]
+
+
+def tara(dosyalar: dict, sozluk: dict) -> dict:
+    """sozluk'teki her biçimin nerede geçtiğini bulur."""
+    bulgu: dict = defaultdict(list)
+    for kelime in sozluk:
+        for aranan, yazilacak in bicimler(kelime, sozluk[kelime]):
+            d = desen(aranan)
+            for ad, metin in sorted(dosyalar.items()):
+                for m in d.finditer(metin):
+                    satir = metin.count("\n", 0, m.start()) + 1
+                    ctx = re.sub(r"\s+", " ",
+                                 metin[max(0, m.start() - 45):m.end() + 45])
+                    bulgu[kelime].append((ad, satir, aranan, yazilacak, ctx))
+    return bulgu
+
+
+def uygula(yol: Path, sozluk: dict) -> int:
+    metin, toplam = _cevir(yol.read_text(encoding="utf-8"), sozluk)
+    if toplam:
+        yol.write_text(metin, encoding="utf-8")
+    return toplam
+
+
+def yaz_bolum(baslik: str, bulgu: dict, ornek: int = 2):
+    if not bulgu:
+        return
+    print(f"\n{'─' * 72}\n{baslik}\n{'─' * 72}")
+    for kelime in sorted(bulgu, key=lambda k: -len(bulgu[k])):
+        kayitlar = bulgu[kelime]
+        hedef = next((y for _a, _s, a, y, _c in kayitlar if a == kelime),
+                     kayitlar[0][3])
+        dosya_sayisi = len({k[0] for k in kayitlar})
+        print(f"\n  {kelime} → {hedef}   "
+              f"({len(kayitlar)} yerde, {dosya_sayisi} bölüm)")
+        for ad, satir, _a, _y, ctx in kayitlar[:ornek]:
+            print(f"     {ad}:{satir}  … {ctx.strip()} …")
+        if len(kayitlar) > ornek:
+            print(f"     … {len(kayitlar) - ornek} tane daha")
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description="Şapka tekleştirici")
+    ap.add_argument("bolumler", nargs="*")
+    ap.add_argument("--uygula", action="store_true",
+                    help="dosyaları gerçekten değiştir (varsayılan: kuru)")
+    ap.add_argument("--elle", action="store_true",
+                    help="yalnızca elle bakılacakları listele")
+    ap.add_argument("--kesif", action="store_true",
+                    help="iki yazımla geçen kelimeleri listele (listeye aday)")
+    ap.add_argument("--sozluk", default=None,
+                    help="sozluk.yml; sözlükte geçen kelimenin yazımını sözlük belirler")
+    ap.add_argument("--kelimeler", default=None,
+                    help="words.md; kalın maddeleri de sözlük gibi sayılır")
+    ap.add_argument("--sozluk-gocu", action="store_true", dest="gocu",
+                    help="listeyi sözlük dosyalarının kendisine uygula (ileri yönde)")
+    ap.add_argument("--duzyazi", action="store_true",
+                    help="göçte aciklama / cevirmen_notu da taşınsın")
+    a = ap.parse_args()
+
+    if a.gocu:
+        if not (a.sozluk or a.kelimeler):
+            ap.error("--sozluk-gocu için --sozluk ve/veya --kelimeler gerekli")
+        return sozluk_gocu(a.sozluk, a.kelimeler, GUVENLI, a.uygula, a.duzyazi)
+    if not a.bolumler:
+        ap.error("bölüm dosyası verilmedi")
+
+    yollar = [Path(y) for y in a.bolumler]
+    dosyalar = {p.name: p.read_text(encoding="utf-8") for p in yollar}
+
+    if a.kesif:
+        kesif_yaz(kesfet(dosyalar))
+        return 0
+
+    uygulanacak, geri = dict(GUVENLI), {}
+    if a.sozluk or a.kelimeler:
+        yazimlar = sozluk_yazimlari(sozluk_adlari(a.sozluk, a.kelimeler))
+        uygulanacak, geri, celisen = sozluge_gore(GUVENLI, yazimlar)
+        yaz_bolum("SÖZLÜKTE İKİ YAZIM — önce sözlüğü tekleştirin (dokunulmadı)",
+                  tara(dosyalar, celisen), ornek=2)
+        yaz_bolum("SÖZLÜĞE GÖRE TERSİNE — sözlük şapkasız yazıyor",
+                  tara(dosyalar, geri), ornek=2)
+
+    if not a.elle:
+        yaz_bolum("GÜVENLİ — DAMAKSILLAŞMA (k/g/l)",
+                  tara(dosyalar, {k: v for k, v in DAMAKSIL.items() if k in uygulanacak}))
+        yaz_bolum("GÜVENLİ — ARAPÇA ALINTILARDA UZUNLUK",
+                  tara(dosyalar, {k: v for k, v in UZUNLUK.items() if k in uygulanacak}))
+        yaz_bolum("GÜVENLİ — EŞADLISI OLMAYAN NİSBET -î",
+                  tara(dosyalar, {k: v for k, v in NISBET_GUVENLI.items() if k in uygulanacak}))
+
+    yaz_bolum("ELLE — KAYIT KARARI  (şapka doğru, ama kelime günlük dilden)",
+              tara(dosyalar, KAYIT), ornek=3)
+    yaz_bolum("ELLE — NİSBET -î  (anlam ayırır, otomatik değiştirilmez)",
+              tara(dosyalar, NISBET), ornek=3)
+    yaz_bolum("ELLE — EŞADLI  (her geçiş ayrı okunmalı)",
+              tara(dosyalar, ESADLI), ornek=3)
+
+    if a.elle:
+        return 0
+
+    uygulanacak = {**uygulanacak, **geri}
+    guvenli_sayi = sum(len(v) for v in tara(dosyalar, uygulanacak).values())
+    print(f"\n{'═' * 72}")
+    if not a.uygula:
+        print(f"{guvenli_sayi} güvenli değişiklik bulundu. "
+              f"Yazmak için:  --uygula")
+        return 0
+
+    toplam = 0
+    for p in yollar:
+        n = uygula(p, uygulanacak)
+        if n:
+            print(f"  {p.name}: {n}")
+            toplam += n
+    print(f"\n{toplam} değişiklik yazıldı. "
+          f"Diff'i okuyun:  git diff")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

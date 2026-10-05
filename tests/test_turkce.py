@@ -1,84 +1,181 @@
 # -*- coding: utf-8 -*-
 """
-Turkce cekim eki deseni (lotm.desen_kur).
+turkce.py ve onu kullanan her yer.
 
-denetci2.py'nin docstring'i v1'in neden 146 bulgunun 141'ini yanlis
-uretttigini anlatiyor: serbest "\\w{0,12}" eki. Asagidaki vakalar o
-docstring'de ADI GECEN vakalar -- prose olarak yazilmis regresyon testleri.
+Her vaka ya uc tuzaktan birinin kendisi (lower / casefold / IGNORECASE)
+ya da o tuzagin belirli bir betikte urettigi somut hata. Depo gerektirmez.
 """
+
+import re
+import sys
+from pathlib import Path
 
 import pytest
 
+KOK = Path(__file__).resolve().parent.parent
+# lint/ betikleri gercek depoda alt klasorde, duz bir kopyada kokte.
+for yol in (KOK, KOK / "lint"):
+    sys.path.insert(0, str(yol))
 
-# Eslesmeli: gercek terim, gercek cekim eki
-ESLESMELI = [
-    ("Kâhin", "Kâhin'in sözü", "Kâhin'in"),
-    ("Kâhin", "Kâhin balkondan izliyordu", "Kâhin"),
-    ("Yol", "Yolda yürüdü", "Yolda"),
-    ("Ay", "Ayın ışığı", "Ayın"),
-    ("Avcı", "Gizem Avcısı geldi", "Avcısı"),
-    ("Gizem Avcısı", "Gizem Avcısı'nı gördü", "Gizem Avcısı'nı"),
-    ("Çırak", "Görücü Yolu'nun bir Çırağı", "Çırağı"),   # k -> ğ yumusamasi
-    ("Sıradışı", "bir Sıradışı'nın ne olduğu", "Sıradışı'nın"),
-    ("Haz", "başkalarına Haz getirirdi", "Haz"),
-]
-
-# Eslesmemeli: siradan Turkce kelime ya da kirpik eslesme
-ESLESMEMELI = [
-    ("Haz", "Haziran ayında"),          # kirpik: Haz|iran
-    ("Haz", "hazine bulundu"),          # kucuk harf -> ozel isim degil
-    ("Haz", "Hazır mısın"),
-    ("Yol", "Yolsuzluk vardı"),
-    ("Yol", "yolu takip etti"),
-    ("Ay", "Ayrıca geldi"),
-    ("San", "Sanat eseri"),
-    ("San", "Sanki öyle"),
-    ("Ana", "Anadolu'da yaşadı"),
-    ("Aşkın", "Bir yılı aşkın süre"),
-    ("Zanaatkâr", "Zanaatkârlık zor bir iştir"),
-    ("Maraz", "marazi bir hâl"),
-]
+import turkce as T  # noqa: E402
 
 
-@pytest.mark.parametrize("terim,cumle,beklenen", ESLESMELI)
-def test_gercek_cekim_eslesir(terim, cumle, beklenen):
+# ------------------------------------------------------------ turkce.py
+
+
+@pytest.mark.parametrize("girdi, beklenen", [
+    ("IŞIK", "ışık"),
+    ("Işık", "ışık"),
+    ("İyi", "iyi"),
+    ("I\u0307yi", "iyi"),        # ayrisik yazilmis İ
+    ("Ayin İlmi", "ayin ilmi"),
+    ("", ""),
+    (None, ""),
+])
+def test_tr_kucult(girdi, beklenen):
+    assert T.tr_kucult(girdi) == beklenen
+
+
+def test_tr_kucult_uzunlugu_korur():
+    s = "Işık İhtiyar Neil'ı gördü."
+    assert len(T.tr_kucult(s)) == len(s)
+
+
+@pytest.mark.parametrize("girdi, beklenen", [
+    ("ışık", "Işık"), ("iyi", "İyi"), ("kanepe", "Kanepe"), ("", ""),
+])
+def test_tr_buyut(girdi, beklenen):
+    assert T.tr_buyut(girdi) == beklenen
+
+
+@pytest.mark.parametrize("desen, metin, eslesir", [
+    ("ışık", "Işık", True),
+    ("ışık", "IŞIK", True),
+    ("ışık", "işik", False),     # IGNORECASE burada True verirdi
+    ("Ayin", "ayın", False),     # lotm.desen_kur notundaki Bolum 9 vakasi
+    ("Ayin", "AYİN", True),
+    ("sıra", "sira", False),
+    ("a.b", "axb", False),       # harf olmayanlar kacislanir
+    ("straße", "STRASSE", False),  # cok karakterli buyuk harf: cokmez
+])
+def test_tr_desen(desen, metin, eslesir):
+    assert bool(re.fullmatch(T.tr_desen(desen), metin)) is eslesir
+
+
+def test_ignorecase_gercekten_yanlis():
+    # Bu test Python'un davranisini belgeler: degisirse turkce.py'nin
+    # gerekcesi de degismis demektir.
+    assert re.fullmatch("Ayin", "ayın", re.IGNORECASE)
+
+
+# ------------------------------------------------------------ lotm
+
+
+def test_lotm_tek_tanim():
     import lotm
-    m = lotm.desen_kur(terim).search(cumle)
-    assert m is not None, f"{terim!r} {cumle!r} icinde bulunamadi"
-    assert m.group(0) == beklenen
+    assert lotm.tr_kucult is T.tr_kucult
+    assert lotm._tr_kucult is T.tr_kucult
+    assert lotm.tr_buyut is T.tr_buyut
 
 
-@pytest.mark.parametrize("terim,cumle", ESLESMEMELI)
-def test_siradan_kelime_eslesmez(terim, cumle):
+def test_sozluk_ara_dile_gore_kucultur():
     import lotm
-    assert lotm.desen_kur(terim).search(cumle) is None, \
-        f"{terim!r} yanlis yere {cumle!r} icinde eslesti"
+    s = lotm.Sozluk([
+        lotm.Terim(tr="Demir Haç", en="Iron Cross"),
+        lotm.Terim(tr="ışık", en="light"),
+    ], veri={})
+    # Eskiden tek Turkce kucultme Ingilizceye de uygulaniyordu:
+    # "Iron" -> "ıron", yazilan "iron" bulunmuyordu.
+    assert [t.tr for t in s.ara("iron")] == ["Demir Haç"]
+    assert [t.tr for t in s.ara("IŞIK")] == ["ışık"]
 
 
-def test_harf_duyarliligi_varsayilan_acik():
-    """
-    Mertebe adlari ozel isim; cakismalari kucuk harfli. Varsayilanin
-    degismesi 146 bulguya geri donus demek.
-    """
+def test_desen_kur_ayin_ayini_bulmaz():
     import lotm
-    assert lotm.desen_kur("Haz").search("hazine") is None
-    assert lotm.desen_kur("Haz", harf_duyarli=False).search("hazine") is not None
+    assert not lotm.desen_kur("Ayin", harf_duyarli=False).search("haziran ayının")
+    assert lotm.desen_kur("Ayin", harf_duyarli=False).search("ayinin sonunda")
 
 
-def test_cumle_basi_buyuk_harf_bilinen_bosluk():
-    """
-    BILINEN SINIR: cumle basindaki 'Hazine' hâlâ 'Haz' ile eslesir.
-    Ek deseni bunu ayirt edemez -- ayrimi denetci2.guven_ver yapar
-    (--cumle-ici-yuksek). Test bu boslugu BELGELER; davranis degisirse
-    kasitli mi diye bakilsin diye burada.
-    """
-    import lotm
-    assert lotm.desen_kur("Haz").search("Hazine kapısı açıldı") is not None
+# ------------------------------------------------------------ kapanis_denetle
 
 
-def test_cok_kelimeli_terim_arada_ek_almaz():
-    """Yalnizca SON kelime cekim eki alabilir."""
-    import lotm
-    d = lotm.desen_kur("Gizem Avcısı")
-    assert d.search("Gizemi Avcısı") is None
-    assert d.search("Gizem Avcısına") is not None
+def test_maskeleme_i_ile_ii_ayirir():
+    import kapanis_denetle as K
+    assert K.maskele("haziran ayının", ["ayin"]) == "haziran ayının"
+    assert K.maskele("Işık yandı", ["ışık"]).strip() == "yandı"
+
+
+# ------------------------------------------------------------ sozluk_lint
+
+
+@pytest.fixture
+def lint():
+    pytest.importorskip("yaml")
+    import sozluk_lint
+    return sozluk_lint
+
+
+def test_diyakritik_gruplama_ii_birlestirir(lint):
+    # "İlâveten" ile "ilaveten" ayni kelimenin iki yazimi: tek grupta
+    # raporlanmali. Kucultme diyakritik atmadan SONRA yapilsaydi "İ" once
+    # "I"ya, sonra "ı"ya inerdi ve iki ayri gruba duserdi.
+    rapor = lint.Rapor()
+    lint.denetle_diyakritik(rapor, {"1.md": "İlâveten geldi. ilaveten gitti."}, {})
+    assert len(rapor.bulgular) == 1
+    assert "ilaveten" in rapor.bulgular[0].bulunan
+
+
+def test_cumle_basi_i_diyakritik_sanilmaz(lint):
+    rapor = lint.Rapor()
+    lint.denetle_diyakritik(rapor, {"1.md": "Işık söndü. ışık yandı. hâlâ."}, {})
+    assert not rapor.bulgular
+
+
+def test_yasakli_i_ile_ii_ayirir(lint):
+    kurallar = {"yasakli": [{"bicim": "sira", "yerine": "sıra"}]}
+    temiz, kirli = lint.Rapor(), lint.Rapor()
+    lint.denetle_yasakli(temiz, {"1.md": "Sıra ona geldi."}, kurallar)
+    lint.denetle_yasakli(kirli, {"1.md": "Sira ona geldi."}, kurallar)
+    assert not temiz.bulgular
+    assert len(kirli.bulgular) == 1
+
+
+# ------------------------------------------------------------ ceviri_denetle
+
+
+def test_kesif_govdesi_cumle_basini_ayirmaz():
+    import ceviri_denetle as C
+    assert C._kok("Işık") == C._kok("ışık")
+    assert C._kok("İhtiyar") == C._kok("ihtiyar")
+    assert C._kok("Iron", "en") == C._kok("iron", "en")
+
+
+# ------------------------------------------------------------ yayim_denetle
+
+
+@pytest.mark.parametrize("metin, eslesir", [
+    ("Sıra", True), ("sira", False), ("AŞKIN", True), ("aşkin", False),
+    ("İksir", True), ("POTION", True),
+])
+def test_ipucu(metin, eslesir):
+    import yayim_denetle as Y
+    assert bool(Y.IPUCU_RE.search(metin)) is eslesir
+
+
+# ------------------------------------------------------------ sapka
+
+
+def test_sapka_buyuk_harf_bicimi():
+    import sapka
+    assert sapka.bicimler("imkan") == [("imkan", "imkân"), ("İmkan", "İmkân")]
+
+
+def test_diyakritik_esadlilari_rapor_etmez(lint, capsys):
+    rapor = lint.Rapor()
+    lint.denetle_diyakritik(rapor, {"1.md": "sekiz adet banknot; eski bir âdet. "
+                                             "Resmi baş aşağıydı; resmî bir üye."}, {})
+    assert not rapor.bulgular
+    assert "2 eşadlı çift atlandı" in capsys.readouterr().err
+    rapor = lint.Rapor()
+    lint.denetle_diyakritik(rapor, {"1.md": "İlâveten geldi. ilaveten gitti."}, {})
+    assert len(rapor.bulgular) == 1   # gercek yazim farki hala raporlanir

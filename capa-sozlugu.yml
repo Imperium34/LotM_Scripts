@@ -1,0 +1,101 @@
+# capa-sozlugu.yml — çapa sözlüğü
+#
+# capa.py --oner çıktısından ayıklandı. İki kural uygulandı:
+#
+#   1. Yalnızca EN UZUN biçim. 克莱恩 varsa 克莱 ve 莱恩 alınmaz — altdize
+#      çapayı bozar (bkz. capa.py'deki eleme notu).
+#   2. Yüksek benzerlik DOĞRU ÇİFT DEMEK DEĞİLDİR. Skor birlikte geçmeyi
+#      ölçer, çeviriyi değil. Aynı bölümlerde geçen iki alakasız şey %100
+#      alır. Elenenler dosyanın sonunda.
+
+# ── Kişiler ──────────────────────────────────────────────────────────
+"克莱恩": Klein          # 982 geçiş — asıl çapa yükünü bu taşıyor
+"邓恩": Dunn
+"周明瑞": Zhou
+"尼尔": Neil
+"梅丽莎": Melissa
+"奥黛丽": Audrey
+"班森": Benson
+"罗珊": Rozanne
+"阿尔杰": Alger
+"韦尔奇": Welch
+"罗塞尔": Roselle
+"戴莉": Daly
+"伦纳德": Leonard
+"娜娅": Naya
+"格拉西斯": Glacis
+"莫雷蒂": Moretti
+"斯卡特": Scarter
+"奥利安娜": Orianna
+"弗兰奇": Franky
+"阿兹克": Azik
+"蒙巴顿": Mountbatten
+"米切尔": Mitchell
+"布莱特": Bredt
+"温蒂": Wendy
+"斯林": Smyrin
+"霍尔": Hall
+"威尔逊": Wilson
+"古斯塔夫": Gustav
+"安提哥努斯": Antigonus
+"阿古希德": Aguesid
+"比奇": Bitsch
+"赛琳娜": Selena
+"安妮": Annie
+"苏茜": Susie
+
+# ── Yerler ───────────────────────────────────────────────────────────
+"廷根": Tingen
+"贝克兰德": Backlund
+"鲁恩": Loen
+"霍伊": Khoy
+"弗萨克": Feysac
+"铁十字街": Haç
+"水仙花街": Nergis
+"香槟街": Şampanya
+"佐特兰": Tuzdiyarı
+"阿霍瓦": Awwa
+"普利兹": Pritz
+"所罗门": Solomon
+"图铎": Tudor
+"查尼斯": Chanis
+
+# ── Kavramlar ve kuruluşlar ──────────────────────────────────────────
+"愚者": Soytarı
+"正义": Adalet
+"倒吊人": Asılmış
+"黑荆棘": Karadiken
+"亵渎石板": İlhad
+"星灵体": Astral
+"以太体": Esir
+"收尸人": Naaş
+"窥秘人": Gizem
+"造物主": Yaradan
+"圣堂": Katedral
+
+# ═════════════════════════════════════════════════════════════════════
+# ELENENLER — hepsi %100 benzerlik almıştı
+#
+#   贝西克街 → Wright     Besik SOKAĞI; Wright o sokaktaki handa çalıştığı
+#                        için ikisi hep aynı bölümlerde geçiyor. Skor
+#                        birlikte geçmeyi ölçüyor, çeviriyi değil. Bu,
+#                        listedeki en öğretici yanlış.
+#   霍尔伯爵 → Kont       "Kont Hall"; 霍尔 zaten Hall'a bağlı, çakışır.
+#   管家 → Klee           kâhya. 安保人员 (güvenlik görevlisi) ve 维克罗尔
+#   安保人员 → Klee        (Vikroll) da Klee'ye bağlanmış: üç ayrı şey, tek
+#   维克罗尔 → Klee        hedef. Üçü de yanlış.
+#   慈善 → İşçi           hayırseverlik ≠ işçi.
+#   创世神话 → Yaradan     yaratılış miti ≠ Yaradan. 造物主 doğru olan.
+#   会呈现 → Nefs         fiil öbeği, ad değil.
+#   特殊行动部 → Birim     "Birim" fazla genel; başka yerlerde de geçer.
+#   第七小组 → Birim       aynı hedefe ikinci bir kaynak — biri yanlış.
+#   老尼尔 → İhtiyar       "Old Neil"; 尼尔 → Neil ile çakışır.
+#   福生玄黄 → Arz         ayin hitabının parçası; TR tarafta yalnızca ilk
+#                        kelime yakalanmış. Sayı eşitliği tutmayabilir.
+#   机械之神 → Çarkların   aynı sorun: TR unvan çok kelimeli.
+#   廷根市改善住 → Konut   uzun bileşik; 廷根 zaten Tingen'e bağlı.
+#
+# NOT: capa_bul zaten sayı eşitliği aramadığı bölümlerde terimi atlıyor,
+# yani yanlış bir çift her yerde zarar vermez. Ama %100 skorlu yanlış bir
+# çift TAM DA sayıların tuttuğu bölümlerde zarar verir — yani en çok
+# güvenilecek yerde. Bu yüzden elle ayıklama şart.
