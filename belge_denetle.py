@@ -11,7 +11,7 @@ yeniden sizar. (Tespit edildigi gibi: Neil ve Azik orneklerindeki
 Uc denetim:
 
   1. ORNEKLERDE ESKI KELIME. sozluk.yml'de gecis bolumu olan terimlerin
-     eski karsiliklari (ritüel, mistisizm; bkz. yayim_denetle.gecis_bolumu)
+     eski karsiliklari (ritüel, mistisizm; bkz. lotm.gecis_bolumu)
      yalnizca ornek metninde aranir: _"…"_ alintilari ve "- **Örnek"
      satirlari. Kural metni bu kelimeleri bilerek anar; orada aranmaz.
      Uyaridir: ornegin hangi bolume ait oldugu dosyadan bilinemez.
@@ -66,11 +66,9 @@ _N_KIMLIK = re.compile(r"\bN-(" + _KIMLIK + r")")
 
 def gecis_kurallari(sozluk) -> list:
     """[(kavram, gecis_bolumu, dogru, [eski desenler])] -- sozluk.yml'den."""
-    from yayim_denetle import gecis_bolumu
-
     out = []
     for t in sozluk.terimler:
-        bolum = gecis_bolumu(t)
+        bolum = lotm.gecis_bolumu(t)
         if not (t.tr and t.eski_karsiliklar and bolum):
             continue
         out.append((

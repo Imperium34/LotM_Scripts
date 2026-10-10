@@ -1016,6 +1016,29 @@ def _terim_kur(ham_girdi, ham_mertebe=None, kardesler=None, kardesler_en=None):
     )
 
 
+def gecis_bolumu(terim) -> int | None:
+    """
+    Eski karsiliklarin GECIS bolumu: terimin bolum_siniri.
+
+    Kapidan once yeni ad henuz acilmamistir; o bolgede eski bicim (Ayin
+    icin "ritüel") o donemin dogru kelimesidir. Kapidan itibaren eski bicim
+    eskimistir. Ters yon (yeni ad kapidan once) yayim_denetle'de 'erken
+    yeni bicim' olarak ayrica raporlanir.
+
+    Gercek bir kapi bildirmeyen degerler (yok, 0, >= SON_BOLUM) gecis
+    sayilmaz: o terimin eski bicimi HER bolumde eskimistir. Aksi hâlde
+    "seri bitmeden acilmaz" isaretli bir terimin eski bicimi hic
+    raporlanmazdi.
+
+    Eskiden bu bilgi lint-kurallari.yml'de 'ogrenme_bolumu' olarak da
+    duruyordu ve ayni karar iki dosyada iki sayiyla tutulabiliyordu. Tek
+    kaynak sozluk.yml; yayim_denetle, toplu_denetle ve belge_denetle bunu
+    kullanir.
+    """
+    esik = getattr(terim, "bolum_siniri", None) or 0
+    return esik if 0 < esik < SON_BOLUM else None
+
+
 # --------------------------------------------------------------- words.md
 
 _KELIME_MADDE = re.compile(r"^\s*-\s*\*\*(.+?)\*\*\s*[—–-]\s*(.*?)\s*$")

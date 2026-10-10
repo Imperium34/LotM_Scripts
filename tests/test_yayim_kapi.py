@@ -26,7 +26,7 @@ def _bolum(no, metin):
 
 
 def _adaylar(kayitlar, bolumler, maske=()):
-    _s, _e, kapi, _sd, _env, _ey = Y.denetle(kayitlar, bolumler, maske=maske)
+    kapi = Y.denetle(kayitlar, bolumler, maske=maske).kapi
     return {(no, k.tr) for _g, no, _d, k, _c in kapi}
 
 
@@ -49,8 +49,8 @@ def test_eleme_envanteri_etkilemez():
     # Kucuk harfle de yazilan gercek terim: cumle basindaki "İksiri" envantere girer
     iksir = lotm.Terim(tr="İksir", en="Potion", kategori="Temel Kavramlar", bolum_siniri=0)
     bolumler = [_bolum(28, "Sessizlik. İksiri içtikten sonra bir iksir daha istedi.")]
-    _s, _e, kapi, _sd, env, _ey = Y.denetle(_kayitlar(iksir), bolumler)
-    assert env["İksir"] == [28] and kapi == []
+    b = Y.denetle(_kayitlar(iksir), bolumler)
+    assert b.envanter["İksir"] == [28] and b.kapi == []
 
 
 def test_kesme_ozel_ad_isaretidir_cumle_basinda_bile():
@@ -95,5 +95,23 @@ def test_gecisten_once_yeni_bicim_bakilacak():
         _bolum(10, "Ayin İlmi'nin bir tezahürü."),                    # uzun terimin parcasi
         _bolum(30, "Ayin bitti."),                                     # gecisten sonra
     ]
-    *_ , erken = Y.denetle(_kayitlar(AYIN, AYIN_ILMI), bolumler)
+    erken = Y.denetle(_kayitlar(AYIN, AYIN_ILMI), bolumler).erken_yeni
     assert [(no, bulunan) for no, _d, _k, bulunan, _c in erken] == [(9, "ayinlerinde")]
+
+
+def test_eski_bicim_gecise_gore_ayrilir():
+    # Eskiden bu ayrim main()'deydi; testten erisilemiyordu.
+    bolumler = [
+        _bolum(9, "Bir ritüel yaptılar."),     # gecisten once: donemin kelimesi
+        _bolum(40, "Yine ritüel yaptılar."),   # gecisten sonra: eskimis
+    ]
+    b = Y.denetle(_kayitlar(AYIN), bolumler)
+    assert [v[0] for v in b.gecis_oncesi] == [9]
+    assert [v[0] for v in b.eskimis] == [40]
+
+
+def test_gecissiz_terimin_eski_bicimi_her_yerde_eskimis():
+    olagan = lotm.Terim(tr="Sıradışı", en="Beyonder", kategori="Kavramlar",
+                        eski_karsiliklar=["olağanüstü"])          # bolum_siniri yok
+    b = Y.denetle(_kayitlar(olagan), [_bolum(2, "Bir olağanüstü gördü.")])
+    assert [v[0] for v in b.eskimis] == [2] and b.gecis_oncesi == []

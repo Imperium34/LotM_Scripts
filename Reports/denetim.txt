@@ -26,7 +26,6 @@
 === 3. KAPI ADAYLARI (yuksek guven) ===
     Bunlar hata degil, ADAYDIR. Metin ayni olsa da gonderge farkli
     olabilir: 'Kara Imparator' hem Mertebe 0 hem tarihi bir unvandir.
-
   [0008.md] 'Tedip Süvarisi' (Arabulucu Yolu S5) kapi=693 kullanim=8
       sessiz bir ciddiyet ve sarsılmaz bir otorite telkin ediyordu. "Üst düzey Tedip Süvarileri olabilirler mi..." Audrey, yetişkinler arasındaki sıradan bir sohbetten cı
   [0018.md] 'Yıldızlı Gökkubbe' (Temel Kavramlar) kapi=892 kullanim=18

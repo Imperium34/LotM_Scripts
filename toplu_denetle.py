@@ -61,7 +61,7 @@ import bolum as B
 import ceviri_denetle as CD
 import hizalama_denetle as HD
 import capa as _capa
-from yayim_denetle import gecis_bolumu
+from lotm import gecis_bolumu
 import turkce
 
 _CAPA_SOZLUGU = _capa.sozluk_yukle()
@@ -597,7 +597,7 @@ def tsv_yaz(kayitlar):
 def eski_ozeti(vuruslar, sayim, eski, gecis=None):
     """
     (eski_gorulen, eski_sayim). Gecis bolumu varsa (bolum_siniri, bkz.
-    yayim_denetle.gecis_bolumu) yalnizca o bolumden itibaren bulunan eski
+    lotm.gecis_bolumu) yalnizca o bolumden itibaren bulunan eski
     bicimler sayilir.
     """
     if not gecis:

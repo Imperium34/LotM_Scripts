@@ -14,8 +14,9 @@ karistirilmasinlar:
     ceviri_denetle.py    YAYIMLANMIS metne bakar (hizali) -- ne yayimladim, tutarli mi?
     yayim_denetle.py     YAYIMLANMIS (TR) metne bakar     -- yayimlanan GUVENLI mi?
 
-kapi_denetle.py kapiyi (bolum_siniri) KAYNAK metinden TURETIR. Bu betik o
-kapiya YAYIMLANMIS metnin UYUP UYMADIGINI denetler -- ikisi ters yonler.
+Kapi (bolum_siniri) cevirmenin kararidir; kapi_denetle.py KAYNAK metinde
+ilk gecisi (ilk_gecis) bulur. Bu betik YAYIMLANMIS metnin kapiya UYUP
+UYMADIGINI denetler -- ikisi ters yonler.
 
 v1'de 146 bulgu vardi, bunlarin ~5'i gercekti. Sebep: Turkce karsiliklar
 gunluk Turkce kelimelerden secilmis (Haz, Yol, Ay, Sanli, Avci...) ve duz
@@ -135,27 +136,8 @@ SON_BOLUM = lotm.SON_BOLUM
 YUKSEK, DUSUK = "yuksek", "dusuk"
 
 
-def gecis_bolumu(terim) -> int | None:
-    """
-    Eski karsiliklarin GECIS bolumu: terimin bolum_siniri.
-
-    Mantik kapi denetiminin aynasi. Kapidan once yeni ad henuz acilmamistir;
-    o bolgede eski bicim (Ayin icin "ritüel") o donemin dogru kelimesidir.
-    Kapidan itibaren eski bicim eskimistir. Yeni adin kapidan once gecmesi
-    ise zaten kapi adayi olarak raporlanir -- ters yon icin ayri bir denetim
-    gerekmez.
-
-    Gercek bir kapi bildirmeyen degerler (yok, 0, >= SON_BOLUM) gecis
-    sayilmaz: o terimin eski bicimi HER bolumde eskimistir. Aksi hâlde
-    "seri bitmeden acilmaz" isaretli bir terimin eski bicimi hic
-    raporlanmazdi.
-
-    Eskiden bu bilgi lint-kurallari.yml'de 'ogrenme_bolumu' olarak
-    duruyordu; ayni karar iki dosyada iki farkli
-    sayiyla tutulabiliyordu. Artik tek kaynak sozluk.yml.
-    """
-    esik = getattr(terim, "bolum_siniri", None) or 0
-    return esik if 0 < esik < SON_BOLUM else None
+# Tek tanim lotm'de; burada eski import yollari icin.
+gecis_bolumu = lotm.gecis_bolumu
 
 
 @dataclass
@@ -412,13 +394,46 @@ def siradan_konum(kelime, metin, aday, siradan: dict, baslik: bool = False) -> b
     return aday.start() == 0 or bool(CUMLE_BASI.search(onceki))
 
 
-def denetle(kayitlar, bolumler, cumle_ici_yuksek=False, maske=()):
+@dataclass
+class Bulgular:
+    """
+    denetle()'nin sonucu. Eskiden 6 elemanli bir demetti ve her cagiran
+    konumla aciyordu: bir alan eklenince (erken_yeni) bes test birden
+    kirildi. Alanlar adla okunur.
+
+    Her bulgu demeti:
+      sizinti      (no, dosya, kayit, baglam)
+      eskimis      (no, dosya, kayit, eski_ad, baglam)  gecisten SONRA
+      gecis_oncesi (no, dosya, kayit, eski_ad, baglam)  gecisten ONCE: bilgi
+      kapi         (guven, no, dosya, kayit, baglam)
+      sadik        (no, dosya, kayit, baglam)
+      erken_yeni   (no, dosya, kayit, bulunan, baglam)
+      envanter     {terim: [bolum, ...]}
+    """
+
+    sizinti: list = field(default_factory=list)
+    eskimis: list = field(default_factory=list)
+    gecis_oncesi: list = field(default_factory=list)
+    kapi: list = field(default_factory=list)
+    sadik: list = field(default_factory=list)
+    erken_yeni: list = field(default_factory=list)
+    envanter: dict = field(default_factory=dict)
+
+
+def denetle(kayitlar, bolumler, cumle_ici_yuksek=False, maske=()) -> Bulgular:
     """
     maske: cok kelimeli words.md adlarinin desenleri. Glossary'nin kendi
     "uzun ad once" kurali gibi, bunlarin icindeki kisa terimler sayilmaz:
     "Savaşçı ve Deniz Tavernası"ndaki "Savaşçı" bir Mertebe adi degildir.
+
+    Eski bicimler terimin GECIS bolumune gore ikiye ayrilir (bkz.
+    lotm.gecis_bolumu): gecisten once eski bicim o donemin dogru
+    karsiligidir (gecis_oncesi, bilgi), sonra eskimistir (eskimis). Karar
+    TERIM BASINA verilir; eski bicimin kendisine gore anahtarlansaydi ayni
+    eski yazim iki terimde farkli gecislerle dursa biri digerini ezerdi.
+    Eskiden bu ayrim main()'deydi ve testlerden erisilemiyordu.
     """
-    sizinti, eskimis, kapi, sadik, erken_yeni = [], [], [], [], []
+    sizinti, eskimis, gecis_oncesi, kapi, sadik, erken_yeni = [], [], [], [], [], []
     envanter = defaultdict(list)
     siradan = siradan_kelime_desenleri(kayitlar, bolumler)
     atlanan = defaultdict(int)
@@ -530,7 +545,8 @@ def denetle(kayitlar, bolumler, cumle_ici_yuksek=False, maske=()):
                     mo = x
                     break
                 if mo:
-                    eskimis.append(
+                    gecisten_once = k.gecis is not None and no is not None and no < k.gecis
+                    (gecis_oncesi if gecisten_once else eskimis).append(
                         (no, dosya, k, eski_ad, baglam(metin, mo.start(), mo.end()))
                     )
 
@@ -553,7 +569,15 @@ def denetle(kayitlar, bolumler, cumle_ici_yuksek=False, maske=()):
             f"basinda, metinde kucuk harfle de geciyor ({ornek}); envanter etkilenmez",
             file=sys.stderr,
         )
-    return sizinti, eskimis, kapi, sadik, envanter, erken_yeni
+    return Bulgular(
+        sizinti=sizinti,
+        eskimis=eskimis,
+        gecis_oncesi=gecis_oncesi,
+        kapi=kapi,
+        sadik=sadik,
+        erken_yeni=erken_yeni,
+        envanter=dict(envanter),
+    )
 
 
 def kelime_maskesi(sozluk) -> list:
@@ -621,18 +645,14 @@ def lint_kapsami(yol) -> set:
 
 def rapor(
     artiklar,
-    sizinti,
-    eskimis,
-    kapi,
-    sadik,
-    envanter,
+    b: Bulgular,
     kayitlar,
     hepsi,
     envanter_ister,
     lint_kapsam=frozenset(),
-    gecis_oncesi=(),
-    erken_yeni=(),
 ):
+    sizinti, eskimis, kapi, sadik = b.sizinti, b.eskimis, b.kapi, b.sadik
+    gecis_oncesi, erken_yeni, envanter = b.gecis_oncesi, b.erken_yeni, b.envanter
     print("\n=== 0. ARTIK ISTEM/SABLON ISARETLERI ===")
     print("    Bunlar okuyucuya GORUNUR. Once bunlar temizlenmeli.")
     if not artiklar:
@@ -645,7 +665,8 @@ def rapor(
         (kapsanan if _tr_kucult(v[3]) in lint_kapsam else kalan).append(v)
 
     print("\n=== 1. ESKIMIS KARSILIKLAR ===")
-    print("  yok" if not eskimis else "")
+    if not eskimis:
+        print("  yok")
     for no, dosya, k, eski_ad, ctx in kalan:
         print(f"  [{dosya}] '{eski_ad}' -> '{k.tr}'\n      {ctx}")
     if kapsanan:
@@ -694,7 +715,8 @@ def rapor(
         )
 
     print("\n=== 2. CEVRILMEDEN KALMIS INGILIZCE TERIMLER ===")
-    print("  yok" if not sizinti else "")
+    if not sizinti:
+        print("  yok")
     for no, dosya, k, ctx in sizinti:
         print(f"  [{dosya}] '{k.en}' -> beklenen '{k.tr}' ({k.yer})\n      {ctx}")
 
@@ -704,7 +726,8 @@ def rapor(
     print("\n=== 3. KAPI ADAYLARI (yuksek guven) ===")
     print("    Bunlar hata degil, ADAYDIR. Metin ayni olsa da gonderge farkli")
     print("    olabilir: 'Kara Imparator' hem Mertebe 0 hem tarihi bir unvandir.")
-    print("  yok" if not yuksek else "")
+    if not yuksek:
+        print("  yok")
     for g, no, dosya, k, ctx in sorted(yuksek, key=lambda x: x[1] or 0):
         print(
             f"  [{dosya}] '{k.tr}' ({k.yer}) kapi={k.kapi} kullanim={no}\n      {ctx}"
@@ -812,42 +835,17 @@ def main():
 
     kaymalar = satir_kaymalari(a.bolumler or lotm.BOLUMLER_TR, bolumler)
     artiklar = artik_tara(birimler, kaymalar)
-    s, e, kp, sd, env, ey = denetle(
+    bulgular = denetle(
         kayitlar, birimler, a.cumle_ici, maske=kelime_maskesi(sozluk)
     )
-
-    # Gecis (bolum_siniri, bkz. gecis_bolumu): gecisten ONCEKI eski bicim o
-    # donemin dogru karsiligidir, eskimis sayilmaz. Karar TERIM BASINA
-    # verilir; eskiden eski bicimin kendisine gore anahtarlaniyordu ve ayni
-    # eski yazim iki terimde farkli gecislerle dursa biri digerini ezerdi.
-    def gecisten_once(v):
-        no, _dosya, k, _eski, _ctx = v
-        return k.gecis is not None and no is not None and no < k.gecis
-
-    gecis_oncesi = [v for v in e if gecisten_once(v)]
-    e = [v for v in e if not gecisten_once(v)]
-
     lint_kapsam = lint_kapsami(a.kurallar)
-    rapor(
-        artiklar,
-        s,
-        e,
-        kp,
-        sd,
-        env,
-        kayitlar,
-        a.hepsi,
-        a.envanter,
-        lint_kapsam,
-        gecis_oncesi,
-        ey,
-    )
+    rapor(artiklar, bulgular, kayitlar, a.hepsi, a.envanter, lint_kapsam)
 
     # Cikis kodu: okura gorunen ya da kesin yanlis olan bulgular. Kapi
     # adaylari ADAYDIR (karari insan verir) ve cikis kodunu etkilemez.
     # Lint kapsamindaki eski bicimler lint'in kendi cikis kodunda.
-    kalan = [v for v in e if tr_kucult(v[3]) not in lint_kapsam]
-    return 1 if (artiklar or kalan or s) else 0
+    kalan = [v for v in bulgular.eskimis if tr_kucult(v[3]) not in lint_kapsam]
+    return 1 if (artiklar or kalan or bulgular.sizinti) else 0
 
 
 if __name__ == "__main__":
