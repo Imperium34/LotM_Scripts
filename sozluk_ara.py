@@ -47,6 +47,8 @@ def yaz(t, notlar=False):
         satir += f"  ({t.zh})"
     satir += f"   [{t.yer}]"
     print(satir)
+    if t.eski_karsiliklar:
+        print(f"    eski karsiliklar: {', '.join(t.eski_karsiliklar)}")
     if t.bolum_siniri:
         print(f"    bolum siniri: {t.bolum_siniri}")
     if notlar and t.cevirmen_notu:

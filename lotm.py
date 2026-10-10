@@ -906,11 +906,16 @@ class Sozluk:
         # Turkce alan Turkce kucultmeyle, Ingilizce alan casefold ile. Tek
         # bir kucultme ikisine birden uygulaninca Ingilizce bozuluyordu:
         # tr_kucult("Iron Cross") = "ıron cross", yazilan "iron" bulunmuyordu.
+        #
+        # Turkce tarafta eski_karsiliklar ve arama_adi da aranir: "ritüel"
+        # ya da "Rumuzcu" aramak, onlarin YERINE gecen terimi bulmali.
+        # Eskiden yalnizca guncel ad aranirdi ve terk edilmis bir bicim
+        # "eslesme yok" cikiyordu -- sanki hic karar verilmemis gibi.
         q_tr, q_en = tr_kucult(sorgu), en_kucult(sorgu)
         return [
             t
             for t in self.terimler
-            if q_tr in tr_kucult(t.tr)
+            if any(q_tr in tr_kucult(b) for b in [t.tr, *t.arama_adi, *t.eski_karsiliklar])
             or q_en in en_kucult(t.en)
             or sorgu in (t.zh or "")
         ]

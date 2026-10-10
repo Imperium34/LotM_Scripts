@@ -8,6 +8,9 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 SCRIPT_DIR = Path(__file__).resolve().parent
+# turkce.py betiklerin kokunde (bir ust klasor): Turkce buyuk harf icin tek kaynak.
+sys.path.insert(0, str(SCRIPT_DIR.parent))
+from turkce import tr_buyuk_harf  # noqa: E402
 DEFAULT_FONT_SIZE = 44  # Bumped up default to match new prompt rules
 MIN_FONT_SIZE = 20
 FONT_STEP = 2
@@ -217,7 +220,7 @@ def build_html(
 
     return f"""
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
   <meta charset="utf-8">
   {google_fonts_link}
@@ -292,7 +295,7 @@ def render_slides(html_content, font_size, num_excerpts, out_dir):
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path="/usr/bin/chromium")
             page = browser.new_page(viewport={"width": 1080, "height": 1080})
-            page.goto(f"file://{temp_html_path}")
+            page.goto(temp_html_path.resolve().as_uri())
 
             # 1. Render all excerpt slides dynamically
             for i in range(num_excerpts):
@@ -370,7 +373,10 @@ def render_slides(html_content, font_size, num_excerpts, out_dir):
 def main():
     title, excerpts, font_size = parse_args()
 
-    title_upper_escaped = html.escape(title.upper())
+    # str.upper() Turkce degil: "Seyirci" -> "SEYIRCI", "Gündelik Ayin
+    # İlmi" -> "GÜNDELIK AYIN İLMI" (ayın). Yayimlanan gorsellerde boyle
+    # cikiyordu.
+    title_upper_escaped = html.escape(tr_buyuk_harf(title))
 
     # Process html for each chunk separately
     excerpts_html = [paragraphs_to_html(exc) for exc in excerpts]

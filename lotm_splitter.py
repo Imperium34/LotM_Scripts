@@ -31,7 +31,9 @@ import zipfile
 
 import lotm
 
-VARSAYILAN_EPUB = "Lord_of_the_Mysteries.epub"
+# Ciltlerin yanindaki EPUB. Eskiden cwd'ye gore goreli bir addi; Scripts/
+# icinden calistirinca "bulunamadi" diyordu.
+VARSAYILAN_EPUB = str(lotm.KOK / "Source" / "Lord_of_the_Mysteries.epub")
 
 
 def clean_html(html_content):
@@ -80,7 +82,15 @@ def split_epub_by_chapters(epub_path, output_folder):
             if not bilgi.filename.endswith((".html", ".xhtml")):
                 continue
             with arsiv.open(bilgi) as f:
-                ham = f.read().decode("utf-8", errors="ignore")
+                bayt = f.read()
+            try:
+                ham = bayt.decode("utf-8")
+            except UnicodeDecodeError:
+                # Eskiden errors="ignore" ile cozuluyordu: bozuk baytlar
+                # SESSIZCE dusuyor, terim metinde "yok" gorunebiliyordu.
+                ham = bayt.decode("utf-8", errors="replace")
+                print(f"UYARI: {bilgi.filename} UTF-8 degil; bozuk baytlar "
+                      f"U+FFFD ile degistirildi", file=sys.stderr)
             blok = clean_html(ham).strip()
             if not blok:
                 continue
@@ -101,8 +111,7 @@ def split_epub_by_chapters(epub_path, output_folder):
             print(f"UYARI: cilt {no} icin icerik yok")
             continue
         dosya = f"Volume_{no}_{ad}.txt"
-        with open(os.path.join(output_folder, dosya), "w", encoding="utf-8") as f:
-            f.write(icerik)
+        lotm.atomik_yaz(os.path.join(output_folder, dosya), icerik)
         print(f"Yazildi: {dosya}")
 
     print(f"\nBitti. '{output_folder}' klasorune bakin.")

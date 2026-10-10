@@ -179,3 +179,12 @@ def test_diyakritik_esadlilari_rapor_etmez(lint, capsys):
     rapor = lint.Rapor()
     lint.denetle_diyakritik(rapor, {"1.md": "İlâveten geldi. ilaveten gitti."}, {})
     assert len(rapor.bulgular) == 1   # gercek yazim farki hala raporlanir
+
+
+
+def test_tr_buyuk_harf():
+    from turkce import tr_buyuk_harf
+    assert tr_buyuk_harf("Bölüm 52: Seyirci") == "BÖLÜM 52: SEYİRCİ"
+    assert tr_buyuk_harf("Gündelik Ayin İlmi") == "GÜNDELİK AYİN İLMİ"
+    assert tr_buyuk_harf("ışık") == "IŞIK"
+    assert tr_buyuk_harf("") == ""

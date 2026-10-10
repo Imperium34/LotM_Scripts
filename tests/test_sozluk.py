@@ -153,3 +153,13 @@ def test_kapi_kardes_ipucu_ingilizce_metinde_calisir(sozluk_dosyasi):
     konum = metin.index("Clown")
     assert K.guven("Clown", terimler["Clown"], metin, konum) == K.YUKSEK
     assert K.guven("Clown", terimler["Clown"], "He was a Clown now.", 8) == K.ORTA
+
+
+
+def test_ara_eski_karsiligi_ve_arama_adini_bulur(sozluk_dosyasi):
+    """Terk edilmis bir bicimi aramak, yerine gecen terimi bulmali."""
+    import lotm
+    s = lotm.sozluk_yukle(sozluk_dosyasi)
+    assert [t.tr for t in s.ara("olağanüstü")] == ["Sıradışı"]   # eski_karsiliklar
+    assert [t.tr for t in s.ara("Falcı")] == ["Kâhin"]           # mertebe eski karsiligi
+    assert [t.tr for t in s.ara("Mystery Pryer")] == ["Gizem Avcısı"]

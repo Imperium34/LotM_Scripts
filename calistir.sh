@@ -146,7 +146,9 @@ adim_kontrol() {
 adim_takvim() {
   # Baslik tekrari ve carsamba/cumartesi takvimi. Ucuz ve yayin oncesi
   # yakalanmasi gereken tek tur hata: tarih yanlissa bolum yanlis gun cikar.
-  python3 "$TOOLS/takvim_denetle.py"
+  # "$@": bolum zinciri --bolum N verir (beklenen tarihi yazdirmak icin).
+  # Eskiden argumanlar iletilmiyordu; tek bolum kipi hic calismiyordu.
+  python3 "$TOOLS/takvim_denetle.py" "$@"
 }
 
 adim_tarama() {
@@ -197,7 +199,7 @@ adim_lint() {
   # dogrudan kullanabilir; zincirin icinde uyari olarak gecilir.
   # --kaynak: anakronizm denetimi Cince metne de bakar. Kaynakta karsiligi
   # olan birim (公里, 米, 克 ...) bulgu sayilmaz -- o dunyanin kendi
-  # kelimesidir. lotm bulunamazsa sessizce kaynaksiz calisir.
+  # kelimesidir. Cince metin okunamazsa uyarip kaynaksiz calisir.
   python3 "$TOOLS/lint/sozluk_lint.py" \
     --sozluk "$SOZLUK" \
     --kurallar "$TOOLS/lint/lint-kurallari.yml" \
@@ -278,9 +280,14 @@ adim_belgeler() {
   # Taslak ureten model bu belgeleri okur ve ORNEKLERI taklit eder; bolumlere
   # uygulanan yazim ve terim kurallari burada da gecerli olmali.
   local belgeler=()
+  # nullglob: bos bir klasor duz "*.md" dizesini dosya adi diye vermesin.
+  local eski_nullglob
+  eski_nullglob=$(shopt -p nullglob || true)
+  shopt -s nullglob
   for d in "$KOK/Tools/Voice_Maps" "$KOK/Tools/Prompts"; do
     [[ -d "$d" ]] && belgeler+=("$d"/*.md)
   done
+  eval "$eski_nullglob"
   [[ ${#belgeler[@]} -gt 0 ]] || {
     mavi "  belge bulunamadi"
     return 0
@@ -380,7 +387,11 @@ hepsi)
   adim_takvim || kirmizi "  (baslik/tarih hatasi var, yukariya bakin)"
   adim_tarama || mavi "  (tarama atlandi, zincire devam)"
   adim_etiket || mavi "  (etiketleme atlandi, zincire devam)"
-  adim_denetim
+  # Her adim "|| ..." ile: set -e altinda bulgu bildiren (cikis 1) tek bir
+  # adim zincirin GERI KALANINI sessizce keserdi. adim_denetim eskiden
+  # boyle cagriliyordu; yayim_denetle bir sey buldugu anda lint, bicim,
+  # sapka, toplu ve belgeler hic calismiyordu.
+  adim_denetim || kirmizi "  (yayim denetimi bulgu bildirdi, yukariya bakin)"
   adim_lint || mavi "  (lint bulgu bildirdi, yukariya bakin)"
   adim_bicim || kirmizi "  (bicim denetimi tabanda olmayan HATA buldu, yukariya bakin)"
   adim_sapka || mavi "  (sapka taramasi atlandi)"

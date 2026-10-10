@@ -62,6 +62,18 @@ def tr_buyut(s):
     return _BUYUK.get(s[0], s[0].upper()) + s[1:]
 
 
+def tr_buyuk_harf(s):
+    """
+    Turkce TUM-buyuk harf: 'i' -> 'İ', 'ı' -> 'I', gerisi str.upper().
+
+    str.upper() 'i'yi 'I' yapar: "Seyirci" -> "SEYIRCI", "Ayin" -> "AYIN"
+    (ayın). Gorsel uretimi (post_generator) basligi buyuk harfle basar.
+    """
+    if not s:
+        return s or ""
+    return s.replace("i", "İ").upper()
+
+
 def _harf_buyut(c):
     b = _BUYUK.get(c, c.upper())
     # Bazi harflerin buyugu iki karakterdir ("ß" -> "SS"); onlar icin sinif
