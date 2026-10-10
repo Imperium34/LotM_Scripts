@@ -73,6 +73,7 @@ except ImportError:
     print("HATA: PyYAML gerekli.  pip install pyyaml", file=sys.stderr)
     sys.exit(1)
 
+import functools
 
 # =====================================================================
 # KAPSAM (SAGLIK) KAYDI
@@ -171,6 +172,8 @@ SOZLUK_YOLU = SITE / "_data/sozluk.yml"
 BOLUMLER_TR = SITE / "_chapters"
 KAYNAK_EN = KOK / "Source/LotM_Volumes"
 KAYNAK_ZH = KOK / "Source/Lord_of_the_Mysteries_Chinese.txt"
+
+
 # words.md betiklerle AYNI klasorde olmayabilir: betikler Scripts/'e tasindi,
 # veri (words.md, Reports/, Voice_Maps/) KOK/Tools'ta kaldi. Tek sabit yol
 # ikisinden birini sessizce kaciriyordu (sozluk_ara "madde listesi yok"
@@ -395,13 +398,13 @@ HAL = (
 # ekleri (-ydim, -ymişsin) ve -(y)sA / -(y)ken yoktu; "Babam Gece
 # Şahinleri'nin bir aslî üyesiydi" terimi iceriyor ama eslesmiyordu.
 EKFIIL = (
-    r"(?:y?[dt][ıiuü](?:m|n|k|n[ıiuü]z|l[ae]r)?"          # -(y)DI + kişi
-    r"|y?m[ıiuü]ş(?:[ıiuü]m|s[ıiuü]n|[ıiuü]z|l[ae]r)?"      # -(y)mIş + kişi
-    r"|y?s[ae](?:m|n|k|n[ıiuü]z|l[ae]r)?"                  # -(y)sA + kişi
-    r"|y?[ıiuü][mz]"                                        # -(y)Im / -(y)Iz
-    r"|s[ıiuü]n(?:[ıiuü]z)?"                                # -sIn / -sInIz
-    r"|[dt][ıiuü]r(?:l[ae]r)?"                              # -DIr
-    r"|y?ken)"                                              # -(y)ken
+    r"(?:y?[dt][ıiuü](?:m|n|k|n[ıiuü]z|l[ae]r)?"  # -(y)DI + kişi
+    r"|y?m[ıiuü]ş(?:[ıiuü]m|s[ıiuü]n|[ıiuü]z|l[ae]r)?"  # -(y)mIş + kişi
+    r"|y?s[ae](?:m|n|k|n[ıiuü]z|l[ae]r)?"  # -(y)sA + kişi
+    r"|y?[ıiuü][mz]"  # -(y)Im / -(y)Iz
+    r"|s[ıiuü]n(?:[ıiuü]z)?"  # -sIn / -sInIz
+    r"|[dt][ıiuü]r(?:l[ae]r)?"  # -DIr
+    r"|y?ken)"  # -(y)ken
 )
 
 SIFAT = r"(?:l[iıuü])?"  # -li / -lı / -lu / -lü
@@ -445,15 +448,54 @@ _UNLU = "aeıioöuüâîû"
 # düşmeyenler de çok ("kurum -> kurumu") ve kurala bağlanamaz; genel bir
 # kural "kurum" terimini "kurma" ile eşleştirirdi. Sözlüğe yeni bir terim
 # girip bölümde düşmüş biçimi kaçırırsa kelime buraya eklenir.
-DUSEN = frozenset({
-    "ağız", "akıl", "akis", "alın", "asıl", "azim", "beniz", "beyin", "boyun",
-    "burun", "cisim", "emir", "fasıl", "fetih", "fikir", "gönül", "göğüs",
-    "hapis", "hatır", "hüküm", "hüzün", "ilim", "isim", "kabir", "kahır",
-    "karın", "kayıp", "kayıt", "keşif", "kısım", "metin", "mühür", "nehir",
-    "nesil", "oğul", "ömür", "resim", "sabır", "şehir", "şekil", "vakit",
-    "zehir", "zihin",
-})
-_DUSMUS = {w[:-2] + w[-1]: w for w in DUSEN}          # "mühr" -> "mühür"
+DUSEN = frozenset(
+    {
+        "ağız",
+        "akıl",
+        "akis",
+        "alın",
+        "asıl",
+        "azim",
+        "beniz",
+        "beyin",
+        "boyun",
+        "burun",
+        "cisim",
+        "emir",
+        "fasıl",
+        "fetih",
+        "fikir",
+        "gönül",
+        "göğüs",
+        "hapis",
+        "hatır",
+        "hüküm",
+        "hüzün",
+        "ilim",
+        "isim",
+        "kabir",
+        "kahır",
+        "karın",
+        "kayıp",
+        "kayıt",
+        "keşif",
+        "kısım",
+        "metin",
+        "mühür",
+        "nehir",
+        "nesil",
+        "oğul",
+        "ömür",
+        "resim",
+        "sabır",
+        "şehir",
+        "şekil",
+        "vakit",
+        "zehir",
+        "zihin",
+    }
+)
+_DUSMUS = {w[:-2] + w[-1]: w for w in DUSEN}  # "mühr" -> "mühür"
 _SOFT = {"t": "d", "p": "b", "k": "ğ", "ç": "c"}
 
 
@@ -507,7 +549,15 @@ def _tamlama_koku(kelime: str) -> str | None:
     return re.escape(kok)
 
 
-_HAFIF_FIILLER = {"etmek", "edilmek", "eylemek", "olmak", "olunmak", "kılmak", "kılınmak"}
+_HAFIF_FIILLER = {
+    "etmek",
+    "edilmek",
+    "eylemek",
+    "olmak",
+    "olunmak",
+    "kılmak",
+    "kılınmak",
+}
 
 
 def _fiil_koku(kelime: str, cok_kelimeli: bool) -> str | None:
@@ -542,15 +592,42 @@ def _fiil_koku(kelime: str, cok_kelimeli: bool) -> str | None:
 # Python'un lookbehind'i sabit genislik ister; her sozcuk ayri bir
 # lookbehind olur ve alternatifle baglanir.
 SAYI_SOZCUKLERI = (
-    "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz", "on",
-    "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan",
-    "yüz", "bin", "milyon", "yarım", "çeyrek", "buçuk", "birkaç", "kaç",
+    "bir",
+    "iki",
+    "üç",
+    "dört",
+    "beş",
+    "altı",
+    "yedi",
+    "sekiz",
+    "dokuz",
+    "on",
+    "yirmi",
+    "otuz",
+    "kırk",
+    "elli",
+    "altmış",
+    "yetmiş",
+    "seksen",
+    "doksan",
+    "yüz",
+    "bin",
+    "milyon",
+    "yarım",
+    "çeyrek",
+    "buçuk",
+    "birkaç",
+    "kaç",
 )
-_SAYI_ONCESI = "(?:" + "|".join(
-    [r"(?<=\d\s)", r"(?<=\d)"]
-    + [rf"(?<=(?<![^\W_]){re.escape(w)}\s)" for w in SAYI_SOZCUKLERI]
-    + [rf"(?<=(?<![^\W_]){re.escape(tr_buyut(w))}\s)" for w in SAYI_SOZCUKLERI]
-) + ")"
+_SAYI_ONCESI = (
+    "(?:"
+    + "|".join(
+        [r"(?<=\d\s)", r"(?<=\d)"]
+        + [rf"(?<=(?<![^\W_]){re.escape(w)}\s)" for w in SAYI_SOZCUKLERI]
+        + [rf"(?<=(?<![^\W_]){re.escape(tr_buyut(w))}\s)" for w in SAYI_SOZCUKLERI]
+    )
+    + ")"
+)
 OLCU_EKI = r"l[iıuü][kğ]"
 
 
@@ -585,32 +662,22 @@ def _govde(terim: str, olcu: bool = False) -> str:
     return r"\s+".join(parcalar)
 
 
+@functools.lru_cache(maxsize=None)
 def desen_kur(terim: str, harf_duyarli: bool = True):
-    """
-    Turkce bir terim icin cekim eklerine dayanikli desen.
+    """(docstring ayni kalir)"""
+    bicimler = (
+        [terim]
+        if harf_duyarli
+        else list(dict.fromkeys([terim, tr_kucult(terim), tr_buyut(tr_kucult(terim))]))
+    )
+    secenekler = [_govde(b) for b in bicimler]
 
-    Harf duyarliligi VARSAYILAN olarak aciktir ve oyle kalmalidir: Mertebe
-    adlari ozel isimdir, cakismalari kucuk harflidir (Yol/yolu, Haz/hazine,
-    Maraz/marazi, San/sansli).
-
-    HARF DUYARSIZ DALDA re.IGNORECASE KULLANILMAZ. Python'un IGNORECASE'i
-    denklik siniflarini upper() uzerinden kurar; Turkce'de 'ı'.upper() de
-    'i'.upper() de 'I' verdigi icin ı ile i AYNI SINIFA duser. Sonuc:
-        re.search("Ayin", "haziran ayının", re.IGNORECASE)  ->  eslesir
-    Bolum 9'da hic gecmeyen bir "Ayin" bu yuzden gorunuyordu. Bunun yerine
-    terimin kucuk ve bas harfi buyuk bicimleri ACIKCA uretilip alternatif
-    olarak baglanir; ı ile i boylece ayri kalir.
-    """
-    if harf_duyarli:
-        secenekler = [_govde(terim)]
-    else:
-        bicimler = dict.fromkeys([terim, tr_kucult(terim), tr_buyut(tr_kucult(terim))])
-        secenekler = [_govde(b) for b in bicimler]
-
-    # Olcu bicimi: sayidan sonra "librelik", "Sterlinlik" (bkz. OLCU_EKI).
-    bicimler_o = [terim] if harf_duyarli else list(dict.fromkeys(
-        [terim, tr_kucult(terim), tr_buyut(tr_kucult(terim))]))
-    secenekler += [_SAYI_ONCESI + _govde(b, olcu=True) for b in bicimler_o]
+    # Olcu bicimi (bkz. OLCU_EKI): sayi on-kosulu bir kez yazilir, uc harf
+    # bicimi onun arkasinda alternatif olur. Eskiden her bicim kendi
+    # ~60 lookbehind'ini tasiyordu.
+    secenekler.append(
+        _SAYI_ONCESI + "(?:" + "|".join(_govde(b, olcu=True) for b in bicimler) + ")"
+    )
 
     kalip = r"(?<![^\W_])(?:" + "|".join(secenekler) + r")"
     return re.compile(kalip)
@@ -669,8 +736,8 @@ class Terim:
     # adi olarak. Sozlukteki butun kullanimlar Turkceydi ("gökkubbe",
     # "şiraze", "El Yazması"); yani kapi_denetle bu uc terimin ilk gecisini
     # Ingilizce metinde Turkce kelime arayarak bulmaya calisiyordu.
-    arama_adi: list = field(default_factory=list)      # TURKCE karsilik bicimleri
-    en_arama_adi: list = field(default_factory=list)   # INGILIZCE tarama adlari
+    arama_adi: list = field(default_factory=list)  # TURKCE karsilik bicimleri
+    en_arama_adi: list = field(default_factory=list)  # INGILIZCE tarama adlari
     cevirmen_notu: str | None = None
     kardesler_tr: list = field(default_factory=list)
     kardesler_en: list = field(default_factory=list)
@@ -775,7 +842,9 @@ class Sozluk:
         return [
             t
             for t in self.terimler
-            if q_tr in tr_kucult(t.tr) or q_en in en_kucult(t.en) or sorgu in (t.zh or "")
+            if q_tr in tr_kucult(t.tr)
+            or q_en in en_kucult(t.en)
+            or sorgu in (t.zh or "")
         ]
 
     def yaz(self, hedef=None, duzeltici=None):
@@ -867,6 +936,11 @@ _ZH_AD = re.compile(r"[\u3400-\u9fff](?:[\u3400-\u9fff·・]*[\u3400-\u9fff])?")
 _TR_OZEL = re.compile(r"[çğıöşüÇĞİÖŞÜâîûÂÎÛ]")
 _PARANTEZ_BLOK = re.compile(r"\(([^()]*)\)")
 KELIME_KATEGORI = "words.md"
+_YAML_YUKLEYICI = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+
+
+def yaml_yukle(akis):
+    return yaml.load(akis, Loader=_YAML_YUKLEYICI)
 
 
 def kesin_gecisler(yol=None) -> dict:
@@ -879,15 +953,16 @@ def kesin_gecisler(yol=None) -> dict:
     """
     yol = Path(yol) if yol else BETIK_KOK / "lint" / "lint-kurallari.yml"
     try:
-        import yaml
-        veri = yaml.safe_load(Path(yol).read_text(encoding="utf-8")) or {}
+        veri = yaml_yukle(Path(yol).read_text(encoding="utf-8")) or {}
     except Exception:
         return {}
     out = {}
     for k in veri.get("varyantlar", []) or []:
         if k.get("kesin_gecis") and k.get("ogrenme_bolumu") and k.get("dogru"):
             out[tr_kucult(k["dogru"])] = (
-                int(k["ogrenme_bolumu"]), {tr_kucult(y) for y in k.get("yanlis", [])})
+                int(k["ogrenme_bolumu"]),
+                {tr_kucult(y) for y in k.get("yanlis", [])},
+            )
     return out
 
 
@@ -903,7 +978,7 @@ def zh_desen(sorgu: str, bilesikler=()) -> re.Pattern:
     for b in bilesikler:
         bas = 0
         while (i := b.find(sorgu, bas)) != -1:
-            on, son = b[:i], b[i + len(sorgu):]
+            on, son = b[:i], b[i + len(sorgu) :]
             ic = re.escape(sorgu + son)
             haric.append(f"(?!(?<={re.escape(on)}){ic})" if on else f"(?!{ic})")
             bas = i + 1
@@ -1022,16 +1097,31 @@ def kelimeler_yukle(yol=None) -> list:
             # Cince de ayni sayidaysa sirayla eslenir ("(「镑」/苏勒/便士)").
             eslesir = len(zh_list) == len(tr_list)
             for i, (tr, en) in enumerate(zip(tr_list, en_list)):
-                out.append(Terim(
-                    tr=tr, en=en, en_ham=en,
-                    zh=zh_list[i][0] if eslesir else None,
-                    zh_kesin=zh_list[i][1] if eslesir else False,
-                    kategori=kategori, cevirmen_notu=kalan))
+                out.append(
+                    Terim(
+                        tr=tr,
+                        en=en,
+                        en_ham=en,
+                        zh=zh_list[i][0] if eslesir else None,
+                        zh_kesin=zh_list[i][1] if eslesir else False,
+                        kategori=kategori,
+                        cevirmen_notu=kalan,
+                    )
+                )
         else:
             en = en_list[0] if en_list else None
-            out.append(Terim(
-                tr=tr_list[0], en=en, en_ham=en, zh=zh, zh_kesin=zh_kesin, kategori=kategori,
-                arama_adi=tr_list[1:], cevirmen_notu=kalan))
+            out.append(
+                Terim(
+                    tr=tr_list[0],
+                    en=en,
+                    en_ham=en,
+                    zh=zh,
+                    zh_kesin=zh_kesin,
+                    kategori=kategori,
+                    arama_adi=tr_list[1:],
+                    cevirmen_notu=kalan,
+                )
+            )
     return out
 
 
@@ -1069,7 +1159,7 @@ def sozluk_yukle(yol=None, bicim_koru=False, kelimeler=False) -> Sozluk:
         y.width = 4096
         y.indent(mapping=2, sequence=2, offset=0)
         with open(yol, "r", encoding="utf-8") as f:
-            veri = y.load(f)
+            veri = yaml_yukle(f) or []
     else:
         with open(yol, "r", encoding="utf-8") as f:
             veri = yaml.safe_load(f) or []
@@ -1318,7 +1408,7 @@ def bolumler_tr(klasor=None) -> list:
         govde = ham[fm.end() :] if fm else ham
         if fm:
             try:
-                bilgi = yaml.safe_load(fm.group(0).strip("-\n")) or {}
+                bilgi = yaml_yukle(fm.group(0).strip("-\n")) or {}
                 if not isinstance(bilgi, dict):
                     raise yaml.YAMLError(
                         f"front matter esleme degil: {type(bilgi).__name__}"

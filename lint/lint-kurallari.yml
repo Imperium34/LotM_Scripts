@@ -7,23 +7,6 @@
 # "yanlis" listesindeki her eşleşme rapor edilir.
 # ---------------------------------------------------------------
 varyantlar:
-  - kavram: "Ritual (仪式)"
-    dogru: "ayin"
-    yanlis: ["ritüel"]
-    istisna: ["şans art[ıi]rma"]
-    harf_duyarsiz: true          # "Ritüel" ayrıca yazılmasın
-    ogrenme_bolumu: 28
-    not: "Temiz geçiş: 28'den önce her seste 'ritüel', 28'den itibaren her seste
-      'ayin'. Dunn 28'de Gizem Avcılarının bildiği ayinlerden söz eder; Neil 33'te
-      'Ayin İlmi'ni tanıtır. 'şans artırma ritüeli' bir ad olarak her yerde kalır."
-
-  - kavram: "Mysticism"
-    dogru: "İlm-i Esrar"
-    yanlis: ["mistisizm", "misitisizm"]
-    harf_duyarsiz: true
-    ogrenme_bolumu: 18
-    not: "Klein terimi Dunn'dan Bölüm 18'de duyar; öncesinde iç sesinde serbest."
-
   - kavram: "Lord of Storms"
     dogru: "Fırtınalar Hakimi"
     yanlis: ["Fırtınaların Hakimi", "Fırtına Hakimi"]
@@ -33,8 +16,8 @@ varyantlar:
     yanlis: ["İlim ve Hikmet İlahı"]
 
   - kavram: "Chaos (çağ adı)"
-    dogru: "Hercümerç"
-    yanlis: ["Kaos Çağı", "kaos çağı"]
+    dogru: "Heyûlâ"
+    yanlis: ["Kaos Çağı", "kaos çağı", "Hercümerç"]
 
   - kavram: "The Creator"
     dogru: "Yaradan"
@@ -63,18 +46,6 @@ varyantlar:
 yasakli:
   - bicim: "cehliyet"
     yerine: "cehalet"
-  - bicim: "Kukla Üstadı"
-    yerine: "Sır Kuklabazı"
-  - bicim: "Kaderin Meşalesi"
-    yerine: "Kaderin Mihenk Taşı"
-  - bicim: "Melekut Efendisi"
-    yerine: "Alem-i Misal Efendisi"
-  - bicim: "Zeval Dükü"
-    yerine: "İnhilal Dükü"
-  - bicim: "Kaos Getiren"
-    yerine: "Fitne Arıtan"
-  - bicim: "Yokluk"
-    yerine: "Hâviye"
 
 # ---------------------------------------------------------------
 # 3. ANLAM AYIRICI DİYAKRİTİKLER
@@ -155,23 +126,84 @@ register:
 # "dogru_ekler" verilirse hata, verilmezse çoğunluğa bakılıp uyarı üretilir.
 # ---------------------------------------------------------------
 ozel_adlar:
+  # --- The Tarot Club (Vol 1) ---
   Klein:
-    dogru_ekler: ["ın", "a", "ı", "dan", "da"]
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Klayn
   Alger:
-    dogru_ekler: ["ın", "a", "ı", "dan", "da"]
-  Rozanne:
-    dogru_ekler: ["in", "e", "i", "den", "de"]
-  Dunn:
-    dogru_ekler: ["ın", "a", "ı", "dan", "da"]
-  Neil:
-    dogru_ekler: ["ın", "a", "ı", "dan", "da"]
-  Benson:
-    dogru_ekler: ["ın", "a", "ı", "dan", "da"]
-  Welch:
-    dogru_ekler: ["in", "e", "i", "den", "de"]
-  Melissa:
-    dogru_ekler: ["ın", "a", "ı", "dan", "da"]
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Al-cır
   Audrey:
-    dogru_ekler: ["in", "e", "i", "den", "de"]
+    dogru_ekler: ["in", "e", "i", "den", "de"] # Aud-ri
+  Derrick:
+    dogru_ekler: ["in", "e", "i", "ten", "te"] # De-rik (Takes 't' mutation)
+
+  # --- Klein's Family & Friends ---
+  Benson:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Ben-sın
+  Melissa:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Me-lis-a
+  Welch:
+    dogru_ekler: ["in", "e", "i", "ten", "te"] # Velç (Takes 't' mutation)
   Naya:
-    dogru_ekler: ["ın", "a", "ı", "dan", "da"]
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Na-ya
+  Selena:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Se-le-na
+  Elizabeth:
+    dogru_ekler: ["in", "e", "i", "ten", "te"] # E-li-za-bet (Takes 't' mutation)
+
+  # --- Tingen Nighthawks & Church of Evernight ---
+  Dunn:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Dan
+  Leonard:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Le-nırd
+  Neil:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Nil
+  Rozanne:
+    dogru_ekler: ["in", "e", "i", "den", "de"] # Ro-zen / Ro-zan
+  Frye:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Fray
+  Royale:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Ro-yal
+  Seeka:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Si-ka
+  Bredt:
+    dogru_ekler: ["in", "e", "i", "ten", "te"] # Bret (Takes 't' mutation)
+  Orianna:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # O-ri-yan-na
+  Daly:
+    dogru_ekler: ["in", "e", "i", "den", "de"] # Dey-li
+
+  # --- Key Figures, Mentors & Others ---
+  Azik:
+    dogru_ekler: ["in", "e", "i", "ten", "te"] # A-zik (Takes 't' mutation)
+  Roselle:
+    dogru_ekler: ["in", "e", "i", "den", "de"] # Ro-zel
+  Amanises:
+    dogru_ekler: ["in", "e", "i", "den", "de"] # A-ma-nay-sis
+
+  # --- Antagonists & Suspects (Volume 1) ---
+  Trissy:
+    dogru_ekler: ["in", "e", "i", "den", "de"] # Tri-si
+  Lanevus:
+    dogru_ekler: ["un", "a", "u", "tan", "ta"] # La-ne-vus (Takes 'u' harmony and 't' mutation)
+  Hood:
+    dogru_ekler: ["un", "a", "u", "dan", "da"] # Hud
+  Eugen:
+    dogru_ekler: ["in", "e", "i", "den", "de"] # Yu-cin
+  Megose:
+    dogru_ekler: ["un", "a", "u", "tan", "ta"] # Ma-gos (Takes 'u' harmony and 't' mutation)
+  Sirius:
+    dogru_ekler: ["un", "a", "u", "tan", "ta"] # Sir-yus (Takes 'u' harmony and 't' mutation)
+  Hanass:
+    dogru_ekler: ["ın", "a", "ı", "tan", "ta"] # Ha-nas (Takes 't' mutation)
+  Joyce:
+    dogru_ekler: ["un", "a", "u", "tan", "ta"] # Coys (Takes 'u' harmony and 't' mutation)
+  Bieber:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Bi-bır
+  Qilangos:
+    dogru_ekler: ["un", "a", "u", "tan", "ta"] # Ki-lan-gos (Takes 'u' harmony and 't' mutation)
+
+  # --- The Masterminds ---
+  Ince:
+    dogru_ekler: ["in", "e", "i", "ten", "te"] # İns (Takes 't' mutation)
+  Zangwill:
+    dogru_ekler: ["in", "e", "i", "den", "de"] # Zang-vil

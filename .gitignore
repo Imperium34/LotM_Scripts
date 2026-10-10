@@ -4,3 +4,4 @@ post_generator/slide3.png
 post_generator/slide4.png
 tests/__pycache__/
 __pycache__/
+.hizalama_onbellek/

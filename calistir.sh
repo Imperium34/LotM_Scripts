@@ -82,15 +82,6 @@ BOLUMLER="$SITE/_chapters"
 # soyler). Reports/ degil lint/ altinda: bu bir rapor degil bir karar, ve
 # lint-kurallari.yml gibi surum denetiminde tutulmali.
 BICIM_TABAN="${LOTM_BICIM_TABAN:-$TOOLS/lint/bicim-taban.tsv}"
-# Yayin takvimi (takvim_denetle.py). Yayinlanmis tarih degistirilmez; bilinen
-# gecmis burada KABUL edilir:
-#   1-12  takvim oncesi: 1-7 yalniz tarih (saat/dilim yok), 1 cuma, 2'den once
-#         dort ay ara; 8-12 saat 21:00. Duzenli 20:00 carsamba/cumartesi 13'te
-#         basliyor.
-#   20    sali (2026-07-07) cikti, carsamba slotundan bir gun once.
-# Yeni bir sapma bilerek kabul edilirse ISTISNA'ya eklenir, nedeniyle birlikte.
-TAKVIM_BASLANGIC="${LOTM_TAKVIM_BASLANGIC:-13}"
-TAKVIM_ISTISNA="${LOTM_TAKVIM_ISTISNA:-20}"
 
 mkdir -p "$RAPOR"
 
@@ -155,8 +146,7 @@ adim_kontrol() {
 adim_takvim() {
   # Baslik tekrari ve carsamba/cumartesi takvimi. Ucuz ve yayin oncesi
   # yakalanmasi gereken tek tur hata: tarih yanlissa bolum yanlis gun cikar.
-  python3 "$TOOLS/takvim_denetle.py" --klasor "$BOLUMLER" \
-    --baslangic "$TAKVIM_BASLANGIC" --istisna "$TAKVIM_ISTISNA" "$@"
+  python3 "$TOOLS/takvim_denetle.py"
 }
 
 adim_tarama() {

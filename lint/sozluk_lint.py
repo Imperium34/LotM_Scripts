@@ -9,6 +9,12 @@ kanıt her zaman başka bir dosyadadır.
 
 Kullanım:
     python3 sozluk_lint.py --sozluk sozluk.yml --kurallar lint-kurallari.yml BOLUMLER...
+    python3 sozluk_lint.py ... ../Imperium34.github.io/_chapters/     (klasör de olur)
+
+Bölümler lotm.bolumler_tr ile okunur (yayim_denetle ile aynı ayrıştırıcı).
+Başlıklar ("Bölüm N: " öneki atılarak) gövdeyle aynı dil denetimlerinden
+geçer ve "0050.md:başlık" olarak raporlanır. Register ve sözlük kapsamı
+yalnızca gövdeyi ölçer.
     python3 sozluk_lint.py ... --sadece varyant,diyakritik
     python3 sozluk_lint.py ... --format json > rapor.json
 """
@@ -38,6 +44,16 @@ for _yol in (Path(__file__).resolve().parent, Path(__file__).resolve().parent.pa
         break
 from turkce import tr_desen, tr_kucult  # noqa: E402
 
+# lotm.py Tools/ kokunde. Bolumler onunla okunur: lint'in kendi front matter
+# ayristiricisi ('---' uzerinden kaba bolme) ile lotm.bolumler_tr (regex +
+# YAML) ayni dosya icin farkli sonuc verebiliyordu ve basligi hic okumuyordu
+# -- Bolum 50'deki "Neil'in" ek denetiminden boyle gecti.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+try:
+    import lotm  # noqa: E402
+except ImportError as _e:
+    sys.exit(f"lotm.py bulunamadi (lint/ klasorunun bir ustunde olmali): {_e}")
+
 
 # ----------------------------------------------------------------------
 # Bulgular
@@ -56,7 +72,13 @@ class Bulgu:
 
     def satir_olarak(self) -> str:
         isaret = {"hata": "!!", "uyari": " *", "bilgi": "  "}[self.agirlik]
-        bas = f"{isaret} {self.dosya}:{self.satir}"
+        # Baslik tek satirdir; satir numarasi bilgi tasimaz.
+        konum = (
+            self.dosya
+            if self.dosya.endswith(BASLIK_EK)
+            else f"{self.dosya}:{self.satir}"
+        )
+        bas = f"{isaret} {konum}"
         govde = f"{self.mesaj}"
         if self.baglam:
             govde += f"\n       … {self.baglam} …"
@@ -80,11 +102,10 @@ TR_HARF = "A-Za-zÇĞİÖŞÜçğıöşüÂÎÛâîûÊê"
 KIVRIK = "\u2019"
 DUZ = "'"
 
-# Klein'in ic sesi (_italik_) ile replik ("...") AYRI tutulur: ogrenme
-# kurallarinda ikisi farkli davranir. Ic ses Klein'indir; replik kimin
-# oldugunu bilemeyiz, o yuzden dusuk agirlikla raporlanir.
+# Klein'in ic sesi (_italik_). Yalnizca anakronizm denetimi kullanir: dunya
+# disi sozcukler anlatici sesinde hata, ic seste serbesttir. (Varyant
+# kurallarindaki ses ayrimi kaldirildi; bkz. denetle_varyant.)
 IC_SES = re.compile(r"_[^_\n]{3,}_")
-REPLIK = re.compile(r"[\"“][^\"”\n]{3,}[\"”]")
 
 
 def bolum_numarasi(dosya_adi: str) -> int | None:
@@ -98,13 +119,70 @@ def diyakritiksiz(s: str) -> str:
     )
 
 
-def govde_metni(ham: str) -> str:
-    """YAML front-matter'ı at."""
-    if ham.startswith("---"):
-        parca = ham.split("---", 2)
-        if len(parca) >= 3:
-            return parca[2]
-    return ham
+BASLIK_EK = ":başlık"
+_BASLIK_ONEKI = re.compile(r"^Bölüm\s+\d+\s*:\s*")
+
+
+def bolum_anahtari(ad: str) -> str:
+    """'0050.md:başlık' -> '0050.md' (bolum sayimlari icin)."""
+    return ad[: -len(BASLIK_EK)] if ad.endswith(BASLIK_EK) else ad
+
+
+def baslik_adi(baslik: str) -> str:
+    """
+    'Bölüm 50: İhtiyar Neil'ın ...' -> 'İhtiyar Neil'ın ...'. Onek atilmazsa
+    "Bölüm" her baslikta ayni ilgisiz bulguyu uretebilir. Bicime uymayan
+    baslik oldugu gibi denetlenir (bicim hatasi takvim_denetle'nin isi).
+    """
+    return _BASLIK_ONEKI.sub("", baslik, count=1)
+
+
+def bolumleri_yukle(yollar) -> tuple[dict, dict]:
+    """
+    ({dosya_adi: govde}, {dosya_adi + BASLIK_EK: baslik_adi}).
+
+    Klasor verilirse icindeki butun bolumler; dosya verilirse yalnizca o
+    dosyalar (bulundugu klasor lotm.bolumler_tr ile okunur ve suzulur, her
+    klasor bir kez). Boylece hem 'lint _chapters/' hem eski '*.md' cagrisi
+    calisir.
+    """
+    klasorler: dict[Path, set | None] = {}
+    for y in map(Path, yollar):
+        if y.is_dir():
+            klasorler[y.resolve()] = None  # hepsi
+        else:
+            k = y.resolve().parent
+            if klasorler.get(k, set()) is not None:
+                klasorler.setdefault(k, set()).add(y.name)
+
+    govdeler, basliklar = {}, {}
+    for klasor, isimler in klasorler.items():
+        bulunan = set()
+        for b in lotm.bolumler_tr(klasor):
+            if isimler is not None and b.kaynak not in isimler:
+                continue
+            bulunan.add(b.kaynak)
+            # Satir numaralari DOSYAYA gore olsun: govde front matter'dan
+            # sonra basladigi icin eskiden her bulgu editordeki satirdan
+            # front matter uzunlugu kadar (genelde 4) geride gorunuyordu.
+            # Govdenin onune o kadar bos satir eklemek satir_no'yu duzeltir;
+            # baglam bosluklari zaten tek bosluga indirir.
+            ham = (klasor / b.kaynak).read_text(encoding="utf-8")
+            kayma = (
+                ham[: len(ham) - len(b.metin)].count("\n")
+                if ham.endswith(b.metin)
+                else 0
+            )
+            govdeler[b.kaynak] = "\n" * kayma + b.metin
+            if b.baslik:
+                basliklar[b.kaynak + BASLIK_EK] = baslik_adi(b.baslik)
+        for eksik in sorted((isimler or set()) - bulunan):
+            print(
+                f"  uyari: {klasor / eksik} bolum olarak okunmadi "
+                f"(uzanti ya da dosya yok)",
+                file=sys.stderr,
+            )
+    return govdeler, basliklar
 
 
 def satir_no(metin: str, indeks: int) -> int:
@@ -120,11 +198,6 @@ def baglam(metin: str, bas: int, son: int, yaricap: int = 55) -> str:
 def ic_ses_araliklari(metin: str) -> list[tuple[int, int]]:
     """Klein'in _italik_ ic sesi."""
     return [m.span() for m in IC_SES.finditer(metin)]
-
-
-def replik_araliklari(metin: str) -> list[tuple[int, int]]:
-    """Tirnak icindeki replikler -- konusan kim, bilinmiyor."""
-    return [m.span() for m in REPLIK.finditer(metin)]
 
 
 def ic_seste_mi(araliklar, bas: int) -> bool:
@@ -159,26 +232,59 @@ def sozluk_terimleri(yol: Path) -> dict[str, str]:
 # ----------------------------------------------------------------------
 
 
+VARYANT_ANAHTARLARI = {
+    "kavram",
+    "dogru",
+    "yanlis",
+    "harf_duyarsiz",
+    "ogrenme_bolumu",
+    "istisna",
+    "not",
+}
+
+
 def denetle_varyant(rapor, dosyalar, kurallar):
+    """
+    Iki kip var, ikisi de acik:
+      ogrenme_bolumu YOK  -> 'yanlis' listesindeki her gecis hatadir.
+      ogrenme_bolumu VAR  -> KESIN GECIS: o bolumden ONCE eski kelime her
+                             seste serbest, o bolumden itibaren her seste
+                             hata. Yeni kelime gecisten once geciyorsa uyari.
+
+    Eskiden ucuncu bir kip vardi (ses ayrimi: ogrenmeden once yalnizca
+    Klein'in ic sesinde serbest) ve ogrenme_bolumu'nu 'kesin_gecis: true'
+    olmadan yazmak sessizce O kipi seciyordu. Ayin kurali tam olarak boyle
+    bozuldu: notu temiz gecis anlatiyordu, bayrak yoktu, 22'den onceki her
+    anlatici "ritüel"i hata cikiyordu. Ses ayrimi okura gorunmedigi icin
+    kaldirildi; ogrenme_bolumu artik tek basina kesin gecis demektir.
+
+    Ayni sinifta bir hatanin tekrarlanmamasi icin taninmayan anahtarlar
+    (kesin_gecis, sadece_anlatici ya da bir yazim hatasi) kural dosyasi
+    hatasi olarak raporlanir; sessizce yok sayilmaz.
+
+    Terim REVIZYONLARI (eski karsilik -> yeni karsilik) burada degil,
+    sozluk.yml'de 'eski_karsiliklar' olarak durur ve yayim_denetle.py
+    denetler. Buradaki gruplar ayni kavramin yazim varyantlaridir. (Ritual
+    ve Mysticism gecis doneminde iki yerde de duruyor; yayim_denetle ayni
+    bulgulari verdigi dogrulaninca buradan silinir.)
+    """
     for kural in kurallar.get("varyantlar", []):
+        bilinmeyen = set(kural) - VARYANT_ANAHTARLARI
+        if bilinmeyen:
+            rapor.ekle(
+                "varyant",
+                "lint-kurallari.yml",
+                0,
+                kural.get("kavram", "?"),
+                f"tanınmayan anahtar(lar): {', '.join(sorted(bilinmeyen))} "
+                f"[{kural.get('kavram', '?')}] -- kural atlandi",
+                agirlik="hata",
+            )
+            continue
+
         dogru = kural["dogru"]
         ek_not = kural.get("not", "")
-        sadece_anlatici = kural.get("sadece_anlatici", False)
-        # Ogrenme bolumu: Klein terimi bu bolumde ogrenir. Oncesinde eski
-        # kelime YALNIZCA onun ic sesinde serbesttir; anlatici ve diger
-        # karakterler dunyanin kelimesini bastan beri kullanir. Bolumden
-        # itibaren ic seste de yasaktir -- devrin tamamlanmasi budur.
-        ogrenme = kural.get("ogrenme_bolumu")
-        # KESIN GECIS (kesin_gecis: true). Ses ayrimi yerine tek bir bolumde
-        # temiz gecis: ogrenme_bolumu'nden ONCE eski kelime her seste
-        # serbesttir, o bolumden itibaren her seste hatadir. Gerekce:
-        # ses ayrimi okura gorunmuyordu; ayni bolumde Dunn "ayin" derken
-        # anlatici "ritüel" diyordu ve bu, kotu ceviri gibi okunuyordu.
-        # Kaynakta tek kelime var (仪式); iki kelimelik ayrim yalnizca okurun
-        # fark edebildigi tek bir gecis noktasi olarak anlam tasir. Ayrica
-        # yeni kelime gecisten ONCE geciyorsa uyari verilir (geriye donuk
-        # tasima icin liste).
-        kesin = bool(kural.get("kesin_gecis")) and ogrenme is not None
+        gecis = kural.get("ogrenme_bolumu")
         # Istisnalar harf duyarsiz: cumle basindaki "Şans artırma ritüeli"
         # de kapsanmali. IGNORECASE'in ı/i gevsekligi burada zararsizdir --
         # istisna yalnizca bulguyu SUSTURUR, yeni bulgu uretmez.
@@ -195,61 +301,23 @@ def denetle_varyant(rapor, dosyalar, kurallar):
 
         for ad, metin in sorted(dosyalar.items()):
             no = bolum_numarasi(ad)
-            ic = ic_ses_araliklari(metin)
-            rep = replik_araliklari(metin)
+            gecisten_once = gecis is not None and no is not None and no < gecis
             kapali: list[tuple[int, int]] = []
 
             for yanlis in yanlislar:
+                if gecisten_once:
+                    break  # gecisten once her seste serbest
                 desen = tr_desen(yanlis) if duyarsiz else re.escape(yanlis)
                 for m in re.finditer(desen, metin):
                     if any(a <= m.start() < b for a, b in kapali):
                         continue
+                    kapali.append(m.span())
                     ctx = baglam(metin, m.start(), m.end())
                     if any(d.search(ctx) for d in istisnalar):
-                        kapali.append(m.span())
                         continue
-
-                    icte = ic_seste_mi(ic, m.start())
-                    replikte = ic_seste_mi(rep, m.start())
-
-                    if kesin:
-                        if no is not None and no < ogrenme:
-                            kapali.append(m.span())
-                            continue  # gecisten once her seste serbest
-                        yer = (("Klein'in ic sesi" if icte else "replik" if replikte
-                                else "anlatici sesi") + f", gecisten SONRA (bolum {ogrenme})")
-                        agirlik = "hata"
-                    elif ogrenme is not None:
-                        if icte:
-                            if no is not None and no < ogrenme:
-                                kapali.append(m.span())
-                                continue  # ogrenmeden once serbest
-                            yer, agirlik = (
-                                (
-                                    "Klein'in ic sesi, ogrenmeden "
-                                    f"SONRA (bkz. bolum {ogrenme})"
-                                ),
-                                "hata",
-                            )
-                        elif replikte:
-                            yer, agirlik = (
-                                ("replik -- konusan Klein mi? elle bakin"),
-                                "uyari",
-                            )
-                        else:
-                            yer, agirlik = "anlatici sesi", "hata"
-                    elif sadece_anlatici:
-                        if icte or replikte:
-                            kapali.append(m.span())
-                            continue
-                        yer, agirlik = "anlatici sesi", "hata"
-                    else:
-                        yer, agirlik = "", "hata"
-
-                    kapali.append(m.span())
                     mesaj = f"“{yanlis}” → “{dogru}”  [{kural['kavram']}]"
-                    if yer:
-                        mesaj += f"  ({yer})"
+                    if gecis is not None:
+                        mesaj += f"  (gecisten SONRA, bolum {gecis})"
                     if ek_not:
                         mesaj += f"\n       {ek_not}"
                     rapor.ekle(
@@ -259,20 +327,24 @@ def denetle_varyant(rapor, dosyalar, kurallar):
                         yanlis,
                         mesaj,
                         ctx,
-                        agirlik=agirlik,
+                        agirlik="hata",
                     )
 
-            # Kesin gecis: yeni kelime gecisten ONCE geciyorsa uyari. Hata
-            # degil -- kilise ayini gibi baska bir anlamda da gecebilir.
-            if kesin and no is not None and no < ogrenme:
+            # Yeni kelime gecisten ONCE geciyorsa uyari. Hata degil -- kilise
+            # ayini gibi baska bir anlamda da gecebilir.
+            if gecisten_once:
                 d = tr_desen(dogru) if duyarsiz else re.escape(dogru)
                 for m in re.finditer(r"(?<![^\W_])" + d, metin):
                     ctx = baglam(metin, m.start(), m.end())
                     rapor.ekle(
-                        "varyant", ad, satir_no(metin, m.start()), m.group(),
-                        f"“{m.group()}” gecisten ONCE (bolum {ogrenme}): "
+                        "varyant",
+                        ad,
+                        satir_no(metin, m.start()),
+                        m.group(),
+                        f"“{m.group()}” gecisten ONCE (bolum {gecis}): "
                         f"“{kural['yanlis'][0]}” mi olmali?  [{kural['kavram']}]",
-                        ctx, agirlik="uyari",
+                        ctx,
+                        agirlik="uyari",
                     )
 
 
@@ -283,7 +355,10 @@ def denetle_yasakli(rapor, dosyalar, kurallar):
         for ad, metin in dosyalar.items():
             for m in desen.finditer(metin):
                 rapor.ekle(
-                    "yasaklı",
+                    # "yasaklı" (noktasiz ı) idi: DENETIMLER'deki "yasakli" ile
+                    # eslesmedigi icin metin ciktisinda bu bulgular HIC
+                    # basilmiyor, yalnizca toplam hata sayisina giriyordu.
+                    "yasakli",
                     ad,
                     satir_no(metin, m.start()),
                     m.group(),
@@ -336,7 +411,7 @@ def denetle_diyakritik(rapor, dosyalar, kurallar):
             # ayiriyordu.
             anahtar = diyakritiksiz(tr_kucult(k))
             gruplar[anahtar][tr_kucult(k)] += 1
-            nerede[anahtar].add(ad)
+            nerede[anahtar].add(bolum_anahtari(ad))
 
     # Eşadlılar (adet/âdet, resmi/resmî, tarihi/tarihî, kar/kâr ...) İKİ
     # AYRI KELİMEDİR, bir kelimenin iki yazımı değil: "sekiz adet banknot" ile
@@ -346,6 +421,7 @@ def denetle_diyakritik(rapor, dosyalar, kurallar):
     # yani ikinci bir liste tutulmaz; bağlamıyla okumak için sapka --elle.
     try:
         from sapka import ESADLI, NISBET
+
         esadli = {tr_kucult(k) for k in (*ESADLI, *NISBET)}
     except Exception:  # sapka yoksa eski davranış
         esadli = set()
@@ -376,7 +452,7 @@ def denetle_diyakritik(rapor, dosyalar, kurallar):
         )
 
 
-def denetle_kesme(rapor, dosyalar):
+def denetle_kesme(rapor, dosyalar, basliklar=None):
     """
     Karisik kesme isareti.
 
@@ -384,45 +460,48 @@ def denetle_kesme(rapor, dosyalar):
     neredeyse ayni gorunur, yani "10 dosyada karisik" bilgisiyle insan
     onlari elle bulamaz. Azinlikta olan bicimin HER GECISI satir numarasiyla
     raporlanir; boylece dogrudan o satira gidilebilir.
+
+    Baslik kendi bolumuyle BIRLIKTE sayilir: govde kivrik, baslik duz ise
+    tek basina bakilan iki birim de "temiz" gorunur ama okur ayni sayfada
+    iki ayri kesme gorur.
     """
+    basliklar = basliklar or {}
     for ad, metin in sorted(dosyalar.items()):
-        kivrik = metin.count(KIVRIK)
-        duz = metin.count(DUZ)
+        b_ad = ad + BASLIK_EK
+        baslik = basliklar.get(b_ad, "")
+        kivrik = metin.count(KIVRIK) + baslik.count(KIVRIK)
+        duz = metin.count(DUZ) + baslik.count(DUZ)
         if not (kivrik and duz):
             continue
         azinlik = KIVRIK if kivrik <= duz else DUZ
         adi = "kıvrık ’" if azinlik == KIVRIK else "düz '"
         hedef = "düz '" if azinlik == KIVRIK else "kıvrık ’"
+        adet = metin.count(azinlik) + baslik.count(azinlik)
         rapor.ekle(
             "kesme",
             ad,
             0,
             azinlik,
-            f"karışık kesme: düz ×{duz}, kıvrık ×{kivrik} — "
-            f"azınlık {adi}, {len(metin.split(azinlik)) - 1} yerde",
+            f"karışık kesme (başlık dahil): düz ×{duz}, kıvrık ×{kivrik} — "
+            f"azınlık {adi}, {adet} yerde",
             agirlik="uyari",
         )
-        for m in re.finditer(re.escape(azinlik), metin):
-            rapor.ekle(
-                "kesme",
-                ad,
-                satir_no(metin, m.start()),
-                azinlik,
-                f"{adi} → {hedef}",
-                baglam(metin, m.start(), m.end(), 40),
-                agirlik="uyari",
-            )
+        for birim, yazi in ((b_ad, baslik), (ad, metin)):
+            for m in re.finditer(re.escape(azinlik), yazi):
+                rapor.ekle(
+                    "kesme",
+                    birim,
+                    satir_no(yazi, m.start()),
+                    azinlik,
+                    f"{adi} → {hedef}",
+                    baglam(yazi, m.start(), m.end(), 40),
+                    agirlik="uyari",
+                )
 
 
 def denetle_ek_uyumu(rapor, dosyalar, kurallar=None):
     """
     Özel adlara gelen eklerin ünlü uyumu.
-
-    ÇOĞUNLUK HER ZAMAN DOĞRU DEĞİLDİR. "Alger" son hecesinde ön ünlü taşır,
-    yani doğru ek "-in"dir; metinde 6 kez "Alger'ın", 3 kez "Alger'in" geçiyor
-    — yani azınlıkta olan biçim doğru olandır. Bu yüzden kural dosyasındaki
-    "ozel_adlar" bölümü doğru eki ELLE bildirebilir. Bildirmezse araç
-    çoğunluğa bakar ama bunu bir TAHMİN olarak işaretler (uyarı, hata değil).
     """
     ayar = (kurallar or {}).get("ozel_adlar", {}) or {}
     adlar = list(ayar) or [
@@ -441,14 +520,15 @@ def denetle_ek_uyumu(rapor, dosyalar, kurallar=None):
         ("ın", "in", "un", "ün"),
         ("a", "e"),
         ("ı", "i", "u", "ü"),
-        ("dan", "den"),
-        ("da", "de"),
+        ("dan", "den", "tan", "ten"),
+        ("da", "de", "ta", "te"),
         ("nın", "nin"),
     ]
 
     for ad_ozel in adlar:
         dogrular = set((ayar.get(ad_ozel) or {}).get("dogru_ekler") or [])
         bicimler: dict[str, list] = defaultdict(list)
+
         for ad, metin in sorted(dosyalar.items()):
             for m in re.finditer(rf"{ad_ozel}['{KIVRIK}]([{TR_HARF}]+)", metin):
                 bicimler[m.group(1)].append(
@@ -457,14 +537,19 @@ def denetle_ek_uyumu(rapor, dosyalar, kurallar=None):
 
         for aile in aileler:
             mevcut = [e for e in aile if e in bicimler]
-            if len(mevcut) < 2:
+            if not mevcut:
                 continue
+
             sayim = {e: len(bicimler[e]) for e in mevcut}
 
-            if dogrular & set(mevcut):
-                hedef = sorted(dogrular & set(mevcut))[0]
+            hedef_kumesi = dogrular & set(aile)
+
+            if hedef_kumesi:
+                hedef = sorted(hedef_kumesi)[0]
                 aciklama, agirlik = "kural dosyasında tanımlı", "hata"
             else:
+                if len(mevcut) < 2:
+                    continue
                 hedef = max(sayim, key=sayim.get)
                 aciklama, agirlik = "çoğunluk — TAHMİN, doğrulayın", "uyari"
 
@@ -477,8 +562,7 @@ def denetle_ek_uyumu(rapor, dosyalar, kurallar=None):
                         dosya,
                         satir,
                         f"{ad_ozel}'{ek}",
-                        f"“{ad_ozel}'{ek}” → “{ad_ozel}'{hedef}”  "
-                        f"({aciklama}; sayım {sayim})",
+                        f"“{ad_ozel}'{ek}” → “{ad_ozel}'{hedef}”  ({aciklama}; sayım {sayim})",
                         ctx,
                         agirlik=agirlik,
                     )
@@ -503,29 +587,21 @@ def anakronizm_kurallari(kurallar) -> list:
 
 def kaynak_metinleri(dosyalar) -> dict:
     """
-    {dosya_adi: Cince govde}. lotm ya da ham metinler yoksa BOS doner ve
-    denetim bugunku (kaynaksiz) davranisina duser.
-
-    lint/ bir alt klasor; lotm.py bir ust dizinde.
+    {dosya_adi: Cince govde}. Ham metinler yoksa BOS doner ve denetim
+    bugunku (kaynaksiz) davranisina duser. Baslik birimleri ("…:başlık")
+    kendi bolumlerinin Cincesini alir.
     """
-    import sys as _sys
-    from pathlib import Path as _P
-
-    _sys.path.insert(0, str(_P(__file__).resolve().parent.parent))
     try:
-        import lotm
-
         zh = lotm.bolum_sozlugu(lotm.bolumler_zh())
     except Exception:
         return {}
 
     out = {}
     for ad in dosyalar:
-        m = re.search(r"(\d+)", ad)
-        if m:
-            b = zh.get(int(m.group(1)))
-            if b:
-                out[ad] = b.metin
+        no = bolum_numarasi(ad)
+        b = zh.get(no) if no is not None else None
+        if b:
+            out[ad] = b.metin
     return out
 
 
@@ -607,7 +683,9 @@ def denetle_register(rapor, dosyalar, kurallar):
         kelime_sayisi = len(metin.split())
         if not kelime_sayisi:
             continue
-        yogunluk = len(desen.findall(diyakritiksiz(tr_kucult(metin)))) * 1000 / kelime_sayisi
+        yogunluk = (
+            len(desen.findall(diyakritiksiz(tr_kucult(metin)))) * 1000 / kelime_sayisi
+        )
         olcum[ad] = round(yogunluk, 1)
         if yogunluk > ust:
             rapor.ekle(
@@ -653,7 +731,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(
         description="LotM Türkçe çevirisi tutarlılık denetleyicisi"
     )
-    ap.add_argument("bolumler", nargs="+", help="bölüm .md dosyaları")
+    ap.add_argument("bolumler", nargs="+", help="bölüm .md dosyaları ya da klasörü")
     ap.add_argument("--sozluk", type=Path, default=Path("sozluk.yml"))
     ap.add_argument("--kurallar", type=Path, default=Path("lint-kurallari.yml"))
     ap.add_argument("--sadece", default="", help=f"virgülle: {','.join(DENETIMLER)}")
@@ -673,30 +751,34 @@ def main() -> int:
     )
     terimler = sozluk_terimleri(args.sozluk) if args.sozluk.exists() else {}
 
-    dosyalar = {}
-    for y in args.bolumler:
-        p = Path(y)
-        dosyalar[p.name] = govde_metni(p.read_text(encoding="utf-8"))
+    try:
+        dosyalar, basliklar = bolumleri_yukle(args.bolumler)
+    except (FileNotFoundError, OSError) as e:
+        sys.exit(f"HATA: {e}")
+    if not dosyalar:
+        sys.exit("HATA: okunacak bölüm bulunamadı")
+    # Dil denetimleri gövdeye VE başlığa bakar; ölçümler yalnızca gövdeye.
+    metinler = {**dosyalar, **basliklar}
 
     secili = set(args.sadece.split(",")) if args.sadece else set(DENETIMLER)
     rapor = Rapor()
 
     if "varyant" in secili:
-        denetle_varyant(rapor, dosyalar, kurallar)
+        denetle_varyant(rapor, metinler, kurallar)
     if "yasakli" in secili:
-        denetle_yasakli(rapor, dosyalar, kurallar)
+        denetle_yasakli(rapor, metinler, kurallar)
     if "diyakritik" in secili:
-        denetle_diyakritik(rapor, dosyalar, kurallar)
+        denetle_diyakritik(rapor, metinler, kurallar)
     if "kesme" in secili:
-        denetle_kesme(rapor, dosyalar)
+        denetle_kesme(rapor, dosyalar, basliklar)
     if "ek-uyumu" in secili:
-        denetle_ek_uyumu(rapor, dosyalar, kurallar)
+        denetle_ek_uyumu(rapor, metinler, kurallar)
     if "anakronizm" in secili:
         denetle_anakronizm(
             rapor,
-            dosyalar,
+            metinler,
             kurallar,
-            kaynak_metinleri(dosyalar) if args.kaynak else None,
+            kaynak_metinleri(metinler) if args.kaynak else None,
         )
     if "register" in secili:
         denetle_register(rapor, dosyalar, kurallar)
@@ -720,7 +802,9 @@ def main() -> int:
     for b in rapor.bulgular:
         gruplu[b.kural].append(b)
 
-    for kural in DENETIMLER:
+    # DENETIMLER'de olmayan bir kural adi (yazim farki) bulgularini
+    # gizlememeli: sona eklenir, sessizce dusmez.
+    for kural in DENETIMLER + sorted(set(gruplu) - set(DENETIMLER)):
         if kural not in gruplu:
             continue
         blok = gruplu[kural]
@@ -745,7 +829,10 @@ def main() -> int:
 
     hata = sum(1 for b in rapor.bulgular if b.agirlik == "hata")
     uyari = sum(1 for b in rapor.bulgular if b.agirlik == "uyari")
-    print(f"\n{'═' * 72}\n{hata} hata, {uyari} uyarı — {len(dosyalar)} bölüm\n")
+    print(
+        f"\n{'═' * 72}\n{hata} hata, {uyari} uyarı — {len(dosyalar)} bölüm"
+        f" ({len(basliklar)} başlık)\n"
+    )
     return 1 if hata else 0
 
 

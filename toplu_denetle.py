@@ -25,6 +25,14 @@ hizalanirsa hizalansin ayni sonucu verir. Bu yuzden burada dongu ters:
 42 hizalama, 381*42 degil. Terim basina kalan is yalnizca bir regex
 taramasi, ki o da once ham bolum metninde ucuz bir on elemeden geciyor.
 
+HIZALAMA ONBELLEGI
+------------------
+Hizalama ayrica DISKTE onbelleklenir (.hizalama_onbellek/, LOTM_ONBELLEK ile
+degistirilebilir) ve LAZY'dir: bir bolum yalnizca icinde aranan terim gecerse
+hizalanir. Anahtar; bolumun iki metni, hizalama kodu (bolum.py,
+hizalama_denetle.py, capa.py) ve sozluk dosyalarinin icerigidir. Bir bolumu
+duzenlerseniz yalnizca o bolum yeniden hizalanir. --yenile onbellegi siler.
+
 Kullanim:
     toplu_denetle.py                        EN -> TR, butun sozluk
     toplu_denetle.py --kaynak zh            Cinceden (yalnizca cince'si olanlar)
@@ -32,13 +40,19 @@ Kullanim:
     toplu_denetle.py --en-az 3              3'ten az gecisi olanlari atla
     toplu_denetle.py --format tsv > kuyruk.tsv
     toplu_denetle.py --ayrinti "Aşkın"      tek terimin eslesmeyenlerini yaz
+    toplu_denetle.py --yenile               hizalama onbellegini sil
 """
 
 from __future__ import annotations
 
 import argparse
+import functools
+import hashlib
+import os
+import pickle
 import re
 import sys
+from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 from collections import Counter, defaultdict
 
@@ -47,19 +61,40 @@ import bolum as B
 import ceviri_denetle as CD
 import hizalama_denetle as HD
 import capa as _capa
+from yayim_denetle import gecis_bolumu
+import turkce
 
 _CAPA_SOZLUGU = _capa.sozluk_yukle()
+
+ONBELLEK_DIZINI = Path(os.environ.get("LOTM_ONBELLEK", ".hizalama_onbellek"))
 
 
 # --------------------------------------------------------------- hizalama
 
 
-def hizalama_onbellegi(kaynak: str, hedef: str, aralik):
+@functools.lru_cache(maxsize=None)
+def _kod_izi() -> str:
     """
-    Ortak bolumleri BIR KEZ hizalar.
+    Onbellek anahtarinin 'kod ve girdi' kismi.
 
-    Doner: {bolum_no: (k_ham, k_par, h_par, nereye)}
-      k_ham   ham kaynak metin -- terim basina ucuz on eleme icin
+    Hizalama sozlukten YALNIZCA capa ciftleri (zh, tr) uzerinden etkilenir;
+    eski_karsiliklar, notlar, bolum_siniri duzenlemeleri onbellegi bozmaz.
+    capa.py'nin kullandigi lotm.desen_kur / zh_desen koddur, o yuzden lotm.py
+    de anahtarda.
+    """
+    h = hashlib.sha1()
+    for m in (B, HD, _capa, lotm, turkce):
+        h.update(Path(m.__file__).read_bytes())
+    h.update(repr(sorted(_CAPA_SOZLUGU.items())).encode())
+    h.update(repr([(z, tr) for z, tr, *_ in _capa.terim_capalari()]).encode())
+    return h.hexdigest()
+
+
+def _hizala_bolum(k_par, h_par, kaynak, hedef):
+    """
+    Tek bolumun hizalamasi. Doner: (nereye, kayan).
+    Saf fonksiyon: surec havuzunda calisabilir.
+
       nereye  {kaynak paragraf indisi: [hedef paragraf indisleri]}
       kayan   hizalamanin kaydigi kaynak paragraf indisleri
 
@@ -72,6 +107,91 @@ def hizalama_onbellegi(kaynak: str, hedef: str, aralik):
     birlestirmiyor. Yani kaynaga bakan hicbir kural bunu onceden bilemez ve
     hizalayici kimi yerde kacinilmaz olarak kayacaktir.
     Cozum kaymayi ortadan kaldirmak degil, KARANTINAYA ALMAK.
+    """
+    capalar = set(_capa.capa_bul(k_par, h_par, _CAPA_SOZLUGU))
+    gruplar = B.hizala(k_par, h_par, capalar)
+    nereye, grup_no = {}, {}
+    for g, (ia, ib) in enumerate(gruplar):
+        for j in ia:
+            nereye[j] = ib
+            grup_no[j] = g
+    rapor = HD.bolumu_denetle(k_par, h_par, gruplar, k_dil=kaynak, h_dil=hedef)
+    supheli = {g for bas, son in rapor["kaymalar"] for g in range(bas, son + 1)}
+    kayan = {j for j, g in grup_no.items() if g in supheli}
+    return nereye, kayan
+
+
+def _hizala_is(args):
+    return _hizala_bolum(*args)
+
+
+class HizalanmisBolum:
+    """
+    Metinler hemen yuklenir; hizalama ilk gerektiginde hesaplanir (ya da
+    diskten okunur).
+    """
+
+    def __init__(self, no, kaynak, hedef, k_ham, h_ham, k_par, h_par):
+        self.no, self.kaynak, self.hedef = no, kaynak, hedef
+        self.k_ham, self.k_par, self.h_par = k_ham, k_par, h_par
+        self._sonuc = None
+        ozet = hashlib.sha1(
+            "\0".join((_kod_izi(), kaynak, hedef, k_ham, h_ham)).encode()
+        ).hexdigest()
+        self._yol = ONBELLEK_DIZINI / f"{kaynak}-{hedef}-{no}-{ozet[:16]}.pkl"
+
+    def diskte_var(self):
+        return self._yol.exists()
+
+    def ayarla(self, sonuc):
+        self._sonuc = sonuc
+        ONBELLEK_DIZINI.mkdir(exist_ok=True)
+        gecici = self._yol.with_suffix(".tmp")
+        gecici.write_bytes(pickle.dumps(sonuc))
+        gecici.replace(self._yol)  # yarim yazilmis dosya kalmasin
+        # bu bolumun eski surumlerini temizle
+        for eski in self._yol.parent.glob(
+            f"{self.kaynak}-{self.hedef}-{self.no}-*.pkl"
+        ):
+            if eski != self._yol:
+                eski.unlink(missing_ok=True)
+
+    @property
+    def hizalama(self):
+        if self._sonuc is None:
+            if self._yol.exists():
+                self._sonuc = pickle.loads(self._yol.read_bytes())
+            else:
+                self.ayarla(
+                    _hizala_bolum(self.k_par, self.h_par, self.kaynak, self.hedef)
+                )
+        return self._sonuc
+
+
+def hepsini_hizala(onbellek, isci=None):
+    """
+    Diskte olmayan hizalamalari hesapla (tam tarama icin). Cok eksik varsa
+    birden cok cekirdekte; az ise tek surecte (havuz kurmak daha pahali).
+    """
+    eksik = [b for b in onbellek.values() if not b.diskte_var()]
+    if not eksik:
+        return
+    print(f"{len(eksik)} bolum hizalanacak...", file=sys.stderr)
+    if len(eksik) <= 3:
+        for b in eksik:
+            b.hizalama  # lazy hesaplar ve diske yazar
+        return
+    isler = [(b.k_par, b.h_par, b.kaynak, b.hedef) for b in eksik]
+    with ProcessPoolExecutor(isci) as ex:
+        for b, sonuc in zip(eksik, ex.map(_hizala_is, isler)):
+            b.ayarla(sonuc)
+
+
+def hizalama_onbellegi(kaynak: str, hedef: str, aralik):
+    """
+    Ortak bolumleri yukler. Hizalama LAZY'dir (bkz. HizalanmisBolum).
+
+    Doner: {bolum_no: HizalanmisBolum}
     """
     yukle = {"zh": lotm.bolumler_zh, "en": lotm.bolumler_en, "tr": lotm.bolumler_tr}
 
@@ -95,30 +215,18 @@ def hizalama_onbellegi(kaynak: str, hedef: str, aralik):
     h_baslik = B.KAYNAKLAR[hedef][2]
 
     onbellek = {}
-    for i, no in enumerate(ortak, 1):
-        print(f"\rhizalaniyor: {i}/{len(ortak)} (bolum {no})", end="", file=sys.stderr)
-        k_ham = k_bolumler[no].metin
-        k_par = B.paragraflar(k_ham, k_baslik)
-        h_par = B.paragraflar(h_bolumler[no].metin, h_baslik)
-        capalar = set(_capa.capa_bul(k_par, h_par, _CAPA_SOZLUGU))
-        gruplar = B.hizala(k_par, h_par, capalar)
-        nereye, grup_no = {}, {}
-        for g, (ia, ib) in enumerate(gruplar):
-            for j in ia:
-                nereye[j] = ib
-                grup_no[j] = g
-
-        rapor = HD.bolumu_denetle(k_par, h_par, gruplar, k_dil=kaynak, h_dil=hedef)
-        supheli_gruplar = {
-            g for bas, son in rapor["kaymalar"] for g in range(bas, son + 1)
-        }
-        kayan = {j for j, g in grup_no.items() if g in supheli_gruplar}
-
-        onbellek[no] = (k_ham, k_par, h_par, nereye, kayan)
-    print(
-        f"\r{len(ortak)} bolum hizalandi ({ortak[0]}-{ortak[-1]}).{' ' * 20}",
-        file=sys.stderr,
-    )
+    for no in ortak:
+        k_ham, h_ham = k_bolumler[no].metin, h_bolumler[no].metin
+        onbellek[no] = HizalanmisBolum(
+            no,
+            kaynak,
+            hedef,
+            k_ham,
+            h_ham,
+            B.paragraflar(k_ham, k_baslik),
+            B.paragraflar(h_ham, h_baslik),
+        )
+    print(f"{len(ortak)} bolum yuklendi ({ortak[0]}-{ortak[-1]}).", file=sys.stderr)
     return onbellek
 
 
@@ -156,7 +264,9 @@ def harf_duyarli_mi(t) -> bool:
     return t.kategori != "Temel Kavramlar"
 
 
-def sweep_terimleri(kaynak: str, hedef: str, en_kisa: int = 4, kelimeler: str = "dahil"):
+def sweep_terimleri(
+    kaynak: str, hedef: str, en_kisa: int = 4, kelimeler: str = "dahil"
+):
     """
     Sozlukten (sorgu, terim, adaylar, duyarli) uretir.
 
@@ -184,8 +294,12 @@ def sweep_terimleri(kaynak: str, hedef: str, en_kisa: int = 4, kelimeler: str = 
         # Bu parcalar atilir; hic parca kalmazsa terim atlananlara sayilir.
         # Kose parantezle yazilmis tek karakter (「镑」) kasitlidir, kalir.
         if kaynak == "zh" and sorgu:
-            sorgu = "/".join(p for p in sorgu.split("/")
-                             if len(p.strip()) > 1 or t.zh_kesin) or None
+            sorgu = (
+                "/".join(
+                    p for p in sorgu.split("/") if len(p.strip()) > 1 or t.zh_kesin
+                )
+                or None
+            )
         # Ingilizce: en_arama_adi verilmisse metinde ARANAN adlar onlardir
         # (bkz. lotm.Terim). Eskiden yalnizca etiket aranirdi; "Heart and
         # Mind Body" metinde hic gecmedigi icin Dimağ Beden tabloda hic
@@ -266,19 +380,24 @@ def kaynak_deseni(sorgu, kaynak, duyarsiz):
         # bayrak bu yuzden tek tek desenlerden degil duyarsiz'dan gelir.
         parcalar = [p.strip() for p in sorgu.split("/") if p.strip()]
         return re.compile(
-            "|".join(f"(?:{CD.desen_kur_kaynak(p, kaynak, duyarsiz).pattern})" for p in parcalar),
+            "|".join(
+                f"(?:{CD.desen_kur_kaynak(p, kaynak, duyarsiz).pattern})"
+                for p in parcalar
+            ),
             re.IGNORECASE if duyarsiz else 0,
         )
     return CD.desen_kur_kaynak(sorgu, kaynak, duyarsiz)
 
 
 def terimi_tara(sorgu, adaylar, onbellek, kaynak, hedef, duyarsiz, desen=None):
-    """Tek terim, onceden hizalanmis bolumler uzerinde. tara()'nin ucuzu."""
+    """Tek terim, onceden yuklenmis bolumler uzerinde. tara()'nin ucuzu."""
     desen = desen or kaynak_deseni(sorgu, kaynak, duyarsiz)
     vuruslar = []
-    for no, (k_ham, k_par, h_par, nereye, kayan) in onbellek.items():
-        if not desen.search(k_ham):  # on eleme: bolumlerin cogu eler
+    for no, b in onbellek.items():
+        if not desen.search(b.k_ham):  # on eleme: hizalama bile tetiklenmez
             continue
+        nereye, kayan = b.hizalama  # lazy: ilk vurusta hesaplanir / diskten gelir
+        k_par, h_par = b.k_par, b.h_par
         for i, p in enumerate(k_par):
             if not desen.search(p):
                 continue
@@ -295,11 +414,21 @@ def terimi_tara(sorgu, adaylar, onbellek, kaynak, hedef, duyarsiz, desen=None):
             ib = list(nereye.get(i, []))
             komsu = []
             if ib:
-                komsu = [j for j in (min(ib) - 1, max(ib) + 1)
-                         if 0 <= j < len(h_par) and j not in ib]
+                komsu = [
+                    j
+                    for j in (min(ib) - 1, max(ib) + 1)
+                    if 0 <= j < len(h_par) and j not in ib
+                ]
             vuruslar.append(
-                CD.vurus_kur(no, p, h_par, ib + komsu, ib_dar=ib,
-                             genis="komsu" if komsu else None, kayan=i in kayan)
+                CD.vurus_kur(
+                    no,
+                    p,
+                    h_par,
+                    ib + komsu,
+                    ib_dar=ib,
+                    genis="komsu" if komsu else None,
+                    kayan=i in kayan,
+                )
             )
     if vuruslar:
         CD.siniflandir(vuruslar, adaylar, hedef, kesif=False)
@@ -374,7 +503,11 @@ def satir_yaz(kayitlar, genislik=100):
 
 
 def ayrinti_yaz(kayit, ust=15, arka_plan=None, elenen=None):
-    yer = f"   [{kayit['kategori']}]" if str(kayit.get("kategori", "")).startswith(lotm.KELIME_KATEGORI) else ""
+    yer = (
+        f"   [{kayit['kategori']}]"
+        if str(kayit.get("kategori", "")).startswith(lotm.KELIME_KATEGORI)
+        else ""
+    )
     print(f"\n{'═' * 72}\n{kayit['terim']}  ←  {kayit['sorgu']}{yer}\n{'═' * 72}")
     print(
         f"{kayit['toplam']} geçiş, {len(kayit['eslesmeyen'])} eşleşmeyen, "
@@ -399,13 +532,18 @@ def ayrinti_yaz(kayit, ust=15, arka_plan=None, elenen=None):
     if len(kayit["eslesmeyen"]) > ust:
         print(f"  ... {len(kayit['eslesmeyen']) - ust} tane daha")
     if zh_mi and kayit["eslesmeyen"]:
-        CD.zh_bilesik_yaz(CD.zh_bilesik_raporu(kayit["eslesmeyen"], desen, arka_plan,
-                                               dil=kayit.get("hedef", "tr")))
+        CD.zh_bilesik_yaz(
+            CD.zh_bilesik_raporu(
+                kayit["eslesmeyen"], desen, arka_plan, dil=kayit.get("hedef", "tr")
+            )
+        )
     if kayit.get("komsu"):
         print("  komşuda bulunanlar (paragraf yapısı farkı mı, başka cümle mi?):")
         for v in kayit["komsu"][:ust]:
             ozet = re.sub(r"\s+", " ", v["hedef_metin_dar"])[:70] or "(boş)"
-            print(f"  [bölüm {v['bolum']}] {', '.join(v['bulunan'])}  <- hizalanan: {ozet}")
+            print(
+                f"  [bölüm {v['bolum']}] {', '.join(v['bulunan'])}  <- hizalanan: {ozet}"
+            )
 
 
 def bilesik_ipucu_yaz(kayitlar, en_az=3, pay=0.25):
@@ -430,12 +568,16 @@ def bilesik_ipucu_yaz(kayitlar, en_az=3, pay=0.25):
         satirlar.append((k, ipuclari, len(kapsanan)))
     if not satirlar:
         return
-    print("\nEşleşmeyenleri sözlükte kayıtlı olmayan bir Çince bileşikte yoğunlaşan terimler")
-    print("(oranları yanıltıcı olabilir; ayrıntı için --ayrinti \"<terim>\"):")
+    print(
+        "\nEşleşmeyenleri sözlükte kayıtlı olmayan bir Çince bileşikte yoğunlaşan terimler"
+    )
+    print('(oranları yanıltıcı olabilir; ayrıntı için --ayrinti "<terim>"):')
     for k, ipuclari, kapsanan in sorted(satirlar, key=lambda s: -s[2]):
         dokum = ", ".join(f"{d}×{n}" for d, n, _vs in ipuclari)
-        print(f"  {_ad(k)} ← {k['sorgu']}: {dokum}  "
-              f"({len(k['eslesmeyen'])} eşleşmeyenin {kapsanan}'i)")
+        print(
+            f"  {_ad(k)} ← {k['sorgu']}: {dokum}  "
+            f"({len(k['eslesmeyen'])} eşleşmeyenin {kapsanan}'i)"
+        )
 
 
 def tsv_yaz(kayitlar):
@@ -452,24 +594,20 @@ def tsv_yaz(kayitlar):
 # --------------------------------------------------------------- ana
 
 
-def kesin_gecisler(yol=None) -> dict:
-    """lotm.kesin_gecisler (lint ve yayim_denetle ile ayni okuma)."""
-    return lotm.kesin_gecisler(yol)
-
-
 def eski_ozeti(vuruslar, sayim, eski, gecis=None):
     """
-    (eski_gorulen, eski_sayim). Kesin gecis varsa yalnizca gecis
-    bolumunden itibaren bulunan eski bicimler sayilir.
+    (eski_gorulen, eski_sayim). Gecis bolumu varsa (bolum_siniri, bkz.
+    yayim_denetle.gecis_bolumu) yalnizca o bolumden itibaren bulunan eski
+    bicimler sayilir.
     """
     if not gecis:
         g = {a for a in sayim if a in eski}
         return g, {a: sayim[a] for a in g}
-    kesit = gecis[0]
+    kesit = gecis
     sonra = defaultdict(int)
     for v in vuruslar:
         if v.get("bolum") is not None and v["bolum"] >= kesit:
-            for ad in (v.get("bulunan_dar") or v.get("bulunan") or []):
+            for ad in v.get("bulunan_dar") or v.get("bulunan") or []:
                 if ad in eski:
                     sonra[ad] += 1
     return set(sonra), dict(sonra)
@@ -497,8 +635,11 @@ def isleri_kur(kaynak: str, hedef: str, kelimeler: str = "dahil"):
     # Hic taranamayan: ne Cince ne Ingilizce anahtari olan. Ayni filtreyle
     # sozlugu bir kez daha sayariz; sweep'in kendi "atlanan"i tek dil icindir.
     taranan = zh_anahtar | {(t.tr, t.kategori) for _s, t, *_ in en_kalan}
-    tum = {(t.tr, t.kategori) for t in lotm.sozluk_yukle(kelimeler=(kelimeler != "haric")).terimler
-           if kelimeler != "yalniz" or t.kategori.startswith(lotm.KELIME_KATEGORI)}
+    tum = {
+        (t.tr, t.kategori)
+        for t in lotm.sozluk_yukle(kelimeler=(kelimeler != "haric")).terimler
+        if kelimeler != "yalniz" or t.kategori.startswith(lotm.KELIME_KATEGORI)
+    }
     isler = [("zh", *x) for x in zh] + [("en", *x) for x in en_kalan]
     return _tekillestir(isler), len(tum - taranan)
 
@@ -510,9 +651,11 @@ def _tekillestir(isler: list) -> list:
     words.md'den Cinceyle). Terim basina TEK satir kalir: Cince anahtarla
     taranan once gelir (kesin), esitlikte sozluk words.md'ye tercih edilir.
     """
+
     def oncelik(is_):
         kaynak, _s, t, *_ = is_
         return (kaynak != "zh", t.kategori.startswith(lotm.KELIME_KATEGORI))
+
     secilen = {}
     for is_ in sorted(isler, key=oncelik):
         secilen.setdefault(lotm.tr_kucult(is_[2].tr), is_)
@@ -524,7 +667,9 @@ def main() -> int:
         description="Sozlugun tamamini yayimlanmis metne karsi tarar."
     )
     ap.add_argument(
-        "--kaynak", choices=("zh", "en", "ikisi"), default="en",
+        "--kaynak",
+        choices=("zh", "en", "ikisi"),
+        default="en",
         help="ikisi: Cincesi olan terim Cince, olmayan Ingilizce anahtarla (zincir bunu kullanir)",
     )
     ap.add_argument("--hedef", choices=("tr", "en", "zh"), default="tr")
@@ -546,12 +691,20 @@ def main() -> int:
         "--ayrinti", default=None, help="tek terimin eslesmeyenlerini ayrintili yaz"
     )
     ap.add_argument(
-        "--kelimeler", choices=("dahil", "haric", "yalniz"), default="dahil",
+        "--kelimeler",
+        choices=("dahil", "haric", "yalniz"),
+        default="dahil",
         help="words.md maddeleri: dahil (varsayilan), haric, ya da yalniz onlar",
     )
     ap.add_argument("--format", choices=("tablo", "tsv"), default="tablo")
-    ap.add_argument("--kurallar", default=None,
-                    help="lint-kurallari.yml (kesin_gecis icin); varsayilan: lint/ altinda")
+    ap.add_argument(
+        "--yenile",
+        action="store_true",
+        help="hizalama onbellegini sil ve sifirdan hesapla",
+    )
+    # Gecis bolumu artik sozluk.yml'den (bolum_siniri) okunuyor. Arguman
+    # yalnizca calistir.sh gibi eski cagrilar bozulmasin diye kabul edilir.
+    ap.add_argument("--kurallar", default=None, help=argparse.SUPPRESS)
     ap.add_argument("--genislik", type=int, default=None)
     a = ap.parse_args()
 
@@ -562,18 +715,33 @@ def main() -> int:
     if a.kaynak == a.hedef:
         sys.exit("kaynak ve hedef ayni olamaz")
 
+    if a.yenile and ONBELLEK_DIZINI.exists():
+        for f in ONBELLEK_DIZINI.glob("*.pkl"):
+            f.unlink(missing_ok=True)
+
     terimler, atlanan = isleri_kur(a.kaynak, a.hedef, a.kelimeler)
+    # --ayrinti: yalnizca istenen terim taranir; bolumler de yalnizca o
+    # terimin gectigi yerde hizalanir (bkz. HizalanmisBolum).
+    if a.ayrinti:
+        q = lotm.tr_kucult(a.ayrinti)
+        terimler = [x for x in terimler if q in lotm.tr_kucult(x[2].tr)]
     kullanilan = sorted({k for k, *_ in terimler})
-    onbellekler = {k: hizalama_onbellegi(k, a.hedef, CD.bolum_araligi(a.bolum))
-                   for k in kullanilan}
-    dokum = ", ".join(f"{sum(1 for k, *_ in terimler if k == x)} {x}" for x in kullanilan)
+    onbellekler = {
+        k: hizalama_onbellegi(k, a.hedef, CD.bolum_araligi(a.bolum)) for k in kullanilan
+    }
+    # Tam taramada hizalamalar bastan, cok cekirdekte hesaplanir.
+    if not a.ayrinti:
+        for ob in onbellekler.values():
+            hepsini_hizala(ob)
+    dokum = ", ".join(
+        f"{sum(1 for k, *_ in terimler if k == x)} {x}" for x in kullanilan
+    )
     print(
         f"{len(terimler)} terim taranacak ({dokum})"
         f"{f'; {atlanan} tanesi anahtarı olmadığı için atlandı' if atlanan else ''}",
         file=sys.stderr,
     )
 
-    gecisler = kesin_gecisler(a.kurallar)
     kayitlar = []
     for i, (kaynak, sorgu, t, adaylar, duyarli, eski) in enumerate(terimler, 1):
         print(f"\rtaraniyor: {i}/{len(terimler)}", end="", file=sys.stderr)
@@ -581,13 +749,15 @@ def main() -> int:
         # birakilir (bkz. harf_duyarli_mi).
         duyarsiz = a.duyarsiz or not duyarli
         desen = kaynak_deseni(sorgu, kaynak, duyarsiz)
-        vuruslar = terimi_tara(sorgu, adaylar, onbellekler[kaynak], kaynak, a.hedef, duyarsiz,
-                               desen=desen)
+        vuruslar = terimi_tara(
+            sorgu, adaylar, onbellekler[kaynak], kaynak, a.hedef, duyarsiz, desen=desen
+        )
         if len(vuruslar) < a.en_az:
             continue
         sayim, eslesmeyen, karantina, tek, komsu = ozetle(vuruslar)
-        eski_g, eski_s = eski_ozeti(vuruslar, sayim, eski,
-                                    gecisler.get(lotm.tr_kucult(t.tr)) if a.hedef == "tr" else None)
+        eski_g, eski_s = eski_ozeti(
+            vuruslar, sayim, eski, gecis_bolumu(t) if a.hedef == "tr" else None
+        )
         kayitlar.append(
             {
                 "terim": t.tr,
@@ -617,8 +787,7 @@ def main() -> int:
     print(f"\r{len(kayitlar)} terim metinde geçiyor.{' ' * 20}", file=sys.stderr)
 
     if a.ayrinti:
-        q = lotm.tr_kucult(a.ayrinti)
-        bulunan = [k for k in kayitlar if q in lotm.tr_kucult(k["terim"])]
+        bulunan = list(kayitlar)  # terimler zaten ayrinti sorgusuna gore suzuldu
         if not bulunan:
             sys.exit(f"'{a.ayrinti}' taramada geçmiyor")
         for k in bulunan:
@@ -627,9 +796,15 @@ def main() -> int:
                 ob = onbellekler["zh"]
                 # Kesif icin arka plan: taranan bolumlerin butun hedef
                 # paragraflari (kume paragraflari zh_bilesik_raporu'nda cikarilir).
-                arka = [p for _kh, _kp, h_par, _n, _ky in ob.values() for p in h_par]
-                elenen = sum((CD.zh_elenenler(p.strip(), [kh for kh, *_ in ob.values()])
-                              for p in k["sorgu"].split("/") if p.strip()), Counter())
+                arka = [p for b in ob.values() for p in b.h_par]
+                elenen = sum(
+                    (
+                        CD.zh_elenenler(p.strip(), [b.k_ham for b in ob.values()])
+                        for p in k["sorgu"].split("/")
+                        if p.strip()
+                    ),
+                    Counter(),
+                )
             ayrinti_yaz(k, arka_plan=arka, elenen=elenen)
         return 0
 
@@ -641,11 +816,15 @@ def main() -> int:
         bilesik_ipucu_yaz(kayitlar)
         temiz = sum(1 for k in kayitlar if not k["eslesmeyen"])
         eskiler = [k for k in kayitlar if k.get("eski_gorulen")]
-        print(f"\n{temiz}/{len(kayitlar)} terim tam eşleşti. "
-              f"{len(eskiler)} terimde terk edilmiş karşılık hâlâ metinde"
-              + (":" if eskiler else "."))
+        print(
+            f"\n{temiz}/{len(kayitlar)} terim tam eşleşti. "
+            f"{len(eskiler)} terimde terk edilmiş karşılık hâlâ metinde"
+            + (":" if eskiler else ".")
+        )
         for k in sorted(eskiler, key=lambda k: -sum(k["eski_sayim"].values())):
-            dokum = ", ".join(f"{a}×{k['eski_sayim'][a]}" for a in sorted(k["eski_gorulen"]))
+            dokum = ", ".join(
+                f"{a}×{k['eski_sayim'][a]}" for a in sorted(k["eski_gorulen"])
+            )
             guncel = sum(n for a, n in k["sayim"].items() if a not in k["eski_gorulen"])
             print(f"  ⚠ {k['terim']}: {dokum}  (güncel karşılık: {guncel})")
         print("Listenin başı: eski_karşılık geri doldurma sırası.")

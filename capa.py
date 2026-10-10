@@ -76,8 +76,8 @@ CAPA_DOSYASI = "capa-sozlugu.yml"
 # yani olcutte notr; hedef vakalarda Bolum 9'un iki kayik gecisini duzeltti.
 # Bu yuzden acik. Kurali gevsetmeden once ceza_tara.py ile yeniden olcun.
 TERIM_CAPALARI = True
-TERIM_TR_EN_AZ = 4      # daha kisa Turkce bas bicim capa olmaz ("Ay", "top")
-TERIM_EN_COK = 2        # bolumde bundan sik gecen terim capa olmaz
+TERIM_TR_EN_AZ = 4  # daha kisa Turkce bas bicim capa olmaz ("Ay", "top")
+TERIM_EN_COK = 2  # bolumde bundan sik gecen terim capa olmaz
 
 # Turkce'de ozel ad adayi: buyuk harfle baslayan kelime.
 # Cince'de kelime siniri YOKTUR, dolayisiyla bir desenle "kelime" aranamaz.
@@ -111,7 +111,7 @@ def capa_bul(k_par, h_par, sozluk: dict, tolerans: float = 0.06, terimler=None) 
     kez, Klein 12 kez geciyorsa k'inci gecis k'inci gecise baglanir. Temiz
     bir kuraldi ama pratikte cok az capa uretti -- Bolum 16'da 17 capa,
     aralarinda 38 paragrafliK bir bosluk.
-    
+
     Sebep Turkce'nin ozne dusurmesi. Cince her cumlede 克莱恩 der; Turkce
     ayni yerde "o" der ya da ozneyi tamamen atar. Sayilar bu yuzden bir
     bolumde neredeyse hicbir zaman TAM tutmuyor ve terim -- en degerli
@@ -217,6 +217,7 @@ def hizala_capali(k_par, h_par, sozluk: dict, hizala_fn=None) -> list:
     """
     if hizala_fn is None:
         import bolum
+
         hizala_fn = bolum.hizala
 
     capalar = capa_bul(k_par, h_par, sozluk)
@@ -227,7 +228,7 @@ def hizala_capali(k_par, h_par, sozluk: dict, hizala_fn=None) -> list:
     # Her capa kendi noktasinda bir sinirdir: capadan ONCEKI dilim
     # hizalanir, capanin kendi paragrafi 1:1 baglanir.
     for ka, ha in capalar + [(len(k_par), len(h_par))]:
-        if ka < ki or ha < hi:          # geriye giden capa: atla
+        if ka < ki or ha < hi:  # geriye giden capa: atla
             continue
         dilim_k, dilim_h = k_par[ki:ka], h_par[hi:ha]
         if dilim_k or dilim_h:
@@ -242,6 +243,29 @@ def hizala_capali(k_par, h_par, sozluk: dict, hizala_fn=None) -> list:
 
 
 # ------------------------------------------------------------ sozluk
+
+
+class _Tembel:
+    """Ilk kullanimda derlenen desen. capa_bul yalnizca search/finditer kullanir."""
+
+    __slots__ = ("_fabrika", "_desen")
+
+    def __init__(self, fabrika):
+        self._fabrika, self._desen = fabrika, None
+
+    def _al(self):
+        if self._desen is None:
+            self._desen = self._fabrika()
+        return self._desen
+
+    def search(self, *a, **k):
+        return self._al().search(*a, **k)
+
+    def finditer(self, *a, **k):
+        return self._al().finditer(*a, **k)
+
+    def findall(self, *a, **k):
+        return self._al().findall(*a, **k)
 
 
 def capalari_kur(terimler) -> tuple:
@@ -268,8 +292,14 @@ def capalari_kur(terimler) -> tuple:
     out = []
     for z, tr in ciftler.items():
         bilesik = [b for b in hepsi if z in b and b != z]
-        out.append((z, tr, lotm.zh_desen(z, bilesik),
-                    lotm.desen_kur(tr, harf_duyarli=tr[:1].isupper())))
+        out.append(
+            (
+                z,
+                tr,
+                lotm.zh_desen(z, bilesik),
+                _Tembel(functools.partial(lotm.desen_kur, tr, tr[:1].isupper())),
+            )
+        )
     return tuple(out)
 
 
@@ -278,6 +308,7 @@ def terim_capalari() -> tuple:
     """Sozluk + words.md'den capalar; sozluk yoksa bos (testler, tek dosya)."""
     try:
         import lotm
+
         return capalari_kur(lotm.sozluk_yukle(kelimeler=True).terimler)
     except (Exception, SystemExit):
         return ()
@@ -286,6 +317,7 @@ def terim_capalari() -> tuple:
 def sozluk_yukle(yol: str = CAPA_DOSYASI) -> dict:
     import yaml
     from pathlib import Path
+
     p = Path(yol)
     # Goreli yol calisma dizinine gore cozuluyordu: betikleri baska bir
     # klasorden cagirmak ad capalarini sessizce kapatiyordu. Yoksa betigin
@@ -293,8 +325,9 @@ def sozluk_yukle(yol: str = CAPA_DOSYASI) -> dict:
     if not p.is_absolute() and not p.exists():
         p = Path(__file__).resolve().parent / yol
     if not p.exists():
-        print(f"uyarı: {yol} yok, yalnızca rakam çapaları kullanılacak",
-              file=sys.stderr)
+        print(
+            f"uyarı: {yol} yok, yalnızca rakam çapaları kullanılacak", file=sys.stderr
+        )
         return {}
     return yaml.safe_load(p.read_text(encoding="utf-8")) or {}
 
@@ -317,7 +350,7 @@ def capa_oner(bolumler: dict, en_az: int = 5, esik: float = 0.9) -> list:
             blok = m.group()
             for n in (2, 3, 4):
                 for i in range(len(blok) - n + 1):
-                    zh_say[blok[i:i + n]][no] += 1
+                    zh_say[blok[i : i + n]][no] += 1
         for m in _TR_OZEL.finditer(tr):
             tr_say[m.group()][no] += 1
 
@@ -370,8 +403,12 @@ def main() -> int:
     ap.add_argument("--oner", action="store_true")
     ap.add_argument("--kendini-dene", action="store_true", dest="dene")
     ap.add_argument("--esik", type=float, default=0.9)
-    ap.add_argument("--tolerans", type=float, default=0.06,
-                    help="çapa eşleşmesinde izin verilen oransal konum farkı")
+    ap.add_argument(
+        "--tolerans",
+        type=float,
+        default=0.06,
+        help="çapa eşleşmesinde izin verilen oransal konum farkı",
+    )
     a = ap.parse_args()
 
     if a.dene:
@@ -379,6 +416,7 @@ def main() -> int:
 
     import lotm
     import bolum as B
+
     zh = lotm.bolum_sozlugu(lotm.bolumler_zh())
     tr = lotm.bolum_sozlugu(lotm.bolumler_tr())
     ortak = sorted(set(zh) & set(tr))
@@ -389,7 +427,7 @@ def main() -> int:
         print("─" * 50)
         for z, t, s, g in capa_oner(veri, esik=a.esik):
             print(f"{z:<10}{t:<20}{s:>9.0%}{g:>7}")
-        print("\nDoğru olanları capa-sozlugu.yml'ye yazın:  \"克莱恩\": Klein")
+        print('\nDoğru olanları capa-sozlugu.yml\'ye yazın:  "克莱恩": Klein')
         return 0
 
     if not a.bolum:
@@ -399,13 +437,13 @@ def main() -> int:
     k_par = B.paragraflar(zh[a.bolum].metin, B.KAYNAKLAR["zh"][2])
     h_par = B.paragraflar(tr[a.bolum].metin, B.KAYNAKLAR["tr"][2])
     capalar = capa_bul(k_par, h_par, sozluk, a.tolerans)
-    print(f"bölüm {a.bolum}: {len(k_par)} ZH / {len(h_par)} TR, "
-          f"{len(capalar)} çapa")
+    print(f"bölüm {a.bolum}: {len(k_par)} ZH / {len(h_par)} TR, {len(capalar)} çapa")
     if capalar:
-        aralik = [capalar[0][0]] + [b[0] - a_[0] for a_, b in
-                                    zip(capalar, capalar[1:])]
-        print(f"çapa aralığı: ortalama {sum(aralik)/len(aralik):.1f}, "
-              f"en büyük {max(aralik)} paragraf")
+        aralik = [capalar[0][0]] + [b[0] - a_[0] for a_, b in zip(capalar, capalar[1:])]
+        print(
+            f"çapa aralığı: ortalama {sum(aralik) / len(aralik):.1f}, "
+            f"en büyük {max(aralik)} paragraf"
+        )
         print("  " + "  ".join(f"{i}→{j}" for i, j in capalar[:24]))
     return 0
 
@@ -418,20 +456,24 @@ def kendini_dene() -> int:
 
     # LIS: celisen capa atilir, en buyuk tutarli kume kalir
     if _monoton([(1, 1), (2, 9), (3, 3), (4, 4)]) != [(1, 1), (3, 3), (4, 4)]:
-        print("HATA: monoton filtre"); hata += 1
+        print("HATA: monoton filtre")
+        hata += 1
 
     # Ayni kaynak paragrafi birden fazla hedefe baglanamaz
-    cok = sorted({(19, 6), (19, 7), (19, 9), (23, 20), (24, 22)},
-                 key=lambda p: (p[0], -p[1]))
+    cok = sorted(
+        {(19, 6), (19, 7), (19, 9), (23, 20), (24, 22)}, key=lambda p: (p[0], -p[1])
+    )
     s = _monoton(cok)
     if len(s) != len({a for a, _ in s}):
-        print("HATA: aynı kaynak birden çok hedefe bağlandı", s); hata += 1
+        print("HATA: aynı kaynak birden çok hedefe bağlandı", s)
+        hata += 1
 
     # Ayni sayida gecmeyen terim capa uretmez
     k = ["克莱恩来了", "别的事情", "克莱恩走了"]
     h = ["Klein geldi", "başka şeyler", "başka bir cümle", "Klein gitti"]
     if len(capa_bul(k, h, {"克莱恩": "Klein"})) != 2:
-        print("HATA: eşit sayılı terim çapa üretmeli"); hata += 1
+        print("HATA: eşit sayılı terim çapa üretmeli")
+        hata += 1
     # Sayilar esit degilse: goreli konumu YAKIN olanlar aday olur,
     # uzak olanlar elenir. Asagida iki kaynak gecisi (0/2 ve 1/2) tek bir
     # hedef gecisiyle (0/1) karsilasiyor; yalnizca ilki tolerans icinde.
@@ -439,13 +481,15 @@ def kendini_dene() -> int:
     h2 = ["Klein geldi", "başka", "başka"]
     c2 = capa_bul(k2, h2, {"克莱恩": "Klein"}, tolerans=0.10)
     if c2 != [(0, 0)]:
-        print("HATA: oransal konum filtresi", c2); hata += 1
+        print("HATA: oransal konum filtresi", c2)
+        hata += 1
 
     # Cok uzaktaki gecisler hic aday olmamali
     k3 = ["克莱恩"] + ["x"] * 20
     h3 = ["y"] * 20 + ["Klein"]
     if capa_bul(k3, h3, {"克莱恩": "Klein"}, tolerans=0.06):
-        print("HATA: uzak eşleşme elenmeli"); hata += 1
+        print("HATA: uzak eşleşme elenmeli")
+        hata += 1
 
     # ASIL SINAV: capa kaymayi HAPSEDIYOR mu?
     # 12 paragraf, ortada bir birlesme; hizalayici olarak kasten BOZUK
@@ -455,26 +499,35 @@ def kendini_dene() -> int:
 
     kp = [f"甲{i}" for i in range(12)]
     hp = [f"a{i}" for i in range(12)]
-    kp[3] = "克莱恩甲3"; hp[3] = "Klein a3"
-    kp[8] = "梅丽莎甲8"; hp[8] = "Melissa a8"
+    kp[3] = "克莱恩甲3"
+    hp[3] = "Klein a3"
+    kp[8] = "梅丽莎甲8"
+    hp[8] = "Melissa a8"
     sozluk = {"克莱恩": "Klein", "梅丽莎": "Melissa"}
     g = hizala_capali(kp, hp, sozluk, hizala_fn=kotu)
     capali = {(tuple(x), tuple(y)) for x, y in g}
     if (((3,), (3,)) not in capali) or (((8,), (8,)) not in capali):
-        print("HATA: çapa noktaları 1:1 bağlanmalı"); hata += 1
+        print("HATA: çapa noktaları 1:1 bağlanmalı")
+        hata += 1
 
     # Capa yoksa dogrudan hizalayiciya devredilir
-    if hizala_capali(["a", "b"], ["a", "b"], {}, hizala_fn=kotu) != \
-            [([0], [0]), ([1], [1])]:
-        print("HATA: çapasız durumda devretmeli"); hata += 1
+    if hizala_capali(["a", "b"], ["a", "b"], {}, hizala_fn=kotu) != [
+        ([0], [0]),
+        ([1], [1]),
+    ]:
+        print("HATA: çapasız durumda devretmeli")
+        hata += 1
 
     # Sozluk onerisi: ayni profil yakalanmali
-    veri = {1: ("克莱恩克莱恩克莱恩", "Klein Klein Klein"),
-            2: ("克莱恩克莱恩", "Klein Klein"),
-            3: ("梅丽莎梅丽莎", "Melissa Melissa")}
+    veri = {
+        1: ("克莱恩克莱恩克莱恩", "Klein Klein Klein"),
+        2: ("克莱恩克莱恩", "Klein Klein"),
+        3: ("梅丽莎梅丽莎", "Melissa Melissa"),
+    }
     oneri = {z: t for z, t, _s, _g in capa_oner(veri, en_az=2)}
     if oneri.get("克莱恩") != "Klein" or oneri.get("梅丽莎") != "Melissa":
-        print("HATA: çapa önerisi", oneri); hata += 1
+        print("HATA: çapa önerisi", oneri)
+        hata += 1
 
     print("kendini-dene:", "geçti" if not hata else f"{hata} HATA")
     return 1 if hata else 0
