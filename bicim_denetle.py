@@ -62,11 +62,11 @@ KODLAR
   K08  ayni algi/tepki fiili art arda paragraflarda        (§4.4)
   K11  cumle "O," ile aciliyor (gereksiz ozne zamiri)      (§5)
   K12  bir cumlede uc "ve"                                 (§5)
+  K06  kod adi ya da Mertebe adi tirnak icinde             (§9)
   K13  yerel tekrar: bolumlere yayilmis bir kok kisa mesafede (§4.4)
 
 Sapka, nisbet -î ve ozel ad ekleri burada YOK: sapka.py ve ad eki lint'i
 onlari kapsiyor.
-  K06  kod adi ya da Mertebe adi tirnak icinde             (§9)
 
 Kullanim:
     python3 bicim_denetle.py                        # butun yayimlanmis bolumler
@@ -1454,10 +1454,38 @@ def taban_oku(yol) -> set:
         sys.exit(f"HATA: taban okunamadı: {e}")
 
 
-def taban_yaz(yol, bulgular):
-    with open(yol, "w", encoding="utf-8") as f:
-        for b in sorted(bulgular, key=lambda b: (b.dosya, b.satir, b.kod)):
-            f.write("\t".join((b.dosya, b.kod, b.alinti)) + "\n")
+def taban_yaz(yol, bulgular, taranan, kodlar=None) -> int:
+    """
+    Tabani gunceller ve korunan (bu calismanin kapsamadigi) satir sayisini
+    doner.
+
+    Yalnizca bu calismanin KAPSADIGI satirlar degisir: taranan dosyalar ve
+    --kod verildiyse o kodlar. Eskiden dosyanin tamami simdiki bulgularla
+    yazilirdi; "47 --taban-yaz" ya da "--kod B03 --taban-yaz" butun diger
+    bolumlerin / kodlarin kabul edilmis gecmisini sessizce silerdi.
+    """
+    kapsam = set(taranan)
+
+    def kapsanir(dosya, kod):
+        return dosya in kapsam and (not kodlar or kod in kodlar)
+
+    korunan = []
+    try:
+        with open(yol, encoding="utf-8") as f:
+            for s in f:
+                alan = s.rstrip("\n").split("\t")
+                if s.strip() and len(alan) >= 3 and not kapsanir(alan[0], alan[1]):
+                    korunan.append(s.rstrip("\n"))
+    except FileNotFoundError:
+        pass
+    yeni = [
+        "\t".join((b.dosya, b.kod, b.alinti))
+        for b in sorted(bulgular, key=lambda b: (b.dosya, b.satir, b.kod))
+    ]
+    # Dosya adina gore sirali tutulur ki diff okunabilsin.
+    satirlar = sorted(korunan + yeni, key=lambda x: x.split("\t", 1)[0])
+    lotm.atomik_yaz(yol, "".join(x + "\n" for x in satirlar))
+    return len(korunan)
 
 
 def main():
@@ -1571,8 +1599,12 @@ def main():
     tum = [b for b in tum if b.dosya in set(taranan)]
 
     if a.taban_yaz:
-        taban_yaz(a.taban_yaz, tum)
-        print(f"{len(tum)} bulgu tabana yazıldı: {a.taban_yaz}", file=sys.stderr)
+        korunan = taban_yaz(a.taban_yaz, tum, taranan, kodlar)
+        print(
+            f"{len(tum)} bulgu tabana yazıldı: {a.taban_yaz}"
+            + (f" ({korunan} satır bu çalışmanın kapsamı dışında, korundu)" if korunan else ""),
+            file=sys.stderr,
+        )
         return 0
 
     taban = taban_oku(a.taban)

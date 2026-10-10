@@ -66,7 +66,12 @@ import turkce
 
 _CAPA_SOZLUGU = _capa.sozluk_yukle()
 
-ONBELLEK_DIZINI = Path(os.environ.get("LOTM_ONBELLEK", ".hizalama_onbellek"))
+# Betik klasorune bagli (orada .gitignore'da). Eskiden cwd'ye gore goreliydi:
+# baska bir klasorden calistirmak yeni, bos bir onbellek acip butun
+# hizalamalari bastan hesapliyordu.
+ONBELLEK_DIZINI = Path(
+    os.environ.get("LOTM_ONBELLEK") or lotm.BETIK_KOK / ".hizalama_onbellek"
+)
 
 
 # --------------------------------------------------------------- hizalama
@@ -702,9 +707,6 @@ def main() -> int:
         action="store_true",
         help="hizalama onbellegini sil ve sifirdan hesapla",
     )
-    # Gecis bolumu artik sozluk.yml'den (bolum_siniri) okunuyor. Arguman
-    # yalnizca calistir.sh gibi eski cagrilar bozulmasin diye kabul edilir.
-    ap.add_argument("--kurallar", default=None, help=argparse.SUPPRESS)
     ap.add_argument("--genislik", type=int, default=None)
     a = ap.parse_args()
 
