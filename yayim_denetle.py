@@ -824,6 +824,28 @@ def fark_kayitlari(artiklar, b: Bulgular) -> list:
     return out
 
 
+def yalniz_artik(klasor, dosyalar=()) -> int:
+    """
+    Yalnizca artik isaret taramasi: okura GORUNEN istem/sablon kalintilari
+    ([BELİRSİZ], [DURUM NOTU], acilis sablonu basliklari...). Sozluk ve terim
+    taramasi yok; saniyenin altinda. Yayin oncesi kanca bunu kullanir --
+    tam denetim (~17 sn) her commit icin fazla.
+    """
+    try:
+        bolumler = lotm.bolumler_tr(klasor)
+    except (FileNotFoundError, OSError) as e:
+        sys.exit(f"HATA: {e}")
+    if dosyalar:
+        adlar = {Path(d).name for d in dosyalar}
+        bolumler = [b for b in bolumler if b.kaynak in adlar]
+    kaymalar = satir_kaymalari(klasor or lotm.BOLUMLER_TR, bolumler)
+    artiklar = artik_tara(birimler_kur(bolumler), kaymalar)
+    for dosya, satir_no, aciklama, ctx in artiklar:
+        print(f"  [{dosya}:{satir_no}] {aciklama}\n      {ctx}")
+    print(f"  artık işaret: {len(artiklar)} ({len(bolumler)} bölüm)")
+    return 1 if artiklar else 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sozluk", default=None)
@@ -838,6 +860,18 @@ def main():
     )
     ap.add_argument("--bulgular", default=None, help="bulgulari fark.py icin TSV olarak yaz")
     ap.add_argument(
+        "--yalniz-artik",
+        action="store_true",
+        dest="yalniz_artik",
+        help="yalnizca artik istem/sablon isaretleri (hizli; sozluk okunmaz). "
+        "Bulgu varsa cikis 1. pre-commit kancasi kullanir",
+    )
+    ap.add_argument(
+        "dosyalar",
+        nargs="*",
+        help="--yalniz-artik ile: yalniz bu bolum dosyalari (ad ya da yol)",
+    )
+    ap.add_argument(
         "--cumle-ici-yuksek",
         action="store_true",
         dest="cumle_ici",
@@ -845,6 +879,9 @@ def main():
         "guven say (bkz. guven_ver)",
     )
     a = ap.parse_args()
+
+    if a.yalniz_artik:
+        return yalniz_artik(a.bolumler, a.dosyalar)
 
     try:
         sozluk = lotm.sozluk_yukle(a.sozluk)

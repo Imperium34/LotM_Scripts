@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+# ============================================================
+#  pre-commit -- Imperium34.github.io icin yayin oncesi kapi.
+#
+#  Kurulum (bir kez):  ./calistir.sh kanca
+#  Sitenin .git/hooks/pre-commit'i bu dosyaya sembolik baglantidir; yani
+#  kanca betiklerle birlikte surum denetiminde durur ve guncellenir.
+#
+#  Yalnizca commit bir BOLUMU ya da _data/takvim.yml'i iceriyorsa calisir.
+#  Uc ucuz denetim, okura gorunecek hatalar icin:
+#    1. takvim_denetle    baslik tekrari, yayin gunu/saati
+#    2. bicim_denetle     degisen bolumler, tabanla; yalniz HATA durdurur
+#    3. artik isaretler   [BELİRSİZ], [DURUM NOTU], sablon basliklari
+#
+#  Denetlenen, CALISMA AGACI degil INDEX'tir (commit edilecek olan): sahne
+#  disi bir duzeltme commit'e eklenmediyse hatali hali yine yakalanir.
+#
+#  Basariliysa tek satir yazar; basarisizsa ilgili raporu.
+#  Atlamak icin (bilerek):  git commit --no-verify
+# ============================================================
+set -euo pipefail
+
+TOOLS="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)"
+
+mapfile -t degisen < <(git diff --cached --name-only --diff-filter=ACMR -- '_chapters/*.md')
+takvim_degisti=$(git diff --cached --name-only -- _data/takvim.yml)
+if ((${#degisen[@]} == 0)) && [[ -z "$takvim_degisti" ]]; then
+  exit 0
+fi
+
+gecici=$(mktemp -d)
+trap 'rm -rf "$gecici"' EXIT
+# Index'teki hal disari aktarilir: butun bolumler (takvim sirayi ve
+# baslik tekrarini butun bolumlere bakarak denetler) ve takvim.
+git ls-files -z -- _chapters _data/takvim.yml |
+  xargs -0 git checkout-index --prefix="$gecici/" --
+
+klasor="$gecici/_chapters"
+yollar=()
+for f in "${degisen[@]}"; do
+  yollar+=("$gecici/$f")
+done
+
+basarisiz=0
+calistir() {
+  # $1: ad; kalan: komut. Cikti yalnizca basarisizlikta gosterilir.
+  local ad="$1" cikti
+  shift
+  if cikti=$("$@" 2>&1); then
+    return 0
+  fi
+  basarisiz=1
+  printf '\n\033[31m✗ %s\033[0m\n%s\n' "$ad" "$cikti"
+}
+
+calistir "takvim" python3 "$TOOLS/takvim_denetle.py" \
+  --klasor "$klasor" --takvim "$gecici/_data/takvim.yml"
+
+if ((${#yollar[@]})); then
+  calistir "bicim (HATA)" python3 "$TOOLS/bicim_denetle.py" "${yollar[@]}" \
+    --bolumler "$klasor" --taban "$TOOLS/lint/bicim-taban.tsv"
+  calistir "artik isaretler" python3 "$TOOLS/yayim_denetle.py" --yalniz-artik \
+    --bolumler "$klasor" "${yollar[@]}"
+fi
+
+if ((basarisiz)); then
+  printf '\n\033[31mcommit durduruldu.\033[0m Duzeltin ve tekrar ekleyin; bilerek '
+  printf 'gecmek icin: git commit --no-verify\n'
+  exit 1
+fi
+printf '\033[32m✓ yayin oncesi denetim: %s bolum, takvim, bicim, artik isaret temiz\033[0m\n' \
+  "${#yollar[@]}"

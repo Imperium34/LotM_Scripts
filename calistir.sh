@@ -47,6 +47,8 @@
 #      ./calistir.sh takvim   bolum adlari tekrarlaniyor mu, tarihler carsamba/
 #                             cumartesi takvimine uyuyor mu
 #      ./calistir.sh tarama   sadece Ingilizce tarama (nadiren gerekir)
+#      ./calistir.sh kanca    sitenin pre-commit kancasini kur (bir kez;
+#                             bkz. kancalar/pre-commit)
 #
 #  FARK: denetim, lint, bicim, toplu, takvim ve belgeler adimlari tam
 #  korpusta calisinca bulgularini Reports/bulgular/'a yazar ve sonunda
@@ -381,6 +383,33 @@ adim_bolum() {
   python3 "$TOOLS/kapanis_denetle.py" "$sablon" --bolum "$no"
 }
 
+adim_kanca() {
+  # Sitenin .git/hooks/pre-commit'i -> kancalar/pre-commit (sembolik baglanti).
+  # Kopya degil baglanti: kanca betiklerle birlikte guncellenir. Baska bir
+  # kanca zaten varsa USTUNE YAZILMAZ.
+  local hedef="$SITE/.git/hooks/pre-commit" kaynak="$TOOLS/kancalar/pre-commit"
+  [[ -d "$SITE/.git" ]] || {
+    kirmizi "  $SITE bir git deposu degil"
+    return 1
+  }
+  if [[ -n "$(git -C "$SITE" config --get core.hooksPath || true)" ]]; then
+    kirmizi "  core.hooksPath ayarli; kanca .git/hooks'a kurulursa calismaz. Elle baglayin."
+    return 1
+  fi
+  if [[ -L "$hedef" && "$(readlink -f "$hedef")" == "$(readlink -f "$kaynak")" ]]; then
+    yesil "  kanca zaten kurulu: $hedef"
+    return 0
+  fi
+  if [[ -e "$hedef" || -L "$hedef" ]]; then
+    kirmizi "  $hedef zaten var (baska bir kanca); ustune yazilmadi."
+    kirmizi "  Bilerek degistirmek icin once onu tasiyin ya da silin."
+    return 1
+  fi
+  ln -s "$kaynak" "$hedef"
+  yesil "  kuruldu: $hedef -> $kaynak"
+  mavi "  bolum ya da takvim iceren her commit'te calisir; atlamak icin: git commit --no-verify"
+}
+
 # 'test' kontrol()'den once gelmeli: testler sozluk.yml ya da _chapters
 # olmadan da calisabilmeli.
 if [[ "${1:-}" == "test" ]]; then
@@ -423,6 +452,7 @@ sapka) adim_sapka ;;
 toplu) adim_toplu ;;
 takvim) adim_takvim ;;
 belgeler) adim_belgeler ;;
+kanca) adim_kanca ;;
 hepsi)
   adim_test || mavi "  (testler atlandi, zincire devam)"
   adim_kontrol || kirmizi "  (numaralandirma sorunlu, zincire yine de devam)"
@@ -442,7 +472,7 @@ hepsi)
   adim_belgeler || kirmizi "  (belgelerde hata var, yukariya bakin)"
   ;;
 *)
-  echo "kullanim: ./calistir.sh [hepsi|test|kontrol|takvim|tarama|etiket|denetim|lint|bicim|bicim-taban|sapka|toplu|belgeler]"
+  echo "kullanim: ./calistir.sh [hepsi|test|kontrol|takvim|tarama|etiket|denetim|lint|bicim|bicim-taban|sapka|toplu|belgeler|kanca]"
   echo "          ./calistir.sh bolum [numara]   (numarasiz: en son bolum)"
   exit 1
   ;;
