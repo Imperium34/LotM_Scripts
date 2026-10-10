@@ -62,6 +62,7 @@ from __future__ import annotations
 import os
 import re
 import sys
+import tempfile
 from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -253,6 +254,51 @@ def metin_oku(yol) -> str:
     # metinde yok" olur ve bu yanlistir.
     SAGLIK.kaydet("kodlama_cozulemedi", str(yol))
     return ham.decode("utf-8", errors="replace")
+
+
+# =====================================================================
+# DOSYA YAZMA
+# =====================================================================
+
+
+def atomik_yaz(yol, icerik) -> None:
+    """
+    Dosyayi ya tamamen yazar ya hic dokunmaz. Veri yazan HER betik bunu
+    kullanir (etiketle -> sozluk.yml, sapka -> bolumler/words.md,
+    bicim_denetle -> taban, takvim_ata -> bolum tarihleri).
+
+    Duz write_text() once dosyayi bosaltir, sonra yazar: arada bir
+    Ctrl-C, dolu disk ya da cokme yarim bir sozluk.yml / bolum birakir.
+    Burada icerik ayni klasordeki gecici dosyaya yazilir, diske indirilir
+    (fsync) ve os.replace ile tek adimda yerine konur.
+
+      - icerik str ise UTF-8 olarak, satir sonlarina DOKUNULMADAN yazilir
+        (write_text Linux'ta da \n'i oldugu gibi yaziyordu; davranis ayni).
+        bytes ise oldugu gibi.
+      - Var olan dosyanin izinleri korunur. mkstemp gecici dosyayi 0600
+        acar; korunmazsa yazilan her bolum yalnizca sahibine okunur kalirdi.
+        Yeni dosya umask'a gore olusur, write_text gibi.
+      - Sembolik baglanti varsa HEDEFI yazilir, baglanti korunur.
+    """
+    yol = Path(os.path.realpath(yol))
+    veri = icerik.encode("utf-8") if isinstance(icerik, str) else icerik
+    try:
+        mod = yol.stat().st_mode & 0o7777
+    except FileNotFoundError:
+        umask = os.umask(0)
+        os.umask(umask)
+        mod = 0o666 & ~umask
+    fd, gecici = tempfile.mkstemp(dir=yol.parent, prefix=f".{yol.name}.")
+    try:
+        with os.fdopen(fd, "wb") as f:
+            f.write(veri)
+            f.flush()
+            os.fsync(f.fileno())
+        os.chmod(gecici, mod)
+        os.replace(gecici, yol)
+    except BaseException:
+        Path(gecici).unlink(missing_ok=True)
+        raise
 
 
 # =====================================================================
@@ -869,16 +915,21 @@ class Sozluk:
             or sorgu in (t.zh or "")
         ]
 
-    def yaz(self, hedef=None, duzeltici=None):
+    def yaz(self, hedef=None, duzeltici=None, dogrulayici=None) -> str:
         """
-        Ham agaci geri yazar. Yalnizca bicim_koru=True ile yuklendiyse
-        calisir -- PyYAML'in dump'i yorumlari siler, anahtarlari siralar ve
-        uzun dizeleri sarar, yani diff okunamaz hale gelir.
+        Ham agaci geri yazar (atomik_yaz ile) ve yazilan metni doner.
+        Yalnizca bicim_koru=True ile yuklendiyse calisir -- PyYAML'in dump'i
+        yorumlari siler, anahtarlari siralar ve uzun dizeleri sarar, yani
+        diff okunamaz hale gelir.
 
         duzeltici: dump edilmis metni alip duzeltilmisini donen bir islev.
         ruamel'in bos satir ve girinti davranisini toparlamak icin gerekir
         (bkz. etiketle.bosluk_duzelt); o duzeltme sozluk.yml'in kendi
         bicimine ozgu oldugu icin burada degil, cagiran tarafta durur.
+
+        dogrulayici: son metni alip sorun varsa aciklamasini, yoksa None
+        donen bir islev. Sorun varsa YazmaReddedildi firlatilir ve dosyaya
+        hic dokunulmaz (bkz. etiketle.dogrula).
         """
         if self._yaml is None:
             raise RuntimeError(
@@ -891,7 +942,16 @@ class Sozluk:
         metin = tampon.getvalue()
         if duzeltici:
             metin = duzeltici(metin)
-        Path(hedef or self._yol).write_text(metin, encoding="utf-8")
+        if dogrulayici:
+            hata = dogrulayici(metin)
+            if hata:
+                raise YazmaReddedildi(hata)
+        atomik_yaz(hedef or self._yol, metin)
+        return metin
+
+
+class YazmaReddedildi(ValueError):
+    """Sozluk.yaz: dogrulayici uretilen metni reddetti; hicbir sey yazilmadi."""
 
 
 def _terim_kur(ham_girdi, ham_mertebe=None, kardesler=None):

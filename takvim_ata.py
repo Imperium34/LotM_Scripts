@@ -47,10 +47,8 @@ from __future__ import annotations
 
 import argparse
 import copy
-import os
 import re
 import sys
-import tempfile
 from datetime import datetime
 from pathlib import Path
 
@@ -148,18 +146,6 @@ def yeni_icerik(yol: Path, yeni: datetime) -> bytes:
     return (fm + govde).encode("utf-8")
 
 
-def atomik_yaz(yol: Path, icerik: bytes) -> None:
-    """Gecici dosya + yer degistirme: yarim kalan yazma dosyayi bozamaz."""
-    fd, gecici = tempfile.mkstemp(dir=yol.parent, prefix=f".{yol.name}.")
-    try:
-        with os.fdopen(fd, "wb") as f:
-            f.write(icerik)
-        os.replace(gecici, yol)
-    except BaseException:
-        Path(gecici).unlink(missing_ok=True)
-        raise
-
-
 def main() -> int:
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -232,7 +218,7 @@ def main() -> int:
             print(f"  !! {e} -- hiçbir şey yazılmadı", file=sys.stderr)
             return 2
         for yol, icerik in hazir:
-            atomik_yaz(yol, icerik)
+            lotm.atomik_yaz(yol, icerik)
         print(f"  {len(hazir)} bölümün tarihi yazıldı")
         sonuc = TD.kunyeler(klasor)  # yazilmis hâli diskten yeniden oku
     else:

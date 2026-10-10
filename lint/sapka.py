@@ -88,6 +88,7 @@ for _yol in (Path(__file__).resolve().parent, Path(__file__).resolve().parent.pa
         sys.path.insert(0, str(_yol))
         break
 from turkce import tr_buyut, tr_kucult  # noqa: E402
+from lotm import atomik_yaz  # noqa: E402
 
 # --------------------------------------------------------------------
 # GÜVENLİ: şapkasız biçim -> şapkalı biçim
@@ -378,7 +379,7 @@ def sozluk_gocu(yol, kelimeler, sozluk: dict, uygula_: bool, duzyazi: bool) -> i
         _goster(Path(yol).name, degisen)
         toplam += len(degisen)
         if uygula_ and degisen:
-            Path(yol).write_text(yeni, encoding="utf-8")
+            atomik_yaz(yol, yeni)
     if kelimeler:
         eski = Path(kelimeler).read_text(encoding="utf-8")
         yeni_satirlar = [_cevir(s, sozluk)[0] for s in eski.split("\n")]
@@ -387,7 +388,7 @@ def sozluk_gocu(yol, kelimeler, sozluk: dict, uygula_: bool, duzyazi: bool) -> i
         _goster(Path(kelimeler).name, degisen)
         toplam += len(degisen)
         if uygula_ and degisen:
-            Path(kelimeler).write_text("\n".join(yeni_satirlar), encoding="utf-8")
+            atomik_yaz(kelimeler, "\n".join(yeni_satirlar))
     print(f"\n{'═' * 72}\n{toplam} satır "
           + ("yazıldı. Diff'i okuyun:  git diff" if uygula_ else "değişecek. Yazmak için:  --uygula"))
     return 0
@@ -490,7 +491,7 @@ def tara(dosyalar: dict, sozluk: dict) -> dict:
 def uygula(yol: Path, sozluk: dict) -> int:
     metin, toplam = _cevir(yol.read_text(encoding="utf-8"), sozluk)
     if toplam:
-        yol.write_text(metin, encoding="utf-8")
+        atomik_yaz(yol, metin)
     return toplam
 
 

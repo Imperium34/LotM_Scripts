@@ -90,7 +90,7 @@ KAYNAK_ELLE = {
     "Dimağ Beden": "metin",
     "Sterlin, Soli ve Peni": "metin",
     "Kara Kehanet": "metin",
-    "Ay Saati": "metin",
+    "Ay saati": "metin",
 }
 
 # Book 2 WeChat gonderisinden gelen Tarot Kulubu tazim isimleri.
@@ -523,19 +523,14 @@ def main():
 
     hedef = args.sozluk if args.yerinde else args.cikti
 
-    import io
-
-    tampon = io.StringIO()
-    sozluk._yaml.dump(sozluk.veri, tampon)
-    metin = bosluk_duzelt(tampon.getvalue())
-
-    hata = dogrula(metin, len(sozluk.veri))
-    if hata:
-        sys.exit(f"HATA: {hata}\nHicbir sey yazilmadi ({hedef} dokunulmadi).")
-
-    from pathlib import Path
-
-    Path(hedef).write_text(metin, encoding="utf-8")
+    try:
+        sozluk.yaz(
+            hedef,
+            duzeltici=bosluk_duzelt,
+            dogrulayici=lambda metin: dogrula(metin, len(sozluk.veri)),
+        )
+    except lotm.YazmaReddedildi as e:
+        sys.exit(f"HATA: {e}\nHicbir sey yazilmadi ({hedef} dokunulmadi).")
 
     print(f"Yazildi: {hedef}\n")
     if alt_dize:

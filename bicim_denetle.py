@@ -1318,7 +1318,7 @@ def duzelt(yollar, kod_adlari, taban, kodlar, uygula: bool) -> int:
             ):
                 s = satirlar[satir - 1]
                 satirlar[satir - 1] = s[:s1] + yeni + s[s2:]
-            yol.write_text("\n".join(satirlar), encoding="utf-8")
+            lotm.atomik_yaz(yol, "\n".join(satirlar))
             yazilan += len(yer)
             if atlanan:
                 print(
