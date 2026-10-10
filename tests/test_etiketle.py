@@ -142,31 +142,31 @@ def test_dogrula_girdi_sayisi_degisirse_yakalar():
 
 # --------------------------------------------------- turetilen kurallar
 
-def test_alt_dize_riski_turetiliyor(lotm_modulu, tmp_path):
+def test_daha_uzun_adin_parcasi_olan_terim_de_ilk_gecis_alir(tmp_path, monkeypatch):
     """
-    'Hunter' hem kendi basina hem 'Demon Hunter' icinde gecer; tarayicinin
-    buldugu bolum guvenilmez. Bu iliski sozlukte zaten yazili -- elle
-    liste tutmak ayni bilgiyi ikinci kez yazmakti.
+    'Beyonder' 'Beyonder Characteristic' icinde de gecer. kapi_denetle
+    o gecisleri zaten saymiyor; rapordaki bolum bagimsiz ilk gecistir.
+    Eskiden etiketle bu terimlere toptan ilk_gecis yazmiyordu.
     """
-    import etiketle
-    lotm = lotm_modulu
-    yol = tmp_path / "s.yml"
-    yol.write_text(textwrap.dedent("""\
-        - terim: Avcı
-          ingilizce: Hunter
-          kategori: Yollar
-        - terim: Şeytan Avcısı
-          ingilizce: Demon Hunter
-          kategori: Yollar
-        - terim: Sıradışı
+    import yaml
+
+    sozluk = tmp_path / "sozluk.yml"
+    sozluk.write_text(textwrap.dedent("""\
+        - terim: Aşkın
           ingilizce: Beyonder
           kategori: Kavramlar
+        - terim: Aşkın Hasleti
+          ingilizce: Beyonder Characteristic
+          kategori: Kavramlar
         """), encoding="utf-8")
-
-    riskli = etiketle.alt_dize_riski_turet(lotm.sozluk_yukle(yol))
-    assert "Hunter" in riskli
-    assert "Demon Hunter" not in riskli
-    assert "Beyonder" not in riskli
+    rapor = tmp_path / "rapor.tsv"
+    _rapor_yaz(rapor, [
+        "yuksek\t6\t6\tevet\t\tKavramlar\tBeyonder\tBeyonder\t\t...",
+        "yuksek\t210\t210\tevet\t\tKavramlar\tBeyonder Characteristic\tBeyonder Characteristic\t\t...",
+    ])
+    _etiketle_calistir(sozluk, rapor, monkeypatch)
+    veri = yaml.safe_load(sozluk.read_text(encoding="utf-8"))
+    assert [g.get("ilk_gecis") for g in veri] == [6, 210]
 
 
 def test_cins_isim_isareti_bolum_yazmayi_engeller(tmp_path, monkeypatch, capsys):
@@ -259,3 +259,29 @@ def test_ilk_gecis_serbestce_guncellenir(tmp_path, monkeypatch):
     m = yaml.safe_load(sozluk.read_text(encoding="utf-8"))[0]["mertebeler"][0]
     assert m["ilk_gecis"] == 21
     assert m["bolum_siniri"] == 137
+
+
+def test_degisiklikler_gercek_alan_farkini_gosterir(tmp_path, monkeypatch, capsys):
+    """
+    DEGISIKLIKLER bolumu alanlarin once/sonra farkidir: ikinci calistirmada
+    hicbir sey listelenmez, ve kaynak gibi eskiden hic raporlanmayan
+    alanlar da gorunur.
+    """
+    sozluk = tmp_path / "sozluk.yml"
+    sozluk.write_text(YOL_VE_YORUM, encoding="utf-8")
+    rapor = tmp_path / "rapor.tsv"
+    _rapor_yaz(rapor, [
+        "yuksek\t21\t21\tevet\t9\tAvcı\tHunter\tHunter\t20\t...",
+        "yok\t\t\tevet\t8\tAvcı\tProvoker\t\t90\t...",
+        "yuksek\t1\t2\tevet\t\tKavramlar\tBeyonder\tBeyonder\t3\t...",
+    ])
+
+    _etiketle_calistir(sozluk, rapor, monkeypatch)
+    ilk = capsys.readouterr().out
+    assert "metinde       Avcı S8: Değişken: None -> False" in ilk
+    assert "kaynak        Sıradışı: None -> metin" in ilk
+    assert "ilk_gecis     Avcı S9: Avcı: None -> 21" in ilk
+
+    _etiketle_calistir(sozluk, rapor, monkeypatch)
+    ikinci = capsys.readouterr().out
+    assert "--- DEGISIKLIKLER (0) ---" in ikinci and "metinde " not in ikinci

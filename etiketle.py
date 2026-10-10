@@ -12,14 +12,17 @@ yeniden calistirilir, diff denetim kaydidir.
   dizelerini yeniden sarar. Dosya anlamca ayni kalir ama diff okunamaz hale
   gelir, yani neyin degistigini goremezsiniz.
 
-BU SURUMDE KALKAN ELLE LISTE
-----------------------------
-ALT_DIZE_RISKI artik sozlukten TURETILIYOR. Bir Ingilizce ad baska bir
-adin icinde tam kelime olarak geciyorsa ("Hunter" -> "Demon Hunter"),
-tarayicinin buldugu bolum o ad icin guvenilmezdir. Bu iliski zaten
-sozlukte yaziyor; elle liste tutmak ayni bilgiyi ikinci kez yazmakti.
+ALT DIZE ("Hunter" / "Demon Hunter") BURADA DEGIL
+--------------------------------------------------
+Eskiden bir Ingilizce ad baska bir adin icinde geciyorsa o terime hic
+ilk_gecis yazilmiyordu (once elle ALT_DIZE_RISKI listesi, sonra sozlukten
+turetilen liste). kapi_denetle artik her GECISI ayri ayri sorguluyor ve
+daha uzun bir adin icindekileri saymiyor (golge_haritasi); rapordaki
+'bolum' zaten bagimsiz ilk gecistir. Terimi toptan dislamak ayni kaygiyi
+ikinci kez, daha kaba bicimde uyguluyordu: Beyonder, Spirit Body, God
+Almighty gibi ust duzey terimlerin ilk_gecis'i hic yazilmiyordu.
 
-Ayrica rapor.tsv'nin 'guvenilir_mi' sutunu artik gercekten okunuyor.
+rapor.tsv'nin 'guvenilir_mi' sutunu artik gercekten okunuyor.
 kapi_denetle.py terimin metinde kucuk harfle de gectigini tespit ediyordu
 (cins isim isareti) ve bu sutunu yaziyordu; etiketle.py sutunu ayristirip
 kullanmadan atiyordu. Simdi o terimlere de bolum numarasi yazilmiyor.
@@ -47,13 +50,9 @@ import lotm
 # Mertebe adi degil. Sozlukteki 66 degeri de ayni yanlis pozitiften geliyordu.
 METINDE_YOK_ZORLA = {"Catastrophe"}
 
-# Turetilen alt dize listesine EK olarak elle eklenecekler. Turetme
-# yalnizca sozlukteki adlar arasindaki iliskiyi gorur; metinde gecip
-# sozlukte olmayan bir uzun ad varsa buraya yazin.
-EK_ALT_DIZE_RISKI = set()
-
-# Elle belirlenmis bolum numaralari. Hunter'in gercek gecisi, Criminal /
-# Prisoner / Warrior / Hunter'in birlikte sayildigi pasaj.
+# Elle belirlenmis kapilar: {Ingilizce ya da Turkce ad: bolum}. Yalnizca
+# sozlukte bolum_siniri BOSSA yazilir; doluysa sozluk kazanir ve cikti
+# fazlalik/celiski olarak bildirir. Su an bos -- kararlarin hepsi sozlukte.
 BOLUM_ELLE = {}
 
 # Tazim ismi denetiminden gelen mudahale degerleri (girdi adina gore).
@@ -114,23 +113,36 @@ TAZIM_KATEGORILERI = {"İlahlar ve Yüce Kadimler", "Tarot Kulübü"}
 # =====================================================================
 
 
-def alt_dize_riski_turet(sozluk) -> set:
-    """
-    Ingilizce adi baska bir adin icinde TAM KELIME olarak gecen terimler.
+# Bu betigin yazdigi alanlar. DEGISIKLIKLER bolumu bunlarin calismadan
+# ONCEKI ve SONRAKI degerlerini karsilastirir; elle tutulan bir liste
+# degil. Eskiden degisiklik satirlari kod icinde tek tek ekleniyordu:
+# metinde=false her calismada "degisti" diye listeleniyor, kaynak/mudahale/
+# denetim degisiklikleri ise hic gorunmuyordu (Ay saati metin ->
+# bilinmiyor dususu yalnizca diff'te fark edilebiliyordu).
+IZLENEN = ("metinde", "kaynak", "mudahale", "denetim", "ilk_gecis", "bolum_siniri")
 
-    'Hunter' hem kendi basina hem 'Demon Hunter' icinde gecer; tarayici
-    ikisini ayirt edemedigi icin buldugu bolum guvenilmezdir. Iliski
-    sozlukte zaten yazili, o yuzden turetiliyor.
-    """
-    adlar = {t.en for t in sozluk.terimler if t.en}
-    riskli = set()
-    for kisa in adlar:
-        desen = re.compile(r"(?<!\w)" + re.escape(kisa) + r"(?!\w)")
-        for uzun in adlar:
-            if uzun != kisa and desen.search(uzun):
-                riskli.add(kisa)
-                break
-    return riskli | EK_ALT_DIZE_RISKI
+
+def _dugumler(veri):
+    """[(etiket, dugum)] -- her ust duzey girdi ve her mertebesi."""
+    for girdi in veri:
+        ad = girdi.get("terim")
+        yield ad, girdi
+        for m in girdi.get("mertebeler") or []:
+            yield f"{ad} S{m.get('seviye')}: {lotm.parantezsiz(m.get('isim'))}", m
+
+
+def anlik(veri) -> list:
+    return [(etiket, {a: d.get(a) for a in IZLENEN}) for etiket, d in _dugumler(veri)]
+
+
+def fark(once, sonra) -> list:
+    """Iki anlik goruntu arasindaki alan degisiklikleri, okunur satirlar."""
+    satirlar = []
+    for (etiket, a), (_e, b) in zip(once, sonra):
+        for alan in IZLENEN:
+            if a[alan] != b[alan]:
+                satirlar.append(f"  {alan:<13} {etiket}: {a[alan]} -> {b[alan]}")
+    return satirlar
 
 
 def rapor_oku(yol):
@@ -320,15 +332,14 @@ def main():
     except (FileNotFoundError, OSError) as e:
         sys.exit(f"HATA: {e}")
 
-    alt_dize = alt_dize_riski_turet(sozluk)
-
-    degisiklikler = []
     sayac = defaultdict(int)
     elle_gereksiz, elle_celiski, kapi_sonrasi = [], [], []
     # bekleyen: turetilemedigi icin "bilinmiyor" yazilan alanlar -- is listesi.
     # kullanilan_elle: elle tablolarda GERCEKTEN eslesen anahtarlar; eslesmeyen
     # anahtar yeniden adlandirilmis bir girdiyi gosterir (bkz. rapor sonu).
     bekleyen, kullanilan_elle = [], set()
+
+    once = anlik(sozluk.veri)
 
     for girdi in sozluk.veri:
         ad = girdi["terim"]
@@ -356,11 +367,9 @@ def main():
                 sayac["mertebe_etiketlendi"] += 1
                 if not durum:
                     yok_var = True
-                    degisiklikler.append(f"  metinde=false  {ad} S{m['seviye']}: {eng}")
+                    continue
 
                 # -------- bolum numaralari: KAPI insanin, ILK GECIS aracin
-                if not durum:
-                    continue
                 mevcut = m.get("bolum_siniri")
                 tarayici = rapor.get(eng, {}).get("bolum")
 
@@ -368,9 +377,6 @@ def main():
                     yeni = BOLUM_ELLE.get(eng, BOLUM_ELLE.get(tr))
                     if mevcut is None:
                         m["bolum_siniri"] = yeni
-                        degisiklikler.append(
-                            f"  kapi(elle)     {ad} S{m['seviye']}: {eng} -> {yeni}"
-                        )
                         sayac["kapi_elle_yazildi"] += 1
                     elif mevcut == yeni:
                         # Deger zaten YAML'de; kodda tutmaya gerek yok.
@@ -382,11 +388,6 @@ def main():
                             f"{eng}: sozluk={mevcut}, BOLUM_ELLE={yeni}"
                         )
 
-                if eng in alt_dize and not tarayici:
-                    # Terim metinde yalnizca daha uzun bir adin icinde
-                    # geciyor; bagimsiz gecisi yok.
-                    sayac["ilk_gecis_atlandi_altdize"] += 1
-                    continue
                 if not rapor.get(eng, {}).get("guvenilir", True):
                     # kapi_denetle.py'nin cins isim isareti: terim metinde
                     # kucuk harfle de geciyorsa bulunan bolum bir sey
@@ -395,10 +396,6 @@ def main():
                     continue
 
                 if tarayici and m.get("ilk_gecis") != tarayici:
-                    degisiklikler.append(
-                        f"  ilk_gecis      {ad} S{m['seviye']}: "
-                        f"{eng} {m.get('ilk_gecis')} -> {tarayici}"
-                    )
                     m["ilk_gecis"] = tarayici
                     sayac["ilk_gecis_yazildi"] += 1
 
@@ -443,7 +440,6 @@ def main():
                     yeni = BOLUM_ELLE.get(eng, BOLUM_ELLE.get(ad))
                     if mevcut is None:
                         girdi["bolum_siniri"] = yeni
-                        degisiklikler.append(f"  kapi(elle)     {ad}: {eng} -> {yeni}")
                         sayac["kapi_elle_yazildi"] += 1
                     elif mevcut == yeni:
                         elle_gereksiz.append(f"{eng} ({yeni})")
@@ -456,14 +452,9 @@ def main():
                 if (
                     durum
                     and tarayici
-                    and eng not in alt_dize
                     and guvenilir
                     and girdi.get("ilk_gecis") != tarayici
                 ):
-                    degisiklikler.append(
-                        f"  ilk_gecis      {ad}: {eng} "
-                        f"{girdi.get('ilk_gecis')} -> {tarayici}"
-                    )
                     girdi["ilk_gecis"] = tarayici
                     sayac["ilk_gecis_yazildi"] += 1
 
@@ -480,8 +471,10 @@ def main():
             kullanilan_elle.add(ad)
         elif ad in TAROT_YAZAR_BEYANI:
             girdi["kaynak"] = "yazar_beyani"
+            kullanilan_elle.add(ad)
         elif ad in TAROT_KARMA:
             girdi["kaynak"] = "karma"
+            kullanilan_elle.add(ad)
         elif ust_durum is True:
             # Tarayici terimi metinde buldu: "metin" TURETILMIS bir deger.
             girdi["kaynak"] = "metin"
@@ -508,13 +501,15 @@ def main():
             # aciklama zaten cevirmenin kendi nesri. "ceviri" burada
             # uydurma degil, girdinin turunden TURETILMIS bir deger.
             #
-            # Celiski degerde degil sayacdaydi: denetim "tamam" yazilip
-            # sayac "bekliyor" artiriliyordu, yani dosya denetlendi derken
-            # ozet denetlenmedi diyordu. Alan sayaca uyduruldu; aciklama
-            # nesri hakikaten denetlenmedigi icin dogrusu BEKLIYOR.
+            # denetim "tamam" BILEREK: tazim ismi denetimi bu girdilere
+            # uygulanmaz, aciklama nesri cevirmenin kendisidir. Sitedeki
+            # "Denetlenmedi" rozeti (denetim == 'denetlenmedi') bu yuzden
+            # bu girdilerde cikmaz. Eskiden sayac "denetim_bekliyor"
+            # diyordu ve yorum alanin "bekliyor" olmasi gerektigini
+            # soyluyordu; dosya ile ozet celisiyordu. Karar "tamam".
             girdi["mudahale"] = "ceviri"
             girdi["denetim"] = "tamam"
-            sayac["denetim_bekliyor"] += 1
+            sayac["denetim_tamam_kavram"] += 1
 
         # eski alan artik iki eksene bolundu
         if "kanon_durumu" in girdi:
@@ -533,11 +528,6 @@ def main():
         sys.exit(f"HATA: {e}\nHicbir sey yazilmadi ({hedef} dokunulmadi).")
 
     print(f"Yazildi: {hedef}\n")
-    if alt_dize:
-        print(
-            f"Alt dize riski turetildi ({len(alt_dize)}): "
-            f"{', '.join(sorted(alt_dize))}\n"
-        )
     if elle_celiski:
         print("--- BOLUM_ELLE ILE SOZLUK CELISIYOR (sozluk kazandi) ---")
         for x in elle_celiski:
@@ -559,9 +549,12 @@ def main():
             print(f"  {x}")
         print()
 
-    print("--- DEGISIKLIKLER ---")
-    for s in degisiklikler:
-        print(s)
+    degisiklikler = fark(once, anlik(sozluk.veri))
+    print(f"--- DEGISIKLIKLER ({len(degisiklikler)}) ---")
+    for satir in degisiklikler:
+        print(satir)
+    if not degisiklikler:
+        print("  yok -- sozluk zaten guncel")
     if bekleyen:
         print(f"\n--- TURETILEMEDI: ELLE KARAR BEKLIYOR ({len(bekleyen)}) ---")
         print("  Bu alanlara deger YAZILMADI ('bilinmiyor'). Eskiden buraya")
@@ -572,7 +565,10 @@ def main():
         if len(bekleyen) > 40:
             print(f"  ... {len(bekleyen) - 40} tane daha")
 
-    oksuz = sorted((set(MUDAHALE) | set(KAYNAK_ELLE)) - kullanilan_elle)
+    oksuz = sorted(
+        (set(MUDAHALE) | set(KAYNAK_ELLE) | TAROT_YAZAR_BEYANI | TAROT_KARMA)
+        - kullanilan_elle
+    )
     if oksuz:
         print(f"\n--- ELLE TABLODA KARSILIGI OLMAYAN ANAHTAR ({len(oksuz)}) ---")
         print("  Bu adlar sozlukte YOK. Girdi yeniden adlandirildiysa karar")
