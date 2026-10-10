@@ -5,3 +5,8 @@ post_generator/slide4.png
 tests/__pycache__/
 __pycache__/
 .hizalama_onbellek/
+
+# Uretilen raporlar ve sozluk yedekleri: her calistirmada yeniden yazilir,
+# git'te tutulunca bayatliyordu. Kararlar (lint/bicim-taban.tsv,
+# lint-kurallari.yml) lint/ altinda ve surum denetiminde kalir.
+Reports/
