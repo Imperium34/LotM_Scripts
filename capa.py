@@ -17,10 +17,15 @@ paragraf yapisindan UZAKLASIYOR. Ipucu temelli hizalamanin tavani burasi.
 COZUM
 -----
 Iki dilde de DEGISMEDEN gecen nadir belirtecler var: ozel adlar (克莱恩/
-Klein), yer adlari, rakamlar. Bunlar capa olarak sabitlenir ve uzunluk
-temelli hizalama YALNIZCA iki capa ARASINDA calisir. Kayma o zaman bir
-sonraki ozel ada kadar yayilabilir -- diyalog agirlikli bir bolumde bu
-birkac paragraftir.
+Klein), yer adlari, rakamlar. Bunlar capa olarak bulunur (capa_bul) ve
+bolum.hizala'ya YUMUSAK bir kisit olarak verilir: capali bir 1:1 eslesme
+CAPA_ODULU kadar ucuzlar. Kayma o zaman cogunlukla bir sonraki ozel ada
+kadar yayilir -- diyalog agirlikli bir bolumde bu birkac paragraftir.
+
+Ilk surum SERT bir kisitti (hizala_capali: hizalama yalnizca iki capa
+ARASINDA calisir, capa paragraflari zorla 1:1 baglanir). Tek bir yanlis
+capa o zaman dilimi zorla bozuyordu; yumusak odul yanlis capayi uzunluk
+kanitina karsi tartabildigi icin yerini aldi ve sert surum kaldirildi.
 
 Capa hizalamanin dogrulugunu artirmaz; HATANIN MENZILINI kisaltir. Asil
 kazanc budur.
@@ -49,8 +54,9 @@ Kullanim:
     capa.py --kendini-dene          ic testler (depo gerektirmez)
 
 Kod olarak kullanim:
-    import capa
-    gruplar = capa.hizala_capali(k_par, h_par, capa.sozluk_yukle())
+    import bolum, capa
+    capalar = set(capa.capa_bul(k_par, h_par, capa.sozluk_yukle()))
+    gruplar = bolum.hizala(k_par, h_par, capalar)
 """
 
 from __future__ import annotations
@@ -205,41 +211,6 @@ def _monoton(ciftler: list) -> list:
         yol.append(ciftler[k])
         k = onceki[k]
     return yol[::-1]
-
-
-def hizala_capali(k_par, h_par, sozluk: dict, hizala_fn=None) -> list:
-    """
-    Capalar arasinda uzunluk temelli hizalama calistirir.
-
-    hizala_fn verilmezse bolum.hizala kullanilir. Capalar hizalamanin
-    YERINE gecmez, onu BOLUMLERE ayirir; her bolumun icinde mevcut
-    Gale-Church aynen calisir.
-    """
-    if hizala_fn is None:
-        import bolum
-
-        hizala_fn = bolum.hizala
-
-    capalar = capa_bul(k_par, h_par, sozluk)
-    if not capalar:
-        return hizala_fn(k_par, h_par)
-
-    gruplar, ki, hi = [], 0, 0
-    # Her capa kendi noktasinda bir sinirdir: capadan ONCEKI dilim
-    # hizalanir, capanin kendi paragrafi 1:1 baglanir.
-    for ka, ha in capalar + [(len(k_par), len(h_par))]:
-        if ka < ki or ha < hi:  # geriye giden capa: atla
-            continue
-        dilim_k, dilim_h = k_par[ki:ka], h_par[hi:ha]
-        if dilim_k or dilim_h:
-            for ia, ib in hizala_fn(dilim_k, dilim_h):
-                gruplar.append(([x + ki for x in ia], [y + hi for y in ib]))
-        if ka < len(k_par) and ha < len(h_par):
-            gruplar.append(([ka], [ha]))
-            ki, hi = ka + 1, ha + 1
-        else:
-            ki, hi = ka, ha
-    return gruplar
 
 
 # ------------------------------------------------------------ sozluk
@@ -489,33 +460,6 @@ def kendini_dene() -> int:
     h3 = ["y"] * 20 + ["Klein"]
     if capa_bul(k3, h3, {"克莱恩": "Klein"}, tolerans=0.06):
         print("HATA: uzak eşleşme elenmeli")
-        hata += 1
-
-    # ASIL SINAV: capa kaymayi HAPSEDIYOR mu?
-    # 12 paragraf, ortada bir birlesme; hizalayici olarak kasten BOZUK
-    # (her zaman 1:1 diyen) bir islev veriyoruz.
-    def kotu(a, b):
-        return [([i], [i]) for i in range(min(len(a), len(b)))]
-
-    kp = [f"甲{i}" for i in range(12)]
-    hp = [f"a{i}" for i in range(12)]
-    kp[3] = "克莱恩甲3"
-    hp[3] = "Klein a3"
-    kp[8] = "梅丽莎甲8"
-    hp[8] = "Melissa a8"
-    sozluk = {"克莱恩": "Klein", "梅丽莎": "Melissa"}
-    g = hizala_capali(kp, hp, sozluk, hizala_fn=kotu)
-    capali = {(tuple(x), tuple(y)) for x, y in g}
-    if (((3,), (3,)) not in capali) or (((8,), (8,)) not in capali):
-        print("HATA: çapa noktaları 1:1 bağlanmalı")
-        hata += 1
-
-    # Capa yoksa dogrudan hizalayiciya devredilir
-    if hizala_capali(["a", "b"], ["a", "b"], {}, hizala_fn=kotu) != [
-        ([0], [0]),
-        ([1], [1]),
-    ]:
-        print("HATA: çapasız durumda devretmeli")
         hata += 1
 
     # Sozluk onerisi: ayni profil yakalanmali

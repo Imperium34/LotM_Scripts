@@ -88,8 +88,12 @@ def _kod_izi() -> str:
     de anahtarda.
     """
     h = hashlib.sha1()
+    # Bu dosya da: _hizala_bolum burada. Eskiden yalnizca ice aktarilan
+    # moduller anahtardaydi; _hizala_bolum degisince onbellek eski
+    # sonuclari sessizce vermeye devam ederdi.
     for m in (B, HD, _capa, lotm, turkce):
         h.update(Path(m.__file__).read_bytes())
+    h.update(Path(__file__).read_bytes())
     h.update(repr(sorted(_CAPA_SOZLUGU.items())).encode())
     h.update(repr([(z, tr) for z, tr, *_ in _capa.terim_capalari()]).encode())
     return h.hexdigest()
@@ -120,7 +124,12 @@ def _hizala_bolum(k_par, h_par, kaynak, hedef):
         for j in ia:
             nereye[j] = ib
             grup_no[j] = g
-    rapor = HD.bolumu_denetle(k_par, h_par, gruplar, k_dil=kaynak, h_dil=hedef)
+    # sozluk: capa yer degistirmesi de kayma sinyali sayilir. Eskiden
+    # verilmiyordu; hizalama_denetle bir bolumu "kaymis" gosterirken (17,
+    # 46, 50) burada o gruplar karantinaya girmiyor, ESLESMEYEN sayiliyordu.
+    rapor = HD.bolumu_denetle(
+        k_par, h_par, gruplar, k_dil=kaynak, h_dil=hedef, sozluk=_CAPA_SOZLUGU
+    )
     supheli = {g for bas, son in rapor["kaymalar"] for g in range(bas, son + 1)}
     kayan = {j for j, g in grup_no.items() if g in supheli}
     return nereye, kayan

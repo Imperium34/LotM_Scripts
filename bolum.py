@@ -468,6 +468,14 @@ def main():
 
     if a.raw:
         sys.exit("--raw yalnizca tek kaynakla kullanilabilir")
+    # Hizalama ikili bir islemdir. Eskiden uc kaynak verilince ilk ikisi
+    # hizalaniyor, ucuncusu zip() icinde SESSIZCE dusuyordu ("--zh --en
+    # --tr" ciktisinda hic TR yoktu).
+    if len(secili) > 2:
+        sys.exit(
+            "hizali gorunum iki kaynak ister (ornek: --zh --tr); "
+            "uc metni tek tek gormek icin her birini ayri cagirin"
+        )
 
     if cilt:
         print(f"bolum {a.bolum} -- cilt {cilt[0]} {cilt[1]}\n")
