@@ -99,10 +99,10 @@ def test_desen_kur_ayin_ayini_bulmaz():
 # ------------------------------------------------------------ kapanis_denetle
 
 
-def test_maskeleme_i_ile_ii_ayirir():
+def test_izinli_ortme_i_ile_ii_ayirir():
     import kapanis_denetle as K
-    assert K.maskele("haziran ayının", ["ayin"]) == "haziran ayının"
-    assert K.maskele("Işık yandı", ["ışık"]).strip() == "yandı"
+    assert K.izinli_araliklari("haziran ayının", ["ayin"]) == []
+    assert K.izinli_araliklari("Işık yandı", ["ışık"]) == [(0, 4)]
 
 
 # ------------------------------------------------------------ sozluk_lint

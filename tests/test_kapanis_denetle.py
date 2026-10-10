@@ -177,3 +177,25 @@ def test_dondurulmus_sayi_harf_duyarlidir():
     metin = "On küsur yıldır. Bay Neil, on küsur yıldır. 'On küsur yıl' dedi."
     assert K.gecis_sayisi(metin, "on küsur yıl") == 1
     assert K.gecis_sayisi(metin, "küsur yıl") == 3
+
+
+
+def test_kisa_izinli_terim_uzun_yasagi_korlestirmez():
+    """
+    REGRESYON: izinli karsiliklar metinden kelime sinirsiz SILINIYORDU.
+    A.1'de "Ay" varken "aynalı" " nalı" oluyor, yasak hic bulunmuyordu.
+    """
+    r = sablon(a1="| Moon | Ay | — |\n", a3='- **"aynalı" yasaktır**\n')
+    assert bulgular(r, "Klein aynalı kapıya baktı. Ay doğdu.", "HATA", "yasak kelime")
+    r = sablon(a1="| cannon | top | — |\n", a3='- **"toplantı" yasaktır**\n')
+    assert bulgular(r, "Bir toplantı yaptılar; top patladı.", "HATA", "yasak kelime")
+
+
+@pytest.mark.parametrize("bas, son, araliklar, beklenen", [
+    (0, 8, [(0, 14)], True),     # silindir <- silindir şapka
+    (7, 13, [(0, 9)], True),     # ettiği <- havale et(tiği): izinli once basladi
+    (0, 6, [(0, 2)], False),     # aynalı, izinli "Ay" ayni yerden ve kisa
+    (5, 9, [(0, 4)], False),     # izinli aralik bitmeden baslamiyor
+])
+def test_izinli_icinde_mi(bas, son, araliklar, beklenen):
+    assert K.izinli_icinde_mi(bas, son, araliklar) is beklenen

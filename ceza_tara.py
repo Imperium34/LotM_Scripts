@@ -100,14 +100,14 @@ def main():
         istek = {int(x) for x in a.bolumler.split(",")}
         ortak = [n for n in ortak if n in istek]
 
-    # Paragraflar sabitlere bagli degil; bir kez ayristirilir.
-    par = {
-        no: (
-            B.paragraflar(k_hepsi[no].metin, B.KAYNAKLAR["zh"][2]),
-            B.paragraflar(h_hepsi[no].metin, B.KAYNAKLAR["tr"][2]),
-        )
-        for no in ortak
-    }
+    def paragraflar():
+        return {
+            no: (
+                B.paragraflar(k_hepsi[no].metin, B.KAYNAKLAR["zh"][2]),
+                B.paragraflar(h_hepsi[no].metin, B.KAYNAKLAR["tr"][2]),
+            )
+            for no in ortak
+        }
 
     print(f"{len(ortak)} bölüm | {a.degisken} (şu an {ilk})"
           f"{' | modül: ' + a.modul if a.modul else ''}\n")
@@ -118,6 +118,11 @@ def main():
     try:
         for deger in [int(x) for x in a.cezalar.split(",")]:
             setattr(B, a.degisken, deger)
+            # Her deger icin yeniden ayristirilir: bazi degiskenler
+            # (etiket_birlestir) paragraflamanin KENDISINI degistirir.
+            # Eskiden bir kez, dongu disinda yapiliyordu ve o degiskenler
+            # icin her satir ayni cikiyordu -- olcum sessizce bostu.
+            par = paragraflar()
             s = Counter()
             kalan = set()
             for no in ortak:

@@ -24,8 +24,13 @@ IKI TUZAK
 1. YASAK KELIME, IZINLI TERIMIN ICINDE OLABILIR. Bolum 44 bunu kendisi
    soyluyor: ¶15'te "silindir" yasaktir (altipatlarin parcasi "top"tur) ama
    ¶22'deki "silindir sapka" dogrudur. Duz arama her seferinde yanlis alarm
-   verir. Cozum: once A.1/A.2'deki izinli karsiliklar metinde maskelenir,
-   yasak arama maskelenmis metinde yapilir.
+   verir. Cozum: yasagin her gecisi icin, onu ORTEN bir izinli gecis var mi
+   diye bakilir (bkz. izinli_icinde_mi).
+
+   Eskiden izinli karsiliklar metinden SILINIYOR, yasak kalan metinde
+   araniyordu. Silme kelime sinirsizdi: A.1'de "Ay" varsa "aynalı" " nalı"
+   oluyor, yasak "aynalı" hic bulunmuyordu. Kisa bir izinli terim, onunla
+   baslayan HER yasagi korlestiriyordu.
 
 2. BUYUK HARF ANLAM TASIR. "Aptal" Soytari'nin yasak esanlamlisidir; kucuk
    "aptal" siradan bir sifattir ("yuzunun aptallastigini gordu"). Bu yuzden
@@ -319,19 +324,32 @@ def govde_bicimleri(kelime: str) -> list:
     return out
 
 
-def yasak_gecer_mi(kelime: str, metin: str) -> bool:
+def yasak_yerleri(kelime: str, metin: str) -> list:
     """
-    Yasak kelime denetimi -- sol sinirli.
+    Yasak kelimenin (bas, son) gecisleri -- sol sinirli.
 
     Duz altdize aramasi "ekip"i "cekip" icinde bulur; bolum 44'te tam bu
     oldu ("omzunu geriye CEKIP"). Sag tarafi acik birakmak sarttir, yoksa
-    "ekibi" kacar.
+    "ekibi" kacar. Buyuk harfle baslayan yasak harf duyarli aranir (bkz.
+    modul notu, 2. tuzak); digerleri Turkce kucultulmus metinde (uzunluk
+    korunur, konumlar asil metne aittir).
     """
     if kelime[:1].isupper():
-        return any(sozcuk_gecer_mi(b, metin) for b in govde_bicimleri(kelime))
-    kucuk = tr_kucult(metin)
+        hedef, bicimler = metin, govde_bicimleri(kelime)
+    else:
+        hedef, bicimler = tr_kucult(metin), govde_bicimleri(tr_kucult(kelime))
+    return [
+        m.span()
+        for b in bicimler
+        for m in re.finditer(_SOL_SINIR + re.escape(b), hedef)
+    ]
+
+
+def yasak_gecer_mi(kelime: str, metin: str, izinli_araliklar=()) -> bool:
+    """Izinli bir gecisin parcasi OLMAYAN en az bir yasak gecisi var mi?"""
     return any(
-        sozcuk_gecer_mi(b, kucuk) for b in govde_bicimleri(tr_kucult(kelime))
+        not izinli_icinde_mi(a, b, izinli_araliklar)
+        for a, b in yasak_yerleri(kelime, metin)
     )
 
 
@@ -394,20 +412,32 @@ def taninmayan_yasaklar(govde: str) -> list:
     return out
 
 
-def maskele(metin: str, izinli: list) -> str:
+def izinli_araliklari(metin: str, izinli: list) -> list:
     """
-    Izinli karsiliklari metinden siler; yasak arama kalan metinde yapilir.
-
-    Uzundan kisaya: "silindir sapka" once silinsin ki geriye "silindir"
-    kalmasin. Ayni sey "Sen Avi Mermisi" / "Mermi" gibi ic ice geciren
-    butun ciftler icin gecerli.
+    Izinli karsiliklarin metindeki (bas, son) araliklari. Harf duyarsiz,
+    ama re.IGNORECASE ile degil tr_desen ile: ı ile i ayri harfler
+    ("ayin" izinliyse "ayının" ortulmez). Sol sinirli: kelimenin ortasinda
+    baslayan izinli gecis bir sey ortmez.
     """
-    # re.IGNORECASE KULLANILMAZ: ı ile i'yi ayni harf sayar. Izinli "ayin"
-    # metindeki "ayın"i da silerdi ve oradaki bir yasak gorulmezdi.
-    for t in sorted(izinli, key=len, reverse=True):
+    out = []
+    for t in izinli:
         if t:
-            metin = re.sub(tr_desen(t), " ", metin)
-    return metin
+            out += [m.span() for m in re.finditer(_SOL_SINIR + tr_desen(t), metin)]
+    return out
+
+
+def izinli_icinde_mi(bas: int, son: int, araliklar) -> bool:
+    """
+    Yasak gecisi (bas, son) izinli bir gecisin parcasi mi?
+
+    Yasak izinli araligin ICINDE baslamali ve ya
+      - icinde bitmeli:           "silindir" <- "silindir şapka"
+      - ya da izinli ondan ONCE baslamis olmali (yasak, izinli ifadenin
+        ekli son kelimesi):       "ettiği" <- "havale et-" + "tiği"
+    Ayni yerden baslayip yasaktan KISA olan izinli ortmez: "Ay" "aynalı"yi,
+    "top" "toplantı"yi ortmez.
+    """
+    return any(a <= bas < b and (son <= b or a < bas) for a, b in araliklar)
 
 
 def gecis_sayisi(metin: str, kalip: str) -> int:
@@ -568,10 +598,10 @@ def denetle(rapor: str, ceviri: str) -> list:
             else ("HATA", f"{etiket} «{kalip[:58]}»: beklenen {bekle}, bulunan {n}")
         )
 
-    # 4. Yasak kelimeler (maskelenmis metinde)
-    temiz = maskele(ceviri, izinli)
+    # 4. Yasak kelimeler (izinli bir gecisin parcasi olmayanlar)
+    ortulen = izinli_araliklari(ceviri, izinli)
     for y in a3:
-        if yasak_gecer_mi(y, temiz):
+        if yasak_gecer_mi(y, ceviri, ortulen):
             bulgular.append(("HATA", f"yasak kelime geçiyor: «{y}»"))
     if not any(s == "HATA" and "yasak kelime" in m for s, m in bulgular):
         bulgular.append(("TAMAM", f"{len(a3)} yasak kelimenin hiçbiri geçmiyor"))
