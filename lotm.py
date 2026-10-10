@@ -49,6 +49,7 @@ Tanilar:
     python3 lotm.py anomali      # ham metindeki numara hatalari
     python3 lotm.py cince        # sozlukte Cince karsiligi eksik terimler
     python3 lotm.py saglik       # arac neyi OKUYAMADI? (bulgu degil, kapsam)
+    python3 lotm.py iz 1401 en   # eksik bir bolumun ham metinde izini surer
 
 'kontrol' ile 'saglik' farkli sorular sorar ve biri digerinin yerine
 gecmez: 'kontrol' bulunan verinin tutarli olup olmadigina bakar, 'saglik'
@@ -165,7 +166,10 @@ SAGLIK = Saglik()
 
 BETIK_KOK = Path(__file__).resolve().parent
 
-KOK = Path(os.environ.get("LOTM_KOK", Path.home() / "Projects/LotM"))
+# Varsayilan, betik klasorunun bir ustu -- calistir.sh ile AYNI kural.
+# Eskiden burada ~/Projects/LotM sabitti: calistir.sh disindan calistirilan
+# bir betik, depo baska yerdeyse sessizce baska bir koke bakardi.
+KOK = Path(os.environ.get("LOTM_KOK") or BETIK_KOK.parent)
 SITE = KOK / "Imperium34.github.io"
 
 SOZLUK_YOLU = SITE / "_data/sozluk.yml"
@@ -196,7 +200,7 @@ KELIMELER = _kelimeler_yolu()
 
 # Wiki ile dogrulanmis araliklar. Cince ham metinden tespit edilen cilt
 # uzunluklari bu tabloyla birebir ortusuyor (fark +0, sekizde sekiz).
-# lotm_splitter.py'deki VOLUME_RANGES bununla ayni olmali.
+# lotm_splitter.py de bu tabloyu kullanir (ayri bir kopyasi yok).
 CILTLER = [
     (1, "Clown", 1, 213),
     (2, "Faceless", 214, 482),
@@ -664,7 +668,20 @@ def _govde(terim: str, olcu: bool = False) -> str:
 
 @functools.lru_cache(maxsize=None)
 def desen_kur(terim: str, harf_duyarli: bool = True):
-    """(docstring ayni kalir)"""
+    """
+    Turkce bir terim icin cekim eklerine dayanikli desen (bkz. EK, _govde).
+
+    Harf duyarliligi VARSAYILAN olarak aciktir ve oyle kalmalidir: Mertebe
+    adlari ozel isimdir, cakismalari kucuk harflidir (Yol/yolu, Haz/hazine,
+    Maraz/marazi, San/sansli).
+
+    HARF DUYARSIZ DALDA re.IGNORECASE KULLANILMAZ (bkz. turkce.py, 3.
+    tuzak): ı ile i ayni sinifa duser ve "Ayin" deseni "ayının"i bulur.
+    Bunun yerine terimin kucuk ve bas harfi buyuk bicimleri ACIKCA uretilip
+    alternatif olarak baglanir.
+
+    Sonuc onbellege alinir: ayni terim her bolum icin yeniden derlenmez.
+    """
     bicimler = (
         [terim]
         if harf_duyarli
@@ -675,9 +692,14 @@ def desen_kur(terim: str, harf_duyarli: bool = True):
     # Olcu bicimi (bkz. OLCU_EKI): sayi on-kosulu bir kez yazilir, uc harf
     # bicimi onun arkasinda alternatif olur. Eskiden her bicim kendi
     # ~60 lookbehind'ini tasiyordu.
-    secenekler.append(
-        _SAYI_ONCESI + "(?:" + "|".join(_govde(b, olcu=True) for b in bicimler) + ")"
-    )
+    #
+    # Basta bir ILERI BAKIS var: lookbehind'lar ancak terimin kendisi o
+    # konumda basliyorsa denenir. Yoksa alternatif bir lookbehind'la
+    # basladigi icin motor metindeki HER konumda ~54 lookbehind calistirir
+    # ve harf onekiyle ileri atlayamaz. yayim_denetle'nin 2 dakikasinin
+    # cogu buydu; ileri bakisla ayni eslesmeler ~9 kat hizli.
+    olcu = "(?:" + "|".join(_govde(b, olcu=True) for b in bicimler) + ")"
+    secenekler.append(f"(?={olcu})" + _SAYI_ONCESI + olcu)
 
     kalip = r"(?<![^\W_])(?:" + "|".join(secenekler) + r")"
     return re.compile(kalip)
