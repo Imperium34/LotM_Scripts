@@ -48,6 +48,13 @@
 #                             cumartesi takvimine uyuyor mu
 #      ./calistir.sh tarama   sadece Ingilizce tarama (nadiren gerekir)
 #
+#  FARK: denetim, lint, bicim, toplu, takvim ve belgeler adimlari tam
+#  korpusta calisinca bulgularini Reports/bulgular/'a yazar ve sonunda
+#  yalnizca son calistirmadan beri DEGISENI gosterir (fark.py):
+#      fark [bicim]: +2 yeni, -1 giden (280 -> 281 bulgu)
+#  Bir onceki calistirma Reports/son/'da durur. 'bolum' zinciri kismi
+#  tarama yaptigi icin fark yazmaz.
+#
 #  LOTM_KOK ayarliysa ona uyar; yoksa betigin konumundan turetir.
 #  Eskiden yalnizca ikincisi vardi, yani lotm.py LOTM_KOK'a bakarken bu
 #  betik bakmiyordu ve ikisi farkli koke isaret edebiliyordu.
@@ -84,6 +91,16 @@ BOLUMLER="$SITE/_chapters"
 BICIM_TABAN="${LOTM_BICIM_TABAN:-$TOOLS/lint/bicim-taban.tsv}"
 
 mkdir -p "$RAPOR"
+# fark.py: her tam-korpus adimi bulgularini buraya yazar; Reports/son/ bir
+# onceki calistirmanin kopyasidir. Adim sonunda yalnizca FARK gosterilir
+# (+ yeni / - giden). 'bolum' zinciri yazmaz: kismi bir tarama "onceki"yi
+# bozar ve bir sonraki tam calistirma yuzlerce sahte "giden" gosterirdi.
+BULGULAR="$RAPOR/bulgular"
+mkdir -p "$BULGULAR"
+
+fark_goster() {
+  python3 "$TOOLS/fark.py" "$BULGULAR/$1.tsv" || true
+}
 
 kirmizi() { printf '\033[31m%s\033[0m\n' "$*"; }
 yesil() { printf '\033[32m%s\033[0m\n' "$*"; }
@@ -148,7 +165,15 @@ adim_takvim() {
   # yakalanmasi gereken tek tur hata: tarih yanlissa bolum yanlis gun cikar.
   # "$@": bolum zinciri --bolum N verir (beklenen tarihi yazdirmak icin).
   # Eskiden argumanlar iletilmiyordu; tek bolum kipi hic calismiyordu.
-  python3 "$TOOLS/takvim_denetle.py" "$@"
+  # Fark yalnizca argumansiz (tam) calismada.
+  if (($#)); then
+    python3 "$TOOLS/takvim_denetle.py" "$@"
+    return
+  fi
+  local kod=0
+  python3 "$TOOLS/takvim_denetle.py" --bulgular "$BULGULAR/takvim.tsv" || kod=$?
+  fark_goster takvim
+  return "$kod"
 }
 
 adim_tarama() {
@@ -185,12 +210,16 @@ adim_denetim() {
   # --kurallar: lint'in bagLAMIYLA bildirdigi eskimis bicimler burada tek
   # satira iner. Ayni karar iki dosyada duruyor (sozluk.yml veriyi tutar,
   # lint-kurallari.yml baglami); rapor bir kez okunsun diye.
+  local kod=0
   python3 "$TOOLS/yayim_denetle.py" \
     --sozluk "$SOZLUK" \
     --bolumler "$BOLUMLER" \
     --kurallar "$TOOLS/lint/lint-kurallari.yml" \
-    --envanter | tee "$RAPOR/denetim.txt"
+    --bulgular "$BULGULAR/denetim.tsv" \
+    --envanter | tee "$RAPOR/denetim.txt" || kod=$?
   yesil "  -> Reports/denetim.txt"
+  fark_goster denetim
+  return "$kod"
 }
 
 adim_lint() {
@@ -200,11 +229,15 @@ adim_lint() {
   # --kaynak: anakronizm denetimi Cince metne de bakar. Kaynakta karsiligi
   # olan birim (公里, 米, 克 ...) bulgu sayilmaz -- o dunyanin kendi
   # kelimesidir. Cince metin okunamazsa uyarip kaynaksiz calisir.
+  local kod=0
   python3 "$TOOLS/lint/sozluk_lint.py" \
     --sozluk "$SOZLUK" \
     --kurallar "$TOOLS/lint/lint-kurallari.yml" \
     --kaynak \
-    "$BOLUMLER"/*.md
+    --bulgular "$BULGULAR/lint.tsv" \
+    "$BOLUMLER"/*.md || kod=$?
+  fark_goster lint
+  return "$kod"
 }
 
 bicim_argumanlari() {
@@ -225,9 +258,11 @@ adim_bicim() {
   # Cikis 1 = tabanda olmayan bir HATA var. Zincirde uyari olarak gecilir;
   # tek bolum zincirinde yayin oncesi kirmizi uyaridir.
   bicim_argumanlari
-  python3 "$TOOLS/bicim_denetle.py" "${BICIM_ARG[@]}" | tee "$RAPOR/bicim.txt"
-  local kod="${PIPESTATUS[0]}"
+  local kod=0
+  python3 "$TOOLS/bicim_denetle.py" "${BICIM_ARG[@]}" --bulgular "$BULGULAR/bicim.tsv" |
+    tee "$RAPOR/bicim.txt" || kod=$?
   yesil "  -> Reports/bicim.txt"
+  fark_goster bicim
   # sapka gibi: duzeltme zincirde yalniz KURU onerilir; yazmak elle.
   mavi "  otomatik duzeltme (KURU): python3 bicim_denetle.py --duzelt"
   mavi "  yazmak icin:              python3 bicim_denetle.py <numara> --duzelt --uygula"
@@ -270,9 +305,13 @@ adim_toplu() {
   mavi "[7/8] Terim tutarliligi (sozluk + words.md, yayimlanmis bolumler)..."
   # --kaynak ikisi: Cincesi girilmis terim Cince anahtarla (kesin), girilmemis
   # olan Ingilizceyle taranir; tek tablo. Tablonun basi duzeltme sirasidir.
-  python3 "$TOOLS/toplu_denetle.py" --kaynak ikisi | tee "$RAPOR/toplu.txt"
+  local kod=0
+  python3 "$TOOLS/toplu_denetle.py" --kaynak ikisi --bulgular "$BULGULAR/toplu.tsv" |
+    tee "$RAPOR/toplu.txt" || kod=$?
   yesil "  -> Reports/toplu.txt"
+  fark_goster toplu
   mavi "  tek terim:  python3 toplu_denetle.py --kaynak ikisi --ayrinti \"<terim>\""
+  return "$kod"
 }
 
 adim_belgeler() {
@@ -295,7 +334,11 @@ adim_belgeler() {
   local kel=()
   [[ -f "$KELIMELER" ]] && kel=(--kelimeler "$KELIMELER")
   python3 "$TOOLS/lint/sapka.py" --sozluk "$SOZLUK" ${kel[@]+"${kel[@]}"} "${belgeler[@]}"
-  python3 "$TOOLS/belge_denetle.py" --sozluk "$SOZLUK" "${belgeler[@]}"
+  local kod=0
+  python3 "$TOOLS/belge_denetle.py" --sozluk "$SOZLUK" --bulgular "$BULGULAR/belgeler.tsv" \
+    "${belgeler[@]}" || kod=$?
+  fark_goster belgeler
+  return "$kod"
 }
 
 adim_bolum() {

@@ -798,6 +798,32 @@ def rapor(
     print(f"  kapi (dusuk)      : {len(dusuk)}   (--hepsi ile gorulur)")
 
 
+def fark_kayitlari(artiklar, b: Bulgular) -> list:
+    """
+    fark.py icin (anahtar, gorunum). Yalnizca bakilmasi gerekenler: artik
+    isaret, eskimis, gecisten once eski/yeni bicim, sizinti, yuksek guvenli
+    kapi adayi. 'sadik', dusuk guvenli adaylar ve envanter tanimi geregi
+    sorun degil; girselerdi her yeni bolum onlarca "yeni" satir uretirdi.
+    """
+    out = []
+    for dosya, satir, aciklama, ctx in artiklar:
+        out.append((("artik", dosya, aciklama, ctx), f"[{dosya}:{satir}] artık işaret: {aciklama}"))
+    for no, dosya, k, eski, _ctx in b.eskimis:
+        out.append((("eskimis", dosya, eski, k.tr), f"[{dosya}] eskimiş '{eski}' -> '{k.tr}'"))
+    for no, dosya, k, eski, _ctx in b.gecis_oncesi:
+        out.append((("gecis_oncesi", dosya, eski, k.tr),
+                    f"[{dosya}] geçişten önce '{eski}' (geçiş {k.gecis}) -- bilgi"))
+    for no, dosya, k, bulunan, _ctx in b.erken_yeni:
+        out.append((("erken_yeni", dosya, k.tr, bulunan),
+                    f"[{dosya}] geçişten önce yeni biçim '{bulunan}' (geçiş {k.gecis})"))
+    for no, dosya, k, _ctx in b.sizinti:
+        out.append((("sizinti", dosya, k.en), f"[{dosya}] çevrilmemiş '{k.en}' -> '{k.tr}'"))
+    for g, no, dosya, k, _ctx in b.kapi:
+        if g == YUKSEK:
+            out.append((("kapi", dosya, k.tr), f"[{dosya}] kapı adayı '{k.tr}' (kapı {k.kapi})"))
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sozluk", default=None)
@@ -810,6 +836,7 @@ def main():
         help="lint-kurallari.yml; burada kapsanan eskimis "
         "bicimler tek satira indirilir (bkz. lint_kapsami)",
     )
+    ap.add_argument("--bulgular", default=None, help="bulgulari fark.py icin TSV olarak yaz")
     ap.add_argument(
         "--cumle-ici-yuksek",
         action="store_true",
@@ -840,6 +867,8 @@ def main():
     )
     lint_kapsam = lint_kapsami(a.kurallar)
     rapor(artiklar, bulgular, kayitlar, a.hepsi, a.envanter, lint_kapsam)
+    if a.bulgular:
+        lotm.bulgulari_yaz(a.bulgular, fark_kayitlari(artiklar, bulgular))
 
     # Cikis kodu: okura gorunen ya da kesin yanlis olan bulgular. Kapi
     # adaylari ADAYDIR (karari insan verir) ve cikis kodunu etkilemez.

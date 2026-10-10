@@ -138,6 +138,7 @@ def main() -> int:
     ap.add_argument("--sozluk", type=Path, default=None, help="varsayilan: lotm.SOZLUK_YOLU")
     ap.add_argument("--klein", type=Path, default=None, help="varsayilan: Voice_Maps/Klein.md")
     ap.add_argument("--notlar", type=Path, default=None, help="varsayilan: Voice_Maps/Klein_Notlar.md")
+    ap.add_argument("--bulgular", type=Path, default=None, help="bulgulari fark.py icin TSV olarak yaz")
     a = ap.parse_args()
 
     dosyalar = a.dosyalar or varsayilan_dosyalar()
@@ -152,6 +153,7 @@ def main() -> int:
         print(f"  !! sözlük yok ({yol}); örneklerde eski kelime denetlenmedi", file=sys.stderr)
         kurallar = []
     hata = uyari = 0
+    kayit = []  # fark.py icin: (anahtar, gorunum); satir numarasi anahtarda yok
     for yol in dosyalar:
         if yol.name == "Klein_Notlar.md":
             continue            # gerekce metni: model okumaz, ornek taklidi yok
@@ -162,6 +164,7 @@ def main() -> int:
                   f"(satır {', '.join(map(str, bekleyen[:8]))}{'…' if len(bekleyen) > 8 else ''})")
         for agirlik, no, mesaj in ornek_denetle(yol.name, metin, kurallar, yol.name.startswith("Klein")):
             print(f"  {'!!' if agirlik == 'hata' else ' *'} {yol.name}:{no}  {mesaj}")
+            kayit.append(((yol.name, mesaj), f"[{yol.name}:{no}] {agirlik}: {mesaj}"))
             hata += agirlik == "hata"
             uyari += agirlik == "uyari"
 
@@ -171,8 +174,11 @@ def main() -> int:
         for agirlik, ad, mesaj in kimlik_denetle(klein.read_text(encoding="utf-8"),
                                                  notlar.read_text(encoding="utf-8")):
             print(f"  {'!!' if agirlik == 'hata' else ' *'} {ad}  {mesaj}")
+            kayit.append(((ad, mesaj), f"[{ad}] {agirlik}: {mesaj}"))
             hata += agirlik == "hata"
             uyari += agirlik == "uyari"
+    if a.bulgular:
+        lotm.bulgulari_yaz(a.bulgular, kayit)
     print(f"  belgeler: {hata} hata, {uyari} uyarı ({len(dosyalar)} dosya)")
     return 1 if hata else 0
 

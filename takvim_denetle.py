@@ -513,6 +513,7 @@ def main() -> int:
     ap.add_argument(
         "--bolum", type=int, default=None, help="yalnizca bu bolumu ilgilendirenler"
     )
+    ap.add_argument("--bulgular", default=None, help="bulgulari fark.py icin TSV olarak yaz")
     # Eski bayraklar: verilirse KABUL EDILMEZ. Sessizce yok saymak (ya da
     # takvimin ustune yazmak) ayni karari yine iki yerde tutmak olurdu.
     ap.add_argument("--baslangic", default=None, help=argparse.SUPPRESS)
@@ -567,6 +568,11 @@ def main() -> int:
 
     hata = [b for b in bulgu if b[0] == "hata"]
     uyari = [b for b in bulgu if b[0] == "uyari"]
+    if a.bulgular:
+        lotm.bulgulari_yaz(
+            a.bulgular,
+            [((no, mesaj), f"{no:04d}.md {agirlik}: {mesaj}") for agirlik, no, mesaj, _i in bulgu],
+        )
     for agirlik, no, mesaj, _ilgili in sorted(bulgu, key=lambda b: (b[1], b[0])):
         print(f"  {'!!' if agirlik == 'hata' else ' *'} {no:04d}.md  {mesaj}")
     kapsam = f"bölüm {a.bolum}" if a.bolum is not None else f"{len(ks)} bölüm"

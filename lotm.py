@@ -301,6 +301,30 @@ def atomik_yaz(yol, icerik) -> None:
         raise
 
 
+def bulgulari_yaz(yol, kayitlar) -> None:
+    """
+    Bir denetimin bulgularini fark.py'nin okuyacagi TSV olarak yazar.
+
+    kayitlar: [(anahtar, gorunum)] -- anahtar bir demet, gorunum tek satir.
+    ANAHTAR KARARLI OLMALI: satir numarasi icermez (bir paragraf eklenince
+    butun bulgular "yeni" gorunurdu); dosya, kural ve alinti gibi alanlardan
+    olusur. Gorunum yalnizca ekranda gosterilir, karsilastirmaya girmez.
+
+    Satir: anahtar alanlari, sekmeyle; son sutun gorunum. Ayni anahtar iki
+    kez gelirse biri kalir. Sirali yazilir ki dosyanin kendisi de diff'lenebilsin.
+    """
+
+    def temiz(x) -> str:
+        return re.sub(r"[\t\r\n]+", " ", str(x if x is not None else "")).strip()
+
+    satirlar = {}
+    for anahtar, gorunum in kayitlar:
+        a = "\t".join(temiz(x) for x in anahtar)
+        satirlar.setdefault(a, temiz(gorunum))
+    Path(yol).parent.mkdir(parents=True, exist_ok=True)
+    atomik_yaz(yol, "".join(f"{a}\t{g}\n" for a, g in sorted(satirlar.items())))
+
+
 # =====================================================================
 # CINCE SAYILAR
 # =====================================================================

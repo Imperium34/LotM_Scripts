@@ -1525,6 +1525,10 @@ def main():
     )
     ap.add_argument("--taban", default=None, help="bu dosyadaki bulgular bastırılır")
     ap.add_argument(
+        "--bulgular", default=None,
+        help="tabandan sonra kalan bulgulari fark.py icin TSV olarak yaz",
+    )
+    ap.add_argument(
         "--taban-yaz",
         dest="taban_yaz",
         default=None,
@@ -1613,6 +1617,15 @@ def main():
 
     hatalar = [b for b in tum if b.duzey == HATA]
     baklar = [b for b in tum if b.duzey == BAK]
+    if a.bulgular:
+        # Anahtar tabaninkiyle ayni (dosya, kod, alinti): satir numarasi yok.
+        lotm.bulgulari_yaz(
+            a.bulgular,
+            [
+                (b.anahtar(), f"[{b.dosya}:{b.satir}] {b.kod} {b.duzey}: {b.mesaj} | {b.alinti}")
+                for b in tum
+            ],
+        )
 
     print(
         f"{len(yollar)} dosya tarandı."

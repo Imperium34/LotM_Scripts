@@ -682,6 +682,24 @@ def denetle_sozluk_kapsami(rapor, dosyalar, terimler):
 # Ana akış
 # ----------------------------------------------------------------------
 
+def _fark_kaydi(b: Bulgu) -> tuple:
+    """
+    fark.py icin (anahtar, gorunum). Anahtar satir numarasi ve SAYI icermez:
+      register     yogunluk degeri her duzenlemede degisir -> (kural, dosya)
+      diyakritik   ozet satirinin 'dosyasi' "(12 bölüm)" bir sayidir
+                   -> (kural, yazim anahtari)
+      digerleri    (kural, dosya, bulunan, baglam)
+    """
+    if b.kural == "register":
+        anahtar = (b.kural, b.dosya)
+    elif b.dosya.startswith("("):
+        anahtar = (b.kural, b.bulunan)
+    else:
+        anahtar = (b.kural, b.dosya, b.bulunan, b.baglam)
+    konum = b.dosya if not b.satir else f"{b.dosya}:{b.satir}"
+    return anahtar, f"[{konum}] {b.kural} {b.agirlik}: {b.mesaj.splitlines()[0]}"
+
+
 DENETIMLER = [
     "varyant",
     "yasakli",
@@ -707,6 +725,7 @@ def main() -> int:
     )
     ap.add_argument("--sadece", default="", help=f"virgülle: {','.join(DENETIMLER)}")
     ap.add_argument("--format", choices=["metin", "json"], default="metin")
+    ap.add_argument("--bulgular", default=None, help="bulgulari fark.py icin TSV olarak yaz")
     ap.add_argument(
         "--kaynak",
         action="store_true",
@@ -757,6 +776,9 @@ def main() -> int:
         denetle_register(rapor, dosyalar, kurallar)
     if terimler:
         denetle_sozluk_kapsami(rapor, dosyalar, terimler)
+
+    if args.bulgular:
+        lotm.bulgulari_yaz(args.bulgular, [_fark_kaydi(b) for b in rapor.bulgular])
 
     if args.format == "json":
         print(

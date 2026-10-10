@@ -676,6 +676,31 @@ def _tekillestir(isler: list) -> list:
     return [is_ for is_ in isler if secilen[lotm.tr_kucult(is_[2].tr)] is is_]
 
 
+def fark_kayitlari(kayitlar) -> list:
+    """
+    fark.py icin (anahtar, gorunum): her ESLESMEYEN gecis ve metinde kalan
+    her terk edilmis karsilik. Anahtar kaynak paragrafindan kurulur; kaynak
+    metin degismez, yani bir gecis yalnizca ceviri, sozluk ya da hizalama
+    degisince belirir ya da kaybolur. Karantina ve komsu bilerek disarida:
+    hizalama kusurudur, ceviri bulgusu degil.
+    """
+    out = []
+    for k in kayitlar:
+        for v in k["eslesmeyen"]:
+            kaynak = re.sub(r"\s+", " ", v["kaynak_metin"])[:80]
+            hedef = re.sub(r"\s+", " ", v["hedef_metin_dar"])[:70]
+            out.append((
+                ("eslesmeyen", k["terim"], v["bolum"], kaynak),
+                f"[bölüm {v['bolum']}] {_ad(k)} <- {k['sorgu']}: eşleşmeyen | {hedef}",
+            ))
+        for eski, n in sorted(k.get("eski_sayim", {}).items()):
+            out.append((
+                ("eski", k["terim"], eski),
+                f"{_ad(k)}: terk edilmiş '{eski}' metinde ×{n}",
+            ))
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(
         description="Sozlugun tamamini yayimlanmis metne karsi tarar."
@@ -717,6 +742,10 @@ def main() -> int:
         help="hizalama onbellegini sil ve sifirdan hesapla",
     )
     ap.add_argument("--genislik", type=int, default=None)
+    ap.add_argument(
+        "--bulgular", default=None,
+        help="eslesmeyen gecisleri ve eski karsiliklari fark.py icin TSV olarak yaz",
+    )
     a = ap.parse_args()
 
     import shutil
@@ -820,6 +849,8 @@ def main() -> int:
         return 0
 
     kayitlar.sort(key=lambda k: (-k["oran"], -k["toplam"]))
+    if a.bulgular:
+        lotm.bulgulari_yaz(a.bulgular, fark_kayitlari(kayitlar))
     if a.format == "tsv":
         tsv_yaz(kayitlar)
     else:
