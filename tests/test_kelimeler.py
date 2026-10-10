@@ -95,7 +95,10 @@ def test_denetleyiciler_words_md_terimini_gorur(tmp_path, monkeypatch):
     assert "印章/盖章" in [s for s, *_ in cikti]
     assert TD.sweep_terimleri("zh", "tr", kelimeler="haric")[0] == []
     # "/" ile iki Cince bicim: ikisi de bulunur
-    ob = {1: ("他盖章了。", ["他盖章了。"], ["Mühürü bastı."], {0: [0]}, set())}
+    b = TD.HizalanmisBolum(1, "zh", "tr", "他盖章了。", "Mühürü bastı.",
+                           ["他盖章了。"], ["Mühürü bastı."])
+    b._sonuc = ({0: [0]}, set())       # hizalama hazir: diske yazilmaz
+    ob = {1: b}
     assert len(TD.terimi_tara("印章/盖章", ["damga"], ob, "zh", "tr", duyarsiz=False)) == 1
 
 

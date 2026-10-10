@@ -7,16 +7,37 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import belge_denetle as BD  # noqa: E402
+import lotm  # noqa: E402
 
-KURAL = """varyantlar:
-  - {kavram: R, dogru: ayin, yanlis: [ritüel], istisna: ["şans art[ıi]rma"], ogrenme_bolumu: 28, kesin_gecis: true}
+SOZLUK = """\
+- terim: Ayin
+  ingilizce: Ritual
+  eski_karsiliklar: ["ritüel"]
+  kategori: Temel Kavramlar
+  bolum_siniri: 22
+
+- terim: Sıradışı
+  ingilizce: Beyonder
+  eski_karsiliklar: ["Olağanüstü"]
+  kategori: Kavramlar
 """
 
 
+def _sozluk(tmp_path):
+    yol = tmp_path / "sozluk.yml"
+    yol.write_text(SOZLUK, encoding="utf-8")
+    return yol
+
+
 def _kurallar(tmp_path):
-    yol = tmp_path / "k.yml"
-    yol.write_text(KURAL, encoding="utf-8")
-    return BD.kesin_kurallar(yol)
+    return BD.gecis_kurallari(lotm.sozluk_yukle(_sozluk(tmp_path)))
+
+
+def test_kurallar_sozlukten_gelir(tmp_path):
+    k = _kurallar(tmp_path)
+    # bolum_siniri olmayan terimin gecisi yok: eski bicimi her yerde eskimis,
+    # o yayim_denetle'nin isi, ornek denetimine girmez.
+    assert [(kavram, bolum, dogru) for kavram, bolum, dogru, _e in k] == [("Ritual", 22, "Ayin")]
 
 
 def test_yalniz_ornekte_aranir(tmp_path):
@@ -26,12 +47,7 @@ def test_yalniz_ornekte_aranir(tmp_path):
              'Düz yazıda _"ritüelin bedeli"_ bir alıntı.\n')
     b = BD.ornek_denetle("Side.md", metin, k, klein_mi=False)
     assert [n for _a, n, _m in b] == [2, 3]
-
-
-def test_sabit_ad_istisnasi(tmp_path):
-    k = _kurallar(tmp_path)
-    metin = '- **Örnek:** _"Şu dört adımlık şans artırma ritüelini yaparken..."_\n'
-    assert BD.ornek_denetle("Klein.md", metin, k, klein_mi=True) == []
+    assert all(a == "uyari" and "22." in m for a, _n, m in b)
 
 
 def test_tamamdir_yalniz_klein(tmp_path):
@@ -51,12 +67,34 @@ def test_kimlikler():
     assert not any("N-K5 " in m and "yetim" in m for _a, _d, m in b)   # bolum notu gecerli
 
 
+def _main(tmp_path, monkeypatch, *ek):
+    # --klein/--notlar acikca verilir: verilmezse main() GERCEK
+    # Voice_Maps/Klein.md'yi okur ve test depodaki veriye baglanir.
+    monkeypatch.setattr(sys, "argv", ["belge_denetle.py",
+                                      "--klein", str(tmp_path / "yok-klein.md"),
+                                      "--notlar", str(tmp_path / "yok-notlar.md"), *ek])
+    return BD.main()
+
+
 def test_denetlenmedi_isareti_sayilir(tmp_path, capsys, monkeypatch):
     yol = tmp_path / "Klein.md"
     yol.write_text("- **Örnek:** _\"a\"_ — *x* · ZH denetlenmedi\n- **Örnek:** _\"b\"_\n", encoding="utf-8")
-    monkeypatch.setattr(sys, "argv", ["belge_denetle.py", "--kurallar", str(tmp_path / "yok.yml"), str(yol)])
-    assert BD.main() == 0
+    assert _main(tmp_path, monkeypatch, "--sozluk", str(_sozluk(tmp_path)), str(yol)) == 0
     assert "1 örnek Çinceyle denetlenmedi (satır 1)" in capsys.readouterr().out
+
+
+def test_main_ornekteki_eski_kelimeyi_bulur(tmp_path, capsys, monkeypatch):
+    yol = tmp_path / "Side.md"
+    yol.write_text('- **Örnek:** _"O ritüeli bitirdik."_\n', encoding="utf-8")
+    assert _main(tmp_path, monkeypatch, "--sozluk", str(_sozluk(tmp_path)), str(yol)) == 0
+    assert "örnekte “ritüeli” [Ritual]" in capsys.readouterr().out
+
+
+def test_sozluk_yoksa_sessiz_gecmez(tmp_path, capsys, monkeypatch):
+    yol = tmp_path / "Side.md"
+    yol.write_text('- **Örnek:** _"O ritüeli bitirdik."_\n', encoding="utf-8")
+    _main(tmp_path, monkeypatch, "--sozluk", str(tmp_path / "yok.yml"), str(yol))
+    assert "sözlük yok" in capsys.readouterr().err
 
 
 def test_bolum_harfli_kimlikler():

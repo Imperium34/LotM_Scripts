@@ -151,7 +151,7 @@ def gecis_bolumu(terim) -> int | None:
     raporlanmazdi.
 
     Eskiden bu bilgi lint-kurallari.yml'de 'ogrenme_bolumu' olarak
-    duruyordu (lotm.kesin_gecisler); ayni karar iki dosyada iki farkli
+    duruyordu; ayni karar iki dosyada iki farkli
     sayiyla tutulabiliyordu. Artik tek kaynak sozluk.yml.
     """
     esik = getattr(terim, "bolum_siniri", None) or 0
@@ -438,9 +438,9 @@ def denetle(kayitlar, bolumler, cumle_ici_yuksek=False, maske=()):
             kapali.extend((x.start(), x.end()) for x in d.finditer(metin))
 
         for k in uzun_once:
-            # TERS YON: yeni bicim gecisten ONCE (Ayin, 22'den once). Lint'in
-            # Ritual/Mysticism kurallarindaki uyarinin karsiligi; o kurallar
-            # silinebilsin diye burada.
+            # TERS YON: yeni bicim gecisten ONCE (Ayin, 22'den once). Eskiden
+            # lint'in ogrenme_bolumu kurallarindaki uyariydi; gecisler artik
+            # yalnizca sozluk.yml'de, bu uyari da yalnizca burada.
             #   - Harf duyarsiz: kucuk harfli kullanim da sayilir.
             #   - Bu noktada 'kapali' YALNIZCA daha uzun terimleri (ve
             #     words.md maskesini) icerir; terimin kendi gecisleri henuz
@@ -583,11 +583,9 @@ def lint_kapsami(yol) -> set:
     oldurur). lint-kurallari.yml ayni yazimlari kendi kurallariyla tutar:
     istisna regexleri, harf duyarliligi.
 
-    GECIS DONEMI: Ritual ve Mysticism hem burada (bolum_siniri) hem lint'te
-    (ogrenme_bolumu) duruyor. Lint kapsamindakiler cikis kodunu ETKILEMEZ;
-    lint kendi bulgusunda zaten hata veriyor. Iki betik ayni bulgulari
-    verdigi dogrulanip kurallar lint'ten silinince bu betik devralir --
-    ek bir degisiklik gerekmez.
+    Lint kapsamindakiler cikis kodunu ETKILEMEZ; lint kendi bulgusunda
+    zaten hata veriyor. Gecis donemli terimler (bolum_siniri'na kadar eski
+    karsilik dogru) artik yalnizca burada; lint'te karsiliklari yok.
 
     Ikisi de bildiginde lint'inki kesinlikle daha bilgilidir; bu betigin
     duz listesi ayni bulgunun ikinci, nuanssiz kopyasidir. Veri yerinde

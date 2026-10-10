@@ -237,7 +237,6 @@ VARYANT_ANAHTARLARI = {
     "dogru",
     "yanlis",
     "harf_duyarsiz",
-    "ogrenme_bolumu",
     "istisna",
     "not",
 }
@@ -245,28 +244,19 @@ VARYANT_ANAHTARLARI = {
 
 def denetle_varyant(rapor, dosyalar, kurallar):
     """
-    Iki kip var, ikisi de acik:
-      ogrenme_bolumu YOK  -> 'yanlis' listesindeki her gecis hatadir.
-      ogrenme_bolumu VAR  -> KESIN GECIS: o bolumden ONCE eski kelime her
-                             seste serbest, o bolumden itibaren her seste
-                             hata. Yeni kelime gecisten once geciyorsa uyari.
+    'yanlis' listesindeki her gecis hatadir.
 
-    Eskiden ucuncu bir kip vardi (ses ayrimi: ogrenmeden once yalnizca
-    Klein'in ic sesinde serbest) ve ogrenme_bolumu'nu 'kesin_gecis: true'
-    olmadan yazmak sessizce O kipi seciyordu. Ayin kurali tam olarak boyle
-    bozuldu: notu temiz gecis anlatiyordu, bayrak yoktu, 22'den onceki her
-    anlatici "ritüel"i hata cikiyordu. Ses ayrimi okura gorunmedigi icin
-    kaldirildi; ogrenme_bolumu artik tek basina kesin gecis demektir.
+    Gecis donemleri (eski karsilik bir bolume kadar dogru, sonra eskimis)
+    burada degil: sozluk.yml'de 'eski_karsiliklar' + 'bolum_siniri' olarak
+    durur ve yayim_denetle.py denetler (bkz. yayim_denetle.gecis_bolumu).
+    Eskiden lint'te 'ogrenme_bolumu' / 'kesin_gecis' anahtarlariyla ayni
+    karar ikinci kez tutuluyordu; o anahtarlar artik taninmaz.
 
-    Ayni sinifta bir hatanin tekrarlanmamasi icin taninmayan anahtarlar
-    (kesin_gecis, sadece_anlatici ya da bir yazim hatasi) kural dosyasi
-    hatasi olarak raporlanir; sessizce yok sayilmaz.
+    Taninmayan anahtarlar (ogrenme_bolumu, kesin_gecis, sadece_anlatici ya
+    da bir yazim hatasi) kural dosyasi hatasi olarak raporlanir; sessizce
+    yok sayilmaz -- yoksa kural anlamini degistirerek calisirdi.
 
-    Terim REVIZYONLARI (eski karsilik -> yeni karsilik) burada degil,
-    sozluk.yml'de 'eski_karsiliklar' olarak durur ve yayim_denetle.py
-    denetler. Buradaki gruplar ayni kavramin yazim varyantlaridir. (Ritual
-    ve Mysticism gecis doneminde iki yerde de duruyor; yayim_denetle ayni
-    bulgulari verdigi dogrulaninca buradan silinir.)
+    Buradaki gruplar ayni kavramin yazim varyantlaridir.
     """
     for kural in kurallar.get("varyantlar", []):
         bilinmeyen = set(kural) - VARYANT_ANAHTARLARI
@@ -284,7 +274,6 @@ def denetle_varyant(rapor, dosyalar, kurallar):
 
         dogru = kural["dogru"]
         ek_not = kural.get("not", "")
-        gecis = kural.get("ogrenme_bolumu")
         # Istisnalar harf duyarsiz: cumle basindaki "Şans artırma ritüeli"
         # de kapsanmali. IGNORECASE'in ı/i gevsekligi burada zararsizdir --
         # istisna yalnizca bulguyu SUSTURUR, yeni bulgu uretmez.
@@ -300,13 +289,9 @@ def denetle_varyant(rapor, dosyalar, kurallar):
         yanlislar = sorted(kural["yanlis"], key=len, reverse=True)
 
         for ad, metin in sorted(dosyalar.items()):
-            no = bolum_numarasi(ad)
-            gecisten_once = gecis is not None and no is not None and no < gecis
             kapali: list[tuple[int, int]] = []
 
             for yanlis in yanlislar:
-                if gecisten_once:
-                    break  # gecisten once her seste serbest
                 desen = tr_desen(yanlis) if duyarsiz else re.escape(yanlis)
                 for m in re.finditer(desen, metin):
                     if any(a <= m.start() < b for a, b in kapali):
@@ -316,8 +301,6 @@ def denetle_varyant(rapor, dosyalar, kurallar):
                     if any(d.search(ctx) for d in istisnalar):
                         continue
                     mesaj = f"“{yanlis}” → “{dogru}”  [{kural['kavram']}]"
-                    if gecis is not None:
-                        mesaj += f"  (gecisten SONRA, bolum {gecis})"
                     if ek_not:
                         mesaj += f"\n       {ek_not}"
                     rapor.ekle(
@@ -328,23 +311,6 @@ def denetle_varyant(rapor, dosyalar, kurallar):
                         mesaj,
                         ctx,
                         agirlik="hata",
-                    )
-
-            # Yeni kelime gecisten ONCE geciyorsa uyari. Hata degil -- kilise
-            # ayini gibi baska bir anlamda da gecebilir.
-            if gecisten_once:
-                d = tr_desen(dogru) if duyarsiz else re.escape(dogru)
-                for m in re.finditer(r"(?<![^\W_])" + d, metin):
-                    ctx = baglam(metin, m.start(), m.end())
-                    rapor.ekle(
-                        "varyant",
-                        ad,
-                        satir_no(metin, m.start()),
-                        m.group(),
-                        f"“{m.group()}” gecisten ONCE (bolum {gecis}): "
-                        f"“{kural['yanlis'][0]}” mi olmali?  [{kural['kavram']}]",
-                        ctx,
-                        agirlik="uyari",
                     )
 
 

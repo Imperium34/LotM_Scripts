@@ -943,29 +943,6 @@ def yaml_yukle(akis):
     return yaml.load(akis, Loader=_YAML_YUKLEYICI)
 
 
-def kesin_gecisler(yol=None) -> dict:
-    """
-    lint-kurallari.yml'deki kesin_gecis kurallari:
-        {dogru (Turkce kucuk): (gecis_bolumu, {eski bicimler, kucuk})}
-
-    Lint, toplu_denetle ve yayim_denetle AYNI kurali buradan okur: gecisten
-    once eski kelime o donemin dogru karsiligidir. Dosya yoksa bos.
-    """
-    yol = Path(yol) if yol else BETIK_KOK / "lint" / "lint-kurallari.yml"
-    try:
-        veri = yaml_yukle(Path(yol).read_text(encoding="utf-8")) or {}
-    except Exception:
-        return {}
-    out = {}
-    for k in veri.get("varyantlar", []) or []:
-        if k.get("kesin_gecis") and k.get("ogrenme_bolumu") and k.get("dogru"):
-            out[tr_kucult(k["dogru"])] = (
-                int(k["ogrenme_bolumu"]),
-                {tr_kucult(y) for y in k.get("yanlis", [])},
-            )
-    return out
-
-
 def zh_desen(sorgu: str, bilesikler=()) -> re.Pattern:
     """
     Cince sorgu, ama daha uzun bir bilesigin PARCASI oldugu yerde degil:
@@ -1159,7 +1136,10 @@ def sozluk_yukle(yol=None, bicim_koru=False, kelimeler=False) -> Sozluk:
         y.width = 4096
         y.indent(mapping=2, sequence=2, offset=0)
         with open(yol, "r", encoding="utf-8") as f:
-            veri = yaml_yukle(f) or []
+            # ruamel ile yuklenmeli: PyYAML (yaml_yukle) duz dict dondurur ve
+            # yaz() "# ---" bolum basliklarini sessizce siler. Bir kez
+            # oldu (test_etiketle.test_bolum_basligi_yorumu_dosyayi_bozmaz).
+            veri = y.load(f) or []
     else:
         with open(yol, "r", encoding="utf-8") as f:
             veri = yaml.safe_load(f) or []

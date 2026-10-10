@@ -288,7 +288,7 @@ adim_belgeler() {
   local kel=()
   [[ -f "$KELIMELER" ]] && kel=(--kelimeler "$KELIMELER")
   python3 "$TOOLS/lint/sapka.py" --sozluk "$SOZLUK" ${kel[@]+"${kel[@]}"} "${belgeler[@]}"
-  python3 "$TOOLS/belge_denetle.py" --kurallar "$TOOLS/lint/lint-kurallari.yml" "${belgeler[@]}"
+  python3 "$TOOLS/belge_denetle.py" --sozluk "$SOZLUK" "${belgeler[@]}"
 }
 
 adim_bolum() {

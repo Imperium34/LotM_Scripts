@@ -26,7 +26,7 @@ def _bolum(no, metin):
 
 
 def _adaylar(kayitlar, bolumler, maske=()):
-    _s, _e, kapi, _sd, _env = Y.denetle(kayitlar, bolumler, maske=maske)
+    _s, _e, kapi, _sd, _env, _ey = Y.denetle(kayitlar, bolumler, maske=maske)
     return {(no, k.tr) for _g, no, _d, k, _c in kapi}
 
 
@@ -49,7 +49,7 @@ def test_eleme_envanteri_etkilemez():
     # Kucuk harfle de yazilan gercek terim: cumle basindaki "İksiri" envantere girer
     iksir = lotm.Terim(tr="İksir", en="Potion", kategori="Temel Kavramlar", bolum_siniri=0)
     bolumler = [_bolum(28, "Sessizlik. İksiri içtikten sonra bir iksir daha istedi.")]
-    _s, _e, kapi, _sd, env = Y.denetle(_kayitlar(iksir), bolumler)
+    _s, _e, kapi, _sd, env, _ey = Y.denetle(_kayitlar(iksir), bolumler)
     assert env["İksir"] == [28] and kapi == []
 
 
@@ -79,3 +79,21 @@ def test_cumle_basi_deseni():
     for onceki, beklenen in [('konuştu. "', True), ("dedi.\n\n", True), ("_", True),
                              ("bir şey ", False), ("Güney Kıtası'nda ", False)]:
         assert bool(Y.CUMLE_BASI.search(onceki)) is beklenen, onceki
+
+
+AYIN = lotm.Terim(tr="Ayin", en="Ritual", kategori="Temel Kavramlar", bolum_siniri=22,
+                  eski_karsiliklar=["ritüel"])
+AYIN_ILMI = lotm.Terim(tr="Ayin İlmi", en="Ritualistic Magic", kategori="Temel Kavramlar",
+                       bolum_siniri=33)
+
+
+def test_gecisten_once_yeni_bicim_bakilacak():
+    # Lint'teki eski Ritual kuralinin "yeni kelime gecisten once" uyarisinin
+    # yerini alan denetim: harf duyarsiz, daha uzun terimin icindeki sayilmaz.
+    bolumler = [
+        _bolum(9, "Hazırlık sürdü. Bu ayinlerinde dikkatli ol."),       # erken, kucuk harf
+        _bolum(10, "Ayin İlmi'nin bir tezahürü."),                    # uzun terimin parcasi
+        _bolum(30, "Ayin bitti."),                                     # gecisten sonra
+    ]
+    *_ , erken = Y.denetle(_kayitlar(AYIN, AYIN_ILMI), bolumler)
+    assert [(no, bulunan) for no, _d, _k, bulunan, _c in erken] == [(9, "ayinlerinde")]

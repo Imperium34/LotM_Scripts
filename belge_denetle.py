@@ -10,12 +10,15 @@ yeniden sizar. (Tespit edildigi gibi: Neil ve Azik orneklerindeki
 
 Uc denetim:
 
-  1. ORNEKLERDE ESKI KELIME. lint-kurallari.yml'deki kesin gecis
-     kurallarinin eski bicimleri (ritüel, mistisizm) yalnizca ornek
-     metninde aranir: _"…"_ alintilari ve "- **Örnek" satirlari. Kural
-     metni bu kelimeleri bilerek anar; orada aranmaz. Kuralin istisnasi
-     ("şans artırma ritüeli" gibi sabit adlar) burada da gecerlidir.
+  1. ORNEKLERDE ESKI KELIME. sozluk.yml'de gecis bolumu olan terimlerin
+     eski karsiliklari (ritüel, mistisizm; bkz. yayim_denetle.gecis_bolumu)
+     yalnizca ornek metninde aranir: _"…"_ alintilari ve "- **Örnek"
+     satirlari. Kural metni bu kelimeleri bilerek anar; orada aranmaz.
      Uyaridir: ornegin hangi bolume ait oldugu dosyadan bilinemez.
+
+     Eskiden gecisler lint-kurallari.yml'den (kesin_gecis + ogrenme_bolumu)
+     okunuyordu. O anahtarlar kaldirilinca bu denetim HATASIZ ve SESSIZCE
+     hicbir sey bulmaz olmustu; artik tek kaynak sozluk.yml.
 
   2. YALNIZCA KLEIN'A AIT ISARETLER. "Tamamdır" Klein.md disindaki bir
      haritanin orneginde geciyorsa hata: yan karakterler bu isareti
@@ -61,22 +64,21 @@ _N_ATIF = re.compile(r"→\s*N-(" + _KIMLIK + r")")
 _N_KIMLIK = re.compile(r"\bN-(" + _KIMLIK + r")")
 
 
-def kesin_kurallar(yol=None) -> list:
-    """[(kavram, gecis_bolumu, dogru, [eski desenler], [istisna desenleri])]"""
-    yol = Path(yol) if yol else lotm.BETIK_KOK / "lint" / "lint-kurallari.yml"
-    try:
-        import yaml
-        veri = yaml.safe_load(Path(yol).read_text(encoding="utf-8")) or {}
-    except Exception:
-        return []
+def gecis_kurallari(sozluk) -> list:
+    """[(kavram, gecis_bolumu, dogru, [eski desenler])] -- sozluk.yml'den."""
+    from yayim_denetle import gecis_bolumu
+
     out = []
-    for k in veri.get("varyantlar", []) or []:
-        if not (k.get("kesin_gecis") and k.get("ogrenme_bolumu")):
+    for t in sozluk.terimler:
+        bolum = gecis_bolumu(t)
+        if not (t.tr and t.eski_karsiliklar and bolum):
             continue
         out.append((
-            k.get("kavram", ""), int(k["ogrenme_bolumu"]), k.get("dogru", ""),
-            [re.compile(r"(?<![^\W_])" + tr_desen(y)) for y in k.get("yanlis", [])],
-            [re.compile(d, re.IGNORECASE) for d in k.get("istisna", [])],
+            t.en or t.tr, bolum, t.tr,
+            # yayim_denetle'nin eski_desen'i ile ayni desen: iki betik ayni
+            # bicimleri bulsun. Harf duyarli, cunku eski karsiliklarin cogu
+            # gunluk kelime (Şanslı, Fitne, Ölüm...).
+            [lotm.desen_kur(e) for e in t.eski_karsiliklar],
         ))
     return out
 
@@ -96,9 +98,7 @@ def ornek_denetle(ad: str, metin: str, kurallar: list, klein_mi: bool) -> list:
     bulgu = []
     ozel = [] if klein_mi else [(w, re.compile(r"(?<![^\W_])" + tr_desen(w))) for w in KLEIN_OZEL]
     for no, parca in ornek_parcalari(metin):
-        for kavram, bolum, dogru, eskiler, istisnalar in kurallar:
-            if any(i.search(parca) for i in istisnalar):
-                continue
+        for kavram, bolum, dogru, eskiler in kurallar:
             for d in eskiler:
                 for m in d.finditer(parca):
                     bulgu.append(("uyari", no,
@@ -137,7 +137,7 @@ def varsayilan_dosyalar() -> list:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("dosyalar", nargs="*", type=Path)
-    ap.add_argument("--kurallar", default=None, help="lint-kurallari.yml")
+    ap.add_argument("--sozluk", type=Path, default=None, help="varsayilan: lotm.SOZLUK_YOLU")
     ap.add_argument("--klein", type=Path, default=None, help="varsayilan: Voice_Maps/Klein.md")
     ap.add_argument("--notlar", type=Path, default=None, help="varsayilan: Voice_Maps/Klein_Notlar.md")
     a = ap.parse_args()
@@ -146,7 +146,13 @@ def main() -> int:
     if not dosyalar:
         print("  belge bulunamadı", file=sys.stderr)
         return 0
-    kurallar = kesin_kurallar(a.kurallar)
+    yol = a.sozluk or lotm.SOZLUK_YOLU
+    if yol.exists():
+        kurallar = gecis_kurallari(lotm.sozluk_yukle(yol))
+    else:
+        # Sessiz kalmasin: 1. denetim bu yuzden bir kez hic calismadan gecti.
+        print(f"  !! sözlük yok ({yol}); örneklerde eski kelime denetlenmedi", file=sys.stderr)
+        kurallar = []
     hata = uyari = 0
     for yol in dosyalar:
         if yol.name == "Klein_Notlar.md":

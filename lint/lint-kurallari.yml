@@ -31,7 +31,7 @@ varyantlar:
   - kavram: "pound / libre"
     dogru: "libre"
     yanlis: ["yarım kiloluk", "yarım kiloya", "yarım kilo", "kiloluk"]
-    istisna: ["olduğu .{0,30}tekabül"]   # Ch3'teki tek seferlik tanım cümlesi
+    istisna: ["yarım kiloya tekabül"]   # Ch3'teki tek seferlik tanım cümlesi
     not: "Ch3 libre = yarım kilo dönüşümünü bir kez kuruyor; sonrasında libre kullanılmalı."
 
   - kavram: "lamb / kuzu"

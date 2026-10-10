@@ -18,12 +18,19 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import toplu_denetle as TD  # noqa: E402
 
 
+def _bolum(no, k_par, h_par, nereye, kayan):
+    """Hizalamasi onceden verilmis bir HizalanmisBolum; diske yazmaz."""
+    b = TD.HizalanmisBolum(no, "en", "tr", "\n".join(k_par), "\n".join(h_par), k_par, h_par)
+    b._sonuc = (nereye, kayan)
+    return b
+
+
 def onbellek():
     k_par = ["The Beyonder arrived.", "Nothing here.", "Another Beyonder spoke."]
     h_par = ["Aşkın geldi.", "Burada bir şey yok.", "Başka biri konuştu."]
     nereye = {0: [0], 1: [1], 2: [2]}
     kayan = {2}  # ucuncu paragraf kaymis bolgede
-    return {7: ("\n".join(k_par), k_par, h_par, nereye, kayan)}
+    return {7: _bolum(7, k_par, h_par, nereye, kayan)}
 
 
 def test_terimi_tara_calisir_ve_siniflandirir():
@@ -68,7 +75,7 @@ def _kayik_onbellek(ikinci_turkce):
     k_par = ["Dunn named the Seer pathway.",
              "Klein recalled Roselle's regret: Apprentice, Marauder, Seer!"]
     h_par = ["Dunn Kâhin yolunu andı.", "_Kâhin mi?_", ikinci_turkce]
-    return {28: ("\n".join(k_par), k_par, h_par, {0: [0], 1: [1]}, set())}
+    return {28: _bolum(28, k_par, h_par, {0: [0], 1: [1]}, set())}
 
 
 def test_terim_komsu_paragrafta_ise_eslesmeyen_sayilmaz():
@@ -101,7 +108,7 @@ def test_eski_isareti_dar_ekranda_da_gorunur(capsys):
 
 
 def _tek_bolum(k_par, h_par):
-    return {32: ("\n".join(k_par), k_par, h_par, {i: [i] for i in range(len(k_par))}, set())}
+    return {32: _bolum(32, k_par, h_par, {i: [i] for i in range(len(k_par))}, set())}
 
 
 def test_en_arama_adi_ile_aranir(monkeypatch):

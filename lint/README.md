@@ -33,7 +33,7 @@ Seçenekler:
 
 | Denetim | Ne arar |
 |---|---|
-| `varyant` | Aynı kavramın terk edilmiş yazımları (`mistisizm` → `İlm-i Esrar`) |
+| `varyant` | Aynı kavramın terk edilmiş yazımları (`Fırtına Hakimi` → `Fırtınalar Hakimi`) |
 | `yasakli` | Revize edilmiş eski tercihler (`Kukla Üstadı` → `Sır Kuklabazı`) |
 | `diyakritik` | (a) Anlam ayırıcı çiftler: `hakim` = *hâkim* mi *hakîm* mi? (b) Şapka tutarsızlığının otomatik taraması — büyük/küçük harf farkı yok sayılır, yalnızca şapka farkı raporlanır |
 | `kesme` | Düz `'` ile kıvrık `’` karışımı |
@@ -47,23 +47,20 @@ Seçenekler:
 verdiğinizde eski biçimi `varyantlar` veya `yasakli` altına ekleyin; araç geriye
 dönük olarak tüm bölümleri tarar.
 
-İki alan işe yarar:
+Geçiş dönemleri bu araçta değildir. Bir karşılık bir bölüme kadar doğru,
+sonra eskimişse (`ritüel → Ayin`, `mistisizm → İlm-i Esrar`), bu `sozluk.yml`'de
+`eski_karsiliklar` + `bolum_siniri` olarak tutulur ve `yayim_denetle.py`
+denetler. `ogrenme_bolumu`, `kesin_gecis` ve `sadece_anlatici` artık
+tanınmayan anahtarlardır: kural atlanır ve hata raporlanır.
 
-- `ogrenme_bolumu: N` — Klein terimi N. bölümde öğrenir. Öncesinde eski kelime
-  **yalnızca** onun `_italik_` iç sesinde serbesttir; anlatıcı ve diğer
-  karakterler dünyanın kelimesini baştan kullanır. N'den itibaren iç seste de
-  hata sayılır — devrin tamamlanması budur. Tırnak içindeki kullanımlar
-  "konuşan kim?" bilinmediği için uyarı olarak raporlanır, hata olarak değil.
-  `mistisizm → İlm-i Esrar` (N=18) ve `ritüel → ayin` kuralları bunu kullanır.
-- `sadece_anlatici: true` — daha basit hâli: kural yalnızca anlatıcı sesinde
-  uygulanır, iç ses ve replik muaftır. Öğrenme anı yoksa bunu kullanın.
+Kural başına isteğe bağlı alanlar:
+
 - `istisna:` — bağlamı bu regex'lere uyan eşleşmeler atlanır. Birimin bir kez
   tanımlandığı cümle gibi meşru istisnalar için.
 - `harf_duyarsiz: true` — kural büyük/küçük harf ayrımı gözetmez. **Varsayılan
   kapalıdır ve öyle kalmalı:** Türkçe karşılıkların çoğu günlük kelimelerden
   seçildiği için (Yol/yolu, Haz/hazine, San/şanslı) harf duyarsız eşleşme
-  yanlış pozitif üretir. Yalnızca terim tek anlamlıysa açın (`ritüel`,
-  `mistisizm`).
+  yanlış pozitif üretir. Yalnızca terim tek anlamlıysa açın.
 
 ## Neyi yakalamaz
 
