@@ -954,9 +954,13 @@ class YazmaReddedildi(ValueError):
     """Sozluk.yaz: dogrulayici uretilen metni reddetti; hicbir sey yazilmadi."""
 
 
-def _terim_kur(ham_girdi, ham_mertebe=None, kardesler=None):
-    """Tek bir YAML dugumunden Terim uretir."""
+def _terim_kur(ham_girdi, ham_mertebe=None, kardesler=None, kardesler_en=None):
+    """
+    Tek bir YAML dugumunden Terim uretir. kardesler / kardesler_en: ayni
+    Yol'daki mertebelerin Turkce / Ingilizce adlari (terimin kendisi haric).
+    """
     kardesler = kardesler or []
+    kardesler_en = kardesler_en or []
 
     if ham_mertebe is not None:
         isim = str(ham_mertebe.get("isim", ""))
@@ -966,6 +970,7 @@ def _terim_kur(ham_girdi, ham_mertebe=None, kardesler=None):
         en_ham = ingilizce_ayikla(isim)
         # cok adli mertebelerde ilk ad esas alinir
         en = en_ham.split("/")[0].strip() if en_ham else None
+        kendi_en = {x.strip() for x in (en_ham or "").split("/")}
         yol_en_list = etiket_temizle(ham_girdi.get("ingilizce", ""))
         return Terim(
             tr=tr,
@@ -984,7 +989,10 @@ def _terim_kur(ham_girdi, ham_mertebe=None, kardesler=None):
             en_arama_adi=list(ham_mertebe.get("en_arama_adi") or []),
             cevirmen_notu=ham_mertebe.get("cevirmen_notu"),
             kardesler_tr=[k for k in kardesler if k != tr],
-            kardesler_en=[],
+            # Cok adli mertebenin ("Mystery Pryer / Pugilist") butun adlari
+            # haric tutulur. Eskiden hep bos kaliyordu ve kapi_denetle
+            # Ingilizce metinde Turkce kardes adlarini ariyordu.
+            kardesler_en=[k for k in kardesler_en if k not in kendi_en],
             ham=ham_mertebe,
         )
 
@@ -1252,8 +1260,14 @@ def sozluk_yukle(yol=None, bicim_koru=False, kelimeler=False) -> Sozluk:
         if mertebeler:
             kardesler = [parantezsiz(m.get("isim")) for m in mertebeler]
             kardesler = [k for k in kardesler if k]
+            kardesler_en = [
+                ad.strip()
+                for m in mertebeler
+                for ad in (ingilizce_ayikla(m.get("isim")) or "").split("/")
+                if ad.strip()
+            ]
             for m in mertebeler:
-                t = _terim_kur(girdi, m, kardesler)
+                t = _terim_kur(girdi, m, kardesler, kardesler_en)
                 if t:
                     terimler.append(t)
             ust = _terim_kur(girdi)  # Yol girdisinin kendisi de bir terim

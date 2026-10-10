@@ -34,18 +34,14 @@ Terim uretimi, varyantlar ve bolume ayirma artik lotm.py'de.
 
 BOLUM NUMARASI NE ANLAMA GELIR
 ------------------------------
-'bolum' sutunu terimin ILK gectigi bolumdur -- cunku etiketle.py onu
-bolum_siniri (kapi) olarak yazar ve kapi "bu addan once soz edilmez"
-demektir.
+'bolum' sutunu terimin Ingilizce metinde ILK gectigi bolumdur. etiketle.py
+onu sozluge 'ilk_gecis' olarak yazar. Editoryal kapiya (bolum_siniri)
+DOKUNULMAZ; o cevirmen kararidir (bkz. lotm.Terim).
 
 Eskiden bu sutun guvene gore yaziliyordu: sonraki bir bolumde daha
-yuksek guvenli bir gecis bulununca numara ILERI kayiyordu. etiketle.py
-de yalnizca ileri yazdigi (tarayici > mevcut) icin kapi her calistirmada
-biraz daha gec bir bolume suruklenebiliyor, denetci2 de arada kalan
-mesru kullanimlari "kapidan once" diye isaretliyordu.
-
-Artik once en yuksek guven KATMANI secilir, sonra o katmandaki EN ERKEN
-bolum yazilir. Guven yine sonucu filtreler ama numarayi ileri itmez.
+yuksek guvenli bir gecis bulununca numara ILERI kayiyordu. Artik guven
+yalnizca 'guven' ve 'kanit_bolum' sutunlarini belirler; 'bolum' her
+zaman en erken gecistir.
 
 Kullanim:
     python3 kapi_denetle.py --sozluk sozluk.yml --kaynak ./LotM_Volumes \
@@ -111,7 +107,10 @@ def terimleri_topla(sozluk_yolu=None):
             "yol_en": t.yol_en,
             "kategori": t.kategori,
             "seviye": t.seviye,
-            "kardesler": [k for k in t.kardesler_tr if k not in adaylar],
+            # INGILIZCE kardes adlari: guven() bunlari Ingilizce metinde
+            # arar. Eskiden kardesler_tr veriliyordu; "Sır Kuklabazı" EN
+            # metinde hic gecmedigi icin bu ipucu fiilen olu idi.
+            "kardesler": [k for k in t.kardesler_en if k not in adaylar],
             "mevcut_bolum": t.bolum_siniri,
             "adaylar": adaylar,
         }
@@ -134,7 +133,7 @@ def guven(aday, bilgi, metin, konum):
     Not: burada eskiden bir CUMLE_BASI kontrolu vardi ama iki kolunda da
     ORTA donuyordu, yani olcup atiyordu. ORTA'nin altinda anlamli bir
     katman da yok (ESNEK "yalnizca harf duyarsiz turda bulundu" demek,
-    baska bir sey), o yuzden kaldirildi. Cumle basi ayrimi denetci2'de
+    baska bir sey), o yuzden kaldirildi. Cumle basi ayrimi yayim_denetle'de
     duruyor; orada gercekten bir karsiligi var.
     """
     bas = max(0, konum - PENCERE)
@@ -221,8 +220,17 @@ def tara(terimler, bolumler):
     bolum_deposu.sort(key=lambda x: x[0])
 
     # 1. tur: harf duyarli
+    #
+    # Bolumler sirayla taranir. YUKSEK katmanina ulasan bir terim icin
+    # sonraki bolumler hicbir seyi degistiremez: 'bolum' zaten daha erken
+    # (ya da ayni) bir gecis, YUKSEK en ust katman ve her katman ilk
+    # goruldugu bolumu tutar. O terimler taramadan cikarilir.
+    acik = dict(terimler)
     for no, metin in bolum_deposu:
-        for t, bilgi in terimler.items():
+        for t, bilgi in list(acik.items()):
+            if YUKSEK in sonuc[t]["katman"]:
+                del acik[t]
+                continue
             for aday, desen in duyarli[t]:
                 if aday not in metin:
                     continue
@@ -341,8 +349,9 @@ def rapor_yaz(terimler, sonuc, yol):
             sayi_ya_da_bos(bilgi.get("mevcut_bolum")),
             (s["baglam"] or "")[:200],
         ]))
-    with open(yol, "w", encoding="utf-8") as f:
-        f.write("\n".join(satirlar) + "\n")
+    # etiketle bu dosyayi okuyup sozluk.yml'e yazar; yarim bir rapor
+    # terimleri sessizce "raporda yok" yapardi.
+    lotm.atomik_yaz(yol, "\n".join(satirlar) + "\n")
 
 
 def yama_yaz(terimler, sonuc, yol):
@@ -361,8 +370,7 @@ def yama_yaz(terimler, sonuc, yol):
             "yol": bilgi.get("yol"),
             "seviye": bilgi.get("seviye"),
         }
-    with open(yol, "w", encoding="utf-8") as f:
-        yaml.safe_dump(cikti, f, allow_unicode=True, sort_keys=True)
+    lotm.atomik_yaz(yol, yaml.safe_dump(cikti, allow_unicode=True, sort_keys=True))
 
 
 def ozet(terimler, sonuc):

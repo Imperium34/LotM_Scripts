@@ -132,3 +132,24 @@ def test_tek_kelime_ozelligi(lotm_modulu, sozluk_dosyasi):
     s = lotm.sozluk_yukle(sozluk_dosyasi)
     assert next(t for t in s.terimler if t.tr == "Çırak").tek_kelime
     assert not next(t for t in s.terimler if t.tr == "Gizem Avcısı").tek_kelime
+
+
+def test_kardesler_en_ingilizce_ve_kendisi_haric(sozluk_dosyasi):
+    import lotm
+    t = {x.tr: x for x in lotm.sozluk_yukle(sozluk_dosyasi).terimler}
+    # cok adli mertebe: iki adi da kendisidir, kardes sayilmaz
+    assert t["Gizem Avcısı"].kardesler_en == ["Seer", "Clown"]
+    assert t["Çırak"].kardesler_en == ["Clown", "Mystery Pryer", "Pugilist"]
+
+
+def test_kapi_kardes_ipucu_ingilizce_metinde_calisir(sozluk_dosyasi):
+    """
+    REGRESYON: kapi_denetle Turkce kardes adlarini ("Gizem Avcısı")
+    Ingilizce metinde ariyordu; ipucu hic tutmuyordu.
+    """
+    import kapi_denetle as K
+    terimler = K.terimleri_topla(sozluk_dosyasi)
+    metin = "He was a Clown now. Next would come the Mystery Pryer, said Dunn."
+    konum = metin.index("Clown")
+    assert K.guven("Clown", terimler["Clown"], metin, konum) == K.YUKSEK
+    assert K.guven("Clown", terimler["Clown"], "He was a Clown now.", 8) == K.ORTA

@@ -58,8 +58,8 @@ from hizalama_denetle import capa_yer_degistirme, grup_artiklari, kayma_bul
 
 _CAPA_SOZLUGU = _capa.sozluk_yukle()
 
-# Turkce cekim eki deseni. Migrasyondan once denetci2.py'deydi ve buradan
-# oraya import ediliyordu; artik dogru yerde.
+# Turkce cekim eki deseni. Migrasyondan once yayim_denetle.py'deydi (eski
+# adi denetci2) ve buradan oraya import ediliyordu; artik lotm'de.
 desen_kur = lotm.desen_kur
 
 
@@ -309,7 +309,7 @@ def desen_kur_kaynak(sorgu: str, kaynak: str, harf_duyarsiz: bool, haric=None):
       zh  duz altdize (kelime siniri yok), ama sozlukteki daha uzun bir
           terimin icindeki gecisler sayilmaz (bkz. zh_bilesikleri);
           haric ile elle bilesik eklenebilir
-      tr  Turkce cekim ekleri (denetci2.desen_kur)
+      tr  Turkce cekim ekleri (lotm.desen_kur)
       en  kelime siniri; sorgu buyuk harf iceriyorsa harf duyarli
     """
     if kaynak == "zh":

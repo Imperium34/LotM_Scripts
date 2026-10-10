@@ -20,7 +20,7 @@ tarayicinin buldugu bolum o ad icin guvenilmezdir. Bu iliski zaten
 sozlukte yaziyor; elle liste tutmak ayni bilgiyi ikinci kez yazmakti.
 
 Ayrica rapor.tsv'nin 'guvenilir_mi' sutunu artik gercekten okunuyor.
-searcher.py terimin metinde kucuk harfle de gectigini tespit ediyordu
+kapi_denetle.py terimin metinde kucuk harfle de gectigini tespit ediyordu
 (cins isim isareti) ve bu sutunu yaziyordu; etiketle.py sutunu ayristirip
 kullanmadan atiyordu. Simdi o terimlere de bolum numarasi yazilmiyor.
 
@@ -388,7 +388,7 @@ def main():
                     sayac["ilk_gecis_atlandi_altdize"] += 1
                     continue
                 if not rapor.get(eng, {}).get("guvenilir", True):
-                    # searcher.py'nin cins isim isareti: terim metinde
+                    # kapi_denetle.py'nin cins isim isareti: terim metinde
                     # kucuk harfle de geciyorsa bulunan bolum bir sey
                     # bildirmez.
                     sayac["ilk_gecis_atlandi_cins_isim"] += 1
@@ -407,7 +407,7 @@ def main():
                 # vardi. Kapi "ad ilk nerede geciyor" degil "nerede
                 # ACIKLANIYOR" demek; ikisi cogu terimde farkli ve karari
                 # cevirmen veriyor. Arac kendi bulgusunu ilk_gecis'e yazar,
-                # celiskiyi denetci2 gosterir.
+                # celiskiyi yayim_denetle gosterir.
                 if mevcut and tarayici and tarayici > mevcut:
                     kapi_sonrasi.append(
                         f"{ad} S{m['seviye']} {eng}: kapi={mevcut}, "
