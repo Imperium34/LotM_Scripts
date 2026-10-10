@@ -26,6 +26,7 @@ var ve yalnızca ikisi mekanik:
      bilinir. Bu grup asla otomatik değiştirilmez, yalnızca listelenir.
 
 Ayrıca 1. ve 2. gruptaki birkaç kelime gerçek eşadlıdır ve elde bırakılır:
+    hakim               ~ hâkim (hükmeden) / hakîm (bilge)
     hala (teyze/hala)   ~ hâlâ (henüz)
     hale (ayla/nur)     ~ hâle (hâl + yönelme)
     alem (bayrak/sancak)~ âlem (dünya)
@@ -121,7 +122,6 @@ DAMAKSIL = {                       # k / g / l inceltmesi
     "sükunetini": "sükûnetini",
     "sükunete": "sükûnete",
     "sükuneti": "sükûneti",        # keşif
-    "hakim": "hâkim",              # keşif; â k'nin inceliğini gösterir
     "kabus": "kâbus",              # keşif; sözlükte Mertebe adı "Kabus"
     "ilaveten": "ilâveten",
     "bekar": "bekâr",              # 46. bölüm
@@ -209,6 +209,10 @@ ESADLI = {
     "adeti": "âdeti",
     "adetleri": "âdetleri",
     "kar": "kâr",     # kar = yağan kar
+    # hakim: hâkim (hükmeden) ~ hakîm (bilge). Eskiden DAMAKSIL'deydi, yani
+    # --uygula "bilge" anlamındaki bir "hakim"i de "hâkim" yapardı; lint ise
+    # aynı kelimeyi diyakritik_ciftleri'nde belirsiz sayıyordu.
+    "hakim": "hâkim",
 }
 
 # --------------------------------------------------------------------

@@ -210,21 +210,15 @@ def ic_seste_mi(araliklar, bas: int) -> bool:
 
 
 def sozluk_terimleri(yol: Path) -> dict[str, str]:
-    """terim -> ingilizce eşlemesi. Mertebe adlarını da toplar."""
-    veri = yaml.safe_load(yol.read_text(encoding="utf-8"))
-    cikti: dict[str, str] = {}
-    for girdi in veri:
-        t = girdi.get("terim")
-        if t:
-            cikti[t] = girdi.get("ingilizce", "")
-        for m in girdi.get("mertebeler", []) or []:
-            isim = m.get("isim", "")
-            eslesme = re.match(r"^(.*?)\s*\(([^)]*)\)\s*$", isim)
-            if eslesme:
-                cikti[eslesme.group(1).strip()] = eslesme.group(2).strip()
-            elif isim:
-                cikti[isim.strip()] = ""
-    return cikti
+    """
+    terim -> ingilizce eslemesi (mertebeler dahil), lotm.sozluk_yukle ile.
+
+    Eskiden YAML'i burada kendisi ayristiriyordu ve ust duzey adlari
+    parantezleriyle birlikte aliyordu: "Ruhanî Âlem (Âlem-i Ervah)" metinde
+    hic oldugu gibi gecmedigi icin kapsam olcumu 25 terimi hep "gecmiyor"
+    sayiyordu (86 yerine 81).
+    """
+    return {t.tr: t.en or "" for t in lotm.sozluk_yukle(yol).terimler if t.tr}
 
 
 # ----------------------------------------------------------------------
@@ -496,7 +490,9 @@ def denetle_ek_uyumu(rapor, dosyalar, kurallar=None):
         bicimler: dict[str, list] = defaultdict(list)
 
         for ad, metin in sorted(dosyalar.items()):
-            for m in re.finditer(rf"{ad_ozel}['{KIVRIK}]([{TR_HARF}]+)", metin):
+            for m in re.finditer(
+                rf"(?<![{TR_HARF}]){re.escape(ad_ozel)}['{KIVRIK}]([{TR_HARF}]+)", metin
+            ):
                 bicimler[m.group(1)].append(
                     (ad, satir_no(metin, m.start()), baglam(metin, m.start(), m.end()))
                 )
@@ -559,7 +555,11 @@ def kaynak_metinleri(dosyalar) -> dict:
     """
     try:
         zh = lotm.bolum_sozlugu(lotm.bolumler_zh())
-    except Exception:
+    except (FileNotFoundError, OSError) as e:
+        # --kaynak acikca istendi; sessizce kaynaksiz calismak "kaynakta
+        # karsiligi var" elemesinin hic yapilmadigini gizlerdi.
+        print(f"  uyari: --kaynak: Cince metin okunamadi ({e}); "
+              f"anakronizm kaynaksiz denetlendi.", file=sys.stderr)
         return {}
 
     out = {}
@@ -698,8 +698,13 @@ def main() -> int:
         description="LotM Türkçe çevirisi tutarlılık denetleyicisi"
     )
     ap.add_argument("bolumler", nargs="+", help="bölüm .md dosyaları ya da klasörü")
-    ap.add_argument("--sozluk", type=Path, default=Path("sozluk.yml"))
-    ap.add_argument("--kurallar", type=Path, default=Path("lint-kurallari.yml"))
+    # Varsayilanlar gercek yollar. Eskiden cwd'ye gore "sozluk.yml" /
+    # "lint-kurallari.yml" idi ve bulunamazsa sessizce bos kurallarla
+    # calisip "0 hata" diyordu.
+    ap.add_argument("--sozluk", type=Path, default=lotm.SOZLUK_YOLU)
+    ap.add_argument(
+        "--kurallar", type=Path, default=Path(__file__).resolve().parent / "lint-kurallari.yml"
+    )
     ap.add_argument("--sadece", default="", help=f"virgülle: {','.join(DENETIMLER)}")
     ap.add_argument("--format", choices=["metin", "json"], default="metin")
     ap.add_argument(
@@ -710,12 +715,14 @@ def main() -> int:
     )
     args = ap.parse_args()
 
-    kurallar = (
-        yaml.safe_load(args.kurallar.read_text(encoding="utf-8"))
-        if args.kurallar.exists()
-        else {}
-    )
-    terimler = sozluk_terimleri(args.sozluk) if args.sozluk.exists() else {}
+    if not args.kurallar.exists():
+        sys.exit(f"HATA: kural dosyasi yok: {args.kurallar}")
+    kurallar = yaml.safe_load(args.kurallar.read_text(encoding="utf-8")) or {}
+    if args.sozluk.exists():
+        terimler = sozluk_terimleri(args.sozluk)
+    else:
+        print(f"  uyari: sozluk yok ({args.sozluk}); kapsam olculmedi", file=sys.stderr)
+        terimler = {}
 
     try:
         dosyalar, basliklar = bolumleri_yukle(args.bolumler)

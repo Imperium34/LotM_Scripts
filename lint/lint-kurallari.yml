@@ -8,8 +8,10 @@
 # ---------------------------------------------------------------
 varyantlar:
   - kavram: "Lord of Storms"
-    dogru: "Fırtınalar Hakimi"
-    yanlis: ["Fırtınaların Hakimi", "Fırtına Hakimi"]
+    dogru: "Fırtınalar Hâkimi"
+    # Şapkalı ve şapkasız biçimlerin ikisi de: kural eskiden şapkasızdı ve
+    # sözlük/bölümler "Hâkimi" yazdığı için "Fırtına Hâkimi" hiç yakalanmıyordu.
+    yanlis: ["Fırtınaların Hâkimi", "Fırtına Hâkimi", "Fırtınaların Hakimi", "Fırtına Hakimi", "Fırtınalar Hakimi"]
 
   - kavram: "God of Knowledge and Wisdom"
     dogru: "İlim ve Hikmetin İlahı"
