@@ -174,6 +174,7 @@ KOK = Path(os.environ.get("LOTM_KOK") or BETIK_KOK.parent)
 SITE = KOK / "Imperium34.github.io"
 
 SOZLUK_YOLU = SITE / "_data/sozluk.yml"
+SALAHIYET_YOLU = SITE / "_data/salahiyetler.yml"
 BOLUMLER_TR = SITE / "_chapters"
 KAYNAK_EN = KOK / "Source/LotM_Volumes"
 KAYNAK_ZH = KOK / "Source/Lord_of_the_Mysteries_Chinese.txt"
@@ -1066,6 +1067,24 @@ def gecis_bolumu(terim) -> int | None:
     """
     esik = getattr(terim, "bolum_siniri", None) or 0
     return esik if 0 < esik < SON_BOLUM else None
+
+
+def salahiyetler_yukle(yol=None) -> list:
+    """
+    salahiyetler.yml (Salahiyet Fihristi) kayitlari: [dict]. Anahtar Cince
+    ('cince'); 'turkce' tek karsilik, 'ingilizce_tuzak' Ingilizcenin bu
+    terimi baska terimlerle ayni kelimeye dusurdugu durumlar. Alanlarin
+    tanimi dosyanin basindaki yorumda. Dosya yoksa bos liste.
+    """
+    yol = Path(yol or SALAHIYET_YOLU)
+    if not yol.exists():
+        return []
+    with open(yol, encoding="utf-8") as f:
+        veri = yaml_yukle(f) or {}
+    kayitlar = veri.get("salahiyetler") if isinstance(veri, dict) else None
+    if not isinstance(kayitlar, list):
+        raise ValueError(f"{yol}: kokte 'salahiyetler:' listesi bekleniyordu")
+    return [k for k in kayitlar if isinstance(k, dict) and k.get("cince")]
 
 
 # --------------------------------------------------------------- words.md

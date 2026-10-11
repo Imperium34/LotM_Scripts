@@ -47,6 +47,9 @@
 #      ./calistir.sh takvim   bolum adlari tekrarlaniyor mu, tarihler carsamba/
 #                             cumartesi takvimine uyuyor mu
 #      ./calistir.sh tarama   sadece Ingilizce tarama (nadiren gerekir)
+#      ./calistir.sh hazirla 54  ceviriden ONCE: bolumde gecen yerlesmis
+#                             terimler -> Reports/hazirlik/Ch_54_terimler.md
+#                             (sablon uretecek modele sozluk yerine verilir)
 #      ./calistir.sh kanca    sitenin pre-commit kancasini kur (bir kez;
 #                             bkz. kancalar/pre-commit)
 #
@@ -410,6 +413,15 @@ adim_kanca() {
   mavi "  bolum ya da takvim iceren her commit'te calisir; atlamak icin: git commit --no-verify"
 }
 
+adim_hazirla() {
+  local no="$1"
+  mkdir -p "$RAPOR/hazirlik"
+  local cikti="$RAPOR/hazirlik/Ch_${no}_terimler.md"
+  python3 "$TOOLS/hazirla.py" "$no" --cikti "$cikti"
+  tail -n 2 "$cikti" | head -n 1
+  yesil "  -> $cikti"
+}
+
 # 'test' kontrol()'den once gelmeli: testler sozluk.yml ya da _chapters
 # olmadan da calisabilmeli.
 if [[ "${1:-}" == "test" ]]; then
@@ -453,6 +465,13 @@ toplu) adim_toplu ;;
 takvim) adim_takvim ;;
 belgeler) adim_belgeler ;;
 kanca) adim_kanca ;;
+hazirla)
+  [[ -n "${2:-}" ]] || {
+    kirmizi "kullanim: ./calistir.sh hazirla <bolum_no>"
+    exit 1
+  }
+  adim_hazirla "$2"
+  ;;
 hepsi)
   adim_test || mavi "  (testler atlandi, zincire devam)"
   adim_kontrol || kirmizi "  (numaralandirma sorunlu, zincire yine de devam)"
@@ -472,7 +491,7 @@ hepsi)
   adim_belgeler || kirmizi "  (belgelerde hata var, yukariya bakin)"
   ;;
 *)
-  echo "kullanim: ./calistir.sh [hepsi|test|kontrol|takvim|tarama|etiket|denetim|lint|bicim|bicim-taban|sapka|toplu|belgeler|kanca]"
+  echo "kullanim: ./calistir.sh [hepsi|test|kontrol|takvim|tarama|etiket|denetim|lint|bicim|bicim-taban|sapka|toplu|belgeler|kanca|hazirla N]"
   echo "          ./calistir.sh bolum [numara]   (numarasiz: en son bolum)"
   exit 1
   ;;
