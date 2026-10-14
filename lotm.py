@@ -204,14 +204,14 @@ KELIMELER = _kelimeler_yolu()
 # uzunluklari bu tabloyla birebir ortusuyor (fark +0, sekizde sekiz).
 # lotm_splitter.py de bu tabloyu kullanir (ayri bir kopyasi yok).
 CILTLER = [
-    (1, "Clown", 1, 213),
-    (2, "Faceless", 214, 482),
-    (3, "Traveler", 483, 732),
-    (4, "Undying", 733, 946),
-    (5, "Red_Priest", 947, 1150),
-    (6, "Lightseeker", 1151, 1266),
-    (7, "Hanged_Man", 1267, 1353),
-    (8, "Fool", 1354, 1394),
+    (1, "Palyaço", 1, 213),
+    (2, "Suretsiz", 214, 482),
+    (3, "Gezgin", 483, 732),
+    (4, "Ölmez", 733, 946),
+    (5, "Ahmer_Hünkar", 947, 1150),
+    (6, "Işıkperest", 1151, 1266),
+    (7, "Asılmış_Adam", 1267, 1353),
+    (8, "Soytarı", 1354, 1394),
 ]
 
 # Ana hikaye 1394'te biter. Ingilizce metindeki 1395+ yan hikayelerdir
@@ -940,7 +940,9 @@ class Sozluk:
         return [
             t
             for t in self.terimler
-            if any(q_tr in tr_kucult(b) for b in [t.tr, *t.arama_adi, *t.eski_karsiliklar])
+            if any(
+                q_tr in tr_kucult(b) for b in [t.tr, *t.arama_adi, *t.eski_karsiliklar]
+            )
             or q_en in en_kucult(t.en)
             or sorgu in (t.zh or "")
         ]
@@ -1173,8 +1175,10 @@ def _madde_zh(kalan: str) -> list:
             if cjk:
                 out.append((cjk, kesin))
         return out
-    m = _CJK.search(kalan)
-    return [(m.group(), False)] if m else []
+    # Parantezsiz liste de '/' ile bolunur: "hizmetkâr — 仆役/仆人" eskiden
+    # yalniz 仆役'yu veriyordu; 仆人 hic aranmiyordu.
+    m = re.search(r"[\u3400-\u9fff]+(?:\s*/\s*[\u3400-\u9fff]+)*", kalan)
+    return [(p.strip(), False) for p in m.group().split("/") if p.strip()] if m else []
 
 
 def _madde_en(kalan: str) -> list:
@@ -1231,28 +1235,46 @@ def kelimeler_yukle(yol=None) -> list:
         zh = "/".join(z for z, _k in zh_list) or None
         zh_kesin = any(k for _z, k in zh_list)
         kategori = f"{KELIME_KATEGORI} › {bolum}" if bolum else KELIME_KATEGORI
-        if len(tr_list) > 1 and len(en_list) == len(tr_list):
-            # Cince de ayni sayidaysa sirayla eslenir ("(「镑」/苏勒/便士)").
-            eslesir = len(zh_list) == len(tr_list)
+        # Turkce ve Ingilizce esit sayidaysa ayri terimler olur; ama yalniz
+        # Cince de ayni sayidaysa ("(「镑」/苏勒/便士)", sirayla eslenir) ya
+        # da hic yoksa. Cince SAYISI TUTMUYORSA satir tek kavramdir ve tek
+        # terim kalir: "Antigonus ailesinin el yazması / el yazması — ...
+        # diary / notebook (安提哥努斯家族笔记)" iki terime bolunup ikisi de
+        # Cincesini kaybediyordu; Cincesiz "el yazması" 56'da yalniz
+        # "notebook" ile bulunup Klein'in kendi defterine yerlesmis terim
+        # diye veriliyordu. Cincesi olan bir satir Cincesiz terim uretmez.
+        ayri = (
+            len(tr_list) > 1
+            and len(en_list) == len(tr_list)
+            and len(zh_list) in (0, len(tr_list))
+        )
+        if ayri:
             for i, (tr, en) in enumerate(zip(tr_list, en_list)):
                 out.append(
                     Terim(
                         tr=tr,
                         en=en,
                         en_ham=en,
-                        zh=zh_list[i][0] if eslesir else None,
-                        zh_kesin=zh_list[i][1] if eslesir else False,
+                        zh=zh_list[i][0] if zh_list else None,
+                        zh_kesin=zh_list[i][1] if zh_list else False,
                         kategori=kategori,
                         cevirmen_notu=kalan,
                     )
                 )
         else:
             en = en_list[0] if en_list else None
+            # Bolunmeyen satirin BUTUN Ingilizce adlari aranir; 'en' (kanonik
+            # kimlik) ilk addir. Eskiden yalniz ilki aranıyordu: "Çince —
+            # Chinese, Mandarin" satirinda Mandarin hic bilinmiyor, 56'da yeni
+            # bir ad diye aday oluyordu. Cince anahtarli kayitta Ingilizce
+            # yalniz yedektir: tutmazsa kayit dogrulanmamis (1b) diye,
+            # baglamiyla verilir ("diary / notebook").
+            en_ham = " / ".join(en_list) if len(en_list) > 1 else en
             out.append(
                 Terim(
                     tr=tr_list[0],
                     en=en,
-                    en_ham=en,
+                    en_ham=en_ham,
                     zh=zh,
                     zh_kesin=zh_kesin,
                     kategori=kategori,

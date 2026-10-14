@@ -144,3 +144,32 @@ def test_sozluk_cince_alani_kose_parantezi_okur():
     assert lotm.zh_ayikla("「镑」") == ("镑", True)
     assert lotm.zh_ayikla("印章/盖章") == ("印章/盖章", False)
     assert lotm.zh_ayikla(None) == (None, False)
+
+
+def test_cince_sayisi_tutmayan_satir_bolunmez_ve_cincesini_korur(tmp_path):
+    # 56: "el yazması" iki terime bolunup Cincesini kaybediyordu; Cincesiz
+    # kayit "notebook" ile Klein'in kendi defterine yerlesmis terim oluyordu.
+    yol = tmp_path / "words.md"
+    yol.write_text(
+        "- **Antigonus ailesinin el yazması / el yazması** — Antigonus family's diary / "
+        "notebook (安提哥努斯家族笔记)\n"
+        "- **Çince** — Chinese, Mandarin (汉语 / 中文)\n"
+        "- **sterlin, soli, peni** — pound, soli, pence (「镑」/苏勒/便士)\n",
+        encoding="utf-8",
+    )
+    t = {x.tr: x for x in lotm.kelimeler_yukle(yol)}
+    el = t["Antigonus ailesinin el yazması"]
+    assert "el yazması" not in t and el.arama_adi == ["el yazması"]
+    assert el.zh == "安提哥努斯家族笔记"
+    assert "notebook" in el.arama_adaylari()  # Cince tutmazsa yedek tarama
+    # Ikinci Ingilizce ad da aranir (56: Mandarin yeni ad diye aday oluyordu)
+    assert t["Çince"].en == "Chinese" and "Mandarin" in t["Çince"].arama_adaylari()
+    assert (t["soli"].zh, t["peni"].zh) == ("苏勒", "便士")  # esit sayi: yine bolunur
+
+
+def test_parantezsiz_cince_liste_bolunur(tmp_path):
+    # "hizmetkâr — 仆役/仆人": eskiden yalniz 仆役 aliniyordu.
+    yol = tmp_path / "words.md"
+    yol.write_text("- **hizmetkâr** — 仆役/仆人\n- **hizmetçi** — 女仆/女佣\n", encoding="utf-8")
+    t = {x.tr: x for x in lotm.kelimeler_yukle(yol)}
+    assert (t["hizmetkâr"].zh, t["hizmetçi"].zh) == ("仆役/仆人", "女仆/女佣")

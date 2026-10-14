@@ -47,9 +47,11 @@
 #      ./calistir.sh takvim   bolum adlari tekrarlaniyor mu, tarihler carsamba/
 #                             cumartesi takvimine uyuyor mu
 #      ./calistir.sh tarama   sadece Ingilizce tarama (nadiren gerekir)
-#      ./calistir.sh hazirla 54  ceviriden ONCE: bolumde gecen yerlesmis
-#                             terimler -> Reports/hazirlik/Ch_54_terimler.md
-#                             (sablon uretecek modele sozluk yerine verilir)
+#      ./calistir.sh hazirla 54  ceviriden ONCE: sablon uretecek modele
+#                             sozluk yerine verilecekler, Reports/hazirlik/:
+#                             Ch_54_terimler.md (terim dokumu, notlarla) ve
+#                             ayrilmis_dizin.md (ayrilmis sozcuk dizini);
+#                             onceki bolumun sablonunun yolunu da yazar
 #      ./calistir.sh kanca    sitenin pre-commit kancasini kur (bir kez;
 #                             bkz. kancalar/pre-commit)
 #
@@ -74,10 +76,12 @@ export LOTM_KOK="$KOK"
 SITE="$KOK/Imperium34.github.io"
 KAYNAK="$KOK/Source/LotM_Volumes"
 RAPOR="$TOOLS/Reports"
-# Bolum acilis sablonlari AYRI bir Reports/ altinda: $KOK/Tools/Reports.
-# Ikisi de "Reports" adini tasiyor, biri sozluk yedekleri ve denetim.txt,
-# digeri Ch_NN.md. Ayni degiskene baglanirsa sessizce yanlis dosya okunur.
-SABLONLAR="${LOTM_SABLONLAR:-$KOK/Tools/Reports}"
+# Bolum acilis sablonlari (Ch_NN.md) $KOK/Tools/Schemas altinda; betiklerin
+# kendi Reports/'u (sozluk yedekleri, denetim.txt) ile karistirilmaz.
+# sablon_denetle.py da ayni klasore bakar. Eskiden burada var olmayan
+# $KOK/Tools/Reports yaziyordu; 'bolum' zincirinin kapanis adimi sablonu
+# bulamayip ATLANDI diyordu.
+SABLONLAR="${LOTM_SABLONLAR:-$KOK/Tools/Schemas}"
 SOZLUK="$SITE/_data/sozluk.yml"
 # words.md: betik klasorunde varsa o, yoksa veri klasoru ($KOK/Tools, Reports/
 # ile ayni yer). lotm.py ayni sirayla bakar; disa aktarilir ki Python betikleri
@@ -415,11 +419,33 @@ adim_kanca() {
 
 adim_hazirla() {
   local no="$1"
-  mkdir -p "$RAPOR/hazirlik"
-  local cikti="$RAPOR/hazirlik/Ch_${no}_terimler.md"
-  python3 "$TOOLS/hazirla.py" "$no" --cikti "$cikti"
-  tail -n 2 "$cikti" | head -n 1
-  yesil "  -> $cikti"
+  local klasor="$RAPOR/hazirlik"
+  local dokum="$klasor/Ch_${no}_terimler.md"
+  local dizin="$klasor/ayrilmis_dizin.md"
+  local onceki="$SABLONLAR/Ch_$((no - 1)).md"
+  mkdir -p "$klasor"
+
+  mavi "[1/2] Terim dokumu..."
+  # --notlar: words.md'nin kullanim notlari (tirnaksiz, ilk gecis bicimi,
+  # yasak) dokume yalniz bununla girer; sablon becerisi notlu dokum ister.
+  python3 "$TOOLS/hazirla.py" "$no" --notlar --cikti "$dokum"
+  # Makbuz, basligin altindaki ilk dolu satir. Eskiden 'tail -n 2 | head -n 1'
+  # idi; dokum makbuzla bittigi icin bos satiri basiyordu.
+  awk '/^## Tarama makbuzu/ { m = 1; next } m && NF { print "  " $0; exit }' "$dokum"
+
+  mavi "[2/2] Ayrilmis sozcuk dizini..."
+  # Bolume degil sozluge bagli; her hazirlikta yeniden uretilir ki
+  # sozluge ve words.md'ye son eklenen yasaklar da girsin.
+  python3 "$TOOLS/ayrilmis.py" --cikti "$dizin"
+
+  yesil "  sablon modeline verilecekler:"
+  yesil "    $dokum"
+  yesil "    $dizin"
+  if [[ -f "$onceki" ]]; then
+    yesil "    $onceki (onceki bolumun sablonu)"
+  else
+    mavi "    onceki sablon yok: $onceki"
+  fi
 }
 
 # 'test' kontrol()'den once gelmeli: testler sozluk.yml ya da _chapters
@@ -466,11 +492,12 @@ takvim) adim_takvim ;;
 belgeler) adim_belgeler ;;
 kanca) adim_kanca ;;
 hazirla)
-  [[ -n "${2:-}" ]] || {
+  [[ "${2:-}" =~ ^[0-9]+$ ]] || {
     kirmizi "kullanim: ./calistir.sh hazirla <bolum_no>"
     exit 1
   }
-  adim_hazirla "$2"
+  # 10#: "056" sekizlik sayilmasin, dosya adi Ch_56_... olsun.
+  adim_hazirla "$((10#$2))"
   ;;
 hepsi)
   adim_test || mavi "  (testler atlandi, zincire devam)"
