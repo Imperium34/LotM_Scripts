@@ -12,7 +12,7 @@ NEGATIVE CONSTRAINTS & STRUCTURAL ADAPTATION (CRITICAL):
 
 1. Ban Literal Transitions: Do not translate "At this moment," "Right then," or "Suddenly" as "Tam o esnada" or "Aniden" every time. Use Turkish simultaneous suffixes (like "-ken", "-dığında") or simply start a new paragraph with the action.
 2. Omit Redundant Action Tags: Web novel authors overuse tags like "subconsciously," "involuntarily," "nodded," or "lampooned." Do NOT translate these 1:1 (e.g., avoid "gayriihtiyari" or "içinden eleştirdi"). If an action is clearly a reflex, use the "-ivermek" suffix. If the dialogue tone is obvious, drop the dialogue tag entirely.
-3. Vocabulary Variation: Do not overuse heavy words. Words like "marazi," "idrak etmek," "heyula," or "maksadıyla" must be used sparingly and only when the context demands severe atmospheric weight. Do not use them as default adjectives/verbs.
+3. Vocabulary Variation: Do not overuse heavy words. Words like "marazi," "idrak etmek," "heyûlâ," or "maksadıyla" must be used sparingly and only when the context demands severe atmospheric weight. Do not use them as default adjectives/verbs.
 4. "He realized": Vary the translation based on intensity. Use "fark etti" for sudden things, "anladı" for logical deductions, and reserve "idrak etti" for profound, heavy revelations.
 5. The Narrator: the narrator doesn't editorialize. It describes exposed brain tissue with the same syntactic patience it describes furniture. Horror is structural, not adjectival.
 
@@ -20,7 +20,7 @@ CHAPTER-SPECIFIC ACTIVE RULES:
  [Insert active Voice Maps and Stages here]
 
 THE VIBE (STYLE REFERENCE):
- Below are previously approved snippets. Mirror their pacing, contrast, and atmospheric weight, but DO NOT mindlessly copy/paste their specific vocabulary (like "marazi" or "heyula") into new contexts unless appropriate:
+ Below are previously approved snippets. Mirror their pacing, contrast, and atmospheric weight, but DO NOT mindlessly copy/paste their specific vocabulary (like "marazi" or "heyûlâ") into new contexts unless appropriate:
 
 Atmospheric Narrator (Cold, Archaic, Lovecraftian): "Dışarıdaki koridor, ışığın dahi içinde boğulduğu kesif bir zulmete gömülmüştü. Koridorun sonundaki pencereden sızan o marazi kızıllık, eşyaların silüetlerini çarpıtarak onları tekinsiz birer heyulaya dönüştürüyor; pencereler ise gecenin derinliklerinde fanileri soğuk ve habis bir merakla süzen kadim bir hortlağın gözlerini andırıyordu."
 

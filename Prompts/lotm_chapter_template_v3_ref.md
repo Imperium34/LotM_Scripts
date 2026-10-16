@@ -2,6 +2,62 @@
 
 Bu dosya, üretilecek şablonun **birebir yapısıdır**. Başlıklar, sıralama ve boş-durum talimatları burada bağlayıcıdır. SKILL.md yöntemi anlatır; bu dosya biçimi dikte eder.
 
+Şablonun iskeleti aşağıda, ikinci `---` çizgisinden sonra başlar. Hemen altındaki **Makine sözleşmesi** şablona kopyalanmaz; iskeletteki A.1, A.2, A.3 ve B hücrelerinin nasıl doldurulacağını bağlar.
+
+---
+
+## Makine sözleşmesi (şablona kopyalanmaz)
+
+Şablonun iki okuru var: çevirmen ve `kapanis_denetle.py`. Betik bitmiş bölümü A.1, A.2, A.3 ve B'ye karşı otomatik denetler. Bu kurallar, onun okuyabildiği biçimi tanımlar. Kurala uymayan bir hücre hata vermez, sessizce yanlış aranır: ya her bölümde yanlış alarm verir ya da hiç denetlenmez. İlke tektir: **Türkçe hücresi makine içindir, çevirmene yazılan her açıklama Not sütununa gider.**
+
+**Dosya ve başlıklar**
+
+- Dosya adı `Ch_<N>.md`, sıfır doldurmasız: `Ch_47.md`, `Ch_5.md`. Bakım zinciri şablonu bu adla arar.
+- A.1, A.2, A.3 ve B başlıkları iskeletteki metinle aynen yazılır. Makine bölümü başlığın başından tanır: "A.1", "A.2", "A.3", "B. DONDURULAN".
+- Bu dört bölümün içinde `##` ya da `###` ile başlayan satır açılmaz; bölümü orada keser ve kalan tablo kaybolur. Alt başlık gerekiyorsa kalın satır kullanılır (A.3'teki **Örtük kalanlar** gibi).
+- Her bölümde tek tablo. İlk satır başlık sayılır; ikinci bir tablonun başlık satırı veri diye okunur.
+- Hiçbir hücrede `|` ya da `<br>` kullanılmaz. `|` sütunları kaydırır; `<br>` hücreyi kalıp tarifine çevirir. Birden fazla dize gerekiyorsa her biri ayrı satırdır.
+
+**A.1 ve A.2: Türkçe hücresi**
+
+- Yalnızca metinde aranacak biçimi taşır. ¶ atfı, açıklama ve etiketler (`[BURADA DONUYOR]`, `[YENİ]`, `[TEREDDÜT]`) Not ya da Etiket sütununa gider; Türkçe hücresine yazılan etiket aranacak dizenin parçası olur.
+- Terimin bu bölümde birden fazla biçimi geçiyorsa biçimler `/` ile ayrılır: `İhtiyar Neil / Bay Neil`. Makine her biçimin bölümde geçtiğini **ayrı ayrı** doğrular. Yani `/` "ya da" değil "hepsi" demektir; bölümde geçmeyecek bir biçim hücreye yazılmaz.
+- Terim bölümde fiilen geçmelidir: makine her A.1 ve A.2 satırının metinde bulunduğunu sınar. Yalnızca yasaklamak ya da açıklamak için satır açılmaz; yasak A.3'ün, açıklama E'nin işidir.
+- Fiil mastarla değil, gövde ve tireyle yazılır: `havale et-`, `rol yap-`. Mastar biçimi, metindeki çekimli geçişlerle eşleşmez.
+- Parantez içini makine siler. Kısa bir niteleme için kullanılabilir (`Kilise (tekil)`), ama aranacak bir biçim paranteze konmaz.
+- Türkçe hücresinde çift tırnak ve boşluklu uzun çizgi ( — ) kullanılmaz. Tırnak varsa makine yalnızca tırnak içini arar; uzun çizgiden sonrasını not sayıp atar.
+- Kesme işareti düz yazılır: `O'na`. Kıvrık kesme (’) tırnak sanılır.
+- `[TEREDDÜT]` sözcüğü yalnızca A.2'nin Etiket sütununda geçer; bir notta geçerse satır denetimden düşer. TEREDDÜT satırları makinece hiç denetlenmez, çünkü karar insanındır. Denetlenmesi gereken bir karar TEREDDÜT olarak bırakılmaz.
+
+**A.1 ve A.2: İngilizce hücresi**
+
+- Makine bu hücreyi çeviriye sızıp sızmadığını görmek için arar. Tek bir İngilizce ifade ya da `/` ile ayrılmış biçimler yazılır; ¶ atfı ve açıklama parantez içinde kalabilir.
+- İngilizce ifade aynı zamanda bir Türkçe kelimeyse (sofa, bar, fan) tanımlıkla yazılır: `the sofa`. Yoksa Türkçe metindeki kelime sızıntı diye raporlanır.
+
+**A.3: makine yasağı**
+
+- **Kalın blok + içinde "yasak" ya da "yazılmaz" = bölüm genelinde makine yasağı.** Bloğun içindeki her çift tırnaklı dize yasaklanır: `**"tarikat" yasak.**`. Başka fiil (yok, kullanılmaz, girmez, sokulmaz) kullanılmaz; makine bunları ya hiç tanımaz ya da yasağı okuyup istisnasını okumaz.
+- Makine yasak dizenin **başını** arar, sonunu Türkçe ekler için açık bırakır; sert ünsüzü yumuşamış biçimi de arar (ekip/ekibi). Bu yüzden "hafi" yasağı "hafif"i de yakalar. Yasak, bölümde meşru geçen bir kelimenin başıysa makine yasağı olarak yazılmaz; düz cümleyle yazılır ve elle denetlenir.
+- Küçük harfle başlayan yasak harf duyarsız, büyük harfle başlayan harf duyarlı aranır. "Aptal" yasağı Soytarı'nın eşanlamlısını yakalar, sıradan "aptal" sıfatını yakalamaz.
+- Yalnızca bir ¶'a ait yasak ve bağlama bağlı her kısıt kalın yazılmaz. Örnek: ¶33'te Basiret yanlış, ¶69'da doğru terimse, bu kısıt düz cümleyle yazılır; kalın yazılırsa ¶69'da yanlış alarm verir.
+- İzinli bir terim yasak dizeyi içeriyorsa (yasak "silindir", izinli "silindir şapka"), izinli biçim aynı maddede, kalın bloğun **dışında**, çift tırnakla yazılır; makine yasağı aramadan önce onu metinden maskeler. Bu yüzden makine yasağı taşıyan bir maddede, istisna olmayan hiçbir şey çift tırnakla yazılmaz. Kelimelere değinmek için düz tek tırnak kullanılır: 'gizli teşkilat'.
+- A.1 ve A.2'deki izinli karşılıklar zaten maskelenir: "Tarikat-ı Hafiyye" A.1'deyse "tarikat" yasağı onu yakalamaz.
+- **Örtük kalanlar** kısmında kalın + yasak fiili kullanılmaz; oradaki kısıtlar bağlama bağlıdır.
+
+**B: dondurulan satırlar**
+
+- Sütunlar sırasıyla: İngilizce, Türkçe (dondurulmuş), geçiş sayısı, Not. Sayı hücresi bir tamsayıyla başlar; ¶ listesi ardından gelebilir: `3 (¶17, ¶19, ¶20)`.
+- Sayı, dizenin bölümün tamamında **harfi harfine ve büyük/küçük harf dâhil** kaç kez geçtiğidir. Başka bir satırın ya da alıntının içindeki geçişler de sayılır; bu yüzden bir dize hem tek başına hem daha uzun bir dondurulmuş satırın parçası olarak dondurulmaz.
+- Geçişlerden biri cümle başına düşebiliyorsa kalıp, büyük harf alabilecek ilk kelimeden değil bir sonrakinden başlar (`küsur yıl`, `Kızıl Ay şeklini çiz-`). Ya da cümle başındaki geçişlere ayrı satır açılır.
+- Türkçe hücresinde yalnızca aranacak dize durur; ¶ atfı ve karara bağlanmış tam cümle Not'a gider. Hücrede çift tırnak varsa makine yalnızca tırnak içini arar.
+- Fiil gövdesi tireyle biter (`dokun-`): bütün çekimleri eşler.
+- Üç nokta (... ya da …) ya da ok (→) taşıyan hücre kalıp tarifi sayılır. Dondurulmuş satırın kendisi üç nokta içeriyorsa üç noktanın iki yanı ayrı çift tırnaklı parçalar olarak yazılır: `"Hım" … "peki"`. Makine parçaları sırayla ve arada en fazla 60 karakterle arar. Tek parçalı ya da tırnaksız bir tarif makinece denetlenemez, elle denetlenir.
+- Jest satırı düzyazı tarifi değil, metinde geçecek çekirdek dizedir: `dört kez dokun-`.
+
+**Teslimden önce**
+
+Son iş olarak A.1, A.2, A.3 ve B bu sözleşmeye karşı bir kez okunur. Her Türkçe hücre metinde aynen aranabilir mi? Her kalın yasak, bölümde meşru geçen bir kelimeyi de yakalar mı? Her B sayısı, büyük/küçük harfiyle birlikte doğru mu?
+
 ---
 
 # Gizemlerin Efendisi — Bölüm Açılış Şablonu
@@ -42,7 +98,7 @@ Karşılığı daha önce karara bağlanmamış, bu bölümde geçen adlar. Kar�
 [Bölümün kasten adlandırmadığı, çevirmenin refleksle dolduracağı kurum/kişi/kavram. Yoksa "yok" yaz.]
 
 **Komşu terim çarpışmaları**
-[Bu bölümdeki sıradan bir kelimenin, mıknatıs gibi çekeceği rezerve terim. Yanlış terim açıkça adlandırılır ve yasaklanır. Yoksa "yok" yaz.]
+[Bu bölümdeki sıradan bir kelimenin, mıknatıs gibi çekeceği rezerve terim. Yanlış terim açıkça adlandırılır ve yasaklanır. Makinenin denetleyeceği yasak Makine sözleşmesindeki biçimle yazılır; ¶'a bağlı yasak düz cümleyle. Yoksa "yok" yaz.]
 
 ---
 
@@ -52,7 +108,7 @@ Bu satırlar bölüm içinde ve sonraki ciltlerde tekrarlanır. **Her geçişte 
 
 | İngilizce | Türkçe (dondurulmuş) | Bölümdeki geçiş sayısı | Not                                                   |
 | --------- | -------------------- | ---------------------- | ----------------------------------------------------- |
-| [Satır]   | [Türkçe]             | [n]                    | [neyin kaymayacağı: sözcük sırası, noktalama, tırnak] |
+| [Satır]   | [Türkçe]             | [n (¶…)]               | [neyin kaymayacağı: sözcük sırası, noktalama, tırnak] |
 
 Yüzlerce bölüm tekrarlanacak **fiziksel bir jest veya ayin edimi** de dondurulan satırdır; düzyazı olması bunu değiştirmez.
 
@@ -104,7 +160,7 @@ Değer bir koşula bağlıysa koşul yazılır ("muhataba göre: X'e karşı nom
 **Kapalı siciller (bu bölümde yasak):**
 
 - [Karakterin genel profilinde bulunan ama burada işlemeyen tik, sözcük alanı veya davranış. Her madde kısa bir sebep taşır.]
-- **Cırcır kontrolü:** [tik tik: hangisi canlı, hangisinin kapısı kapandı, hangisi canlı ama bu bölümde tetiklenmiyor. Kapısı kapanmış tik bir gönderme değil, süreklilik hatasıdır; tetiklenmemiş tik ise aşamayı ispatlamak için metne sokulmaz. **Cırcır yalnızca bu karakterin tikini yönetir**; kaba dil dahil hiçbir kısıt sahneye toptan uygulanmaz, her ses için ayrı belirtilir.]
+- **Cırcır kontrolü:** [tik tik: hangisi canlı, hangisinin kapısı kapandı, hangisi canlı ama bu bölümde tetiklenmiyor. Kapısı kapanmış tik bir gönderme değil, süreklilik hatasıdır; tetiklenmemiş tik ise aşamayı ispatlamak için metne sokulmaz. **Cırcır yalnızca bu karakterin tikini yönetir**; kaba dil dâhil hiçbir kısıt sahneye toptan uygulanmaz, her ses için ayrı belirtilir.]
 
 **Dayanak:** [Bu bloktaki kuralların ne kadarı ses haritasından geliyor, ne kadarı çıkarım? Haritanın ince olduğu aşamalarda açıkça yaz: "aşama tarifi iki satır; kalibrasyonun büyük kısmı tik envanterinden türetildi." Bu, haritanın nerelerinin yazılması gerektiğini zamanla kendiliğinden gösterir.]
 

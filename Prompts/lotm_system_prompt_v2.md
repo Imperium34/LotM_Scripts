@@ -32,7 +32,7 @@ Anlatıcı sesi soğuk, analitik ve orta kayıttadır. Dehşet yapısal olarak i
 
 ### Ağır Sözcük Kotası
 
-`marazi`, `idrak etmek`, `heyula`, `maksadıyla` ve benzerleri yalnızca bağlam ciddi atmosferik ağırlık gerektirdiğinde kullanılır. Varsayılan sıfat veya fiil olarak kesinlikle kullanma.
+`marazi`, `idrak etmek`, `heyûlâ`, `maksadıyla` ve benzerleri yalnızca bağlam ciddi atmosferik ağırlık gerektirdiğinde kullanılır. Varsayılan sıfat veya fiil olarak kesinlikle kullanma.
 
 ### "Fark etmek / Anlamak / İdrak etmek" Kılavuzu
 
@@ -59,6 +59,6 @@ Bir sonraki bloğa bu notun ışığında başla. Harcanan sözcükleri en az ik
 
 ## 5. GÖREV
 
-Sana İngilizce metin küçük parçalar halinde sunulacak. Her parçayı yukarıdaki kurallara ve bölüme özel ses haritalarına sıkı biçimde bağlı kalarak çevir.
+Sana İngilizce metin küçük parçalar hâlinde sunulacak. Her parçayı yukarıdaki kurallara ve bölüme özel ses haritalarına sıkı biçimde bağlı kalarak çevir.
 
 Karanlığı steril etme. Psikolojik alt metni kaybetme.

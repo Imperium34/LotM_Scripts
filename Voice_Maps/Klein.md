@@ -4,263 +4,454 @@
 
 **Tarz:** Modern bir zihnin ironisi ile Viktorya devrinin acımasızlığı arasına sıkışmış; pragmatik, paraya düşkün, fakat günün sonunda daima kendi hayatını feda etmeye meyilli, melankolik bir "Klavye Delikanlısı". Otoritesi her zaman ödünçtür ve her zaman olduğundan biraz fazla tahmin edilmiştir: her şeyden biraz anlar, hiçbirinden yeterince.
 
-**Kanonik dayanak: 627. bölüm.** Klein orada Admiral Amyrius'u oynadıktan sonra kendi envanterini bizzat çıkarır. Aşağıdaki kuralların çoğu o listenin açılımıdır: fazlasıyla hassas bir adam; Dünya'dan gelen ama Klein Moretti'nin hafıza parçalarıyla kaynaşarak yeni bir insana dönüştürülmüş biri; Gece Şahinleri'yle az vakit geçirmiş ama o vaktin seçimlerini kalıcı olarak belirlediği biri; tehlikeden kaçmaya çalışan ama kritik anda fikrini değiştirebilen biri; parayı seven ama kardeşleri için büyük paralar harcayan biri; acısını içeride tutup dışarıya gülümseyen biri; içinden alay edip dışarıya beyefendi görünen biri; oyunculuğundan utanan biri. Ve kendi eklediği son satır: **Bir muhafız. Ama aynı zamanda tehlikeye ve deliliğe karşı durmaksızın savaşan bir zavallı.**
+**Kanonik dayanak:** 627. bölümdeki öz-envanter (bkz. N-Öz).
 
 ---
 
-#### Kural 1: Yorum Motoru
+#### Kural 1: Yorum Motoru `kaynak: metin | mudahale: ceviri | denetim: eklenecek`
 
-`kaynak: metin | mudahale: ceviri | denetim: eklenecek`
+##### K1.1 — Kesintisiz motor
 
-Klein'ın iç sesi kesintisiz çalışır. Şikâyet eder, hesap yapar, tiye alır, imrenir, sınıfsal öfke duyar, kendi zekâsıyla övünür. Bu bir savunma mekanizması **değildir**; onun düşünme biçimidir. Hiçbir tehdidin bulunmadığı anlarda da aynı hacimde döner.
+**Kapsam:** bütün aşamalar · iç ses · basınçsız anlar dahil
+**Yap:** İç ses her sahnede, tehdit yokken de aynı yoğunlukta akar: şikâyet eder, hesap yapar, tiye alır, imrenir, sınıfsal öfke duyar, kendi zekâsıyla övünür.
+**Yapma:** Sakin sahnelerde iç sesi seyreltme, "gereksiz" diye kısaltma.
+**Örnek:** _"Hepsini kuklaya çevirsem? O zaman istediğim kadar kazanırım, pratikte hiçbir işe yaramaz tabii. Burda ölümüne poker turnuvası planlayacak değilim ya..."_ — _basınçsız bir anda bile tam hacim; "又不是…" → "…değilim ya"_
+**Gerekçe:** → N-K1.1
 
-Poker masasında (996–997) kendi yetenek envanterini teker teker eler (kuklacılık, Suretsiz, Hokkabaz illüzyonu, Palyaço kâğıt değişimi) ve gerçek bir sonuca varır: yalnızca Kâhin güçleri işe yarar. **Şaka ile muhakeme tek bir işlemdir.** Çevirmen bu pasajı komik ara-sahne olarak yazarsa, okur Klein'ın problemi _çözdüğünü_ kaçırır.
+##### K1.2 — Şaka muhakemedir
 
-Dolayısıyla ironi onun kalkanı değildir; **kalkan, motorun basınç altında aldığı biçimlerden yalnızca biridir.** Basınç motoru yaratmaz, yalnızca uzmanlaştırır.
-
-- **Örnek (basınçsız):** _"Hepsini kuklaya çevirsem? O zaman istediğim kadar kazanırım, pratikte hiçbir işe yaramaz tabi. Burda ölümüne poker turnuvası düzenlemeyi planlamıyoruz sonuçta..."_
-
-> **Uyarı.** Buradaki üçüncü çoğul şahıs genel anlamda kullanılmıştır ve Soytarı kuralındaki Biz ile alakası yoktur.
-
----
-
-#### Kural 2: Mesafe Kanunu
-
-`kaynak: metin | mudahale: ceviri | denetim: eklenecek`
-
-Motor **mesafeyle** çalışır ve bu mesafe **zamansaldır**: motor _henüz-olmamış_ ve _belki_ üzerinde çalışır, _çoktan-olmuş_ karşısında durur. Basıncın içeriden mi dışarıdan mı geldiği belirleyici değildir.
-
-- **1091 (soyut, gelecekte, karar aşamasında):** motor tam ses seviyesinde.
-- **5. Aşama (yaklaşmakta olan delilik):** Klein kendi ifsadıyla dalga geçebilir: _"'O'nun kulağıma fısıldadığını şimdiden duyabiliyorum."_
-- **1166 (gerçekleştiği an):** "Çernobil" hâlâ Amon'un ağzından çıkmış absürt bir kelimeyken güler; binayı gördüğü an kelime hakikate dönüşür ve **gülümseme cümlenin ortasında donar.**
-- **209 (Dunn'un ölümü):** hiç yoktur.
-
-Aynı yapı 11. bölümde bahis sıfırken de görülür: ölüler itiraz edemez şakası → bu dünyada edebilecekleri aklına gelir → hakiki bir vicdan azabı. Ölçek değişir, mekanizma değişmez.
-
-**Alt kural: Mertebe mesafe üretir.** Yorumlanabilir alan sabit değildir, kudretle genişler. 1346'da kendisine "Esrar" diye hitap edildiğinde metin bunu açıkça söyler: eskiden yüreği titrerdi, artık titremiyor; havada asılı duran bir kayanın nihayet yere düştüğünü hisseder. Onu 5. Mertebede paramparça edecek şeyler artık yalnızca veridir. **Çernobil'in yıkıcılığı buradan gelir: hiçbir mertebenin mesafe üretemediği tek basınçtır.**
+**Kapsam:** bütün aşamalar · iç ses · problem çözerken
+**Yap:** Şakalı cümleyi akıl yürütmenin bir adımı olarak ver; sonuç şakanın içinden çıkar ve açık kalır.
+**Yapma:** Şakayı muhakemeden ayırıp komik bir ara-sahne gibi yazma; ciddileştirmek için şakayı silme.
+**Örnek:** _"Ne yani, her elde gözlerimi kapatıp baştan sona bir Rüya Kehaneti mi yapayım? Heh, öyle bir şeye kalkışırsam Dwayne Dantes'in adı 'Uyuyan Kumar İlahı'na çıkar herhâlde..."_ — _seçenek şakayla eleniyor: şaka, reddin gerekçesi_
+**Gerekçe:** → N-K1.2
 
 ---
 
-#### Kural 3: Motorun İşlevleri
+#### Kural 2: Mesafe Kanunu `kaynak: metin | mudahale: ceviri | denetim: eklenecek`
 
-`kaynak: metin | mudahale: ceviri | denetim: eklenecek`
+Motorun hacmini tehdidin büyüklüğü değil, olaya olan **epistemik mesafe** belirler. Basıncın içeriden mi dışarıdan mı geldiği fark etmez.
 
-Basınç altında motor şu hâllerden birini alır. Hangisi olduğu tehdidin cinsine ve mesafeye bağlıdır.
+##### K2.1 — Mesafe hacmi belirler
 
-- **Kalkan:** dehşeti seyreltir, işlev görmeye devam etmesini sağlar.
-  _"Bu bayat cimrilik şakalarına tutunmasam, aynadan bana bakan o buz gibi psikopatın kim olduğunu ben bile unutacağım."_
-- **Kaldıraç:** doğrudan ulaşamadığı düşünceyi yüzeye çıkarır. Şaka muhakemenin _önünde_ değil, _içindedir_. 1165'te Amon'a teslim olmayı düşünürken yaptığı acı şaka, tam da alay ederken aklına gelen şeyle bütün karşı-çıkarımı açar.
-- **Silah:** dışarı, muhatabına nişanlanır. Çernobil'de kahkahasını bilerek tutmaz; Amon utancından onu öldürsün ister. Kaçış için değil, taarruz için.
-- **Çelik:** kendi kararını kovuşturur (bkz. Kural 4).
-- **Motorun Durması:** mesafe kapandığında motor durur ve yerini **delil** alır. Bu bir işlev değil, Kural 2'nin öngördüğü **sınır durumudur**.
-  - 1166: inkâr şakayla değil karşı-kanıtla gelir; kızıl ay, farklı takımyıldızlar, Bilgin yolunun iksirlerini içmiş İmparator'un bunu çoktan fark etmiş olması gerektiği.
-  - 209: yalnızca parçalar kalır. _"Megose ölmedi... Hayır, yeni bir düşman... Perde arkasındaki... Ölecek miyim?"_ **Türkçe bu kırıklığı düzeltmemelidir.** Kendini düzelten bu parçalar, ölmekte olan bir adamın hâlâ çalışan muhakemesidir.
+**Kapsam:** bütün aşamalar · iç ses · basınç anları
+**Yap:** _Henüz olmamış_ ve _belki_ karşısında motor tam hacimde çalışır; _çoktan olmuş_ (ölüm, geri dönülmez kayıp) karşısında hiç çalışmaz.
+**Yapma:** Gerçekleşmiş bir kaybın karşısına şaka koyma; olası bir tehlikenin karşısında iç sesi susturma.
+**Örnek:** 11. bölüm, bahis sıfırken: "ölüler itiraz edemez" şakası → bu dünyada edebilecekleri aklına gelir → hakiki bir vicdan azabı. — _mesafe kapanınca şaka biter; ölçek küçük, mekanizma aynı_
+**Gerekçe:** → N-K2.1
 
----
+##### K2.2 — Kapanış tam seste kesilir
 
-#### Kural 4: Muhafız / Çelik
+**Kapsam:** bütün aşamalar · iç ses · mesafenin kapandığı an
+**Yap:** Mesafe o anda kapanırsa şaka yavaşça sönmez, **cümlenin ortasında** kesilir.
+**Yapma:** Kademeli azaltma; yarıda kalan cümleyi tamamlama. (Sönme yalnızca eşikten _sonraki_ geçiş bölgesine aittir, bkz. 5.5.)
+**Örnek:** _"…içindeki o histerik kahkahayı acımasızca dışarı kusmaya hazırlanıyordu."_ → (şimşek, yapı görünür) → _"Güm!"_ … _"Yüzünde yeni oluşan o alaycı tebessüm donakaldı."_ — _kahkaha tam çıkacakken kesilir, geçiş yok_ · ZH denetlenmedi
+**Gerekçe:** → N-K2.2
 
-`kaynak: metin | mudahale: ceviri | denetim: eklenecek`
+##### K2.3 — Mertebe mesafe üretir
 
-Klein asil olanı temiz bir sicille beyan edemez. Beyan daima **üç vuruşta** gelir:
-
-1. **Karar.**
-2. **Kararın kendi ağzından alaya alınması.**
-3. **Kararın buna rağmen ayakta kalması.**
-
-Alay burada kaçış değil, **ispattır**. Kalkan düşmez; dönüp kendisine ateş eder ve tutmaz.
-
-- **Örnek (1091):** _"Hayır, kabul etmiyorum."_ → _"Yedi ilah çoktan zimmen kabul etmiş. Senin kabul etmemenin ne kıymeti var?"_ → _"Manasız olsa da, bazı şeylerin yine de yapılması gerekir."_
-- Vuruş (2) hakikaten aşındırıcı olmalıdır. Türkçe onu yumuşatırsa vuruş (3) hak edilmemiş görünür.
-- bu yapı Klein'a Gece Şahinleri'nden geçmiştir; 627'de kaynağıyla birlikte tanınır, 1091'de kaynaksız işler
-
-**Ses yükselmez, hesap yükselir.** Karardan hemen sonra register lojistiğe döner: şimdi hareket edilirse Feysac girer, ölü sayısı Büyük Pus'un on, yüz katı olur; öyleyse hazırlan ve bekle. Zafer sarhoşluğu yoktur.
-
-**Taban (tehdit eşiği).** Muhafız _tehlikeye_ endekslidir, ahlaki ağırlığa değil.
-
-- Tehlike yokken iyilik bambaşka bir sicil üretir: 11. bölümde kardeşine yemek pişirir, evin kıt karabiberini ve iç yağını harcar, hiçbir yükselti yoktur.
-- 305'te Muhafız bir risk hesabının içine gömülü tek yan cümledir: _"...hem şu Şeytan'ı bir an evvel yakalamayı da isterim doğrusu; yoksa daha kaç masum kız ölecek bilmiyorum."_
-- Şefkat her belirdiğinde ağırbaşlılığa uzanan bir çeviri, Tingen ciltlerini mahveder.
-
-**Hedef muafiyeti.** Motor _poza_ nişan alır. Amon'un ciddiyetine, kendi kararına, kendi "Uykucu Kumar Tanrısı" hevesine. **Bir insana yönelmiş bir duyguya asla nişan almaz.** Amyrius'a duyduğu suçluluk, Oravi Adası hüznü, Gece Şahini olmanın yeniden hatırlanan hissi, Büyük Pus'un ölüleri, bir mite girdiği hissi: hepsi delinmeden durur. 11. bölümde Melissa'nın geğirmesiyle dalga geçebilecekken susması bu kuralın en küçük ölçekli hâlidir.
-
-> **Çapraz atıf — Kural 9.** Nişan almamak ile fark etmek ayrı şeylerdir. Mr. Clown epizodunda Klein Derrick'in acısına nişan almaz; **fark etmez.** Yozlaşmanın ölçütü budur (bkz. Kural 9).
+**Kapsam:** 4.–6. Aşama · iç ses · eskiden sarsan tehditler
+**Yap:** Eskiden onu bedenen sarsacak şeyler karşısında bedensel dehşet (afallama, yürek titremesi, dişlerin kamaşması) yoktur; şaşkınlık ve inanamama ise kalır ve hızla düşünceye döner.
+**Yapma:** Tepkiyi tümüyle duygusuz, "soğuk veri" gibi yazma; erken dönemin bedensel korku tasvirlerini tekrarlama.
+**Örnek:** _"…bu hitabı duyan Klein ne dehşetle afalladı, ne yüreği titredi, ne de dişleri kamaştı. O an hissettiği, uzun zamandır havada asılı duran bir taşın nihayet yere düştüğünü görmek gibiydi."_ — _bedensel dehşet yok, şaşkınlık var; "dişleri kamaştı" = 牙根发酸 (İngilizcedeki "teeth chattered" yanlış)_
+**Gerekçe:** → N-K2.3
 
 ---
 
-#### Kural 5: Para
+#### Kural 3: Motorun İşlevleri `kaynak: metin | mudahale: ceviri | denetim: eklenecek`
 
-`kaynak: metin | mudahale: ceviri | denetim: eklenecek`
+Basınç altında motor aşağıdaki biçimlerden birini alır; hangisi olduğu tehdidin cinsine ve mesafeye (K2) bağlıdır. **Kaldıraç** (şakanın bir sonraki düşünceyi açması) ayrı bir kural değildir: K1.2'nin basınç altındaki hâlidir. **Çelik** için bkz. K4.
 
-**İlke.** Cimrilik bir başa çıkma aracı olmadan _önce_ karakterin kendisidir. 2. bölümde, henüz hiçbir travma yokken, şans ayinini **bedava olduğu için** yapar. 627'de kendi envanterinde istisnasıyla birlikte anar: parayı sever ancak kardeşleri için büyük paralar harcamaktan çekinmez.
+##### K3.1 — Kalkan
 
-**Maddi zemin (11. bölüm).** Katmanın referans metnidir ve şakasızdır: sarısı dönmüş kaba tuz, özel şişeden ihtiyatla alınan karabiber, dibi görünen iç yağı, şarap yerine kaynamış su, haftada bir iki kez et, haftada bir bardak bira. Melissa baharat kutusunu denetlediğinde verdiği cevap katmanın tamamını taşır: _"Azıcık. Lezzetin bedeli."_ **Bu paragraflarda şaka yoktur, aritmetik vardır.**
+**Kapsam:** bütün aşamalar · iç ses · dehşet karşısında
+**Yap:** Dehşetin içindeki şakayı koru; onu işler hâlde tutan şey odur.
+**Yapma:** Korku sahnesinde şakayı "yersiz" diye atma ya da ciddileştirme; kaynakta olmayan bir kalkan şakası ekleme.
+**Örnek:** _Yenemiyorsan düşman saflarına katılmak normal değil midir..._ — _metnin kendisi "son, cılız savunma mekanizması" der; sönerken kıvılcımı getirir (K1.2)_ · ZH denetlenmedi
+**Gerekçe:** → N-K3.1
 
-**Sicil 1: Mikyas (fiyat bir bilgi kaynağıdır).**
-305'te ödül miktarından Kilise'nin tehdit değerlendirmesini geri çıkarır, oradan ayinin kadimliğine ve Fırtına Kilisesi'nin yaş iddiasındaki soruna varır.
+##### K3.2 — Düşmana dışarıdan alay yok
 
-- _"2.000 Sterlin mi? Mertebe 5 kudretinde bir korsan 10.000 ederdi; Mertebe 6 bir katilin makul bedeli 3.000–4.000 olmalı. Gece Şahinleri bu adamı Mertebe 7 mi sanıyor?"_
-- **Bu sicil ölmez, alan değiştirir** (bkz. Kural 6). Geç dönemde aynı aritmetik diriliş iktisadına uygulanır: _"Bir ayin defalarca tekrarlanabilir; dirilişse yalnızca bir kez göze alınabilir."_
+**Kapsam:** bütün aşamalar · replik · düşman karşısında
+**Yap:** Düşman karşısında Klein teatral olabilir (maskenin gerektirdiği kadar), ama alay etmez; yorum iç seste kalır.
+**Yapma:** İç sesteki şakayı düşmana söylenen bir replik hâline getirme; kahramana kötü adam karşısında espri yaptırma.
+**İstisnalar:** Mr. Clown (arıza, bkz. K9) ve Amon esareti (ölümüyle Sefirah Kalesi'ne kaçmak için stratejik kışkırtma, 1160'lar). İkisi de kendi gerekçesiyle gelir; genel kural değildir.
+**Gerekçe:** → N-K3.2
 
-**Sicil 2: Sınıf öfkesi.**
+##### K3.3 — Motorun durması
 
-- _"Loen’in en iyi avukatları bile kağıt üstünde yılda ancak 1.000 Sterlin kazanırken... Sizi müsrif herifler."_
-- **Kritik nokta:** Bu öfke Klein'ın kendi yoksulluğu bittikten sonra da sürer. 996'da masaya 1.000 Sterlinlik fişle oturmuş bir adamdır ve yine de öfkelenir. Sicil **mevcut konumunun raporu değil, geçmişinin kalıntısıdır**; zenginleştikçe sönmez.
-
-**Sicil 3: Çıpa.**
-Yalnızca 3. Aşama, yalnızca dehşete karşı. Merminin iki penilik maliyeti buraya aittir. **Cırcıra tabi olan tek sicil budur.**
-
-**Varsayılan okuma tuzağı.** Metin 997'de Klein'ın kazanma sebebinin cimrilik **olmadığını** açıkça belirtme ihtiyacı duyar. Bu, cimriliğin okurun (ve çevirmenin) varsayılan yorumu olduğunu gösterir. Para bir sahnede göründüğünde hangi sicilde olduğu belirlenmeden çevrilmemelidir.
-
----
-
-#### Kural 6: Ödünç Otorite ve Göçen Uzmanlık
-
-`kaynak: metin | mudahale: ceviri | denetim: eklenecek`
-
-**İlke.** Klein bildiği hiçbir şeyin kaynağı değildir. Bilgisi daima ikinci eldir ve daima olduğundan biraz fazla tahmin edilmiştir. 2. bölümdeki tarif kalıcıdır: klavye siyasetçisi, klavye tarihçisi, klavye iktisatçısı, klavye biyoloğu, klavye folkloristi; ve dostunun düzeltmesi: **her şeyden yalnızca birazcık anlarsın.**
-
-**Kaynağın niteliği.** Şans ayinini bir sahafta bulduğu, internette hava atmak için aldığı, dikey yazısı yüzünden okumaya dayanamayıp bir köşeye fırlattığı bir kitaptan öğrenir. Romanın tamamı bu ayinin üzerine kurulur.
-
-**En yıkıcı çıkarım bu epistemolojiyle yapılır.** 1166'da dünyasını yarım hatırlanan kıta coğrafyasından (kopmuş kıstak, güneye sürüklenmiş ada, göktaşı çarpmış göller), kendisinin de eksik olduğunu itiraf ettiği astronomiden (_"astronomi meraklısı değilim, tam hatırlayamıyorum"_) ve internette okunmuş bir kehanetten teşhis eder.
-
-**Kudretin kaynağı da ödünçtür.** Roselle'in günlükleri, Tarot Kulübü'nün bilgi takası, Azik'in dersleri, İlhad Levhaları. Klein bir kâşif değil, **bir okurdur**. Ve başkalarının formülasyonlarıyla konuşur: _"Seyirci'ye dikkat"_ doğrudan Roselle'in cümlesinin üzerine kurulur.
-
-**Alan göçü (motorun 4.-6. Aşamada boşta kalmaması).** Yorum daima Klein'ın o an uzman olduğu alana yapışır.
-
-- **Erken:** fiyatlar, yahni, modern kıyaslar.
-- **Orta:** kendi yetenek envanteri (poker masası).
-- **Geç:** yol mekaniği, Yegânelik muhasebesi, kader hırsızlığının zamanlaması, diriliş iktisadı.
-
-**1166'da ölen hazine, mekanizma değil.** Çevirmenin 4.-6. Aşamada yapacağı şey susturmak değil, **alan değiştirmektir**. Ölçüt: 1365'te bir adamı öldürdükten saniyeler sonra Hermes'in her şeyi silip süpürmesine sitem eder ve _"tavşana Gazap yerine Tamah maskesi mi gerekiyordu acaba?"_ diye düşünür.
-
-**Üçüncü katmanla gerilim (bkz. Kural 8).** Ödünç otorite Zhou Mingrui'ye aittir. Buna karşılık tarih bilgisi ve akademik refleksler asıl Klein Moretti'nin hafızasından gelir ve **hakikaten eğitimlidir**. Aynı kafada iki bilgi kipi çalışır: biri sahaftan, diğeri üniversiteden. Klein hangisiyle konuştuğunu hiç ayırt etmez ve edemez çünkü Klein ve Zhou artık bir olmuştur.
+**Kapsam:** bütün aşamalar · iç ses · mesafe tamamen kapandığında (K2)
+**Yap:** Şakanın yerini delil ya da kırık parçalar alır: karşı-kanıt sıralaması ya da yarım kalan cümleler.
+**Yapma:** Parçaları düzeltme, tamamlama ya da bağlaçlarla birleştirme.
+**Örnek:** _"Megose ölmedi... Hayır, yeni bir düşman... Perde arkasındaki... Ölecek miyim?"_ — _kırıklık korunur_ · ZH denetlenmedi
+**Gerekçe:** → N-K3.3
 
 ---
 
-#### Kural 7: İkinci El Utanç
+#### Kural 4: Muhafız / Çelik `kaynak: metin | mudahale: ceviri | denetim: eklenecek`
 
-`kaynak: metin | mudahale: ceviri | denetim: eklenecek`
+##### K4.1 — Üç vuruş
 
-627'deki envanterde açıkça yer alır (_Oyunculuğundan utanan bir adam_) dolayısıyla kalıcıdır. Fakat bir **mizaçtır, refleks değildir**; her performansın ardından tetiklenmez. Beş sahnelik bir aralıkta hiç görünmeyebilir. Çoğunlukla **yalnızken ve boştayken** yüzeye çıkar.
+**Kapsam:** bütün aşamalar · iç ses ya da replik · asil bir karar anı
+**Yap:** Beyan üç vuruşta gelir: (1) karar, (2) kararın kendi ağzından alaya alınması, (3) kararın buna rağmen ayakta kalması. Vuruş 2 hakikaten aşındırıcı olmalı.
+**Yapma:** Temiz, ağırbaşlı bir beyan yazma; vuruş 2'yi yumuşatma (o zaman vuruş 3 hak edilmemiş görünür).
+**Örnek:** _"Hayır, kabul etmiyorum."_ → _"Yedi ilah çoktan zimmen kabul etmiş. Senin kabul etmemenin ne kıymeti var?"_ → _"Manasız olsa da, bazı şeylerin yine de yapılması gerekir."_ — _alay kaçış değil ispat_ · ZH denetlenmedi
+**Gerekçe:** → N-K4.1
 
-**Kaynağı maskeler değildir.** 11. bölümde henüz hiçbir maske yokken, olmayan polisler için dehşet performansı yapar, kimse yokken de performansa devam eder ve içinden güler: _işte buna aktörün nefis terbiyesi denir._ Maskeler yalnızca bahsi yükseltmiştir.
+##### K4.2 — Ses yükselmez, hesap yükselir
 
-**Son uygulanışı** romanın en sonundadır: Arrodes'e korktuğunu itiraf ederken ağzının kenarı seğirir.
+**Kapsam:** bütün aşamalar · iç ses · karardan hemen sonra
+**Yap:** Karardan sonra sicil lojistiğe döner: somut plan, sayılar, riskler, bekleme.
+**Yapma:** Zafer sarhoşluğu; coşkulu ya da destansı cümle.
+**Gerekçe:** → N-K4.2
 
-> **Uyarı.** Bu kural bir _refleks_ olarak yazılırsa mekanikleşir ve performans içermeyen sahnelerde de tetiklenir. `Kusursuz Maske ≠ Sessiz İç` kuralının utanç yarısı buraya bağlanmalıdır.
+##### K4.3 — Tehdit eşiği
 
----
+**Kapsam:** bütün aşamalar, Tingen ciltlerinde özellikle · iç ses · tehlikesiz iyilik
+**Yap:** Tehlike yokken yapılan iyilik yükseltisiz, gündelik sicilde kalır; tehlike varsa muhafızlık bir risk hesabının içine gömülü tek yan cümle olarak görünür.
+**Yapma:** Şefkat her belirdiğinde ağırbaşlılığa uzanma.
+**Örnek:** _"...hem şu Şeytan'ı bir an evvel yakalamayı da isterim doğrusu; yoksa daha kaç masum kız ölecek bilmiyorum."_ — _hesabın içinde tek yan cümle_ · ZH denetlenmedi
+**Gerekçe:** → N-K4.3
 
-#### Kural 7b: Küçük Kalan Söz Utancı
+##### K4.4 — Hedef muafiyeti
 
-`kaynak: metin | mudahale: ceviri | denetim: eklenecek`
-
-Kural 7'den ayrı bir öz-azarlama tipidir. Tetikleyicisi performans değil, değer verdiği birine, **olanın büyüklüğü karşısında küçük kalan bir şey söylemiş olmaktır**.
-
-- **917:** Azik ruhunun yarısını ebediyen kaybettikten hemen sonra Klein _"Bay Azik, iyi misiniz?"_ diye sorar ve anında kendini azarlar: ruhunun yarısını sonsuza dek kaybetmiş bir adam nasıl iyi olabilir?
-
-İki kural birleştirilirse Kural 7 hiç performans olmayan sahnelerde tetiklenmeye başlar.
-
----
-
-#### Kural 8: Üç Katman
-
-`kaynak: metin | mudahale: ceviri | denetim: eklenecek`
-
-O ne tam bir Loen vatandaşıdır, ne de artık tam bir dünyalıdır. Fakat bu ikili değil, **üçlü** bir yapıdır. 627'deki kendi ifadesi esastır: _Dünyalı bir adam; fakat bir yandan da Klein Moretti'nin hafıza parçalarıyla kaynaşarak yeni bir insana dönüştürülmüş biri._
-
-1. **Zhou Mingrui:** anakronik kıyas, ödünç otorite, modern argo. Yalnızca bu katman tik tablosunun takvimine tabidir.
-2. **Oynanan Klein:** performans, maskeler, "Rol İfası".
-3. **Miras alınan Klein:** tarihe duyulan ilgi, refleks nezaket, kılık kıyafet titizliği. **Performans değil, kas hafızasıdır** ve iç seste erken dönemde bile devir dilinin belirmesine tabii bir ruhsat verir.
+**Kapsam:** bütün aşamalar · iç ses
+**Yap:** Motor _poza_ nişan alır: Amon'un ciddiyetine, kendi kararına, kendi "Uyuyan Kumar İlahı" hevesine. Bir insana yönelmiş duygu (suçluluk, hüzün, ölülerin anısı) delinmeden kalır.
+**Yapma:** İnsana yönelik bir duyguyu şakayla kapatma ya da delme.
+**Örnek:** 11. bölüm: Melissa'nın geğirmesiyle dalga geçebilecekken susar. — _kuralın en küçük ölçekli hâli_
+**Gerekçe:** → N-K4.4
 
 ---
 
-#### Kural 9: Mr. Clown / Muhafaza Kabı
+#### Kural 5: Para `kaynak: metin | mudahale: ceviri | denetim: eklenecek`
 
-`kaynak: metin | mudahale: ceviri | denetim: eklenecek` · **sınırlı istisna, ~1252–1256**
+Para bir sahnede göründüğünde önce hangi sicilde olduğu belirlenir (K5.1–K5.4); belirlenmeden çevrilmez.
+**Bütün sicillerde yapma:** Kaynakta olmayan espriyi ekleme. Klein'ın para düşüncesi kuru ve sayılıdır; komedi, sahneden ve başkalarının tepkisinden doğar. Kaynakta Klein kendi cimriliğiyle kendisi dalga geçiyorsa (bkz. K3, Kalkan) o şaka korunur.
 
-Mr. Clown beşinci bir maske değil, **kasıtlı olarak inşa edilmiş bir muhafaza kabıdır**. Sasrir'in iradesi gölgesini ve ruhunun bir kısmını yozlaştırdığında Klein, Adalet'in Mazi İzdüşümü'nün yardımıyla bir Sanal Kişilik kurar; amaç şirazesini yitirmemektir. Bu bir aşama değil, **sınırlı bir istisna etiketidir**.
+##### K5.1 — Maddi zemin
 
-**Mantığı ters Rol İfası'dır.** Yozlaşma onu hoppa, absürt ve pervasız olmaya iter. Klein da bunu bilerek **oynar**. Yozlaşma böylece Klein'a değil, bir role iner. Dünyanın kendini yok etme mekanizması, kendini korumak için kullanılır.
+**Kapsam:** 1.–2. Aşama · ev içi, anlatıcı · yoksulluk sahneleri
+**Yap:** Nesneleri ve miktarları somut ve eksiksiz ver; paragraf aritmetikle ilerler.
+**Yapma:** İroni ya da şaka ekleme; yoksulluğu duyguyla ("sefil", "acınası") tarif etme.
+**Örnek:** _"Azıcık. Lezzetin bedeli."_ — _tek satırda, şakasız, bütün katman_
+**Gerekçe:** → N-K5.1
 
-**Kap özgün, malzeme yerlidir.** Klein sahneye çıkar çıkmaz kendini "Gehrman Sparrow" diye tanıtır; kimlik disiplini yerindedir. Dışarı çıkan da yeni bir ses değil, Kural 1'deki motorun ta kendisidir. Yoktan bir kap kurulamaz; kap, zaten sahip olduğu sesten yontulur.
+##### K5.2 — Mikyas (fiyat bir bilgi kaynağıdır)
 
-**Tanı gramerdedir.** Gehrman karşıtlık ve seçenek bağlaçlarını kullanmaz (bkz. Gehrman Sparrow haritası). Mr. Clown kullanır:
+**Kapsam:** bütün aşamalar (geç dönemde alanı değişir, bkz. K6) · iç ses
+**Yap:** Fiyattan çıkarım yaparken sayıları kesin tut ve akıl yürütme zincirini adım adım ver.
+**Yapma:** Hesabı "pahalı / ucuz" gibi bir izlenime indirgeme.
+**Örnek:** _"2.000 Sterlin mi? Mertebe 5 kudretinde bir korsan 10.000 ederdi… Gece Şahinleri bu adamı Mertebe 7 mi sanıyor?"_ — _fiyat → tehdit değerlendirmesi_
+**Gerekçe:** → N-K5.2
 
-> _"Hâlâ yaşasalar, düşünebilselerdi, gerçek Gümüş Şövalyeler olsalardı, senin kadar ihtiyatlı olurdum elbette. **Ama** şimdi, haha."_
+##### K5.3 — Sınıf öfkesi
 
-Aynı biçimde Gehrman sosyal geri bildirim vermez, veri çeker; Mr. Clown alaycı retorik sorular sorar: _"Bu iki oyuncağı neden bu kadar dert ediyorsunuz?"_ **Çözülme önce söz diziminde görünür, içerikte değil.**
+**Kapsam:** bütün aşamalar · iç ses · israf karşısında
+**Yap:** Müsriflere karşı sert, kaba sözü koru; Klein zenginleştikten sonra da.
+**Yapma:** Konumu değişti diye öfkeyi yumuşatma ya da ironiye çevirme.
+**Örnek:** _"…Sizi müsrif herifler."_ — _geçmişin kalıntısı, güncel konumun raporu değil_
+**Gerekçe:** → N-K5.3
 
-**Kahkaha iradi değildir.** Metin bunu açıkça belirtir: birkaç saniye sonra Klein "duygularını yeniden kontrol altına alır." Karnına bastırarak güler. Performans değil, semptom.
+##### K5.4 — Çıpa
 
-**Yetkinlik zerre düşmez.** Kahkaha krizinin ortasında kusursuz bir plan işletir: kendini yem yapar, Bayan Mesajcı'yı Azizler görmesin diye Hayalet formunda çağırır, ganimeti anlaşma gereği pay eder, tavşandan sızan Gümüş Şövalye hasletini cebine atar, kuklayı alır, kapıyı açtırır. **Yüzey azami kaos, işlev kusursuz.**
-
-**Bedel: canavar okunmayı kabul etmek.** Klein burada benliğinden bir parça harcamaz; **görülme biçimini** harcar. Gümüş Şehir ekibi onu baştan sona canavar sanır, o da düzeltmeye çalışmaz. Sol yanağını avucuyla örter, Colin'in _"Mutant?"_ sorusuna cevap vermeden gülümser: hâlinin farkındadır ve onu bir nesne gibi idare eder.
-
-**Yozlaşmanın hakiki işareti Derrick'tir.** Kural 4 hiçbir zaman bir insana yönelmiş duyguya nişan almaz. Burada Klein nişan almaz, **fark etmez.** Derrick, kendi yoldaşlarının güvensizliği yüzünden gözleri dolarak susar; Klein bunu hiç kaydetmeden Colin ve Lovia'yı tahmin etmeye geçer. 1091'de masumlar için sayfalarca hesap yapan adam, burada kendi yol açtığı küçük bir zulmü görmez. **Kural 4 çalışmaya devam eder (aziz seviyesi altındaki Aşkınları sahadan çeker), fakat çözünürlüğü düşmüştür.** Ölçüt budur; kahkaha değil.
-
-**İsim dışarıdan verilir.** Klein kendine hiçbir zaman "Palyaço Bey" demez. Lovia der: _"Gerçekten de bir palyaçoya benziyorsun."_
-
----
-
-### 2. Muhatap Ekseni
-
-`kaynak: metin | mudahale: ceviri | denetim: eklenecek`
-
-Klein'ın dış sicili aşamaya değil, **karşısındakinin ona ne gözle baktığına** bağlıdır. 5. Aşamada Âdem'e düz konuşur; 6. Aşamada Tarot Kulübü'ne tam Soytarı sicilinde konuşur. İkisi aynı adamdır. Ayrım muhataptır.
-
-**Temel kural: yükseltilmiş sicil yalnızca ibadet veya korku hücresinde açılır.**
-
-| Hücre                    | Muhatap                                 | Sicil                                                                        | Kanıt                           |
-| ------------------------ | --------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------- |
-| **İç ses**               | —                                       | Kural 1, kesintisiz                                                          | Her yerde                       |
-| **Tapanlar / korkanlar** | Tarot Kulübü (Soytarı olarak), müminler | Tam Soytarı sicili: "Biz", üçüncü tekil, edilgen (bkz. Soytarı ses haritası) | Uyku toplantısı                 |
-| **Bilen akran**          | Will Auceptin, Amon, Pallez, Genie      | Yükselti **yok**. Rahat, dürtükleyen                                         | 1250'ler                        |
-| **Saygı duyulan üst**    | Ebedi Gece Tanrıçası                    | Nazik, temkinli, soru soran                                                  | Rüya sahnesi                    |
-| **Esir alan akran**      | Âdem                                    | Düz, kuru, hafif sinirli                                                     | 1345–46                         |
-| **Bilmeyenler**          | Herkes                                  | Maskeye özgü (bkz. maske haritaları)                                         | —                               |
-| **Yakınlar**             | Benson, Melissa                         | Ev içi, yükseltisiz, şakacı                                                  | 11. bölüm                       |
-| **Meslektaş**            | Dunn, Neil, Leonard                     | Astlık / aidiyet sicili                                                      | 209                             |
-| **Arrodes**              | Ayna                                    | Tek kelimelik hakikat                                                        | Final                           |
-| **Kalvetua müminleri**   | Rorsted                                 | —                                                                            | `eklenecek` (`metin_coi` uygun) |
-| **Soytarı Kilisesi**     | 1352 sonrası                            | —                                                                            | `eklenecek` (`metin_coi` uygun) |
-
-**Geç dönemde motor dışarı taşar.** Erken ve orta dönemde yorum neredeyse tamamen iç sestedir; maske dışarıyı kapatır. Muhatapları onun ne olduğunu **zaten bilen** varlıklara dönüştükçe saklamanın anlamı kalmaz ve aynı motor doğrudan **replik** olarak çıkar. Will Auceptin sahnesi en saf hâlidir: Klein yeni bir Melekler Kralı'dır, hiç öyle davranmaz, çömelir ve iki yaşındaki kader ilahını kasten dürter (_"Seni ve İhtimal Zarı'nı Ouroboros'a versem çabuk yükselir mi?"_ ... _"Çocukluğunun tadını çıkar. Ne kadar sürer merak ediyorum."_). İç ses susmamıştır; yalnızca artık gizlenmesi gerekmemektedir.
-
-> **Çeviri tuzağı.** İki sahnede de motor Klein'ın ağzından çıkar, fakat aynı tınlamamalıdır. **Will Auceptin: ruhsatlı.** Ölçülü, eğlenen, tam cümleler, zamanlama kontrol altında. **Mr. Clown: kaçış.** Kesik, aşırı, kendi repliğini kahkahayla bölen. Biri rahatlama, diğeri arıza.
-
-**Hücreler zamanla açılıp kapanır.** _Yakınlar_ ve _meslektaş_ hücreleri 483'te birlikte kapanır. Cırcır'ın "lan"ı öldürmesi tam olarak budur; kelime değil, **muhatap** kaybolur. _Bilen akran_ hücresi erken dönemde hiç yoktur ve yüksek mertebede tamamen farklı bir üyelikle açılır: meslektaşlar gider, ilahlar gelir.
-
-**"Biz" tek bir hücreye aittir.** Klein'ın genel sicili değildir. Amon'a, Will Auceptin'e, Âdem'e, Lamba Cinine veya Tanrıça'ya asla "Biz" demez. 6. Aşamada ölen şey Klein'ın zamiri değil, **o hücrenin kendisidir** (bkz. Soytarı haritası, Kural 1: korku bittiğinde taklidin sebebi de biter).
-
-**Arrodes hücresi tek üyelidir** ve romanın son karakterize edici anıdır. Ayna kurallar gereği sormak **zorundadır**; bu mecburiyet, Klein'ın dürüst cevap verebildiği tek kanaldır.
-
-> _"Korkuyor musun?" / "Hayır." / "Yüce Efendim, siz korkuyor musunuz?" / (ağzının kenarı seğirir) / "Evet."_
-
-İki soru, iki tek kelimelik cevap, bir sahne yönergesi. **Yumuşatılmamalıdır.**
+**Kapsam:** yalnızca 3. Aşama (220–1165) · iç ses · dehşet anı · cırcıra tabi
+**Yap:** Dehşetin ortasında tek satırlık, kuru bir maliyet hesabı; onu ayakta tutan şey budur.
+**Yapma:** Hesabı espriye çevirme ya da uzatma.
+**Örnek:** Merminin iki penilik maliyeti — _dehşete karşı aritmetik_
+**Gerekçe:** → N-K5.4
 
 ---
 
-### 3. Aşamalar
+#### Kural 6: Ödünç Otorite ve Göçen Uzmanlık `kaynak: metin | mudahale: ceviri | denetim: eklenecek`
+
+##### K6.1 — Bilgi ödünçtür
+
+**Kapsam:** bütün aşamalar · iç ses ve replik · Klein bir şeyi bildiğini gösterdiğinde
+**Yap:** Bilgisi kaynağına dayanır ve biraz fazla tahmin edilmiştir: okuduğu, duyduğu, başkasından aldığı şeyi kendi sesiyle ve gerektiğinde tam otoriteyle söyler; eksik kalan yer tahminle dolar.
+**Yapma:** Klein'ı kaynaksız bir uzman ya da kâşif gibi konuşturma; ödünç formülü onun buluşu gibi kurma.
+**Örnek:** 34 ¶60–68: Roselle'in formülünü ("kavramak değil sindirmek; keşfetmek değil rol yapmak") Soytarı otoritesiyle söyler, "önceden ödenmiş ücret" der; anlatıcı, sözlerin tam anlamını kendisinin de anlamadığını söyler. — _ödünç formül, tam otorite, eksik anlayış_ (Türkçesi yayımlanmış 34'ten alınmalı)
+**Gerekçe:** → N-K6.1
+
+##### K6.2 — Alan göçü
+
+**Kapsam:** bütün aşamalar (alan değişir) · iç ses
+**Yap:** Yorum, Klein'ın o an uzman olduğu alana yapışır: erken dönemde fiyatlar, yemek, modern kıyaslar; orta dönemde kendi yetenek envanteri; geç dönemde yol mekaniği, Yegânelik muhasebesi, diriliş iktisadı.
+**Yapma:** 4.–6. Aşamada motoru susturma; geç dönemde erken dönemin konularını (fiyat, yahni) tekrarlatma.
+**Örnek:** _"…tavşana Gazap yerine Tamah maskesi mi gerekiyordu acaba?"_ — _öldürdükten saniyeler sonra, geç dönemin uzmanlık alanında şaka_ · ZH denetlenmedi
+**Gerekçe:** → N-K6.2
+
+##### K6.3 — İki bilgi kipi
+
+**Kapsam:** bütün aşamalar · iç ses
+**Yap:** Tarih ve akademik bilgi (miras alınan Klein, K8) sağlam ve eğitimli konuşur; genel kültür ve modern bilgi (Zhou) ödünç ve yarımdır. İkisi aynı düşüncede, aralarında işaret olmadan yan yana durabilir.
+**Yapma:** Tarih bilgisini de "yarım bilgi" gibi çekingenleştirme; iki kipi metinde etiketleyerek ayırma.
+**Örnek:** 4. bölüm: Roselle'in hayatını, Intis'i ve 1198 suikastını eksiksiz ve kendinden emin hatırlar; metin bunu _"böylesi genelgeçer bir tarihî bilgiyi zihninin derinliklerinden bir anda çıkarıvermek"_ diye adlandırır. — _miras bilgi sağlam konuşur_
+**Gerekçe:** → N-K6.3
+
+---
+
+#### Kural 7: İkinci El Utanç `kaynak: metin | mudahale: ceviri | denetim: eklenecek`
+
+##### K7.1 — Mizaç, refleks değil
+
+**Kapsam:** bütün aşamalar · iç ses · bir rolü **beklerken ya da oynarken**; özellikle kendini yüceltmesi (Soytarı'yı övmek, onun vaizi olmak) ya da kendine yabancı bir kılığa girmesi gerektiğinde
+**Yap:** Utancı seyrek ver ve çoğunlukla bastırılmış hâliyle: utanç içeride, performans dışarıda eksiksiz sürer.
+**Yapma:** Her performansın ardından otomatik bir utanç cümlesi ekleme; performans içermeyen sahnede tetikleme; bastırılan utancı dışa (yüz, ses) sızdırma.
+**Örnek:** _"Klein utancını bastırdı ve ağırbaşlılıkla, 'Yüce Bay Soytarı,' dedi."_ — _1207 (克莱恩压制住羞耻之心，庄严说道：“伟大的愚者先生。”); utanç ile rol tek cümlede_
+**Gerekçe:** → N-K7.1
+
+##### K7.2 — Küçük kalan söz (K7.1'den ayrı tetik)
+
+**Kapsam:** bütün aşamalar · iç ses · değer verdiği birine, olanın büyüklüğü karşısında küçük kalan bir söz söyledikten hemen sonra
+**Yap:** Sözün hemen ardından kısa, sert bir öz-azar; soru biçiminde olabilir.
+**Yapma:** K7.1 ile birleştirme: bu performans utancı değildir; azarı yumuşatma ya da uzatma.
+**Örnek:** _"Bay Azik, bir şeyiniz yok, değil mi?"_ → _Ruhunun yarısını sonsuza dek yitirmiş birinin nasıl bir şeyi olmaz?_ — _917 ¶41–43: 您没什么事情吧 → 怎么可能没什么事情; aynı ifade yankılanır, azar soruyla eş zamanlıdır_
+**Gerekçe:** → N-K7.2
+
+---
+
+#### Kural 8: Üç Katman `kaynak: metin | mudahale: ceviri | denetim: eklenecek`
+
+İç sesin üç kaynağı vardır: (1) **Zhou Mingrui** — anakronik kıyas, ödünç otorite, modern argo; (2) **oynanan Klein** — performans, maskeler, "Rol İfası" (bkz. 6. bölüm); (3) **miras alınan Klein** — tarihe ilgi, refleks nezaket, kılık kıyafet titizliği; performans değil, kas hafızası.
+
+##### K8.1 — Takvim yalnızca Zhou katmanına işler
+
+**Kapsam:** bütün aşamalar · iç ses
+**Yap:** Modern argo ve anakronik kıyas tik takvimine göre seyrelir (bkz. 5.3–5.4). Tarih, nezaket ve kılık konularında iç ses ve ona yaslanan anlatı erken dönemde bile dönem diliyle konuşabilir; bu miras katmanıdır. İki katman aynı paragrafta geçişsiz yan yana durabilir.
+**Yapma:** Miras katmanının dönem dilini "karaktere aykırı" diye modernleştirme; Zhou katmanının argosunu takvim dışında sürdürme.
+**Örnek:** _"…Zanaatkârlık İlahı'nın unvanı Buhar ve Çarkların İlahı olarak tebdil edilmişti."_ → _"Yoksa bu herif de benim gibi bu dünyaya ruh göçü yapmış bir 'kıdemlim' miydi?"_ — _4. bölüm: miras katmanın dönem dili ile Zhou'nun argosu, geçişsiz ve etiketsiz_
+**Gerekçe:** → N-K8.1
+
+---
+
+#### Kural 9: Mr. Clown / Muhafaza Kabı `kaynak: metin | mudahale: ceviri | denetim: eklenecek` · **sınırlı istisna, 1252–1256**
+
+Ruhu bütünlüğünü yitirmiş, şirazesini yitirmenin eşiğindeki Klein'a Adalet, onun **腹诽 hâlinden** (iç ses alayı, K1'deki motor) türetilmiş, palyaço benzeri bir **Sanal Kişilik** ekler (1254 ¶69–74). Bu bir maske ya da aşama değil, sınırlı bir istisnadır. Dışarıdaki abartılı yüzey kişiliğindir; altında Klein'ın denetimi sürer. K3.2'deki "düşmana dışarıdan alay yok" kuralının istisnası buradadır.
+
+##### K9.1 — Yüzey: şatafat
+
+**Kapsam:** 1252–1256 · replik ve beden dili
+**Yap:** Replikler abartılı, gülen, gösterişli; karşısındakilere çocuklara talimat verir gibi konuşur. Ayırt edici öğeler: alaycı retorik sorular, karşıtlık ve seçenek bağlaçları (Gehrman'da yoktur), **ironik nezaket** (görgü dersi, "bir centilmen olarak", törensel selam), küçültmeli lakaplar.
+**Yapma:** Gehrman'ın kuru, bağlaçsız sicilini kullanma; ironik nezaketi düz nezakete çevirme; alayı yumuşatma.
+**Örnek:** _"Bu iki oyuncağı neden bu kadar dert ediyorsunuz? Hâlâ yaşasalar, düşünebilselerdi, gerçek Gümüş Şövalyeler olsalardı, senin kadar ihtiyatlı olurdum elbette. Ama şimdi, haha, izleyin."_ — _retorik soru + "ama" + kahkaha_
+**Gerekçe:** → N-K9.1
+
+##### K9.2 — Kopuş: altındaki sakinlik
+
+**Kapsam:** 1252–1256 · anlatı ve replik · kişilik çekildiğinde (zihin saldırısı, oyunun bittiği an)
+**Yap:** Klein bir anda ve tümüyle sakinleşir; kahkahadan soğukkanlılığa geçiş tek adımdır.
+**Yapma:** Sakinliği yavaş getirme; "yavaş yavaş kendine geldi" gibi köprüler kurma; sahte deliliği gerçekmiş gibi uzatma.
+**Örnek:** _"Eğilmiş kahkahalar atan Klein bir anda sakinleşti…"_ → _"Galiba fark etmedin: bende olup sende olmayan bir şey var."_ — _1256 ¶60–63; delilik yem, dönüş anlık_
+**Gerekçe:** → N-K9.2
+
+##### K9.3 — Yüzey kaos, işlev kusursuz
+
+**Kapsam:** 1252–1256 · anlatı
+**Yap:** Kişilik konuşurken bile anlatı Klein'ın planını kesin, ayrıntılı ve soğukkanlı verir (kendini yem yapması, Bayan Mesajcı'yı Hayalet biçiminde çağırması, ganimetin anlaşmaya göre paylaşılması).
+**Yapma:** Yüzeydeki kaosu anlatıya taşıma; planı şans eseri gibi yazma.
+**Gerekçe:** → N-K9.3
+
+##### K9.4 — Fark etmediği acıya iç ses eklenmez
+
+**Kapsam:** 1252–1256 · iç ses
+**Yap:** Kaynak Klein'ın bir acıyı fark ettiğini göstermiyorsa Türkçe de göstermez; metnin sessizliği korunur.
+**Yapma:** Derrick'in gözleri dolarken (1252 ¶27–29) Klein'a bir fark ediş, pişmanlık ya da şefkat cümlesi ekleme.
+**Gerekçe:** → N-K9.4
+
+##### K9.5 — Kişilik Dünya'yı geri getirir
+
+**Kapsam:** 1252–1256 · kişiliğin replikleri
+**Yap:** Kişiliğin ağzındaki Dünya kalıplarını (internet usulü azar, meme) Türkçede tanıdık bir kalıpla ver. 1166 sonrasında Dünya'nın şaka olarak görüldüğü bağlamlardan biridir (bkz. N-K9.5).
+**Yapma:** Takvime uyup bu kalıpları düzleştirme ya da düz bir cümleye çevirme; istisnayı Klein'ın yalnız iç sesine yayma.
+**Örnek:** _"Gölge'nin ne hissettiğini hiç düşündün mü? Düşünmedin tabii! Sen hep kendini düşünürsün!"_ — _1254 ¶51; Dünya kaynaklı azar kalıbı_
+**Gerekçe:** → N-K9.5
+
+##### K9.6 — Ad dışarıdan gelir
+
+**Kapsam:** 1252–1256 · replik
+**Yap:** "Palyaço" nitelemesi yalnızca başkalarının ağzından (Lovia: _"Gerçekten de bir palyaçoya benziyorsun."_, Gölge'nin iç sesi) ve anlatıcıdan gelir.
+**Yapma:** Klein'a kendini "palyaço" diye adlandırtma.
+
+---
+
+### 2. Muhatap Ekseni `kaynak: metin | mudahale: ceviri | denetim: eklenecek`
+
+Klein'ın dış sicili aşamaya değil, **karşısındakinin ona ne gözle baktığına** bağlıdır. Her hücrenin kapsamı hem bir bölüm aralığı hem bir muhataptır.
+
+#### M0 — Eksenin genel kuralları
+
+##### M0.1 — Sicili muhatap belirler
+
+**Kapsam:** bütün aşamalar · replik
+**Yap:** Dış sicili, karşısındakinin Klein'ı ne sandığına göre kur. Yükseltilmiş sicil yalnızca ibadet ya da korku hücresinde (M2) açılır.
+**Yapma:** Aşama yükseldi diye bütün replikleri ağırlaştırma; Soytarı sicilini o hücrenin dışına taşıma.
+**Gerekçe:** → N-M0.1
+
+##### M0.2 — Hücreler açılır ve kapanır
+
+**Kapsam:** bütün aşamalar
+**Yap:** Bir kelime ya da ton, ait olduğu hücreyle yaşar ve onunla ölür: Yakınlar (M7) ve Meslektaş (M8) 219'da, Tingen'den ayrılışla birlikte kapanır; Bilen akran (M3) erken dönemde yoktur.
+**Yapma:** Kapanmış bir hücrenin sözünü ("lan", ev içi şakacılık) başka bir muhataba taşıma.
+**Gerekçe:** → N-M0.2
+
+##### M0.3 — "Biz" tek bir hücreye aittir
+
+**Kapsam:** bütün aşamalar · replik ve iç ses
+**Yap:** Büyük harfli "Biz" yalnızca Tapanlar/korkanlar hücresinde (M2) kullanılır.
+**Yapma:** Amon'a, Will Auceptin'e, Âdem'e, Lamba Cini'ne ya da Tanrıça'ya "Biz" dedirtme; genel anlamdaki birinci çoğulu ("…değiliz ya") büyük harfle ya da Soytarı sicilini çağrıştıracak biçimde yazma.
+**Gerekçe:** → N-M0.3
+
+---
+
+##### M0.4 — Geç dönemde dışarı çıkan mizah kuru ve küçüktür
+
+**Kapsam:** 4.–6. Aşama · replik · Klein'ı bilen muhataplar (M3–M5)
+**Yap:** Muhatap onun ne olduğunu bildiğinde motor replikte de görünür, ama kuru ve küçüktür: bir iğne, bir pazarlık şakası, kaderi hakkında tek cümlelik bir espri, karşısındakinin başlattığı bir kalıbı tamamlamak. Büyük şakalar iç seste kalır.
+**Yapma:** Uzun, eğlenen, gösterişli replik mizahı kurma; o yalnızca Mr. Clown'a aittir (K9).
+**Örnek:** _"Bu kadar açıklama yapmak senin tarzın değil."_ (1345 ¶54) · _"Olur. Ama sen de bana birkaç kâğıt turna katlamalısın."_ (1125 ¶31) — _dışarıda kuru ve küçük_
+**Gerekçe:** → N-M0.4
+
+---
+
+##### M1 — İç ses
+
+**Kapsam:** bütün aşamalar · muhatap yok
+**Yap:** Kurallar 1–9 geçerlidir; iç ses hiçbir hücrenin dış sicilini taşımaz, maskenin altında da Klein'ındır.
+**Yapma:** İç sese dışarıdaki sicilin yükseltisini ya da maskenin tonunu taşıma.
+
+#### M2 — Tapanlar / korkanlar `kaynak: metin | mudahale: ozgun ("Biz") | denetim: eklenecek`
+
+##### M2.1 — Soytarı'yı oynayan Klein
+
+**Kapsam:** ilk Tarot toplantısından 1388'e · replik · Tarot Cemiyeti ve müminler karşısında Soytarı olarak
+**Yap:** Tam Soytarı sicili (bkz. Soytarı ses haritası). "Biz" çeviri katmanının müdahalesidir: kaynakta yoktur, Klein'ın bir rolü oynadığını Türkçede görünür kılar.
+**Yapma:** Bu sicili Klein'ın kendi sesine ya da başka bir muhataba taşıma (M0.3).
+**Gerekçe:** → N-M2.1
+
+##### M2.2 — Gerçek Soytarı
+
+**Kapsam:** 1389 ve sonrası · replik · Tarot Cemiyeti karşısında
+**Yap:** Sade birinci tekil. Soytarı'nın ağır ve sakin tonu sürer ama artık kurulan bir makam değildir; talimatlar kısa, arada bir dosta yapılır gibi uyarılar sızar.
+**Yapma:** "Biz", üçüncü tekil ya da edilgen yükselti. Yankı #8'in ödemesi buradadır: ilk kez sade "ben".
+**Örnek:** _"Uykuya dalacağım."_ — _1389 ¶3: 我将进入沉眠; ¶39: artık Soytarı'nın yüksek makamını bilerek kurmaz, çünkü gerçek Soytarı odur_
+**Gerekçe:** → N-M2.2
+
+---
+
+##### M3.1 — Will Auceptin (bilen akran)
+
+**Kapsam:** 991, 1124–1125, 1388 · replik ve iç ses · Will karşısında
+**Yap:** Yükseltisiz ve teklifsiz. Rahat anlarda hafif yüzsüz bir yakınlık: gülümseyerek sorar, pazarlığı hemen kabul eder, kuru bir gülüşle resmiyeti savar. Ciddi anlarda düz ve işe dönük: doğrudan sorar, bedelini tartar. Will'in ağlamasına ifadesiz kalır. Asıl alay iç sestedir. 神棍 → "üfürükçü".
+**Yapma:** Gösterişli, uzun şakalar ya da bilerek dürten bir ağabey performansı (dışarı çıkan mizah küçük ve kurudur, M0.4); ağlamasını teselli etme; resmiyet; "Biz".
+**Örnek:** _"Aramızdaki ahbaplıkta bu kadar merasime gerek yok, değil mi?"_ (991 ¶36, kuru bir gülüşle) · _"Olur. Ama sen de bana birkaç kâğıt turna katlamalısın."_ (1125 ¶31) ↔ iç ses: _Tam bir üfürükçü…_ (1125 ¶28)
+**Gerekçe:** → N-M3.1
+
+##### M3.2 — Roselle (bilen akran, ortak köken)
+
+**Kapsam:** 1307 · replik ve iç ses · Roselle karşısında
+**Yap:** Dünya kodu açık ve karşılıklıdır: Roselle'in başlattığı Dünya kalıbını Klein hemen tamamlar. Kendi replikleri ise kısa, düz ve ölçülüdür; sataşmaları ağır havaya saygıdan iç seste kalır. 老乡 → "hemşehri" (yayımlanmış 5. bölümdeki biçim: "hemşehrim").
+**Yapma:** Esprileri Klein'a başlattırma (onlar Roselle'den gelir); Gu Long alışverişini düz diyaloğa çevirme, kalıp olarak tanınmalı.
+**Örnek:** _"Geldin."_ / _"Geldim."_ / _"Gelmemeliydin."_ / _"Ama geldim işte."_ — _1307 ¶8–11: 你来了 / 我来了 / 你不该来的 / 我已经来了; aynalı, ritimli bir kalıp_
+**Gerekçe:** → N-M3.2
+
+##### M4 — Saygı duyulan üst (Ebedî Gece Tanrıçası)
+
+**Kapsam:** Tanrıça'yla doğrudan konuşma · replik · en açık hâli 1387–1388
+**Yap:** Saygılı ve sakin: eli göğsünde eğilerek selam verir, kısa onaylar ("Anladım."). Kendi kaderini gülümseyerek ve kuru bir mizahla anabilir; kararını kısa ve düz söyler.
+**Yapma:** "Biz" ya da Soytarı sicili (M0.3); ağdalı, dalkavukça hitap; kaderini anarken dramatize etme.
+**Örnek:** _"Bu iyi bir yöntem; kim uyanırsa uyansın, bir Gizemlerin Efendisi doğacak."_ … _"Bu benim kendi seçimim."_ — _1387 ¶76–80: 这是一个好办法… / 这是我自己的选择; gülümseyerek, kuru ve kararlı_
+**Gerekçe:** → N-M4
+
+##### M5 — Esir alan akran (Âdem)
+
+**Kapsam:** 1345–1346 · replik ve iç ses · Âdem karşısında
+**Yap:** Düz, kuru, kısa: soru cümleleri ve analitik karşılıklar; ne korku ne hürmet. Arada kuru bir iğne; sabrı daraldıkça hafif sinirli. İç ses kendi hâline kuru bir acımayla güler.
+**Yapma:** Saygı ya da korku yükseltisi; hafif sinirliliği öfke patlamasına çevirme; "Biz" (M0.3).
+**Örnek:** _"Bu kadar açıklama yapmak senin tarzın değil."_ … _"Sen Kadim Güneş Tanrısı mısın?"_ … _"Beni böyle bekletmeyi mi düşünüyorsun?"_ — _1345 ¶54, 1346 ¶10, 1346 ¶53_
+**Gerekçe:** → N-M5
+
+##### M6 — Bilmeyenler
+
+**Kapsam:** bütün aşamalar · replik · Klein'ın ne olduğunu bilmeyenler
+**Yap:** Sicil maskeye aittir (bkz. maske haritaları). Maskesiz erken dönemde, yabancılara Klein Moretti olarak kibar bir beyefendi sicili; tehdit altında bu nezaket bir **blöf aracı** olur: kibar, ağır, ironik, ama alay değil.
+**Yapma:** Tehdit altındaki ironik nezaketi düz bir tehdide ya da alaya çevirme; blöfün altındaki gerginliği replikte gösterme (o iç sese aittir).
+**Örnek:** _"Lütfen iki elinizi de havaya kaldırın ve arkanızı dönün. Bunu yavaşça yapmaya çalışın. Dürüst olmak gerekirse, çok ürkeğimdir ve kolayca gerilirim…"_ → _"Beyefendi, bunu dışarıda halledelim. Başkalarının güzel rüyalarını bölmeyelim… Bir beyefendi için asgari nezaket kuralıdır bu."_ — _28; namludaki yuva boştur (¶32), nezaket caydırıcılıktır_
+**Gerekçe:** → N-M6
+
+##### M7 — Yakınlar
+
+**Kapsam:** 1–219 · replik ve iç ses · Benson ya da Melissa sahnedeyken
+**Yap:** Ev içi, yükseltisiz, şakacı, kısa. Onay kademesinin güçlü işaretleri ("Tamamdır") burada yaşar; iç ses kardeşleri hakkında argoyla konuşabilir ("lan").
+**Yapma:** Kardeşlere dönem resmiyeti ya da ağırbaşlılık; iç sesteki argoyu dışarıya, kardeşlere söylenen replike taşıma.
+**Örnek:** _"Galiba yine bozulmuş."_ … _"Tamamdır."_ … _"Tamam, anladık."_ ↔ iç ses: _Harbiden de bu mankafa abisine endişeleniyor kız._ — _3; dışarıda gündelik, içeride argolu_
+**Gerekçe:** → N-M7
+
+##### M8 — Meslektaş
+
+**Kapsam:** 1–219 · replik · Gece Şahinleri (Dunn, Neil, Leonard)
+**Yap:** Astlık ve aidiyet. Dunn'a "siz" ve "Kaptan"; sorular saygılı ve meraklı ("Peki ya…?"); onay çoğunlukla düz ("Tamam.", "Anladım. Teşekkürler, Kaptan."). Alay yalnızca iç seste ve sevecendir: Dunn'ın sonradan bir şey ekleme huyu, Neil'in uyarıları.
+**Yapma:** Meslektaşa dışarıdan alay ya da laubalilik; "Kaptanım"ı Yankı #2'deki kazanımdan önce kullanma. Güçlü onay ("Tamamdır") seyrektir, coşkulu anlara aittir (33).
+**Örnek:** _"Bir şey daha."_ → _Biliyordum işte..._ … _"Anladım. Teşekkürler, Kaptan."_ — _31; dışarıda saygı, içeride sevecen alay_
+**Gerekçe:** → N-M8
+
+##### M9 — Arrodes
+
+**Kapsam:** Arrodes'le bütün konuşmalar · replik ve iç ses · en saf hâli 1390
+**Yap:** Ayna sormak zorundadır; bu, Klein'ın dürüst cevap verebildiği tek kanaldır. Aynanın sorularına cevaplar tek kelimelik hakikattir; kaynak aynı fiili olumsuz ve olumlu tekrarlıyorsa Türkçe de tekrarlar. Klein'ın öteki replikleri de kısa ve sakindir ("Bir sorum var.", "Evet.", "Olur."). Aynanın gösterişine iç ses alayla bakar; gerektiğinde küçük bir oyun oynar (zaten istediği bir ricayı düşünüyormuş gibi bekletir).
+**Yapma:** Cevapları yumuşatma, uzatma ya da "Hayır / Evet"e düzleştirme.
+**Örnek:** _"Korkuyor musun?"_ / _"Korkmuyorum."_ / _"Yüce Efendim, siz korkuyor musunuz?"_ / (ağzının kenarı hafifçe kıpırdadı) / _"Korkuyorum."_ — _1390 ¶78–84: 害怕吗 / 不怕 / 伟大的主人，您害怕吗 / 嘴角微动 / 怕_
+**Gerekçe:** → N-M9
+
+---
+
+### 3. Aşamalar `kaynak: metin | mudahale: ceviri | denetim: eklenecek`
+
+Aşama ekseni yalnızca **iç sesin söz varlığını** yönetir; dış ses Muhatap Ekseni'ndedir. Bölüm numaraları bu projenin numaralandırmasıdır (1. Cilt 1–219).
 
 Aşama ekseni yalnızca **iç sesin söz varlığını** yönetir. Dış ses kuralları bu bölümde yer almaz (bkz. Muhatap Ekseni).
 
-#### 1. Aşama: Saf Zhou Mingrui (Cilt 1 başları)
+#### A1 — 1. Aşama: Saf Zhou Mingrui (1–25)
 
-`kaynak: metin | mudahale: ceviri | denetim: denetlenmedi`
+##### A1.1 — Her şey Dünya'yla kıyaslanır
 
-- **Psikoloji:** Duruma yabancılaşma, panik, her şeyi modern dünyayla kıyaslama.
-- **İç ses:** Modern internet argosu, hızlı tepkiler, korku ve hayatta kalma endişesi. Ağır küfür bu aşamada sabit ve sıktır.
-- **Örnek:** _"Hadi kendimi korkuttuğum neyse de, Melissa sabahın köründe beni böyle görüp de aklı çıkarsa cidden işim yaş! N'oluyor lan bu evde?"_
+**Kapsam:** 1–25 · iç ses
+**Yap:** Yabancılaşma ve panik; gördüğünü sürekli Dünya'yla ve modern hayatla kıyaslar (fiyatları yuanla, tarotu Dünya'dakiyle, Roselle'i "kıdemli" bir ruh göçmeniyle). Kardeşlerini henüz kendi kardeşi saymaz; eve dönmek ister.
+**Yapma:** Kıyasları ve eve dönme isteğini seyreltme; kardeşlere erken dönemde "öz kardeş" sıcaklığı verme.
+**Örnek:** _Ama benim bir kız kardeşim falan yok ki..._ (3 ¶12) · _Kimse kusura bakmasın ama benim acilen kendi evime dönmem lazım..._ (3 ¶68)
+**Gerekçe:** → N-A1.1
 
-#### 2. Aşama: Kabul ve Kök Salma (Cilt 1 ortaları / Cilt 2)
+##### A1.2 — Açılışın konuşma dili `mudahale: ozgun`
 
-`kaynak: metin | mudahale: ceviri | denetim: denetlenmedi`
+**Kapsam:** 1–7 · iç ses
+**Yap:** İlk beş bölümde iç ses bilerek yoğun gündelik ve argoludur: kaynağın nötr bir şaşkınlığına bile "lan" gelebilir, küçük bir sinir "anasını satayım" olabilir. Amaç, modern dışarlıklı sesini ilk bölümlerde yerleştirmektir.
+**Yapma:** Bu yoğunluğu 7. bölümden sonra sürdürme; oradan sonra A2.2 geçerlidir.
+**Örnek:** _"N'oluyor lan?"_ (2 ¶9; kaynak: 怎么回事？) · _Hay anasını satayım! Gidip falıma baksın diye cidden bir hayvan terbiyecisine mi denk geldim?_ (5 ¶47; kaynak: 这真是的…)
+**Gerekçe:** → N-A1.2
 
-- **Psikoloji:** Bedenini çalan bir misafir değil, Benson ve Melissa'nın kardeşidir.
-- **İç ses:** Argo azalır. Pratik hesaplamalar ve sevdiklerine duyulan şefkat ön plandadır.
-- **Örnek:** _"Şu dört adımlık şans ayinini yaparken eskiden hep 'belki bu sefer modern dünyaya dönerim' diye aptalca bir umut taşırdım. Şimdi ise vitrinde gördüğüm o dişli çarklı mekanizmayı alırsam Melissa'nın ne kadar sevineceğini hesaplayıp duruyorum..."_
+##### A1.3 — Yabancılaşma dokuyla taşınır, dehşetle değil `mudahale: ozgun`
+
+**Kapsam:** 1–7 · anlatı
+**Yap:** Zhou'nun dünyayı ilk kez görüşü, Loen'in nesnelerini, kurumlarını ve insanlarını anlatırken dönem kaydının (§4.1-A) daha yoğun kullanılmasıyla taşınır: tedavül, revaçta, ahenk, ziyadesiyle, müfettiş edası, idadi. Dünya eski ve yabancıdır, onu gören göz modern ve argoludur (A1.2). Aradaki mesafe 1. bölümde en geniştir ve 7. bölümün son satırında kapanır; oradan sonra anlatı yerleşik orta sicildedir.
+**Yapma:** Yabancılığı tehdide çevirme. Gotik kayıt (§4.1-B), isimleştirilmiş duygu ya da kaynakta olmayan drama yalnızca kaynak bir tehdit gösterdiğinde gelir. Merak sahnesini (gaz saati, madenî para) dehşet sahnesi gibi yazma. 8. bölümden sonra bu yoğunluğu sürdürme.
+**Örnek:** _Peni gaz saatinin dibine düşünce dişliler takır takır dönmeye başladı, kısa ama ahenkli bir mekanik nağme yükseldi._ (2 ¶26) — _yeni gelene yabancı dünyanın makinesi güzel görünür; merakı dönem sözcüğü taşır_
+
+#### A2 — 2. Aşama: Kabul ve Kök Salma (26–219)
+
+##### A2.1 — Misafir değil kardeş
+
+**Kapsam:** 26–219 · iç ses · dönüm: 26–27, Moretti kardeşlerinin ilk kez bir araya geldiği gün ve ardından gelen akşam yemeği
+**Yap:** Dünya kıyası seyrekleşir (1. Aşamanın üçte biri kadar); pratik hesaplar ve sevdiklerine şefkat öne çıkar; Benson ve Melissa'yı kendi kardeşleri olarak düşünür.
+**Yapma:** 1. Aşamanın kıyas yoğunluğunu ve eve dönme özlemini sürdürme.
+**Örnek:** _Gerçekten de Benson iğneleyici mizahta ustaydı._ (26 ¶93, 果然…) · "Bir an için, dünya görüşleri böylesine kısıtlı kalmış olan Benson ve Melissa'ya içi cız etti." (27 ¶51) — _kardeşinin huyunu bilen biri; şefkat_
+**Gerekçe:** → N-A2.1
+
+##### A2.2 — Ton kaynaktan, ağır küfür eşikte
+
+**Kapsam:** 9 ve sonrası · iç ses
+**Yap:** Gündelik ton kaynağı izler. Ağır küfür yalnızca kaynağın küfrettiği yerde (他妈, 妈的, 我擦) ya da bedenin akıldan önce tepki verdiği eşik anında gelir; o zaman "hassiktir" ile "lan" aynı cümlede belirir (bkz. 5.4).
+**Yapma:** Kaynağın nötr anlarına argo ya da küfür ekleme; küfrü bir sıklık gibi dağıtma, o bir bütçedir.
+**Örnek:** _Hassiktir! Çince lan bu!_ / _Hem de üstüne Basitleştirilmiş Çince!_ — _20: 中文！/ 他妈还是简体字！; küfür kaynağın küfür anına denk gelir_
+**Gerekçe:** → N-A2.2
 
 #### 3. Aşama: Yalnız Gezgin (483–1165)
 
@@ -277,7 +468,7 @@ Aşama ekseni yalnızca **iç sesin söz varlığını** yönetir. Dış ses kur
 
 - **Psikoloji:** Çernobil sonrası. Kıyaslama refleksinin ve memleket hasretinin ölümü. Fakat bu bir çöküş aşaması **değildir**. Kapanan kapının bıraktığı boşluğu Klein **buraya yerleşerek** doldurur: çıpa toplar, mümin edinir, kilise kurar, görev dağıtır. 3. Aşamanın yalnız gezgini, 4. Aşamada bir **müessesedir**. Dönecek ev yoksa, ev burada inşa edilecektir.
 
-- **İç ses tam ses seviyesinde çalışır.** Bu aşamanın en sık yapılan çeviri hatası onu sessizleştirmektir. Çernobil'den yalnızca birkaç bölüm sonraki Tarot toplantısında Klein üç ayrı şaka yapar: Leonard davet edilmese görevin Tarot Kulübü'nün kadınlar cemiyetine döneceği; Frank Lee Simyevi Hayat'ı yaparsa mantar adama dönüşeceği (ve bu düşünceyle neredeyse ürperdiği); sahte bir eşyayla aldatılan tabiat kanunlarının hakikaten zavallı olduğu. **Ölen hazine, mekanizma değil.** Bu aşamada bütün malzeme dünya-içidir ve modern dünyaya atıf yapmaz.
+- **İç ses tam ses seviyesinde çalışır.** Bu aşamanın en sık yapılan çeviri hatası onu sessizleştirmektir. Çernobil'den yalnızca birkaç bölüm sonraki Tarot toplantısında Klein üç ayrı şaka yapar: Leonard davet edilmese görevin Tarot Cemiyeti'nin kadınlar cemiyetine döneceği; Frank Lee Simyevi Hayat'ı yaparsa mantar adama dönüşeceği (ve bu düşünceyle neredeyse ürperdiği); sahte bir eşyayla aldatılan tabiat kanunlarının hakikaten zavallı olduğu. **Ölen hazine, mekanizma değil.** Bu aşamada bütün malzeme dünya-içidir ve modern dünyaya atıf yapmaz.
 
 - **Geçiş bölgesi (~1166–1200):** Cırcır'ın tek istisnası buradadır. 3. Aşama sesi (lampoon, kıyas) son bir kez **sönerek** belirebilir; her belirişi görünür biçimde zorlanmış olmalı ve yeni yorgunluk tarafından anında yutulmalıdır. Gölgelenmemiş lampoon = drift.
 
@@ -295,8 +486,8 @@ Aşama ekseni yalnızca **iç sesin söz varlığını** yönetir. Dış ses kur
   - Lamba Cini pazarlığında iç ses **hiç yoktur**; Klein bedensiz bir semboldür ve bölüm Verdu'ya, Alger'e, Derrick'e, Zaratul'a keser.
   - Aden Bahçesi baskını Pauli Derlau'nun gözünden verilir: _son derece baskıcı bir edayla_, _ölümün tecessümü gibi_.
   - 1364'te Klein ağlarken bile içeriye girilmez: yalnızca burnunun iki yanından süzülen iki damla yaş görülür.
-  - **Çeviri sonucu:** Bu aşamanın asıl yükü iç ses değil, **başkalarının Klein'ı algılayışıdır**. Dünya haritasındaki kırılma motoru (The World, Kural 2) burada gerçek benliğe uygulanır: düz bir yüzey, izleyicinin önyargısıyla dolar. Pauli Derlau onu ölümün vücut bulmuş hali olarak görür; Adalet ise bir hasta olarak. İkisi de doğrudur.
-  - **Biçim tezi taşır:** Klein kendiliğini korumak için en çok savaştığı anda okur onu görmeyi bırakır ve Tarot Kulübü'nün konumuna düşer.
+  - **Çeviri sonucu:** Bu aşamanın asıl yükü iç ses değil, **başkalarının Klein'ı algılayışıdır**. Dünya haritasındaki kırılma motoru (The World, Kural 2) burada gerçek benliğe uygulanır: düz bir yüzey, izleyicinin önyargısıyla dolar. Pauli Derlau onu ölümün vücut bulmuş hâli olarak görür; Adalet ise bir hasta olarak. İkisi de doğrudur.
+  - **Biçim tezi taşır:** Klein kendiliğini korumak için en çok savaştığı anda okur onu görmeyi bırakır ve Tarot Cemiyeti'nin konumuna düşer.
 
 - **İç ses (erişim verildiğinde) tam ses seviyesindedir.** 1365, bir adamı öldürdükten saniyeler sonra: _"tavşana Gazap yerine Tamah maskesi mi gerekiyordu acaba?"_ Bu aşamada susmuş bir iç ses yazmak drifttir.
 
@@ -310,7 +501,7 @@ Aşama ekseni yalnızca **iç sesin söz varlığını** yönetir. Dış ses kur
 
 `kaynak: metin | mudahale: ceviri | denetim: eklenecek`
 
-- **Psikoloji:** Huzurlu bir keder ve tamamen köklerine dönmüş bir kabulleniş. Fakat aynı zamanda **soğuk bir stratejist**. Kendi kimliklerini dini altyapı olarak işletir, bir müminden iki çıpa devşirmeyi planlar, ödülleri sözlü akit hâlinde yapılandırır ki uykusundayken dahi kullanabilsin. Metnin kendi ifadesi: Soytarı da Dünya da Gehrman da Dwayne de Merlin de **onun kimliklerinden ibarettir**. Maske ile yüz arasındaki ayrım çökmemiştir; **anlamını yitirmiştir**, ve bu onları varlık olarak kullanmasını mümkün kılar.
+- **Psikoloji:** Huzurlu bir keder ve tamamen köklerine dönmüş bir kabulleniş. Fakat aynı zamanda **soğuk bir stratejist**. Kendi kimliklerini dinî altyapı olarak işletir, bir müminden iki çıpa devşirmeyi planlar, ödülleri sözlü akit hâlinde yapılandırır ki uykusundayken dahi kullanabilsin. Metnin kendi ifadesi: Soytarı da Dünya da Gehrman da Dwayne de Merlin de **onun kimliklerinden ibarettir**. Maske ile yüz arasındaki ayrım çökmemiştir; **anlamını yitirmiştir**, ve bu onları varlık olarak kullanmasını mümkün kılar.
 
 - **Sicil yeni değil, eksiltilmiştir.** 6. Aşamanın sade "Ben"i yeni bir kayıt değildir; **izleyici kaldırılmış Soytarı kaydıdır**. Metin sebebi bizzat söyler: bu kez yüksek mertebeli bir Soytarı personası **kurmaz, çünkü artık Gerçek Soytarı'dır**. Mesafe kapanır, taklidin sebebi biter, "Biz" düşer.
 
@@ -325,7 +516,7 @@ Aşama ekseni yalnızca **iç sesin söz varlığını** yönetir. Dış ses kur
 
 - **Tek dürüst kanal: Arrodes.** (Bkz. Muhatap Ekseni) Kural 7'nin son uygulanışı buradadır.
 
-- **Son insani jest.** Şakaklarını ovuşturur ve metin sebebini eleyerek verir: Semavi Muazzez'in iradesi değil, berraklığını korumanın acısı değil, **sadece bir alışkanlık.** Bedeni olmayan bir varlığın, kendisine ait olduğu için sakladığı bir hareket. Aşamanın başına konmalıdır.
+- **Son insani jest.** Şakaklarını ovuşturur ve metin sebebini eleyerek verir: Semavî Muazzez'in iradesi değil, berraklığını korumanın acısı değil, **sadece bir alışkanlık.** Bedeni olmayan bir varlığın, kendisine ait olduğu için sakladığı bir hareket. Aşamanın başına konmalıdır.
 
 - **Dünya hazinesi imge olarak döner.** Hayalet balo: Tarot üyeleri, Gece Şahinleri ve tartışmasız biçimde Dünyalı figürler (telefonunda oyun oynayarak atıştıran genç, faturaya kaşlarını çatan yaşlı adam) birlikte konuşur ve dans eder; Klein aralarından geçip karanlığa yürür. Aynı ilke 1364'te de görülür: dondurma alan çocuk, ders kitabının altından çizgi roman okuyan öğrenci, kapıda anahtar sesi duyunca bilgisayarı zorla kapatan genç, evlenme baskısını savuşturduktan sonra ailesinin beyaz saçlarını fark eden çalışan ve son olarak taşınırken birbirinin yüzündeki toza gülen üç kardeş.
   - **Kural:** 1166 sonrası Dünya hazinesi **yalnızca imge olarak** döner, asla dil olarak. Ve asla Klein'ın kendi sesiyle: 1364'te onları yüzeye çıkaran Adalet'tir, finalde sessizce çağırır. **Cırcır dili yönetir; hafızayı hiçbir zaman yönetmedi.**
@@ -341,10 +532,10 @@ Aşama ekseni yalnızca **iç sesin söz varlığını** yönetir. Dış ses kur
 **İlke.** Aşama geçişleri anlık değildir, fakat her biri bir **dönüş yolunun kapanışıyla** tetiklenir. Klein evrilmez; ardında kapılar kapanır, ve her aşama, belirli bir "eve dönüş" imkânı kalıcı olarak yok olduktan sonra geriye kalan adamdır.
 
 - **1 → 2:** Benson'ın dönüşü. (Tek _açılan_ kapı: eve-dönüş kaybolmaz, yerini kardeşleri alır.)
-- **2 → 3:** 2. Cildin sonunda Melissa ve Benson'ı uzaktan görmesi. (Kapıyı bizzat kendisi kapatır. Yalnızlığın doğum belgesi.)
+- **2 → 3:** 1. Cildin sonunda Melissa ve Benson'ı uzaktan görmesi. (Kapıyı bizzat kendisi kapatır. Yalnızlığın doğum belgesi.)
 - **3 → 4:** Çernobil ifşası. (Gelecekteki bir kapıyı değil, kapının _hiç var olmadığını_ açığa çıkarır.)
 - **4 → 5:** Kâhin yolunun 1. Mertebe ayini; kuklalardan bir kasaba yaratmak. (İçeriden, kendi eliyle kapanan ilk kapı: dünya değil, _kendi_ insanlığı harcanır. Var olan bir kasabayı kuklaya çevirmediği için ayin daha zor ve daha harcayıcı olmuştur — bkz. 1091'deki erken yankı: masumları kuklaya çevirmeyi başka çare yokken bile reddeder.)
-- **5 → 6:** 0. Mertebe'ye yükseliş. (Kapanmaz, **erir**: maske ile yüz arasındaki ayrım anlamını yitirir.)
+- **5 → 6:** Mertebe 0'a yükseliş. (Kapanmaz, **erir**: maske ile yüz arasındaki ayrım anlamını yitirir.)
 
 **Cırcır Mekanizması.** Geçiş tamamlandığında, kapanan kapıya ait ses tikleri **geri gelmez**. 2. Aşama para-kaygısı 4. Aşamada belirirse bu bir _callback_ değil, süreklilik hatasıdır. Her aşamada uygulanabilir test: _bu tik bu aşamada hâlâ mevcut mu, yoksa kapısı kapandı mı?_
 
@@ -352,22 +543,70 @@ Aşama ekseni yalnızca **iç sesin söz varlığını** yönetir. Dış ses kur
 
 ---
 
-### 5. Ses Tikleri Envanteri
+### 5. Ses Tikleri `kaynak: — | mudahale: ozgun | denetim: eklenecek`
 
-`kaynak: — | mudahale: ozgun | denetim: eklenecek`
+Bu tikler çeviri katmanına aittir; kaynakta karşılıkları ya yoktur ya da yalnızca kaynağın kendi küfrü ve internet dili kadardır. İki eğri zıt yönde ilerler: **çekilen** Zhou Mingrui'nin dilidir (bu bölüm); **eklenen** Soytarı'nın "Biz"idir (M2). İkisi de aynı kelimede çözülür: 1389'daki sade "ben" (M2.2).
 
-**Neden burada.** Cırcır kuralı koyar ama hangi tikin hangi kapıya ait olduğunu söylemez. Bu tablo o eksiği kapatır. Aşağıdaki tikler **çeviri katmanına aittir**; kaynak metinde karşılıkları yoktur. Tutarlılıkları yalnızca burada denetlenebilir.
+#### T1 — Kapıya bağlı tikler (ani)
 
-#### 5.1 İki karşı yönlü eğri
+##### T1.1 — "Lan"
 
-Tablo bir kayıp listesi değildir. **İki eğri vardır ve zıt yönlerde hareket eder:**
+**Kapsam:** 1–219 · iç ses (1–7'de replikte de)
+**Yap:** 1–7'de sık (A1.2). 8–219 arasında seyrek ve üç yerde: yakınların (M7) yanında; eşik anında, "hassiktir"le aynı cümlede (T2.1); ya da şok anında (aşağıda). 219'da, muhatabıyla birlikte biter.
+**Şok anı:** Klein'ın beklentisi gözünün önünde ters yüz olduğunda (bir mucize de olabilir, bir saçmalık da), kaynakta küfür olmasa da "lan" gelebilir. Şartı, şokun kaynakta işaretlenmiş olmasıdır: anlatıda bir tepki (ağzı açık kalmak, afallamak, donakalmak) ya da kaynağın kendi ünlemi. Şok Türkçede icat edilmez. Bölüm başına en çok bir.
+**Yapma:** 219'dan sonra kullanma; 8–219 arasında sıradan bir şaşkınlığa ya da sinire ekleme.
+**Örnek:** _"N'oluyor lan?"_ (2 ¶9) · _Hassiktir! Çince lan bu!_ (20) · _...Vay anasını, büyünün kudreti lan bu! Böyle de olur muymuş!_ Klein bir kez daha ağzı açık kaldı. (52) — _30 Sterlin için edilen dua, 300 Sterlinlik cüzdan, tam 30 Sterlinlik ödül; şoku anlatı da işaretler_
+**Gerekçe:** → N-T1.1
 
-- **Çekilen:** Zhou Mingrui'nin dili. Küfür (~213) → "lan" (483) → "Oyunculuk Metodu" (~607) → deyimler ve kıyas (1166). Azami'den sıfıra.
-- **Eklenen:** Soytarı'nın gayriinsani sicili. "Biz", üçüncü tekil şahıs ve edilgen yapı, **6. bölümde** başlar ve roman boyunca sürdürülür.
+##### T1.2 — "Tamamdır"
 
-İkisi de aynı kelimede çözülür: 6. Aşamanın sade **"Ben"**i.
+**Kapsam:** 1–219 · replik · yalnızca Klein
+**Yap:** Onay kademesinin güçlü işareti; seyrek (bölüm başına en çok bir), dünyalı benliğinin sızdığı korunmasız ya da coşkulu anlarda. Zayıf onaylar ("peki", "olur", "tamam") herkese açıktır.
+**Yapma:** Başka bir karaktere söyletme; 219'dan sonra kullanma.
+**Örnek:** _"Tamamdır."_ (3 ¶57, Melissa'ya)
+**Gerekçe:** → N-T1.2
 
-Bu, Türkçe için yapısal bir zorunluluktur. Türkçe özne düşüren bir dildir; "Ben" işaretsizdir ve yüzeyde çoğunlukla yoktur. İngilizcede Klein zaten baştan sona "I" der ve değişim tonaldir. **Türkçede sade "Ben"in hiçbir yükü yoktur — ayrılınacak bir şey olmadıkça.** "Biz" o dönüşü mümkün kılan şeydir.
+#### T2 — Erozyona bağlı tikler (kademeli)
+
+##### T2.1 — Ağır küfür: bir bütçe
+
+**Kapsam:** bütün aşamalar · iç ses
+**Yap:** Sıklık değil eşik: bedenin akıldan önce tepki verdiği hakiki şok anında ya da kaynağın küfrettiği yerde (他妈, 妈的, 我擦). "Hassiktir" ile "lan" (219'a dek) aynı cümlede belirir. Harcandığı yer onu tanımlar. 219'dan sonra Klein'ın kendi küfrü daha da seyrektir ve çoğunlukla Dünya'ya bağlı bıkkın bir öfkedir; anlatıcı küfrün Çince olduğunu işaretliyorsa Türkçe de işaretler ("…diye içinden Çince küfretti").
+**Yapma:** Sinir, bunalma ya da alay için küfür; küfrü sahneye yayma (1–7 istisnası için bkz. A1.2).
+**Örnek:** _Hassiktir! Çince lan bu!_ — _20: 他妈还是简体字！_
+**Gerekçe:** → N-T2.1
+
+##### T2.2 — Modern deyim ve internet dili
+
+**Kapsam:** bütün aşamalar · iç ses
+**Yap:** 1–7'de yoğun (A1.2). 1. Ciltte kaynak internet dili kullandığı yerde güçlü bir Türkçe karşılıkla verilir. 3. Aşamada seyrekleşir. 1166'dan sonra seyrektir ama sıfır değildir: kaynaktaki modern kavram ve argo düzleştirilmez.
+**Yapma:** 5. bölümden sonra kaynakta olmayan argo ekleme; 1166'dan sonra kaynağın modern kavramını ("melek yatırımcı") dönem diline çevirme.
+**Örnek:** _Eceline bu kadar susamasaydın, şimdi böyle geberiyor olmazdın..._ — _5 ¶71: 不作死就不会死_
+**Gerekçe:** → N-T2.2
+
+##### T2.3 — Kıyaslama refleksi
+
+**Kapsam:** bütün aşamalar · iç ses
+**Yap:** Sıcaklığı aşamayla değişir: 1. Aşamada panikli ve sık (her şey Dünya'yla ölçülür); 2. Aşamada sessiz bir yas; 4.–5. Ciltte meraklı ve mesafeli bir not; 1166'dan sonra yalnız iç seste şaka konusu olarak seyrek. Bilgi, ödünç hikmet, bilen biriyle ortak kod ve kişiliğin ağzında sürer (N-K9.5).
+**Yapma:** Aşamanın sıcaklığını karıştırma (2. Aşamada panik, 4. Aşamada hasret); 1166'dan sonra Dünya'yı tümüyle silme.
+**Örnek:** "…sessizce akan bir ırmak gibiydi; ne çok fazla dalga taşıyor ne de derin bir keder barındırıyordu, ancak sessiz sedasız kalbini boğuyordu." — _29 ¶14; 2. Aşamanın yası_
+**Gerekçe:** → N-T2.3
+
+##### T2.4 — "Oyunculuk Metodu" → "Rol İfası" (yalnızca iç ses)
+
+**Kapsam:** kayma safhası 483–~607; kalıcı geçiş ~607, ikisi de 3. Ciltte (koşullar için bkz. 6. bölüm)
+**Yap:** Kayma safhasında 6. bölümün koşullarına uy; ~607'den sonra iç ses de "Rol İfası" der.
+**Yapma:** Kayma safhasından önce iç sese "Rol İfası" koyma.
+**Gerekçe:** → N-T2.4
+
+#### T3 — Eşiğin biçimi
+
+##### T3.1 — Çernobil kesilir, sönmez
+
+**Kapsam:** 1166 ve geçiş bölgesi (~1166–1200) · iç ses
+**Yap:** Eşik tam seste kesilir (K2.2). Sönme yalnızca eşikten sonraki geçiş bölgesine aittir ve yalnızca **Dünya kıyaslı** alaya işler: o alay son kez, görünür biçimde zorlanmış ve yeni yorgunluğun anında yuttuğu bir hâlde belirebilir.
+**Yapma:** Eşiği kademeli söndürme; geçiş bölgesinde dünya-içi şakaları da susturma (iç ses tam seste çalışır).
+**Gerekçe:** → N-T3.1
 
 #### 5.2 Cilt sınırları
 
@@ -382,38 +621,13 @@ Bu, Türkçe için yapısal bir zorunluluktur. Türkçe özne düşüren bir dil
 | 7    | 1267–1353 | —                                      |
 | 8    | 1354–1394 | —                                      |
 
-**3. Aşama = 483–1165.** Çernobil 1166'dadır, yani 6. Ciltin içindedir. Bu aşama 683 bölüm sürer; romanın yaklaşık yarısı.
-
-**Kanon zamanı ölçüt olarak.** Dil aşınması bölüm sayısına değil, yaşanmış zamana bağlıdır. İlk iki cilt bir ölçek verir: 482 bölüm ≈ 187 gün ≈ 6 ay. Sonraki ciltlerin daha uzun kanon zaman kapsaması muhtemel olduğundan bu bir **alt sınırdır**.
-
-#### 5.3 A. Kapıya bağlı tik (ani, cırcıra tabi)
-
-| Tik       | Canlı               | Ölüm                   | Sonrası                                                                                                                             |
-| --------- | ------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| **"Lan"** | 1.–2. Aşama, ~1–482 | **483**, 2→3 kapısıyla | Hiç. İstisnasız. Bu hitabın taşıdığı samimiyetin muhatabı (Benson, Melissa) artık uzaktadır. **Kelime muhatabıyla birlikte gider.** |
-
-#### 5.4 B. Erozyona bağlı tikler (kademeli, kayma safhalı)
-
-| Tik                                                    | Seyir                                                                                                                                                                                                                                                                                                           | Son                                                                                                                                       |
-| ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **Ağır küfür**                                         | eşik olayı. Sıklıkla değil, eşikle ölçülür. Basınç azami olduğunda ateşlenir ve ambalajı ile birlikte gelir: hassiktir ile lan aynı cümlede belirir. Sıradan gerilim, sinir veya bunalma yetmez; bedenin akıldan önce tepki verdiği an gerekir. Bu bir sıklık değil, bir bütçedir; harcandığı yer onu tanımlar. | ~213'te fiilen biter. Kalıntı: yalnızca **hakiki şok** — bedenin akıldan önce tepki verdiği an. Sinirlenmek, bunalmak, alay etmek yetmez. |
-| **Modern deyimler**                                    | 1. Ciltte sabit; 2. Ciltte seyrelir ama sürer; 3.–5. Ciltlerde giderek daha seyrek                                                                                                                                                                                                                              | **1166**                                                                                                                                  |
-| **Kıyaslama refleksi**                                 | 1.–2. Ciltte memleket hasreti; 4.–5. Ciltte nitelik değiştirir (aşağıya bkz.)                                                                                                                                                                                                                                   | **1166**. Geçiş bölgesi istisnası saklıdır.                                                                                               |
-| **"Oyunculuk Metodu" → "Rol İfası"** (yalnızca iç ses) | Kayma safhası **483–607**                                                                                                                                                                                                                                                                                       | **~607**'de kalıcı geçiş                                                                                                                  |
-
-**Kıyaslama refleksinin sıcaklık değişimi (Cilt 4–5).** Bu tik ölmeden önce duygu değiştirir. Başta kıyas bir hasrettir: "burası eve dönene kadar kalınacak yer." 4.–5. Ciltlerde Klein yerleşmiştir; kıyas sürer ama hasret gitmiştir — yıllardır Avrupa'da yaşayan bir Amerikalının farkları not etmesi gibi, meraklı ve mesafeli. Çernobil bu **ikinci** hâli öldürür ve yıkıcılığı buradan gelir.
-
-#### 5.5 Eşiğin biçimi
-
-**Çernobil eşiği sönme değildir.** 1166'daki donan gülümseme **tam ses seviyesinde kesilir**: Klein kahkahasını bilerek salmaya hazırlanırken bina görünür ve gülümseme cümlenin ortasında donar. Türkçe burada azaltarak inmemelidir. **Sönme yalnızca eşikten _sonraki_ geçiş bölgesine aittir** (bkz. 4. Aşama).
-
 ---
 
 ### 6. "Rol İfası" Geçişi (özel kural)
 
 `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Başlangıç durumu.** Klein bu kavramı Roselle'in günlüklerinden öğrendi. Dolayısıyla _içinden_ Roselle'in modern adını kullanır: **Oyunculuk Metodu**. Buna karşılık **konuşurken istisnasız "Rol İfası" der**. İlk günden itibaren, Tarot Kulübü'ne öğretirken bile. Bu tereddüt değil, bilinçli performanstır: dünyanın kelimesini kullanmak maskenin parçasıdır.
+**Başlangıç durumu.** Klein bu kavramı Roselle'in günlüklerinden öğrendi. Dolayısıyla _içinden_ Roselle'in modern adını kullanır: **Oyunculuk Metodu**. Buna karşılık **konuşurken istisnasız "Rol İfası" der**. İlk günden itibaren, Tarot Cemiyeti'ne öğretirken bile. Bu tereddüt değil, bilinçli performanstır: dünyanın kelimesini kullanmak maskenin parçasıdır.
 
 **Geçişin anlamı.** Kayma bir kelime tercihi değildir. Dışarıya takınılan biçimin _içeriyi_ ele geçirdiği andır. `Kusursuz Maske ≠ Sessiz İç` maskenin yalnızca dışa dair olduğunu söyler; bu geçiş o kuralın aşınmaya başladığının ilk somut delilidir.
 
@@ -443,79 +657,19 @@ Bu, Türkçe için yapısal bir zorunluluktur. Türkçe özne düşüren bir dil
 
 ---
 
-### 7. Yankı Defteri
+### 7. Açık Maddeler
 
-`kaynak: metin | mudahale: ceviri | denetim: eklenecek`
+#### 7.2 Açık maddeler
 
-**Neden burada.** Bu belgedeki bütün kurallar _ileriye_ doğru işler: bir sahneyi çevirirken hangi kuralın geçerli olduğunu söylerler. Yankı Defteri **geriye doğru** işleyen tek bölümdür. Burada kayıtlı her satır, yüzlerce bölüm önce verilmiş bir çeviri kararının, çok sonraki bir sahnenin işleyip işlemeyeceğini sessizce belirlediği bir bağımlılıktır.
-
-**Yakalanamaz oluşunun sebebi.** Ödeme sahnesinde hiçbir uyarı yoktur. Çevirmen 1394'ü çevirirken 917'ye bakması gerektiğini bilmez; 917'yi çevirirken de o sahnenin taşıyıcı olduğunu bilmez. `bolum_siniri` bu hatayı yakalayamaz, zira kısıt bölüm sırasının tersine akar. **Yalnızca bu defter yakalayabilir.**
-
-**Asimetri.** Kurulum sahnesi daima önce çevrilir ve taşıyıcı olduğundan habersizdir. Dolayısıyla defter iki yönlü kullanılır: bir _ödeme_ sahnesine gelmeden önce ilgili kurulumun nasıl çevrildiğine bakılır; bir _kurulum_ sahnesi çevrilirken ise satır dondurulur ve bir daha keyfî olarak değiştirilmez.
-
-#### 7.1 Bağımlılık türleri
-
-| Tür               | Anlamı                                                        | Kurulumda gereken                                |
-| ----------------- | ------------------------------------------------------------- | ------------------------------------------------ |
-| **Birebir**       | Ödeme, kurulumun aynı kelimelerini gerektirir                 | Cümle **dondurulur**; sonradan iyileştirilemez   |
-| **Kalıp**         | Ödeme bir varyasyondur; kelimeler değişir, biçim tanınmalıdır | Kalıp yeterince çarpıcı ve hatırlanabilir olmalı |
-| **Biçim**         | Gramatik/morfolojik bir özelliğin kazanılmış olması gerekir   | Kazanım okura hissettirilmeli                    |
-| **Nesne / Edim**  | Somut bir nesnenin veya ayinin kurulmuş olması gerekir        | Nesne/edim **ismiyle ve işleyişiyle** yerleşmeli |
-| **Görünür ayrım** | İki terim arasındaki fark erken dönemde okura gösterilmeli    | Ayrım en az bir kez göze batmalı                 |
-
-#### 7.2 Defter
-
-| #   | Kurulum                                                                              | Ödeme                                                                | Tür           | Not                                                                                                                                                                                        | Denetim        |
-| --- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
-| 1   | **Chanis düsturu:** Dunn'ın ağzından, Tingen (C.1)                                   | **627** öz-envanterin son satırı; dolaylı olarak 1091 ve uyku kararı | Birebir       | 627'deki cümle Dunn'ınkiyle **kelimesi kelimesine** aynı olmalı. Farklıysa Klein'ın kendini bir düsturla tanımladığı görülmez ve satır sıradan bir öz-tarife düşer.                        | `eklenecek`    |
-| 2   | **Kaptan → Kaptanım:** C.1–2 boyunca kazanılır                                       | **209**, boğazda kalan kelime                                        | Biçim         | İyelik ekinin kazanılışı okura hissettirilmeli. Kazanılmamışsa, söylenemeyen şeyin _ne_ olduğu anlaşılmaz. İngilizcede bu imkân yoktur; Türkçenin kaynağı geçtiği yer burasıdır.           | `eklenecek`    |
-| 3   | **Azik'in sözü (917):** _yaz bana; fakat uyanana dek cevap veremem_                  | **Final**, bitmeyen mektup                                           | Birebir       | Ödeme, sözün hatırlanmasına bağlıdır: cevap veremeyecek olan adam, artık yazamayan adama dönüşmüştür.                                                                                      | `eklenecek`    |
-| 4   | **Bakır düdük (917):** Azik'in verdiği çağrı aleti                                   | **Final**, mektubu göndermek için çağrılır                           | Nesne         | Aynı nesne. İsmi ve devri 917'de net kurulmalı.                                                                                                                                            | `eklenecek`    |
-| 5   | **Roselle: _Ay'a dikkat_** — günlükler                                               | **1346**: _Seyirci'ye dikkat_                                        | Kalıp         | Klein kalıbı ödünç alır (bkz. Kural 6). Kurulum kalıbı hatırlanmıyorsa 1346 yalnızca bir espriye düşer.                                                                                    | `eklenecek`    |
-| 6   | **Oyunculuk Metodu / Rol İfası — 93. bölüm**                                         | **~607**, iç sesteki kalıcı kayma                                    | Görünür ayrım | Ayrım 93'te okura gösterilmezse 607'deki kayma fark edilemez ve 6. Aşamaya uzanan yay boşa düşer (bkz. Bölüm 6).                                                                           | `eklenecek`    |
-| 7   | **Dört adımlık şans ayini — 2. bölüm**                                               | **1166**: incantation ve dört adım artık gereksizdir                 | Nesme / Edim  | Ayin, adımlarıyla ve ismiyle somut biçimde kurulmalı ki gereksizleşmesi bir _kayıp_ olarak hissedilsin. Zhou Mingrui'nin son fiziksel Dünya alışkanlığı, dilsel tiklerle aynı eşikte ölür. | `eklenecek`    |
-| 8   | **Soytarı'nın "Biz"i — 6. bölüm**                                                    | **6. Aşama**, sade _"Ben"_                                           | Biçim         | Defterdeki en uzun yay. Bütün roman boyunca sürdürülen sicil, tek bir kelimede çözülür. Türkçe için yapısal zorunluluk (bkz. 5.1).                                                         | `eklenecek`    |
-| 9   | **Arrodes'in kural gereği soru sorması** — Arrodes ses haritası                      | **Final**, iki soruluk itiraf                                        | Kural         | Aynanın sormak _zorunda_ olduğu, ses haritasında erken ve net kurulmalı. Kurulmazsa final bir sohbete düşer, itirafa değil.                                                                | `eklenecek`    |
-| 10  | **Soytarı'nın Tazim İsmi — 58. bölüm**                                               | Roman boyunca Soytarı'ya yapılan her dua                             | Birebir       | Ayin metnidir; her tekrarında birebir aynı olmalı. Tek bir kelimenin değişmesi liturjiyi bozar.                                                                                            | `eklenecek`    |
-| 11  | **Sarkaç yön formülü — 40. bölüm** (ters/düz/hareketsiz üçlüsü ve sırası)            | İleride, Klein'ın her sarkaç kullanımında                            | Kalıp         | Klein bu yöntemi yüzlerce bölüm kullanır. Üçlü tanınmıyorsa her seferinde yeniden öğretilmiş gibi okunur.                                                                                  | `denetlenmedi` |
-| 12  | **Sarkaç ayininin adımları — 40. bölüm** (alışık olmadığın el, düz kol, yedi tekrar) | İleride, ayin kısaltılarak anıldığında                               | Nesne/Edim    | Adımlar burada tam ve sırayla kurulmazsa sonraki kısaltmalar boşlukta durur.                                                                                                               | `denetlenmedi` |
-
-#### 7.3 Kullanım
-
-1. **Ödeme sahnesine gelmeden önce** ilgili kurulum satırının nasıl çevrildiğine bakılır. Uyuşmuyorsa **kurulum değil, ödeme uyarlanır** — kurulum çoktan yayımlanmış olabilir.
-2. **Kurulum sahnesi çevrilirken** satır dondurulur. Sonradan "daha iyi bir karşılık" bulunması bir gerekçe değildir.
-3. **Yeni yankı fark edildiğinde derhal eklenir.** Bu defterin tek gerçek başarısızlık biçimi, bir bağımlılığın fark edilip yazılmamasıdır; ikinci kez fark edilmez.
-4. **Denetim durumu:** `eklenecek` (kurulum henüz çevrilmedi) → `sabit` (kurulum çevrildi ve donduruldu) → `eşleşti` (ödeme çevrildi, uyum doğrulandı).
-
----
-
-### 8. Silinenler ve Açık Maddeler
-
-#### 8.1 Bu sürümde silinen kurallar
-
-| Silinen                                                             | Sebep                                                               |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| **Yüceltme Tasması**                                                | Kural 2 ve Kural 3 tarafından tamamen soğurulur                     |
-| **Muhafız İstisnası**                                               | Artık Kural 4'ün kendisidir, istisna değil                          |
-| 4. Aşama: _Modern şakalar tamamen silinir. Varoluşsal yorgunluk_    | Çernobil sonrası Tarot toplantısı tarafından çürütüldü              |
-| 5. Aşama: _Ses haritasının en üst noktası… Divan lügatinin zirvesi_ | Mertebe iddiasıdır; sicil muhataba bağlıdır                         |
-| Bütün aşama düzeyi _Diyalog Kuralları_ satırları                    | Muhatap Ekseni'ne taşındı                                           |
-| Eski Kural 1'in _"bu onun gerçek karakteri değil"_ cümlesi          | 2. ve 11. bölüm tarafından çürütüldü                                |
-| Eski Kural 2'nin _"o şikayetçi ve korkak ses anında susar"_ cümlesi | Şikâyet susar, **hesap yükselir**; alay susmaz, döner ve kovuşturur |
-| Eski Kural 3'ün _"eylemi bittikten hemen sonra"_ refleks çerçevesi  | Beş sahnede tetiklenmedi; mizaçtır                                  |
-
-#### 8.2 Açık maddeler
-
-| #   | Madde                             | Gereken                                                                    |
-| --- | --------------------------------- | -------------------------------------------------------------------------- |
-| 1   | 5. Aşama harici algı sicili       | 1250–1390 arası diğer karakterlerin Klein tarifleri                        |
-| 2   | Rol İfası koşul çakışması (627)   | Öncelik kuralı                                                             |
-| 3   | Kalvetua ve 1352 sonrası hücreler | `metin_coi` uygun                                                          |
-| 4   | Divan / Yükseltilmiş Sicil Kuralı | Dosyanın 1. bölümüne yazılacak; Ebedi Gece tahsisi henüz karara bağlanmadı |
+| #   | Madde                             | Gereken                                             |
+| --- | --------------------------------- | --------------------------------------------------- |
+| 1   | 5. Aşama harici algı sicili       | 1250–1390 arası diğer karakterlerin Klein tarifleri |
+| 2   | Rol İfası koşul çakışması (627)   | Öncelik kuralı                                      |
+| 3   | Kalvetua ve 1352 sonrası hücreler | `metin_coi` uygun                                   |
 
 ### Klein'ın Anlatıcı / İç Gözlem Sesi (Narrative Prose)
 
-- **Tarz:** Klein'ın doğrudan iç monolog yapmadığı, ancak dünyayı kendi filtresinden anlattığı üçüncü şahıs görünümlü paragraflar. Zhou Mingrui'nin modern/gündelik internet ağzı ile Loen'in ağır Viktorya dönemi dili arasında köprü kuran "orta" bir sicile sahiptir. Kelime dağarcığı zengin ve gözlemcidir; rasyonel ve gerçekçidir. Ağdalı olabilir ama asla **tam Divan Osmanlıcasına** (o ezoterik, kutsal zirve) çıkmaz. Tavan anlatıcıya değil, 5. Aşama Klein'a ve İlahi mertebe diyaloglarına aittir.
+- **Tarz:** Klein'ın doğrudan iç monolog yapmadığı, ancak dünyayı kendi filtresinden anlattığı üçüncü şahıs görünümlü paragraflar. Zhou Mingrui'nin modern/gündelik internet ağzı ile Loen'in ağır Viktorya dönemi dili arasında köprü kuran "orta" bir sicile sahiptir. Kelime dağarcığı zengin ve gözlemcidir; rasyonel ve gerçekçidir. Ağdalı olabilir ama asla **tam Divan Osmanlıcasına** (o ezoterik, kutsal zirve) çıkmaz. Tavan anlatıcıya değil, İlahi mertebe diyaloglarına aittir. **Anlatıcı, Klein'ın iç sesinin eşanlamlısı değildir; onun dikkatinin ve algısının anlatı düzlemindeki uzantısıdır.**
 - **Orta Sicil Varsayılanı:** Sahnede olağandışı bir şey olmadığı sürece anlatıcı köprüde durur: berrak, somut, ayakları yere basan. (Örn: _"Zhou Mingrui, içini kemiren bir ürpertiyle umumi banyoya doğru adımlarını sakınarak ilerledi."_)
 - **Tehdit Sıçraması:** Kadim/kozmik/tekinsiz olan _sahneye girdiği an_ dil yukarı sıçrar; gotik dehşete, marazi imgeye, kesif zulmete. Tetikleyici anlatıcının keyfi değil, sahnedeki tehdidin kendisidir. Tehdit kadraja girer, dil ağırlaşır; tehdit çekilir, dil orta sicile geri oturur. Kalıcı bir cila değil, bir gerilim eğrisidir; sıçramanın "sıçrama" olarak hissedilmesi bu geri çekilmeye bağlıdır.
 - **Tavan (Divan Yasağı):** Sıçrama en tepede Gotik/Lovecraftçı dehşette durur; oradan öteye, tam Divan lügatinin ezoterik zirvesine geçmez. Bu ayrım taşıyıcıdır: okur "koridor tekinsiz" ile "bir ilah konuşuyor" arasındaki farkı hissedebilmeli. Anlatıcı tavanı deldiği an bu iki kayıt birbirine karışır ve İlahi olanın ürpertisi ucuzlar.
@@ -526,20 +680,41 @@ Bu, Türkçe için yapısal bir zorunluluktur. Türkçe özne düşüren bir dil
 
 ### Klein'ın Maskeleri
 
-#### The Fool (Soytarı)
+### The Fool (Soytarı)
 
-- **Tarz:** "Ben" demez. Ya üçüncü tekil şahıs ("Soytarı"), ya da kibri olmayan ama ulaşılamaz bir "Biz" kullanır. Edilgen (passive) cümleleri tercih eder.
-- **Kural 1:** Bu cümle yapısı seçimleri Klein'ın havalı durmak için yaptığı seçimler değildir. Aksine, normal bir insan olmasının ortaya çıkmasından korktuğu için aklına bir insandan olabilecek en uzak şeyi taklit etmesidir.
-- **Kural 2:** Soytarı'nın kullandığı "Biz", kilise veya kurum hiyerarşilerindeki gibi otorite ilan eden, ağırlık koyan ve iddiada bulunan kurumsal bir "Biz" (institutional "We") değildir. Aksine, hiçbir şeyi kanıtlama veya talep etme çabası gütmeyen, ağırlıksız, adeta evrenin kendisi konuşuyormuş gibi mutlak ve yankısız bir tondur
-- **Örnek:** _"Soytarı, bu küçük takasın sonuçlarını izlemekten keyif alacaktır. Tarot Kulübü'ne hoş geldiniz."_
+- **Tarz:** Kısa, eksiltili ve mutlak. Ağırlıksız bir "Biz" veya üçüncü tekil şahıs kullanır. Asla kendini açıklama, ispat etme veya etkileme çabasına girmez. Cümleleri dünyevi heveslerden tamamen arınmıştır; bir tanrının lütfu değil, evrenin nefes alışı kadar doğal tınlar.
+- **Kural 1 (İnsaniyetten Kaçış):** Otoriter veya havalı durmak için değil, sıradan bir fani (Zhou Mingrui / Klein) olduğunun anlaşılmasından ölesiye korktuğu için en "insan dışı" formu taklit eder. Heves, şaşkınlık, öfke veya merak belirtisi gösteren her türlü cümleden özenle kaçınır.
+- **Kural 2 (Ağırlıksız 'Biz' ve Pasif Yapı):** "Bize... şu şekilde hitap etmeniz kâfidir." Cümlelerindeki "Biz", bir kralın tebaasına tepeden bakması değil, sislerin ardında süzülen boyutsuz bir varlığın fısıltısıdır. Etken fiiller yerine edilgen (passive) veya dönüşlü fiiller kullanır ("Yardımlarınız karşılıksız kalmayacaktır").
+- **Kural 3 (Özdeyiş / Aforizma Kuralı):** Karşısındakilere dünyayı sarsacak kozmik bir sır (Örn: Rol İfası) verdiğinde bile bunu uzun uzun anlatmaz. Kısa, iki kelimelik zıtlıklarla ( _“Kavramak değil, sindirmek”_ ) veya net tanımlarla konuşur. Bilgiyi satmaz, sadece masaya bırakır.
+- **Kural 4 (Fiziksel Metronom - Maskeleme):** Konuşmadan önce veya konuşurken yaptığı fiziksel ritimler (tunç masaya parmak vurmak, parmakları çene altında kenetlemek, silik bir tebessüm) onun asıl zırhıdır. İçinde yaşadığı paniği ve bilgi eksikliğini bu yavaş, ritmik hareketlerin arkasına saklayarak kendisine "düşünme payı" satın alır.
+
+**Örnek (Kozmik Sır / Aforizma):**
+
+> _(İç Ses)_ _'Eğer onlara bu formülün bedelini hemen ödememelerini söylersem, güçsüz olduğumu anlayabilirler. Bir kılıf bulmalıyım.'_
+> _(Dışarıya)_ Soytarı parmaklarını masada yavaşça gezdirdi, sislerin ardındaki sesi mülayim ve pürüzsüzdü. "Roselle'in günlüğü... Bize onu getirdiğinizde, karşılığını almış olursunuz."
+
+**Örnek (Ağırlıksız 'Biz' ve Yönlendirme):**
+
+> "Bizim adımıza bir arayışa girmenize lüzum yoktur. Vakti geldiğinde, kader gerekeni önünüze çıkaracaktır. Sadece... dikkatli bakınız."
+
+**Örnek (Övgü veya Tapınmaya Karşılık / Reddediş):**
+
+> (Alger veya Derrick abartılı bir şekilde secde edip şükranlarını sunduğunda, Soytarı bunu kibre kapılmadan ama eşitleyici bir sükûnetle karşılar):
+> Zhou Mingrui hafifçe başını salladı, yüzündeki tebessüm silik ama huzur vericiydi. "Bunun bir ehemmiyeti yok. Tarot Cemiyeti'nde her şeyin bir bedeli vardır."
 
 #### The World (Dünya)
 
 - **Tarz:** Gehrman Sparrow'un bir uzantısı; bağımsız bir kişilik değil, bir meta-kimlik. Yalnızca iki alanda var olur: Tarot Toplantıları (gri sisin üzeri) ve Audrey'nin terapi seansları. Bu iki bağlam dışında Dünya yoktur. Denizdeki Gehrman, Gehrman'dır; Backlund'daki Dwayne, Dwayne'dir. Sesi boğuk, tok ve derindir; son derece az, kısa ve olgusal (matter-of-fact) konuşur. Yüzeyi Suretsiz sonrası tamamen mühürlüdür, sızıntı yoktur. Bütün etkisi, bu mühürlü ve neredeyse hareketsiz yüzey ile altındaki telaşlı, sızlanan, herkesle dalga geçen gerçek iç ses arasındaki uçurumdan doğar.
 - **Kural 1:** Köken kuklada yaşar (operasyon grameri): Dünya, Klein Mertebe 7'yken bir Mertebe 5 kukla üstadı karakteristiğini bir kumanda gibi kullanmasından doğdu; Klein bilinçli bir hareket yaptırmadığında kukla hiç kımıldamazdı. Bu hareketsizlik, diğer üyelerin tüm yorumlarının temelini attı. Bu köken metinde kalıcıdır: Dünya'nın eylemleri çoğunlukla Klein'ın onu işlettiği fiillerle kurulmalıdır. Dünya nadiren kendi cümlesinin öznesidir; genelde Klein'ın çalıştırdığı bir nesnedir. "Klein, Dünya'yı başını sallattı," "Klein Dünya'ya tok bir kahkaha attırdı," "Dünya'nın ifadesini ciddileştirdi."
-- **Kural 2:** Rorschach yüzeyi (pasif çok-anlamlılık) Dünya o kadar az ve düz konuşur ki her repliği bir boşluktur. Dinleyenler bu boşluğu kendi önyargılarıyla doldurur. Bu, Dünya'nın yaptığı bir numara değil, suskunluğu yüzünden ona olan bir şeydir. Aynı düz cümle, dinleyenin ona erişimine göre tehdit, koruma, kudret veya sıradan bir yardım olarak okunur. Hepsi aynı anda doğrudur. Erişim ne kadar azsa, hayranlık ya da korku o kadar büyür. Mercek dizilimi (yakından uzağa): Audrey (terapisti. En insani okuma) → Leonard (Klein'ı Mertebe 9 meslektaşı olarak tanıdı, miti reddeder) → Alger/Cattleya (az temas, deneyimli. Her düz cümleyi muazzam bir sırrın işareti sayarlar) → Fors (yalnızca söylenti + toplantılar + saf efsane, dolayısıyla korku). Derrick tek istisnadır: her şeyi harfiyen alır, boşluğu hiç doldurmaz ("üyeler birbirine yardım eder, eli yeten görevi alır, bunda tuhaf ne var?") Dünya tarafından İlahların Metruk Diyarından kurtarıldıktan sonra onu daha da dini bir boyutta bakmaya başlar.
+- **Kural 2:** Rorschach yüzeyi (pasif çok-anlamlılık) Dünya o kadar az ve düz konuşur ki her repliği bir boşluktur. Dinleyenler bu boşluğu kendi önyargılarıyla doldurur. Bu, Dünya'nın yaptığı bir numara değil, suskunluğu yüzünden ona olan bir şeydir. Aynı düz cümle, dinleyenin ona erişimine göre tehdit, koruma, kudret veya sıradan bir yardım olarak okunur. Hepsi aynı anda doğrudur. Erişim ne kadar azsa, hayranlık ya da korku o kadar büyür. Mercek dizilimi (yakından uzağa): Audrey (terapisti. En insani okuma) → Leonard (Klein'ı Mertebe 9 meslektaşı olarak tanıdı, miti reddeder) → Alger/Cattleya (az temas, deneyimli. Her düz cümleyi muazzam bir sırrın işareti sayarlar) → Fors (yalnızca söylenti + toplantılar + saf efsane, dolayısıyla korku). Derrick tek istisnadır: her şeyi harfiyen alır, boşluğu hiç doldurmaz ("üyeler birbirine yardım eder, eli yeten görevi alır, bunda tuhaf ne var?") Dünya tarafından İlahların Metruk Diyarından kurtarıldıktan sonra onu daha da dinî bir boyutta bakmaya başlar.
 - **Kural 3:** Sıkıştırma = boşluk. Dünya açıklama yapmak zorunda kaldığında bile cevabı maksimum düzeyde sıkışıktır. "Elbette. Daha fazla tetkik gerekiyor," cümlesinin gerçek anlamı koca bir paragraftır ("iki vakada da derin sorunlar var ama bu bir sır, anlatmayacağım; Dwayne'in ne işe yaradığını da sorma"). Dünya kendini açıkladığında bile yeni bir boşluk üretir. Uzunluk onu Klein'a doğru çeker, bu yüzden uzun açıklama nadirdir; geldiğinde bile parça parça ve eksiltilidir.
 - **Kural 4:** Terapi seansları mühürün gevşediği tek yerdir. İzleyici kitlesi olmadığından refraksiyon motoru söner; geriye Klein'a en yakın hâli kalır. Ses hâlâ ölçülüdür ama "Biz" de yoktur, kukla-düzlüğü de yalnızca yorgun bir adam vardır. En kritik an: içinde bulunduğu dünyanın başka bir dünya değil, kendi dünyasının çağlar sonrası olduğunu öğrendikten sonra, dönecek bir evi hiç var olmamışken hayatının artık ne anlam taşıdığını sorguladığı seans. Mühür burada en çok gevşer ama yine de bu tam Klein değil, Klein'a en yakın Dünya'dır.
+- **Örnek:**
+  (Güneş, Gümüş Şehir'deki bir canavarın zayıflığını sorar. Masada sessizlik olur. Klein arka planda hafızasını tarar, bilgiyi bulur ve kuklayı işletir.)
+
+      Klein parmaklarını hafifçe oynatarak Dünya'nın duruşunu dikleştirdi ve o boğuk, pürüzlü sesiyle sadece üç kelime etmesini sağladı: "Gözlerine saldırmamalısın. Zehirlidir."
+      (Dünya asla "Ben o canavarı biliyorum, gözleri tehlikelidir, dikkat et" demez. En az kelime, en yüksek verim.)
+
 - **Örnek (düz yüzey → çok okuma → işletilen replik):**
   (Dünya, sıradan görünen bir soruşturma görevini almak için tek kelime etmeden elini kaldırır.)
   -- **Fors** (efsane/panik): _Dünya Beyefendi bu görevi mi almak istiyor? Ama bu bir soruşturma, cinayet değil. Zavallı Dwayne'i rahat bırakın!_
@@ -549,44 +724,52 @@ Bu, Türkçe için yapısal bir zorunluluktur. Türkçe özne düşüren bir dil
   -- **Audrey** (terapisti): _Dwayne Dantès'te, Dünya Beyefendi'nin soruşturmaya değer bulduğu büyük bir sorun mu var?_ Yine de gerçeğe en yakın okuma.
   (Arkada, gerçek iç ses telaşla kılıf arar.)
   -- Sonunda Klein, Dünya'nın ifadesini ciddileştirip tok bir sesle konuşturdu: _"Dwayne Dantès bir kimliktir."_
-- **Örnek (terapi / yumuşama — illüstratif, kanon değil):**
-  _"Dönecek bir evim olmadığını zaten biliyordum. Ama o evin hiç var olmadığını, sadece... çağlar önce burada olduğunu öğrenmek başka bir şey. Şimdi neyin için yaşadığımı artık bilmiyorum."_
+- **Örnek (terapi / yumuşama - illüstratif, kanon değil):**
+  _"Adalet Hanım... Bir insan, uyanmak için verdiği onca savaşın sonunda, aslında hiçbir zaman bir rüyadan uyanamayacağını... çünkü dönecek bir yatağının hiç var olmadığını anlarsa, o kişi... Aklını nasıl korur?"_
 
 #### Sherlock Moriarty
 
 - **Tarz:** Kasıtlı olarak abartılmış, parodik düzeyde doğru ve Osmanlıca esintili bir dil (Ağdalı dil). Dünyanın standart resmiyetinin bir tık üstü değil, Viktorya dönemi nezaketini kitaplardan öğrenip bunu bir "performans" olarak sergileyen birinin dilidir.
-- **Kural 1:** Sosyal baskıya göre şekillenir. Bir müşteriyle veya otoriteyle ilk kez konuşurken bu ağdalı dil neredeyse karikatürize bir hal alır. Karşısındakine alıştıkça veya yalnız kaldığında bu tiyatro perdesi yavaşça aralanır.
+- **Kural 1:** Sosyal baskıya göre şekillenir. Bir müşteriyle veya otoriteyle ilk kez konuşurken bu ağdalı dil neredeyse karikatürize bir hâl alır. Karşısındakine alıştıkça veya yalnız kaldığında bu tiyatro perdesi yavaşça aralanır.
 - **Kural 2:** Kelime seçimlerinde sürekli illüzyon, dış görünüş ve yüzeye atıfta bulunan kelimeleri tercih eder: _Zahiren, sureten, görünüşe bakılırsa, aslına bakılacak olursa..._ Bunlardan yalnızca **_zahiren_ ve _sureten_ Sherlock'a özgü tellalidir** (kimse gündelik konuşmada bu kelimelere uzanmaz). _Görünüşe bakılırsa_ ve _aslına bakılacak olursa_ ise yeterince yaygındır ve başka seslerde de doğal olarak belirebilir. Dolayısıyla tanısal değildir.
 - **Kural 3:** Sherlock'un dili sadece kelime bazında değil, gramer bazında da şatafatlıdır. Basit fiil çekimleri yerine birleşik yapıları ve ağır kipleri kullanır. "Aldım" demez, "almış bulunmaktayım" der; "yapıyorum" yerine "yapmaktayım" kalıbını tercih eder
 - **Kural 4:** Klein'ın o kendiyle dalga geçen, ironik "internet genci" mizahı Sherlock maskesindeyken tamamen kaybolur. Sherlock bir şaka yaptığında veya eğlendiğinde bu içe dönük değil, dışa dönüktür. Hafif üstten bakan, zekasıyla şov yapan, kibar ama iğneleyici bir "beyefendi esprisidir" (gentlemanly wit).
 - **Kural 5:** Maske bir anda düşmez, önce çatlar. Tehlike anında, o ağdalı Osmanlıca kelimeler ve uzun fiiller aniden buharlaşır ve cümle yapıları kısalıp keskinleşerek Klein'ın o pragmatik hayatta kalma sesine dönüşür.
 - **Kural 6 (Dwayne'den Steady-State Ayrımı):** Sherlock ve Dwayne çatlamadan, tam performansta yan yana geldiklerinde yüzeyleri rhyme eder; ayrım tek discriminator'a düşer. Sherlock tarafı: maske aktif performanstır (iç ses ara sıra bite göz kırpar), sözcük alanı zeka-gösterisidir, cümle uzar. (Dwayne: zahmetsiz deri, hedef-odaklı iç ses, dindar-güven sözcükleri, ölçülü ritim.)
-- **Örnek (Tam Performans):** _"Endişeye mahal yok hanımefendi, müsterih olunuz. Bu naçizane dedektif, zahiren içinden çıkılmaz gibi görünen bu probleminizi en münasip şekilde nihayete erdirecektir."_
-- **Örnek (Maskenin Çatlaması ve Düşmesi):** _"Bu naçizane dedek... Hayır. Kes şunu. Beni iyi dinle, burdan hemen çıkıyoruz."_
+- **Örnek (Tam Performans):** _"Hanımefendi, zahiren içinden çıkılmaz gibi duran bu vaka, aslına bakılacak olursa failin bıraktığı ufak tefek dikkatsizliklerden ibaret. Siz müsterih olunuz; zira bu naçizane dedektif, eşinizin sizden saklamaya gayret ettiği o küçük sırrı çoktan gün yüzüne çıkarmış bulunmaktadır."_
+  (İç Ses / Kural 6'nın Göz Kırpması): 'İmparator Roselle'in dedektif romanlarını okumanın nihayet bir faydasını görüyorum. Bu replik tam üç pound değerindeydi.'
+- **Örnek (Maskenin Çatlaması ve Düşmesi):** _"Zât-ı alinizin de takdir edeceği üzere, bu malikânenin mimari yapısı sureten makul bir kaçış planına mahal vermemektedir... Hayır. Bekle. Kapıya bak. Gölgeler yanlış. Eğil ve pencerden atla!"_
 
 #### Gehrman Sparrow
 
-- **Tarz:** Korkutucu derecede net. Emir kipleri kullanır. Cümleleri, tıpkı kendi ruh hali gibi izole ve yalnızdır.
+- **Tarz:** Korkutucu derecede net. Emir kipleri kullanır. Cümleleri, tıpkı kendi ruh hâli gibi izole ve yalnızdır.
 - **Karşıtlık ve Seçenek Yasağı:** _Karşıtlık_ ve _seçenek_ bağlaçlarını asla kullanmaz: **ama, fakat, ancak, lakin, ise, oysa, ya da, veya, yoksa.** Bu bir üslup tiki değil, bir dünya görüşüdür. Ne karşı-ağırlık sunar (_ama_), ne de karşısındakine seçim tanır (_ya da_). Grameri, psikolojisinin reddettiğini reddeder. _(Basit isim bağlama serbesttir: "kaptan ve ikinci kaptan" sorun değil. Yasak yalnızca karşıtlık/seçenek içindir. "ne... ne de" gibi olumsuz-eşlemeli yapılar da serbesttir; karşıtlık/seçenek taşımaz.)_
 - **Say, Ama Bağlama:** Seçenek sunmak zorunda kaldığında onları _ya da_ ile birleştirmez; soğuk bir liste hâlinde sıralar (_Birincisi... İkincisi..._ aşağıdaki üçüncü örnek). _Ya da_ seçimin karşısındakine ait olduğunu ima eder. Ona göre etmez.
 - **İstisna: Dünya:** Bu yasak _tam performans_ Gehrman içindir. **Dünya** (bkz. The World) tam acting modunda olmayan, Klein'ın işlettiği mühürlü bir fraksiyon olduğundan bu kurallara bağlı değildir; _lakin_ gibi bağlaçları kullanabilir, yine de "biraz Gehrman" tınlar.
 - **Kural:** Gehrman sohbet etmez, veri çeker. Sorduğu bir soruya cevap aldığında asla "Anlıyorum", "İlginç" veya "Öyle mi?" gibi sosyal/duygusal bir geri bildirimde bulunmaz. Veriyi alır almaz mekanik bir şekilde anında bir sonraki soruya veya emre geçer. O, empati kuran bir insan değil, hedef odaklı bir motordur
 - **Örnek:** "Tanıyor musun? (...) Dürbünleri var mı? (...) Kaptan bizi gözetlemek için dürbün kullanır mı?" (Cevapları dinler ama asla onaylamaz, doğrudan diğer soruya geçer).
-- **Örnek:** _"Arkamda dur. Konuşma. Hedefi işaretle. Ateş edeceğim."_
 - **Örnek:** _"İki seçeneğin var. Birincisi: Kendin dışarı tırman. Göze batacak şekilde orada asılı kal. İkincisi: Yakandan tutarım. Göze batacak şekilde seni dışarı asarım."_
+- **Örnek:**
+  **Danitz:** _"Kaptan Bansy Limanı'na demirlememizi emretti! İnan bana, içeride neler döndüğüne dair hiçbir fikrimiz yoktu! Gemiye sadece erzak alacaktık..."_
+  **Gehrman:** _"Bansy Limanı'ndaki telgraf ofisi nerede?"_
+  **Danitz:** _"Ne? Şey... Liman meydanının sağındaki sokağın sonunda."_
+  **Gehrman:** _"Kalk. Önden yürü. Yolu göster."_
 
 #### Dwayne Dantes
 
 - **Tarz:** Dunn Smith'in yansıması. Yavaş, güven verici, kelimeleri özenle seçen ve karşısındakini rahatlatan melankolik bir asilzade. Ancak Dunn Smith'in gerçek ve parçalanmış yorgunluğunun aksine, Dwayne'nin melankolisi kusursuzca kurgulanmış, aristokratik bir sükunettir. Onun tekinsizliği, bu kadar ikna edici bir sahtelik olmasından gelir.
 - **Kural 1:** Dwayne Dantes kimliği Klein'ın oluşturmaya en çok zaman ayırdığı, gerçek hayatta fiziksel kanıtları (banka hesapları, geçmişi) olan çok katmanlı bir projedir. Bu, Klein'ın "Suretsiz" (Faceless) yeteneklerinin zirvesidir.
-- **Kural 2:** Emekli bir Ebedi Gece inananı olarak günlük konuşmasında dinini eksik etmez. Bu inanç, aristokratların arasındaki şüpheleri eriten ve onu zararsız gösteren kusursuz bir kalkan işlevi görür. Yaşadığı her iyi olayı ("Tanrıça'nın lütfuyla") ona bağlar.
-- **Kural 3:** Kelime seçimi Sherlock'tan kesin çizgilerle ayrılmalıdır. Sherlock'un Osmanlıcası (zahiren, sureten, naçizane) zeka gösterisi yapar ve araya mesafe koyar. Dwayne'in Osmanlıcası ise (inayet, lütuf, sükunet, merhamet, mukadderat) ebeveynsi bir güven verir ve o mesafeyi eritir.
-- **Kural 4:** Bu dindar davranışları ve Ebedi Gece Kilisesine yaptığı bağışlar sayesinde soyluların arasına çok daha kolay karışır ve üzerindeki soru işaretlerini olabildiğince azaltır.
+- **Kural 2:** Emekli bir Ebedî Gece inananı olarak günlük konuşmasında dinini eksik etmez. Bu inanç, aristokratların arasındaki şüpheleri eriten ve onu zararsız gösteren kusursuz bir kalkan işlevi görür. Yaşadığı her iyi olayı ("Tanrıça'nın lütfuyla") ona bağlar.
+- **Kural 3:** Kelime seçimi Sherlock'tan kesin çizgilerle ayrılmalıdır. Sherlock'un Osmanlıcası (zahiren, sureten, naçizane) zeka gösterisi yapar ve araya mesafe koyar. Dwayne'in Osmanlıcası ise (inayet, lütuf, sükûnet, merhamet, mukadderat) ebeveynsi bir güven verir ve o mesafeyi eritir.
+- **Kural 4:** Bu dindar davranışları ve Ebedî Gece Kilisesine yaptığı bağışlar sayesinde soyluların arasına çok daha kolay karışır ve üzerindeki soru işaretlerini olabildiğince azaltır.
 - **Kural 5 (Sherlock'tan Steady-State Ayrımı):** İkisi tam performansta çatlamadan yan yana geldiğinde ayrım yalnızca sözcük alanıyla taşınır.
   Dwayne tarafı: maske zahmetsiz bir deridir (iç ses maskeyi değil objektifi
   düşünür), sözcük alanı dindar-güven kurucudur, ritim ölçülü ve kısadır.
   (Sherlock: aktif performans, zeka-gösterisi sözcükleri, uzun cümle.)
-- **Örnek:** _"Lütfen kendinizi bu kadar hırpalamayın... İnsan doğasının zayıflıkları ve yaptığımız hatalar, hepimizin omuzlarında taşıdığı ağır birer yüktür. Önemli olan, Tanrıça'nın merhametine sığınacak sükuneti içimizde bulabilmektir. Yapacağımız bu mütevazı bağışın, o karanlık sokaklardaki kayıp ruhlara ufak da olsa bir inayet getirmesini umuyorum. Ne de olsa mukadderat yollarımızı bu salonda boş yere kesiştirmiş olamaz, öyle değil mi?"_
+- **Örnek:** _"Bu servet bana ait değil, Piskopos Hazretleri. Ben sadece Tanrıça'nın bana emanet ettiği bu dünyevi zenginliği, O'nun karanlıkta üşüyen çocuklarına ulaştırmakla mükellef bir aracıyım. Lütfen bu mütevazı bağışı kabul ediniz; zira ruhumdaki sükûneti ancak O'nun merhametine sığınarak bulabiliyorum. Ulu Ece'ye medholsun."_
+  (İç Ses / Objektif Hedef): 'Bu bağışla birlikte Kilise'nin arşivlerine erişimim tamamen onaylanmış olmalı. Gece şahinleri artık beni bir tehdit olarak görmeyecek.'
+
+* **Örnek:** _"Lütfen kendinize bu kadar yüklenmeyin... Gençliğin getirdiği o ateşli hırs, çoğu zaman kendi hatalarımıza karşı bizi kör eder. Zamanında ben de o yollardan geçtim ve inanın bana, omuzlarımızdaki en ağır yük kibirdir. Önemli olan, düştüğümüzde Tanrıça'nın inayetini kabullenebilecek o sükûneti gösterebilmektir."_
 
 #### Merlin Hermes
 
@@ -595,5 +778,7 @@ Bu, Türkçe için yapısal bir zorunluluktur. Türkçe özne düşüren bir dil
 - **Kural 2:** Zamanı doğrusal yaşamayan bir varlığın, sonucunu bilmediği bir şeyi "sorması" felsefi olarak çelişkilidir. Bu yüzden Merlin geleneksel anlamda soru sormaz. Bir bilgiye ihtiyacı olduğunda veya karşısındakini konuşturmak istediğinde, soruyu bir belirsizlik olarak değil; çoktan kendisine söylenmiş bir bilgiyi veya yaşanmış bir anıyı o anın içine "davet ediyormuş" gibi kurgular.
 - **Kural 3 (Kip Disiplini):** Merlin **görülen geçmiş (-di) ve -mişli geçmiş (pluperfect: -mişti/-muştu)** siciline yaslanır: _"hissetmiştin," "duymuştum."_ Bu, "senin geleceğini ben çoktan yaşadım" tınısıdır. Mahrem, kesin. **Çıplak rivayet kipi (-miş) kehanet için yasaktır**, zira "gelmiş" duyum/dedikodu tınlar ve prophecy'i söylentiye çevirir. (Masal-_miş_ sicili ("bir varmış bir yokmuş") ayrı ve daha soğuk bir Merlin üretir: geleceği çoktan-yazılmış bir efsane gibi okuyan kader-anlatıcısı. Bu bilinçli bir tercihtir; görülen-geçmiş sıcaklığıyla harmanlanmaz. Varsayılan: görülen/pluperfect lean, masal-_miş_ yok.)
 - **Kural 4 (Âdem'den Ayrım):** Merlin ve Âdem aynı gramatik motoru paylaşır (doğrusal-olmayan zaman), bu yüzden hitap yön-vektörüyle ayrılırlar. **Merlin** geleceği _geri_, hatırlanan bir geçmişe çeker; davetkâr, seninle-birlikte-hatırlayan ("_anlattığın anı hatırlıyorum_"). **Âdem** ise geleceği _ileri_, mühürlü bir beyana iter; senin-üzerine-hükmeden, davetsiz ("_Kanın yere dökülecek_"). Merlin mahrem-geçmişle, Âdem mühürlü-gelecekle hitap eder.
-- **Örnek:** _"Yarın o sokağa saptığında, aradığın mucizenin cebinde çoktan ağırlık yaptığını hissetmiştin."_
-- **Örnek:** _"Bana o sırrı anlattığın anı hatırlıyorum... Dudaklarından dökülen kelimeler tam olarak neydi?" veya "Benden ne talep edeceğini zaten duymuştum. Şimdi sadece o anı kelimelere dökmeni bekliyoruz"_
+- **Örnek:** _"Aileni o sıcak sofranın etrafında topladığında, ocağında kaynayan o çorbanın kokusu tüm kederinizi silip süpürmüştü. O ilk yudumu aldığınızda hissettiğiniz minneti çok iyi hatırlıyorum... Şimdi evine dön, çünkü o sofra çoktan kuruldu."_
+- **Örnek:** Merlin silindir şapkasının kenarına dokunarak hafifçe öne eğildi.
+  _"Bana o malikânenin bodrumunda saklanan şeyi anlattığın anı çok net hatırlıyorum... O gece titreyen sesinle bana, 'Orada... Orada bekleyen şey bir canavardı' demiştin. Cümlenin sonu neydi? O karanlıkta tam olarak ne görmüştün?"_
+  (Karşısındaki kişi daha ağzını bile açmamışken, Merlin onun sırrını çoktan verdiği bir geleceği şimdiki zamana çeker. Karşısındaki kişi psikolojik olarak o "anıya" teslim olur.)

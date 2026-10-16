@@ -28,15 +28,15 @@ Bu yüzden romandaki en ağdalı sicil bir ilaha değil, **bir sahtekâra** aitt
 
 Bir varlığın hangi uçta durduğu değil, **kaç sicil arasında gezinebildiği** belirleyicidir.
 
-| Varlık         | Menzil                | Konum                              | Sebep                                                                                                                                                                          |
-| -------------- | --------------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Âdem**       | sıfır                 | Divan'a kilitli                    | Bin yıldır sürdürülen mutaassıp kılığı. Kendi iç muhasebesinde bile mühürlü konuşur. **Rol giyeni yemiştir.**                                                                  |
-| **Amon**       | sıfır                 | Gündeliğe kilitli                  | Ne makam ne benlik. İnsanlık değil, **boşluk**. Görünür çeşitliliği menzil değildir; bkz. aşağıdaki not.                                                                       |
-| **Pallez**     | sıfır                 | Gündeliğe kilitli                  | Saklanan, mevkisi kalmamış bir melek. Amon'dan farkı: Amon'un rahatlığı yük taşır, Pallez'inki taşımaz.                                                                        |
-| **Medici**     | dar ama gerçek        | Soğuk-araçsal ↔ hakiki kanaat      | Ölmüş bir Rabbin makamını temsil eder. Davası anıldığında düşer.                                                                                                               |
-| **Lamba Cini** | gerçek                | Alaycı ↔ _kanun ilan eder gibi_    | Pazarlık ederken lâubali, akit bağlanırken ağır. **Ağdalılık icra edilen işleve bağlıdır, mertebeye değil.** Bu ton farklılığı kitapta açıkça belirtilir.                      |
-| **Ebedi Gece** | dar (suskunluk ↔ söz) | Sadeye kilitli                     | Hakiki ilahın ağdalanmaya ihtiyacı yoktur (bkz. 1.06). Menzili sade ↔ ağdalı ekseninde değil, **susmak ↔ konuşmak** ekseninde işler; Gizlenmenin Anası'nın kendi ekseni budur. |
-| **Klein**      | romandaki en geniş    | Divan → sade → ev içi → tek kelime | Müminlere Divan, akranlara sade, Melissa'ya ev içi, aynaya tek kelime.                                                                                                         |
+| Varlık         | Menzil                | Konum                              | Sebep                                                                                                                                                                         |
+| -------------- | --------------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Âdem**       | sıfır                 | Divan'a kilitli                    | Bin yıldır sürdürülen mutaassıp kılığı. Kendi iç muhasebesinde bile mühürlü konuşur. **Rol giyeni yemiştir.**                                                                 |
+| **Amon**       | sıfır                 | Gündeliğe kilitli                  | Ne makam ne benlik. İnsanlık değil, **boşluk**. Görünür çeşitliliği menzil değildir; bkz. aşağıdaki not.                                                                      |
+| **Pallez**     | sıfır                 | Gündeliğe kilitli                  | Saklanan, mevkisi kalmamış bir melek. Amon'dan farkı: Amon'un rahatlığı yük taşır, Pallez'inki taşımaz.                                                                       |
+| **Medici**     | dar ama gerçek        | Soğuk-araçsal ↔ hakiki kanaat      | Ölmüş bir Rabbin makamını temsil eder. Davası anıldığında düşer.                                                                                                              |
+| **Lamba Cini** | gerçek                | Alaycı ↔ _kanun ilan eder gibi_    | Pazarlık ederken lâubali, akit bağlanırken ağır. **Ağdalılık icra edilen işleve bağlıdır, mertebeye değil.** Bu ton farklılığı kitapta açıkça belirtilir.                     |
+| **Ebedî Gece** | dar (suskunluk ↔ söz) | Sadeye kilitli                     | Hakiki ilahın ağdalanmaya ihtiyacı yoktur (bkz. 1.06). Menzili sade ↔ ağdalı ekseninde değil, **susmak ↔ konuşmak** ekseninde işler; Gizliliğin Anası'nın kendi ekseni budur. |
+| **Klein**      | romandaki en geniş    | Divan → sade → ev içi → tek kelime | Müminlere Divan, akranlara sade, Melissa'ya ev içi, aynaya tek kelime.                                                                                                        |
 
 **Menzil = insanlık.** Âdem sıfır menzille ağdalı uçta, Amon sıfır menzille sade uçta kilitlidir; ikisi de gayriinsanidir. Klein'ı insan yapan hangi sicilde durduğu değil, **arada gezinebilmesidir**.
 
@@ -53,9 +53,9 @@ Bir varlığın hangi uçta durduğu değil, **kaç sicil arasında gezinebildi�
 - **Menzili sıfır olan varlığa tek satır yeter:** hangi uçta kilitli ve neden.
 - **Menzili olan varlığa küçük bir harita gerekir:** varsayılan hücre, diğerini ne açar, geçiş neyi açığa çıkarır.
 - **Klein'ın 6. Aşamadaki sadeleşmesi bir üslup tercihi değildir.** Metin sebebi söyler: bu kez yüksek mertebeli bir persona **kurmaz, çünkü artık Gerçek Soytarı'dır.** Mesafe kapanır, ağdalılık düşer. Divan Kuralı ile Aşama 6 aynı mekanizmanın iki ucudur.
-- **Yükseklik ile alan bağımsızdır.** Amon: yükseklik sıfır, Yağmacı alanı azami yoğunlukta (bkz. Bölüm II). Bir varlık ağdalanmadan da yolunun diliyle konuşabilir.
+- **Yükseklik ile alan bağımsızdır.** Amon: yükseklik sıfır, Kapkaççı alanı azami yoğunlukta (bkz. Bölüm II). Bir varlık ağdalanmadan da yolunun diliyle konuşabilir.
 
-### 1.06 Karar: Ebedi Gece Tanrıçası — her yerde sade
+### 1.06 Karar: Ebedî Gece Tanrıçası — her yerde sade
 
 `kaynak: metin | mudahale: ozgun | denetim: tamam`
 
@@ -69,7 +69,7 @@ Bir varlığın hangi uçta durduğu değil, **kaç sicil arasında gezinebildi�
 
 **İnşa yolu.** Tanrıça'nın sade sicili düz veya renksiz demek değildir. Söz varlığı **kendi Tazim İsminden** türetilir: kozmos, ebediyet, gizlenme, talihsizlik, dehşet. Cümleler kısa ve sakin kurulur; imge yükünü bu alan taşır. Böylece bir yolun yüksek sicili ile ilahının dili aynı kaynaktan beslenir. Biri diğerinin devamıdır.
 
-**Erken dönem sicili suskunluktur.** Klein'a ilk yardımlarında Tanrıça konuşmaz: göz kırpar, mühürlü esere iner, yardım eder, susar. **Gizlenmenin Anası'nın ayin dili budur.** Menzili de burada işler: susmak ile konuşmak arasında, sade ile ağdalı arasında değil. Bu yüzden Tanrıça'nın konuştuğu her an bir şeyin verildiği andır; konuşmanın kendisi lütuftur.
+**Erken dönem sicili suskunluktur.** Klein'a ilk yardımlarında Tanrıça konuşmaz: göz kırpar, mühürlü esere iner, yardım eder, susar. **Gizliliğin Anası'nın ayin dili budur.** Menzili de burada işler: susmak ile konuşmak arasında, sade ile ağdalı arasında değil. Bu yüzden Tanrıça'nın konuştuğu her an bir şeyin verildiği andır; konuşmanın kendisi lütuftur.
 
 > **Aşağı yön hakkında.** 1.03'teki boşluk bu kararla kapanmaz, yalnızca tahsis edilmiş olur: aşağı yön **sadedir**. Bir kural değil, bir karardır ve öyle işaretlenmiştir.
 
@@ -89,19 +89,19 @@ Bir varlığın hangi uçta durduğu değil, **kaç sicil arasında gezinebildi�
 
 Esrarın Hükümdarı'nın üç yolu, Türkçenin üç ayrı morfolojik sisteminden beslenir. Bu, kaynağın veremediği bir imkândır: İngilizce ve Çince bu ayrımları sözdizimiyle kurmak zorundadır, Türkçe ekle kurar.
 
-| Yol         | Kadir-i Mutlak parçası | Yerli imkân           |
-| ----------- | ---------------------- | --------------------- |
-| **Kâhin**   | _Ben herkesim_         | ek-fiil (yüklemleşme) |
-| **Yağmacı** | _Herkes benim_         | iyelik eki            |
-| **Çırak**   | _Ben her yerdeyim_     | uzamsal hâl ekleri    |
+| Yol          | Kadir-i Mutlak parçası | Yerli imkân           |
+| ------------ | ---------------------- | --------------------- |
+| **Kâhin**    | _Ben herkesim_         | ek-fiil (yüklemleşme) |
+| **Kapkaççı** | _Herkes benim_         | iyelik eki            |
+| **Çırak**    | _Ben her yerdeyim_     | uzamsal hâl ekleri    |
 
 **Kazanç:** İlk iki düstur Türkçede **birbirinin aynası olur** ve aynı morfemi paylaşır. Kaynak metinde bulunmayan bu kafiye, üç yolun akraba duyulması gereğini (bkz. 1.14) kendiliğinden sağlar.
 
-> **Tehlike — 1. tekil şahısta çakışma.** Türkçede ek-fiil ile iyelik eki 1. tekilde eşseslidir: _"Gehrman Sparrow'um"_ hem "Gehrman Sparrow benim" hem "benim Gehrman Sparrow'um" okunur. Kâhin imzası (yüklem) ile Yağmacı imzası (iyelik) tam da ayrılmaları gereken yerde yüzeyde birleşir.
+> **Tehlike — 1. tekil şahısta çakışma.** Türkçede ek-fiil ile iyelik eki 1. tekilde eşseslidir: _"Gehrman Sparrow'um"_ hem "Gehrman Sparrow benim" hem "benim Gehrman Sparrow'um" okunur. Kâhin imzası (yüklem) ile Kapkaççı imzası (iyelik) tam da ayrılmaları gereken yerde yüzeyde birleşir.
 >
-> **Kural:** 1. tekil şahısta ayrım **ekten değil, söz diziminden** okunur. Kâhin kimliği _yüklem konumuna_, Yağmacı _nesne veya tamlayan konumuna_ koyar. Diğer bütün şahıs ve hâllerde ekler zaten ayrışır.
+> **Kural:** 1. tekil şahısta ayrım **ekten değil, söz diziminden** okunur. Kâhin kimliği _yüklem konumuna_, Kapkaççı _nesne veya tamlayan konumuna_ koyar. Diğer bütün şahıs ve hâllerde ekler zaten ayrışır.
 >
-> **İstisna — Klein.** Bu belirsizlik onun için _doğrudur_. Kâhin yolundadır ve Sefirah Kalesi üzerinden Yağmacı salahiyeti taşır. Aynı anda iki yol gibi duyulması gereken tek karakter odur.
+> **İstisna — Klein.** Bu belirsizlik onun için _doğrudur_. Kâhin yolundadır ve Sefirah Kalesi üzerinden Kapkaççı salahiyeti taşır. Aynı anda iki yol gibi duyulması gereken tek karakter odur.
 
 ---
 
@@ -123,17 +123,17 @@ Esrarın Hükümdarı'nın üç yolu, Türkçenin üç ayrı morfolojik sistemin
 
 **Kolonizasyon ölçütü.** Kimlikle ilgisi olmayan bir şeyin ikame terimleriyle tarif edilmesi: bir kararın takılan bir yüz gibi, bir olgunun bir maske gibi, bir çağın kılık değiştirmiş biri gibi anılması.
 
-**Ayırt edici (Yağmacı'ya karşı):** Kâhin **yüklem**dir, Yağmacı **iyelik**. Kâhin _ben o olurum_ der; Yağmacı _o benim olur_ der.
+**Ayırt edici (Kapkaççı'ya karşı):** Kâhin **yüklem**dir, Kapkaççı **iyelik**. Kâhin _ben o olurum_ der; Kapkaççı _o benim olur_ der.
 
 ---
 
-### 1.12 Yağmacı Yolu: "Herkes benim"
+### 1.12 Kapkaççı Yolu: "Herkes benim"
 
 `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
 **Yetki:** hırsızlık ve gedik. _Bug_; kaderin Truva atı, vakti kemiren kurt, kaidelerdeki gedikler, bütün hataların tecessümü.
 **Kadir-i Mutlak parçası:** _Herkes benim._ Başkaları içeri doğru çekilir.
-**Açan/kapayan yarılar:** `eklenecek` — Kâhin (Değişim/Sır) ve Çırak (Kapı/Mühür) net bir çift beyan eder; Yağmacı etmez. Muhtemel karşılık **Hırsızlık / Hile**'dir (Amon *Aldatma İlahı*dır, Hırsızlık İlahı değil), fakat bu çıkarımdır, atıf değil.
+**Açan/kapayan yarılar:** `eklenecek` — Kâhin (Değişim/Sır) ve Çırak (Kapı/Mühür) net bir çift beyan eder; Kapkaççı etmez. Muhtemel karşılık **Hırsızlık / Hile**'dir (Amon *Aldatma İlahı*dır, Hırsızlık İlahı değil), fakat bu çıkarımdır, atıf değil.
 
 **Gramatik imza:**
 
@@ -155,7 +155,7 @@ Esrarın Hükümdarı'nın üç yolu, Türkçenin üç ayrı morfolojik sistemin
 
 **Amon'un tavrı buradan çıkar.** Kaderden gündelik bir tonda söz eder çünkü **onun için kader bir eşyadır.** Sicil yüksekliği sıfır, alan yoğunluğu azami. Bu ikisinin bir arada bulunabilmesi, yükseklik ile alanın bağımsız olduğunun kanıtıdır.
 
-**Ayırt edici (Çırak'a karşı):** Yağmacı sınırın **içindekini alır**; Çırak **sınırı geçer**.
+**Ayırt edici (Çırak'a karşı):** Kapkaççı sınırın **içindekini alır**; Çırak **sınırı geçer**.
 
 ---
 
@@ -180,30 +180,30 @@ Esrarın Hükümdarı'nın üç yolu, Türkçenin üç ayrı morfolojik sistemin
 
 **Ayırt ediciler:**
 
-- **Yağmacı'ya karşı:** Yağmacı sınırın içindekini alır; Çırak sınırı geçer. Biri mülkiyet, diğeri güzergâh.
+- **Kapkaççı'ya karşı:** Kapkaççı sınırın içindekini alır; Çırak sınırı geçer. Biri mülkiyet, diğeri güzergâh.
 - **Kâhin'e karşı:** Kâhin _neyin ne olduğunu_ oynatır; Çırak _neyin nereye açıldığını_. Kimlik değil, topoloji.
 
 ---
 
 ### 1.14 Ortak Zemin (Esrarın Hükümdarı imzası)
 
-**Ortak ihlal.** Üç yol da aynı gayrimeşru işi yapar: **sabit olması gerekene işlem uygular.** Kâhin kimliğe ve idrake, Yağmacı soyutlamalara, Çırak mekân ve hâle. Klein bunu metinde bizzat fark eder: Kâhin ve Yağmacı yollarını en tuhaf yollar sanmıştır... ta ki Seyirci'yle karşılaşana dek.
+**Ortak ihlal.** Üç yol da aynı gayrimeşru işi yapar: **sabit olması gerekene işlem uygular.** Kâhin kimliğe ve idrake, Kapkaççı soyutlamalara, Çırak mekân ve hâle. Klein bunu metinde bizzat fark eder: Kâhin ve Kapkaççı yollarını en tuhaf yollar sanmıştır... ta ki Seyirci'yle karşılaşana dek.
 
 Kâhin ne yapıldığını gizler; Çırak nerede olduğunu. Biri faili örter (edilgen yapı, kişisiz çatı), diğeri erişimi kapatır (mühür, kapama, menfez yokluğu). Aynı sahnede ikisi birden görünürse ayrım budur.
 
 **Ortak yapı: açan yarı / kapayan yarı.** Her yol, Esrarın Hükümdarı'nın _Kadir-i Mutlaklık ve Esrar_ çiftini kendi ölçeğinde tekrarlar:
 
-| Yol         | Açan yarı (Kadir-i Mutlaklık) | Kapayan yarı (Esrar)          |
-| ----------- | ----------------------------- | ----------------------------- |
-| **Kâhin**   | Değişim                       | Sır                           |
-| **Yağmacı** | Hırsızlık                     | `eklenecek` (muhtemelen Hile) |
-| **Çırak**   | Kapı                          | Mühür                         |
+| Yol          | Açan yarı (Kadir-i Mutlaklık) | Kapayan yarı (Esrar)          |
+| ------------ | ----------------------------- | ----------------------------- |
+| **Kâhin**    | Değişim                       | Sır                           |
+| **Kapkaççı** | Hırsızlık                     | `eklenecek` (muhtemelen Hile) |
+| **Çırak**    | Kapı                          | Mühür                         |
 
 Esrarın Hükümdarı, bu altı yarının tamamını aynı anda taşıyan varlıktır. Üç düsturun birleşimi de bunu söyler: **"Ben herkesim. Herkes benim ve ben her yerdeyim."**
 
 **Yazım sonucu.** Üçünün Türkçesi **akraba duyulmalıdır**; ayrım, sabit olanın hangi kategorisini açtıkları ve hangi morfolojiyle açtıklarındadır (bkz. _Üç yerli morfoloji_).
 
-**Klein'ın konumu.** Romandaki en geniş palete sahiptir (Kâhin + Sefirah Kalesi üzerinden Yağmacı ve Çırak salahiyeti + taşıdığı bütün kimlikler) ve **hiçbiri onu kolonize etmez.** Ayin iktisadından ayin terimleriyle, kardeşinin yemeğinden mutfak terimleriyle söz eder. _Menzil = insanlık_ burada söz varlığı düzeyinde tekrarlanır: **en çok yolu taşıyan adam, hiçbirine ait olmayan adamdır.**
+**Klein'ın konumu.** Romandaki en geniş palete sahiptir (Kâhin + Sefirah Kalesi üzerinden Kapkaççı ve Çırak salahiyeti + taşıdığı bütün kimlikler) ve **hiçbiri onu kolonize etmez.** Ayin iktisadından ayin terimleriyle, kardeşinin yemeğinden mutfak terimleriyle söz eder. _Menzil = insanlık_ burada söz varlığı düzeyinde tekrarlanır: **en çok yolu taşıyan adam, hiçbirine ait olmayan adamdır.**
 
 ---
 
@@ -212,8 +212,8 @@ Esrarın Hükümdarı, bu altı yarının tamamını aynı anda taşıyan varlı
 `denetim: eklenecek`
 
 | #   | Madde                                | Gereken                                                                                                                                                                                                                                   |
-| --- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 1   | **Planeswalker (Mertebe 2, 旅法师)** | 旅法师'ın Magic: The Gathering'in Çince karşılığı olup olmadığı doğrulanmalı. Öyleyse bu **kaynaktaki** modern bir gönderme (Roselle katmanı) ve Türkçesi hafifçe yamuk durmalı. Değilse yalnızca "seyyah efsuncusu"dur ve sade çevrilir. |
 | 2   | **`sicil` çakışması**                | Belge `sicil`i teknik terim olarak (konuşma sicili) kullanıyor. Çırak alanının arşiv tabakası da aynı kelimeyi ister. Çözüm: Çırak alanından `sicil` çıkarılır, yerine _kütük / zabıt / defter_.                                          |
-| 3   | **Yağmacı'nın kapayan yarısı**       | **Yağmacı'nın kapayan yarısı**                                                                                                                                                                                                            | Kanonik bir çift beyanı aranmalı. Bulunamazsa `mudahale: tamamlama` ile **Hile** yazılır ve öyle işaretlenir. **Ayrım kaydı:** Soytarı'nın salahiyeti _Kandırma_, Yağmacı'nın kapayan yarısı _Hile_'dir; ikisi ayrı yollara aittir ve bulanmamalıdır. **Kandırma yanlış olanı hakikat kılar; Hile hâlihazırda hakikat olandaki gediği kullanır.** Amon'un tazim isminde _hilekârlık_ ve _aldatmaca_ bulunması bir çakışma değil, beklenen sonuçtur: yolun karakterini tepesindeki tasarlar (bkz. 1.1), dolayısıyla Yağmacı alanının Amon'un diliyle örtüşmesi yapısal olarak doğrudur. Örtüşmemesi gereken tek çift Kandırma ↔ Hile'dir. |
+| 3   | **Kapkaççı'nın kapayan yarısı**      | **Kapkaççı'nın kapayan yarısı**                                                                                                                                                                                                           | Kanonik bir çift beyanı aranmalı. Bulunamazsa `mudahale: tamamlama` ile **Hile** yazılır ve öyle işaretlenir. **Ayrım kaydı:** Soytarı'nın salahiyeti _Kandırma_, Kapkaççı'nın kapayan yarısı _Hile_'dir; ikisi ayrı yollara aittir ve bulanmamalıdır. **Kandırma yanlış olanı hakikat kılar; Hile hâlihazırda hakikat olandaki gediği kullanır.** Amon'un tazim isminde _hilekârlık_ ve _aldatmaca_ bulunması bir çakışma değil, beklenen sonuçtur: yolun karakterini tepesindeki tasarlar (bkz. 1.1), dolayısıyla Kapkaççı alanının Amon'un diliyle örtüşmesi yapısal olarak doğrudur. Örtüşmemesi gereken tek çift Kandırma ↔ Hile'dir. |
 | 4   | **Kör Ahmaklık (盲目痴愚)**          | Azathoth'un Türkçe yayımlanmış çevirilerindeki karşılığı kontrol edilmeli; tanınma bu kalıba bağlıdır.                                                                                                                                    |

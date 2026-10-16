@@ -99,11 +99,11 @@ _...Sebeplerden biri, Şeytaniçe iksirlerini sindirip ayin düzenlemek adına b
 
 _O halde, III. George'un Şeytaniçe Tarikatı ile işbirliği yaptığını bilen yedi ilahın "O'nun" Kara İmparator makamına oturmasına göz yummaması gerekir..._
 
-_Vaat başka bir emel üzerine mi kurulu? Şeytaniçe yolunun zaten hakiki bir tanrısı var ve dışarıda çok az kıymetli nesne kalmış olmalı... Benzer yollar mı? Kızıl Rahip yolu... III. George-hayır, Amon'un kardeşi Kara İmparator için elzem olan gizli mozoleyi Kan İmparatoru Alista Tudor'dan öğrenmekle kalmamış, aynı zamanda Kızıl Rahip yolunun melek mertebesindeki Aşkın karakteristiklerini yahut 0. Derece Mühürlü Eserlerini de mi ele geçirmiş?_
+_Vaat başka bir emel üzerine mi kurulu? Şeytaniçe yolunun zaten hakiki bir tanrısı var ve dışarıda çok az kıymetli nesne kalmış olmalı... Benzer yollar mı? Ahmer Hünkar yolu... III. George-hayır, Amon'un kardeşi Kara İmparator için elzem olan gizli mozoleyi Kan İmparatoru Alista Tudor'dan öğrenmekle kalmamış, aynı zamanda Ahmer Hünkar yolunun melek mertebesindeki Aşkın karakteristiklerini yahut 0. Derece Mühürlü Eserlerini de mi ele geçirmiş?_
 
 _0. Mertebe'nin mevcudiyeti 1. Mertebe'ye giden yolu kapattığına göre, Şeytaniçe Tarikatı'nın üst kademelerinin mertebe atlamak için ellerindeki en büyük umut bu olmalı. Tabii, Kadim Şeytaniçe de bu mevzuyla epey alakadar olmalı..._
 
-_Şeytaniçe Tarikatı'nın bu desteği ardındaki maksat böylece aydınlanıyor... Kızıl Melek habis ruhu, Beyazın Azizesi Katarina'yı arıyor ve bu hiç de "O'nun" iddia ettiği kadar basit bir meseleye benzemiyor... Hayır, zaten "O" beni bu şekilde düşünmeye sevk etmek adına genelgeçer bilgileri ve tepkilerimi kullanmak dışında başka tek bir laf dahi etmemişti..._
+_Şeytaniçe Tarikatı'nın bu desteği ardındaki maksat böylece aydınlanıyor... Ahmer Melek habis ruhu, Beyazın Azizesi Katarina'yı arıyor ve bu hiç de "O'nun" iddia ettiği kadar basit bir meseleye benzemiyor... Hayır, zaten "O" beni bu şekilde düşünmeye sevk etmek adına genelgeçer bilgileri ve tepkilerimi kullanmak dışında başka tek bir laf dahi etmemişti..._
 
 Klein'ın zihnindeki sis perdesi giderek aralandı. Beyazın Azizesi Katarina'yı bir kırılma noktası olarak belirleyip onu bir sonraki hedefi haline getirmeye karar verdi. Ne var ki bundan evvel, Gizem Kraliçesi'nin öngörülerini bizzat dinlemesi gerekiyordu. Backlund'daki emellerini kendi ağzından işitmek istiyordu.
 

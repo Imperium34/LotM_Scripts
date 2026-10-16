@@ -1,5 +1,5 @@
 ---
-name: lotm-chapter-template
+name: "lotm-chapter-template"
 description: "Generate a secondary prompt (Bölüm Açılış Şablonu) for Lord of the Mysteries / Gizemlerin Efendisi Turkish translation, carrying the chapter's active glossary terms, frozen lines, voice maps, address table and translation traps. Use this whenever the user supplies an LotM chapter (Chinese, English or both) together with any of sozluk.yml, Klein.md, Side_Character_Maps.md, words.md, Schema.md or the Sabit Çekirdek system prompt, or asks for a chapter template, opening template, şablon, or chapter prep for LotM translation — even if they phrase it casually as 'can you do this chapter'."
 ---
 
@@ -59,6 +59,8 @@ Read the term index in full rather than grepping a hand-made keyword list. A mis
 
 **Sweep receipt.** Report one line to the user in chat (not in the template): candidates extracted, glossary hits, new coinages. A process nobody can see is a process that gets skipped.
 
+**The bolum_siniri value of a term are not binding.** You can use words that are set to have a bolum_siniri of 300 on chapter 30 as that value is for when the term is *explained* not when it first appears.
+
 ---
 
 ## Section-by-section method
@@ -99,6 +101,8 @@ _E-4 Inner-voice boundary._ Chinese writes long stretches of free indirect disco
 **E — budget allocation.** The core rations the gothic vocabulary and supplies verb-selection tables, but has no map of where this chapter's spending goes. Name the paragraph ranges that carry the atmospheric peaks and the stretch that must be left **starved**, since contrast is what the peaks are made of. Two cautions: the period vocabulary is the floor and is never rationed, so it does not enter the allocation; and an _emotional_ climax is not a gothic peak — if the chapter has one, say that it must stay lexically plain. If the chapter's own subject matter forces a pile-up of perception verbs (a chapter about seeing, listening, realising), say so and give a strategy — shift perception into bodily reaction, or drop the act entirely — because the core forbids repetition without knowing the chapter will demand it.
 
 **Do not decide house format.** Sequence notation, artifact grades, number and clock style, apostrophes, the quotation marks the Chinese puts around codenames and personas, authorial tildes in dialogue, and the fate of English translator footnotes are settled in the core and apply to every chapter. Restating them wastes the translator's context; contradicting them creates a conflict the translator must resolve mid-scene.
+
+**The template has a second reader.** `kapanis_denetle.py` parses A.1, A.2, A.3 and B and checks the finished chapter against them. Those cells are therefore machine input, and a cell written for a human reader is searched literally: prose in a Turkish cell becomes a string that never matches, a ban that is also the start of a legitimate word fires on every chapter, a count that ignores capitalization fails. The **Makine sözleşmesi** in the spec defines the grammar and is as binding as the headings. Run its closing self-check before delivering, and deliver the file as `Ch_<N>.md`.
 
 **The closing audit list.** The template ends with a five-item mechanical checklist the translator runs _after_ finishing: Latin script, italics, frozen lines, terms, quotation marks. Keep it mechanical — nothing on it may require rewriting prose. Two items carry this chapter's numbers (the italic ¶ lists, the count of frozen lines); the rest are fixed. Its value is separation: these checks compete with sentence-level judgement when run in the same pass, and lose.
 

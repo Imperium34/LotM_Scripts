@@ -23,7 +23,7 @@
 
 **Türkçesi görünmez olmalıdır.** Derin bulaşma okura yabancı gelmemeli; dünyanın kendi kadim kutsal dili gibi duyulmalıdır. Okur ancak _düşününce_ fark etmelidir. Çernobil ifşasının bütün gücü buna bağlıdır: Klein'ın onlarca bölüm boyunca yanından geçtiği şeylerin ne olduğunu birdenbire anlaması gerekir.
 
-**Tek istisna: metnin kendisi işaretlediğinde.** Amon _Bug_ kelimesini "menşei meçhul, tuhaf bir kelime" diye takdim eder. Metin onu yabancı olarak işaretlediği için Türkçe de yabancı bırakmalıdır (Latin harfleriyle, çekimsiz, tırnak içinde).
+**Tek istisna: metnin kendisi işaretlediğinde.** Amon _Bug_ kelimesini "menşei meçhul, tuhaf bir kelime" diye takdim eder. Metin onu yabancı olarak işaretlediği için Türkçe de yabancı bırakmalıdır (Latin harfleriyle, çekimsiz).
 
 ### Sığ bulaşma — Roselle (Dördüncü/Beşinci Çağ)
 
@@ -67,9 +67,7 @@ Zaten başkalarının tortusundan yapılmış bir dünyada, hiçbir tortu bırak
 
 **Sonuç 2 — Bu, Rol İfası'nın nüfus ölçeğidir.** Yolun biçimi onu içen kişiyi ele geçirir. Klein'ın 607'de tek bir kelimede yaşadığı şey (bkz. Klein dosyası, Bölüm 6), hiç direnmemiş bütün bir nüfusta dört çağ boyunca sonuna kadar işlemiş hâlidir.
 
-**Sonuç 3 — Kâhin, Yağmacı ve Çırak yollarını Esrarın Hükümdarı tasarlamıştır.** Klein'ın bütün aletleri, içinde uyanmaya çalışan varlığın eseridir.
-
-> **Bunun içine Oyunculuk Metodu da girer.** 607'de iç sesini neredeyse ele geçiren mekanizma, önceki sahibin tasarımıdır ve tasarlandığı gibi çalışmaktadır — hem de nihayetinde kimin için tasarlandıysa onun üzerinde. _Bölüm 6'ya çevirmen notu olarak eklenmeli._
+**Sonuç 3 — Kâhin, Kapkaççı ve Çırak yollarını Esrarın Hükümdarı tasarlamıştır.** Klein'ın bütün aletleri, içinde uyanmaya çalışan varlığın eseridir.
 
 **Açık soru.** Aynı tasarımcıyı paylaşan üç yolun Türkçesi, Ölüm veya Karanlık'la paylaşmadıkları bir ortak zemin taşımalı mı? (bkz. Divan Kuralı 1.14 — _akraba duyulmalıdır_.) Şu an bu, üç yol için ifade edilmiş fakat komşu yol ailelerine karşı sınanmamıştır.
 

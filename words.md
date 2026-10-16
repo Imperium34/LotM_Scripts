@@ -1,259 +1,283 @@
+# I. Kozmoloji, Din & Mistisizm
+
 ## Cosmology & Time
 
-- **Yaradan** — the Creator
-- **Hercümerç** — the primordial chaos state
-- **Epochs:** Kaos Çağı (1st) → Helak Çağı (3rd) → Tanrılar Çağı (4th) → Demir Çağı (5th, current)
+- **Yaradan** — the Creator (造物主)
+- **Heyûlâ** — the primordial chaos state (混沌)
+- **Epochs:** Heyûlâ Çağı (第一纪) → Karanlık Çağ (第二纪 / 黑暗纪元) → Helak Çağı (第三纪 / 灾变纪元) → İlahlar Çağı (第四纪) → Demir Çağı (第五纪, current)
+- **Karanlık Çağ** — Dark Epoch, Second Epoch (第二纪 / 黑暗纪元); insanlığın karanlık çağı, gök, deniz ve karada ejderlerin, devlerin, elflerin hüküm sürdüğü devir; "Karanlık" Mertebe adıyla aynı kelime, Çince de aynı 黑暗'yı kullanır _180_
+- **Helak Çağı** — Cataclysm Epoch, Third Epoch (第三纪 / 灾变纪元) _60_
+- **Şaşaa Devri** — Glorious Era (光辉年代); Helak Çağı'nın başlangıcı; "Çağ" 纪/纪元'ye, "Devir" 年代'ya ayrılı; "Nur" Güneş Kilisesi'nin akoruna ayrılı olduğu için kullanılmaz; İng. çeviri bu devri Helak'la birleştirir, yanlış
+- **Büyük Helak** — the Great Cataclysm (大灾变); Şaşaa Devri'nden sonra gelen felaket; Helak Çağı adını ondan alır
+- **İlahlar Çağı / Dördüncü Çağ** — Fourth Epoch (第四纪); 9'da "İlahlar Çağı olarak da bilinen Dördüncü Çağ"; sıra adı ile tema adı eşanlamlı, "Beşinci Çağ / Demir Çağı" gibi _9_
 
 ## Religion / Church
 
-- **Ebedi Gece Tanrıçası** — Evernight Goddess
-- **Ebedi Gece Ulusu** — Evernight Nation (mountain nation)
-- **Ebedi Gece Tanrıçası Kilisesi** — Evernight Church (教会)
+- **Ebedî Gece Tanrıçası** — Evernight Goddess (黑夜女神)
+- **Ebedî Gece Kilisesi / Ebedî Gece Tanrıçası Kilisesi** — Evernight Church (黑夜女神教会)
   - Kilise = 教会 (kurum) / Katedral = 大教堂 (yapı)
-- **Azize Selena Katedrali** — Tingen HQ of the Evernight Church
-- **Kutsal Katedral** — Church's central/Holy Cathedral (Kış Kontluğu)
-- **Sükûnet Katedrali** — Cathedral of Serenity
-- **Kutsal Sayılar Katedrali** — Buhar ve Çarkların İlahı's cathedral
-- **Nehir ve Deniz Katedrali** — Fırtınalar Hakimi's cathedral
-- **Karanlık Mukaddesat Amblemi** — the dark-sigil motif
-- **Ebedi Gece'nin Vahyi** — kadim bir kaynak metin (夜之启示录)
+- **Azize Selena Katedrali** — Tingen HQ of the Evernight Church (圣赛琳娜教堂)
+- **Kutsal Katedral** — Church's central/Holy Cathedral (圣堂; Kış Kontluğu)
+- **Sükûnet Katedrali** — Cathedral of Serenity (宁静教堂)
+- **Kutsal Sayılar Katedrali** — Buhar ve Çarkların İlahı's cathedral (圣数教堂)
+- **Nehir ve Deniz Katedrali** — Fırtınalar Hakimi's cathedral (河海教堂)
+- **Azize Arianna Katedrali** — Saint Arianna Church; Klein'ın asıl bedeninin yattığı yapı (圣阿里安娜教堂)
+- **Karanlık Mukaddesat Amblemi** — the dark-sigil motif (黑暗圣徽)
+- **Ebedî Gece Vahyi** — kadim bir kaynak metin (夜之启示录)
 - **Fırtınalar Kitabı** — kadim bir kaynak metin (风暴之书)
 - **Chanis Kapısı** — Chanis Gate/Door; Gece Şahinleri'nin Tingen karargâhının girişi, Başpiskopos Chanis'e ithafen adlandırılmış (查尼斯门)
-
-## Organizations & Systems
-
-- **Hususi Operasyonlar Dairesi** — Special Operations Bureau
-- **Karadiken Güvenlik Şirketi** — Blackthorn Security Company
-- **Mühürlü Eserler** — Sealed Artifacts
-  - **Classification:** Sınıf 0 (Son Derece Tehlikeli / Grade 0: Extremely Dangerous) → Sınıf 1 (Yüksek Tehlikeli / Grade 1: Highly Dangerous) → Sınıf 2 (Tehlikeli / Grade 2: Dangerous) → Sınıf 3 (Dikkate Değer Ölçüde Tehlikeli / Grade 3: Considerably Dangerous)
-  - Numbering format "2-125"
-- **Yedinci Birim** — Seventh Unit
-- **Beşinci Birim** — Makine Külli Şuuru'nun Tingen ekibi; üniversite bölgesi ve banliyölerden sorumlu (第五组/组)
-- **Altıncı Birim** — Salahiyetli Tecziyeciler'in Tingen ekibi; rıhtım, doğu ve güney bölgelerinden sorumlu (第六组)
-- **Müfreze** — Nighthawk squad (bir kaptanın idaresindeki en küçük birim)
-  - **asli üye** — formal member
-  - **kalem memuru** — civilian staff (sahaya çıkmayan, evrak personeli)
-- **Psikoloji Simyacıları** — Psychological Alchemists; Dunn'a göre habis/deli bir grup, teorileri Daly tarafından kullanıldı (心理炼金会)
-
-## Nations & Empires
-
-- **Balam İmparatorluğu** — Balam Empire
-- **Intis Cumhuriyeti** — Intis Republic
-- **Loen Krallığı** — Kingdom of Loen
-- **Solomon İmparatorluğu** — Solomon Empire
-- **Soren ailesi** — eski İntis kraliyet hanedanı (索伦家族)
-  - İng. çeviri "Sauron" der — Tolkien çakışmasından kaçınmak için değiştirildi
-
-## Regions & Counties
-
-- **Awwa Kontluğu** — Awwa County
-- **İmparatoriçe Nahiyesi** — Empress District (Backlund)
-- **Kış Kontluğu** — Winter County
-- **Ortadeniz Kontluğu** — Midseashire
-
-## Cities & Geography
-
-- **Sonia Denizi** — Sonia Sea
-- **Desi Körfezi** — Desi Bay
-- **Enmat Limanı** — Enmat Port
-- **Güney Kıta** — Southern Continent
-- **Kuzey Kıta** — Northern Continent (北大陆)
-- **Hornacis sıradağları** — Hornacis mountain range
-- **Pritz Limanı** — Port Pritz
-- **Tingen Şehri** — City of Tingen
-- **Tussock Nehri** — Tussock River
-- **Meşe Adası** — Oak Island, Pritz Limanı'ndaki İmparatorluk deniz üssü (橡树岛)
-- **Constant Şehri** — Ortadeniz Kontluğu'nda bir şehir, Welch McGovern'in memleketi (康斯顿城)
-- **Altın Çınar Bölgesi** — Tingen'de bir semt; Yedinci Birim'in sorumluluk alanlarından biri (金梧桐区)
-- **Rüzgâr Şehri** — "Wind City," Constant Şehri'nin lakabı; kömür-çelik sanayisiyle Loen'in en büyük üç şehrinden biri (风城)
-
-## Tingen — Streets & Districts
-
-- **Aşağı Sokak** — Lower Street
-- **Beşik Sokağı** — Besik Street
-- **Beyaz Gül Nahiyesi** — White Rose District
-- **Demir Haç Sokağı** — Iron Cross Street
-- **Doğu Semti** — East Borough
-- **Kızıl Mehtap Sokağı** — Red Moon Street
-- **Kuzey Semti** — North Borough
-- **Nergis Sokağı** — Daffodil Street
-- **Pelikan Sokağı** — Pelican Street
-- **Şampanya Sokağı** — Champagne Street
-- **Tuzdiyarı Sokağı** — Zouteland Street
-- **Wendel Sokağı** — Wendel Street
-- **Sol Sokak** — Left Street
-- **Sağ Sokak** — Right Street
-- **Yukarı Sokak** — Upper Street
-- **Orta Sokak** — Middle Street (sakinlerin uydurduğu ad)
-- **Köşe Meydanı** — Corner Square
-- **Howes Sokağı** — Howes Street (Kuzey Semti; Kehanet Kulübü burada)
-
-## Tingen — Establishments
-
-- **Bayan Wendy'nin dükkânı/Smyrin Fırını** — Mrs. Wendy's/Smyrin Bakery
-- **Kehanet Kulübü** — Divination Club
-- **Emekli Subaylar Kulübü** — Military Veterans Mess (Çincesi subay der)
-- **Harold Bonmarşesi** — Harold Department Store
-  (İng. çeviri "Harrods" der; Çince telaffuz Harold — İng. yanlış)
-- **Gümüş Taç Restoranı** — Silver Crown Restaurant
-- **Savaşçı ve Deniz Tavernası** — Warrior and Sea Tavern
-- **Tazı Hanı** — Hound Tavern
-- **Tuzdiyarı Atış Kulübü** — Zouteland Shooting Club
-- **Vahşi Yürek Barı** — Heart of the Wild Bar
-- **Marul ve Et Pazarı** — Klein'ın alışveriş yaptığı semt pazarı (莴苣与肉类市场)
-
-## Institutions
-
-- **Deweyville Vakfı** — Deweyville Trust
-- **Backlund Üniversitesi** — Backlund University
-- **Tingen Üniversitesi** — Tingen University (Khoy Üniversitesi'nden ayrı kurum)
-- **Khoy Üniversitesi** — Khoy University
-- **Tingen İşçi Sınıfı Mesken Islah Cemiyeti** — Tingen Housing Improvement Association for the Working Class
-- **Tingen Şehri Konut İyileştirme Şirketi** — Tingen City Housing Improvement Company
-- **Tingen Teknik Okulu** — Tingen Technical School
-- **Yüzde Beş Hayır Kurumları** — Five Percent Charities
-- **Tingen Şehri Noterliği** — Notary Office of Tingen City
-- **Silahhane** — Armory
-
-## Education System
-
-- **pazar okulu** — Sunday school (周日学校; kilise, haftalık 1 peni)
-- **umumi ilkokul** — public elementary school (公立初等学校; devlet, haftalık 3 peni)
-- **idadi** — grammar school (文法学校; üniversiteye hazırlayan akademik ortaöğretim)
-- **özel idadi** — private grammar school (私立文法学校; Klein'ın okulu)
-- **kolej** — public school (公学; asilzadelerin yatılı okulu — "umumi" DEĞİL)
-- **ortaöğretim** — secondary education (中等教育)
-- **Temel Eğitim Kanunu** — Elementary Education Act (《初等教育法》)
-- **İlk ve Ortaöğretim Encümeni** — Committee for Primary and Secondary Education (中低等教育委员会)
-- **Tingen Teknik Okulu, Buhar ve Çark bölümü** — Tingen Technical School, Steam and Machinery dept.
-  - 机械 kuralı: dinî/kurumsal bağlamda **Çark** (Buhar ve Çarkların İlahı), meslek adında **makinist** (buhar makinisti)
-
-## Publications
-
-- **Akşam Postası** — Evening Post
-- **Backlund Günlük Tribünü** — Backlund Daily Tribune
-- **Tingen Sabah Postası** — Tingen Morning Post
-- **Tingen Şehri Dürüstlük Gazetesi** — Tingen City Honest Paper
-- **Tussock Times** — Backlund Daily Tribune
-
-## Language & Honorifics
-
-- **Antik Feysac** — Ancient Feysac
-  - **Antik Feysac Dili** — 古弗萨克文 (yazı/lisan bağlamı; krş. Hermes Dili)
-- **Hermes Dili** — Hermes Language
-- **zât-ı âliniz** — formal honorific (standardized spelling)
-
-## Objects & Materials
-
-- **Altıpatlar** — revolver
-- **Demirkalp ağacı** — Iron-heart wood; heaviest/hardest cane wood, most expensive (铁心木)
-- **beyaz boli ağacı** — White Boli wood; silver-inlaid cane material (白博利树)
-- **altın nane yaprağı** — Golden mint leaf; Kâhin iksiri malzemesi (金薄荷叶)
-- **baldıran zehri** — Hemlock poison; kadim çağda intihar için kullanılırdı, Kâhin iksiri malzemesi (毒堇汁)
-- **Lavos Ahtapotu kanı** — mutasyona uğramış, gizemli sembollerle kaplı bir ahtapot türünün kanı; ışıkta hızla bozulur (拉瓦章鱼血液)
-- **Yıldız Kristali** — jelatinimsi, içinde yıldız kümesi görünümü barındıran saf kristal; kehanet kristali yapımında kullanılır (星水晶)
-- **Ejderkanı otu (tozu)** — Ejderkanı'nın bitki/toz formu; Kâhin iksiri malzemesi — mevcut "Ejderkanı" girdisiyle ilişkisi teyit edilmeli (龙血草粉末)
-- **Ejderkanı** — dragon's blood (alchemy ingredient)
-- **güz çiğdemi özü** — autumn crocus extract; Seyirci iksiri malzemesi (秋水仙精华)
-- **öküzdişi şakayığı tozu** — Seyirci iksiri malzemesi (牛齿芍药粉末)
-- **elf çiçeği** — Seyirci iksiri malzemesi; "elf" ırk adıyla tutarlı (精灵花)
-- **Lanti Şarabı** — Lanti wine (alchemy ingredient)
-- **Kehanet usturlabı** — divination astrolabe
-- **Kristal / beyaz kristal / sarı kristal** — crystal / white crystal / citrine (İng. çeviri "moonstone" ve "topaz" der; ikisi de yanlış taş)
-- **Kristal küre** — crystal ball
-- **Ruhani sarkaç** — spirit pendulum (yöntemin adı: Sarkaç Kehaneti)
-- **top** — revolver cylinder (转轮; "silindir" kullanılmaz)
-- **libre** — pound, weight (磅; para birimi "sterlin"den ayrı tutulur)
-- **gaz lambası** — gas lamp (煤气灯)
-- **gaz saati** — gas meter (瓦斯计费器; madeni parayla çalışır)
-- **cep saati** — pocket watch (怀表; babadan yadigâr, gümüş asma yaprağı motifli)
-
-## Creatures
-
-- **Manhal balığı** — Seyirci iksiri malzemesi; ergin bir çift gözü kullanılıyor (曼哈尔鱼)
-- **teke boynuzlu kara balık** — Seyirci iksiri malzemesi; kanı 35 ml olarak kullanılıyor (羊角黑鱼)
-- **Hayalet Köpekbalığı** — Ghost Shark (iksir malzemesi kaynağı; en az 100 mililitre kanı gerekir)
-- **Tussock Balığı** — Tussock Nehri'nden gelen, az kılçıklı yenilebilir bir balık türü (塔索克鱼)
+- **Yedi muteber ilah** — Seven orthodox gods (七大正神)
+- **Zanaatkârlık İlahı** — Buhar ve Çarkların İlahı'nın eski/tarihi adı (工匠之神; 5. Çağ'dan önceki unvan)
+- **Buhar Hâkimi** — Lord of Steam (蒸汽之主); Buhar ve Çarkların İlahı'na nida, dua değil; Fırtınalar Hâkimi ile aynı kuruluş _55_
+- **Buhar aşkına** — Exalted Steam (蒸汽在上); Buhar inananının yemini, "Tanrıça aşkına" kalıbı; Çince anahtar teyit bekliyor _55_
+- **ibadet** — Mass (弥撒); "ayin" 仪式'e ayrılı olduğu için kullanılamaz; özgül bir terim ("Missa", "Kudas") istenirse kilise sahneleri başlamadan seçilmeli _50_
+- **Mukaddes Mesken** — Holy Residence (圣所); Fecir Tarikatı’nın, Yaradan’ın bir zamanlar yaşadığına inandığı yer; büyük harf, tırnaksız; “mabet” 圣堂'e ayrılı 53
+- **sahte ilah** — fake god (伪神); Fecir Tarikatı’nın yedi muteber ilaha verdiği ad 53
+- **piskoposluk** — diocese (教区); “Backlund Piskoposluğu” 53
+- **ilahî saray** — temple of a god (神殿); ancient/pagan or non-orthodox ilah için; "mabet" 圣堂'e ayrılı
+- **Buhar ve Çark Mukaddesat Amblemi** — Sacred Emblem of Steam and Machinery (蒸汽与机械圣徽); üçgen; müminler göğüslerine nokta nokta dokunarak çizer; "Karanlık Mukaddesat Amblemi" kalıbı, kurumsal bağlamda 机械 → Çark _56_
+- **Tanrı'ya minnettarım** — Thank God (感谢神); sıradan müminin adsız tanrıya şükranı; "şükür/hamd" Kadir-i Mutlak grubu kiliselerine ayrılı. _56_
 
 ## Mysticism — Working Terms
 
-- **efsun** — incantation ("tılsım" Charm'a rezerve, kullanılmaz)
-- **sembol** — symbol / symbolism (sözlüğün düzyazısında zaten kullanılıyor)
-- **vahiy** — revelation (ham vahiy = raw revelation; rakip okuma "keşif" idi)
+- **efsun** — incantation (咒文; "tılsım" Charm'a rezerve, kullanılmaz)
+- **simge** — symbol / symbolism (象征 / 符号; sözlüğün düzyazısında zaten kullanılıyor)
 - **Amantha** — Hermesçe "sükûnet"; gece vanilyası, uyku çiçeği, papatyadan damıtılmış sakinleştirici esans, Daly'nin tarifi (安曼达/'Amantha')
+- **yaşanmışlık hissi** — déjà vu (似曾相识 / "似乎在哪里见过"); "déjà vu" ve "tanıdıklık hissi" kullanılmaz _44_
+- **habis ruh** — evil spirit (恶灵); "kötü ruh" gündelik kaldığı için elendi
+- **kinli hayalet** — resentful ghost, İng. çeviri "wraith" der (怨魂); "Tayf" Mertebe adıdır, 魂'un "nüve" karşılığı düzyazıda okunmaz
+- **ruhanî varlık** — spirit body, varlık anlamında (灵体); insan bedeninin katmanı olan "Ruhanî Beden" ile karıştırılmaz
+- **ışıltı** — büyünün bıraktığı ruhanî ışık (魔法的灵光 → "büyü ışıltısı"); "Hâle" canlının kendi ışımasına ayrılmıştır
+- **ruh göçü** — Transmigration (穿越)
+- **ruh göçmeni** — transmigrator (穿越者)
+- **Aşkın malzeme** — Beyonder materials (非凡材料); "Aşkın" yalnızca 非凡 için, 超凡物种 → fevkalade mahluk _47_
+- **himaye** — bless, protection (庇佑); dua formülünde fiil (himaye etmek), gündelik dilde isim (ilahların himayesini yitirmek) _47_
+- **kehanet / kehanette bulunmak** — divination (占卜); yöntem, disiplin ve müşteriye yapılan iş; Kehanet Kulübü, kâhin ve Mertebe adı Kâhin aynı kökte _48_
+- **kâhin** — seer, diviner (占卜者); küçük harf, sıradan meslek; Mertebe adı Kâhin (占卜家) büyük harf; "falcı" kullanılmaz _48_
+- **falcı** — fortune-teller (占卜师)
+- **fal** — fortune-telling (算命); yalnızca 算命 için, 占卜 için kullanılmaz _4_
+- **işaret** — revelation (启示); Kehanette soru soranın ya da kâhinin, Ruhaniyet aracılığıyla yahut bir ilahtan aldığı ve yorumlanması gereken mesaj
+- **inayet** — loving grace, favor (眷顾); dua kalıbında "Tanrıça'nın inayeti"; "himaye" 庇佑'e ayrılı olduğu için ayrı kelime _51_
+- **niyaz etmek** — to pray for, beseech (祈求); Ayin ve dua kalıbında "X'in kudretini niyaz ediyorum", şimdiki zaman; Neil'in dersinde de aynı fiil ("Fırtınalar Hâkimi'ne niyaz etmek") _46_
+- **Gece** — Tanrıça'nın veçhesi olarak gece (黑夜); dua ve simgede büyük harf, ekler kesmeyle (Gece'nin, Gece'yi) _46_
+  yardımcı Aşkın — support Beyonder (辅助性非凡者); “destek rolü” kullanılmaz, “rol” 扮演'ye ayrılı 53
+- **fani** — mortal (凡人); rakip okuma “ölümlü”; teyit bekliyor 53
+- **soru soran** — divination requester, querent (求卜者); kâhine kehanet için başvuran kişi; kulüpte ücret ödeyen aynı kişinin iş adı "müşteri" _49_
+- **el okuma** — palm-reading (手相 / 看手相); "el falı" kullanılmaz, "fal" 算命'e ayrılı _54_
+- **yüz okuma** — face-reading (面相); el okumayla eş biçimli; "fizyonomi" kullanılmaz _54_
+- **saat yönünde** — clockwise (顺时针)
+- **saat yönünün tersine** — counter-clockwise (逆时针); sarkaç yön formülü: saat yönünde iyi, tersine kötü, hiç kımıldamıyorsa ne iyi ne kötü _40_
+- **nefs**: 精神 only in its mystic/doctrinal sense (the cultist’s sermon, chapter 53 ¶20) and inside Nefs Beden (精神体). Ordinary 精神 → zihin/zihinsel/ruh etc. as context requires. Not machine-checkable; the Chinese doesn’t separate the senses
+- **ışık küresi** — sphere of light (光球); Tefekküre girerken zihinde canlandırılan nesne
+- **gri sis** — grey fog (灰雾); öbek bölünmez, "gri bir sis" yazılmaz; "grimsi beyaz sis" ayrı öbek _55_
+- **grimsi beyaz sis** — grayish-white fog (灰白雾气); "gri sis" ayrı öbek; teyit bekliyor 53
+- **üfürükçü** — psychic charlatan (神棍); Klein.md'de kurulu _56_
+- **enerji seviyesi** — energy level (能量级别 / 能级); 'güç seviyesi' 力量 ile karışır, Mertebe ile karıştırılmaz _57_
+- **sunu** — offering part of a ritual (祭祀部分); Ayin İlmi'nin üç kısmının ilki; 'kurban' 祭祀 salahiyetine ayrılı; 51 ile teyit bekliyor _57_
+- **beden, kalp ve ruh** — body, heart and soul (身、心、灵); rol yapmanın değdiği üçlü; 'zihin' 心灵'e, 'nefs' 精神'e ayrılı _57_ ← marjinal
+- **mevcudiyet** — existence, entity (神秘的存在/神秘存在/莫名存在/崩溃的存在/未知的存在/隐秘的存在/对应存在/对应的存在/那位存在); Sadece bilinmez/esrarengiz varlıklar için kullanılır; "varlık" ise daha genel anlam içindir _49_
 
 ## Sky & Zodiac
 
-- **burç** — constellation ("takımyıldız" kullanılmaz; o kelime Takımyıldızlar Üstadı mertebesine ait)
-- **Ak Kırağı Burcu** — Frost constellation
-- **Bereket Burcu** — Bumper Harvest constellation
-- **Gürleyen Burcu** — Thunderous constellation
-- **Başak, Yengeç, Akrep** — Virgo, Cancer, Scorpio (Roselle'in değiştirme teklifi)
-- **Kızıl Ay** — crimson moon
-- **Kahverengi Yıldız, Al Yıldız, Mavi Yıldız** — Brown, Scarlet, Blue Planet (Çincesi üçü için de "yıldız" der)
+- **burç** — constellation (星座)
+- **Ak Kırağı Burcu** — Frost constellation (冰霜星座)
+- **Bereket Burcu** — Bumper Harvest constellation (丰收星座)
+- **Gürleyen Burcu** — Thunderous constellation (雷霆星座)
+- **Başak, Yengeç, Akrep** — Virgo, Cancer, Scorpio (处女座, 巨蟹座, 天蝎座; Roselle'in değiştirme teklifi)
+- **Kızıl Ay** — crimson moon (红月)
+- **kızıl mehtap** — crimson moonlight (绯红月光 / 绯红月华); ayın adı olan "Kızıl Ay"dan ayrı, küçük harf _44_
+- **Kahverengi Yıldız** — Brown Planet (褐星)
+- **Al Yıldız** — Scarlet Planet (绯星 / 赤星); 赤星 48 ¶51'de geçer, 绯星 ile aynı gezegen olduğu teyit edilmeli; değilse 赤星 → Kızıl Yıldız _48_
+- **Mavi Yıldız** — Blue Planet (蓝星)
+- **ev** — astrological house (宫位); göğün bölümlerinden biri; İng. çeviri düşürür _55_
 
-## Tarot Deck — Card Names
+## Tarot Deck & Club
+
+**Card Names:**
 
 - **Soytarı** — The Fool (愚者) — kulüp kod adıyla aynı (Soytarı Efendi)
 - **Hokkabaz** — The Magician (魔术师) — "Büyücü" KULLANILMAZ
 - **İmparator** — The Emperor (皇帝)
 - **Asılmış Adam** — The Hanged Man (倒吊人) — kulüp: Alger Wilson
-- **İtidal** — Temperance (节制) — kulüp: Sharron
+- **İtidal / ölçülü / kararınca** — Temperance (节制) — kulüp: Sharron
 
-## Transport
+**Club Structure & Terms:**
 
-- **raylı umumi at arabaları** — railed public carriages
-- **raysız umumi at arabaları** — unrailed public carriages
-- **Yörünge At Arabası Şirketi** — raylı umumi at arabalarını işleten şirket (轨道马车公司)
-- **Süzülen Ekspres** — Constant Şehri'ne yeni açılan buharlı tren seferi (飞翔号)
+- **Beyefendi / Hanımefendi**: Tarot Cemiyeti üye hitabı. 成员 için kullanılır
+- **Şeref Makamı / başköşe** — "Seat of Honor," the Fool's head-of-table position in the Tarot Club's illusory hall is "Şeref Makamı" while it is "başköşe" in other places (上首)
+- **alacalı uzun masa** — Tarot toplantılarının masası; her geçişte aynı (斑驳长桌)
+- **üye / aza / mensup** — member (成员; Tarot toplantılarında üye yerine aza kullanılır)
+- **üye** — member (会员)
+- **Tarot Cemiyeti** — Tarot Club (塔罗会)
+- **Soytarı Efendi** — Mr. Fool (愚者先生)
+- **Esrarengiz Zât** — Mr. Mysterious (神秘先生)
+- **esrarengiz şahıs** — mysterious person (神秘人)
+- **açılım** — spread (牌阵)
+- **Ağa Devirme / Yükseltme** — (斗地主 / 升级)
+- **şatafatlı giysiler, görkemli bir başlık** — Fool kartı tasviri (愚者 kartı: 穿华丽衣物、戴绚烂头饰)
+- **阁下** (isimden önce): Audrey → "Efendi hazretleri", Alger → "Ulu efendim"
+- **Roselle Hattı** — "Roselle Line/Roselle Script (罗塞尔秘文); " Alger's term for Roselle Gustav's undeciphered private cipher
+- **Ağa Devirme** — Fighting the Landlord; Roselle'in kendi dünyasından getirdiği iskambil oyunu (斗地主)
+- **Şer Devirme** — Fighting Evil; aynı oyunun Roselle'in koyduğu adı, oynanışı birebir aynı (斗邪恶)
 
-## Miscellaneous
+## Key Figures, Legends & Historical Texts
 
-- **kıvırcık tüylü babun** — curly haired baboon
-- **Şeref Makamı** — "Seat of Honor," the Fool's head-of-table position in the Tarot Club's illusory hall (上首)
-- **Roselle Hattı** — "Roselle Line/Script," Alger's term for Roselle Gustav's undeciphered private cipher (罗塞尔秘文)
-- **Antigonus ailesinin el yazması** — Antigonus family's diary / notebook
-- **Gurme İmparatorluğu** — Gourmet Empire (Zhou's Earth-side reference, cooking-show/webnovel allusion)
-- **Kokuşmuş Krallık** — Rotten Kingdom
-- **İmparator Roselle'in günlükleri** — Emperor Roselle's diaries
-- **Ruh göçü** — Transmigration
-- **Ruh göçmeni** — transmigrator
-- **Yedi muteber ilahlar** — Seven othodox gods
-- **sterlin, soli, peni** — pound, soli, pence (currency)
-- **Kral III. George** — King George III (bakır peniyi bastıran kral)
-- **Kraliyet Ordusu** — Royal Army (皇家陆军; "İmparatorluk Ordusu" DEĞİL — Loen bir krallıktır)
-- **Roselle Gustav** — kadim İntis Konsülü; tarot kehanetini ve iskambil kâğıtlarını icat etti, sonradan "İmparator Sezar" oldu
-- **Kara İmparator** — Solomon İmparatorluğu'nun kadim hükümdarı (Audrey'nin aynasının kaynağı)
-- **Zanaatkârlık İlahı** — Buhar ve Çarkların İlahı'nın eski/tarihi adı (5. Çağ'dan önceki unvan)
-- **İntis Krallığı** — Roselle'den önceki İntis devleti (bugünkü İntis Cumhuriyeti'nin selefi)
-- **Beşinci Çağ** — Demir Çağı ile eşanlamlı (ordinal ad / demir-temalı ad)
-- **Beyaz Akçaağaç Sarayı** — White Maple Palace (Roselle'in suikaste kurban gittiği yer)
+- **Roselle Gustav** — kadim Intis Konsülü; tarot kehanetini ve iskambil kâğıtlarını icat etti, sonradan "İmparator Sezar" oldu (罗塞尔·古斯塔夫)
+- **Sezar** — Caesar (凯撒); Roselle'in unvanı ("İmparator Sezar") ve Sezar Limanı; İngilizce ad kuralının istisnası, "Caesar" yazılmaz _56_
+- **İmparator Roselle'in günlükleri** — Emperor Roselle's diaries (罗塞尔日记)
+- **Kara İmparator** — Solomon İmparatorluğu'nun kadim hükümdarı (黑皇帝; Audrey'nin aynasının kaynağı)
+- **Antigonus ailesinin el yazması / el yazması** — Antigonus family's diary / notebook (安提哥努斯家族笔记)
+- **III. George** — King George III (乔治三世; bakır peniyi bastıran kral)
+- **I. Henry Augustus** — King Henry Augustus I (亨利·奥古斯都一世); beş Sterlinlik banknottaki portre _48_
+- **I. William** — William I (威廉一世); portrait on the ten-pound note; epithets 'Kurucu' (立国者) and 'Koruyucu' (保护者) 52
+- **Büyük Oburlar İmparatorluğu** — Gourmet Empire (大吃货帝国/大吃货国/大吃货民族)
+- **Kokuşmuş Krallık** — Rotten Kingdom (腐烂国度)
+- **Nast** — Nast (纳斯特); kendine Beş Deniz'in Kralı diyen korsan; Solomon İmparatorluğu'nun soyundan geldiğini söyler, tutsak öldürmez _56_
+- **Beş Deniz'in Kralı** — King of the Five Seas (五海之王); Nast'ın unvanı, tırnaksız; "Denizlerin Kralı" Mertebe adıyla karışır, kullanılmaz _56_
+- **Flegrea** — Flegrea (弗雷格拉); Klein 57'de önce yanlış duyar ('Frygrea' 费来格拉, 'Feygrea' 费雷格拉), sonra doğru biçimi yazar _32_
+- **Ray Bieber** — Ray Bieber (瑞尔·比伯); Antigonus ailesinin el yazmasını elinde bulunduran adam; ek: Bieber'ın _46_
 
-## Food and Drinks
+---
 
-- **Fermo Kahvesi** — Paz Nehri Vadisi'nden gelen, acı ama kokulu bir kahve türü (帕斯河谷/费尔默咖啡)
-- **Feynapotter Yaylası Kahvesi** — Klein'ın tercih ettiği kahve, Welch'in evinde birkaç kez tattığı (费内波特高原咖啡)
+# II. Uluslar, Bölgeler & Coğrafya
 
-## Loen Krallığı — Siyaset ve Kurumlar
+## Nations & Empires
+
+- **Ebedî Gece Ulusu** — Nation of the Evernight (夜之国); Hornacis sıradağlarındaki kadim krallık; Antigonus ile Gökyüzünün Anası'nın kurduğu, sonradan Ebedî Gece Tanrıçası'nın Kilisesi'nin saldırısına uğrayan ülke. Tanrıça'nın kendi İlahî Hükümranlığı ayrı bir yerdir; bu ad ona verilmez _46_
+- **Balam İmparatorluğu** — Balam Empire (拜朗帝国)
+- **Intis Cumhuriyeti** — Intis Republic (因蒂斯共和国)
+- **Intis Krallığı** — Roselle'den önceki Intis devleti (因蒂斯王国; bugünkü Intis Cumhuriyeti'nin selefi)
+- **Loen Krallığı** — Kingdom of Loen (鲁恩王国)
+- **Solomon İmparatorluğu** — Solomon Empire (所罗门帝国)
+- **Soren ailesi** — Sauron family (索伦家族); eski Intis kraliyet hanedanı; İngilizce ad kuralının istisnası: Tolkien çakışmasından kaçınmak için değiştirildi, "Sauron" yazılmaz
+- **Abraham ailesi** — Abraham family (亚伯拉罕家族); İngilizce ad korunur, "İbrahim" yazılmaz
+
+## Regions & Counties
+
+- **Awwa Kontluğu** — Awwa County (阿霍瓦郡)
+- **İmparatoriçe Nahiyesi** — Empress District (皇后区; Backlund)
+- **Kış Kontluğu** — Winter County (凛冬郡)
+- **Ortadeniz Kontluğu** — Midseashire (间海郡)
+- **Southville Kontluğu** — Southville County (南威尔郡); birası ve kırmızı şarabıyla ünlü _48_
+
+## Cities & Geography
+
+- **Sonia Denizi** — Sonia Sea (苏尼亚海)
+- **Desi Körfezi** — Desi Bay (迪西海湾)
+- **Enmat Limanı** — Enmat Port (恩马特港)
+- **Güney Kıta** — Southern Continent (南大陆)
+- **Kuzey Kıta** — Northern Continent (北大陆)
+- **Hornacis sıradağları** — Hornacis mountain range (霍纳奇斯山脉)
+- **Pritz Limanı** — Port Pritz (普利兹港)
+- **Tingen Şehri** — City of Tingen (廷根市)
+- **Tussock Nehri** — Tussock River (塔索克河)
+- **Meşe Adası** — Oak Island, Pritz Limanı'ndaki İmparatorluk deniz üssü (橡树岛)
+- **Constant Şehri** — Ortadeniz Kontluğu'nda bir şehir, Welch McGovern'in memleketi (康斯顿城)
+- **Altın Çınar Bölgesi** — Tingen'de bir semt; Yedinci Birim'in sorumluluk alanlarından biri (金梧桐区)
+- **Rüzgâr Şehri** — "Wind City," Constant Şehri'nin lakabı; kömür-çelik sanayisiyle Loen'in en büyük üç şehrinden biri (风城)
+- **Beyaz Akçaağaç Sarayı** — White Maple Palace (白枫宫; Roselle'in suikaste kurban gittiği yer)
+- **Kudurgan Deniz** — Berserk Sea (狂暴海); Kuzey Kıta ile Güney Kıta'yı ayıran, felaketleri ve tehlikeli akıntılarıyla bilinen deniz; 狂暴 deliliği ve şiddeti birlikte taşır, "kudurmak" ikisini de karşılar; "Fırtına" ve "Hiddet" başka adlara ayrılı _54_
+- **Sezar Limanı** — Caesar Port (凯撒港); İng. çeviri "Caesar Pier" der, 港 limandır; Yonca'nın Enmat'a dönüş yolculuğuna çıktığı liman _56_
+- **Beş Deniz** — Five Seas (五海); ekler kesmeyle (Beş Deniz'in) _56_
+
+## Tingen — Streets & Districts
+
+- **Aşağı Sokak** — Lower Street (下街)
+- **Beşik Sokağı** — Besik Street (贝西克街)
+- **Beyaz Gül Nahiyesi** — White Rose District (白玫瑰区)
+- **Demir Haç Sokağı** — Iron Cross Street (铁十字街)
+- **Doğu Semti** — East Borough (东区)
+- **Kızıl Mehtap Sokağı** — Red Moon Street (红月亮街)
+- **Kuzey Semti** — North Borough (北区)
+- **Nergis Sokağı** — Daffodil Street (水仙花街)
+- **Pelikan Sokağı** — Pelican Street (鹈鹕街)
+- **Şampanya Sokağı** — Champagne Street (香槟街)
+- **Tuzdiyarı Sokağı** — Zouteland Street (佐特兰街)
+- **Wendel Sokağı** — Wendel Street (韦恩德尔街)
+- **Sol Sokak** — Left Street (左街)
+- **Sağ Sokak** — Right Street (右街)
+- **Yukarı Sokak** — Upper Street (上街)
+- **Orta Sokak** — Middle Street (中街; sakinlerin uydurduğu ad)
+- **Köşe Meydanı** — Corner Square (街角广场)
+- **Howes Sokağı** — Howes Street (豪尔斯街; Kuzey Semti; Kehanet Kulübü burada)
+- **Stevens Sokağı** — Stevens Street (斯蒂芬斯街); Doğu Semti; Joyce Meyer'in adresi _55_
+
+## Tingen — Establishments
+
+- **Bayan Wendy'nin dükkânı/Smyrin Fırını** — Mrs. Wendy's/Smyrin Bakery (斯麦尔面包房). Sahibi Wendy Smyrin
+- **Kehanet Kulübü** — Divination Club (占卜俱乐部)
+- **Emekli Subaylar Kulübü** — Military Veterans Mess (退伍军官俱乐部; Çincesi subay der)
+- **Harold Bonmarşesi** — Harold Department Store (哈罗德百货)
+  (İng. çeviri "Harrods" der; Çince telaffuz Harold — İng. yanlış)
+- **Gümüş Taç Restoranı** — Silver Crown Restaurant (银王冠餐厅)
+- **Savaşçı ve Deniz Tavernası** — Warrior and Sea Tavern (战士与海酒馆)
+- **Tazı Hanı** — Hound Tavern (猎犬酒馆)
+- **Tuzdiyarı Atış Kulübü** — Zouteland Shooting Club (佐特兰射击俱乐部)
+- **Vahşi Yürek Barı** — Heart of the Wild Bar (野性之心酒吧)
+- **Marul ve Et Pazarı** — Klein'ın alışveriş yaptığı semt pazarı (莴苣与肉类市场)
+- **İhtiyar Will Restoranı** — Old Will's Restaurant; Karadiken Güvenlik Şirketi'ne günlük öğle ve akşam yemeği servisi yapar (老维尔餐厅)
+- **Lagolas Silah Dükkânı** — Lagolas Weapons (拉格拉斯武器店)
+- **Raphael Mezarlığı** — Raphael Cemetery (拉斐尔墓园)
+- **Beyaz Kristal Odası** — White Crystal Room (白水晶房); Kehanet Kulübü'nde bir oda; İng. çeviri "Moonstone" der _48_
+- **Sarı Kristal Odası** — Topaz Room (黄水晶房); Kehanet Kulübü'nde bir oda; Beyaz Kristal Odası'yla aynı kalıp; İng. çeviri "Topaz room" der _54_
+- **kehanet odası** — divination room (占卜房); Kehanet Kulübü'nde kehanete ayrılmış odaların genel adı _54_
+- **toplantı odası** — meeting room (会议室); Kehanet Kulübü'nün koridor sonundaki odası; "salon" kabul salonuna ayrılı _48_
+- **albüm** — album (图册); kâhinlerin ve ücretlerinin yer aldığı, müşterilere sunulan albüm _48_
+- **Backlund Bankası** — Backlund Bank (贝克兰德银行); Tingen şubesi var _50_
+
+---
+
+# III. Yönetim, Kanun & Asayiş
+
+## Loen Kingdom — Politics
 
 - **Başvekil** — Prime Minister (首相)
+- **Düşes** — Duchess (公爵夫人)
 - **Muhafazakâr Parti** — Conservative Party (保守党)
 - **Augustus Hanedanı** — Loen'in hükümdar hanedanı (奥古斯都家族; amblemi Yargı Kılıcı)
 - **Yargı Kılıcı** — Augustus hanedanı amblemi (审判之剑)
-- **Negan Dükü / Negan ailesi** — Başvekil Aguesid Negan'ın ağabeyi Pallas Negan, mevcut Dük (尼根公爵)
+- **Negan Dükü / Negan ailesi** — Başvekil Aguesid Negan'ın ağabeyi Pallas Negan, mevcut Dük (尼根公爵 / 尼根家族). eşi Della Hanımefendi (黛拉夫人)
 - **Bahriye Nezareti** — Admiralty (海军部)
 - **Bahriye Nazırı** — Minister of the Navy (海军大臣)
 - **Kabine** — Cabinet (内阁)
 - **Gemi İnşa Encümeni** — Shipbuilding Committee (造舰委员会)
 - **Backlund Topçu Akademisi** — Backlund Artillery Institute (贝克兰德火炮研究院)
 - **Pritz Denizcilik Akademisi** — Pritz Maritime/Shipbuilding Institute (普利兹船舶研究院)
+- **Kraliyet Ordusu** — Royal Army (皇家陆军; "İmparatorluk Ordusu" DEĞİL — Loen bir krallıktır)
 
 ## Mayoral Titles
 
-- **Belediye reisi** — Mayor
-- **Kontluk Valisi** — County Governor
-- **Siyasi makam** — Political position
-- **İdari makam** — Administrative position
+- **Belediye reisi** — Mayor (市长)
+- **Kontluk Valisi** — County Governor (郡长)
+- **Siyasi makam** — Political position (政务官)
+- **İdari makam** — Administrative position (事务官)
+
+## Organizations & Systems
+
+- **Hususî Operasyonlar Dairesi** — Special Operations Bureau (特别行动部)
+- **Karadiken Güvenlik Şirketi** — Blackthorn Security Company (黑荆棘安保公司)
+- **Mühürlü Eser** — Sealed Artifact (封印物)
+  - **Classification:** Sınıf 0 (0级; Son Derece Tehlikeli / Grade 0: Extremely Dangerous) → Sınıf 1 (1级; Yüksek Tehlikeli / Grade 1: Highly Dangerous) → Sınıf 2 (2级; Tehlikeli / Grade 2: Dangerous) → Sınıf 3 (3级; Dikkate Değer Ölçüde Tehlikeli / Grade 3: Considerably Dangerous)
+  - Numbering format "2-125"
+- **Yedinci Birim** — Seventh Unit (第七小组)
+- **Beşinci Birim** — Makine Külli Şuuru'nun Tingen ekibi; üniversite bölgesi ve banliyölerden sorumlu (第五组/组)
+- **Altıncı Birim** — Salahiyetli Tecziyeciler'in Tingen ekibi; rıhtım, doğu ve güney bölgelerinden sorumlu (第六组)
+- **müfreze** — Nighthawk squad (小队; bir kaptanın idaresindeki en küçük birim)
+  - **aslî üye** — formal member (正式成员/正式队员)
+  - **kalem memuru** — civilian staff (文职人员; sahaya çıkmayan, evrak personeli)
+- **müvekkil** — client (委托者 / 委托给)
+- **tevdi etmek / iş** — to commission (委托) / commission (委托); depending on the context
+- **eğlence odası** — Gece Şahinleri'nin eğlence/dinlenme odası (娱乐室)
+- **istirahat odası** — break room (休息室); nöbetten çıkanların uyuduğu oda _50_
+- **Silahhane** — Armory (武器库)
+- **bölme** — ofisin ön salonunu ayıran bölme (隔断)
+- **yeraltı pazarı** — underground market (地下交易市场); "karaborsa" modern iktisat terimi, kullanılmaz _47_
+- **ödenek** — müfreze bütçesi, funds (经费); 46'daki "ek ödenek" farklı bir kaynak sözcük olabilir, teyit edilmeli _47_
+- **kabul salonu** — Karadiken'in ön salonu (接待厅) _47_
+- **muhasebe odası** — Orianna'nın odası (会计室) _47_
+- **ithalat-ihracat şirketi** — import-export company, İng. çeviri "trading company" der (进出口公司); Benson'ın işyeri _47_
+- **danışman** — consultant (顾问) _50_
+- **müşteri** — client (客户); Kehanet Kulübü'nde kehanet isteyen kişi; "müvekkil" 委托者'e ayrılı _48_
 
 ## Law & Legislation
 
@@ -265,20 +289,228 @@
 - **Tahıl Kanunu** — Grain Act (谷物法案)
 - **çok amaçlı silah ruhsatı** — Full weapons license; hard to obtain, allows any civilian firearm (全类武器使用证)
 - **avcılık belgesi** — Hunting license; easier to get, limited to shotguns/hunting arms (狩猎证)
+- **sözleşme / akit / fesihname** — contract (合约/合同); sözleşme genel, akit Aşkın/archaic anlam, fesihname ise sözleşme iptali için.
+- **madde** — clause (条款)
+- **muamelat avukatı** — solicitor; evrak hukukçusu, kural olarak mahkemeye çıkamaz (事务律师)
+- **mahkeme avukatı** — barrister; mahkemede temsil salahiyeti olan tam ruhsatlı hukukçu (大律师)
+- **avukat** — lawyer; ikisini de kapsayan üst kelime, ayrımı bozmadan kullanılır (律师)
+- **sulh mahkemesi** — magistrates' court (治安法庭) — "zaptiye/asayiş mahkemesi" Mertebe adlarına çarpar, kullanılmaz
+- **ceza mahkemesi** — criminal court (刑事法庭)
+- **meşru müdafaada haddi aşmak** — excessive self-defence; fiil hâlinde çekilir (防卫过当)
+- **beraat müdafaası** — not-guilty plea (无罪辩护)
+- **mahkemeye çıkmak** — to appear in court / stand trial (上庭)
+- **görülmek / muhakeme edilmek** — to be tried; "yargılanmak" Yargı kod adının yakınında kullanılmaz (审理)
+- **ifade** — deposition, sözlü tanık beyanı (口供)
+- **cürüm** — crime, offence (罪行)
+- **müdafaa** — defence (辩护)
 
 ## Police & Law Enforcement
 
-- **Dunn Smith** — gri gözlü, sakin tavırlı müfettiş; Welch ve Naya vakasını soruşturuyor (邓恩·史密斯)
-- **Bitsch Mountbatten** — Awwa şiveli, kıdemli çavuş; apartmanın bulunduğu sokağın polisi (比奇·蒙巴顿)
 - **Müfettiş** — Inspector rütbesi; omuzda gümüş altıgen sayısıyla (2/3) ayırt edilir (督察)
+- **Kıdemli başmüfettiş** — high-ranking inspector (高级督察)
 - **Çavuş** — Sergeant rütbesi; omuzda V-şeridiyle gösterilir (警长)
-- **Asayiş Memuru** — polis teşkilatından önce (yalnızca 15-16 yıldır var) kullanılan eski ad (治安官)
+- **Asayiş Memur** — polis teşkilatından önce (yalnızca 15-16 yıldır var) kullanılan eski ad (治安官)
+- **Kontluk Polis Müdüriyeti** — County Police Department; Gece Şahinleri müfrezelerinin ödeneğinin ikinci kaynağı (郡警察厅)
+- **özel dedektif** — private detective (私家侦探)
+- **nezarethane** — temporary holding cell (临时关押室)
+- **dava evrakı** — case file/materials (案件材料/案件资料)
+- **adam kaçıran / kaçıran** — kidnapper (绑匪)
 
-## Frozen Lines
+---
 
-- **"Ben dahil herkes ölecek."** — 所有人都会死，包括我 (Klein's notebook; 1:54, 2:54, 3:4)
-- **Şans artırma ritüeli çağrısı** — 福生玄黄…, four steps, counter-clockwise:
+# IV. Kurumlar & Eğitim
+
+## Institutions
+
+- **Deweyville Vakfı** — Deweyville Trust (德维尔基金)
+- **Backlund Üniversitesi** — Backlund University (贝克兰德大学)
+- **Tingen Üniversitesi** — Tingen University (廷根大学; Khoy Üniversitesi'nden ayrı kurum)
+- **Khoy Üniversitesi** — Khoy University (霍伊大学)
+- **Tingen İşçi Sınıfı Mesken Islah Cemiyeti** — Tingen Housing Improvement Association for the Working Class (廷根市工人阶级住房改善协会)
+- **Tingen Şehri Konut İyileştirme Şirketi** — Tingen City Housing Improvement Company (廷根市房屋改良公司)
+- **Tingen Teknik Okulu** — Tingen Technical School (廷根技术学校)
+- **Yüzde Beş Hayır Kurumları** — Five Percent Charities (百分之五慈善基金会)
+- **Tingen Şehri Noterliği** — Notary Office of Tingen City (廷根市公证处)
+
+## Education System
+
+- **pazar mektebi** — Sunday school (周日学校; kilise, haftalık 1 peni)
+- **umumî ilkokul** — public elementary school (公立初等学校; devlet, haftalık 3 peni)
+- **idadi** — grammar school (文法学校; üniversiteye hazırlayan akademik ortaöğretim)
+- **özel idadi** — private grammar school (私立文法学校; Klein'ın okulu)
+- **kolej** — public school (公学; asilzadelerin yatılı okulu — "umumî" DEĞİL)
+- **ortaöğretim** — secondary education (中等教育)
+- **Temel Eğitim Kanunu** — Elementary Education Act (《初等教育法》)
+- **İlk ve Ortaöğretim Encümeni** — Committee for Primary and Secondary Education (中低等教育委员会)
+- **Tingen Teknik Okulu, Buhar ve Çark bölümü** — Tingen Technical School, Steam and Machinery dept. (廷根技术学校蒸汽与机械系)
+  - 机械 kuralı: dinî/kurumsal bağlamda **Çark** (Buhar ve Çarkların İlahı), meslek adında **makinist** (buhar makinisti)
+- **lise** — high school (高中); yalnızca Klein'ın Dünya'daki okulu için; Loen okulları "idadi" _54_
+- **kıdemli doçent** — senior associate professor (资深副教授); Klein'ın hocasının unvanı; 10 ile teyit bekliyor _10_
+- **Cohen Quentin** — Cohen Quentin (科恩·昆汀); Klein'ın hocası; Çince sıra ad·soyad (Cohen ad, Quentin soyad); İng. çeviri "Quentin Cohen" der; "Quentin Cohen" yazılmaz _10_
+
+---
+
+# V. Yayınlar & Dil
+
+## Publications
+
+- **İçtimai Fikir Cereyanları ve Terbiye Hâdiseleri** — Tracey'in istediği kitap; adı, kendi tahlilinde kullandığı iki kelimeyi (fikir cereyanı, hâdise) birebir taşımak zorunda (社会思潮与教育现象)
+- **Büyük Dedektif Manseng** — Great Detective Manseng (《大侦探芒森》)
+- **Akşam Postası** — Evening Post (晚邮报)
+- **Backlund Günlük Tribünü** — Backlund Daily Tribune (贝克兰德日报)
+- **Tingen Sabah Postası** — Tingen Morning Post (廷根早报)
+- **Tingen Şehri Dürüstlük Gazetesi** — Tingen City Honest Paper (廷根市老实人报)
+- **Tussock Times** — Tussock Times (塔索克报)
+- **Müneccimlik Kılavuzu** — (占星手册)
+- **Qin ve Han Hanedanlıklarının Temel Kehanet ve Batınî İlimleri** — Quintessential Divination and Arcane Arts of the Qin and Han Dynasty (秦汉秘传方术纪要); kısa biçim 'Temel Kehanet ve Batınî İlimler'; ad İngilizce çeviriyi izler, Çince adda kehanet yok _2_
+
+## Language & Honorifics
+
+- **Kadim Feysac** — Ancient Feysac (古弗萨克语)
+  - **Kadim Feysac Dili** — 古弗萨克文 (yazı/lisan bağlamı; krş. Hermes Dili)
+- **Hermes Dili** — Hermes Language (赫密斯语)
+- **Kadim Hermes Dili** — Ancient Hermes (古赫密斯语); tabiattan doğmuş, dolaysız ama korumasız dil; Hermes Dili onun ıslah edilmiş hâli; Tılsım girdisinin düzyazısı "antik Hermesçe" der, teyit edilmeli _51_
+- **Kadim Ejder Dili** — Ancient Dragonese (古龙语); "ejder" Ejderkanı ile aynı kök _51_
+- **Kadim Elf Dili** — Ancient Elvish (古精灵语); "elf" ırk adıyla tutarlı _51_
+- **Jotun** — Jotun (巨人语)
+- **Çince** — Chinese (汉语 / 中文)
+- **sanal arkadaşlık sitesi** — online dating/friend site (交友平台)
+- **zât-ı âliniz / Ulu efendim / Efendi hazretleri** — formal honorific (您 / 阁下; standardized spelling. can use other translations like )
+- **fikir cereyanı** — current of thought (思潮)
+- **hâdise** — phenomenon; devrin içtimai ilim dilinde "içtimai hâdise" (现象)
+- **Tünaydın / Merhaba** — good afternoon / hello (下午好 / 你好) _48–49_
+
+---
+
+# VI. Gündelik Hayat & Kültür
+
+## Objects & Materials
+
+- **Altıpatlar** — revolver (左轮手枪)
+- **daktilo** — typewriter; saf mekanik yazı aleti, Akerson Şirketi'nin 1346 modeli Loen bürolarında yaygın (打字机)
+- **Demirkalp ağacı** — Iron-heart wood; heaviest/hardest cane wood, most expensive (铁心木)
+- **beyaz boli ağacı** — White Boli wood; silver-inlaid cane material (白博利树)
+- **altın nane yaprağı** — Golden mint leaf; Kâhin iksiri malzemesi (金薄荷叶)
+- **baldıran zehri** — Hemlock poison; kadim çağda intihar için kullanılırdı, Kâhin iksiri malzemesi (毒堇汁)
+- **Lavos Ahtapotu kanı** — mutasyona uğramış, gizemli sembollerle kaplı bir ahtapot türünün kanı; ışıkta hızla bozulur (拉瓦章鱼血液)
+- **Yıldız Kristali** — jelatinimsi, içinde yıldız kümesi görünümü barındıran saf kristal; kehanet kristali yapımında kullanılır (星水晶)
+- **Ejderkanı otu (tozu)** — Ejderkanı'nın bitki/toz formu; Kâhin iksiri malzemesi — mevcut "Ejderkanı" girdisiyle ilişkisi teyit edilmeli (龙血草粉末)
+- **Ejderkanı** — dragon's blood (龙血; alchemy ingredient)
+- **güz çiğdemi özü** — autumn crocus extract; Seyirci iksiri malzemesi (秋水仙精华)
+- **öküzdişi şakayığı tozu** — Seyirci iksiri malzemesi (牛齿芍药粉末)
+- **elf çiçeği** — Seyirci iksiri malzemesi; "elf" ırk adıyla tutarlı (精灵花)
+- **Lanti Şarabı** — Lanti wine (兰蒂斯酒; alchemy ingredient)
+- **kehanet gök haritası / gök haritası** — divination star chart (占卜星盘 / 星盘); çizilen yıldız haritası, alet değil; İng. çeviri "astrolabe" der, "usturlap" kullanılmaz _40_
+- **üyelik kol düğmesi / kol düğme** — membership cufflink (会员袖钉 / 袖钉); tekil; "kol düğme" biçimi "kol düğmeniz"i de yakalar _48_
+- **Kristal / beyaz kristal / sarı kristal** — crystal / white crystal / citrine (水晶 / 白水晶 / 黄水晶; İng. çeviri "moonstone" ve "topaz" der; ikisi de yanlış taş)
+- **Kristal küre** — crystal ball (水晶球)
+- **Ruhanî sarkaç / sarkaç** — spirit pendulum (灵摆; yöntemin adı: Sarkaç Kehaneti)
+- **sarı kristal sarkaç** — citrine pendant (黄水晶吊坠); İng. çeviri "topaz" der; Ruhanî sarkaç ile aynı nesne
+- **top** — revolver cylinder (转轮; "silindir" kullanılmaz)
+- **gaz lambası** — gas lamp (煤气灯)
+- **gaz saati** — gas meter (瓦斯计费器; madeni parayla çalışır)
+- **cep saati / saat** — pocket watch (怀表; babadan yadigâr, gümüş asma yaprağı motifli)
+- **mühür / mühürlemek** — stamp (印章/盖章)
+- **yarım boy ipek silindir şapka** — half-height silk top hat (半高丝绸礼帽); Klein'ın alametifarikası _44_
+- **takım elbise / resmî kıyafet / resmî takım / ceket** — formal suit (正装) _44_
+- **papyon** — bow tie (领结) _44_
+- **baston** — cane (手杖); ağaç türleri için Demirkalp ağacı, beyaz boli ağacı _44_
+- **palto** — trench coat (风衣)
+- **koltuk altı kılıfı** — underarm holster (腋下肩带 / 腋下枪套)
+- **şömine** — fireplace (壁炉); İng. çeviri "chimney" der, "baca" değil
+- **yedi telli lir** — seven-stringed lyre; İng. çeviri "guitar" der, yanlış (七弦琴)
+- **monokl** — monocle
+- **sabah elbisesi / gece elbisesi** — morning gown / evening dress (晨礼服 / 晚礼服); "sabahlık" ev giysisidir, kullanılmaz _50_
+- **gümüş kakmalı siyah baston** — silver-inlaid black cane (镶银的黑色手杖); Klein'ın bastonu; 44'te 镶银 başka kelimeyle verildiyse o geçerli _50_
+- **gümüş kutu** — small silver case (银制小箱); İhtiyar Neil'in Ayin malzemesi kutusu; "sandık", "çanta" değil _50_
+- **parşömen görünümlü kâğıt / parşömen görünümlü bir kâğıt** — imitation parchment (仿羊皮纸); gerçek parşömen (羊皮纸) "parşömen" kalır; İng. çeviri "goatskin" der _50_
+- **hesap pusulası / borç** — bill (账单); İng. çeviri "IOU" der, yanlış _50_
+- **Dolunay Yağı** — Full Moon Essence Oil (满月精油); Ayin'de mumlara damlatılan hazırlanmış uçucu yağ; özel ad, tırnaksız; "esans" Amantha gibi damıtılmış karışımlara ayrılı _51_
+- **mehtap çiçeği** — moon flower (月亮花); Tanrıça'nın sevdiği, Kızıl Ay'a ait sayılan bitki; "ay çiçeği" günebakan diye okunduğu için kullanılmaz _51_
+- **kızıl sandal (ağacı)** — dark-red sandalwood (深红檀香); Kızılın Hâkimesi'ni simgeleyen mumların malzemesi _51_
+- **gümüş Ayin hançeri** — ritual silver dagger (仪式银匕); Ayin duvarını kuran ve delen takdisli alet; aynı nesne anlatıda 银制小刀 olarak geçtiğinde "gümüş bıçak" (çakı değil) _51_
+- **kazan** — cauldron (大釜); Ayin'de kâğıdın yakıldığı kap; üzerinde Karanlık Mukaddesat Amblemi _51_
+- **Kutsal Gece Tozu** — Holy Night Powder (圣夜粉); Ayin için temiz ruhanî ortam kuran toz; 46'da adı geçmeden "bir tutam toz" olarak kullanıldı, ad 51'de konuyor _51_
+- **arma** — crest, coat of arms (纹章); "amblem" stays reserved for 徽 (Karanlık Mukaddesat Amblemi); "logo" is not used _52_
+- **keçe şapka** — felt hat (毡帽)
+- **ceket** — jacket (外套)
+- **sahaf tezgâhı** — secondhand book stall (旧书摊)
+- **gümüş zincir** — silver chain (银链); sarkacın zinciri _40_
+- **kol ağzı** — sleeve cuff (袖口); Klein sarı kristal sarkacını sol kol ağzının içinde taşır _48_
+- **tüllü şapka** — veiled hat (纱帽); "peçe" ve "duvak" kullanılmaz _54_
+- **kanepe** — sofa (沙发); "sofa" Türkçede evin orta salonudur, kullanılmaz _54_
+- **olayın gök haritası** — event chart (事件星盘); bir olay için çizilen gök haritası; "doğum haritası" başka bir nesnedir _55_
+- **dolma kalem** — fountain pen (钢笔); kısa biçim 'kalem'. 1. bölümde kapaklı (笔帽) tarif edilir; mürekkebe batırma imgesi eklenmez.
+- **koltuk** — seat (座椅); İng. çeviri "throne" der; 座椅 için "taht" kullanılmaz _55_
+- **dişli / çark** — gear (齿轮); "çark" dinî/kurumsal bağlama (Buhar ve Çarkların İlahı) ayrılı onun dışında dişli _56_
+
+## Currency & Measurements
+
+- **Sterlin, soli, peni** — pound, soli, pence (「镑」/苏勒/便士)
+- **libre** — pound, weight (「磅」)
+
+## Creatures
+
+- **fevkalade mahluk** — extraordinary creatures (超凡物种)
+- **Manhal balığı** — Seyirci iksiri malzemesi; ergin bir çift gözü kullanılıyor (曼哈尔鱼)
+- **teke boynuzlu kara balık** — Seyirci iksiri malzemesi; kanı 35 ml olarak kullanılıyor (羊角黑鱼)
+- **Hayalet Köpekbalığı** — Ghost Shark (鬼鲨; iksir malzemesi kaynağı; en az 100 mililitre kanı gerekir)
+- **Tussock Balığı** — Tussock Nehri'nden gelen, az kılçıklı yenilebilir bir balık türü (塔索克鱼)
+- **kıvırcık tüylü babun** — curly haired baboon (卷毛狒狒)
+- **kurtçuk** — maggot, worm (蛆虫 / 蠕虫); "solucan" ve tek başına "kurt" kullanılmaz; Zaman Kurtçuğu ile aynı baş kelime, teyit bekliyor (değilse "sürfe") _55_
+
+## Food and Drinks
+
+- **Fermo Kahvesi** — Paz Nehri Vadisi'nden gelen, acı ama kokulu bir kahve türü (帕斯河谷/费尔默咖啡)
+- **Feynapotter Yaylası Kahvesi** — Klein'ın tercih ettiği kahve, Welch'in evinde birkaç kez tattığı (费内波特高原咖啡)
+- **ikindi çayı** — afternoon tea (下午茶)
+- **Southville Kahvesi** — Southville coffee (南威尔咖啡); ortanın biraz altında bir kahve _48_
+- **Sibe Çayı** — Sibe black tea (锡伯红茶) _48_
+- **Desi Kahvesi** — Desi coffee (迪西咖啡); ad, Desi Körfezi'nin adıdır _48_
+- **limonlu kek** — lemon cake (柠檬蛋糕); İng. çeviri "lemon egg tarts" der; 27'deki "limonlu puding" aynı Çinceyse birleştirilmeli _50_
+- **ziyafet** — banquet (宴会); "balo" is kept for 舞会 52
+- **çay** — tea, black tea (红茶); düz çay, "siyah çay" / "kara çay" kullanılmaz; adlı hâli Sibe Çayı _48_
+
+## Transport & Ships
+
+- **umumî at araba** — public carriage (公共马车); raylı/raysız belirtilmediğinde _56_
+- **raylı umumî at araba** — railed public carriages (轨道公共马车)
+- **raysız umumî at araba** — unrailed public carriages (无轨公共马车)
+- **Yörünge At Arabası Şirketi** — raylı umumî at arabalarını işleten şirket (轨道马车公司)
+- **Süzülen Ekspres** — Constant Şehri'ne yeni açılan buharlı tren seferi (飞翔号)
+- **hava gemisi** — airship (飞空艇)
+- **iki tekerlekli fayton** — two-wheeled carriage (双轮马车) _44_
+- **kira arabası** — for-hire carriage (出租马车); "taksi" anakronik
+- **arabacı / arabacılık** — carriage driver (马车夫)
+- **biletçi** — umumî at arabasında ücret toplayan görevli (收费员)
+- **Mavi İntikamcı** — Blue Avenger; Alger Wilson'ın kaptanlığındaki hayalet gemi (幽蓝复仇者号)
+- **Yonca** — the Alfalfa (苜蓿号); Güney Kıta'dan Enmat Limanı'na dönen gemi; tırnaksız; Yonca kadın adı da olduğundan ilk geçişte "Yonca adlı gemi" _54_
+
+## Household & Social Roles
+
+- **kâhya** — butler (管家); "uşak" alt basamak hizmetlidir, kullanılmaz
+- **ziyaret kartı** — calling card (名片); "kartvizit" fazla modern, kullanılmaz _50_
+- **sabah ziyareti** — morning call (晨访); öğleden sonra ikiyle altı arası yapılır; şaka buna ve "sabah elbisesi"ne dayanır _50_
+- **hizmetli** — hired servants (佣人)
+- **hizmetçi** — 女仆/女佣
+- **hizmetkâr** — 仆役/仆人
+- **efendi/sahip** — a servant's master (主人); the butler speaks of him with the respectful plural
+- **hekim** — doctor (医生); küçük harf, sıradan meslek; Mertebe adı Hekim büyük harf 53
+
+## Çeviri Alışkanlıkları (Style Rules)
+
+- **整个人** — çoğunlukla düşer
+- **有所 / 有些 / 一丝** — korunur
+- **微微 + jest** — düşer
+
+---
+
+# VII. Frozen Lines
+
+- **Ben dâhil herkes ölecek** — 所有人都会死，包括我 (Klein's notebook; 1:54, 2:54, 3:4)
+- **İradeniz emrimizdir.** — (遵从您的意志); dondurulmuş
+- **şans artırma ayini** — luck enhancement ritual (转运仪式 / 福生玄黄), four steps, counter-clockwise:
   1. **Arz ve Semanın Lütufkâr Baki Efendisi** — 仙尊
   2. **Arz ve Semanın Lütufkâr Gök Hakimi** — 天君
   3. **Arz ve Semanın Lütufkâr Ulu İlahı** — 上帝
-  4. **Arz ve Semanın Lütufkâr Semavi Muazzezi** — 天尊 [yml: Semavi Muazzez, b2]
+  4. **Arz ve Semanın Lütufkâr Semavî Muazzezi** — 天尊 [yml: Semavî Muazzez, b2]

@@ -64,7 +64,7 @@ _Bu tablo canlıdır._
 
 ### Ağır Sözcük Kotası
 
-`marazi`, `idrak etmek`, `heyula`, `maksadıyla` ve benzerleri yalnızca bağlam ciddi atmosferik ağırlık gerektirdiğinde kullanılır. Varsayılan sıfat veya fiil olarak kesinlikle kullanma.
+`marazi`, `idrak etmek`, `heyûlâ`, `maksadıyla` ve benzerleri yalnızca bağlam ciddi atmosferik ağırlık gerektirdiğinde kullanılır. Varsayılan sıfat veya fiil olarak kesinlikle kullanma.
 
 ### "Fark etmek / Anlamak / İdrak etmek" Kılavuzu
 
@@ -121,7 +121,7 @@ Kaynak metin, Çince web romanlarına özgü dört karakterli deyimler (Chengyu)
 
 ## 7. BELİRSİZLİK ETİKETİ
 
-Bir replik veya cümle iki farklı kayıt arasında kalıyorsa, varsayılan olarak daha muhafazakâr kaydı seç ve satırın başına `[BELİRSİZ]` etiketi koy. Bu etiketler DURUM NOTU'na dahil edilmez, yalnızca geri bildirim için görünür kalır.
+Bir replik veya cümle iki farklı kayıt arasında kalıyorsa, varsayılan olarak daha muhafazakâr kaydı seç ve satırın başına `[BELİRSİZ]` etiketi koy. Bu etiketler DURUM NOTU'na dâhil edilmez, yalnızca geri bildirim için görünür kalır.
 
 ---
 
@@ -148,6 +148,6 @@ _(Aşama/Sahne düzeyindeki kalıcı durum ikincil promptta tutulur; bu bölüm 
 
 ## 10. GÖREV
 
-Sana İngilizce referans metniyle birlikte eşleştirilmiş Çince metin parçalar halinde sunulacak. Ayrıca Bölüm Açılış Şablonu sağlanacak. Her parçayı yukarıdaki kurallara, kaynak hiyerarşisine ve bölüme özel ses haritalarına sıkı biçimde bağlı kalarak çevir.
+Sana İngilizce referans metniyle birlikte eşleştirilmiş Çince metin parçalar hâlinde sunulacak. Ayrıca Bölüm Açılış Şablonu sağlanacak. Her parçayı yukarıdaki kurallara, kaynak hiyerarşisine ve bölüme özel ses haritalarına sıkı biçimde bağlı kalarak çevir.
 
 Karanlığı steril etme. Psikolojik alt metni kaybetme.

@@ -1,3 +1,5 @@
+Ch. 504
+
 "Kaptan, bir korsan gemisi var!" Sesini alçaltma gereği duymamıştı. Yolcuların çoğu şaşkına dönmüş, yemek yemeyi bırakmıştı.
 
 Klein başını kaldırdı, karşısındaki Danitz'e karanlık ve buz gibi gözlerle baktı.
