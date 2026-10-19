@@ -127,3 +127,54 @@ def test_sayidan_sonra_olcu_eki(terim, metin):
 ])
 def test_olcu_eki_sayisiz_eslesmez(terim, metin):
     assert not lotm.desen_kur(terim, harf_duyarli=False).search(metin)
+
+
+@pytest.mark.parametrize("terim, metin", [
+    ("vahiy", "ilahların ve ruhların vahyi"),
+    ("vahiy", "vahye kulak verdi"),
+    ("vahiy", "vahiyler"),                       # korunur: unsuz oncesi dusmez
+])
+def test_unlu_dusmesi_vahiy(terim, metin):
+    assert lotm.desen_kur(terim, harf_duyarli=True).search(metin)
+
+
+@pytest.mark.parametrize("metin", [
+    "kızıl ayı simgeleyen bir daire",
+    "Tanrıça'yı yalnızca iki mum simgeliyor",
+    "bunun simgelediği şey",
+    "iksirin simgesel anlamı",
+    "simgeler",                                  # korunur: cogul
+])
+def test_turetme_simge(metin):
+    assert lotm.desen_kur("simge", harf_duyarli=True).search(metin)
+
+
+@pytest.mark.parametrize("terim, metin", [
+    ("işaret", "işaretleyen"),                   # -lA- kapali liste: listede olmayan isim turemez
+    ("simge", "simgecilik"),                     # yalniz kayitli turevler
+])
+def test_turetme_kapali_liste(terim, metin):
+    assert not lotm.desen_kur(terim, harf_duyarli=True).search(metin)
+
+
+def test_ozel_ad_tamlamasi_ilk_kelime_iyelik():
+    d = lotm.desen_kur("Kontluk Polis Müdüriyeti", harf_duyarli=True)
+    assert d.search("Awwa Kontluğu Polis Müdüriyeti, Loen Krallığı")
+    assert d.search("Kontluk Polis Müdüriyeti'nden")       # korunur
+    assert not d.search("dedi ki kontluğu Polis Müdüriyeti")  # onunde ozel ad yok
+
+
+@pytest.mark.parametrize("terim, metin, eslesir", [
+    ("arama çubuğu", "Arama Çubuğu Kehaneti'ne başvurdu", True),   # ozel ad icinde
+    ("koyu kızıllık", "Koyu kızıllık usulca soldu.", True),        # korunur: cumle basi
+    ("dolunay yağı", "Dolunay Yağı'nı aldı", False),               # imla kaymasi kalir
+    ("dolunay yağı", "Dolunay Yağı şişesini", False),
+])
+def test_duyarsiz_ozel_ad_icindeki_ortak_isim(terim, metin, eslesir):
+    assert bool(lotm.desen_kur(terim, harf_duyarli=False).search(metin)) is eslesir
+
+
+def test_duyarli_dal_degismez():
+    # yayim_denetle / hazirla duyarli dalda kucuk harfli bicimi bilerek sorar
+    assert not lotm.desen_kur("arama çubuğu", harf_duyarli=True).search("Arama Çubuğu Kehaneti")
+    assert not lotm.desen_kur("baston", harf_duyarli=True).search("Baston elindeydi.")

@@ -565,6 +565,7 @@ DUSEN = frozenset(
         "sabır",
         "şehir",
         "şekil",
+        "vahiy",
         "vakit",
         "zehir",
         "zihin",
@@ -660,6 +661,39 @@ def _fiil_koku(kelime: str, cok_kelimeli: bool) -> str | None:
     return re.escape(kok) + r"[^\W\d_]*"
 
 
+# TÜRETME. Bazi terimler metinde en cok tureviyle gecer: simge -> simgeleyen,
+# simgeliyor, simgesel. Bunlar ayni kavramdir (象征'nin fiil ve sifat hali),
+# ama ek degil yapim ekidir ve EK deseni bulmaz. KAPALI LİSTE, DUSEN gibi:
+# -lA- her isme acilsa "baş" -> "başla-" (start), "kol" -> "kolla-" (guard)
+# esleirdi. Deger kelimenin ARKASINA gelen desen parcalaridir; fiil parcasi
+# cekimi serbest birakir (simgel-e-yen / simgel-i-yor: unlu daralmasi).
+TURETME = {
+    "simge": (r"l[ei][^\W\d_]*", r"sel" + EK),
+}
+
+
+def _turetme_deseni(kelime: str) -> str | None:
+    ekler = TURETME.get(tr_kucult(kelime))
+    if not ekler:
+        return None
+    return "(?:" + "|".join(re.escape(kelime) + e for e in ekler) + ")"
+
+
+# Baslangici buyuk harf bir sozcuk: tamlamaya giren ozel ad (Awwa) ya da
+# buyuk harfle devam eden ozel ad (Arama Çubuğu Kehaneti).
+_BUYUK_HARF = "A-ZÇĞİÖŞÜÂÎÛ"
+_OZEL_AD = rf"[{_BUYUK_HARF}][^\W\d_]*"
+
+
+def _iyelikli(kelime: str) -> str:
+    """'Kontluk' -> 'Kontlu[kğ][ıiuü]', 'Kapı' -> 'Kapıs[ıiuü]' (3. tekil iyelik)."""
+    if kelime[-1] in _UNLU:
+        return re.escape(kelime) + "s[ıiuü]"
+    if kelime[-1] in YUMUSAMA:
+        return re.escape(kelime[:-1]) + YUMUSAMA[kelime[-1]] + "[ıiuü]"
+    return re.escape(kelime) + "[ıiuü]"
+
+
 # OLCU EKI -lIk. "altı librelik top", "iki yüz Sterlinlik ücret": sayidan
 # sonra gelen birim -lIk alir. Her terime acilamaz: "İmparator" ->
 # "İmparatorluk", "Aşkın" -> "Aşkınlık" baska kelimelerdir. Bu yuzden
@@ -715,7 +749,14 @@ def _govde(terim: str, olcu: bool = False) -> str:
         if kelime and kelime[-1] in YUMUSAMA:
             g = re.escape(kelime[:-1]) + YUMUSAMA[kelime[-1]]
         if i < son:
-            parcalar.append(g + r"(?![^\W_])")
+            g += r"(?![^\W_])"
+            # Araya ozel ad girince ilk kelime iyelik alir: "Kontluk Polis
+            # Müdüriyeti" -> "Awwa Kontluğu Polis Müdüriyeti". Yalniz ozel ad
+            # gibi yazilmis (buyuk harfli) terimlerde ve onunde gercekten bir
+            # ozel ad varken; ciplak "Kontluğu Polis" Turkce degil.
+            if i == 0 and not olcu and kelime[0].isupper():
+                g = f"(?:{g}|{_OZEL_AD}\\s+{_iyelikli(kelime)}(?![^\\W_]))"
+            parcalar.append(g)
             continue
         if olcu:
             # yalnizca -lIk'li bicim; cagiran (desen_kur) sayi sartini koyar
@@ -733,6 +774,9 @@ def _govde(terim: str, olcu: bool = False) -> str:
         dusmus = _dusmus_desen(kelime)
         if dusmus:
             g = f"(?:{g}|{dusmus}(?=[{_UNLU}]){EK})"
+        turev = _turetme_deseni(kelime)
+        if turev:
+            g = f"(?:{g}|{turev})"
         parcalar.append(g)
     return r"\s+".join(parcalar)
 
@@ -759,6 +803,17 @@ def desen_kur(terim: str, harf_duyarli: bool = True):
         else list(dict.fromkeys([terim, tr_kucult(terim), tr_buyut(tr_kucult(terim))]))
     )
     secenekler = [_govde(b) for b in bicimler]
+
+    # HER KELIMESI BUYUK bicim (duyarsiz dalda). Cumle basi bicimi yukarida
+    # zaten var; ortak isim bir de daha uzun bir ozel adin icinde gecer:
+    # "Arama Çubuğu Kehaneti'ne başvurdu" (arama çubuğu). YALNIZ arkasindan
+    # buyuk harfli bir sozcuk geliyorsa: tek basina "Dolunay Yağı" bir imla
+    # kaymasidir ve eslesmeyen kalmali. Duyarli dala dokunulmaz; cagiranlar
+    # (yayim_denetle, hazirla) orada kucuk harfli bicimi bilerek sorar.
+    if not harf_duyarli and " " in terim:
+        baslik = " ".join(tr_buyut(k) for k in tr_kucult(terim).split())
+        if baslik not in bicimler:
+            secenekler.append(_govde(baslik) + rf"(?=\s+[{_BUYUK_HARF}])")
 
     # Olcu bicimi (bkz. OLCU_EKI): sayi on-kosulu bir kez yazilir, uc harf
     # bicimi onun arkasinda alternatif olur. Eskiden her bicim kendi
