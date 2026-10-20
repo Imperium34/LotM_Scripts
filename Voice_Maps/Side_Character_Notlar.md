@@ -654,3 +654,38 @@ Tasarım kararı (çevirmen). Toplantıda doğrudan örneği henüz bulunmadı; 
 
 1172: 心跳陡地加快 → 低下脑袋，让自己嗓音轻微有些颤抖地开口道 是我们不够虔诚，想得太多。 393: 为之前的浅薄冒冷汗. 1185: 额头布满冷汗.
 **Denetim:** 393, 1172, 1185 (ZH).
+
+---
+
+## Lanevus
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Çevrildikçe ZH/TR ¶ eklenmeli.
+> **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm:** 62 (Glacis'in anlattığı demir madeni dolandırıcılığı), 115–116 (kaçış, Megose), 175–186 (Hood Eugen bağlantısı; 185'te Hood onun sesini taklit eder), 203–205 (mektup), 210 (perde arkası anlatı), 264–289 (Backlund'da takip, 284 röportaj, 285–287 baskın ve ölüm). Kendi ağzından konuşması yalnızca 185 (aktarılan), 203–204 (mektup), 285–287'dedir.
+> **Eski haritadan düşenler:** "Kazanılmış nihilizm", "insan doğasının çürüklüğünü kanıtlayan filozof" ve "kendi ipiyle asma" kaynakta yok; fabrika sefaleti onun için ahlaki bir tez değil, planının malzemesidir (203 ¶69, 286 ¶64). "Hiçbir şeye şaşırmaz" kuralı ölüm sahnesiyle çelişir (287 ¶81–86). Eski örnek (hisse senedi tiradı) uydurmadır.
+
+### N-LAN1.1
+
+Mektup 203 ¶67–70, 204 ¶6–8: 哈哈哈，祝贺你们，祝贺你们终于找到了这封信！/ 这说明你们还不算太愚蠢，不算太迟钝，有资格参与我设计的这场生与死的游戏 / 我们的游戏将在这样的背景下开始 / 蠢货们，做好准备了，我要给你们提示了！/ 女士们，先生们，我的提示是… / 相信我，在这件事情上，我没有进行任何的欺骗 / 最喜欢给朋友带来惊喜的兰尔乌斯. Leonard: 他‘没有骗人’的描述或许本身就在骗人 (204 ¶18). 210 ¶47–48: doğrudan ihbar etmeyi 像个蠢货 bulur, mektubu bir oyun gibi bırakır.
+**Denetim:** 203 ¶67–70, 204 ¶3–18, 210 ¶46–48 (ZH).
+
+### N-LAN1.2
+
+185 ¶74: Hood 换了副满是磁性的嗓音，略显癫狂地笑道. ¶75: 这是最坏的时代，也是最好的时代，只要能抓住机会，我们也能成为世界的掌控者，成为真正的不朽者！ ¶76: vaat (扮演法 ipucu, 一点神性，不朽的神性). ¶77: 我的承诺就是祂的承诺. ¶78: 除非你愿意永远停留于现在的位阶. Kalıp 203 ¶69'da tekrar eder. Klein bunu 诈骗师 konuşma tarzı sanar (186 ¶43). Kalıp Dickens'ın *İki Şehrin Hikâyesi* açılışını ters sırayla yankılar; Türkçe yerleşik çeviri "Zamanların en iyisiydi, zamanların en kötüsüydü"; Lanevus'unki şimdiki zaman ve "en kötü" önce gelir.
+**Denetim:** 185 ¶73–78, 186 ¶43, 203 ¶69 (ZH).
+**Açık soru:** Kalıp cümle Frozen Lines'a alınmalı mı? Önerilen: "Bu, zamanların en kötüsü, ama aynı zamanda en iyisi."
+
+### N-LAN1.3
+
+286 ¶55–67: 咳嗽着笑道; 你知道吗？对我这种人来说，做了一件很值得自豪的大事后，无人分享是最难过的 (¶56); 我在廷根市的时候，被‘真实造物主’骗了 (¶57); 哈哈，你能想象吗？我在被一点一点替换 (¶59); grev kışkırtma, kanalizasyon mahlukları (¶66–67), 哎 ile biten bir yakınma.
+**Denetim:** 286 ¶48–67 (ZH).
+
+### N-LAN1.4
+
+286 ¶48–51: 突然大声笑道，疯狂笑道: 哈哈，哈哈，感谢你们！/ 我真的要感谢你们！/ 真的，看我诚恳的眼睛，我确实要感谢你们！ ¶74–78: 右手按胸…行了一礼; 感谢你们，由衷地感谢。/ 虽然你们很愚蠢，但终究帮到了我。/ 对你们这帮愚蠢的家伙来说，这是你们的荣幸。
+**Denetim:** 286 ¶48–52, ¶74–78 (ZH).
+
+### N-LAN1.5
+
+285 ¶108: 表情淡漠而平静，没有一丁点恐惧; ¶110–112 标志性的嘲讽笑容: 这很简单。/ 因为我不再是纯粹的兰尔乌斯。 286 ¶84: kaçmak için kılıcı baygın Gece Şahini'ne fırlatır. 287 ¶10, ¶18, ¶55: kısa, hesaplı iç ses (他能预知我的动作？/ 不能再耽搁了 / 他在欺诈我？), 头脑非常清醒. 287 ¶24 半笑半讥讽: 不管怎么样，被神灵这么折腾了一次后，总是有些收获的. Ölüm 287 ¶81–86: 非常疑惑地断断续续地问道: 为什么…… / 要……杀……我…… / 不…… (双眼圆睁，难以释怀). Görünüş: 嘴角常含讥讽笑意 (185 ¶70), 噙着嘲讽意味 (264 ¶39), 始终噙着俯视和嘲讽的笑意 (284 ¶74).
+**Denetim:** 185 ¶70, 264 ¶39, 284 ¶74, 285 ¶108–112, 286 ¶84, 287 ¶10–86 (ZH).

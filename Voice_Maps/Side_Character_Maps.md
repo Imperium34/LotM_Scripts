@@ -924,12 +924,50 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 - **Kural 2 (Taktiksel Sessizlik):** Zangwill konuşurken cümlenin ortasında duraksadığında veya hemen cevap vermediğinde, bu asla bir tereddüt, şüphe veya vicdan azabı olarak okunmamalıdır. Üzerine düşüneceği veya şüphe duyacağı hiçbir şey yoktur. Onun sessizlikleri tamamen _taktiksel birer hesaplamadır_.
 - **Ayar:** _"Gece'nin sükûneti sadece boyun eğenler içindir. Benim yolum ise bu sükûneti yırtıp atmayı gerektiriyor. Gecenin gözleri üzerimde olabilir ama o karanlığı asıl yönlendiren benim irademdir."_
 
-### Lanevus
+### Lanevus `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-- **Tarz:** Kazanılmış (earned) ve ne yazık ki haklı bir nihilizm. O, dikkat çekmek için alaycı davranan sahte bir filozof değildir; insan doğasının, açgözlülüğün ve ikiyüzlülüğün ne kadar çürük olduğunu _gerçekten bilen_ ve bunu pratik olarak kanıtlayan biridir.
-- **Kural 1 (Kendi İpiyle Asma):** Konuşurken sadece dalga geçmez, karşısındakine kendi karanlık doğasını acımasızca ispatlar. Tiyatro sahnesindeymiş gibi coşkulu, karizmatik ve vurucu cümleler kurar, ancak cümlelerinin altındaki o acımasız gerçeklik hissi asla kaybolmaz. İnsanları kandırmaz; sadece kendi açgözlülükleriyle kendilerini asmaları için onlara ip uzatır.
-- **Kural 2 (Beklentinin Teyidi / Sıfır Şaşkınlık):** Lanevus insan doğasının kötülüğü karşısında asla şaşırmaz. Birisi ihanet ettiğinde, açgözlülük kazandığında veya insanlar kendi kendilerini kandırdığında, Lanevus bunu bir "aydınlanma" olarak değil, sadece doğal bir "teyit" olarak karşılar. Karşısındakinin kapasitesine (gücüne) şaşırabilir ama motivasyonuna (insanlığın kokuşmuşluğuna) asla şaşırmaz.
-- **Ayar:** _"Bana bir canavar diyorsun ama kendi hisselerinin değeri artarken o zavallı insanların paralarının nereye gittiğini bir kez bile sorgulamadın, değil mi? Ben sadece size içten içe taptığınız o açgözlülüğün gerçek bir tapınağını inşa ettim. Asıl komik olan, hâlâ masum olduğunuza inanmanız."_
+**Tarz:** Kapkaççı Yolu'nda Mertebe 8 Dolandırıcı (诈骗师, 184; 597). Sıradan yüzlü, gözlüklü genç bir adam; anlatı onu hep alaycı, tepeden bakan bir gülümsemeyle anar (嘲讽笑意). Ağzı iyi laf yapan bir satıcının ağzıdır: akıcı, kendinden emin, gösterişli. Dünyayı bir sahne, karşısındakileri seyirci ya da oyun rakibi olarak görür. Kendi zekâsına hayrandır ve başkalarının aptallığıyla açıkça alay eder. Felsefe yapmaz; büyük laflar onun satış aracıdır. Klein ve Leonard onu "gizli bir deli" diye tarif eder (204), ama planlarındaki soğukkanlılık deli olmadığını gösterir (186). Kendi sesiyle ilk kez 185'te (Hood Eugen'in ağzından) konuşur; 62 ve 115–116'da yalnızca adı geçer.
+**Onay:** Kısa ve kendinden emin: _"Çok basit."_ (285)
+
+##### LAN1.1 — Oyun kurucu sunucu
+
+**Kapsam:** Mektup (203–204) · karşı taraf, yetkililer · meydan okuma
+**Yap:** Rakiplerini bir gösterinin seyircisi gibi karşılar: kahkahayla açar, tebrik eder, "Hanımlar, beyler" diye seslenir, olayı "oyun" diye adlandırır ve ipucunu bir sunucu gibi duyurur. Nezaket kalıplarının içine açık hakaret koyar ("aptallar"). Kendi dürüstlüğüne yemin eder ("inanın bana, bu konuda hiç yalan söylemiyorum"); okur bunun da bir oyun olabileceğini sezmeli. İmzasını süsler.
+**Yapma:** Tehdidi öfkeyle ya da nefretle yazmak; ciddi, ağır bir kötü adam ağzı; hakareti yumuşatmak.
+**Örnek:** _"Hahaha, tebrikler, nihayet bu mektubu bulduğunuz için sizi tebrik ederim!"_; _"Aptallar, hazır olun, size ipucunu veriyorum!"_; _"Arkadaşlarına sürpriz yapmaya bayılan Lanevus."_ (203–204)
+**Gerekçe:** → N-LAN1.1
+
+##### LAN1.2 — Satış konuşması
+
+**Kapsam:** Hood Eugen (185) · ikna, kandırma, tavlama
+**Yap:** Büyüleyici, hafifçe kendinden geçmiş bir sesle büyük vaatler sırala: fırsat, ölümsüzlük, dünyaya hükmetmek. Vaadi, arkasındaki gücün adını anmadan büyüt ("benim sözüm O'nun sözüdür"). Kapanışta karşı tarafın başka yolunu kapat: geri durmanın bedelini söyle. "Bu, zamanların en kötüsü, ama aynı zamanda en iyisi" cümlesi onun kalıbıdır (185, 203) ve her geçişte aynı kalır.
+**Yapma:** Vaadi kanıtlarla ya da ayrıntıyla ağırlaştırmak; yalvarmak; kalıp cümleyi değiştirmek.
+**Örnek:** _"Hood Eugen, bu, zamanların en kötüsü, ama aynı zamanda en iyisi. Fırsatı yakalayabilirsek biz de dünyaya hükmedebilir, gerçek birer ölümsüz olabiliriz!"_ (185); _"Şüphe etme. Ruhiyat Simyagerleri şimdilik sana yeterince yardım edecek kadar güçlü değil; tabii ömrünün sonuna kadar bu Mertebede kalmak istemiyorsan."_ (185)
+**Gerekçe:** → N-LAN1.2
+
+##### LAN1.3 — Seyircisiz kalamayan
+
+**Kapsam:** 286 · planını anlatırken
+**Yap:** Başardığı ya da atlattığı bir işi gururla ve açık açık anlatır, kendini nasıl kurtardığını adım adım sayar. Kendi tuzağa düşüşünü de bir hikâye gibi, kahkahayla anlatır ("Hayal edebiliyor musunuz?"). Seyirci ihtiyacını kendisi söyler.
+**Yapma:** Anlatıyı itiraf ya da pişmanlık tonuna çevirmek; kendine acımak.
+**Örnek:** _"Biliyor musunuz? Benim gibi biri için, gurur duyulacak büyük bir iş yaptıktan sonra bunu paylaşacak kimsenin olmaması, dünyanın en zor şeyidir."_ (286); _"Haha, hayal edebiliyor musunuz? Yavaş yavaş değiştiriliyordum, O'nun tarafından yavaş yavaş değiştiriliyordum!"_ (286)
+**Gerekçe:** → N-LAN1.3
+
+##### LAN1.4 — Kibar hakaret, alaycı teşekkür
+
+**Kapsam:** 286 · kendisine istemeden yardım edenler, yenilmiş rakipler
+**Yap:** Teşekkürü abartarak tekrarlar ve samimiyetine yemin eder; tam bu yüzden alay gibi durur. Selamı eksiksiz verir (eli göğsünde eğilir), sonra hakareti aynı resmiyetle söyler.
+**Yapma:** Teşekkürü gerçekten içten ya da sıcak kurmak; hakareti kaba küfre çevirmek.
+**Örnek:** _"Haha, haha, teşekkür ederim! Size gerçekten teşekkür etmeliyim! Hakikaten, şu samimi gözlerime bakın, size gerçekten müteşekkirim!"_; _"Aptal olsanız da sonunda işime yaradınız. Sizin gibi bir avuç budala için bu bir şereftir."_ (286)
+**Gerekçe:** → N-LAN1.4
+
+##### LAN1.5 — Soğukkanlılık ve son çatlak
+
+**Kapsam:** 285–287 · tehlike, dövüş, ölüm
+**Yap:** Kuşatıldığında bile sakin ve korkusuz; kısa, alaycı bir cevap verir. Dövüşte iç sesi soğuk ve hesaplıdır (kısa sorular, hızlı kararlar). Tek çatlak ölümde gelir: neden öldürüldüğünü anlayamaz, cümlesi kelime kelime kırılır; son sözü bir "Hayır..."dır.
+**Yapma:** Son anda vecize, son konuşma ya da kahkaha; ölümünü kahramanca bir kabullenişe çevirmek.
+**Örnek:** _"Çünkü artık yalnızca Lanevus değilim."_ (285); _"Ne olursa olsun, bir ilah tarafından böyle hırpalandıktan sonra insanın eline hep bir şeyler geçiyor."_ (287); _"Neden..."_ / _"...beni... öldürüyorsun..."_ (287)
+**Gerekçe:** → N-LAN1.5
 
 ### Trissy
 
