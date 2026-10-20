@@ -1008,5 +1008,44 @@ Ad: 1110 ¶39, 1111 ¶4, ¶10, ¶24, 1275 ¶67, 1359 ¶19, ¶30 索伦·艾因�
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.
 > **Kullanıcı kararı (2026-10-20):** ikisi, konuşmacı etiketi olmadan replikten tanınabilecek kadar ayrı sicillerle yazılır; "Ayırt etme sınaması" tablosu bunun ölçüsüdür. Sicil seçimleri (vaiz / hokkabaz) kaynaktaki anlatı işaretlerine dayanan yorumdur.
 > **Eski haritalardan düşenler:** Âdem Kural 1 ("asla belirsizlik bildirmez") 1347 ¶49 ile çelişir (我猜测…结果未知); Kural 7'deki "idrak sancısı" anı ve Merlin'e dayalı zaman kipi kuralı (Kural 6) kaynakta bir sahneye dayanmıyor. Amon Kural 1 ("karşısındakinin sesini kopyalayarak başlar") kaynakta yok. Amon Kural 7 (sıfır kayıp) AMN1.4 olarak korundu. Eski örneklerin hepsi uydurmadır.
-> **Henüz yapılmadı:** ADM/AMN kural başına ayrıntılı N- notları. Ana kanıtlar: Âdem 891 ¶31–40 (adsız rahip), 945 ¶85, 1150 ¶4–12, 1345 ¶43–81, 1346 ¶12–64, 1347 ¶40–78, 1348 ¶59–91, 1375 ¶74. Amon 983 ¶53–76, 1005 ¶13–73, 1151–1166 (Klein'ı Çernobil'e götürüş; 你猜 ×9, 有意思 ×12, 很有趣 ×9, 偏执狂 ×11), 1176–1177 (koro), 1183, 1223 ¶6–61 (oylama), 1359 ¶20–27, 1381–1386.
 > **Açık soru:** 时天使 ve 恶作剧之神 için sözlükte ad yok.
+
+### N-ADM1.1
+
+Ton: 1150 ¶12 嗓音和煦: 你可以走了; 1346 ¶56 嗓音不疾不徐; ¶60 平静说道: 这是必要的牺牲; 1348 ¶59 依旧保持着那种布道的状态: 是的; ¶80 眸光不变: 你不理解，是因为你了解的不够多. Bilgi düz ve eksiksiz: 1345 ¶60 (komşu Yollar ve Yegânelik), 1347 ¶44, ¶52, ¶62, 1348 ¶91. Belirsizliği sakince söyler: 1347 ¶49 目前没谁能验证这件事情…我猜测曾经有某些存在做过尝试，毕竟聚合是强烈的本能，但结果未知. Ünlem ve kahkaha yok; gülüş yalnız anlatıda (945 ¶85 和煦笑道, 1348 ¶86 和煦笑道, 1347 ¶44 嘴角微动，仿佛笑了一下).
+**Denetim:** 945, 1150, 1345–1348 (ZH).
+
+### N-ADM1.2
+
+1346 ¶14 保持着牧师和煦的微笑，用启发的口吻说道：你不觉得八大天使之王里，我是最为特殊的那个吗？ 1348 ¶75 不答反问，一副随时开始祷告的模样：为什么这么说？ 1347 ¶76 他太累了，想要休息，想要自由，哪怕只有几秒 (Klein'ın yükünü söyler); ¶78 和煦问道，就像在开解信徒：你为什么不称呼他格尔曼·斯帕罗…？ 891 ¶35–39: adsız rahip Roselle'e yaratılış söylencesini anlatır.
+**Denetim:** 891, 1346, 1347, 1348 (ZH).
+
+### N-ADM1.3
+
+1346 ¶60 这是必要的牺牲; ¶64 没有什么情绪波动地说道: 查拉图就在门口等你…只能成为祂的秘偶. 1348 ¶63 就像在说一个陌生人: 所以，祂疯掉了; ¶69 态度平和: 这是我们之间的事情. 1346 ¶56 我将自己伪装成了一个偏执狂. 1150 ¶4 Klein'ın kabulünden sonra 你可以走了.
+**Denetim:** 1150, 1346, 1348 (ZH).
+
+### N-ADM1.4
+
+891 ¶31 和煦内敛…简朴的白色长袍…清澈如同孩子的浅色眼眸; ¶40 攥住胸口的十字架坠子，无声祷告. 1345 ¶43 单手握住那个银制十字架吊坠; 1347 ¶40 低头看了眼胸口悬挂的银制十字架吊坠; ¶49 握住了胸前那根银制十字架吊坠; 1348 ¶59 穿着简朴白袍; ¶66 松开了握着银制十字架吊坠的手掌. 1347 ¶54 用模仿的方式说道：福生玄黄天尊 (→ donmuş "Arz ve Arşın Kutlu Semavî Muazzezi").
+**Denetim:** 891, 1345, 1347, 1348 (ZH).
+
+### N-AMN1.1
+
+Gülüş ve monokl: neredeyse her replik 笑 ile; 1151 ¶43, ¶53, ¶79, ¶89; 1153 ¶38; 1157 ¶17; 1161 ¶21 monokl jestleri. Oyun dağarcığı (Amon sahnelerinde): 你猜 ×9 (1152 ¶26 你可以猜一猜，如果能猜中，我可以让你的结局好一点; 1183 ¶41; 1223 ¶17, ¶46), 有意思 ×12 (1151 ¶89 坦白地讲，这很有意思; 1382 ¶31), 很有趣 ×9 (1154 ¶37, 1359 ¶27). 1157 ¶67 偷走一个天使级的信使，这很有挑战性，也很好玩，不是吗？生活总是需要些乐趣、刺激和期待. Teklif: 1151 ¶89, 1157 ¶17 真的不考虑做我的眷者？ Lakap: 1159 ¶62 我不称呼祂亚当，纯粹是觉得偏执狂这个外号很适合祂 (偏执狂 ×11). Saygı ironisi: 1155 ¶77 我对神灵们一直都很尊重. Klein'ın zikri: 1151 ¶9 福生玄黄天君 (→ "Arz ve Arşın Kutlu Gök Hakimi").
+**Denetim:** 1151–1166, 1183, 1223, 1359, 1382 (ZH).
+
+### N-AMN1.2
+
+1005 ¶13 你的行为往往会暴露你的问题，对一位欺诈领域的导师来说…说明你有优秀的道德水准，且依旧将自己视作人类; ¶32 序列2 命运木马 açıklaması. 1151 ¶53: teklif dizisi (你把‘源堡’让给我，所有的问题就解决了…). 1153 ¶40 iki olasılık + 猜一猜. 1163 ¶72 我说的是不超过三天。一天也是不超过三天. 1183 ¶21 我说的每一个单词，你都不会相信. 1359 ¶27 做出不符合你想法的行为，也是一种欺诈. 983 ¶76: kurbanını 太迟了 yalanıyla kandırdığını kendi kendine anlatır.
+**Denetim:** 983, 1005, 1151, 1153, 1163, 1183, 1359 (ZH).
+
+### N-AMN1.3
+
+1153 ¶27 不是我，是我们. 1176 ¶40 阿蒙们同时推了下单片眼镜; 1177 ¶3 阿蒙们…用巨人语诵念道 (Klein'ın "Gehrman Sparrow" tazim ismini alayla okur); ¶10 改得真快. 1223 ¶31 在本体主持下，我们进行了公正的投票，很不幸，我被选中了. 1382 ¶57 被分出来的那个阿蒙看了站在原地的阿蒙一眼. 983 ¶60 你不会以为我只来了一个人吧？
+**Denetim:** 983, 1153, 1176, 1177, 1223, 1382 (ZH).
+
+### N-AMN1.4
+
+1151 ¶75 我想与你和平达成交易…带你去见我的本体，去一个足够安全的地方，然后再拿走你的命运. 1166 ¶13 (Klein'ın tahlili: 源堡 riskini almak istemez); ¶22 鼓掌: 完美的推理…现在，我们还没有抵达最终的目的地，我当然不会冒险尝试. 1005 ¶26 我又不是‘暴君’途径的非凡者，肯定不会那么鲁莽…直接顶替你会发生一些我不愿意看到的事情. 1152 ¶43 只能等下一次了.
+**Denetim:** 1005, 1151, 1152, 1166 (ZH).
