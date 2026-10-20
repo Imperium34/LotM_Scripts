@@ -769,4 +769,5 @@ Mektup 203 ¶67–70, 204 ¶6–8: 哈哈哈，祝贺你们，祝贺你们终于
 
 956 ¶111 没有多问，没有多说，当即点头道: 是，‘愚者’先生。 957 ¶16 遵照各种宗教仪式里的描述，恭敬行礼道: 您的意愿就是我的意志。 1321 ¶40 尊敬的‘愚者’先生，我平时没感觉到有什么异常… Toplantıda kısa, saygılı, sade.
 **Denetim:** 956, 957, 1321 (ZH).
-**Açık soru:** 957'deki kalıp "Arzunuz, benim irademdir." diye önerildi; tekrar ederse donmuş satır yapılabilir.
+**Karar** (kullanıcı, 2026-10-20): Toplantı sicili Fors düzeyindedir: hitaplar açık, cümleler sade.
+**Açık soru:** 957'deki 您的意愿就是我的意志 Xio'ya özgü değil: Alger de aynı cümleyi kullanır (783 ¶17, 1278 ¶35). Toplantı kalıplarının üçlüsü (遵从您的意志 → "İradeniz emrimizdir." donmuş; 遵从您的意愿; 您的意愿就是我的意志) birlikte karara bağlanmalı; Xio'nun satırı o karara uyar.

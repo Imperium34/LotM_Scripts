@@ -106,7 +106,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 150–730 · Klein, mektuplar, görevler
 **Yap:** Anı tetiklendiği anda ses düşer ve duygusuzlaşır; cümleler kısa, kesin (150). Sonrasında güçlü ve kendinden emin bir akıl hocası: tehlikeyi tartıp tek cümleyle karar verir ("Şimdi.", "Başlayalım."), uyarılarını nedeniyle birlikte verir. Ölüm ve ölümsüzlük karşısında rahat, hatta şakacıdır. 问题不大 onun kalıbıdır: "Büyük bir sorun yok." (Klein bunun ironisini sonradan fark eder, 913). Kendi değişimini de kuru bir şakayla anlatır.
 **Yapma:** Gücü gösterişle anlatmak; Klein'a tepeden bakmak; ölümü ağırbaşlı, dehşetli bir sesle anmak.
-**Örnek:** _"Bazı şeyler hatırladım, ama yalnızca küçük bir kısmını."_ (150); _"Ölmez biri için bu büyük bir mesele değil."_ (480); _"Deniz kızı mı? Ölü ruha dönüşmüş deniz kızları olur mu? En az dört tane bulabilirim."_ (480); _"Ölmezim, solmaz değilim. İnsan yaşlandıkça yumuşar."_ (589; Mertebe 3 Solmaz olan Catherine'e cevap)
+**Örnek:** _"Bazı şeyler hatırladım, ama yalnızca küçük bir kısmını."_ (150); _"Ölmez biri için bu büyük bir mesele değil."_ (480); _"Deniz kızı mı? Ölü ruha dönüşmüş deniz kızları olur mu? En az dört tane bulabilirim."_ (480); _"Ölmezim, solmaz değilim. İnsan yaşlandıkça yumuşar."_ (589; Solmaz Şeytaniçe Catherine'e cevap)
 **Gerekçe:** → N-AZK1.3
 
 ##### AZK1.4 — Aşama 3: Ölüm Veliahdı'nın sesi
@@ -986,7 +986,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 ##### XIO1.7 — Toplantıda
 
 **Kapsam:** 956'dan itibaren · gri sisin üstü
-**Yap:** Toplantı Sicili'nin hitaplarını kullanır ('Soytarı Efendi', 'Adalet Hanımefendi'); cümleleri ise kendi sade cümleleridir (Fors'taki gibi). Soytarı'ya kısa ve saygılı onay verir. İlk toplantı dönüşünde dinî ayinlerdeki tarifi taklit ederek kendi kalıbını kurar (957); Alger'in donmuş "İradeniz emrimizdir." (遵从您的意志) kalıbından ayrı bir cümledir.
+**Yap:** Toplantı Sicili'nin hitaplarını kullanır ('Soytarı Efendi', 'Adalet Hanımefendi'); cümleleri ise kendi sade cümleleridir (Fors'taki gibi). Soytarı'ya kısa ve saygılı onay verir. İlk toplantı dönüşünde dinî ayinlerdeki tarifi taklit ederek selam verir (957); cümlesi (您的意愿就是我的意志) Alger'in de kullandığı bir toplantı kalıbıdır (783, 1278), Türkçesi o kalıpla aynı olmalı.
 **Yapma:** Audrey ya da Alger düzeyinde ağdalı bir huzur dili; hitabı düşürmek.
 **Örnek:** _"Evet, Soytarı Efendi."_ (956); _"Arzunuz, benim irademdir."_ (957; 您的意愿就是我的意志)
 **Gerekçe:** → N-XIO1.7
