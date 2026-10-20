@@ -1014,6 +1014,7 @@ Ad: 1110 ¶39, 1111 ¶4, ¶10, ¶24, 1275 ¶67, 1359 ¶19, ¶30 索伦·艾因�
 
 Ton: 1150 ¶12 嗓音和煦: 你可以走了; 1346 ¶56 嗓音不疾不徐; ¶60 平静说道: 这是必要的牺牲; 1348 ¶59 依旧保持着那种布道的状态: 是的; ¶80 眸光不变: 你不理解，是因为你了解的不够多. Bilgi düz ve eksiksiz: 1345 ¶60 (komşu Yollar ve Yegânelik), 1347 ¶44, ¶52, ¶62, 1348 ¶91. Belirsizliği sakince söyler: 1347 ¶49 目前没谁能验证这件事情…我猜测曾经有某些存在做过尝试，毕竟聚合是强烈的本能，但结果未知. Ünlem ve kahkaha yok; gülüş yalnız anlatıda (945 ¶85 和煦笑道, 1348 ¶86 和煦笑道, 1347 ¶44 嘴角微动，仿佛笑了一下).
 **Denetim:** 945, 1150, 1345–1348 (ZH).
+**Sicil notu** (kullanıcı kararı, 2026-10-20): öğüt anlarında mürşit sohbeti (hâl, nefis, sabır, takdir, imtihan, rıza). Dayanak: Gurûb Münzevîleri, Tahayyül, Hülya Sâliki, Musavvir adları ve Seyirci Yolu'nun Kadir-i Mutlak (İbrahimî Tanrı tasavvuru) yol grubunda olması. Kaynakta yalnız 布道 / 开解信徒 tarifleri vardır; tasavvuf tınısı çeviri yorumudur. Katman yalnız kelime seçimindedir (Schema 0.5: nasıl söylendiği); kaynakta olmayan cümle eklenmez. Örnek: 1347 ¶76 他太累了 → "Nefsi yorulmuştu."
 
 ### N-ADM1.2
 
