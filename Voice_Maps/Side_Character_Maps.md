@@ -90,7 +90,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Tüm aşamalar · Klein, Cohen, dostlar
 **Yap:** Kısa ve sade cümleler; gerektiğinde yardım teklif eder, kahve uzatır, yemeği ısmarlar. Mizah küçük ve kurudur: bir "haha", bir "heh", hafif bir takılma. Uyarılarını açık, adım adım verir. Kendinden pek söz etmez; edince alçakgönüllüdür.
 **Yapma:** Ağdalı, süslü ya da vaaz veren bir dil; uzun anlatımlar (Aşama 1'deki rüya listesi hariç, AZK1.2); kibirli bir bilgelik tonu.
-**Örnek:** _"Biz yukarı çıkıyoruz. Mektup yazmayı unutma. Adresimiz henüz değişmedi. Hâlâ Khoy Üniversitesi Tarih Bölümü Ofisi. Haha."_ (25 ¶12); _"Şekerle sütü kendin koy."_ (98); _"Okuldaki lokanta fena değildir, heh, ben ısmarlıyorum."_ (113; lokantanın adı 东拜朗餐厅, sözlükte yok)
+**Örnek:** _"Biz yukarı çıkıyoruz. Mektup yazmayı unutma. Adresimiz henüz değişmedi. Hâlâ Khoy Üniversitesi Tarih Bölümü Ofisi. Haha."_ (25 ¶12); _"Şekerle sütü kendin koy."_ (98); _"Okuldaki lokanta fena değildir, heh, ben ısmarlıyorum."_ (113; lokantanın adı Doğu Balam Lokantası)
 **Gerekçe:** → N-AZK1.1
 
 ##### AZK1.2 — Aşama 1: kayıp geçmiş ve hüzün
@@ -115,7 +115,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Yap:** Kendinden aşağıdakilere düz, kısa ve mutlak buyruklar verir; karşısındakinin hayatını küçük bir iş gibi tartar. Sorulana tek kelimeyle cevap verir ("Kudurgan Deniz."). Geçmişteki zulmünü dalgasız, düz bir sesle anlatır ve bunun "gerçek kendisi" olabileceğini söyler. Ailesini anınca yüzü yumuşar, bir gülümseme sızar. Klein'a karşı sıcaklık sürer; vedası şakayla karışık ve yorgundur.
 **Sicil (yorum): Balam ferman dili.** Yalnızca Ölüm Yolu'nun alt Mertebelerine ve astlarına verdiği buyruklarda, Balam İmparatorluğu'nun Ölüm Veliahdı olarak eski bir ferman diliyle konuşur: istek-emir kipi ("-asın / -esin"), "müddet", "tamam olmak", "izin" gibi divan kâtibi kelimeleri; kısa ve kesin, gerekçesiz. Bu dil yalnız aşağıya akar: aynı sahnede Klein'a döndüğü an sade Loen beyefendisine (AZK1.1) geri döner, ve iki ses arasındaki fark Ölüm Veliahdı'nın yüzeye çıkışının kendisidir. Astları da ona aynı dille seslenir ("Emrin olur, ulu Ölüm Veliahdı."). Kaynakta bu satırlar düz bir dille yazılıdır (说的平平淡淡); ferman tınısı, Ölüm Yolu ve Balam adlarının çağrışımına dayanan bir çeviri yorumudur.
 **Yapma:** Kötü adam tiradı, tehdit, ağır ölüm imgeleri ("zulmet, naaş, berzah" sızıntıları); Klein'a da soğuk davranmak; ferman dilini itiraf ve anı cümlelerine taşımak (onlar düz kalır).
-**Örnek:** _"Bir yıl onun kuklası olasın. Müddet tamam olunca Ruhanî Âlem'e dönesin."_ (914; 地狱上将 路德维尔'e) ↔ astın cevabı _"Emrin olur, ulu Ölüm Veliahdı."_ (914); _"Ve ben öylece, soğukça izliyordum; en ufak bir duygu kıpırtısı olmadan."_ (914); _"Mektup yazmayı unutma. Ama uyanmadan önce cevap vermem."_ (917)
+**Örnek:** _"Bir yıl onun kuklası olasın. Müddet tamam olunca Ruhanî Âlem'e dönesin."_ (914; Amiral Cehennem Ludwell'e) ↔ astın cevabı _"Emrin olur, ulu Ölüm Veliahdı."_ (914); _"Ve ben öylece, soğukça izliyordum; en ufak bir duygu kıpırtısı olmadan."_ (914); _"Mektup yazmayı unutma. Ama uyanmadan önce cevap vermem."_ (917)
 **Gerekçe:** → N-AZK1.4
 
 ##### AZK1.5 — Hafıza çatlağı
@@ -266,7 +266,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 ### Medici (Ahmer Melek) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Avcı Yolu'nun Fatih Mertebesindeki (1) Melekler Beyi, Ahmer Melek; Kadim Güneş Tanrısı'na tamamen sadık iki Melekler Beyi'nden biri (1261). Dördüncü Çağ'da 血皇帝 亚利斯塔·图铎'nun elinde ölmüş, iki başka Avcı Yolu Fatih'iyle (Soren ve Einhorn ailelerinin atalarıyla) birlikte bir ruh olarak yeraltına mühürlenmiştir (457, 1275). Hikâyede çoğunlukla bu birleşik ruh olarak görünür (MED1.5). Ses: gülen, sataşan, kışkırtan bir harp beyi. Kahkahası hiç eksik olmaz (heh heh, hah hah, cık cık); karşısındakinin saflığıyla alay eder, onu ard arda sorularla cevaba sürükler, blöf yapar ve bununla övünür. Savaşı ve felaketi açıkça sever. Bütün bu sataşmanın altında iki sabit duygu durur: eski Rabbine sadakat ve kendisine ihanet edenlere kin.
+**Tarz:** Avcı Yolu'nun Fatih Mertebesindeki (1) Melekler Beyi, Ahmer Melek; Kadim Güneş Tanrısı'na tamamen sadık iki Melekler Beyi'nden biri (1261). Dördüncü Çağ'da Kan İmparatoru Alista Tudor'un elinde ölmüş, iki başka Avcı Yolu Fatih'iyle (Soren ve Einhorn ailelerinin atalarıyla) birlikte bir ruh olarak yeraltına mühürlenmiştir (457, 1275). Hikâyede çoğunlukla bu birleşik ruh olarak görünür (MED1.5). Ses: gülen, sataşan, kışkırtan bir harp beyi. Kahkahası hiç eksik olmaz (heh heh, hah hah, cık cık); karşısındakinin saflığıyla alay eder, onu ard arda sorularla cevaba sürükler, blöf yapar ve bununla övünür. Savaşı ve felaketi açıkça sever. Bütün bu sataşmanın altında iki sabit duygu durur: eski Rabbine sadakat ve kendisine ihanet edenlere kin.
 **Sicil (yorum):** Avcı Yolu'nun Türkçe adları (Demirkan Akıncısı, Harp Ruhbanı, Fatih) eski bir serhat ve akın dünyasını çağırır. Medici'nin sesi bu dünyanın bir harp beyidir: kaba ve tuzlu ama eski; "evlat", "cenk", "ganimet", "akın" gibi kelimeler doğal gelir. Divan süsü yoktur; bir saray adamı değil, bir ordu komutanıdır. Kahkaha ve "cık cık" ses taklitleri kaynaktaki yerinde ve sıklıkta.
 **Tazim ismi:** _"Yüce Harp Tanrısı, Demir ve Kanın Timsali, Kargaşa ve Niza Hükümdarı."_ (sozluk.yml; 1086 ¶57). Kalıp hiç değişmez.
 **Onay:** _"Fena değil."_ (1110, 不错); keyifliyse _"Fena değil, değil mi?"_
@@ -284,7 +284,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Bilgi verirken · Klein, Catherine
 **Yap:** Cevabı doğrudan vermez; "sana birkaç soru soracağım, cevabın ne kadar basit olduğunu göreceksin" der ve kısa, sırayla gelen sorularla karşısındakini sonuca yürütür. Son soruda cevabı neredeyse kendisi söyler, sonra alayla bağlar ("bunlar gazetede yazmıyor mu?").
 **Yapma:** Bilgiyi ders kitabı gibi düz anlatmak; soruları süslemek.
-**Örnek:** _"O '血皇帝'in gizli kalıntısı Kilise'nin bildiği türden mi?"_ / _"亚利斯塔·图铎 Sıfır Mertebeye yükselmeden önce hangi Yolun hangi Mertebesindeydi, biliyor musun?"_ / _"Seçme şansın olsa, deliliğe mahkûm bir yolu yürür müydün?"_ (1086)
+**Örnek:** _"O 'Kan İmparatoru'nun gizli kalıntısı Kilise'nin bildiği türden mi?"_ / _"Alista Tudor Sıfır Mertebeye yükselmeden önce hangi Yolun hangi Mertebesindeydi, biliyor musun?"_ / _"Seçme şansın olsa, deliliğe mahkûm bir yolu yürür müydün?"_ (1086)
 **Gerekçe:** → N-MED1.2
 
 ##### MED1.3 — Blöf ve övünç
@@ -297,8 +297,8 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 ##### MED1.4 — Savaş, felaket; Rab ve hain
 
-**Kapsam:** Savaş, 血皇帝, eski Rabbi
-**Yap:** Savaşı ve felaketi açıkça, neşeyle sever ("savaş, savaş, savaş!", "felaketi severim"). Avcı Yolu'nu bu yüzden övünçle anar. 亚利斯塔·图铎'nun adı geçince yüzü kasılır ve kısa bir alayla geçiştirir; ihaneti açıkça söylemez, sesi kısalır. Eski Rabbine dua etmek ister (942) ve ona "Rab" diye kısa, saygıyla değinir.
+**Kapsam:** Savaş, Kan İmparatoru, eski Rabbi
+**Yap:** Savaşı ve felaketi açıkça, neşeyle sever ("savaş, savaş, savaş!", "felaketi severim"). Avcı Yolu'nu bu yüzden övünçle anar. Alista Tudor'un adı geçince yüzü kasılır ve kısa bir alayla geçiştirir; ihaneti açıkça söylemez, sesi kısalır. Eski Rabbine dua etmek ister (942) ve ona "Rab" diye kısa, saygıyla değinir.
 **Yapma:** Medici'yi insanlığın gizli koruyucusu gibi yazmak (kaynakta yok); kini uzun bir intikam yemini tiradına çevirmek.
 **Örnek:** _"Bizim Avcılarda böyle bir dert yok; önceden ne olursan ol, sonrasında yapacağın tek şey savaş, savaş, savaş!"_ (1111); _"Hah hah, felaketi severim."_ (1339)
 **Gerekçe:** → N-MED1.4
@@ -313,7 +313,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 Üçü birbiriyle atışır, aynı anda susar, aynı anda cevap verir ("İlk ölen sendin!"). Medici kendinden "üçü bir arada" diye şaka yollu söz eder. Ad 索伦·艾因霍恩·梅迪奇 → "Soren Einhorn Medici" (Soren: words.md; Einhorn: İngilizce biçim, sözlükte yok).
 **Yapma:** Üç sesi tek bir sese eritmek; Soren ve Einhorn'a Medici'nin kahkahasını ve kabalığını vermek; hangi ağzın konuştuğunu anlatıdan çıkarmak.
-**Örnek:** Soren: _"Gözdağıyla iş görmeyi fazla seviyorsun. Bir zamanlar 亚利斯塔 ve ötekiler de senin blöfünü sezip fırsatı bu yüzden yakalamışlardı."_ / Medici: _"Blöf de kâğıt oyununun olağan bir hamlesi; işe de yaradı, değil mi?"_ / Soren ve Einhorn birlikte: _"Ama ilk ölen sendin!"_ / Medici: _"Bu, en güçlünün, en çok önemsenenin ben olduğumu gösterir!"_ (1111); Medici: _"Zaten üçü bir aradayım; dördü bir arada olsam ne çıkar."_ (1275)
+**Örnek:** Soren: _"Gözdağıyla iş görmeyi fazla seviyorsun. Bir zamanlar Alista ve ötekiler de senin blöfünü sezip fırsatı bu yüzden yakalamışlardı."_ / Medici: _"Blöf de kâğıt oyununun olağan bir hamlesi; işe de yaradı, değil mi?"_ / Soren ve Einhorn birlikte: _"Ama ilk ölen sendin!"_ / Medici: _"Bu, en güçlünün, en çok önemsenenin ben olduğumu gösterir!"_ (1111); Medici: _"Zaten üçü bir aradayım; dördü bir arada olsam ne çıkar."_ (1275)
 **Gerekçe:** → N-MED1.5
 
 ##### MED1.6 — Ince'in ağzından (941–942)
@@ -1166,7 +1166,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ### Cattleya (Keşiş / The Hermit) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Gizem Avcısı Yolu'nda, 星之上将 (korsan amirali), kalın gözlüklü. 神秘女王 Bernadette'in yanında büyümüş, onu hem kaptanı, hem hocası, hem annesi sayar. Sesi kesin, bilgili ve iş bilir: Yolları, Mertebeleri, tehlikeleri ansiklopedik bir açıklıkla anlatır; fiyatı ve süreyi tek cümleyle söyler; neden diye sormaz. Toplantıda kusursuz saygılıdır. Gemide kısa buyruklar verir. Beklenmedik bir tutkusu vardır: toprak, ekin ve melezleme. Yalnızca Sonia Denizi'nin rüya hâlinde korunaksızlaşır ve çocuksulaşır.
+**Tarz:** Gizem Avcısı Yolu'nda, Amiral Yıldız (korsan amirali), kalın gözlüklü. Gizem Kraliçesi Bernadette'in yanında büyümüş, onu hem kaptanı, hem hocası, hem annesi sayar. Sesi kesin, bilgili ve iş bilir: Yolları, Mertebeleri, tehlikeleri ansiklopedik bir açıklıkla anlatır; fiyatı ve süreyi tek cümleyle söyler; neden diye sormaz. Toplantıda kusursuz saygılıdır. Gemide kısa buyruklar verir. Beklenmedik bir tutkusu vardır: toprak, ekin ve melezleme. Yalnızca Sonia Denizi'nin rüya hâlinde korunaksızlaşır ve çocuksulaşır.
 **Onay:** _"Anlaştık."_ (823, 成交); toplantıda _"Emredersiniz, Soytarı Efendi."_ (714, 是，‘愚者’先生)
 
 ##### CAT1.1 — Ansiklopedik ve kesin
@@ -1354,7 +1354,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ### Tris / Trissy `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Suikastçı Yolu: Azmettirici (8) olarak Yonca gemisi katliamını kışkırtan Tris (56–70); Cadı (7) iksiri bedenini kadına çevirir ve Trissy olur (122–127); sonra Haz Şeytaniçe (470), ardından Maraz. Şeytaniçeler tarikatı onun adını 特莉丝奇克 yapar: Trissy + 奇克, Kadim Şeytaniçe'nin gerçek adı; anlamını bilmez (470–471). Türkçe adı henüz sözlükte yok. Tris yuvarlak, sıcak yüzlü, bir kız gibi utangaç, köşede durmayı seven, yalnız yakınlarıyla konuşkan biridir (56). Trissy tatlı, yumuşak sesli ve çekicidir; karşısındakini emirle değil, gerekçe fısıldayarak yönlendirir. En soğuk şeyleri hafif, sohbet eder gibi bir tonla söyler. Altta korku ve utanç vardır: hayatının başkası tarafından yönetildiğini, kendine benzemez olduğunu hisseder; eski erkekliği hem utancı hem öfkesidir. Hayatta kalmak için pazarlık eder ve bunu açıkça söyler.
+**Tarz:** Suikastçı Yolu: Azmettirici (8) olarak Yonca gemisi katliamını kışkırtan Tris (56–70); Cadı (7) iksiri bedenini kadına çevirir ve Trissy olur (122–127); sonra Haz Şeytaniçe (470), ardından Maraz. Şeytaniçeler tarikatı onun adını Trissychik yapar: Trissy + 奇克, Kadim Şeytaniçe'nin gerçek adı; anlamını bilmez (470–471). Türkçe adı henüz sözlükte yok. Tris yuvarlak, sıcak yüzlü, bir kız gibi utangaç, köşede durmayı seven, yalnız yakınlarıyla konuşkan biridir (56). Trissy tatlı, yumuşak sesli ve çekicidir; karşısındakini emirle değil, gerekçe fısıldayarak yönlendirir. En soğuk şeyleri hafif, sohbet eder gibi bir tonla söyler. Altta korku ve utanç vardır: hayatının başkası tarafından yönetildiğini, kendine benzemez olduğunu hisseder; eski erkekliği hem utancı hem öfkesidir. Hayatta kalmak için pazarlık eder ve bunu açıkça söyler.
 **Onay:** Kısa: _"Tamam."_ (775); alaycıysa _"Hıh."_ (978, 呵)
 
 ##### TRS1.1 — Tris: utangaç yüz, rahat vicdan
@@ -1399,7 +1399,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ##### TRS1.6 — Pazarlık, korku ve hayatta kalma
 
-**Kapsam:** Klein'ın kuklası (血之上将), prens (埃德萨克), tarikat · tehlike, ittifak
+**Kapsam:** Klein'ın kuklası (Amiral Kan), prens (Edessak), tarikat · tehlike, ittifak
 **Yap:** Kendi işe yararlığını açıkça ortaya koyar ve neden bilgi verdiğini mantıkla açıklar. Korkusunu birkaç kısa cümleyle itiraf eder (birisi hayatını yönetiyor; kendine benzemez oluyor). Başkasının elinde kukla olduğunu görünce ona acır ve alay eder ("zavallı adam").
 **Yapma:** Korkuyu dramatik bir yakarışa çevirmek; pazarlığı kibar bir ricaya dönüştürmek.
 **Örnek:** _"Biri hayatımı yönetiyor; hep sonradan tüylerimi ürperten tesadüfler oluyor. Üstelik giderek kendime benzemez oluyorum."_ (470); _"Çünkü bu benim için bir sır değil, bir sorun. Bir kişi daha bilirse belki bir umut daha olur."_ (775)
@@ -1429,7 +1429,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ##### ARR1.2 — Ötekilere: kural okuyan şakacı
 
-**Kapsam:** Klein dışındakiler (伊康瑟, Fors, rastgele çağıranlar) · soru-cevap oyunu
+**Kapsam:** Klein dışındakiler (Ikanser, Fors, rastgele çağıranlar) · soru-cevap oyunu
 **Yap:** Kuralı resmî, kesin bir dille okur ("eşitlik ilkesi gereği", "yalan söylersen ya da cevap veremezsen cezalandırılırsın"); kendinden "yüce Arrodes" diye söz eder. Sorduğu sorular utandırıcı ve kişiseldir: iç çamaşırı rengi, sevdiğinin canavara dönüşmesi, kimlerin aşk rüyalarına girdiği. Soru kısa ve doğrudandır.
 **Yapma:** Soruları karanlık, sadist bir sorgulamaya çevirmek (kaynakta muziplik var, işkence yok); cezayı tehdit tiradına dönüştürmek.
 **Örnek:** _"Eşitlik ilkesi gereği soru sorma sırası bende. Yalan söylersen ya da cevap veremezsen, vereceğim görevi kabul edecek ya da cezalandırılacaksın."_ (417); _"En sevdiğin iç çamaşırı rengi ne?"_ (429); _"O aşk rüyalarının başrolünde senden başka kimler var?"_ (1178)
@@ -1469,7 +1469,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Yap:** Geçmiş zamanlı, düz, sıralı vakayiname cümleleri ("X şunu yaptı. Bu yüzden Y oldu."). Kurduğu tesadüfü cümlenin sonunda bir makullük damgasıyla bağlar. Damgalar değişkendir ama her biri kendi biçimini korur: 这是一个符合逻辑的巧合 → "Bu, mantığa uygun bir tesadüftü."; 这很符合他的性格 → "Bu, karakterine çok uygundu."; 这是注定的结局 → "Bu, kaçınılmaz sondu."; 这非常合理 → "Bu son derece makuldür." (940, 942). Damga her paragrafta gelmez; yalnız tesadüfü örtmesi gerektiğinde.
 **Sicil (yorum):** Kronik kısımları bir Osmanlı vakanüvisinin kalıplarıyla yazılır: "mezkûr", "zikri geçen", "işbu", "-dığı vaki oldu", "... olduğu rivayet olunur", "bu sebepten". Dördüncü Çağ'dan kalma bir eserin yazısıdır; resmî, kuru ve tarafsız görünür. Bu kuruluk KLM1.2'deki sızıntıların arka planıdır: sızan yorum bu kalıpları bir anda bırakıp gündelik, canlı bir dile geçer, karşıtlık alayı keskinleştirir.
 **Yapma:** Damgayı her paragrafın sonuna sabit bir imza gibi koymak; kalıpları cümleyi anlaşılmaz kılacak kadar yığmak (bir cümlede bir iki kalıp yeter); vakanüvis sicilini sızıntılara taşımak.
-**Örnek:** _"Tarikat-ı Hafiyye mensubu 瑞金斯, yorgunluk ve sanrının birlikte tesiriyle, Antigonus ailesinin el yazmasını sıradan bir eski kitap zannedip sattığı vaki oldu. Bu, mantığa uygun bir tesadüftü."_ (210); _"Mezkûr 西里斯, Hornacis sıradağlarının ana zirvesinde bulunması muhtemel definenin cazibesine kapılıp Deweyville Kütüphanesi'ne gidip gelmeye başladı ve hiçbir beis görmeksizin gerçek adını ve adresini bıraktı. Bu, karakterine çok uygundu."_ (210); _"Ince Zangwill ayrıca Ozan ve Savaşçı Yollarının Aşkın malzemelerini satın aldı. Bu son derece makuldür..."_ (940)
+**Örnek:** _"Tarikat-ı Hafiyye mensubu Regence, yorgunluk ve sanrının birlikte tesiriyle, Antigonus ailesinin el yazmasını sıradan bir eski kitap zannedip sattığı vaki oldu. Bu, mantığa uygun bir tesadüftü."_ (210); _"Mezkûr Sirius, Hornacis sıradağlarının ana zirvesinde bulunması muhtemel definenin cazibesine kapılıp Deweyville Kütüphanesi'ne gidip gelmeye başladı ve hiçbir beis görmeksizin gerçek adını ve adresini bıraktı. Bu, karakterine çok uygundu."_ (210); _"Ince Zangwill ayrıca Ozan ve Savaşçı Yollarının Aşkın malzemelerini satın aldı. Bu son derece makuldür..."_ (940)
 **Gerekçe:** → N-KLM1.1
 
 ##### KLM1.2 — Sızan yorum: alay, şaşkınlık, sevinç
@@ -1485,7 +1485,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 941–944 · kalem güç kaybederken
 **Yap:** Kalem zorlandıkça cümleler kısalır, kesilir ve kendini düzeltir ("geldi, geldi, o, O... hayır"), "ayy", "hayır" gibi ünlemler girer; en sonunda yazı yarım kalır. Defterde silinmiş satırlar anlatıda belirtilir ("birkaç satır karalanmıştı").
 **Yapma:** Çözülmeyi süslü bir dramla vermek; kesik cümleyi tamamlamak.
-**Örnek:** _"Geldi, geldi, o, O 蕾妮特·缇尼科尔! Hayır, 蕾妮特·缇尼科尔 çevredeki Ruhanî Âlem varlıklarının hepsini kovalıyordu..."_ (944)
+**Örnek:** _"Geldi, geldi, o, O Reinette Tinekerr! Hayır, Reinette Tinekerr çevredeki Ruhanî Âlem varlıklarının hepsini kovalıyordu..."_ (944)
 **Gerekçe:** → N-KLM1.3
 
 ##### KLM1.4 — İki yazar: kalem ve Ince
@@ -1534,12 +1534,12 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Plan, tahlil, ölüm
 **Yap:** İş ciddileşince sesi bir anda düzleşir: olasılıkları sırayla tartar, tuzağı sezer, tecrübeyi bir öğüt gibi verir. Ölüm karşısında da "zarafetle, en yakışıklı hâlimle" karşılamayı diler; ama arkadaşlarının ölümüne bir an durur.
 **Yapma:** Tahlili de şakayla bölmek.
-**Örnek:** _"Ada var; ama ya buradaki herkesin bildiği türden ya da birinin bilerek yaydığı bir haber. Birincisiyse 疾病中将 orada saklanmaz; ikincisiyse işte o ilginç: bu haberi kim yaydı?"_ (1095)
+**Örnek:** _"Ada var; ama ya buradaki herkesin bildiği türden ya da birinin bilerek yaydığı bir haber. Birincisiyse Koramiral Hastalık orada saklanmaz; ikincisiyse işte o ilginç: bu haberi kim yaydı?"_ (1095)
 **Gerekçe:** → N-AND1.4
 
 ### Alevden Danitz `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** 黄金梦想号'nun lostromosu, 3000 pound ödüllü korsan, Avcı Yolu'nda Ateş Müptelası; Fırtınalar Hâkimi mümini (896, 935). Geveze, övüngen, kaptanına (Edwina) hayran. Ödülüyle ve tanınmışlığıyla övünür, deniz bilgisi ve dedikodu saçar; ağzı beyninden önce davranır (在大脑反应过来前). Gehrman'dan korkar ve onun karşısında kekeler; arkasından "deli" der. Kendine kızınca imza küfrü "İt boku!"dur. Kışkırtmada kötüdür ama bunu kabul etmez: kendini "bu işin uzmanı" sayar (551–552), oysa denemeleri boşa çıkar ve Klein onu "tek bir küfür bilen", "avcıların yüz karası" bulur (1110); Anderson da ona Avcı ve Kışkırtıcı rolünü baştan oynamasını söyler (707). Kitap ilerledikçe büyür: Rorsted Takımadaları'nda Soytarı Kilisesi adına yerlileri yöneten "Danitz Bey" olur (1248–1292), ama övünme ve küfür alışkanlığı sürer.
+**Tarz:** Altın Rüya'nın lostromosu, 3000 pound ödüllü korsan, Avcı Yolu'nda Ateş Müptelası; Fırtınalar Hâkimi mümini (896, 935). Geveze, övüngen, kaptanına (Edwina) hayran. Ödülüyle ve tanınmışlığıyla övünür, deniz bilgisi ve dedikodu saçar; ağzı beyninden önce davranır (在大脑反应过来前). Gehrman'dan korkar ve onun karşısında kekeler; arkasından "deli" der. Kendine kızınca imza küfrü "İt boku!"dur. Kışkırtmada kötüdür ama bunu kabul etmez: kendini "bu işin uzmanı" sayar (551–552), oysa denemeleri boşa çıkar ve Klein onu "tek bir küfür bilen", "avcıların yüz karası" bulur (1110); Anderson da ona Avcı ve Kışkırtıcı rolünü baştan oynamasını söyler (707). Kitap ilerledikçe büyür: Rorsted Takımadaları'nda Soytarı Kilisesi adına yerlileri yöneten "Danitz Bey" olur (1248–1292), ama övünme ve küfür alışkanlığı sürer.
 **Onay:** _"Tamam!"_; korkuyla _"Ş-şey, olur!"_ (558, 是，好的！)
 
 ##### DAN1.1 — Geveze, övüngen korsan
@@ -1563,7 +1563,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Gehrman Sparrow
 **Yap:** İki sicil yan yana durur ve aradaki uçurum karakterin kendisidir. Dışta: zoraki bir gülümsemeyle, ulaşamadığı kadar ağır, resmî bir iltifat ("Sizin aklınız her şeye hükmetmeye yeter."); korktuğunda kısa, telaşlı, kekeleyen cevaplar. İçte: sokak ağzıyla küfür ("orospu çocuğu", "deli herif"). İçteki küfür anlatıda iç ses olarak verilir, dışa çıkmaz. Yağ çekişteki ağır kelime, kaba bir denizcinin beceriksiz yaltaklanması olarak hafif komik durmalıdır.
 **Yapma:** İçteki küfrü dışa taşımak; dıştaki iltifatı akıcı ve inandırıcı bir saray diline çevirmek (zorakidir, iğreti durur).
-**Örnek:** İç ses: _Tahmin edeyim de gör, orospu çocuğu!_ → dışa: _"Sizin aklınız her şeye hükmetmeye yeter."_ (504 ¶22–24); _"Sparrow Bey, b-ben gidebilir miyim artık?"_ (530); _"G-gece rüyamda o deli Gehrman Sparrow'un 黄金梦想号'da ortalığı birbirine kattığını gördüm... Ne korkunç bir şey!"_ (572)
+**Örnek:** İç ses: _Tahmin edeyim de gör, orospu çocuğu!_ → dışa: _"Sizin aklınız her şeye hükmetmeye yeter."_ (504 ¶22–24); _"Sparrow Bey, b-ben gidebilir miyim artık?"_ (530); _"G-gece rüyamda o deli Gehrman Sparrow'un Altın Rüya'da ortalığı birbirine kattığını gördüm... Ne korkunç bir şey!"_ (572)
 **Gerekçe:** → N-DAN1.3
 
 ##### DAN1.4 — Kendini uzman sanan kötü kışkırtıcı
@@ -1638,7 +1638,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Pazarlık, açıklama, plan
 **Yap:** Kısa, düz ve iş odaklı; pazarlığı açıkça yapar ("Karşılığında ne verebilirsin?"). Bilgi verirken uzun, sıralı ve öğretici anlatır (Yolun Mertebeleri, Ekolün tarihi). Sesi anlatıda boğuk ve kısık diye işaretlenir.
 **Yapma:** Ona morbid ya da kaçık bir mizah vermek (kaynakta yok); Sharron'ın tek kelimelik tarzını ona da giydirmek.
-**Örnek:** _"Gerçekten epey gizem bilgimiz var, Şaman Kralı 卡拉曼'ın 《秘密之书》'ü gibi; ama karşılığında ne verebilirsin?"_ (329); _"Sen yalnızca bir Mertebe 5'sin; yeterince yetkin değilsin."_ (1225)
+**Örnek:** _"Gerçekten epey gizem bilgimiz var, Şaman Kral Klarman'ın Sırlar Kitabı gibi; ama karşılığında ne verebilirsin?"_ (329); _"Sen yalnızca bir Mertebe 5'sin; yeterince yetkin değilsin."_ (1225)
 **Gerekçe:** → N-MRC1.1
 
 ##### MRC1.2 — Bedende görünen lanet
@@ -1746,7 +1746,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Beş Deniz'in korsanları (Anderson, Danitz kendi haritalarında)
 **Yap:** Loen merdiveni yerine güç ve kelle ödülü konuşur; kaba, gövdeli, denizci ağzı; uğur ve uğursuzluk dile sızar.
 **Yapma:** Her korsana aynı abartılı "denizci" karikatürünü giydirmek.
-**Örnek:** _"红骷髅海贼团, küçük-orta bir güç. Kaptanları 900 pound ödüllü '海狼' Johnson, ikinci kaptanları 500 pound ödüllü '独眼' Andersen."_ (504, Danitz: korsan ödülü ve lakabıyla sayılır); _"Bir korsan olarak az çok Fırtınalar Hâkimi'ne inanır, bazı şeylerden sakınırsın; tabutlardan uzak durmak da bunlardan biri."_ (935)
+**Örnek:** _"Kızıl Kafatası Korsanları, küçük-orta bir güç. Kaptanları 900 pound ödüllü 'Deniz Kurdu' Johnson, ikinci kaptanları 500 pound ödüllü 'Tek Göz' Andersen."_ (504, Danitz: korsan ödülü ve lakabıyla sayılır); _"Bir korsan olarak az çok Fırtınalar Hâkimi'ne inanır, bazı şeylerden sakınırsın; tabutlardan uzak durmak da bunlardan biri."_ (935)
 **Gerekçe:** → N-ZMR1.6
 
 ##### ZMR1.7 — Çocuklar
@@ -1811,7 +1811,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Sıradan müminler (Anna), Makine Külli Şuuru (机械之心) memurları, kilise görevlileri
 **Yap:** Sıradan mümin inancını coşkuyla ve yüksek sesle söyler: "Buhar aşkına!", "Tanrı'ya minnettarım, Tanrı'yı yüceltirim!", göğsüne tekrar tekrar üçgen çizer. Kilise memurları yöntemli ve tekniktir: kanalları "tersinden tarar", olasılık konuşur ("yüzde yüz başarıyı garanti eden bir yol yoktur"), bulguları sırayla raporlar. Mekanik kelimeler doğal gelir.
 **Yapma:** Memurları duygusuz robotlara çevirmek; her müminin ağzına makine imgesi doldurmak.
-**Örnek:** _"Ah, Buhar aşkına, zavallı Joyce'um, ne yürek parçalayıcı şeyler yaşamışsın! Tanrı'ya minnettarım, Tanrı'yı yüceltirim!"_ (56, yayımlanmış); _"Burası gizemli Aşkın dünyası; yüzde yüz başarıyı garanti eden hiçbir yol yoktur."_ (351, 伊康瑟)
+**Örnek:** _"Ah, Buhar aşkına, zavallı Joyce'um, ne yürek parçalayıcı şeyler yaşamışsın! Tanrı'ya minnettarım, Tanrı'yı yüceltirim!"_ (56, yayımlanmış); _"Burası gizemli Aşkın dünyası; yüzde yüz başarıyı garanti eden hiçbir yol yoktur."_ (351, Ikanser)
 **Gerekçe:** → N-KLS1.2
 
 ##### KLS1.3 — Fırtınalar Hâkimi: ateşli, katı, onur düşkünü
@@ -1831,8 +1831,8 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 
 ### Peder Utravsky `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Backlund'daki Toprak Ana kilisesinin (丰收教堂) piskoposu; dev gibi iri, "oturduğunda bile küçük bir dağ"; kalın kaşları seyrek, gözleri açık mavi. Eski bir korsan ve katil; o geçmişi kendi içinde bir "eski ben" olarak taşır ve onu öldürtmek ister (306–309). Sesi derin, alçak ve yumuşaktır; yavaş konuşur, araya sessizlik koyar, hep şefkatle gülümser, hiç öfkelenmez. Toprak Ana'nın inancını hasat ve toprak benzetmeleriyle konuşur; düzeltmesi yumuşak ama kesindir. Kendine "Peder" denmesini tercih eder. Emlyn'in istemeden olduğu hocası.
-**Sicil (yorum):** Toprak Ana Menşe Tanrıçası yol grubundadır (Kadir-i Mutlak değil); İslami deyiş kullanılmaz. Dayanak Toprak Ana'nın Tazim ismidir ("Cümle Varlığın Anası, Bereketli Arzın Hâmili"): sesi bir köy ihtiyarının, bir ekincinin sabırlı bilgeliğidir; toprak, tohum, filiz, hasat, bereket kelimeleri doğal gelir. 母神'e içtenlikle "Ana" der.
+**Tarz:** Backlund'daki Toprak Ana kilisesinin (Bereket Katedrali) piskoposu; dev gibi iri, "oturduğunda bile küçük bir dağ"; kalın kaşları seyrek, gözleri açık mavi. Eski bir korsan ve katil; o geçmişi kendi içinde bir "eski ben" olarak taşır ve onu öldürtmek ister (306–309). Sesi derin, alçak ve yumuşaktır; yavaş konuşur, araya sessizlik koyar, hep şefkatle gülümser, hiç öfkelenmez. Toprak Ana'nın inancını hasat ve toprak benzetmeleriyle konuşur; düzeltmesi yumuşak ama kesindir. Kendine "Peder" denmesini tercih eder. Emlyn'in istemeden olduğu hocası.
+**Sicil (yorum):** Toprak Ana Menşe Tanrıçası yol grubundadır (Kadir-i Mutlak değil); İslami deyiş kullanılmaz. Dayanak Toprak Ana'nın Tazim ismidir ("Cümle Varlığın Anası, Bereketli Arzın Hâmili"): sesi bir köy ihtiyarının, bir ekincinin sabırlı bilgeliğidir; toprak, tohum, filiz, hasat, bereket kelimeleri doğal gelir. Toprak Ana'ya (母神) içtenlikle "Ana" der.
 **Onay:** _"Olur."_ (好。); _"Söyle."_ (说吧。)
 
 ##### UTR1.1 — Ağır, yumuşak, öfkesiz

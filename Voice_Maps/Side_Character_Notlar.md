@@ -701,7 +701,7 @@ Mektup 203 ¶67–70, 204 ¶6–8: 哈哈哈，祝贺你们，祝贺你们终于
 
 > **Numaralama:** 24–25 ZH/TR ¶ (bolum.py hizalı); diğerleri ZH satır sırası. Çevrildikçe ZH/TR ¶ eklenmeli.
 > **Örnekler:** 24–25 dışındaki örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
-> **Görünüm:** 268 bölümde adı geçer; konuştuğu ana sahneler 24–25, 98, 112–113, 150–151, 170, 187 (mektup), 480, 587–589, 730, 913–917. 917'den sonra uykudadır: 1145 tarihî yansıma (konuşmaz), 1368 永暗之河 kıyısındaki gölgeler.
+> **Görünüm:** 268 bölümde adı geçer; konuştuğu ana sahneler 24–25, 98, 112–113, 150–151, 170, 187 (mektup), 480, 587–589, 730, 913–917. 917'den sonra uykudadır: 1145 tarihî yansıma (konuşmaz), 1368 Ebedi Zulmet Nehri kıyısındaki gölgeler.
 > **Aşama sınırları:** 150 ¶46–48: anılar ilk kez döner, Klein onu 更加深沉，更加威严 bulur. 588 ¶18: hâlâ 正在寻回它们的途中. 914 ¶65: 之前的沉眠让我回想起了更多的事情; Ölüm Veliahdı'nın soğukluğunu kendi geçmişi olarak tanır. 917 ¶25: 我选择三 → yeniden uyku.
 > **Eski haritadan düşenler:** "Ölüm Yolu kelimelerinin (naaş, berzah, zulmet) konuşmasına sızması" kaynakta yok: Azik her aşamada sade konuşur; soğukluk içerikte ve muhatapta görünür (914 ¶22–23, ¶65–67). Ince Zangwill'le yüzleşme örneği uydurmadır (o karşılaşma 480'de sahne dışında geçer).
 
@@ -838,7 +838,7 @@ Kural, Divan_Rule 1.1'deki kolonizasyon ölçütüne dayanan bir öngörüdür. 
 
 > **Numaralama:** 56 ZH/TR ¶ (bolum.py hizalı; Tris'in tarifi TR ¶14); diğerleri ZH satır sırası. Çevrildikçe ZH/TR ¶ eklenmeli.
 > **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
-> **Görünüm:** Tris: 56 (Joyce'un anlatısı), 63–70 (Yonca katliamı soruşturması, kaçış), 66 ¶58–72 (雪伦夫人'dan Cadı formülünü alır; kimliği 199'da açılır), 199 (geri dönüş). Trissy: 122–127 (Tingen'deki ayin ve kaçış; replik yok), 470–478 (prens 埃德萨克'ın yanında, Klein'la karşılaşma, kaçış), 774–788 (kanalizasyonda, Klein'ın kuklasıyla ittifak), 978, 999–1023 (Sherman/Shermane'i yetiştirir, Stafford Vikontu), 1043–1044, 1127–1133 (Kapı Efendi'yle temas). Kendi replikleri yalnızca 66, 470–474, 774–785, 978, 999–1019, 1043, 1127–1133'tedir.
+> **Görünüm:** Tris: 56 (Joyce'un anlatısı), 63–70 (Yonca katliamı soruşturması, kaçış), 66 ¶58–72 (雪伦夫人'dan Cadı formülünü alır; kimliği 199'da açılır), 199 (geri dönüş). Trissy: 122–127 (Tingen'deki ayin ve kaçış; replik yok), 470–478 (prens Edessak'ın yanında, Klein'la karşılaşma, kaçış), 774–788 (kanalizasyonda, Klein'ın kuklasıyla ittifak), 978, 999–1023 (Sherman/Shermane'i yetiştirir, Stafford Vikontu), 1043–1044, 1127–1133 (Kapı Efendi'yle temas). Kendi replikleri yalnızca 66, 470–474, 774–785, 978, 999–1019, 1043, 1127–1133'tedir.
 > **Eski haritadan düşenler:** "Kan, beden ve acı üzerine kıkırdayan, morbid, şehvetli fanteziler" kaynakta yok; Trissy korkunç şeyleri hafif bir tonla ve kısa söyler (1018 ¶90, 774 ¶62). "Geçiş döneminde iki sesin aynı cümlede savaşması" da yok: dönüşüm sahne dışında olur, 122'den sonra Trissy hazır gelir. Üç eski örnek uydurmadır. Eski Kural 1 (Türkçe "o" sorunu) TRS1.7 olarak korundu.
 
 ### N-TRS1.1
@@ -875,7 +875,7 @@ Kural, Divan_Rule 1.1'deki kolonizasyon ölçütüne dayanan bir öngörüdür. 
 
 Ad ve zamir: 64–126'da 特里斯 / 他; 122'den itibaren 特莉丝 / 她. 125 ¶48–56 Klein ve Leonard'ın geçişi: 特里斯，不，特莉丝; 470 ¶50 从“教唆者”特里斯变成“女巫”特莉丝. 56 ¶11 (ZH/TR) 特里斯先生 → "Bay Tris". 999 ¶33 Sherman: 特，特莉丝女士 → "T-Trissy Hanım". Çevrenin tepkisi: 999 ¶36 Sherman bakışını kaçırır; 782 ¶19 ve 785 ¶45–46 Klein'ın kuklası aracılığıyla bile çekiciliğine karşı temkin.
 **Denetim:** 56 ¶11 (ZH/TR); 64, 125, 470, 782, 785, 999 (ZH).
-**Açık soru:** 特莉丝奇克 (Trissy + 奇克) için Türkçe biçim yok; 470–471'de karar gerekecek. 原初魔女 = Kadim Şeytaniçe (sozluk.yml; 'Aslî' original/本源 içindir, primordial değil).
+**Ad:** 特莉丝奇克 → Trissychik (words.md); İng. çeviri "Trissy Cheek" der, 'Cheek' İngilizce kelime gibi okunduğu için alınmadı. 原初魔女 = Kadim Şeytaniçe (sozluk.yml; 'Aslî' original/本源 içindir, primordial değil).
 
 ---
 
@@ -883,7 +883,7 @@ Ad ve zamir: 64–126'da 特里斯 / 他; 122'den itibaren 特莉丝 / 她. 125 
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Çevrildikçe ZH/TR ¶ eklenmeli.
 > **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
-> **Görünüm:** 351'de anılır; 417–448 (Buhar Kilisesi'nde, 伊康瑟 ve Klein), 556–609 (telsiz telgrafla Klein'a bağlanır), 713–1136 (düzenli danışma; 776–780 sahte Dantès kılığı), 1178–1179 (Fors'un çağrısı), 1273–1275 (Klein onu yanına alır), 1280–1390 (Klein'ın cebinde).
+> **Görünüm:** 351'de anılır; 417–448 (Buhar Kilisesi'nde, Ikanser ve Klein), 556–609 (telsiz telgrafla Klein'a bağlanır), 713–1136 (düzenli danışma; 776–780 sahte Dantès kılığı), 1178–1179 (Fors'un çağrısı), 1273–1275 (Klein onu yanına alır), 1280–1390 (Klein'ın cebinde).
 > **Eski haritadan düşenler:** "Mutlak sadizm; en karanlık sırları sahte masumiyetle döker; cevaplayanı suça ortak eden psikolojik tuzaklar" abartı: ötekilere sorduğu sorular utandırıcı ve muziptir (429 iç çamaşırı rengi, 423 sevdiğin canavara dönüşse, 1178 aşk rüyaları); anlatı onu 恶作剧 (şaka, muziplik) ile anar (493 ¶13). Eski Leonard örneği uydurmadır. Kural 1 (iltifat yığma) ve Kural 3 (şalter) kaynakla örtüşür ve korundu.
 
 ### N-ARR1.1
@@ -972,7 +972,7 @@ Ince'in 19–940 arasında kendi repliği yok (konuşmacı etiketli tarama: 932,
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır.
 > **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
 > **Yorum payı:** Kullanıcı kararıyla (2026-10-20) bu harita daha yorumcudur: sicil (serhat harp beyi) Avcı Yolu'nun Türkçe adlarından türetildi; kaynakta karşılığı yoktur. Kural içerikleri ise kaynağa dayanır.
-> **Görünüm:** 457 (mühürlü eski ruh, ilk konuşma), 585–587 (班西港'deki mühür; "kalıntı" olarak anılır), 668 (Klein'ın tahmini), 736, 934–945 (Ince'e musallat), 963–965, 1081–1092 (Dantès'in evinde, 血皇帝 sorusu), 1109–1111 (Catherine'i ele geçirir; üç ağız), 1153, 1261, 1275–1276, 1339, 1359 (Amon'la), 1389.
+> **Görünüm:** 457 (mühürlü eski ruh, ilk konuşma), 585–587 (班西港'deki mühür; "kalıntı" olarak anılır), 668 (Klein'ın tahmini), 736, 934–945 (Ince'e musallat), 963–965, 1081–1092 (Dantès'in evinde, Kan İmparatoru sorusu), 1109–1111 (Catherine'i ele geçirir; üç ağız), 1153, 1261, 1275–1276, 1339, 1359 (Amon'la), 1389.
 > **Eski haritadan düşenler:** "En dipte insanlığı korumaya adanmış", "Amon'un tersi: soğuk yüzey / gerçek koruyucu öz" ve "Rabbin gazabı, Rabbin cezası" tantanası kaynakta yok: Medici felaketi sever (1339 ¶84 我喜欢灾难), savaşı över (1111 ¶4), ve sesi soğuk-marazi değil, gülen ve sataşandır. "Kışkırtma = taktik" doğru ve MED1.1'de korundu; "açık beyan" kısmen doğru (blöf de yapar, MED1.3). Üç eski örnek uydurmadır. Eski "Kızıl Melek" adı başlıktaki "Ahmer Melek" ile birleştirildi.
 
 ### N-MED1.1
@@ -999,7 +999,7 @@ Kahkaha: 457 ¶16, ¶30, ¶33, ¶44, ¶49 笑; 965 ¶77 哈哈笑道; 1086 ¶6 �
 
 Ad: 1110 ¶39, 1111 ¶4, ¶10, ¶24, 1275 ¶67, 1359 ¶19, ¶30 索伦·艾因霍恩·梅迪奇. Üç ağız: 1111 ¶31 右侧脸颊上也裂开了道狰狞的血色缝隙 / 用正常的嘴巴说道; ¶35 属于梅迪奇的那份人格; ¶40 属于索伦的那份人格用左侧脸颊上的裂口道 (azar); ¶46 脸庞上两道裂口同时回应道：但最先死的是你！; ¶50 三个人格同时沉默了下来…代表艾因霍恩的那个血色裂口张合着道 (soğuk tahlil: 格尔曼·斯帕罗和黑夜的联系比我想象得更加紧密…). 1086 ¶42 让出现的那张嘴巴缓慢消失. 457 ¶16 mühürden kurtulmak için 索伦、艾因霍恩和梅迪奇家族的直系后裔 kanı. 1275 ¶62 和两个可恶的家伙一起被关在地底一两千年; ¶67 我现在已经是三合一了，变成四合一也问题不大. 942 ¶19 kalem: 这个恶灵的精神分裂更加严重了.
 **Denetim:** 457, 942, 1086, 1110, 1111, 1275, 1359 (ZH).
-**Açık soru:** Einhorn (艾因霍恩) sözlükte yok; İngilizce biçim önerildi.
+**Ad:** Einhorn (艾因霍恩), words.md.
 
 ### N-MED1.6
 
@@ -1118,7 +1118,7 @@ Walter: 741 ¶50 先生，有什么能为您效劳的吗？; ¶57 önce ev, sonr
 **Karar** (kullanıcı, 2026-10-20): işarette de "Kızıl Ay". Yayımlanmış satırlar Scripts/Reports/kilise_formulleri.md listesinde (26, 39, 46).
 
 ### N-KLS1.2
-56 ¶16 (ZH/TR) Anna: 蒸汽在上…感谢神，膜拜神… / 不断地在胸口点出三角形的蒸汽与机械圣徽. 55 ¶75 (ZH/TR) 蒸汽在上啊. 116 ¶7 Buhar müminleri evlilik öncesi iffeti şart koşmaz (Fırtına'nın aksine). 伊康瑟 (Makine Külli Şuuru): 351 ¶23 没有什么办法是能保证百分之百成功的; 420 ¶4 我们反向排查了消息和资料泄露的各个渠道…初步锁定了一个嫌疑对象; ¶12–56 sıralı rapor.
+56 ¶16 (ZH/TR) Anna: 蒸汽在上…感谢神，膜拜神… / 不断地在胸口点出三角形的蒸汽与机械圣徽. 55 ¶75 (ZH/TR) 蒸汽在上啊. 116 ¶7 Buhar müminleri evlilik öncesi iffeti şart koşmaz (Fırtına'nın aksine). Ikanser (Makine Külli Şuuru): 351 ¶23 没有什么办法是能保证百分之百成功的; 420 ¶4 我们反向排查了消息和资料泄露的各个渠道…初步锁定了一个嫌疑对象; ¶12–56 sıralı rapor.
 **Denetim:** 55, 56 (ZH/TR); 116, 351, 420 (ZH).
 
 ### N-KLS1.3
@@ -1135,7 +1135,7 @@ Güneş: 140 歌颂者…他们的口号是：“让我们赞美太阳吧！”;
 ## Anderson Hood ve Alevden Danitz
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.
-> **Adlar:** 黄金梦想号, 疾病中将 ve korsan lakapları (海狼, 独眼, 红骷髅海贼团) sözlükte yok, Çince bırakıldı. Edwina, Segar İngilizce biçim.
+> **Adlar (words.md):** Altın Rüya (黄金梦想号), Koramiral Hastalık (疾病中将), Kızıl Kafatası Korsanları (红骷髅海贼团), 'Deniz Kurdu' (海狼), 'Tek Göz' (独眼). Korsan unvanları rütbe + lakap biçimindedir; lakap adın yerine geçer. Edwina, Segar İngilizce biçim.
 > **Eski haritalardan düşenler:** Anderson: "her iğneleme bir olta atışı, asla keyfî değil" ve "kibri sarsılınca öfke" kaynakla örtüşmüyor; kışkırtma çoğunlukla huydur (1095 ¶37, ¶61) ve güçlü karşısında anında, şakayla teslim olur (677 ¶44, 707 ¶65). Danitz: eski Kural 1 (dışta ağır iltifat / içte küfür) kaynakta vardır ve DAN1.3'te geri getirildi (504 ¶22–24; kullanıcı hatırlatması, 2026-10-20); önceki taslakta yanlışlıkla düşürülmüştü. "Kışkırtmada berbat" ise doğrudur (kullanıcı hatırlatması, 2026-10-20): Danitz bununla övünür ama beceremez (N-DAN1.4); açık hüküm Klein'ındır, Anderson'ın iğnelemesi dolaylıdır (707). Eski Danitz haritasındaki "İt boku!" ise 狗屎'ün sabit karşılığı olarak korundu.
 
 ### N-AND1.1
@@ -1180,7 +1180,7 @@ Güneş: 140 歌颂者…他们的口号是：“让我们赞美太阳吧！”;
 ## Sharron ve Maric
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.
-> **Ad düzeltmeleri:** Tarot adı "Perhiz" değil "İtidal" (words.md, 节制); fırkalar sozluk.yml'den: İtidal Fırkası / Sefahat Fırkası (eski haritadaki "İfrat Ekolü" yerine). Yol adı Mahkûm Yolu, Mertebe 0 adıyla Prangalı Yolu (kullanıcının Mertebe 9 / 0 kuralı). 卡拉曼巫王, 《秘密之书》 sözlükte yok.
+> **Ad düzeltmeleri:** Tarot adı "Perhiz" değil "İtidal" (words.md, 节制); fırkalar sozluk.yml'den: İtidal Fırkası / Sefahat Fırkası (eski haritadaki "İfrat Ekolü" yerine). Yol adı Mahkûm Yolu, Mertebe 0 adıyla Prangalı Yolu (kullanıcının Mertebe 9 / 0 kuralı). Şaman Kral Klarman (卡拉曼巫王), Sırlar Kitabı (《秘密之书》), words.md.
 > **Eski haritadan düşenler:** Sharron "boş laf ve nezaket kalıbı yoktur": teşekkür ve bayram tebriği vardır, yalnızca çıplaktır (457 ¶76, ¶82). Maric "morbid, kaçık mizah": repliklerinde yok; boğuk, kısa ve iş odaklıdır. Diğer gözlemler (Sharron'ın sükûtu, Maric'in sözcülüğü, iki ucun karşıtlığı, zombilerle kâğıt oynaması anlatıda) korundu.
 
 ### N-SHR (Tarz: bebek benzetmesi)
@@ -1216,7 +1216,7 @@ Tayf aşaması: 338 苍白的脸孔，精致的五官，有种人偶般的美感
 ## Emlyn White ve Cattleya
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.
-> **Adlar:** 血族 → Kan Zümresi (sozluk.yml bolgesel); Aktar Yolu'nun Mertebeleri sozluk.yml'den; 星之上将, 神秘女王 sözlükte yok, Çince bırakıldı. Kart adları (Ay, Keşiş) eski harita başlığından.
+> **Adlar:** 血族 → Kan Zümresi (sozluk.yml bolgesel); Aktar Yolu'nun Mertebeleri sozluk.yml'den; Amiral Yıldız (星之上将), Gizem Kraliçesi (神秘女王), words.md. Kart adları (Ay, Keşiş) eski harita başlığından.
 > **Eski haritalardan düşenler:** Emlyn: üç kural (vampir kelimesine öfke, otorite karşısında çöküş, şaşkın taban) kaynakla örtüşür ve EML1.1–1.2'de korundu; eski örnekler uydurmaydı. Cattleya: "lanetli bilgiyi asla doğrudan aktarmaz, masal ve mecazla konuşur" kaynakta yok; Cattleya bilgiyi doğrudan, ansiklopedik verir (594–595, 617, 653); eski örneklerin hepsi uydurmadır.
 
 ### N-EML1.1
@@ -1264,7 +1264,7 @@ Tayf aşaması: 338 苍白的脸孔，精致的五官，有种人偶般的美感
 ## Peder Utravsky
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.
-> **Açık sorular (adlar):** 丰收教堂 (öneri: "Hasat Kilisesi", eski kilise haritasındaki ad), 生命圣徽 (öneri: "Hayat Mukaddesat Amblemi", "Buhar ve Çark Mukaddesat Amblemi" kalıbıyla), 圣典 (öneri: "kutsal kitap"), 母神 (öneri: "Toprak Ana", Utravsky'nin ağzında içtenlikle "Ana"). Indo (因多) İngilizce biçim.
+> **Adlar (words.md):** Bereket Katedrali (丰收教堂; 丰收 = Bereket salahiyeti, "Hasat" 收割'e ayrılı), Hayat Mukaddesat Amblemi (生命圣徽), kutsal kitap (圣典), Toprak Ana (母神; hitapta "Ana"). Indo (因多) İngilizce biçim.
 > **Görünüm:** 306–309 (Klein'dan "eski ben"ini öldürmesini ister), 315–316, 369–372 ve 407–482 (Emlyn telkin altında kilisede), 639, 742, 801, 973, 1014 (Emlyn'le), 1097, 1126, 1279, 1310, 1361, 1392.
 
 ### N-UTR1.1

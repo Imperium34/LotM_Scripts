@@ -10,6 +10,8 @@
 - **Şaşaa Devri** — Glorious Era (光辉年代); Helak Çağı'nın başlangıcı; "Çağ" 纪/纪元'ye, "Devir" 年代'ya ayrılı; "Nur" Güneş Kilisesi'nin akoruna ayrılı olduğu için kullanılmaz; İng. çeviri bu devri Helak'la birleştirir, yanlış
 - **Büyük Helak** — the Great Cataclysm (大灾变); Şaşaa Devri'nden sonra gelen felaket; Helak Çağı adını ondan alır
 - **İlahlar Çağı / Dördüncü Çağ** — Fourth Epoch (第四纪); 9'da "İlahlar Çağı olarak da bilinen Dördüncü Çağ"; sıra adı ile tema adı eşanlamlı, "Beşinci Çağ / Demir Çağı" gibi _9_
+- **Ebedi Zulmet Nehri** — River of Eternal Darkness (永暗之河); salahiyetler.yml Kural 9: özel adlarda 暗 → 'Zulmet'
+- **Âlem-i Berzah** — Underworld (冥界); sozluk.yml / salahiyetler.yml; içinden Berzah Nehri (冥河) geçer
 
 ## Religion / Church
 
@@ -21,6 +23,10 @@
 - **Kutsal Katedral** — Church's central/Holy Cathedral (圣堂; Kış Kontluğu)
 - **Sükûnet Katedrali** — Cathedral of Serenity (宁静教堂)
 - **İlim Mabedi** — Temple of Knowledge (知识圣殿); İlim ve Hikmetin İlahı Kilisesi'nin Lenburg'daki merkezi; 知识 = İlim (İlim Kulesi ile aynı)
+- **Bereket Katedrali** — Harvest Church (丰收教堂); Backlund'daki Toprak Ana kilisesi; 丰收 = Bereket salahiyeti ('Hasat' 收割'e ayrılı); 教堂 adlarda 'Katedral'
+- **Hayat Mukaddesat Amblemi** — Sacred Emblem of Life (生命圣徽); Toprak Ana'nın amblemi; 生命 = Hayat
+- **kutsal kitap** — scripture (圣典); küçük harf, jenerik
+- **Toprak Ana / Ana** — 母神; anlatıda 'Toprak Ana', hitapta ve dua içinde 'Ana' (母亲 = Ana salahiyeti)
 - **Kutsal Sayılar Katedrali** — Buhar ve Çarkların İlahı's cathedral (圣数教堂)
 - **Nehir ve Deniz Katedrali** — Fırtınalar Hakimi's cathedral (河海教堂)
 - **Azize Arianna Katedrali** — Saint Arianna Church; Klein'ın asıl bedeninin yattığı yapı (圣阿里安娜教堂)
@@ -148,6 +154,15 @@
 
 - **Roselle Gustav** — kadim Intis Konsülü; tarot kehanetini ve iskambil kâğıtlarını icat etti, sonradan "İmparator Sezar" oldu (罗塞尔·古斯塔夫)
 - **İmparator Roselle** — Emperor Roselle (罗塞尔大帝); Tarot kartı 'İmparator' (皇帝) ile aynı sözcük, ayrı kayıt; Klein'ın iç sesinde kısaca 'İmparator'
+- **Kan İmparatoru Alista Tudor** — Blood Emperor Alista Tudor (血皇帝 亚利斯塔·图铎); Tudor İmparatorluğu; 'Kara İmparator' ile aynı kalıp
+- **Şaman Kral Klarman** — Shaman King Klarman (卡拉曼巫王)
+- **Reinette Tinekerr** — (蕾妮特·缇尼科尔); İngilizce biçim
+- **Trissychik** — (特莉丝奇克); Şeytaniçeler tarikatının Trissy'ye verdiği ad (Trissy + 奇克, Kadim Şeytaniçe'nin gerçek adından); İng. çeviri 'Trissy Cheek' der, 'Cheek' İngilizce kelime gibi okunduğu için alınmadı
+- **Einhorn** — (艾因霍恩); Feysac ailesi, Soren Einhorn Medici'nin bir parçası
+- **Sirius** — (西里斯); 210'daki Aşkın; İngilizce biçim
+- **Regence** — (瑞金斯); soyadı; iki ayrı kişi: Tarikat-ı Hafiyye mensubu (210) ve Darc Regence (Gümüş Şehir, 385)
+- **Ikanser Bernard** — (伊康瑟); Makine Külli Şuuru
+- **Edessak Augustus** — Prens Edessak (埃德萨克)
 - **Buharın Oğlu** — Son of the Steam (蒸汽之子); Roselle'e verilen ad; tırnaksız _59_
 - **Sezar** — Caesar (凯撒); Roselle'in unvanı ("İmparator Sezar") ve Sezar Limanı; İngilizce ad kuralının istisnası, "Caesar" yazılmaz _56_
 - **İmparator Roselle'in günlükleri** — Emperor Roselle's diaries (罗塞尔日记/罗塞尔的日记); Soytarı'nın toplantıdaki görevinde tekil: 'Roselle Gustav'ın gizli günlüğü'
@@ -353,6 +368,11 @@
   - **"Hikmet Gözü"** — Eye of Wisdom (智慧之眼); Isengard Stanton; 智慧 = Hikmet (İlim ve Hikmetin İlahı ile aynı)
   - **"Kara Yılan"** — Black Snake (黑蛇); iki kelime
   - **"Yaban Köpeği"** — 野狗; İng. biçimi doğrulanmadı
+- **Korsan unvanları** — rütbe + lakap; lakap adın yerine geçer (ZH'de unvan neredeyse hep tek başına kullanılır, ör. 星之上将 280 kez). 上将 → Amiral, 中将 → Koramiral; 之 bağlaçtır, çevrilmez:
+  - **Amiral Cehennem** Ludwell (地狱上将 路德维尔); **Amiral Kan** Senor (血之上将); **Amiral Yıldız** Cattleya (星之上将)
+  - **Koramiral Buzdağı** Edwina (冰山中将); **Koramiral Kasırga** Qilangos (飓风中将); **Koramiral Hastalık** Tracy (疾病中将; 疾病 = Hastalık salahiyeti, Maraz değil); **Koramiral Alacakaranlık** Bulatov (黄昏中将; 黄昏 = Alacakaranlık); **Koramiral Derin Deniz** (深海中将)
+  - **Gizem Kraliçesi** Bernadette (神秘女王; 神秘知识 = Gizem Marifeti)
+- **Kızıl Kafatası Korsanları** — Red Skull Pirate Crew (红骷髅海贼团); kaptanı 'Deniz Kurdu' Johnson (海狼), ikinci kaptanı 'Tek Göz' Andersen (独眼)
 
 ## Law & Legislation
 
@@ -408,6 +428,7 @@
 - **Yüzde Beş Hayır Kurumları** — Five Percent Charities (百分之五慈善基金会)
 - **Tingen Şehri Noterliği** — Notary Office of Tingen City (廷根市公证处)
 - **Backlund Bisiklet Şirketi** — Backlund Bike Company (贝克兰德脚踏车公司)
+- **Doğu Balam Lokantası** — East Balam Restaurant (东拜朗餐厅); Khoy Üniversitesi'ndeki lokanta (113)
 
 ## Education System
 
@@ -433,6 +454,7 @@
 
 - **İçtimai Fikir Cereyanları ve Terbiye Hâdiseleri** — Tracey'in istediği kitap; adı, kendi tahlilinde kullandığı iki kelimeyi (fikir cereyanı, hâdise) birebir taşımak zorunda (社会思潮与教育现象)
 - **Büyük Dedektif Manseng** — Great Detective Manseng (《大侦探芒森》)
+- **Sırlar Kitabı** — Book of Secrets (《秘密之书》); Şaman Kral Klarman'ın kitabı; Kural 8: 秘 = Sır
 - **Fırtınalı Tepeler** — Stormwind Mountain Villa (《暴风山庄》); Fors Wall'un romanı. 《呼啸山庄》 (Wuthering Heights) üzerine tek karakterlik oyun; Türkçede de 'Uğultulu Tepeler' üzerinden tek kelime değişir. 风暴 → Fırtına (bkz. Fırtınalar Kitabı) _107_
 - **Sissi Hanım** — Lady Sissi (茜茜女士); Fırtınalı Tepeler'in kahramanı; 'sakin, zeki, miskin'. 女士 + ad → Hanım (Daly Hanım gibi) _107_
 - **Akşam Postası** — Evening Post (晚邮报)
@@ -569,6 +591,7 @@
 - **kaptan kamarası** — captain's cabin (船长室) _58_
 - **hayalet gemi** — ghost ship (幽灵船); Alger'in gemisi adıyla anılmadığı yerler
 - **Kara Taht** — Black Throne (黑王座号); İng. çeviri "Black King" der; Roselle'in gemisi, tırnaksız; "Kara Kral" yazılmaz _59_
+- **Altın Rüya** — Golden Dream (黄金梦想号); Edwina'nın gemisi, tırnaksız; 梦想 'özlem' anlamında, 梦境 (Hülya salahiyeti) değil
 
 ## Household & Social Roles
 
