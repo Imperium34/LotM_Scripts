@@ -1210,3 +1210,51 @@ Tayf aşaması: 338 苍白的脸孔，精致的五官，有种人偶般的美感
 ### N-MRC1.2
 331 ¶18 从这个序列开始，诅咒逐渐出现，‘疯子’是容易失控。马里奇脸庞肌肉抽动了一下; ¶44 Hortlak laneti (渴望人类温热的血液); ¶67 如果，如果放弃自我，那我宁愿选择死亡！马里奇沙哑着低吼道; 346 ¶22 两支半，再多的话，我会真的镇静 (yatıştırıcı); 877 ¶63 揉了揉额角…刚才的大量话语似乎让他有了精神和欲望上的波动; 1000 ¶75 揉了揉眼睛; 878 ¶72 有些控制不住地抢先问道.
 **Denetim:** 331, 346, 877, 878, 1000 (ZH).
+
+---
+
+## Emlyn White ve Cattleya
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.
+> **Adlar:** 血族 → Kan Zümresi (sozluk.yml bolgesel); Aktar Yolu'nun Mertebeleri sozluk.yml'den; 星之上将, 神秘女王 sözlükte yok, Çince bırakıldı. Kart adları (Ay, Keşiş) eski harita başlığından.
+> **Eski haritalardan düşenler:** Emlyn: üç kural (vampir kelimesine öfke, otorite karşısında çöküş, şaşkın taban) kaynakla örtüşür ve EML1.1–1.2'de korundu; eski örnekler uydurmaydı. Cattleya: "lanetli bilgiyi asla doğrudan aktarmaz, masal ve mecazla konuşur" kaynakta yok; Cattleya bilgiyi doğrudan, ansiklopedik verir (594–595, 617, 653); eski örneklerin hepsi uydurmadır.
+
+### N-EML1.1
+369 ¶22 血族，高贵的血族！明白吗？; 431 ¶30 血族！明白吗？血族！还有，不要用‘只’这个单位！; 407 ¶7 不要用金钱侮辱高贵的血族！; ¶15 傲慢; ¶58, ¶73 Kan Zümresi'nin üstünlüğü; 465 ¶35 血族，血族！; 595 ¶22 这应该就是我们血族都很英俊和美丽的原因; 716 ¶75 血族！(咬牙); 792 ¶68 我对我的智商很有信心.
+**Denetim:** 369, 407, 431, 465, 595, 716, 792 (ZH).
+
+### N-EML1.2
+369 ¶54 神父，主教，我要回家，我要回家，我要回家！; ¶69 kiliseyi özleme; ¶72 表情扭曲，语气愤怒: 我会对抗这种感觉的！; 371 ¶61 那个老头子…该死，那该死的暗示该怎么消除？; 421 ¶35 脸色惨白…我做了什么，做了什么……; ¶38 用略带哭丧意味的嗓音道…可是，我不想背叛月亮！; 458 ¶73 母神啊…忽然停顿，表情瞬间呆滞; 742 ¶45 好，好的 (突感惭愧).
+**Denetim:** 369, 371, 421, 458, 742 (ZH).
+
+### N-EML1.3
+458 ¶77 尼拜斯大人？; ¶88 尊敬的尼拜斯大人…; 459 ¶17 祖父…; 523 ¶30–37 男爵大人; 468 ¶25 尊敬的‘愚者’先生，始祖给予的启示是这样的…; ¶61 您的意愿必将贯行于大地.
+**Denetim:** 458, 459, 468, 523 (ZH).
+
+### N-EML1.4
+421 ¶77 我只喜欢人偶和纯净美丽的少女！; ¶57–62 pazarlık ve aracılık payı; ¶90 消息的报酬最低20镑; 568 ¶37 可以，便宜一点吗？; 789 ¶29, ¶38 pazarlık ve uyarı. 1231 Klein'la bebek konuşması.
+**Denetim:** 421, 568, 789, 1231 (ZH).
+
+### N-EML1.5
+594 ¶62 我已经是一名男爵了; 609 ¶59 略显高傲地微笑道; 610 ¶5 有，就报价格，没有，就坦白讲。当然，我很确定你有; ¶12 轻抬下巴，优雅笑道; 716 ¶75 血族！(咬牙).
+**Denetim:** 594, 609, 610, 716 (ZH).
+
+### N-CAT1.1
+594 ¶66–72, 595 ¶7–21 Aktar Yolu ve Yol mantığı; 617 ¶6, ¶42 Amon ve Kapkaççı Yolu; 653 ¶15 石怪…‘守护者’的主材料; ¶44 ‘猎人’途径的序列5叫‘收割者’; 647 ¶55–72 Sonia Denizi'nin tehlikeleri (嗓音有些飘忽 ama düz bilgi); 767 ¶61 月亮使者 tarifi.
+**Denetim:** 594, 595, 617, 647, 653, 767 (ZH).
+
+### N-CAT1.2
+680 ¶19 两周之内给你，同样600镑 (简洁明确); 823 ¶9 成交，给我一周的时间筹集; ¶49 我尽力促成，但不保证; 825 ¶53 能，你什么时候要？嘉德丽雅没问为什么; ¶57 就当是购买‘断指’的赠送; 744 ¶68 fiyat teklifi.
+**Denetim:** 680, 744, 823, 825 (ZH).
+
+### N-CAT1.3
+648 ¶10 快！加速绕过那里，不要靠近！; ¶25 kahvaltı buyruğu; 641 ¶27 你今天可以喝一瓶苏尼亚血酒，其他不限量; 651 ¶32 rota buyruğu; 656 ¶84 弗兰克，停止一切尝试.
+**Denetim:** 641, 648, 651, 656 (ZH).
+
+### N-CAT1.4
+638 ¶36 不要在意什么‘毒素专家’，我是一个很友好的人，只要不面对那些该死的家伙！我最大的爱好是研究土壤、作物和品种杂交技术，相信我，这才是人类的未来.
+**Denetim:** 638 (ZH).
+
+### N-CAT1.5
+649 ¶11 梦呓般说道; ¶27 不去…我要在这里等着，等着！; 663 ¶44 我不告诉你！; ¶60 我只是一个被放逐的人; 665 ¶43 之前，之前的梦境里，我是不是说了什么？; 671 ¶91 是呀。我三岁不到就跟在她身边了…既是船长，也是老师，还是，还是，母亲…….
+**Denetim:** 649, 663, 665, 671 (ZH).

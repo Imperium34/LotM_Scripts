@@ -1082,25 +1082,94 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
   - _Çatlak:_ umut ve hırs onu bir anda çıplak bırakır (312: _"İsterim!"_, _"Anlaştık!"_); korkuda cümle kısalır ve kekeler.
 - **Seeka'dan ayrımı:** İkisi de yazar. Seeka bir kilise müfrezesinin disiplinli üyesidir ve esprisi derli topludur; Fors bohem, miskindir ve esprisi Xio'yu indirmek içindir.
 
-### Emlyn White (Ay / The Moon)
+### Emlyn White (Ay / The Moon) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-- **Tarz:** Kibirli, abartılı bir asalet taslaması (Chuunibyou) ama özünde sosyal becerileri zayıf bir otaku. Eski çağ asilzadeleri gibi konuşmaya çabalar, uzun ve ağdalı kelimeler seçer ancak cümlelerin sonu genellikle mızmızlanan, çocuksu bir şikayete bağlanır.
-- **Onay:** Kibirliyken _"Pekâlâ, lütfedeyim."_; çöküşte kekeleyerek _"T-tamam..."_
-- **Kural 1:** Kendisine veya ırkına asla "Vampir" demez. Bu kelimeyi duyduğunda sinirlenir ve anında, tavizsiz bir ciddiyetle düzeltir. Sadece ve sadece "Kan Zümresi" (Sanguine) kelimesini kullanır.
-- **Kural 2:** Kendisinden üstün veya baskın otorite figürleri (Peder Utravsky, Soytarı veya onun üstündeki Kan Zümresi üyeleri) karşısında o asilzade maskesi bilinçli bir şekilde terk edilmez, doğrudan _çöker_. Aristokratik kelime dağarcığı yüklenemez ve yerini cümlenin iskeleti altında ezilen, kekeleyen pısırık bir tona bırakır.
-- **Kural 3 (Şaşkın / Kopuk Baz):** Emlyn olan bitenin gerisinde kaldığında, ne maske yukarıdadır ne de otorite karşısında çöker. Maske sadece _yoktur_. Geriye ne mağrur poz ne kekeme ezilme kalır; salt sosyal olarak savruk, kafası karışmış çocuk. İç ses tek notaya iner: _"Ne? Neler oluyor?"_ Bu üçüncü hâl, chuunibyou'nun ne takıldığı ne çöktüğü, sadece _devrede olmadığı_ andır.
-- **Ayar (Kibirli):** _"Biz asil Kan Zümresi, sizin o bayağı ve fani dertlerinizle ilgilenmeyiz. Benim estetik zevkim, sizin idrak sınırlarınızı fersah fersah aşar."_
-- **Ayar (Maskenin Düşüşü):** _"Peder Utravsky, ben... yani... asil bir Kan Zümresi üyesi olarak... ah, bu kiliseyi gerçekten benim temizlemem şart mı?"_
+**Tarz:** Genç bir Kan Zümresi üyesi (血族), "insan Mertebesiyle 7'ye denk"; Aktar (Ay) Yolu'nda, sonra Kan Zümresi baronu (594). Kibirli bir asalet taslar ama içi henüz büyümemiş bir delikanlıdır: Kan Zümresi'nin şerefi en hassas noktasıdır, para teklifini hakaret sayar ama sıkı pazarlık eder, oyuncak bebekleri ve "saf, güzel genç kızları" sever. Toprak Ana Kilisesi'nde Peder Utravsky'nin telkiniyle istemeden dindarlaşır ve bundan dehşete düşer. Kendinden büyük otorite karşısında asaleti çöker; Kan Zümresi büyüklerine karşı ise kusursuz, törensel bir saygı kullanır. Baron olunca sesi bir parça incelir, zarifleşir.
+**Onay:** Kibirliyken _"Elbette!"_ (568, 当然！); çöküşte _"P-peki, tamam."_ (742, 好，好的)
 
-### Cattleya (Keşiş / The Hermit)
+##### EML1.1 — "Kan Zümresi! Anladın mı?"
 
-- **Tarz:** Ağırbaşlı, ketum ve masalsı bir akademisyen. "Gizem Avcısı" (Mystery Pryer) yolunun getirdiği bilgi ağırlığını ve Kraliçe Mistik (Bernadette) ile olan bağlantısından gelen o peri masalı dokusunu dilinde taşır.
-- **Onay:** Ölçülü ve kısa: _"Anladım."_, _"Öyle olsun."_
-- **Kural 1:** _Lanetli ve kadere dair_ bilgiyi (kehanet, kozmik hakikatler, Yolunun açıkça söylemeyi cezalandırdığı şeyler) asla doğrudan aktarmaz. Tıpkı bir efsane veya masal anlatıyormuş gibi dolaylı, metaforik ve sembolik bir dille örter. Bilginin lanet getirdiğini çok iyi bildiği için kelimelerini bir sarraf gibi tartar. **Ancak sıradan lojistiği düz konuşur:** bir mistik mekaniğin nasıl işlediğini, bir eserin ne yaptığını gerektiğinde net ve teknik biçimde ifade eder (örn: _"3. Mertebe bir Mühürlü Eser, belirli bir menzil dahilindeki dualara icabet etme yetisine sahiptir."_). Perde, tehlikeli bilgiye örtülür; mühendislik değil.
-- **Kural 2:** Dolaylı konuşması bir kaçış veya şımarık bir gizem yaratma çabası değildir. Karşısındakinin onu anlamasını _gerçekten ister_ ancak açık iletişimin kendi Yolunda ölümcül olduğunu bilir. Bu yüzden dilinde, hayati bir uyarıyı veya bilgiyi açıkça haykıramamanın, kelimeleri sembollere gömmek zorunda kalmanın getirdiği o ince, boğucu çaresizlik ve hüsran zaman zaman hissedilmelidir.
-- **Ayar:** _"Yıldızların dizilimi ve denizin fısıltıları bize farklı bir hikaye anlatıyor. Eğer masalın sonunu öğrenmek istiyorsanız, karanlık ormana adım atmayı göze almalısınız."_
-- **Ayar (Mekanik Bilgi/Akademisyen):** _"O Mühürlü Eser'in çalışma prensibi son derece basittir. Etki alanı, yapımında kullanılan ruhanî malzemenin saflığıyla doğru orantılıdır ve negatif yan etkileri kan bağıyla sınırlandırılabilir. Dolayısıyla, eserin menzilinin elli metreyi aşması teorik olarak imkânsızdır."_
-- **Ayar (Kozmik Bilginin Kaplanması / Peri Masalı Modu):** _"Gökyüzündeki elmasları saymaya çalışan küçük kızın masalını hatırlarsınız... Gözlerini o ışıltıya o kadar uzun süre dikti ki, sonunda o elmasların aslında karanlıkta bekleyen devasa bir kurdun dişleri olduğunu fark edemedi."_ Sesi giderek fısıltıya dönüştü. _"O gökkubbeye bakmayın. Gerçek hakikat, geceleyin penceremizi tıklatan canavarlardan çok daha açgözlüdür."_
+**Kapsam:** Tüm görünümleri · kendisinden, ırkından söz edilirken
+**Yap:** Irkına "vampir" denmesine, onu hayvan gibi saymaya, parayla aşağılanmaya tahammül etmez; düzeltmeyi bir ünlemle ve tekrar ederek yapar ("Kan Zümresi, Kan Zümresi!"). Kendinden ve ırkından "asil Kan Zümresi" diye söz eder; zekâsıyla, güzelliğiyle övünür.
+**Yapma:** Düzeltmeyi soğukkanlı ve ağırbaşlı yapmak (öfkeli ve çocuksudur); "vampir" kelimesini onun ağzına koymak.
+**Örnek:** _"Kan Zümresi, asil Kan Zümresi! Anladın mı?"_ (369); _"Kan Zümresi! Anladın mı? Kan Zümresi! Bir de beni hayvan sayar gibi sayma!"_ (431); _"Asil bir Kan Zümresi'ni parayla aşağılama!"_ (407)
+**Gerekçe:** → N-EML1.1
+
+##### EML1.2 — Otorite karşısında çöken asalet
+
+**Kapsam:** Peder Utravsky, telkin, korku
+**Yap:** Maske bilinçle bırakılmaz, çöker: çocuk gibi ağlar ve tekrarlar ("Eve gitmek istiyorum, eve gitmek istiyorum!"), utançla kekeler. İstemeden dindarlaştığını fark edince yüzü kararır, sesi ağlamaklı olur. Toprak Ana'nın adını ağzından kaçırıp donup kalır.
+**Yapma:** Çöküşü ağırbaşlı bir hüzne çevirmek.
+**Örnek:** _"Peder, piskopos, eve gitmek istiyorum, eve gitmek istiyorum, eve gitmek istiyorum!"_ (369); _"Ben Ay'a ihanet etmek istemiyorum!"_ (421); _"Kiliseyi özlemeye başladım galiba; kutsal metni ezberlemeyi, hayat simgesini, süpürüp temizlemeyi... yalnızca bir saat, bir saat..."_ (369)
+**Gerekçe:** → N-EML1.2
+
+##### EML1.3 — Kan Zümresi büyüklerine tören dili
+
+**Kapsam:** Nibbas, baronlar, Kan Zümresi'nin üst katı; Tarot'ta Soytarı
+**Yap:** Kendi büyüklerine kusursuz, törensel bir saygıyla seslenir ("Muhterem ... Hazretleri", "Baron Hazretleri"); Soytarı'ya Toplantı Sicili'nin hitaplarını kullanır, cümleleri de bir tık süslenir.
+**Yapma:** Bu saygıya kendi kibrini sızdırmak.
+**Örnek:** _"Muhterem Nibbas Hazretleri, sanırım telkini üzerimden kaldırmayı düşünüyorsunuz."_ (458); _"Muhterem Soytarı Efendi, Atamızın verdiği vahiy şöyledir: ben, Emlyn White, Kan Zümresi'ni kurtaracak, kıyameti yenecek olanların anahtarıyım."_ (468)
+**Gerekçe:** → N-EML1.3
+
+##### EML1.4 — Bebekler, kızlar, pazarlık
+
+**Kapsam:** Gündelik konuşma, alışveriş
+**Yap:** Zevkini açıkça ve çocuksu bir ciddiyetle ilan eder ("Ben yalnız oyuncak bebekleri ve saf, güzel genç kızları severim!"). Parayı "aşağılama" sayar ama fiyatı kuruşu kuruşuna pazarlar ve aracılık payını ister.
+**Yapma:** Zevkini müstehcen ya da karanlık bir imaya çevirmek.
+**Örnek:** _"Hayır; ben olmasam 2800 isteyecekti. Anlaşmamız gereği bana fazladan 150 pound ödeyeceksin; toplam 2450."_ (421); _"Biraz indirebilir misin?"_ (568)
+**Gerekçe:** → N-EML1.4
+
+##### EML1.5 — Baron Emlyn (594'ten itibaren)
+
+**Kapsam:** Baron olduktan sonra, yabancılarla
+**Yap:** Kibir aynı, ama artık "hafif bir tepeden bakış" ve "zarif bir gülümseme" ile: kısa, ölçülü, işini bilen bir genç soylu. "Kan Zümresi!" düzeltmesi azalır ama kaybolmaz.
+**Yapma:** Olgunlaşmayı onun çocuksu çatlağını silecek kadar ileri götürmek (kızınca yine dişini sıkıp "Kan Zümresi!" der, 716).
+**Örnek:** _"Aslında bu kadar uğraşmaya gerek yok. Varsa fiyatı söyle, yoksa açıkça söyle. Gerçi ben, olduğundan eminim."_ (610)
+**Gerekçe:** → N-EML1.5
+
+### Cattleya (Keşiş / The Hermit) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Gizem Avcısı Yolu'nda, 星之上将 (korsan amirali), kalın gözlüklü. 神秘女王 Bernadette'in yanında büyümüş, onu hem kaptanı, hem hocası, hem annesi sayar. Sesi kesin, bilgili ve iş bilir: Yolları, Mertebeleri, tehlikeleri ansiklopedik bir açıklıkla anlatır; fiyatı ve süreyi tek cümleyle söyler; neden diye sormaz. Toplantıda kusursuz saygılıdır. Gemide kısa buyruklar verir. Beklenmedik bir tutkusu vardır: toprak, ekin ve melezleme. Yalnızca Sonia Denizi'nin rüya hâlinde korunaksızlaşır ve çocuksulaşır.
+**Onay:** _"Anlaştık."_ (823, 成交); toplantıda _"Emredersiniz, Soytarı Efendi."_ (714, 是，‘愚者’先生)
+
+##### CAT1.1 — Ansiklopedik ve kesin
+
+**Kapsam:** Bilgi verirken · Tarot, Klein
+**Yap:** Bildiğini doğrudan, sıralı ve eksiksiz söyler; bilmediğinin sınırını da açıkça çizer ("Daha üstünü bilmiyorum."). Tehlikeyi gösterişsiz, düz bir tonla anlatır.
+**Yapma:** Bilgiyi bilmeceye, masala, mecaza çevirmek (eski haritanın kuralı; kaynakta yok); bilgiyi saklıyormuş gibi kaçamak konuşmak.
+**Örnek:** _"Vampir Ay Yolu'ndadır; Mertebe 9'u Aktar, 8'i Hayvan Terbiyecisi, 6'sı İksir Müderrisi, 5'i Kızıl Alim, 4'ü Şaman Kralı... Daha üstünü bilmiyorum."_ (595); _"Bu bir dev değil, bir taş mahluk. Çekirdeği Savaşçı Yolu'nun Mertebe 5'i Muhafız'ın ana malzemesidir; bu yüzden savunması çok yüksektir."_ (653)
+**Gerekçe:** → N-CAT1.1
+
+##### CAT1.2 — İş bilir: fiyat, süre, soru yok
+
+**Kapsam:** Takas, görev, Gehrman'la iş
+**Yap:** Kısa ve net: ne, ne kadar, ne zaman. Neden diye sormaz; garanti vermez ("Elimden geleni yaparım ama söz veremem."). Gerektiğinde cömerttir ("Kuralı bedava say.").
+**Yapma:** Pazarlığı uzatmak ya da süslemek.
+**Örnek:** _"Tamam; iki hafta içinde, yine 600 pound."_ (680); _"Var. Ne zaman istersin?"_ (825, neden diye sormadan)
+**Gerekçe:** → N-CAT1.2
+
+##### CAT1.3 — Kaptan
+
+**Kapsam:** Gemi, tayfa, tehlike anı
+**Yap:** Kısa, ünlemli buyruklar; tayfasını rahatça yönetir, yemeği ve içkiyi bile buyrukla düzenler.
+**Yapma:** Kaptanlığı kaba bir korsan ağzına çevirmek (Danitz değildir).
+**Örnek:** _"Çabuk! Hızlanın, oradan dolaşın, yaklaşmayın!"_ (648); _"Bugün bir şişe Sonia kan şarabı içebilirsin, gerisi sınırsız."_ (641)
+**Gerekçe:** → N-CAT1.3
+
+##### CAT1.4 — Toprak ve ekin
+
+**Kapsam:** Kendinden söz ederken
+**Yap:** Ünlü bir korsan olmasına karşın en büyük tutkusu toprak, ekin ve melezlemedir; bunu ciddiyetle ve inançla söyler. "Zehir uzmanı" ününü küçümser.
+**Örnek:** _"'Zehir uzmanı' lafına aldırma; ben çok dost canlısı biriyimdir, o lanet olasılar karşıma çıkmadıkça. En büyük tutkum toprağı, ekinleri, tür melezlemeyi incelemek; inan bana, insanlığın geleceği budur."_ (638)
+**Gerekçe:** → N-CAT1.4
+
+##### CAT1.5 — Rüyada korunaksız
+
+**Kapsam:** Sonia Denizi'ndeki yarı rüya hâli
+**Yap:** Burada kesinlik çözülür: cümleler kısa, çocuksu, inatçı ("Söylemem!"); Bernadette'ten söz ederken tekrarlar ve kekeler. Uyanınca ne söylediğini sorar, utanır.
+**Yapma:** Bu hâli olağan sesine taşımak.
+**Örnek:** _"Söylemem!"_ (663); _"Evet ya. Üç yaşıma basmadan yanındaymışım... Bana bilgi verdi, elimden tutup maceraya götürdü, büyüyüşümü izledi; benim için hem kaptan, hem hoca, hem de, hem de, anne..."_ (671); _"Az önceki rüyada bir şey mi söyledim?"_ (665)
+**Gerekçe:** → N-CAT1.5
 
 ### Xio Derecha (Yargı / Judgment) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
@@ -1532,7 +1601,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Pazarlık, açıklama, plan
 **Yap:** Kısa, düz ve iş odaklı; pazarlığı açıkça yapar ("Karşılığında ne verebilirsin?"). Bilgi verirken uzun, sıralı ve öğretici anlatır (Yolun Mertebeleri, Ekolün tarihi). Sesi anlatıda boğuk ve kısık diye işaretlenir.
 **Yapma:** Ona morbid ya da kaçık bir mizah vermek (kaynakta yok); Sharron'ın tek kelimelik tarzını ona da giydirmek.
-**Örnek:** _"Gerçekten epey gizem bilgimiz var, 卡拉曼巫王的《秘密之书》 gibi; ama karşılığında ne verebilirsin?"_ (329); _"Sen yalnızca bir Mertebe 5'sin; yeterince yetkin değilsin."_ (1225)
+**Örnek:** _"Gerçekten epey gizem bilgimiz var, Şaman Kralı 卡拉曼'ın 《秘密之书》'ü gibi; ama karşılığında ne verebilirsin?"_ (329); _"Sen yalnızca bir Mertebe 5'sin; yeterince yetkin değilsin."_ (1225)
 **Gerekçe:** → N-MRC1.1
 
 ##### MRC1.2 — Bedende görünen lanet
