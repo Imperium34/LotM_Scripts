@@ -583,7 +583,7 @@
 
 # VII. Frozen Lines
 
-- **Bu, zamanların en kötüsü, ama aynı zamanda en iyisi.** — 这是最坏的时代，也是最好的时代 (Lanevus; 185, 203). Dickens'ın *İki Şehrin Hikâyesi* açılışının ters sırası (Türkçe yerleşik: "Zamanların en iyisiydi, zamanların en kötüsüydü"). 482 İkinci Cildi anlatıcı ağzından aynı tersine çevrilmiş cümleyle kapatır (这是最坏的时代，这是最好的时代。) ve yazar notu bu yankıyı bilerek kurduğunu söyler; 482 biçimi Lanevus'unkini yankılamalı. 482 için öneri (onay bekliyor): "Bu, zamanların en kötüsü; bu, zamanların en iyisi."
+- **Bu, zamanların en kötüsü, ama aynı zamanda en iyisi.** — 这是最坏的时代，也是最好的时代 (Lanevus; 185, 203). Dickens'ın *İki Şehrin Hikâyesi* açılışının ters sırası (Türkçe yerleşik: "Zamanların en iyisiydi, zamanların en kötüsüydü"). 482 İkinci Cildi anlatıcı ağzından aynı tersine çevrilmiş cümleyle kapatır (这是最坏的时代，这是最好的时代。) ve yazar notu bu yankıyı bilerek kurduğunu söyler; 482 biçimi Lanevus'unkini yankılamalı. 482 biçimi (anlatıcı, geçmiş zaman, Çincedeki paralel yapı korunur): **"Bu, zamanların en kötüsüydü; bu, zamanların en iyisiydi."**
 - **Bu asra mensup olmayan Soytarı, Gri sislerin fevkindeki esrarlı Hükümdar, Talihe hükmeden Sarı ve Siyahın Kralı** — the Fool's honorific name (不属于这个时代的愚者/灰雾之上的神秘主宰/执掌好运的黄黑之王); Klein 58'de kurar; 58'deki kendi okuyuşu 'Ey …, sen …sın, sen …sın' biçiminde _58_
 - **Ben dâhil herkes ölecek** — 所有人都会死，包括我 (Klein's notebook; 1:54, 2:54, 3:4)
 - **İradeniz emrimizdir.** — (遵从您的意志); dondurulmuş
