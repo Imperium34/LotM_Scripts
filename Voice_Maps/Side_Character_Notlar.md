@@ -1136,7 +1136,7 @@ Güneş: 140 歌颂者…他们的口号是：“让我们赞美太阳吧！”;
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.
 > **Adlar:** 黄金梦想号, 疾病中将 ve korsan lakapları (海狼, 独眼, 红骷髅海贼团) sözlükte yok, Çince bırakıldı. Edwina, Segar İngilizce biçim.
-> **Eski haritalardan düşenler:** Anderson: "her iğneleme bir olta atışı, asla keyfî değil" ve "kibri sarsılınca öfke" kaynakla örtüşmüyor; kışkırtma çoğunlukla huydur (1095 ¶37, ¶61) ve güçlü karşısında anında, şakayla teslim olur (677 ¶44, 707 ¶65). Danitz: "kışkırtmada berbat" ve "Gehrman'a Osmanlıca, süslü yaltaklanma" kaynakta yok; Danitz kışkırtmayla övünür (552) ve Gehrman karşısında kekeler (530 ¶55, 558 ¶12). Eski Danitz haritasındaki "İt boku!" ise 狗屎'ün sabit karşılığı olarak korundu.
+> **Eski haritalardan düşenler:** Anderson: "her iğneleme bir olta atışı, asla keyfî değil" ve "kibri sarsılınca öfke" kaynakla örtüşmüyor; kışkırtma çoğunlukla huydur (1095 ¶37, ¶61) ve güçlü karşısında anında, şakayla teslim olur (677 ¶44, 707 ¶65). Danitz: "Gehrman'a Osmanlıca, süslü yaltaklanma" kaynakta yok; Danitz Gehrman karşısında kekeler (530 ¶55, 558 ¶12). "Kışkırtmada berbat" ise doğrudur (kullanıcı hatırlatması, 2026-10-20): Danitz bununla övünür ama beceremez (N-DAN1.4); açık hüküm Klein'ındır, Anderson'ın iğnelemesi dolaylıdır (707). Eski Danitz haritasındaki "İt boku!" ise 狗屎'ün sabit karşılığı olarak korundu.
 
 ### N-AND1.1
 651 ¶77 哭笑不得…我就想开个玩笑…你不觉得环境一下变得很恐怖的体验非常棒吗？当然，我是指让对方; 653 ¶71 强行笑道：我知道，我的厄运会让我不好的话语应验，好了，别看我，我不说了; 656 ¶21 好，好，我闭嘴，闭嘴; 676 ¶46 …有点烦人，哈哈，开个玩笑; 677 ¶67 什么烦恼也不能影响吃饭和睡觉！; 689 ¶70 kumarhane; 691 ¶10 portre teklifi (大师级的水准); 694 ¶74 哈哈，刚才开玩笑的; 696 ¶6 我大概没法做巨龙猎手，只能做巨龙粪便了; 1040 ¶60 它已经会叫爸爸了 → ¶63 开个玩笑.
@@ -1167,8 +1167,8 @@ Güneş: 140 歌颂者…他们的口号是：“让我们赞美太阳吧！”;
 **Denetim:** 499, 530, 556, 558, 572, 690 (ZH).
 
 ### N-DAN1.4
-552 ¶3 一般海盗的挑衅就是辱骂，而我不同，是有针对性地辱骂…; ¶10 这才叫专业的挑衅; 1096 ¶40 Anderson karşısında 直觉地放弃了这句话; 1107 ¶10 küfür; 1179 ¶57 差点被说服.
-**Denetim:** 552, 1096, 1107, 1179 (ZH).
+Övünç: 551 ¶75–77 以为格尔曼·斯帕罗在怀疑自己，不自觉拔高了音量：难道你认为我不擅长挑衅？不，我是这方面的专家！; 552 ¶3–10 一般海盗的挑衅就是辱骂，而我不同，是有针对性地辱骂… / 这才叫专业的挑衅. Beceri: 656 ¶20 (Klein) 安德森在“挑衅”这方面比达尼兹不知强了多少; 1110 ¶22 (Klein) 骂人也只会骂一句的达尼兹简直是猎人之耻; ¶14 喊两声“胆小鬼”; 1040 ¶88–92 半挑衅半试探 → Anderson 你到时候可以考虑直接吃我的骨灰 → 为什么这家伙完全不受挑衅……决定就此放弃. Anderson'ın dolaylı iğnesi: 707 ¶26–29 你重新再扮演下‘猎人’吧，接着是‘挑衅者’和‘纵火家’. 1096 ¶40 Anderson karşısında 直觉地放弃了这句话; 1179 ¶57 差点被说服.
+**Denetim:** 551, 552, 656, 707, 1040, 1096, 1110, 1179 (ZH).
 
 ### N-DAN1.5
 1248 ¶9 达尼兹大人; ¶19 立刻给我准备一个干净安宁的祭坛，我要向神祷告; ¶48 抽签决定，这样最公平; 1270 ¶6–32 kısa buyruklar, misafirlere yemek; 1291 ¶51–56 狗屎！… 这就是文盲的下场…语言天赋这种事情和智商有关; 1381 ¶23 电报局 iç ses. İnanç: 896 ¶14 我信仰的是‘风暴之主’; 935 ¶35 作为一名海盗，或多或少都要信仰‘风暴之主’…远离棺材 (ALG1.7/KLS1.3: Fırtına yemini "Ya Hâkim").

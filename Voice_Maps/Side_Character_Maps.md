@@ -1433,7 +1433,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ### Alevden Danitz `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** 黄金梦想号'nun lostromosu, 3000 pound ödüllü korsan, Avcı Yolu'nda Ateş Müptelası; Fırtınalar Hâkimi mümini (896, 935). Geveze, övüngen, kaptanına (Edwina) hayran. Ödülüyle ve tanınmışlığıyla övünür, deniz bilgisi ve dedikodu saçar; ağzı beyninden önce davranır (在大脑反应过来前). Gehrman'dan korkar ve onun karşısında kekeler; arkasından "deli" der. Kendine kızınca imza küfrü "İt boku!"dur. Anderson onun aklıyla dalga geçer; Danitz ise kendini profesyonel bir kışkırtıcı sayar (552). Kitap ilerledikçe büyür: Rorsted Takımadaları'nda Soytarı Kilisesi adına yerlileri yöneten "Danitz Bey" olur (1248–1292), ama övünme ve küfür alışkanlığı sürer.
+**Tarz:** 黄金梦想号'nun lostromosu, 3000 pound ödüllü korsan, Avcı Yolu'nda Ateş Müptelası; Fırtınalar Hâkimi mümini (896, 935). Geveze, övüngen, kaptanına (Edwina) hayran. Ödülüyle ve tanınmışlığıyla övünür, deniz bilgisi ve dedikodu saçar; ağzı beyninden önce davranır (在大脑反应过来前). Gehrman'dan korkar ve onun karşısında kekeler; arkasından "deli" der. Kendine kızınca imza küfrü "İt boku!"dur. Kışkırtmada kötüdür ama bunu kabul etmez: kendini "bu işin uzmanı" sayar (551–552), oysa denemeleri boşa çıkar ve Klein onu "tek bir küfür bilen", "avcıların yüz karası" bulur (1110); Anderson da ona Avcı ve Kışkırtıcı rolünü baştan oynamasını söyler (707). Kitap ilerledikçe büyür: Rorsted Takımadaları'nda Soytarı Kilisesi adına yerlileri yöneten "Danitz Bey" olur (1248–1292), ama övünme ve küfür alışkanlığı sürer.
 **Onay:** _"Tamam!"_; korkuyla _"Ş-şey, olur!"_ (558, 是，好的！)
 
 ##### DAN1.1 — Geveze, övüngen korsan
@@ -1460,12 +1460,12 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Örnek:** _"Sparrow Bey, b-ben gidebilir miyim artık?"_ (530); _"G-gece rüyamda o deli Gehrman Sparrow'un 黄金梦想号'da ortalığı birbirine kattığını gördüm... Ne korkunç bir şey!"_ (572)
 **Gerekçe:** → N-DAN1.3
 
-##### DAN1.4 — Kışkırtıcı mı, avlanan mı
+##### DAN1.4 — Kendini uzman sanan kötü kışkırtıcı
 
 **Kapsam:** Anderson, kışkırtma, av
-**Yap:** Kışkırtmayı bir meslek gibi anlatır ve onunla övünür ("sıradan korsan küfreder, ben hedefe göre küfrederim"). Anderson'ın alayı karşısında lafı bulamaz, ya küfreder ya susar.
-**Yapma:** Anderson'la atışmayı eşit bir düelloya çevirmek.
-**Örnek:** _"Sıradan bir korsanın kışkırtması küfürdür; benimki öyle değil, hedefine göre küfrederim. Tek bir cümleyle, tek bir hareketle aklını öfkeyle yakacak kadar bilgi toplamak gerekir. Profesyonel kışkırtma budur."_ (552)
+**Yap:** Kışkırtmayı bir meslek gibi anlatır ve onunla övünür ("sıradan korsan küfreder, ben hedefe göre küfrederim"); en küçük şüphede sesini yükseltip uzman olduğunu ilan eder. Gerçek denemeleri ise beceriksizdir: tek bir küfre ya da yavan bir iğnelemeye dayanır ve karşısındaki kızmayınca ağzı seğirip vazgeçer. Komedi övünç ile beceri arasındaki uçurumdadır. Anderson'ın alayı karşısında lafı bulamaz, ya küfreder ya susar.
+**Yapma:** Kışkırtmalarını gerçekten etkili, zekice yazmak; Anderson'la atışmayı eşit bir düelloya çevirmek.
+**Örnek:** _"Yoksa kışkırtmada iyi olmadığımı mı sanıyorsun? Hayır, ben bu işin uzmanıyım!"_ (551); _"Sıradan bir korsanın kışkırtması küfürdür; benimki öyle değil, hedefine göre küfrederim. Tek bir cümleyle, tek bir hareketle aklını öfkeyle yakacak kadar bilgi toplamak gerekir. Profesyonel kışkırtma budur."_ (552) ↔ deneme: _"Bir yerlerde epey mirasın, yok, mülkün var değil mi? Ölünce küllerini oraya ben götürürüm."_ Anderson: _"Küllerimi doğrudan yiyebilirsin."_ (1040; Danitz vazgeçer)
 **Gerekçe:** → N-DAN1.4
 
 ##### DAN1.5 — Danitz Bey (1248'den itibaren)
