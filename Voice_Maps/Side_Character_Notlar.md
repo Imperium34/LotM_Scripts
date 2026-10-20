@@ -819,7 +819,7 @@ Kural, Divan_Rule 1.1'deki kolonizasyon ölçütüne dayanan bir öngörüdür. 
 
 1216 ¶8 kendi tahliliyle Başbuğ'un niyetini çözer; ¶20 即使您想将我留在白银城，我也要申请前往; ¶18 Colin: 你的成长比我预想得更好. 1266 ¶9–12 Meclis'e girer (带着鼻音道: 是，首席阁下！). 1267 ¶9 再等一等; ¶21 低沉说道: 出发。 1277 ¶20 沉稳说道 (Tarot'ta söz alıp şart koşar). 1298 ¶64 保持着外表的严肃: 我们立刻去找首席…. 1323 ¶22 抱歉，我需要把刚才说的先记下来. 1393 ¶54 Soytarı: 你已经足够成熟和稳重.
 **Denetim:** 1216, 1266, 1267, 1277, 1298, 1323, 1393 (ZH).
-**Açık soru:** 是，首席阁下 için önerilen "Baş üstüne, Başbuğum." (Dede Korkut sicili; modern askerî "Emredersiniz" Kolluk haritasında kullanılıyor).
+**Karar** (kullanıcı, 2026-10-20): 是，首席阁下 → "Baş üstüne, Başbuğum." (Dede Korkut sicili; modern askerî "Emredersiniz" Kolluk haritasındadır).
 
 ---
 
@@ -864,4 +864,4 @@ Kural, Divan_Rule 1.1'deki kolonizasyon ölçütüne dayanan bir öngörüdür. 
 
 Ad ve zamir: 64–126'da 特里斯 / 他; 122'den itibaren 特莉丝 / 她. 125 ¶48–56 Klein ve Leonard'ın geçişi: 特里斯，不，特莉丝; 470 ¶50 从“教唆者”特里斯变成“女巫”特莉丝. 56 ¶11 (ZH/TR) 特里斯先生 → "Bay Tris". 999 ¶33 Sherman: 特，特莉丝女士 → "T-Trissy Hanım". Çevrenin tepkisi: 999 ¶36 Sherman bakışını kaçırır; 782 ¶19 ve 785 ¶45–46 Klein'ın kuklası aracılığıyla bile çekiciliğine karşı temkin.
 **Denetim:** 56 ¶11 (ZH/TR); 64, 125, 470, 782, 785, 999 (ZH).
-**Açık soru:** 特莉丝奇克 (Trissy + 奇克) ve 原初魔女 için Türkçe ad yok; 470–471'de ve sonrasında karar gerekecek.
+**Açık soru:** 特莉丝奇克 (Trissy + 奇克) için Türkçe biçim yok; 470–471'de karar gerekecek. 原初魔女 = Kadim Şeytaniçe (sozluk.yml; 'Aslî' original/本源 içindir, primordial değil).
