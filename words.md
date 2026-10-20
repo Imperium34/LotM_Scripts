@@ -591,6 +591,7 @@
 - **Ben dâhil herkes ölecek** — 所有人都会死，包括我 (Klein's notebook; 1:54, 2:54, 3:4)
 - **İradeniz emrimizdir.** — (遵从您的意志 / 遵从您的意愿); dondurulmuş. Toplantıyı kapatan koro cevabı; yazar 意志 (7, 36, 571, 682) ile 意愿 (159, 395, 489, 564) arasında rastgele gidip gelir, ikisi de bu satırla karşılanır. 364'teki 遵从您的意志，首席阁下 toplantı dışıdır, bağlamına göre çevrilir.
 - **Arzunuz, benim irademdir.** — (您的意愿就是我的意志); dondurulmuş. Bir üyenin Soytarı'dan aldığı görevi tek başına kabul etmesi, birinci tekil (Alger 783, 1278; Xio 957). Koro satırından ayrıdır; çevresindeki cümle konuşanın siciline uyar.
+- **Her şeyi bilmek, her şeye kadir olmaktır.** — 全知意味着全能 ("omniscience means omnipotence"); dondurulmuş. İlim ve Hikmetin İlahı Kilisesi'nin vecizesi (Isengard, 415 ¶24). "Kadir" Kadir-i Mutlak yol grubunu yankılar; bilerek seçildi. Klein'ın 257 ¶55'teki 知识等于力量…全知等于全能 düşüncesi bu satırı önceden yankılar ve aynı kalıpla verilir.
 - **şans artırma ayini** — luck enhancement ritual (转运仪式 / 福生玄黄), four steps, counter-clockwise:
   1. **Arz ve Arşın Kutlu Baki Efendisi** — 仙尊
   2. **Arz ve Arşın Kutlu Gök Hakimi** — 天君
