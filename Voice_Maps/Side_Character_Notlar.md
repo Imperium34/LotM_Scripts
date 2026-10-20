@@ -719,6 +719,7 @@ Mektup 203 ¶67–70, 204 ¶6–8: 哈哈哈，祝贺你们，祝贺你们终于
 
 914 ¶12 tek soru; ¶22–23: 你做他一年的秘偶，到了时限，可以回归灵界 — 说的平平淡淡…无需在意被命令者的心情. ¶32 语速缓慢: 高位者对下位者有很强的压制能力. ¶41 狂暴海。(平静回答). ¶51 那里有声音在呼唤我. ¶65–67 语气平静没有起伏: 头骨王座, 冷酷地注视着，没有一点情绪的波动 / 这或许才是真正的自己. 915 ¶11–18: evlilik ve oğul anısında 表情逐渐柔和…嘴角不知不觉翘了起来, 呵呵，他太小看他的父亲了. ¶28: 我内心似乎分裂成两个人. 917 ¶24–25 平和笑道: 或许是已经习惯现在的生活，我选择三; ¶36 疲惫地微笑; ¶53 沉眠…还在为那个爱撒娇的小家伙打造秋千; ¶55–56 记得写信。但我睡醒之前，不会回你。
 **Denetim:** 914 ¶10–70, 915 ¶2–50, 917 ¶21–57 (ZH).
+**Sicil notu** (kullanıcı kararı, 2026-10-20): astlara verilen buyruklar Balam ferman diliyle çevrilir (istek-emir kipi, 'müddet', 'tamam olmak'). Kaynakta 说的平平淡淡; ferman tınısı Ölüm Yolu ve Balam adlarına dayanan bir yorumdur. 914 ¶25 astın cevabı 是，伟大的死亡执政官 → "Emrin olur, ulu Ölüm Veliahdı."
 
 ### N-AZK1.5
 
@@ -771,6 +772,11 @@ Mektup 203 ¶67–70, 204 ¶6–8: 哈哈哈，祝贺你们，祝贺你们终于
 **Denetim:** 956, 957, 1321 (ZH).
 **Karar** (kullanıcı, 2026-10-20): Toplantı sicili Fors düzeyindedir: hitaplar açık, cümleler sade.
 **Karar** (kullanıcı, 2026-10-20): 957'deki 您的意愿就是我的意志 Alger'le ortak bir toplantı kalıbıdır (783 ¶17, 1278 ¶35); words.md › Frozen Lines: "Arzunuz, benim irademdir." Koro cevabı 遵从您的意志 / 遵从您的意愿 ise "İradeniz emrimizdir."
+
+### N-XIO1.8
+
+Kural, Divan_Rule 1.1'deki kolonizasyon ölçütüne dayanan bir öngörüdür (Derrick'in DER1.5'i gibi); kullanıcı kararı 2026-10-20. Kaynakta Xio'nun 1189 öncesi replikleri sadedir (N-XIO1.1). 1189 ¶20–33: mahkemedeki vakayı anlatırken 'Kadı' olarak konuşur (他的辩护律师说服了我…). 1337 ¶82: 去告诉文德尔，之后的两周，他将在这里度过，直到那份文书过期 (örnek bu satırdan). 1391 ¶71: Ferman Sahiri (Mertebe 4) olarak plan. Sızıntının ölçüsü çeviri sırasında bu bölümlerle sınanmalı.
+**Denetim:** 1189, 1337, 1391 (ZH); öngörü.
 
 ---
 
@@ -913,6 +919,7 @@ Anlatı fiilleri: 勾勒于镜面 (417), 浮现 (429), 呈现 (608), 凝成了�
 
 210: ¶7 这是一个符合逻辑的巧合; ¶12 这很符合他的性格; ¶18 这是注定的结局; ¶26 但他的选择同样符合他当时的状态和隐含的逻辑; ¶64 这很符合逻辑，我们的故事并不是胡编乱造的; ¶88 这完美符合因斯·赞格威尔的想法. 940 ¶27 但从本质上讲，这是一种必然; ¶31 这非常合理，因为他要掩盖…; ¶33 这有点巧合，但也不让人意外…所以，他那样的表现没有一点问题. 941 ¶31 …在这个时间点，乌洛琉斯降临这里是符合逻辑的！ 942 ¶19 这非常合理. Kronik cümleleri: 210 ¶8–17, ¶21–35, ¶40–49 (damgasız, düz sıralama).
 **Denetim:** 210 ¶7–92, 940 ¶25–45, 941 ¶31, 942 ¶18–19 (ZH).
+**Sicil notu** (kullanıcı kararı, 2026-10-20): kronik kısımları Osmanlı vakanüvis kalıplarıyla yazılır (mezkûr, zikri geçen, işbu, -dığı vaki oldu, rivayet olunur). Kaynakta kronik düz bir Çincedir; vakanüvis tınısı eserin Dördüncü Çağ'dan kalmasına ve haritanın 'vakanüvis' benzetmesine dayanan bir yorumdur. Amacı, KLM1.2'deki sızıntıların kuru kronikle karşıtlığını keskinleştirmektir.
 
 ### N-KLM1.2
 

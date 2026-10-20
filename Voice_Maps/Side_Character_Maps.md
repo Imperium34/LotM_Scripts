@@ -113,8 +113,9 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 **Kapsam:** 913–917 · astlar, Ölüm Yolu'nun alt Mertebeleri; geçmiş itirafı
 **Yap:** Kendinden aşağıdakilere düz, kısa ve mutlak buyruklar verir; karşısındakinin hayatını küçük bir iş gibi tartar. Sorulana tek kelimeyle cevap verir ("Kudurgan Deniz."). Geçmişteki zulmünü dalgasız, düz bir sesle anlatır ve bunun "gerçek kendisi" olabileceğini söyler. Ailesini anınca yüzü yumuşar, bir gülümseme sızar. Klein'a karşı sıcaklık sürer; vedası şakayla karışık ve yorgundur.
-**Yapma:** Kötü adam tiradı, tehdit, ağır ölüm imgeleri ("zulmet, naaş, berzah" sızıntıları); Klein'a da soğuk davranmak.
-**Örnek:** _"Bir yıl onun kuklası olacaksın. Süre dolunca Ruhanî Âlem'e dönebilirsin."_ (914); _"Ve ben öylece, soğukça izliyordum; en ufak bir duygu kıpırtısı olmadan."_ (914); _"Mektup yazmayı unutma. Ama uyanmadan önce cevap vermem."_ (917)
+**Sicil (yorum): Balam ferman dili.** Yalnızca Ölüm Yolu'nun alt Mertebelerine ve astlarına verdiği buyruklarda, Balam İmparatorluğu'nun Ölüm Veliahdı olarak eski bir ferman diliyle konuşur: istek-emir kipi ("-asın / -esin"), "müddet", "tamam olmak", "izin" gibi divan kâtibi kelimeleri; kısa ve kesin, gerekçesiz. Bu dil yalnız aşağıya akar: aynı sahnede Klein'a döndüğü an sade Loen beyefendisine (AZK1.1) geri döner, ve iki ses arasındaki fark Ölüm Veliahdı'nın yüzeye çıkışının kendisidir. Astları da ona aynı dille seslenir ("Emrin olur, ulu Ölüm Veliahdı."). Kaynakta bu satırlar düz bir dille yazılıdır (说的平平淡淡); ferman tınısı, Ölüm Yolu ve Balam adlarının çağrışımına dayanan bir çeviri yorumudur.
+**Yapma:** Kötü adam tiradı, tehdit, ağır ölüm imgeleri ("zulmet, naaş, berzah" sızıntıları); Klein'a da soğuk davranmak; ferman dilini itiraf ve anı cümlelerine taşımak (onlar düz kalır).
+**Örnek:** _"Bir yıl onun kuklası olasın. Müddet tamam olunca Ruhanî Âlem'e dönesin."_ (914; 地狱上将 路德维尔'e) ↔ astın cevabı _"Emrin olur, ulu Ölüm Veliahdı."_ (914); _"Ve ben öylece, soğukça izliyordum; en ufak bir duygu kıpırtısı olmadan."_ (914); _"Mektup yazmayı unutma. Ama uyanmadan önce cevap vermem."_ (917)
 **Gerekçe:** → N-AZK1.4
 
 ##### AZK1.5 — Hafıza çatlağı
@@ -1095,6 +1096,14 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Örnek:** _"Evet, Soytarı Efendi."_ (956); _"Arzunuz, benim irademdir."_ (957; donmuş satır, words.md)
 **Gerekçe:** → N-XIO1.7
 
+##### XIO1.8 — Arabulucu Yolu sızıntısı (Kadı'dan itibaren)
+
+**Kapsam:** 1189 sonrası · iş, mahkeme, ekip; yüksek Mertebeler
+**Yap:** Arabulucu Yolu'nun Türkçe adları (Zaptiye, Kadı, Ferman Sahiri, Nizamın Eli) bir Osmanlı kaza ve nizam dünyasıdır. Divan_Rule 1.1'deki kolonizasyon ölçütüyle, Yol'un dağarcığı Mertebesi yükseldikçe Xio'nun diline sızar: Kadı'da (6) yalnız iş konuşurken "hüküm", "nizam", "mahkeme", "kanun" gibi birkaç kelime; Ferman Sahiri'nde (4, 1391) emirleri bir ferman kesinliği kazanır ve aynı kelimeler gündelik konulara da girer. Dobra, sade, kısa çekirdek (XIO1.1) değişmez; sızıntı onun üstüne eklenir. **Sürüklenme göstergesi:** Fors'la ev işini ya da yemeği konuşurken hüküm ve nizam diliyle konuşuyorsa Yol onu yemeye başlamıştır.
+**Yapma:** Sızıntıyı 1189'dan önce başlatmak (eski haritanın hatası buydu: Xio başta sade konuşur); hukuk jargonunu cümleleri anlaşılmaz kılacak kadar yığmak; çekirdeği resmî bir dile çevirmek.
+**Örnek:** _"Hükmüm şu: iki hafta burada kalacak, o belgenin süresi dolana kadar."_ (1337; Kadı/ekip başı)
+**Gerekçe:** → N-XIO1.8
+
 ## 6. Tingen'in Gölgeleri
 
 ### Ince Zangwill `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -1285,8 +1294,9 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 **Kapsam:** Yazdığı her metin (210, 940–944)
 **Yap:** Geçmiş zamanlı, düz, sıralı vakayiname cümleleri ("X şunu yaptı. Bu yüzden Y oldu."). Kurduğu tesadüfü cümlenin sonunda bir makullük damgasıyla bağlar. Damgalar değişkendir ama her biri kendi biçimini korur: 这是一个符合逻辑的巧合 → "Bu, mantığa uygun bir tesadüftü."; 这很符合他的性格 → "Bu, karakterine çok uygundu."; 这是注定的结局 → "Bu, kaçınılmaz sondu."; 这非常合理 → "Bu son derece makuldür." (940, 942). Damga her paragrafta gelmez; yalnız tesadüfü örtmesi gerektiğinde.
-**Yapma:** Damgayı her paragrafın sonuna sabit bir imza gibi koymak; cümleleri süslü, edebî bir anlatıya çevirmek.
-**Örnek:** _"Tarikat-ı Hafiyye üyesi 瑞金斯, yorgunluk ve sanrının birlikte etkisiyle Antigonus ailesinin el yazmasını sıradan bir eski kitap sanıp sattı. Bu, mantığa uygun bir tesadüftü."_ (210); _"Ince Zangwill ayrıca Ozan ve Savaşçı Yollarının Aşkın malzemelerini satın aldı. Bu son derece makuldür..."_ (940)
+**Sicil (yorum):** Kronik kısımları bir Osmanlı vakanüvisinin kalıplarıyla yazılır: "mezkûr", "zikri geçen", "işbu", "-dığı vaki oldu", "... olduğu rivayet olunur", "bu sebepten". Dördüncü Çağ'dan kalma bir eserin yazısıdır; resmî, kuru ve tarafsız görünür. Bu kuruluk KLM1.2'deki sızıntıların arka planıdır: sızan yorum bu kalıpları bir anda bırakıp gündelik, canlı bir dile geçer, karşıtlık alayı keskinleştirir.
+**Yapma:** Damgayı her paragrafın sonuna sabit bir imza gibi koymak; kalıpları cümleyi anlaşılmaz kılacak kadar yığmak (bir cümlede bir iki kalıp yeter); vakanüvis sicilini sızıntılara taşımak.
+**Örnek:** _"Tarikat-ı Hafiyye mensubu 瑞金斯, yorgunluk ve sanrının birlikte tesiriyle, Antigonus ailesinin el yazmasını sıradan bir eski kitap zannedip sattığı vaki oldu. Bu, mantığa uygun bir tesadüftü."_ (210); _"Mezkûr 西里斯, Hornacis sıradağlarının ana zirvesinde bulunması muhtemel definenin cazibesine kapılıp Deweyville Kütüphanesi'ne gidip gelmeye başladı ve hiçbir beis görmeksizin gerçek adını ve adresini bıraktı. Bu, karakterine çok uygundu."_ (210); _"Ince Zangwill ayrıca Ozan ve Savaşçı Yollarının Aşkın malzemelerini satın aldı. Bu son derece makuldür..."_ (940)
 **Gerekçe:** → N-KLM1.1
 
 ##### KLM1.2 — Sızan yorum: alay, şaşkınlık, sevinç
@@ -1294,7 +1304,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Hikâyesi bozulduğunda; sahibinden söz ederken; son bölümler
 **Yap:** Kronik akarken bir anda yorum sızar: acıma ("Ne acınası!"), şaşkınlık ("Buna inanmak gerçekten zor!", "anlaşılmaz olan, yeterli gerekçesi olmayan şey..."), sahibine iğneleme ("iyi kalpli Ince Zangwill"), sahte otorite ("bu, en usta, en üst düzey ruh hekiminin teşhisidir!"). Ünlem bu sızıntılarda gelir. Sonda sahibinin talihsizliğini sevinçle ve tekrarla yazar.
 **Yapma:** Kronik bölümlerine ünlem ve yorum serpiştirmek (sızıntı ara sıra ve ani gelir); yorumu uzun bir iç sese çevirmek.
-**Örnek:** _"Ne acınası! Biraz daha akıllı olsaydı bu hikâye çok daha karmaşık olurdu."_ (210); _"Klein Moretti, Ince Zangwill'in gizli etkisini fark etti ve o koyu kızıl bacayı gördü. Buna inanmak gerçekten zor!"_ (210); _"Ince Zangwill gerçekten çok şanssızdı, çok talihsizdi!"_ (944)
+**Örnek:** _"...ve mezkûr Ray Bieber, gizlice ayini icra etmek üzere daha tenha bir mahalle çekildi. Ne acınası! Biraz daha akıllı olsaydı bu hikâye çok daha karmaşık olurdu."_ (210; kronikten sızıntıya geçiş); _"Klein Moretti, Ince Zangwill'in gizli etkisini fark etti ve o koyu kızıl bacayı gördü. Buna inanmak gerçekten zor!"_ (210); _"Ince Zangwill gerçekten çok şanssızdı, çok talihsizdi!"_ (944)
 **Gerekçe:** → N-KLM1.2
 
 ##### KLM1.3 — Zorlandıkça çözülen yazı
