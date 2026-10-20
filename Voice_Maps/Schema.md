@@ -119,3 +119,44 @@ Bir cümleyi yazarken ya da denetlerken:
 - Şablonda sıradan kullanımı yasaklamak. Mertebe adına bir yasak gerekiyorsa büyük harfli biçimle yazılır; makine onu harf duyarlı arar ve küçük harfli mesleğe dokunmaz.
 
 **Sınır.** Kural bir izindir, ekleme emri değildir. Kaynak sıradan bir kişiyi Mertebe adıyla ilgisiz gündelik bir kelimeyle anıyorsa, Türkçe de Mertebe adını oraya taşımaz. Bağı kaynak kurar; çeviri onu silmez, uydurmaz da.
+
+### 0.7 Yan Karakter Haritaları: Biçim ve Uzlaşımlar
+
+`kaynak: — | mudahale: — | denetim: tamam`
+
+Side_Character_Maps.md'nin bütün haritaları bu biçimdedir; şablon üreteci bir haritayı bölüme taşırken bu uzlaşımları korur.
+
+**Biçim.**
+
+- Başlık: `### Ad (açıklama) \`kaynak: metin | mudahale: ozgun | denetim: eklenecek\``. Altında **Tarz:** (kim, nasıl konuşur, hangi dönemde ne değişir), **Onay:** (kaynaktaki kısa evet/tamam kalıbı, Çincesiyle), isteğe bağlı **Sicil (yorum):**.
+- Kurallar `##### KOD1.x — Başlık`; alanlar **Kapsam / Yap / Yapma / Örnek / Gerekçe: → N-KOD1.x**. Kod üç harflidir (ROS, AZK, ISG...). Kanıt Side_Character_Notlar.md'de `### N-KOD1.x` altında Çince alıntıyla ve **Denetim:** satırıyla durur.
+- `Kapsam` dönemi ve muhatabı belirler; kural o aralığın dışına taşınmaz. Bir özellik Mertebeyle ya da olayla değişiyorsa kademeli yazılır (ör. Sharron'un kukla imgesi: Tayf iken ender bir benzetme, Kukla'dan (1016) sonra baskın).
+- **Örnekler:** yayımlanmış bölümlerden (1–58) alınmış olanlar kesindir; geri kalanlar Claude'un çevirisidir ve bölüm çevrildiğinde çevirmenin cümlesiyle değiştirilir. ¶ numaraları çevrilmemiş bölümlerde ZH satır sırasıdır. Örnek yalnız kelime ve kayıt seçimini gösterir; kaynakta olmayan bir cümle, söz ya da formül içermez (0.5 §2, §4).
+
+**Sicil (yorum) katmanı.** Kaynakta karşılığı olmayan bir kayıt, ancak bir dayanağı varsa eklenir: Yolun ya da Mertebenin adı, sozluk.yml'deki tazim ismi, yol grubu, kültürel konum. Kural:
+
+- Katman Yolun karakteri yediği ölçüde girer. Düşük Mertebede (Lanevus, Isengard: Mertebe 7) Yol sesi henüz yemez; katman yalnız konu inanç ya da Yol olduğunda görünür.
+- Katman çoğu zaman belirli anlara bağlıdır ("yalnız öğüt verirken", "yalnız astlarına"); bütün replikleri boyamaz.
+- Gizli kimlik taşıyan karakterde iki ses ayrı tutulur; kimlik açılmadan okur onları aynı kişi diye tanımamalıdır. Ortak iz yalnız kaynakta varsa korunur (Isengard / "Hikmet Gözü": 相信我).
+- Kademeli sürüklenme örnekleri: Derrick (Ozan → Güneş Naibi), Xio (Kadı'dan sonra Hakem dili), Azik (üç aşama, Balam fermanı yalnız astlarına).
+
+**Kiliseler ve yol grupları.** Kadir-i Mutlak yol grubu (Seyirci, Denizci, Ozan, Okur, Hafi Talibi) dünyada İbrahimî Tanrı tasavvurunu temsil eder ve dindar dili İslami bir deyişle kurulur; diğer kiliseler kendi deyişlerini korur. Formül yalnız kaynakta formül olan yere girer (0.5 §4).
+
+| Kilise / grup | Deyiş | Sabit formüller |
+|---|---|---|
+| Fırtınalar Hâkimi (Kadir-i Mutlak) | namus, iffet, günah, haram | 风暴在上 → "Ya Hâkim"; 主啊 → "Ya Rab" |
+| Ebedî Yanan Güneş (Kadir-i Mutlak) | hamd, nur, tövbe | 赞美太阳 → "Güneş'e hamd olsun!"; "Haydi Güneş'e hamd edelim!", "Karanlığı kov, Güneş'e hamd et." |
+| İlim ve Hikmetin İlahı (Kadir-i Mutlak) | ilim, hikmet, akıl; yakarış değil bilgi gururu | 全知意味着全能 → "Her şeyi bilmek, her şeye kadir olmaktır." |
+| Seyirci / Âdem (Kadir-i Mutlak) | mürşit sohbeti (hâl, nefis, sabır, takdir) yalnız öğüt anlarında | — |
+| Ebedî Gece | kendi deyişi, İslami değil | "Ulu Ece'ye medholsun.", "Ulu Ece/Tanrıça seni himaye etsin."; göğüste Kızıl Ay |
+| Buhar ve Çarklar | kendi deyişi | "Buhar aşkına!"; üçgen amblem |
+| Toprak Ana (Menşe Tanrıçası grubu) | köy ihtiyarı, ekinci bilgeliği; İslami değil | 母神 → anlatıda "Toprak Ana", hitapta "Ana" |
+
+**Adlar.**
+
+- Ad uydurulmaz. Önce sozluk.yml, words.md ve salahiyetler.yml'de Çincesiyle **ve** İngilizcesiyle aranır (girdilerin çoğunda `cince` alanı yoktur). Bulunamazsa Çince bırakılır ve not dosyasında soru olarak işaretlenir.
+- Bir adın parçası bir salahiyetse salahiyetin kelimesi kullanılır: 丰收 = Bereket ("Hasat" 收割'e ayrılı), 疾病 = Hastalık, 光 = Işık, 生命 = Hayat, 母亲 = Ana, 神秘(知识) = Gizem, 智慧 = Hikmet, 冥界 = Âlem-i Berzah; Kural 8: 秘 = Sır; özel adlarda 暗 = Zulmet (Ebedi Zulmet Nehri). Bilinen istisnalar words.md'de kayıtlıdır (Yedi Nur, Müphem Sis'in "Nur ile Zulmet"i).
+- Yollar Mertebe 9 ya da Mertebe 0 adıyla anılabilir. Şeytaniçe Mertebeleri girdilerde düz adla, anlatıda "X Şeytaniçe" biçiminde yazılır.
+- Korsan unvanları rütbe + lakaptır ve adın yerine geçer: Koramiral Buzdağı, Amiral Yıldız (上将 → Amiral, 中将 → Koramiral, 之 çevrilmez).
+- Kişi ve yer adları İngilizce yazımla alınır (İngilizce çeviri hatalı değilse). Takma adlar ve kurum adları çevrilir.
+- Frozen Lines (words.md §VII) kelimesi kelimesine uygulanır.
