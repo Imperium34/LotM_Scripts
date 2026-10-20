@@ -934,6 +934,14 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Yapma:** Pişmanlığı süslü bir yalvarışa ya da komediye çevirme.
 **Gerekçe:** → N-ALG1.6
 
+##### ALG1.7 — Fırtına mümininin ağzı
+
+**Kapsam:** Kendi inancından söz ettiği, yemin ettiği, dua ettiği anlar; dindar maske
+**Yap:** Fırtınalar Hâkimi Kilisesi Kadir-i Mutlak yol grubundadır ve İslami bir deyişle konuşur (KLS1.3). Alger'in yemini "Ya Hâkim!", yakarışı "Ya Rab"dır; inancın kurallarını konuşurken namus, günah, haram, iffet gibi kelimeler doğal gelir. Bu dağarcık dindar maskesinin dilidir; Soytarı'ya huzur dili (ALG1.1) ayrı bir kalıptır ve ona karışmaz.
+**Yapma:** "Ya Hâkim"i Soytarı'ya yönelik dualara taşımak; Fırtına deyişini her cümleye serpiştirmek.
+**Örnek:** _"Ya Hâkim..."_ (8 ¶83, yayımlanmış; demir zırhlı gemiyi görünce)
+**Gerekçe:** → N-ALG1.7
+
 - **Maske / Öz / Çatlak:**
   - _Maske:_ dindar bir Fırtına Kilisesi mensubu ve saygılı bir hizmetkâr.
   - _Öz:_ hırslı, hesaplı bir eski korsan; mevki ve güç ister (1101).
@@ -984,7 +992,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 ##### DER1.5 — Ozan Yolu sızıntısı
 
 **Kapsam:** Mertebe yükseldikçe · ilgisiz konular
-**Yap:** Güneş Yolu'nun dağarcığı (övgü, ilahi, ışık, arınma, şafak) Mertebesi yükseldikçe ilgisiz konulara taşar (Divan_Rule 1.1, kolonizasyon ölçütü). Kademe: Ozan'da (9) yalnız övmeye ve şarkıya yatkınlık, sesine henüz sızmaz; Işık Duacısı (8) ve Güneş Naibi (7) ile ışık ve övgü imgeleri gündelik konulara girer; yüksek Mertebelerde ve Papa'lıkta bir vaizin sesine yerleşir. **Sürüklenme göstergesi:** Gümüş Şehir'in karanlığını, yemeği ya da bir dövüşü anlatırken ışık ve övgü dili kullanıyorsa Yol onu yemeye başlamıştır. Dede Korkut iskeleti kalır, üstüne ilahi dili eklenir.
+**Yap:** Güneş Yolu'nun dağarcığı (övgü, ilahi, ışık, arınma, şafak; Ozan Yolu Kadir-i Mutlak grubunda olduğu için İslami deyişiyle: hamd, nur, tövbe; bkz. KLS1.4) Mertebesi yükseldikçe ilgisiz konulara taşar (Divan_Rule 1.1, kolonizasyon ölçütü). Kademe: Ozan'da (9) yalnız övmeye ve şarkıya yatkınlık, sesine henüz sızmaz; Işık Duacısı (8) ve Güneş Naibi (7) ile ışık ve övgü imgeleri gündelik konulara girer; yüksek Mertebelerde ve Papa'lıkta bir vaizin sesine yerleşir. **Sürüklenme göstergesi:** Gümüş Şehir'in karanlığını, yemeği ya da bir dövüşü anlatırken ışık ve övgü dili kullanıyorsa Yol onu yemeye başlamıştır. Dede Korkut iskeleti kalır, üstüne ilahi dili eklenir.
 **Yapma:** Sızıntıyı erken Mertebelerde başlatmak; Dede Korkut iskeletini ilahi diliyle değiştirmek.
 **Gerekçe:** → N-DER1.5
 

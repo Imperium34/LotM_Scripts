@@ -655,6 +655,11 @@ Tasarım kararı (çevirmen). Toplantıda doğrudan örneği henüz bulunmadı; 
 1172: 心跳陡地加快 → 低下脑袋，让自己嗓音轻微有些颤抖地开口道 是我们不够虔诚，想得太多。 393: 为之前的浅薄冒冷汗. 1185: 额头布满冷汗.
 **Denetim:** 393, 1172, 1185 (ZH).
 
+### N-ALG1.7
+
+8 ¶83 (ZH/TR) 风暴在上…… → "Ya Hâkim..." (2026-10-20 revizyonu; önceden "Yüce Fırtınalar Hâkimi..."). Kilise deyişi kararı: N-KLS1.3 (Kadir-i Mutlak katmanı, kullanıcı kararı 2026-10-20). Fırtına müminlerinin kuralları: 116 ¶7, 467 ¶77.
+**Denetim:** 8 (ZH/TR); 116, 467 (ZH).
+
 ---
 
 ## Lanevus
