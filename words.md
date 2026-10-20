@@ -20,6 +20,7 @@
 - **Azize Selena Katedrali** — Tingen HQ of the Evernight Church (圣赛琳娜教堂)
 - **Kutsal Katedral** — Church's central/Holy Cathedral (圣堂; Kış Kontluğu)
 - **Sükûnet Katedrali** — Cathedral of Serenity (宁静教堂)
+- **İlim Mabedi** — Temple of Knowledge (知识圣殿); İlim ve Hikmetin İlahı Kilisesi'nin Lenburg'daki merkezi; 知识 = İlim (İlim Kulesi ile aynı)
 - **Kutsal Sayılar Katedrali** — Buhar ve Çarkların İlahı's cathedral (圣数教堂)
 - **Nehir ve Deniz Katedrali** — Fırtınalar Hakimi's cathedral (河海教堂)
 - **Azize Arianna Katedrali** — Saint Arianna Church; Klein'ın asıl bedeninin yattığı yapı (圣阿里安娜教堂)
@@ -218,6 +219,7 @@
 - **Sezar Limanı** — Caesar Port (凯撒港); İng. çeviri "Caesar Pier" der, 港 limandır; Yonca'nın Enmat'a dönüş yolculuğuna çıktığı liman _56_
 - **Beş Deniz** — Five Seas (五海); ekler kesmeyle (Beş Deniz'in) _56_
 - **Sis Denizi** — Fog Sea (迷雾海); Intis Cumhuriyeti'nin batısındaki deniz; 'gri sis' ile ilgisi yok _59_
+- **Lenburg** — Lenburg (伦堡); İlim ve Hikmetin İlahı Kilisesi'nin merkezi olan küçük ülke; başkenti kilisenin merkezidir
 
 ## Forsaken Land — Silver City
 
@@ -347,6 +349,10 @@
 - **danışman** — consultant (顾问) _50_
 - **müşteri** — client (客户); Kehanet Kulübü'nde kehanet isteyen kişi; "müvekkil" 委托者'e ayrılı _48_
 - **terfi** — promotion to a named post or title (升职/提拔); 晋升 'yükselmek'e bırakıldı, iş terfisi anlamındaki 晋升 orada eşleşmeyen olarak görünür; yalnızca Mertebe söz konusu değilken; Mertebe yükselişi için 'yükselmek'
+- **Aşkın toplantısı takma adları** (Backlund, "Hikmet Gözü"nün toplantısı; tırnaklı yazılır):
+  - **"Hikmet Gözü"** — Eye of Wisdom (智慧之眼); Isengard Stanton; 智慧 = Hikmet (İlim ve Hikmetin İlahı ile aynı)
+  - **"Kara Yılan"** — Black Snake (黑蛇); iki kelime
+  - **"Yaban Köpeği"** — 野狗; İng. biçimi doğrulanmadı
 
 ## Law & Legislation
 
@@ -384,6 +390,7 @@
 - **nezarethane** — temporary holding cell (临时关押室)
 - **dava evrakı** — case file/materials (案件材料/案件资料)
 - **adam kaçıran / kaçıran** — kidnapper (绑匪)
+- **Sivellaus Yard** — Sivellaus Yard (西维拉斯场); Scotland Yard parodisi, çevrilmez
 
 ---
 
@@ -400,6 +407,7 @@
 - **Tingen Teknik Okulu** — Tingen Technical School (廷根技术学校)
 - **Yüzde Beş Hayır Kurumları** — Five Percent Charities (百分之五慈善基金会)
 - **Tingen Şehri Noterliği** — Notary Office of Tingen City (廷根市公证处)
+- **Backlund Bisiklet Şirketi** — Backlund Bike Company (贝克兰德脚踏车公司)
 
 ## Education System
 

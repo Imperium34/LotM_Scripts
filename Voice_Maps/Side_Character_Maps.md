@@ -1651,9 +1651,9 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 
 ---
 
-### Isengard Stanton ("智慧之眼") `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+### Isengard Stanton ("Hikmet Gözü") `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Backlund'un ünlü dedektifi; zayıf yüzlü, şakakları ağarmış, piposuyla düşünen kibar bir yaşlı beyefendi. Polisle çalışır, dedektifleri toplayıp davayı yönetir (305). Gizlice İlim ve Hikmetin İlahı'na inanır: Lenburg'da okurken dinini değiştirmiştir (576), Okur Yolu'nun Mertebe 7'si Dedektif'tir (415) ve elinde "2-081" yüzüğü vardır. Aynı adam, Aşkınların gizli toplantısını yöneten "智慧之眼"dir (ad henüz yok) (240–344); Klein bunu ancak 415'te anlar. Sesi ölçülü, nazik ve açık sözlüdür. Çıkarımını basamak basamak, çoğu zaman "belki... elbette, belki de..." diye iki ihtimali tartarak kurar. Tehlike karşısında sakindir, kuru bir mizahı vardır; hatasını kabul eder, hakkı teslim eder. Klein'a önce "Bay Moriarty", 338'den sonra "Sherlock" der.
+**Tarz:** Backlund'un ünlü dedektifi; zayıf yüzlü, şakakları ağarmış, piposuyla düşünen kibar bir yaşlı beyefendi. Polisle çalışır, dedektifleri toplayıp davayı yönetir (305). Gizlice İlim ve Hikmetin İlahı'na inanır: Lenburg'da okurken dinini değiştirmiştir (576), Okur Yolu'nun Mertebe 7'si Dedektif'tir (415) ve elinde "2-081" yüzüğü vardır. Aynı adam, Aşkınların gizli toplantısını yöneten "Hikmet Gözü"dür (240–344); Klein bunu ancak 415'te anlar. Sesi ölçülü, nazik ve açık sözlüdür. Çıkarımını basamak basamak, çoğu zaman "belki... elbette, belki de..." diye iki ihtimali tartarak kurar. Tehlike karşısında sakindir, kuru bir mizahı vardır; hatasını kabul eder, hakkı teslim eder. Klein'a önce "Bay Moriarty", 338'den sonra "Sherlock" der.
 **Onay:** _"Tamam."_ (好。, 416/422); işbirliğinde _"İşbirliğimiz hayırlı olsun."_ (305, 合作愉快。)
 **Sicil (yorum): ilim ehli.** İlim ve Hikmetin İlahı Kadir-i Mutlak yol grubundadır; Türkçe Tazim ismi zaten ilim–hikmet–akıl–irfan dörtlüsüyle kurulmuştur ("İlim Kulesi, Aklın Nuru, Bahr-i İrfan"). Isengard bu dili yalnız inancından, ilimden ya da kilisesinin kibrinden söz ederken kullanır: ilim, hikmet, akıl, bilgi. Gündelik dedektif konuşması sade bir Viktorya beyefendisinin dilidir; Mertebe 7'de Yol sesini henüz yemez (Lanevus gibi). Fırtına ve Güneş kiliselerinin "Ya Rab / hamd" formülleri ona verilmez; onun dindarlığı yakarış değil, bilgi gururudur.
 
@@ -1681,7 +1681,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Örnek:** _"Ha ha, kilisemizde bir vecize vardır: Her şeyi bilmek, her şeye kadir olmaktır."_ (415); _"Hayır, Sherlock; gerçekten hikmet sahibi dostlarımıza saygımızı da yakınlığımızı da esirgemeyiz."_ (734); _"Kontrol ettim; bu konuda oyun oynamazlar, bu benim zekâma hakaret olur."_ (769)
 **Gerekçe:** → N-ISG1.3
 
-##### ISG1.4 — "智慧之眼" maskesi
+##### ISG1.4 — "Hikmet Gözü" maskesi
 
 **Kapsam:** Aşkın toplantısı (240–344); kimliği açığa çıkmadan önce
 **Yap:** Daha yaşlı ve kısa konuşan bir ses: "yaşlı" ve "kısık" anlatıda belirtilir. Toplantıyı kısa usul cümleleriyle açıp kapatır, kuralları hatırlatır, gerekirse sertçe keser. Yeni gelene "delikanlı" (小伙子) diye öğüt verir. Fiyat konuşurken hakkaniyetten söz eder. Kaynakta iki sesin ortak bir izi vardır ("inanın bana", 240 ve 305); bu iz korunur, başka bir ortak tik eklenmez. Okur, açık olmadan önce iki sesi aynı kişi diye tanımamalıdır.
@@ -1694,7 +1694,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Mektupları, gazete ilanları
 **Yap:** Tek cümlelik, işe dönük mektuplar. Ayrıntıya çok dikkat eder; ilan ve mektuplarında noktalama da bir mesajdır: 768'deki ünlem işareti bir uyarıdır ve çeviride aynen kalmalıdır.
 **Yapma:** Mektuplarına selam ya da süs eklemek; ilandaki noktalamayı Türkçe akış için değiştirmek.
-**Örnek:** _"Bu davaya Salahiyetli Tecziyeciler bakmıyor; kraliyet, ... davayı üstlendi."_ (437); _"... %10 hissesi satılmıştır, lütfen artık rahatsız etmeyiniz!"_ (768)
+**Örnek:** _"Bu davaya Salahiyetli Tecziyeciler bakmıyor; kraliyet, ... davayı üstlendi."_ (437); _"Backlund Bisiklet Şirketi'nin %10 hissesi satılmıştır, lütfen artık rahatsız etmeyiniz!"_ (768)
 **Gerekçe:** → N-ISG1.5
 
 ## 10. NPC ve Zümre Sesleri (Toplu Haritalar) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`

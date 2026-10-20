@@ -1313,7 +1313,7 @@ Tayf aşaması: 338 苍白的脸孔，精致的五官，有种人偶般的美感
 
 > **Numaralama:** hiçbir sahnesi çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.
 > **Görünüm:** "智慧之眼" olarak 240–241, 256–257, 273–274, 302, 334, 344; Isengard olarak 271–272, 284, 304–305, 315 (mektup), 325, 338, 411–424, 437–438, 733–734, 769. Anılır: 431, 470, 535, 576, 768, 1098.
-> **Açık sorular:** 智慧之眼 (toplantı takma adı), 西维拉斯场, 伦堡 (EN Lenburg), 知识圣殿, 黑蛇, 野狗, 贝克兰德脚踏车公司. Kilise vecizesi 全知意味着全能 için öneri: "Her şeyi bilmek, her şeye kadir olmaktır." ("kadir", Kadir-i Mutlak grubunu yankılar.)
+> **Adlar (words.md, 2026-10-20):** "Hikmet Gözü" (智慧之眼), Sivellaus Yard, Lenburg, İlim Mabedi, "Kara Yılan", "Yaban Köpeği", Backlund Bisiklet Şirketi. Vecize Frozen Lines'ta: "Her şeyi bilmek, her şeye kadir olmaktır."
 > **Eski haritadan düşenler:** eski harita yok; yeni.
 
 ### N-ISG1.1
