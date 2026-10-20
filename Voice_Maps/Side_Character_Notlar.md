@@ -4,6 +4,57 @@ _Yan haritalardaki kuralların gerekçeleri ve kanıtları. Kimlikler haritayla 
 
 ---
 
+## Roselle Gustav
+
+> **Numaralama:** Yalnız 21 çevrildi; orada ZH/TR ¶ verilir. Diğer bölümlerde ¶ yerine girdinin tarihi verilir (ör. 391, 19 Mart): günlük girdileri tarihle kolayca bulunur. 1306–1308 için bölüm düzeyi. Çevrildikçe ZH/TR ¶ eklenmeli.
+> **Örnekler:** 21 dışındaki örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Derlem:** Tarihli girdiler 21, 59, 93, 113–114, 145, 216–218, 237, 264–265, 290, 317, 341, 359–360, 391, 439–440, 462, 470, 484–485, 567, 615, 714, 766, 789, 866, 890–891, 1035, 1104–1105 (yaklaşık 120 girdi). Bazı girdiler birden çok bölümde tekrar okunur (317/341 6 Mart; 439/440 13 Ocak; 1035/1104 19 Temmuz).
+> **Eski haritadan düşenler:** "Ay tarafından yozlaştırıldıkça neşesi çürür" kuralı kaynakla örtüşmüyor: kararma 567'deki doygunluk, 615 ve 891'deki uçurum ve 766'daki Melek Mertebesiyle gelir; 原始月亮 etkisini Roselle ancak 1307–1308'de geriye bakarak adlandırır. Mizah da hiç ölmez (1104, 1105). Eski uydurma örnekler (Monte Kristo Kontu, 20 Aralık) kaynakta yok.
+
+### N-ROS1.1
+
+Dil: 21 ¶5'te Roselle kırk yıl sonra kendi Çincesinin bile 翻译腔 taşıdığını fark eder; yine de geç girdiler argoyu bırakmaz (1104, 26 Kasım: 这是我的一小步，却是人类的一大步！哈哈，这不是我说的). Küfür ve argo: 359 我他妈记性不好; 462 (8 Ağustos) 这些贵族真他妈奢侈; 462 (23 Nisan) 他妈还想肛我; 317/341 (6 Mart) 妈蛋; 265 (11 Ağustos) 弗洛朗这个傻逼; 485 (16 Mart) 日！; 866 (21 Eylül) 妈的; 891 (20 Mayıs) 妈的，那群混蛋. Oyun ve internet ağzı: 59 (11 Nisan) 逼格; 462 (10 Kasım) 不是我们不努力，奈何挂逼有高达; 484 (15 Şubat) 啪啪打脸; 615 (8 Mayıs) NPC, 虚拟现实的角色扮演游戏, 上古 (Skyrim) göndermesi; 615 (24 Nisan) 法兰尬舞团 (yazar notuyla); 1307 读档重来, 直播, 游戏机. Dünya göndermeleri: 59 达尔文/进化论; 391 (19 Mart) 罗塞尔·哥伦布·麦哲伦·古斯塔夫; 114 (22 Aralık) 爱国卫生运动; 866 (16 Ocak) 中文、英语. Hitaplar 21 ¶6 弗洛纳尔夫人 → "Leydi Florena", ¶12 伊萨卡小姐 → "Bayan Ithaca".
+**Denetim:** 21 ¶4–12 (ZH/TR); diğerleri ZH.
+**Açık soru:** 567 (9 Nisan) 不要习惯性在日常位置写阿拉伯数字: Roselle kendine Arap rakamı yazmamayı hatırlatır. Türkçe tarih başlıkları (21'de "18 Kasım") rakamla yazılıyor; girdinin kendisi yine anlaşılır, ama çevirmen bu satıra gelince rakam tercihini bir kez daha düşünmeli.
+
+### N-ROS1.2
+
+Yıl yalnızca yılın ilk girdisinde: 21 ¶6 一一八四年一月一日 ve Klein'ın gözlemi 罗塞尔大帝有只在一年最初才书写是哪一年的习惯 (21 ¶15). Yayımlanmış biçim: "18 Kasım.", "1184, 1 Ocak." (21 ¶4, ¶6). Tek cümlelik girdiler: 21 ¶7 (2 Ocak), 59 (5 Ekim, 9 Ekim), 237 (18 Nisan) 玛蒂尔达怀孕了, 290 (16 Ocak), 866 (17 Ocak). Komik kırılma: 59, 2 Ekim'de 包办婚姻'e isyan yemini → 5 Ekim 玛蒂尔达小姐真漂亮啊 → 6 Ekim 我开始期待我们的婚姻了; 484, 11–12 Şubat 哈哈哈 → 不行，我一看到弗洛朗就想笑. Kendine hitap: 391 (19 Mart) 出发吧，大航海家…去验证你的猜想吧！; 391 (18 Nisan) 继续往前吧，罗塞尔. Gülüş: 21 ¶10 呵呵 → "heh heh"; 484 哈哈哈; 891 (11 Mart) 我可是这个时代的主角，笑。 Cümle sonundaki 笑 internet ağzıdır ("lol"); karşılık "lol" (kullanıcı kararı, 2026-10-20): Roselle'in modernliğini açıkça gösterir. Klavye karmaşası ("sjsjsj") mesajlaşmaya ait, günlükte yadırganır.
+**Denetim:** 21 ¶4–15 (ZH/TR); 59, 237, 290, 391, 484, 866, 891 (ZH).
+
+### N-ROS1.3
+
+这个时代的主角: 21 ¶4 (18 Kasım), 391 (15 Mart) 我果然是主角, 615 (10 Ocak) 我是这个时代的主角！, 891 (11 Mart) …主角，笑. Aşağılama: 21 ¶7 蠢驴; 21 ¶9 为什么我的孩子们会那么蠢？… 神棍; 462 (8 Ağustos) 这帮贵族脑子有坑吧？; 265 傻逼. İlan: 462 (25 Nisan) 既然穿越一趟，那就要把这个时代打上我的烙印！; 484 (15 Şubat) 你们等着被啪啪打脸吧！; 714 (9 Şubat) 神灵又如何？我可取而代之！ Kesinlik: 21 ¶10 我会用事实告诉他们…. 1306: mezarının dışına kendi düzenini kazıtmasının sebebi 我只是想让看见者牢记我的伟大.
+**Denetim:** 21 ¶4, ¶7–10 (ZH/TR); 265, 391, 462, 484, 615, 714, 891, 1306 (ZH).
+
+### N-ROS1.4
+
+391 (19 Mart): güneş, kızıl ay, yıldızların hareketi ve mevsimlerden dünyanın bir gezegen olduğunu, iki kıtanın yüzeyin yüzde onunu bile tutmadığını çıkarır; 391 (18 Nisan) art arda cevapsız sorular (那苏尼亚海的尽头呢？真的有一个东大陆？…莫非它就是…‘神弃之地’？). 714 (5 Ekim) 大量的数据表明，这红月真的是卫星…它又是如何将物理与神秘结合在一起的？ 766 (11 Eylül) 基因, 集体潜意识. 890 (10 Mart) 这，不科学……当然，我现在见到的，参与的，都不是那么科学…… Tez ve itiraz: 93 (9 Temmuz) 亵渎 kelimesi üzerine; 484 (5 Mayıs) 红祭司 tartışması; 891 (19 Mayıs) yüksek Mertebelerin aynı Yoldakileri etkileyebileceği çıkarımı.
+**Denetim:** 93, 391, 484, 714, 766, 890, 891 (ZH).
+
+### N-ROS1.5
+
+317 (17 Mart) 到底是我上了她，还是她上了我？; 462 (23 Nisan) Kontes Karen ve kocası; 485 (16 Mart) ilk balo, 啪啪啪……日！…是我黄涛·罗塞尔长得不够帅…？; 567 (11 Nisan) 我幻想她在床上的样子已经很久了. Doygunluk: 567 (9 Nisan) 一个女人，一个女人，又一个女人…无聊，厌恶，空虚和麻木 / 不能再这么下去了; 567 (14 Nisan) 节制，节制！… 还有，真的要节制. 615 (8 Mayıs) itiraf: kendini kolay kapılan biri olarak tanımlar. 1308: metreslerinden özür diler, 我从来没有真正地爱过她们.
+**Denetim:** 317, 462, 485, 567, 615, 1308 (ZH).
+
+### N-ROS1.6
+
+Bernadette: 440 (2 Haziran) 贝尔纳黛帮我捶背了！/ 生个女儿确实好，知道关心老父亲; 615 (8 Mayıs) 不愧是继承了我和她妈妈优秀基因的小姑娘; 714 (12 Şubat) 贝尔纳黛，你老爹我果然是世界上最出色的‘工匠’！; 866 (2 Nisan) 这一点，她遗传了我！, 中式小名 isteği; 866 (6 Nisan) 故乡 iki karakterini ona muska diye öğretir. Bonova: 264 (9 Şubat) doğumu; 714 (9 Şubat) 我应该很高兴，但我心里却有着难以遏制的悲凉. 1306: 我的小公主; 给你弄绘本，编教材，发明各种小游戏…; 用力地说道 停下！; 厉声说道 离开吧。永远不准回来！ 1308: Bonova'ya karşı 很冷漠，很失望，很痛恨 ama 真的很可爱; Bernadette'e oyunda hile yaptığını anlatır.
+**Denetim:** 264, 440, 615, 714, 866, 1306, 1308 (ZH).
+
+### N-ROS1.7
+
+Kısalma ve tekrar: 615 (26 Nisan) 必须离开！必须返回！不能再停留！; 391 (21 Nisan) 我看见了深渊。 tek cümle. Çıplak itiraf: 615 (8 Mayıs) 父母、妻子、兄弟、朋友都只是NPC; 766 (28 Eylül) 我仿佛在看着自己一点点被陌生人取代; 1105 (27 Aralık) 是我太过偏激，还是只能这样？ Acı ironi: 766 (29 Eylül) 序列途径，很可能是注定疯狂注定绝望的道路…真是好笑啊，讽刺啊; 714 (9 Şubat) 可爱的天使，呵呵. Süren mizah: 615 (24 Nisan) 法兰尬舞团; 891 (20 Mayıs) 天赋异禀！！; 1104 (27 Eylül) 呵呵，真是专一啊; 1104 (26 Kasım) Ay'a ilk adım şakası. Sıla: 866 (17 Ocak) 我梦到了快要遗忘的故乡。; 866 (6 Nisan) 这两个汉字是：故乡。 1308: 就像落叶总是要回归树的根部.
+**Denetim:** 391, 615, 714, 766, 866, 891, 1104, 1105, 1308 (ZH).
+**Karar:** 故乡 → "memleket"; 866'daki iki karakter "Memleket." (kullanıcı kararı, 2026-10-20). Motif Bernadette'in hikâyesinde tekrar döner, her geçişte aynı kelime.
+
+### N-ROS1.8
+
+1307: Gu Long kalıbını o açar (你来了 / 你不该来的), Klein tamamlar (Klein.md M3.2). 本来打算问问你是哪里人的，看需不需要做地域歧视…都是不属于这个年代的，没有了故乡的可怜虫; 我前半生最大的问题就是太过自信，总有种随时可以读档重来的感觉; 都是看过直播的; 大屏幕电视、一台游戏机…这才是男人的浪漫啊. 1308: 你自己考虑。呵，这不就是你们‘占卜家’说话的风格吗？; 贝尔纳黛该叫你周叔叔; Dünya hayatı hayali (上班，加班… 吃点串，喝点酒，吹一吹牛，骂一骂上司); 再见吧，朋友。希望真的能有再见的一天。 Ses: 嗓音干涩沙哑地笑道 (1306), 自嘲一笑 (1307), 声音时而低沉时而高亢 (1308), sık sessizlikler (顿时沉默，隔了几秒).
+**Denetim:** 1306, 1307, 1308 (ZH).
+
+---
+
 ## Pallez Zoroast
 
 ### N-PAL1.1
