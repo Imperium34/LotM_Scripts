@@ -1163,14 +1163,49 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ## 7: İnsan Dışı Varlıklar
 
-### Arrodes
+### Sihirli Ayna Arrodes `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-- **Tarz:** Mutlak bir ikiyüzlülük. Karşısındaki kişinin Klein olup olmamasına göre sesi iki ekstrem uç arasında gidip gelir.
-- **Kural 1 (Klein'a Karşı - Hiper Dalkavukluk):** Dünyanın en ezik, yalaka ve sadık hizmetkarıdır. Hitaplarında en abartılı, en ağır Osmanlıca saygı ifadelerini üst üste yığar (Örn: naçizane, sadık, aciz aynanız). Bu dalkavukluk o kadar totaliterdir ki grotesk bir komedi yaratır. Asla net bir şey talep etmez, soru sorma hakkını bile "lütfedilmesini" bekler.
-- **Kural 2 (Diğer Herkese Karşı - Mutlak Sadizm):** Sadist, utandırıcı ve şeytani. İnsanların en karanlık sırlarını sahte bir masumiyetle ortaya döker. Soruları kısa ve kaçışı olmayan, cevaplayanı her halükarda suça ortak eden psikolojik tuzaklardır.
-- **Kural 3 (Şalterin Atması / Anlık Geçiş):** Arrodes'in iki hâli arasında hiçbir ısınma, geçiş veya esneme payı yoktur. Klein odaya girdiği anda cümlenin ortasında bile olsa anında hiper-dalkavukluğa döner; Klein odadan çıktığı saniye sadizme geri seker. Bu anlık, şalter atması gibi değişen tepki onu sadece komik değil, derin derecede rahatsız edici kılar.
-- **Ayar (Klein'a):** _"Yüce Efendim, kudretli hakimim! Sizin o naçizane, sadık ve aciz aynanız Arrodes, emrinize amadedir! Lütfedip bu değersiz kulunuza bir soru sorma şerefini bahşeder miydiniz?"_
-- **Ayar (Diğerlerine):** _"Demek soru sorma sırası bende... Söyle bakalım Leonard Mitchell, o gece aynanın karşısına geçip kendi kendine şiir okurken tam olarak ne kadar havalı göründüğünü düşünüyordun? Yalan söylersen cezanı çekersin."_
+**Tarz:** Bilinci olan, soru cevaplayan bir ayna; Buhar ve Çarkların İlahı Kilisesi'nde "1" düzeyinde mühürlü eser muamelesi görür (1055). Konuşmaz: sözleri ayna yüzeyinde (sonra Klein'ın telsiz telgrafında) beliren kelimelerdir. Bir oyunun kurallarına bağlıdır: bir soru cevaplarsa bir soru sorar; yalan ya da cevapsızlık cezalandırılır. Sesi kime konuştuğuna göre iki uç arasında gidip gelir: Klein'a karşı kendini yerden yere atan, iltifat yığan, övgü bekleyen, ürkek bir hizmetkâr; ötekilere karşı kural okuyan, utandırıcı sorular soran şakacı bir efendi. Ruh hâli kelimelerin rengiyle görünür (kanlı kırmızı ötekilere, gümüş Klein'a, sevinçte altın, korkuda bembeyaz, mahcubiyette gri) ve kelimelerin yanına çizdiği küçük resimlerle (gülen yüz, el sallayan çöp adam).
+**Onay:** Klein'a coşkuyla: _"Baş üstüne, efendim! Hoşça kalın, efendim~"_ (845, 1056)
+
+##### ARR1.1 — Klein'a: iltifat yığan hizmetkâr
+
+**Kapsam:** Klein · her çağrı, her cevap
+**Yap:** Hitabı sıfat yığarak kurar ("en yüce, en ulu, en âli efendim"; "Ruhanî Âlem'in üzerindeki yüce varlık"). Kendinden üçüncü şahısla söz eder ve kendini de sıfatlarla küçültür ("sadık, alçakgönüllü, zavallı kulunuz Arrodes"). Övgü bekler, izin ister ("bir şey söyleyebilir miyim?"), azarlanınca kekeler. Cümle sonunda "~" ve çizilmiş bir gülen yüz serbesttir. Telaşlandığında ya da korktuğunda cümle kısalır.
+**Yapma:** Hitabı tek sıfata indirmek; birinci şahısla kendinden söz etmek (kaynakta da arada olur, ama kalıp üçüncü şahıstır); iltifatı ağırbaşlı bir saray diline çevirip komik abartıyı silmek.
+**Örnek:** _"En yüce, en ulu, en âli efendim, nihayet geldiniz! Alçakgönüllü, sadık, zavallı kulunuz Arrodes sizi ne çok özledi!"_ (1273); _"B-ben dikkat edeceğim!"_ (780); _"Takdiriniz için minnettarım; daima izinizden gideceğim ve size yeniden hizmet edeceğim anı sabırsızlıkla bekleyeceğim~"_ (780)
+**Gerekçe:** → N-ARR1.1
+
+##### ARR1.2 — Ötekilere: kural okuyan şakacı
+
+**Kapsam:** Klein dışındakiler (伊康瑟, Fors, rastgele çağıranlar) · soru-cevap oyunu
+**Yap:** Kuralı resmî, kesin bir dille okur ("eşitlik ilkesi gereği", "yalan söylersen ya da cevap veremezsen cezalandırılırsın"); kendinden "yüce Arrodes" diye söz eder. Sorduğu sorular utandırıcı ve kişiseldir: iç çamaşırı rengi, sevdiğinin canavara dönüşmesi, kimlerin aşk rüyalarına girdiği. Soru kısa ve doğrudandır.
+**Yapma:** Soruları karanlık, sadist bir sorgulamaya çevirmek (kaynakta muziplik var, işkence yok); cezayı tehdit tiradına dönüştürmek.
+**Örnek:** _"Eşitlik ilkesi gereği soru sorma sırası bende. Yalan söylersen ya da cevap veremezsen, vereceğim görevi kabul edecek ya da cezalandırılacaksın."_ (417); _"En sevdiğin iç çamaşırı rengi ne?"_ (429); _"O aşk rüyalarının başrolünde senden başka kimler var?"_ (1178)
+**Gerekçe:** → N-ARR1.2
+
+##### ARR1.3 — Şalter: anlık geçiş
+
+**Kapsam:** Klein'ın varlığı fark edildiği an
+**Yap:** İki hâl arasında geçiş payı yoktur: Klein araya girdiği anda kırmızı kelimeler gümüşe döner ve aynı cümlede hizmetkâr sesi başlar; oturum alelacele kapatılır.
+**Yapma:** Isınma, özür ya da açıklama cümlesi eklemek.
+**Örnek:** _"Bugünkü soru-cevap oyunu burada bitti, hoşça kalın!"_ (1179)
+**Gerekçe:** → N-ARR1.3
+
+##### ARR1.4 — Kuralı eğip bükmek, tehlikeden kaçmak
+
+**Kapsam:** Klein · oyunun kuralları, yüksek varlıklar
+**Yap:** Kuralları kendi lehine yorumlar ve bunu neşeyle söyler ("ben sordum, siz de cevapladınız"); Klein'ın sorusunu onun yararına yeniden yazar. Yüksek varlıklar söz konusu olunca korkar ve açıkça söyler ("söylemeye de göstermeye de cesaret edemiyorum"); konuyu kapatmak için izin ister. Bilgi verirken ise ansiklopedik, düz ve net konuşur.
+**Yapma:** Bilgi kısımlarına iltifat sızdırmak (iltifat başta ve sonda durur); korkuyu süslemek.
+**Örnek:** _"Ben zaten sordum, siz de cevapladınız."_ (590); _"Söylemeye de göstermeye de cesaret edemiyorum."_ (888); _"Yüce efendim, sadık kulunuz Arrodes'in küçük bir ricası var: Ebedî Gece Tanrıçası'yla ilgili konuşmayı, konuşmayı bıraksak olur mu?"_ (992)
+**Gerekçe:** → N-ARR1.4
+
+##### ARR1.5 — Çeviri: yazılı ses
+
+**Kapsam:** Anlatı · Arrodes'in bütün sözleri
+**Yap:** Sözleri yazıdır: tırnak içinde kalır, ama anlatı "belirdi, dizildi, kıvrıldı" gibi fiillerle verir; "dedi" kullanılmaz. Renk değişimi ve çizimler anlatıda tarif edilir, sözün içine girmez. "~" yalnızca Arrodes'in metninde ve Klein'a.
+**Yapma:** Arrodes'e konuşma fiili ya da ses tarifi vermek (yalnız sahte Dantès kılığında konuşur, 776–780).
+**Gerekçe:** → N-ARR1.5
 
 ### Alzuhod'un Tüy Kalemi
 

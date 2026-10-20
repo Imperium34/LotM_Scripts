@@ -865,3 +865,37 @@ Kural, Divan_Rule 1.1'deki kolonizasyon ölçütüne dayanan bir öngörüdür. 
 Ad ve zamir: 64–126'da 特里斯 / 他; 122'den itibaren 特莉丝 / 她. 125 ¶48–56 Klein ve Leonard'ın geçişi: 特里斯，不，特莉丝; 470 ¶50 从“教唆者”特里斯变成“女巫”特莉丝. 56 ¶11 (ZH/TR) 特里斯先生 → "Bay Tris". 999 ¶33 Sherman: 特，特莉丝女士 → "T-Trissy Hanım". Çevrenin tepkisi: 999 ¶36 Sherman bakışını kaçırır; 782 ¶19 ve 785 ¶45–46 Klein'ın kuklası aracılığıyla bile çekiciliğine karşı temkin.
 **Denetim:** 56 ¶11 (ZH/TR); 64, 125, 470, 782, 785, 999 (ZH).
 **Açık soru:** 特莉丝奇克 (Trissy + 奇克) için Türkçe biçim yok; 470–471'de karar gerekecek. 原初魔女 = Kadim Şeytaniçe (sozluk.yml; 'Aslî' original/本源 içindir, primordial değil).
+
+---
+
+## Sihirli Ayna Arrodes
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Çevrildikçe ZH/TR ¶ eklenmeli.
+> **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm:** 351'de anılır; 417–448 (Buhar Kilisesi'nde, 伊康瑟 ve Klein), 556–609 (telsiz telgrafla Klein'a bağlanır), 713–1136 (düzenli danışma; 776–780 sahte Dantès kılığı), 1178–1179 (Fors'un çağrısı), 1273–1275 (Klein onu yanına alır), 1280–1390 (Klein'ın cebinde).
+> **Eski haritadan düşenler:** "Mutlak sadizm; en karanlık sırları sahte masumiyetle döker; cevaplayanı suça ortak eden psikolojik tuzaklar" abartı: ötekilere sorduğu sorular utandırıcı ve muziptir (429 iç çamaşırı rengi, 423 sevdiğin canavara dönüşse, 1178 aşk rüyaları); anlatı onu 恶作剧 (şaka, muziplik) ile anar (493 ¶13). Eski Leonard örneği uydurmadır. Kural 1 (iltifat yığma) ve Kural 3 (şalter) kaynakla örtüşür ve korundu.
+
+### N-ARR1.1
+
+Hitaplar: 556 ¶55 灵界之上的伟大存在; 590 ¶27 伟大的主人; 815 ¶7 伟大的至高的主人; 830 ¶3 至高的伟大的主人，您忠实的谦卑的仆人阿罗德斯时刻等待着为您效劳！; 845 ¶20 您卑微的忠诚的仆人阿罗德斯; 1136 ¶31 您忠诚的，卑微的，乖巧的仆人; 1273 ¶59 至高至大至上的主人，您终于来了！您谦卑的，忠诚的，可怜的仆人阿罗德斯好想你啊！ Üçüncü şahıs: 448 ¶78, 608 ¶49, ¶54 愚昧的浅薄的阿罗德斯. Övgü bekleme: 815 ¶7–9 (求表扬); 780 ¶59 结结巴巴: 我，我会注意的！; ¶61 期待着为您效劳的下一次机会~. Çizimler: 590 ¶30 简笔画笑脸; 608 ¶54 讨好的笑脸; 713 ¶5 小心翼翼探头张望的表情; 845 ¶28 好的，主人，再见，主人~ + 挥手的简笔画; 1056 ¶44 不断挥手的简笔画. Renk: 1056 ¶32 银色 → 灰白 (沮丧和自责); 1273 ¶68 惨白 (korku); 1274 ¶40 金色 (sevinç). 870 ¶23 总之，我就是错了…… (Klein: 吓得脸都白了).
+**Denetim:** 448, 556, 590, 608, 713, 780, 815, 830, 845, 870, 1056, 1136, 1273–1275 (ZH).
+
+### N-ARR1.2
+
+417 ¶8–9 鲜红如血的单词: 根据对等原则，轮到我提出问题了，如果你撒谎或回答不出，将接受我安排的任务或者被惩罚. 423 ¶58 sevdiğin adam canavara dönüşse sorusu; 429 ¶40 你最喜欢什么颜色的内裤？; 878 ¶17–18 aynı kural cümlesi, Klein'a bile kırmızıyla; 1178 ¶50–52 暗红的古弗萨克文字: 你们召唤了伟大的阿罗德斯，你们必须遵守相应的规则; ¶72 你那些桃色之梦的主角，除了你，还有谁？ 1280 ¶22–28: yabancıya 你更希望自己的新娘是四十岁以上的女士，对吧？ / 你多少岁？ 493 ¶13 anlatı: 恶作剧的精神. 424 ¶4 anlatı: kullanıcılarının sabrını törpüler.
+**Denetim:** 417, 423, 424, 429, 493, 878, 1178, 1280 (ZH).
+
+### N-ARR1.3
+
+1178 ¶71–72 kırmızıyla Fors'a utandırıcı soru; 1179 ¶7–8 暗红的单词陡然染上了银白，飞快更替为新的内容：今天的问答游戏就到这里结束，再见！ Klein ¶28–29: 明知道是我派人召唤它，还敢提这种问题，等我出手阻止了雷罚，才忙不迭改变态度，仓皇离开. 1178 ¶66–67: aynı oturumda bilgi verirken gümüşe geçer, soru sorarken kırmızıya döner.
+**Denetim:** 1178 ¶50–72, 1179 ¶7–29 (ZH).
+
+### N-ARR1.4
+
+590 ¶31, ¶44 我已经问过了，您也回答了 (Klein: 没有一点节操); ¶37 Klein'ın sorusunu onun yararına yeniden yazar (我帮您稍微修改了一下). 713 ¶9 作为我必须遵守的规则. 888 ¶74–75 霍然沉默: 我不敢说，也不敢显示. 992 ¶68 可以，可以不再讨论‘黑夜女神’相关吗？; ¶72 sonra 轻快 bilgi listesi. 1056 ¶26 我有一句话想告诉您，可以说吗？; ¶34 可以吗？ 1273 ¶69 惨白: 我不知道……但神战时…. Bilgi düz: 556 ¶64–66, 830 ¶8, 871 ¶33–35, 992 ¶58–59, 1055 ¶76–84, 1136 ¶23–24.
+**Denetim:** 556, 590, 713, 830, 871, 888, 992, 1055, 1056, 1136, 1273 (ZH).
+
+### N-ARR1.5
+
+Anlatı fiilleri: 勾勒于镜面 (417), 浮现 (429), 呈现 (608), 凝成了一个个单词 (780), 蠕动聚合成了相应的鲁恩文 (830), 无线电收报机哒哒哒吐出白纸 (556, 590). Yazı dili Loen (鲁恩文); ötekilere bazen Kadim Feysac (1178). Sahte Dantès: 776 ¶64 我会扮演好您这个身份的！; 780 ¶56 魔镜结结巴巴地询问 (tek konuştuğu yer, insan kılığında).
+**Denetim:** 417, 429, 556, 590, 608, 776, 780, 830, 1178 (ZH).
