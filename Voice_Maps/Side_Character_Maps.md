@@ -204,7 +204,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 **Kapsam:** Tüm görünümleri · herkes · her konuşma
 **Yap:** Cümleleri sakin ve eksiksiz kur; yavaşlık virgülden ve sıralamadan gelsin. Uzun açıklamaları düzenli bir sırayla ver (ilki, ikincisi, üçüncüsü).
-**Yapma:** Cümlelere kaynakta olmayan üç nokta ve uzun çizgi serpiştirme; sesi kesik, dalgın ya da kendini düzelten biri gibi gösterme. Üç nokta yalnızca kaynakta (……) varsa kullanılır.
+**Yapma:** Cümlelere kaynakta olmayan üç nokta ve uzun çizgi serpiştirme; sesi kesik, dalgın ya da kendini düzelten biri gibi gösterme. Üç nokta kaynaktaki (……) sayısının hemen üstünde kalır: fazlası yalnız kaynağın kendisi bir duraksamayı işaret ettiğinde (含糊解释, 默然) ya da replik bir hareketle bölündüğünde. Uzun çizgi kullanılmaz; kaynakta —— yoktur. Ölçü (12–53): 14 …… karşısında 17 üç nokta. Az olduğu için, kullanıldığı yerde iş görür.
 **Örnek:** _"Acele etmene gerek yok. Pazartesi sabahı söylersin. Hangisini seçersen seç, istersen hiçbirini seçme; biz Gece Şahinlerinin içinden kimse arkandan tek kelime etmez."_ — _sakin, eksiksiz, güven veren_
 **Gerekçe:** → N-DUN1.1
 
