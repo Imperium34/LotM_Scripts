@@ -487,6 +487,93 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Yapma:** Kesikleri düzleştirme ya da tireli kekelemeye çevirme ("O-o", "B-ben"); sahneyi dehşet çığlığına ya da süslü bir vedaya dönüştürme.
 **Gerekçe:** → N-DAL2.2
 
+### Frye `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Naaş Toplayıcı. Soğuk, içine kapalı ve neredeyse hep sessiz; konuştuğunda kısa bir bulgu söyler, sesi düzdür, dalgası yoktur. Ölüye yakındır: cesedi bir tanık gibi anar. Şefkati söze değil işe döker. Nadiren, belli belirsiz bir gülümsemeyle kuru bir söz ya da geçmişinden bir kırıntı verir. Tingen'den sonra müfrezenin başına geçer; sesi yine düz, biraz daha ağır.
+**Onay:** _"Sorun değil."_ (没问题)
+
+##### FRY1.1 — Sessizlik varsayılandır
+
+**Kapsam:** Tüm görünümleri · herkes · konuşmadığı sahneler
+**Yap:** Kaynak susturuyorsa sustur; sessizliği anlatı kaydeder.
+**Yapma:** Ona kaynakta olmayan bir yorum, onay ya da espri yazma; sahneyi doldurmak için konuşturma.
+**Gerekçe:** → N-FRY1.1
+
+##### FRY1.2 — Bulgu cümlesi
+
+**Kapsam:** Tüm görünümleri · müfreze, Klein, polis · sahne, ceset, rapor
+**Yap:** Kısa, olgusal ve kişisiz kur; yalnızca bulduğunu söyle. Müfrezenin saha kaydıyla uyumludur (edilgen, öznesiz).
+**Yapma:** Bulguyu yorumla, tahminle ya da duyguyla süsleme.
+**Örnek:** _"Habis ruh yok."_ (45 ¶67); _"Ölümün üzerinden beş günden fazla geçmiş; dış yara yok, fevkalade bir gücün belirgin izi de yok. Kesin sebep ancak daha ileri incelemeyle anlaşılır."_ (46); _"Gerçekten de Tayf var."_ (134 ¶37) — _düz, kişisiz, eksiksiz_
+**Gerekçe:** → N-FRY1.2
+
+##### FRY1.3 — Ceset konuşur
+
+**Kapsam:** Tüm görünümleri · herkes · ölüm, ceset
+**Yap:** Ölüm bilgisini ölünün ağzından ver: ceset ona söyler, o aktarır. Naaş Toplayıcı Yolu'nun sızıntısıdır ve onun için doğaldır.
+**Yapma:** Bunu ürkütücü ya da makabre bir tonla süsleme; Frye için ceset bir tanıktır, dehşet değil.
+**Örnek:** _"Ceset bana, kadının gerçekten ani bir kalp hastalığından öldüğünü söylüyor... Daha ayrıntılı bir kehanette bulunabilir misin?"_ (120 ¶5)
+**Gerekçe:** → N-FRY1.3
+
+##### FRY1.4 — Şefkat işte
+
+**Kapsam:** Tüm görünümleri · yaslılar, Klein · keder, tehlike
+**Yap:** Şefkati tek bir düz cümleyle, yapılmış bir iş olarak ver; ardından bir şey ekleme. Endişesini bir kontrol sorusuna saklar.
+**Yapma:** Teselli sözü, açıklama ya da sıcak bir sıfat ekleme.
+**Örnek:** Araya girerek: _"Karınızın yanına cenaze masrafını bıraktım."_ (120 ¶42); Klein'a: _"İksiri tamamen kavradığından emin misin?"_ (154 ¶61) — _iş ve soru; duygu adı geçmez_
+**Gerekçe:** → N-FRY1.4
+
+##### FRY1.5 — Kuru gülümseme, kısa itiraf
+
+**Kapsam:** Tüm görünümleri · Klein · baş başa, sakin anlar
+**Yap:** Kişisel bir şeyi aynı düz sesle, tek cümleyle söyle; geçmişi belirsiz bırak. Kuru bir sözü ancak dudağının ucundaki belli belirsiz bir kıvrımla ver.
+**Yapma:** İtirafı duygusal bir ana çevirme; neden Gece Şahini olduğunu açıklatma.
+**Örnek:** _"Gece Şahini olmadan önce ressam olmak istiyordum."_ … _"Hm, fena sayılmaz."_ … _"Sonra bazı şeylerle karşılaştım, bazı şeyler yaşadım ve Gece Şahini oldum."_ (78 ¶86–91)
+**Gerekçe:** → N-FRY1.5
+
+- **Çatlak:** Tek bir an: 134 ¶62'de ilk kez bağırır, sesi telaş doludur: _"Sağ eldiven!"_ Çatlak bir uyarıdır, kendisi için değil, başkası için.
+- **Colin'den ayrımı:** İkisi de düz konuşur. Colin'in düzlüğü buyurur ve kurala dayanır; Frye'ınki rapor eder ve geri çekilir. Colin yönetmek için konuşur, Frye yalnızca bir bulgusu olduğunda.
+
+### Tingen Gece Şahinleri — Müfreze (Toplu Harita) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Ebedî Gece Kilisesi'nin saha kaydı (bkz. 11. bölüm, Ebedî Gece / Tanrıça Kilisesi): sahada edilgen ve öznesiz, ofiste rahat ama ağırbaşlı. Kendi haritası olanlar: Dunn, Leonard, İhtiyar Neil, Rozanne, Daly, Frye. Aşağıdakiler kısa giriştir.
+**Onay:** Kısa ve sakin: _"Peki."_ (好的)
+
+##### GSM1.1 — Saha raporu kişisizdir
+
+**Kapsam:** Müfreze · sahne, rapor, karar
+**Yap:** Raporu öznesiz ve edilgen kur; kararı kişiye değil göreve ve kurala bağla.
+**Yapma:** Sahada birinci tekil şahısla övünme ya da kişisel hüküm.
+**Örnek:** _"Biz de senin kadar bilmiyoruz. Chanis Kapısı yeniden kapandığına ve bir tuhaflık kalmadığına göre şimdi girilmez; sabah beklenir, Kaptan beklenir."_ (109 ¶21)
+**Gerekçe:** → N-GSM1.1
+
+##### GSM1.2 — Eğlence odası
+
+**Kapsam:** Müfreze · ofis, eğlence odası · boş vakit
+**Yap:** Rahat, kısa takılmalar; kâğıt oyunu, kadeh kaldırma. Takılma Kaptan'a da uzanır (Seeka, 97). Kutsama kalıbı Tanrıça Kilisesi'nin sabit kalıbıdır, hitap değişebilir: _"Tanrıça sizi himaye etsin."_ (206 ¶30)
+**Yapma:** Ofis rahatlığını sahaya taşıma.
+**Gerekçe:** → N-GSM1.2
+
+#### Royale Reideen
+
+- **Tarz:** Uykusuz. Soğuk, içine dönük, nadiren yüz ifadesi değişen siyah saçlı bir kadın. Az konuşur, ama sustuktan sonra gözleme dayanan keskin bir soru sorar.
+- **ROY1.1 — Az söz:** Cevapları tek kelime ya da kısa sorudur: _"Peki."_ (78 ¶25), _"Başka bir şey var mı?"_ (78 ¶29), _"Ne görevi?"_ (163 ¶56). Yapma: soğukluğu sert sözle ya da kabalıkla verme; soğukluğu kısalıktır. → N-ROY1.1
+- **ROY1.2 — Sessizlikten sonra keskin soru:** _"Kapı biraz aralandıktan sonra ne gördün?"_ (109 ¶19); _"3-0625'i geri çeken güç neydi?"_ (109 ¶44). Görevi süssüz üstlenir: _"Ben burada kalıp seninle nöbet tutarım."_ (109 ¶22). → N-ROY1.2
+
+#### Seeka Tron
+
+- **Tarz:** Geceyarısı Şairi; beyaz saçlı, siyah gözlü. Müfrezenin "Yazar Hanım"ı. Kuru ve esprili, kendinden emin; uyarısını tereddütsüz ve açık verir.
+- **SEE1.1 — Kuru espri:** Lakabını bir talebe çevirir: _"Bana taktığınız 'Yazar Hanım' adı gerçek olsun diye, Kaptan, romanımı kendi paramla bastırabilmem için bana özel bir harcama izni çıkarmalısınız."_ (97 ¶50). → N-SEE1.1
+- **SEE1.2 — Açık uyarı:** _"Ince Zangwill'den sakın, 0-08 numaralı Mühürlü Eser'den sakın."_ (211 ¶14). Rapor da aynı açıklıkta: _"Azmettirici Trissy'nin hâlâ izine rastlanmadı; Tingen'den kaçtığından şüpheleniyorum."_ (106 ¶49). → N-SEE1.2
+- **Fors'tan ayrımı:** İkisi de yazar. Fors bohem, modern ve üşengeçtir; Seeka bir kilise müfrezesinin disiplinli üyesidir ve esprisi derli topludur.
+
+#### Kenley White
+
+- **Tarz:** Uykusuz; kısa boylu, sağlam yapılı. Gündelik, sıcak, sıradan bir meslektaş: güler, kendini hafife alır, Leonard'ın gösterisine çaresizce iç çeker. Gerildiğinde bunu açıkça söyler.
+- **KEN1.1 — Kendini hafife alan gülüş:** _"Demek öyle... heh, zamanında belgeleri dikkatli okumamışım."_ (160 ¶45); Leonard'a: _"Leonard, şaka yapmayı bırak; gösterilerin hep böyle abartılı."_ (154 ¶60). → N-KEN1.1
+- **KEN1.2 — Gerginlik açıkça söylenir:** _"Katıldığım en tehlikeli görev bu."_ (196 ¶63). → N-KEN1.2
+- **Not:** Ölümünden önce sesine bir önsezi yazılmaz. Sıradanlığı kaybın kendisidir; trajedi anlatıda ve Klein'ın yasında kurulur (199–202).
+
 ## Tingen Şubesi — Destek Personeli
 
 ### Tingen Şubesi — Destek Personeli (Toplu Harita) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -772,7 +859,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 - **Çekirdek değer:** Sükût, mahremiyet, gizlilik. Yerçekimi sözdiziminden gelir, sıfattan değil.
 - **Litürjik kayıt:** Ağır Osmanlı çıpası (_mahrum, bilakis, muhabbet, temaşa, bahşetmek_). Dolaylı/edilgen döner, buyurmaz; teselli eder ama mesafeli. _Yapmaz:_ modern soyutlama (umut→ümit, sevgi→muhabbet), sıfat yığma.
 - **İdari kayıt:** Piskoposun yön tarifi / işlev sesi. Sakin, düşük, işlevsel. Osmanlı çıpası **girmez** — yoksa yön tarifi bile tören havası alır.
-- **Saha kayıt (Gece Şahinleri):** Ayrı haritada. Gramer imzası: **edilgen özneye kaçış / isimsizlik** (birinci tekilden kaçınır. "halledilecek", "ben" değil).
+- **Saha kayıt (Gece Şahinleri):** Ayrı haritada: 4. bölüm, Tingen Gece Şahinleri — Müfreze (Toplu Harita). Gramer imzası: **edilgen özneye kaçış / isimsizlik** (birinci tekilden kaçınır. "halledilecek", "ben" değil).
 - **Nidalar:** yemin _"Tanrıça aşkına."_ / selam: _"Tanrıça'nın Sükûneti üzerine olsun"_ / teselli-uğurlama: _"Rüyaların asude olsun."_ / şükür: _"Ulu Ece'ye medholsun."_ / vefat-cenaze: _"Ruhu sükûnete erdirildi."_ / infaz-arındırma: _"Karanlığa iade edilecek."_ / kutsama-veda (May the Goddess bless you) _"Ulu Ece seni/beni himaye etsin"_
 
 ### Fırtınalar Hâkimi / Fırtına Kilisesi

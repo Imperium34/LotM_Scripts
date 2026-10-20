@@ -377,3 +377,80 @@ Kural: 这是规矩 (401 ¶25). Meclis: 这必须通过'六人议事团'的表�
 ### N-LOV Maske/Öz/Çatlak
 
 401 ¶63–64: 闭了闭眼睛，露出带着些许悲伤的笑容 ardından 我假装与其他队员失散，在那里等了五天，可他都没有异变为恶灵 ('o'nun kim olduğu söylenmez). 401 ¶31 又开始了吗？(迷茫): kaderin tekrarına alışkınlık. 1263 ¶45: 声音虚幻飘渺.
+
+## Frye
+
+> **Numaralama:** 1–58 arası bölümler ZH/TR, sonrası ZH/EN hizalamasıyla (`bolum.py N`); sonrakiler çevrildiğinde ZH/TR ile yeniden numaralanmalı. 373–476'daki 弗莱娅 (Freya) başka biridir.
+
+### N-FRY1.1
+
+保持着不变的沉默 (45 ¶57), 一如既往的沉默 (46 ¶63). Çoğu sahnede yalnızca anılır, konuşmaz (45, 46, 123, 165). Kendi ifadesiyle: 冰冷内敛 (120 ¶7), 气质冰冷而阴沉 (120 ¶53), 一向冰冷阴沉 (134 ¶62).
+**Denetim:** 45, 46, 120, 134 (ZH).
+
+### N-FRY1.2
+
+没有恶灵。(45 ¶67); 46: 死亡超过5天，没有外伤，也没有超凡力量造成的显著影响，具体原因必须等待进一步的检查; 西区。(122 ¶23); 你先尝试。(120 ¶7); 死因是自然的心脏疾病，这一点没有疑问 (120 ¶33); 确实有怨魂 (134 ¶37, 语气没什么起伏); 危险在可以解决的范围内，或者没有 (135 ¶14). Ses: 平静到近乎没有情绪波动 (78 ¶37), 语气没有一点起伏 (78 ¶86).
+**Denetim:** 45, 46, 78, 120, 122, 134, 135 (ZH).
+
+### N-FRY1.3
+
+尸体告诉我，她确实死于突发的心脏疾病 (120 ¶5). Klein onu cesede bakarak korkusunu yensin diye bilerek yanına çağırdığını düşünür (79 ¶78). Tabutları kapatmak 收尸人的职业道德 sayılır (150 ¶34).
+**Denetim:** 79, 120, 150 (ZH).
+
+### N-FRY1.4
+
+120 ¶42: 弗莱突然打断道 我留了下葬的费用在你太太旁边 — tek cümle, sonra devam etmez. 154 ¶61: 默然几秒 ardından 确定已经完全掌握了魔药？; Klein bunu 关切 olarak okur.
+**Denetim:** 120, 154 (ZH).
+
+### N-FRY1.5
+
+78 ¶86 在成为值夜者之前，我的梦想是做一位画家 (语气没有一点起伏); ¶88 babası Tanrıça'nın rahibidir; ¶91 表情冷漠，嘴角隐有点上翘 ile 嗯，做得还不坏 ve 后来遇见了一些事情，经历了一些事情，就成为值夜者了.
+**Denetim:** 78 (ZH).
+
+### N-FRY Çatlak ve sonrası
+
+134 ¶62: 一向冰冷阴沉的弗莱大喊了一声，语气里满是焦急 — 右手手套！. 1013 ¶29–35: müfrezenin başındadır; 嗓音平缓低沉; 我应该不会继续寻求晋升了 / 我想留在这里 / 我派两位队员跟着你.
+
+## Tingen Gece Şahinleri — Müfreze
+
+> **Numaralama:** N-FRY'deki not geçerli.
+
+### N-GSM1.1
+
+109 ¶21: 我们和你一样，并不清楚这一切的原因…那我们就不该在这个时候进入，必须等待天明，等待队长 — karar göreve ve Kaptan'a bağlanır. Rapor kalıbı: Frye 46, Seeka 106 ¶49.
+**Denetim:** 46, 106, 109 (ZH).
+
+### N-GSM1.2
+
+97 ¶43–50: yeni üye için kadeh kaldırılır; Dunn Seeka'ya 作家小姐 diye takılır, Seeka talebe çevirir. 109, 126, 154: eğlence odasında kâğıt oyunu. 206 ¶30: 愿女神庇佑你们.
+**Denetim:** 97, 109, 126, 154, 206 (ZH).
+
+### N-ROY1.1
+
+表情冷淡 (78 ¶25), 表情未变 (78 ¶29), 冷淡内敛 (97 ¶43), 很少有表情 (163 ¶55), 平静问道 (163 ¶56). Cevaplar: 好的。(78 ¶25, 155 ¶5), 还有什么事情吗？(78 ¶29), 是什么任务？(163 ¶56).
+**Denetim:** 78, 97, 155, 163 (ZH).
+
+### N-ROY1.2
+
+109 ¶19: 一直保持着沉默 ardından 主动问道 门被推开一点之后，你看见了什么？; ¶22: 清冷地补充道 我会留在这里，和你一起值守; ¶35 ve ¶44: Chanis Kapısı'ndaki değişikliği gözlemle bağlar.
+**Denetim:** 109 (ZH).
+
+### N-SEE1.1
+
+97 ¶49–50: 西迦笑了笑，看了邓恩一眼 ardından self-publishing için 特批我一笔费用. Not: 费用 'ödenek' (经费) değildir.
+**Denetim:** 97 (ZH).
+
+### N-SEE1.2
+
+211 ¶14: 没有犹豫地回答道 小心因斯·赞格威尔，小心封印物'0-08'; 106 ¶49 rapor.
+**Denetim:** 106, 211 (ZH).
+
+### N-KEN1.1
+
+矮小精悍 (97 ¶43); 160 ¶45: 呵呵，我当初看资料看得不够仔细啊 (恍然笑道); 154 ¶60: 伦纳德，不要开玩笑了，你的表演总是这么浮夸 (无奈); 105 ¶68 Leonard'la bakışıp gülmemek için başını çevirir.
+**Denetim:** 97, 105, 154, 160 (ZH).
+
+### N-KEN1.2
+
+196 ¶62–63: 略显紧绷地感慨道 这是我第一次参与这么危险的行动; 197 ¶34 并不平静. Ölüm 199; yas 201–202 (nişanlısı ve ailesi), 207 ¶70 Dunn onu yanında savaşanlar arasında sayar.
+**Denetim:** 196, 197, 199, 201, 202, 207 (ZH).
