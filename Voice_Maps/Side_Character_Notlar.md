@@ -673,7 +673,7 @@ Mektup 203 ¶67–70, 204 ¶6–8: 哈哈哈，祝贺你们，祝贺你们终于
 
 185 ¶74: Hood 换了副满是磁性的嗓音，略显癫狂地笑道. ¶75: 这是最坏的时代，也是最好的时代，只要能抓住机会，我们也能成为世界的掌控者，成为真正的不朽者！ ¶76: vaat (扮演法 ipucu, 一点神性，不朽的神性). ¶77: 我的承诺就是祂的承诺. ¶78: 除非你愿意永远停留于现在的位阶. Kalıp 203 ¶69'da tekrar eder. Klein bunu 诈骗师 konuşma tarzı sanar (186 ¶43). Kalıp Dickens'ın *İki Şehrin Hikâyesi* açılışını ters sırayla yankılar; Türkçe yerleşik çeviri "Zamanların en iyisiydi, zamanların en kötüsüydü"; Lanevus'unki şimdiki zaman ve "en kötü" önce gelir.
 **Denetim:** 185 ¶73–78, 186 ¶43, 203 ¶69 (ZH).
-**Açık soru:** Kalıp cümle Frozen Lines'a alınmalı mı? Önerilen: "Bu, zamanların en kötüsü, ama aynı zamanda en iyisi."
+**Karar:** Kalıp cümle Frozen Lines'a alındı (kullanıcı kararı, 2026-10-20): "Bu, zamanların en kötüsü, ama aynı zamanda en iyisi." 482 İkinci Cildi aynı cümlenin anlatıcı biçimiyle kapatır; iki biçim birbirini yankılamalı.
 
 ### N-LAN1.3
 

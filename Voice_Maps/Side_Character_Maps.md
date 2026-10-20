@@ -940,7 +940,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 ##### LAN1.2 — Satış konuşması
 
 **Kapsam:** Hood Eugen (185) · ikna, kandırma, tavlama
-**Yap:** Büyüleyici, hafifçe kendinden geçmiş bir sesle büyük vaatler sırala: fırsat, ölümsüzlük, dünyaya hükmetmek. Vaadi, arkasındaki gücün adını anmadan büyüt ("benim sözüm O'nun sözüdür"). Kapanışta karşı tarafın başka yolunu kapat: geri durmanın bedelini söyle. "Bu, zamanların en kötüsü, ama aynı zamanda en iyisi" cümlesi onun kalıbıdır (185, 203) ve her geçişte aynı kalır.
+**Yap:** Büyüleyici, hafifçe kendinden geçmiş bir sesle büyük vaatler sırala: fırsat, ölümsüzlük, dünyaya hükmetmek. Vaadi, arkasındaki gücün adını anmadan büyüt ("benim sözüm O'nun sözüdür"). Kapanışta karşı tarafın başka yolunu kapat: geri durmanın bedelini söyle. "Bu, zamanların en kötüsü, ama aynı zamanda en iyisi" cümlesi onun kalıbıdır (185, 203); words.md › Frozen Lines'tadır ve her geçişte aynı kalır.
 **Yapma:** Vaadi kanıtlarla ya da ayrıntıyla ağırlaştırmak; yalvarmak; kalıp cümleyi değiştirmek.
 **Örnek:** _"Hood Eugen, bu, zamanların en kötüsü, ama aynı zamanda en iyisi. Fırsatı yakalayabilirsek biz de dünyaya hükmedebilir, gerçek birer ölümsüz olabiliriz!"_ (185); _"Şüphe etme. Ruhiyat Simyagerleri şimdilik sana yeterince yardım edecek kadar güçlü değil; tabii ömrünün sonuna kadar bu Mertebede kalmak istemiyorsan."_ (185)
 **Gerekçe:** → N-LAN1.2

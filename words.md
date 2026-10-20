@@ -151,6 +151,9 @@
 - **Sezar** — Caesar (凯撒); Roselle'in unvanı ("İmparator Sezar") ve Sezar Limanı; İngilizce ad kuralının istisnası, "Caesar" yazılmaz _56_
 - **İmparator Roselle'in günlükleri** — Emperor Roselle's diaries (罗塞尔日记/罗塞尔的日记); Soytarı'nın toplantıdaki görevinde tekil: 'Roselle Gustav'ın gizli günlüğü'
 - **Bay Zaratul** — Mr. Zaratul (查拉图先生/查拉图); Roselle'e 'rol yapmak'tan söz eden esrarengiz adam; 'Zât' eklenmez _59_
+- **Lanevus** — Lanevus (兰尔乌斯); demir madeni dolandırıcısı, Kapkaççı Yolu Mertebe 8 Dolandırıcı _62_
+- **Hood Eugen** — Hood Eugen (胡德·欧根); Ruhiyat Simyagerleri'nden Mertebe 7 Ruh Hekimi, tımarhanede _175_
+- **Megose** — Megose (梅高欧丝); Lanevus'un nişanlısı, Christina'nın yeğeni _116_
 - **Grimm** — Grimm (格林); Roselle'in gemi arkadaşı _59_
 - **Edwards** — Edwards (爱德华兹); Roselle'in gemi arkadaşı _59_
 - **Matilda** — Matilda (玛蒂尔达); Abel ailesinden, Roselle'in nişanlısı; 'Matilda Hanım' _59_
@@ -580,6 +583,7 @@
 
 # VII. Frozen Lines
 
+- **Bu, zamanların en kötüsü, ama aynı zamanda en iyisi.** — 这是最坏的时代，也是最好的时代 (Lanevus; 185, 203). Dickens'ın *İki Şehrin Hikâyesi* açılışının ters sırası (Türkçe yerleşik: "Zamanların en iyisiydi, zamanların en kötüsüydü"). 482 İkinci Cildi anlatıcı ağzından aynı tersine çevrilmiş cümleyle kapatır (这是最坏的时代，这是最好的时代。) ve yazar notu bu yankıyı bilerek kurduğunu söyler; 482 biçimi Lanevus'unkini yankılamalı. 482 için öneri (onay bekliyor): "Bu, zamanların en kötüsü; bu, zamanların en iyisi."
 - **Bu asra mensup olmayan Soytarı, Gri sislerin fevkindeki esrarlı Hükümdar, Talihe hükmeden Sarı ve Siyahın Kralı** — the Fool's honorific name (不属于这个时代的愚者/灰雾之上的神秘主宰/执掌好运的黄黑之王); Klein 58'de kurar; 58'deki kendi okuyuşu 'Ey …, sen …sın, sen …sın' biçiminde _58_
 - **Ben dâhil herkes ölecek** — 所有人都会死，包括我 (Klein's notebook; 1:54, 2:54, 3:4)
 - **İradeniz emrimizdir.** — (遵从您的意志); dondurulmuş
