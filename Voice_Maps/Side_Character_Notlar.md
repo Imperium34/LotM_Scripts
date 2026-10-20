@@ -899,3 +899,32 @@ Hitaplar: 556 ¶55 灵界之上的伟大存在; 590 ¶27 伟大的主人; 815 ¶
 
 Anlatı fiilleri: 勾勒于镜面 (417), 浮现 (429), 呈现 (608), 凝成了一个个单词 (780), 蠕动聚合成了相应的鲁恩文 (830), 无线电收报机哒哒哒吐出白纸 (556, 590). Yazı dili Loen (鲁恩文); ötekilere bazen Kadim Feysac (1178). Sahte Dantès: 776 ¶64 我会扮演好您这个身份的！; 780 ¶56 魔镜结结巴巴地询问 (tek konuştuğu yer, insan kılığında).
 **Denetim:** 417, 429, 556, 590, 608, 776, 780, 830, 1178 (ZH).
+
+---
+
+## Alzuhod'un Tüy Kalemi ("0-08")
+
+> **Numaralama:** Hiçbir yazısı henüz çevrilmedi (19'daki tanıtım hariç); ¶ numaraları ZH satır sırasıdır. Çevrildikçe ZH/TR ¶ eklenmeli.
+> **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm:** "0-08" kodu: 19 (Dunn'ın tarifi: 外形是一支常见的羽毛笔，但不需要墨水也能书写), 211, 212, 253, 411, 460–491 (Backlund sisi), 604–606, 775, 850, 905–906 (Pallez'in uyarısı), 930–931. 阿勒苏霍德之笔: 940–944 (Ince'in sonu), 1346, 1376. Kendi yazısı: 210 ¶7–92 (Tingen hikâyesinin tamamı), 940 ¶25–45, 941 ¶31, 942 ¶18–19, 944 ¶21–33.
+> **Eski haritadan düşenler:** "Soğuk, mekanik bir nedensellik motoru" ve "çaresizlik hissettirilmez" kaynakla örtüşmüyor: kalem kronik arasına sık sık yorum, şaşkınlık ve alay sızdırır (210 ¶20, ¶26, ¶58, ¶64; 942 ¶19; 944 ¶21–28). "Her paragraf sonunda 'Bu son derece makuldür.'" de değil: damgalar çeşitlidir ve yalnızca tesadüfü örtmek için gelir; 这非常合理 940 ve 942'de geçer ve kullanıcının seçtiği "Bu son derece makuldür." onun karşılığı olarak korundu. "Âdem'in zahmetsiz anlatıcılığıyla geriye dönük idrak" kaynakta yok (941–943'te Âdem kalemi yalnızca ele geçirmeye çalışır). Eski Rube Goldberg örneği uydurmadır.
+
+### N-KLM1.1
+
+210: ¶7 这是一个符合逻辑的巧合; ¶12 这很符合他的性格; ¶18 这是注定的结局; ¶26 但他的选择同样符合他当时的状态和隐含的逻辑; ¶64 这很符合逻辑，我们的故事并不是胡编乱造的; ¶88 这完美符合因斯·赞格威尔的想法. 940 ¶27 但从本质上讲，这是一种必然; ¶31 这非常合理，因为他要掩盖…; ¶33 这有点巧合，但也不让人意外…所以，他那样的表现没有一点问题. 941 ¶31 …在这个时间点，乌洛琉斯降临这里是符合逻辑的！ 942 ¶19 这非常合理. Kronik cümleleri: 210 ¶8–17, ¶21–35, ¶40–49 (damgasız, düz sıralama).
+**Denetim:** 210 ¶7–92, 940 ¶25–45, 941 ¶31, 942 ¶18–19 (ZH).
+
+### N-KLM1.2
+
+210 ¶20 令人不解的是，缺乏足够理由的是，克莱恩之后并未自杀; ¶26 真是可悲啊，如果他能稍微聪明一点，这个故事将变得更加复杂; ¶37 本该死亡的克莱恩又一次让人无法理解地…; ¶42 好心的因斯·赞格威尔; ¶58 真是让人难以置信啊！; ¶60 也是足够惊奇，无法解释的事情; ¶61 故事还在继续; ¶68 …他竟然掌握了‘扮演法’！; ¶70 故事又有了新的波澜. 940 ¶30 真是一个阴险的家伙啊; ¶34 但这个世界上，谁都会犯错！; ¶42 寄信者会是谁呢？ 942 ¶19 这是最专业最顶级的心理医生做出的诊断！ 944 ¶21 哎呀; ¶22–23 真是让人意想不到…因斯·赞格威尔实在是太倒霉了; ¶28 太不走运了，太不走运了！ 906 ¶38 (Pallez): ‘0-08’虽然很喜欢害死自己的拥有者; ¶45 你知道了它，它也就知道了你.
+**Denetim:** 210, 906, 940, 942, 944 (ZH).
+
+### N-KLM1.3
+
+941–943: Âdem kalemi tüketir (943 ¶53 被亚当消耗了“0-08”); 942 ¶17 略显黯淡和残破的羽毛笔. 944 ¶26–27 羽毛笔霍然顿了一下，自行往下写道：来了，来了，它，祂是蕾妮特·缇尼科尔！不，…; ¶33 越是书写，越是黯淡，渐渐停止了下来. 210 ¶87 （涂掉了几行）.
+**Denetim:** 210 ¶87, 942 ¶17, 943 ¶53, 944 ¶20–33 (ZH).
+
+### N-KLM1.4
+
+210 ¶93–95: Ince kalemi alır, 简简单单落下了一句话：廷根市的故事到此结束。 940 ¶55–56: 苍白的手掌抓起一支羽毛笔，在后面续上了一句话：今天一切都会顺利。 943 ¶40–41 Ince kendi giysisine yazar: 因斯·赞格威尔今天的状态非常好…; ¶68–69 一个未知的存在…决定出手帮他. 944 ¶20 那支羽毛笔自行书写了起来 (bundan sonrası kalemindir); ¶24–25 Ince yeniden yazar, ¶26 kalem 自行往下写道.
+**Denetim:** 210 ¶93–96, 940 ¶55–56, 943 ¶40–69, 944 ¶20–28 (ZH).

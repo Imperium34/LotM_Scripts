@@ -1207,12 +1207,42 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Yapma:** Arrodes'e konuşma fiili ya da ses tarifi vermek (yalnız sahte Dantès kılığında konuşur, 776–780).
 **Gerekçe:** → N-ARR1.5
 
-### Alzuhod'un Tüy Kalemi
+### Alzuhod'un Tüy Kalemi ("0-08") `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-- **Tarz:** Olayları görünmez bir yazar gibi manipüle eden, soğuk ve mekanik bir nedensellik motoru. Kaderi bükebilmek için inanılmaz derecede zorlama tesadüfler kurgulamak zorundadır.
-- **Kural 1 (Gizli Çaresizlik ve Geriye Dönük İdrak):** 0-08'in yazıları, tesadüfleri mantıklı kılabilmek için arka planda inanılmaz bir efor ve "çaresizlik" harcar (Rube Goldberg makinesi gibi). Ancak çeviride bu çaresizlik _şu anki zamanda (present tense)_ asla bariz bir şekilde hissettirilmez. Başlangıçta soğuk, mekanik ve mutlak bir kader gibi okunmalıdır. Kalemin ne kadar kıvrandığı, ancak serinin ilerisinde Âdem'in o zahmetsiz anlatıcılığı devreye girdiğinde okuyucunun zihninde **geriye dönük bir farkındalıkla (retroactive recognition)** uyanacaktır.
-- **Kural 2 (İmza ve Frekans):** Paragrafların sonuna _"Bu son derece makuldür."_ cümlesini iliştirir. Bu, kalemin evrenin mantığıyla tartışması ve onay beklemesidir. Ancak bu imza bir komedi unsuruna dönüşmemesi için dikkatli bir tempoyla (pacing) kullanılmalıdır. Âdem ortaya çıkana kadar yavaşça biriken soğuk bir imza olarak kalmalı, komedisi ve trajedisi sonradan açığa çıkmalıdır.
-- **Ayar:** _"Hedef sokağın köşesini döndüğü esnada rüzgârın aniden şiddetlenmesiyle havalanan bir gazete kâğıdı, tam o an yoldan geçen başıboş bir atın yüzüne yapıştı; paniğe kapılıp şaha kalkan atın çiftelediği gevşek kaldırım taşı havada sekerken, üçüncü katın pervazında duran ve zaten yılların aşınmasıyla dengesini yitirmek üzere olan ağır saksıya çarptı. Saksı, tam da o saniye ayakkabısının bağcığını bağlamak için eğilen hedefin ensesine kusursuz bir ivmeyle ve ölümcül bir açıyla düştü; kurbanın o anda duraksaması ve saksıyı fark edememesi tamamen doğal bir refleksti çünkü hem bir önceki sokakta ayağına takılan çivi yüzünden bağcığı gevşemişti hem de rüzgârın savurduğu toz zerresi tam o saniye gözüne kaçmıştı. Bu son derece makuldür."_
+**Tarz:** Mürekkepsiz yazan sıradan görünüşlü bir tüy kalem; erken bölümlerde yalnızca mühürlü eser kodu "0-08" ile anılır (19), adı 940'tan itibaren verilir (阿勒苏霍德之笔). Yazdığı hikâye gerçekleşir; bunun için tesadüf kurar ve her tesadüfü "mantığa uygun" diye gerekçelendirmek zorundadır. Sesi bu yazının sesidir: bir vakanüvis gibi geçmiş zamanda, üçüncü şahısla olayları sıralar; ama tarafsız değildir. Araya yorum, şaşkınlık ve alay sızar; sahibine karşı iğnelidir ("iyi kalpli Ince Zangwill"); hikâyesini bozan Klein karşısında bocalar; sonunda sahibinin talihsizliğine sevinir. Kendisi hakkında konuşulduğunu bilir ("sen onu bilirsen, o da seni bilir", 906).
+**Onay:** yok (konuşmaz, yazar)
+
+##### KLM1.1 — Vakanüvis cümlesi ve makullük damgası
+
+**Kapsam:** Yazdığı her metin (210, 940–944)
+**Yap:** Geçmiş zamanlı, düz, sıralı vakayiname cümleleri ("X şunu yaptı. Bu yüzden Y oldu."). Kurduğu tesadüfü cümlenin sonunda bir makullük damgasıyla bağlar. Damgalar değişkendir ama her biri kendi biçimini korur: 这是一个符合逻辑的巧合 → "Bu, mantığa uygun bir tesadüftü."; 这很符合他的性格 → "Bu, karakterine çok uygundu."; 这是注定的结局 → "Bu, kaçınılmaz sondu."; 这非常合理 → "Bu son derece makuldür." (940, 942). Damga her paragrafta gelmez; yalnız tesadüfü örtmesi gerektiğinde.
+**Yapma:** Damgayı her paragrafın sonuna sabit bir imza gibi koymak; cümleleri süslü, edebî bir anlatıya çevirmek.
+**Örnek:** _"Tarikat-ı Hafiyye üyesi 瑞金斯, yorgunluk ve sanrının birlikte etkisiyle Antigonus ailesinin el yazmasını sıradan bir eski kitap sanıp sattı. Bu, mantığa uygun bir tesadüftü."_ (210); _"Ince Zangwill ayrıca Ozan ve Savaşçı Yollarının Aşkın malzemelerini satın aldı. Bu son derece makuldür..."_ (940)
+**Gerekçe:** → N-KLM1.1
+
+##### KLM1.2 — Sızan yorum: alay, şaşkınlık, sevinç
+
+**Kapsam:** Hikâyesi bozulduğunda; sahibinden söz ederken; son bölümler
+**Yap:** Kronik akarken bir anda yorum sızar: acıma ("Ne acınası!"), şaşkınlık ("Buna inanmak gerçekten zor!", "anlaşılmaz olan, yeterli gerekçesi olmayan şey..."), sahibine iğneleme ("iyi kalpli Ince Zangwill"), sahte otorite ("bu, en usta, en üst düzey ruh hekiminin teşhisidir!"). Ünlem bu sızıntılarda gelir. Sonda sahibinin talihsizliğini sevinçle ve tekrarla yazar.
+**Yapma:** Kronik bölümlerine ünlem ve yorum serpiştirmek (sızıntı ara sıra ve ani gelir); yorumu uzun bir iç sese çevirmek.
+**Örnek:** _"Ne acınası! Biraz daha akıllı olsaydı bu hikâye çok daha karmaşık olurdu."_ (210); _"Klein Moretti, Ince Zangwill'in gizli etkisini fark etti ve o koyu kızıl bacayı gördü. Buna inanmak gerçekten zor!"_ (210); _"Ince Zangwill gerçekten çok şanssızdı, çok talihsizdi!"_ (944)
+**Gerekçe:** → N-KLM1.2
+
+##### KLM1.3 — Zorlandıkça çözülen yazı
+
+**Kapsam:** 941–944 · kalem güç kaybederken
+**Yap:** Kalem zorlandıkça cümleler kısalır, kesilir ve kendini düzeltir ("geldi, geldi, o, O... hayır"), "ayy", "hayır" gibi ünlemler girer; en sonunda yazı yarım kalır. Defterde silinmiş satırlar anlatıda belirtilir ("birkaç satır karalanmıştı").
+**Yapma:** Çözülmeyi süslü bir dramla vermek; kesik cümleyi tamamlamak.
+**Örnek:** _"Geldi, geldi, o, O 蕾妮特·缇尼科尔! Hayır, 蕾妮特·缇尼科尔 çevredeki Ruhanî Âlem varlıklarının hepsini kovalıyordu..."_ (944)
+**Gerekçe:** → N-KLM1.3
+
+##### KLM1.4 — İki yazar: kalem ve Ince
+
+**Kapsam:** Defter ve Ince'in bedenine yazılan satırlar
+**Yap:** Ince'in kendi yazdığı satırlar kısa, emir kipinde bir dilek gibidir ("Bugün her şey yolunda gidecek."); kalemin yazdıkları uzun, yorumlu kroniklerdir. Kalemin "kendi kendine yazdığı" yerler anlatıda belirtilir (自行书写).
+**Yapma:** Ince'in satırlarına kalemin yorumunu ya da makullük damgasını eklemek.
+**Örnek:** Ince: _"Tingen'in hikâyesi burada sona erdi."_ (210); _"Bugün her şey yolunda gidecek."_ (940)
+**Gerekçe:** → N-KLM1.4
 
 ---
 
