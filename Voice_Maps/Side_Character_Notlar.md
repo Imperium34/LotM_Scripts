@@ -952,3 +952,44 @@ Anlatı fiilleri: 勾勒于镜面 (417), 浮现 (429), 呈现 (608), 凝成了�
 
 Ince'in 19–940 arasında kendi repliği yok (konuşmacı etiketli tarama: 932, 941, 942, 945 dışında sonuç yok; 932 ve 941 başkalarınındır). 941–942: Ahmer Melek'in ruhu Ince'in ağzını kullanır: 942 ¶14–16 嘴巴就控制不住地张开，对着手中的古典羽毛笔“呵”了一声：要不是你这个蠢货不听我的建议… Bu satırlar Medici'nindir.
 **Denetim:** 932, 941, 942 ¶14–16 (ZH).
+
+---
+
+## Medici (Ahmer Melek)
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır.
+> **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Yorum payı:** Kullanıcı kararıyla (2026-10-20) bu harita daha yorumcudur: sicil (serhat harp beyi) Avcı Yolu'nun Türkçe adlarından türetildi; kaynakta karşılığı yoktur. Kural içerikleri ise kaynağa dayanır.
+> **Görünüm:** 457 (mühürlü eski ruh, ilk konuşma), 585–587 (班西港'deki mühür; "kalıntı" olarak anılır), 668 (Klein'ın tahmini), 736, 934–945 (Ince'e musallat), 963–965, 1081–1092 (Dantès'in evinde, 血皇帝 sorusu), 1109–1111 (Catherine'i ele geçirir; üç ağız), 1153, 1261, 1275–1276, 1339, 1359 (Amon'la), 1389.
+> **Eski haritadan düşenler:** "En dipte insanlığı korumaya adanmış", "Amon'un tersi: soğuk yüzey / gerçek koruyucu öz" ve "Rabbin gazabı, Rabbin cezası" tantanası kaynakta yok: Medici felaketi sever (1339 ¶84 我喜欢灾难), savaşı över (1111 ¶4), ve sesi soğuk-marazi değil, gülen ve sataşandır. "Kışkırtma = taktik" doğru ve MED1.1'de korundu; "açık beyan" kısmen doğru (blöf de yapar, MED1.3). Üç eski örnek uydurmadır. Eski "Kızıl Melek" adı başlıktaki "Ahmer Melek" ile birleştirildi.
+
+### N-MED1.1
+
+Kahkaha: 457 ¶16, ¶30, ¶33, ¶44, ¶49 笑; 965 ¶77 哈哈笑道; 1086 ¶6 嘿嘿笑了一声, ¶9 非常惹人讨厌的笑容, ¶84 嘿嘿一笑, ¶92 啧啧笑道; 1111 ¶10 啧啧笑道; 1275 ¶62 呵呵笑道. Sataşma: 1086 ¶6 你在害怕什么，查拉图吗？; ¶27 不是那么无知，也不是那么愚蠢嘛; 1087 ¶28 你几岁了？为什么还这么天真和幼稚？; 1110 ¶5 你很有‘挑衅者’的天赋; ¶32 你是一个需要仪式感的小男孩？; 1111 ¶4 Catherine'e uzun, kaba bir aşağılama (就算是一条狗，活上一千多年…; Şeytaniçelerin cinsiyetiyle alay); ¶16 怎么？想睡我？; 965 ¶77 你们两个果然上当了！…我确定你们两个以前是女人！; 1275 ¶62 cinsel şaka; 1276 ¶11 你还记得你还是个婴儿的时候，负责抱你的是谁吗？ Taktik: 1111 ¶31 啧，魔女果然都很狡猾，不过，我从来不会小瞧每一个猎物.
+**Denetim:** 457, 965, 1086, 1087, 1110, 1111, 1275, 1276 (ZH).
+
+### N-MED1.2
+
+1086 ¶70 这样吧，我问你几个问题，然后你就会明白答案是如此简单; ¶70–87 dört soru (教会知晓的类型吗？/ …在哪条途径哪个序列吗？/ …有理性和机会留下秘密遗迹吗？/ 在有选择的情况下，你会走一条注定疯狂的道路吗？); ¶92 这不就简单了吗？…这不都是报纸上刊登的事情吗？/ …不是常识吗？ 1087 ¶19 你怎么知道…？你怎么确定…？ 1086 ¶50 我能猜到你在想什么，除非你承认自己很无知.
+**Denetim:** 1086 ¶50–92, 1087 ¶19 (ZH).
+
+### N-MED1.3
+
+1111 ¶40 (Soren): 你太喜欢用诈唬来达成目的了，当初亚利斯塔祂们就是识破了你的诈唬，才抓住了机会…装成已恢复到序列1的样子; ¶43 撇了撇嘴巴: 诈唬也是扑克的正常玩法，效果还不错，不是吗？; ¶46–48 但最先死的是你！→ 那表明我最强，最受重视！ 1086 ¶9 Dantès'e: hizmetkârları "kurutulmuş jambon gibi" asılı bulmadığı için ona güvenmesi gerektiğini söyler (tehdit + gösteriş). 1359 ¶21 我怎么知道你不是在诈我？也许你预判了我的预判呢？
+**Denetim:** 1086 ¶9, 1111 ¶38–48, 1359 ¶21 (ZH).
+
+### N-MED1.4
+
+1111 ¶4 像我们猎人就没这个问题了…反正之后需要做的就是战争，战争，战争！ 1339 ¶84 哈哈，我喜欢灾难. 1086 ¶64 听到这个名字，“红天使”恶灵脸部肌肉略微扭曲了一下，然后才嗤笑道 (亚利斯塔·图铎). 942 ¶16 早点让我向主祈祷，暗中回归救赎蔷薇 (Medici kısmı); ¶18 kalem: 无论索伦，还是艾因霍恩，都不想信仰那个邪神. 1261 ¶41 梅迪奇和乌洛琉斯这种完全忠诚于远古太阳神的天使之王. 457 ¶44 曾经是，后来不是，在亚利斯塔·图铎疯了之后，就不是了. 965 ¶73 只要你们让我诵念主的尊名.
+**Denetim:** 457, 942, 965, 1086, 1111, 1261, 1339 (ZH).
+
+### N-MED1.5
+
+Ad: 1110 ¶39, 1111 ¶4, ¶10, ¶24, 1275 ¶67, 1359 ¶19, ¶30 索伦·艾因霍恩·梅迪奇. Üç ağız: 1111 ¶31 右侧脸颊上也裂开了道狰狞的血色缝隙 / 用正常的嘴巴说道; ¶35 属于梅迪奇的那份人格; ¶40 属于索伦的那份人格用左侧脸颊上的裂口道 (azar); ¶46 脸庞上两道裂口同时回应道：但最先死的是你！; ¶50 三个人格同时沉默了下来…代表艾因霍恩的那个血色裂口张合着道 (soğuk tahlil: 格尔曼·斯帕罗和黑夜的联系比我想象得更加紧密…). 1086 ¶42 让出现的那张嘴巴缓慢消失. 457 ¶16 mühürden kurtulmak için 索伦、艾因霍恩和梅迪奇家族的直系后裔 kanı. 1275 ¶62 和两个可恶的家伙一起被关在地底一两千年; ¶67 我现在已经是三合一了，变成四合一也问题不大. 942 ¶19 kalem: 这个恶灵的精神分裂更加严重了.
+**Denetim:** 457, 942, 1086, 1110, 1111, 1275, 1359 (ZH).
+**Açık soru:** Einhorn (艾因霍恩) sözlükte yok; İngilizce biçim önerildi.
+
+### N-MED1.6
+
+942 ¶14–16: 嘴巴就控制不住地张开，对着手中的古典羽毛笔“呵”了一声：要不是你这个蠢货不听我的建议，怎么会弄到现在这个样子！/ 我都不知道你在害怕什么，早点让我向主祈祷…今天就是我们狩猎亚当，而不是相反！ 940 ¶25–30 kalemin anlatısı: Ince ile "barış", 恶灵附身 ve 自我为主 hâlleri arasında geçiş.
+**Denetim:** 940 ¶25–30, 942 ¶14–20 (ZH).

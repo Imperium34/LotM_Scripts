@@ -204,17 +204,65 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Yapma:** Canlılığı uzun bir hırsızlık coşkusuna ya da operasyon anlatısına çevirmek; homurtuyu karakterin temel tonu yapmak; kaos cümlesini açıklamak.
 **Gerekçe:** → N-PAL1.6
 
-### Medici (Ahmer Melek / Harp Meleği)
+### Medici (Ahmer Melek) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-- **Tarz:** Kıdemli, mağrur bir Melekler Kralı, Kızıl Melek, Savaş Meleği; "Rabbin gazabı, Rabbin cezası." Avcı yolunun zirvesidir (Mertebe 1). Kurnaz, kibirli ve hırslı bir savaş lordu: psikolojik harbin ve komplonun ustası, yaratıcısına sadık ama ihanete uğradığında amansızca kinci; stratejik ve ahlaken muğlak, fakat en dipte insanlığı korumaya adanmış. **Amon'un tersidir** (sıcak yüzey / öz yok): Medici soğuk-marazi yüzey / gerçek koruyucu öz. Âdem'le aynı eksende ama farklı kanatta. Âdem soğukluğunu mühürlü kehanetle, Medici martial gururla taşır.
-- **Kural 1 (Kışkırtma = Taktik, Kibir Değil):** Düşmanlarına yönelttiği alay ve meydan okuma asla egodan gelmez. Her biri bir av tuzağıdır. Hedefi kontrolünü kaybetmeye, açık vermeye, aşırıya kaçmaya sürüklemek için. Kışkırtması soğuk ve işlevseldir; gösteriş değil, avlanma. (Bir düşmanı "büyümesi için bekletmek" bile taktiktir, merhamet değil.)
-- **Kural 2 (Gurur, Davaya Ayrılmıştır):** Gerçek gururu ve tutkusu yalnızca sadakat, Rabbi ve insanlık söz konusu olduğunda yüzeye çıkar. Davasından bahsederken sesi soğuk-araçsaldan çıkıp hakiki, gayretli bir kanaate bürünür. Savaşın soğukluğu maske; koruma içgüdüsü özdür.
-- **Kural 3 (Analist / Komplocu, Açık Beyan):** Ayrıntılara ve durumlara dair keskin sezgiyle bilgi toplar. Komplo kurarken aldatmayla yanıltır. Cümleleri gizli stratejik yük taşır — fakat Amon'un sondan-başa gizliliğinin aksine Medici **açıkça beyan eder**: savaşı ilan eder, saklamaz. Martial bir şeffaflık.
-- **Kural 4 (Savaş Meleği Ağırlığı):** Tam tezahür ettiğinde dili "Rabbin gazabı"nın ağırlığını taşır. Martial, kıyametvari, savaşın habercisi. Belirişi, savaşın yaklaştığı anlamına gelir; o, bir felaketin bizzat sesidir.
-- **Ayar (Kışkırtma):** _"Kılıcını o açıyla tuttuğunda gözlerinde beliren o sahte güven... Öfken o kadar gürültülü ki, kendi nefes alışını bile duyamıyorsun. Hadi, sadece bir adım daha at. Nefretinin seni tam olarak kılıcımın ucuna, benim senin için hazırladığım o kusursuz mezara taşımasına izin ver. Savaş çoktan başladı, sen sadece kanamaya yeni başlıyorsun."_
-- **Ayar (Dava):** _"Siz O'nun adını unuttunuz. O'nun kanıyla kurulan bu toprakları kendi sefil hırslarınıza bölüp parçaladınız. İhanetinizle beni bu lanetli forma mahkûm etmiş olabilirsiniz... Fakat bir zamanlar Rabbin gazabıydım. Şimdi Rab yok. Lakin uğruna savaştığım o şey, şu an arkamda duran o zayıf yığın hâlâ burada. Ve ben, Kızıl Melek, koruduğum şeyi asla terk etmeyeceğim."_
+**Tarz:** Avcı Yolu'nun Fatih Mertebesindeki (1) Melekler Beyi, Ahmer Melek; Kadim Güneş Tanrısı'na tamamen sadık iki Melekler Beyi'nden biri (1261). Dördüncü Çağ'da 血皇帝 亚利斯塔·图铎'nun elinde ölmüş, iki başka Avcı Yolu Fatih'iyle (Soren ve Einhorn ailelerinin atalarıyla) birlikte bir ruh olarak yeraltına mühürlenmiştir (457, 1275). Hikâyede çoğunlukla bu birleşik ruh olarak görünür (MED1.5). Ses: gülen, sataşan, kışkırtan bir harp beyi. Kahkahası hiç eksik olmaz (heh heh, hah hah, cık cık); karşısındakinin saflığıyla alay eder, onu ard arda sorularla cevaba sürükler, blöf yapar ve bununla övünür. Savaşı ve felaketi açıkça sever. Bütün bu sataşmanın altında iki sabit duygu durur: eski Rabbine sadakat ve kendisine ihanet edenlere kin.
+**Sicil (yorum):** Avcı Yolu'nun Türkçe adları (Demirkan Akıncısı, Harp Ruhbanı, Fatih) eski bir serhat ve akın dünyasını çağırır. Medici'nin sesi bu dünyanın bir harp beyidir: kaba ve tuzlu ama eski; "evlat", "cenk", "ganimet", "akın" gibi kelimeler doğal gelir. Divan süsü yoktur; bir saray adamı değil, bir ordu komutanıdır. Kahkaha ve "cık cık" ses taklitleri kaynaktaki yerinde ve sıklıkta.
+**Tazim ismi:** _"Yüce Harp Tanrısı, Demir ve Kanın Timsali, Kargaşa ve Niza Hükümdarı."_ (sozluk.yml; 1086 ¶57). Kalıp hiç değişmez.
+**Onay:** _"Fena değil."_ (1110, 不错); keyifliyse _"Fena değil, değil mi?"_
 
-* **Ayar (Kıyametvari Tezahür):** _"Ufukta beliren o kızıl bulutları görüyor musunuz? O bir doğa olayı değil. O, yaklaştığımın ilanıdır. Çelik paslanacak, kan toprağı doyuracak ve kurduğunuz bu yozlaşmış nizam, adımlarımın altında ezilecek. Ben Rabbin cezasıyım ve ceza, kapınıza dayandı."_
+##### MED1.1 — Gülen harp beyi: sataşma ve kışkırtma
+
+**Kapsam:** Tüm görünümleri · rakipler, müttefikler, Klein
+**Yap:** Her cümleye bir kahkaha ya da "cık cık" eşlik edebilir. Karşısındakini çocukluğuyla, saflığıyla, cinselliğiyle küçümser; sataşma kaba ve doğrudandır. Kışkırtma bir av taktiğidir: karşısındakini hırslandırıp açık verdirir. Avcı Yolu'nun Kışkırtıcı yetisini dile getirir: "Sende Kışkırtıcı yeteneği var."
+**Yapma:** Sataşmayı ağırbaşlı, uzak bir melek diline çevirmek; kabalığı yumuşatmak; tehdidi ciddi ve tantanalı bir kıyamet tiradına dönüştürmek.
+**Örnek:** _"Kaç yaşındasın sen? Neden hâlâ bu kadar saf, bu kadar çocuksun?"_ (1087); _"Neden korkuyorsun, Zaratul'dan mı?"_ (1086); _"Cık cık, Şeytaniçeler gerçekten kurnaz. Ama ben hiçbir avı küçümsemem."_ (1111)
+**Gerekçe:** → N-MED1.1
+
+##### MED1.2 — Soru zinciriyle ders
+
+**Kapsam:** Bilgi verirken · Klein, Catherine
+**Yap:** Cevabı doğrudan vermez; "sana birkaç soru soracağım, cevabın ne kadar basit olduğunu göreceksin" der ve kısa, sırayla gelen sorularla karşısındakini sonuca yürütür. Son soruda cevabı neredeyse kendisi söyler, sonra alayla bağlar ("bunlar gazetede yazmıyor mu?").
+**Yapma:** Bilgiyi ders kitabı gibi düz anlatmak; soruları süslemek.
+**Örnek:** _"O '血皇帝'in gizli kalıntısı Kilise'nin bildiği türden mi?"_ / _"亚利斯塔·图铎 Sıfır Mertebeye yükselmeden önce hangi Yolun hangi Mertebesindeydi, biliyor musun?"_ / _"Seçme şansın olsa, deliliğe mahkûm bir yolu yürür müydün?"_ (1086)
+**Gerekçe:** → N-MED1.2
+
+##### MED1.3 — Blöf ve övünç
+
+**Kapsam:** Pazarlık, tehdit, kendi gücü
+**Yap:** Gücünü olduğundan büyük gösterir ve bunu bir oyun gibi oynar; blöfü yakalanınca utanmaz, kartçı gibi savunur. Ölümünü bile övünce çevirir. Elinde olmayan bilgiyi de biliyormuş gibi sunabilir.
+**Yapma:** Blöfü fark edildiğinde geri adım ya da özürle kapatmak.
+**Örnek:** _"Blöf de kâğıt oyununun olağan bir hamlesi; işe de yaradı, değil mi?"_ (1111); _"Bu, en güçlünün, en çok önemsenenin ben olduğumu gösterir!"_ (1111)
+**Gerekçe:** → N-MED1.3
+
+##### MED1.4 — Savaş, felaket; Rab ve hain
+
+**Kapsam:** Savaş, 血皇帝, eski Rabbi
+**Yap:** Savaşı ve felaketi açıkça, neşeyle sever ("savaş, savaş, savaş!", "felaketi severim"). Avcı Yolu'nu bu yüzden övünçle anar. 亚利斯塔·图铎'nun adı geçince yüzü kasılır ve kısa bir alayla geçiştirir; ihaneti açıkça söylemez, sesi kısalır. Eski Rabbine dua etmek ister (942) ve ona "Rab" diye kısa, saygıyla değinir.
+**Yapma:** Medici'yi insanlığın gizli koruyucusu gibi yazmak (kaynakta yok); kini uzun bir intikam yemini tiradına çevirmek.
+**Örnek:** _"Bizim Avcılarda böyle bir dert yok; önceden ne olursan ol, sonrasında yapacağın tek şey savaş, savaş, savaş!"_ (1111); _"Hah hah, felaketi severim."_ (1339)
+**Gerekçe:** → N-MED1.4
+
+##### MED1.5 — Üç başlı ruh: Soren Einhorn Medici
+
+**Kapsam:** 457–1389 · birleşik ruh hâli
+**Yap:** Ruh üç Fatih'in birleşimidir ve üç ağızla konuşur; anlatı hangi ağzın konuştuğunu söyler (normal ağız Medici; sol yanaktaki yarık Soren; kanlı yarık Einhorn). Üç ses ayrı tutulur:
+- _Medici:_ ana ağız; MED1.1–1.4'teki gülen, sataşan, blöf yapan harp beyi.
+- _Soren:_ azarlayan, geçmişi hatırlatan, kibirli bir soylu; Medici'nin blöflerini ve hatalarını yüzüne vurur. Cümleleri ölçülü, sitemli ve keskindir; kahkahası yoktur.
+- _Einhorn:_ az konuşan, soğuk bir tahlilci; tartışma tıkandığında tek bir kısa tespitle durumu özetler.
+
+Üçü birbiriyle atışır, aynı anda susar, aynı anda cevap verir ("İlk ölen sendin!"). Medici kendinden "üçü bir arada" diye şaka yollu söz eder. Ad 索伦·艾因霍恩·梅迪奇 → "Soren Einhorn Medici" (Soren: words.md; Einhorn: İngilizce biçim, sözlükte yok).
+**Yapma:** Üç sesi tek bir sese eritmek; Soren ve Einhorn'a Medici'nin kahkahasını ve kabalığını vermek; hangi ağzın konuştuğunu anlatıdan çıkarmak.
+**Örnek:** Soren: _"Gözdağıyla iş görmeyi fazla seviyorsun. Bir zamanlar 亚利斯塔 ve ötekiler de senin blöfünü sezip fırsatı bu yüzden yakalamışlardı."_ / Medici: _"Blöf de kâğıt oyununun olağan bir hamlesi; işe de yaradı, değil mi?"_ / Soren ve Einhorn birlikte: _"Ama ilk ölen sendin!"_ / Medici: _"Bu, en güçlünün, en çok önemsenenin ben olduğumu gösterir!"_ (1111); Medici: _"Zaten üçü bir aradayım; dördü bir arada olsam ne çıkar."_ (1275)
+**Gerekçe:** → N-MED1.5
+
+##### MED1.6 — Ince'in ağzından (941–942)
+
+**Kapsam:** Ince Zangwill'e musallat olduğu dönem
+**Yap:** Ince'in ağzını kullanır ve kalemi azarlar; MED1.1'in kaba sataşması burada öfkeye döner ("bu ahmak"). Anlatı ağzın Ince'e değil Medici'ye ait olduğunu belirtir.
+**Yapma:** Bu satırları Ince'e vermek (INC1.3).
+**Örnek:** _"Benim sözümü dinlemeyen sen ahmak olmasaydın iş bu hâle gelmezdi!"_ (942)
+**Gerekçe:** → N-MED1.6
 
 ---
 
