@@ -1008,6 +1008,48 @@ Ad: 1110 ¶39, 1111 ¶4, ¶10, ¶24, 1275 ¶67, 1359 ¶19, ¶30 索伦·艾因�
 
 ---
 
+## Will Auceptin (Kader Yılanı)
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır (Klein_Notlar'daki N-M3.1 ile aynı numaralama).
+> **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm (konuşan):** 326 (Aaron'un aktarımı), 386–388 (rüya), 606 (yazılı cevap), 770, 818, 827, 886–887, 936–937, 979–980, 991, 1124–1125, 1231–1232, 1357, 1370, 1388. Anılır: 340, 370, 384–389, 402–404 (eski bedenin cesedi), 591–611 (Darkwill ve İhtimal Zarı), 1006 (Amon'a karşı "Kader Yılanı. Yeniden Başlatma!"), 1009, 1146 (tarihî izdüşüm), 1178 (tazim ismi).
+> **Klein.md ile bağ:** Klein'ın Will'e karşı sesi Klein.md M3.1'dedir (bilen akran). İki harita aynı sahneleri paylaşır: 991 ¶36–37 (Klein merasimi savar), 1125 ¶28 (iç ses "üfürükçü"), 1125 ¶31 (kâğıt turna pazarlığı), 1388 (Klein ifadesiz, Will ağlar). Will'in tarafı burada, Klein'ınki orada. 神棍 / "üfürükçü" Klein'ın iç sesinin kelimesidir, Will'in ağzına girmez.
+> **Ad kararları (2026-10-21):** 概率之骰 → "İhtimal Zarı" (Canavar Yolu'nun Yegâneliği, 609 ¶33; salahiyet kelimesi 概率 = İhtimal); 哇 → "Ingaa!"; '命运'途径 → "Kader Çarkı Yolu" (609 ¶33 “怪物”途径又叫“命运之轮”途径; Mertebe 0 adı).
+> **Ad kararları (devam):** 议长 → "Reis" (Hayat Ekolü'nün Reisi), 命运议员 → "Kader Azası"; 容纳 → "barındırmak" (words.md).
+> **Açık soru:** 昨日重现 (Klein'ın tılsımı, Yesterday Once More): Türk okura tanıdık bir göndermeyle değiştirilmesi düşünülüyor. 神话生物 sözlükte yok; örneklerden kaçınıldı.
+
+### N-WIL1.1
+
+Tavır: 770 ¶28–29 (Klein: ‘命运之蛇’先生？ / Will: 你为什么肯定是先生？); ¶32–33 我还没有决定……你知道的，哦，你不知道，每一次重新开始，我都尽量让自己有点不同，以便保持良好的心理状态，小孩阶段就该有小孩的样子。; 818 ¶50 难道你指望我在妈妈的肚子里给你折千纸鹤？就算能折，你也拿不到啊！; ¶53 好了，作为一个还没出生的胎儿，我该补眠了; ¶57 你厨师做的冰淇淋太甜了……; 887 ¶2 我也没有办法，我还在妈妈肚子里啊！; ¶9 你觉得这现实吗？不仅让一个刚出生的婴儿提笔给你写信，还要布置仪式，召唤信使？; ¶13 那也得尊重自然规律！; 936 ¶49 你这句话应该对我父母说！ Açıklama: 770 ¶36 (yeniden başlamak deliliği yıkar ama inanç çıpası gerekir), ¶40 (Ouroboros'un çocukluğu yok); 827 ¶64 (Gizem Talibi Yolu'nun 5→4 ritüeli); 1125 ¶17–23 (Yegâneliği barındırmanın üç yolu; Yolun ilahlaşma ritüeli). Anlatı: 清亮的声音/嗓音 (818 ¶40, 827 ¶40, 886 ¶66, 936 ¶49); 吸了下拇指/手指 (818 ¶34, 827 ¶52, 886 ¶70, 936 ¶73). İki yaş: 1357 ¶39 我总觉得你会说：你尽情呼救吧，没有谁能听见。; ¶41 欺负小孩并不符合你现在的身份。; ¶46 你为什么不蹲下来？在我这个年纪，如果一直这么扬着头，会对颈椎发育不好。 Hitap: Will Klein'a her sahnede 你 der; ad ya da unvan kullanmaz.
+**Denetim:** 770, 818, 827, 886–887, 936, 1125, 1357 (ZH).
+
+### N-WIL1.2
+
+Hamle: 770 ¶55–60 (Klein 您的脐带血…… der demez 哇！; Klein geri çekilince 一下停止了哭泣，笑着说道：当然是，不过，我会提前替换掉，否则会让在场所有人都死去。); 937 ¶7–10 (0-08 sorusuna 嘴巴突然咧开，发出了响亮的哭声：哇！); 979 ¶66–72 (dondurma takılmasına 哇！). 991 ¶39 ağlamanın eşiği: 小婴儿的嘴巴一点点咧开，似乎要当场大哭，好不容易才控制住自己道：我出生还没到一个月啊！ Yara: 1124 ¶85–86 没用的……太迟了……我已经重启，还得成长至少二十二年才有能力容纳‘唯一性’……你为什么不早点这么说……/ 我真是太不幸了……一定是乌洛琉斯那条傻蛇夺走了我太多运气……; 1125 ¶5 (享年四个月……); ¶23 依旧，依旧没能碰上……; ¶27 虽然还没真正找到……但已有了一定的预感……; 1388 ¶24 突然流下了眼泪，抽噎得很是厉害; ¶34 有种自己被命运欺骗了的感觉; ¶36 略显抽噎. Klein'ın tepkisi: 1125 ¶1 只好没有表情; 1388 ¶35 无视了威尔的痛哭.
+**Denetim:** 770, 937, 979, 991, 1124–1125, 1388 (ZH).
+
+### N-WIL1.3
+
+818 ¶27 你的命运出现了一点偏移。; ¶40 不用解决，从长远来看，这应该是一件好事，但中间会有不小的麻烦。; ¶46 今晚舞会里那个很高傲的少女有点问题; 979 ¶64 我就说嘛，你命运的偏移从长期看是好事。; 980 ¶11 对‘命运’途径的非凡者来说，都是先付出价目表上的事物，然后才等待馈赠。; 991 ¶53 你下周，周三或周四的时候，命运有些起伏。; 936 ¶56 命运的直觉。; 1357 ¶50 没有…我有预感，它快要来了。; 1388 ¶25 我终于感觉到了那个契机。; ¶39 我预感到下次的契机会更好。; ¶41–42 这是一个预言？/ 不，这是一个祝福。 预知 = İstişraf: 606 ¶82 我早就发现你可以对抗我的预知 (salahiyetler.yml 预知; Will'in tazim isminde 预知未来的怪物 → İstikbale İstişraf Canavar).
+**Denetim:** 606, 818, 936, 979–980, 991, 1357, 1388 (ZH).
+
+### N-WIL1.4
+
+936 ¶60–62 (Klein çok kullanımlık yolu kendisi söyleyince: 好，我接受。记住，刚才那些话是你自己说的！); 827 ¶48–54 (我看起来像是没有类似办法的神话生物吗？…我选择二。…多知道一个办法，就多一张底牌，这难道不对？); 937 ¶3 这是常识！; 1231 ¶84 你最近肯定是吃甜食太少，导致记忆不好……; 979 ¶57–58 这种礼物有什么意义？你不如直接送我‘瓜达尔’，这至少还能喝！; ¶65 哎呀，突然想喝‘瓜达尔’，最好加点冰。; 1232 ¶6–9 不，不用了。我这段时间吃了太多冰淇淋…/ (Trier dondurması) ……下周，再给我。; 1357 ¶45 给我虚假的冰淇淋并不等于愚弄命运。; ¶62 就这样走了……真是没礼貌，上门拜访竟然不准备礼物……; 1370 ¶82 出生礼物是幸运护符，生日礼物是幸运金币，你真没有创意。 Ouroboros: 770 ¶40 我和祂已经玩了很久的捉迷藏…祂没有童年; 818 ¶43 乌洛琉斯那个家伙; 1124 ¶86 那条傻蛇. Bernadette'e çıplak adla: 827 ¶44 那边是贝尔纳黛啊。 Ses: 嗤笑 (770 ¶40, 818 ¶29, ¶43, 827 ¶64), 哼 (936 ¶55, 979 ¶57, 991 ¶37), 啧 (827 ¶48), 呵呵 (827 ¶44, 991 ¶45), 哈哈 (606 ¶82, 770 ¶47).
+**Denetim:** 770, 818, 827, 936–937, 979, 1124, 1231–1232, 1357, 1370 (ZH).
+
+### N-WIL1.5
+
+606 ¶73–86: tek bir mektup. Zarın 1–6 değerlerini sırayla anlatır (¶75), iki mühür yolu önerir (¶81, ¶83–85), araya ¶82 哈哈，我摊牌，我早就发现你可以对抗我的预知，也许你可以利用这一点封印它。 koyar; kapanış ¶86 最后，感谢你的帮助，你诚挚的朋友威尔·昂赛汀。 Klein'ın kâğıt turna notları da kısadır (991 ¶31 有事！; 1231 ¶77 有问题请教。).
+**Denetim:** 606 (ZH).
+
+### N-WIL1.6
+
+326 ¶22 医生，你的运气会变差诶。 (Aaron'un aktarımı; ¶23'te Talim tekrar eder); 386 ¶53 (Aaron'un rüyası: 艾伦医生，有蛇想吃我！); 388 ¶65–66 aynı satır, Klein rüyada görür (又惊又喜，又畏惧又惶恐). 403'te bu bedenin cesedi bulunur; Will sonradan Aaron'un çocuğu olarak yeniden doğar (591).
+**Denetim:** 326, 386, 388 (ZH).
+
+---
+
 ## Âdem ve Amon
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.

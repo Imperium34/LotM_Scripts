@@ -340,10 +340,10 @@ Klein'ın dış sicili aşamaya değil, **karşısındakinin ona ne gözle bakt�
 
 ##### M3.1 — Will Auceptin (bilen akran)
 
-**Kapsam:** 991, 1124–1125, 1388 · replik ve iç ses · Will karşısında
-**Yap:** Yükseltisiz ve teklifsiz. Rahat anlarda hafif yüzsüz bir yakınlık: gülümseyerek sorar, pazarlığı hemen kabul eder, kuru bir gülüşle resmiyeti savar. Ciddi anlarda düz ve işe dönük: doğrudan sorar, bedelini tartar. Will'in ağlamasına ifadesiz kalır. Asıl alay iç sestedir. 神棍 → "üfürükçü".
-**Yapma:** Gösterişli, uzun şakalar ya da bilerek dürten bir ağabey performansı (dışarı çıkan mizah küçük ve kurudur, M0.4); ağlamasını teselli etme; resmiyet; "Biz".
-**Örnek:** _"Aramızdaki ahbaplıkta bu kadar merasime gerek yok, değil mi?"_ (991 ¶36, kuru bir gülüşle) · _"Olur. Ama sen de bana birkaç kâğıt turna katlamalısın."_ (1125 ¶31) ↔ iç ses: _Tam bir üfürükçü…_ (1125 ¶28)
+**Kapsam:** 770–1388 · replik ve iç ses · Will karşısında
+**Yap:** İki dönem. _770–937 (doğumdan önce ve hemen sonra):_ "siz" (您). Kibar ve temkinli bir müşteri: ilk hitap "Kader Yılanı Bey?", soruları işe dönük, teşekkürü eğilerek eder ("Cevabınız için teşekkürler.", "Cömertliğiniz için teşekkürler."), doğumu şapkasını çıkararak kutlar. İstemediği soruda Will ağlayınca hemen geri çekilir. Bu dönemde de alay iç sestedir (827'de "Mertebe 1 vakarın nerede?", 886'da kararsızlık ve üfürükçülük). _979'dan itibaren:_ "sen"e geçer; geçiş 979'da bebeğe dondurmayla takılırken olur ve 991'deki "merasime gerek yok" sözü bu geçişi dile getirir. Bu dönemde yükseltisiz ve teklifsiz. Rahat anlarda hafif yüzsüz bir yakınlık: gülümseyerek sorar, pazarlığı hemen kabul eder, kuru bir gülüşle resmiyeti savar. Ciddi anlarda düz ve işe dönük: doğrudan sorar, bedelini tartar. Will'in ağlamasına ifadesiz kalır. Asıl alay iç sestedir. 神棍 → "üfürükçü".
+**Yapma:** 770–937'de "sen"; 979'dan sonra "siz" ya da resmiyet; gösterişli, uzun şakalar ya da bilerek dürten bir ağabey performansı (dışarı çıkan mizah küçük ve kurudur, M0.4); ağlamasını teselli etme; "Biz".
+**Örnek:** _"…Kader Yılanı Bey?"_ (770 ¶28, kibar ve temkinli) · _"Cevabınız için teşekkürler."_ (827 ¶65, eğilerek) · _"Doğduğunuz için tebrikler."_ (936 ¶48, şapkasını çıkararak) → _"Hediyemi pek beğenmedin galiba?"_ (979 ¶54) · _"Aramızdaki ahbaplıkta bu kadar merasime gerek yok, değil mi?"_ (991 ¶36, kuru bir gülüşle) · _"Olur. Ama sen de bana birkaç kâğıt turna katlamalısın."_ (1125 ¶31) ↔ iç ses: _Tam bir üfürükçü…_ (1125 ¶28)
 **Gerekçe:** → N-M3.1
 
 ##### M3.2 — Roselle (bilen akran, ortak köken)

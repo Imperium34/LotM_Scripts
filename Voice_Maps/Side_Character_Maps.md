@@ -324,6 +324,60 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Örnek:** _"Benim sözümü dinlemeyen sen ahmak olmasaydın iş bu hâle gelmezdi!"_ (942)
 **Gerekçe:** → N-MED1.6
 
+### Will Auceptin (Kader Yılanı) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Canavar Yolu'nun Mertebe 1'i, Kader Yılanı; anlatıda Cıva Yılanı diye de anılır. Hayat Ekolü'nün başıdır (1125). Ouroboros'tan saklanmak için "yeniden başlar" (重启) ve her seferinde bir çocuk olarak doğar. Her başlangıçta kendini biraz farklı kılar, çünkü "çocukken çocuk gibi olmak gerek" (770). Dört bedende görünür: Will Auceptin adlı, on yaşlarında bir hastane çocuğu (326–389); Doktor Aaron Ceres'in karısının karnındaki cenin, rüyada bebek arabasında bir bebek (770–887); doğduktan sonra Will Ceres (936–1232; tam adı Will Auceptin Ceres, 1125); iki yaşında bir çocuk (1357–1388). Sesi berraktır (清亮). Çocuk tavrının ardında bir meleğin bilgisi durur: huysuzlanır, burun kıvırır, hediye beğenmez, dondurma ister, istemediği soruya ağlayarak cevap verir. Ama bir yöntemi ya da kuralı açıklarken uzun, düzenli, açık cümleler kurar. Klein'a hep "sen" der; ona ne tapar ne ağabeylik eder. Ouroboros'u küçümser.
+**Onay:** _"Tamam, kabul ediyorum."_ (936, 好，我接受。); _"Tabii ki."_ (936, 当然，可以。)
+**Sicil (yorum):** yok. Tazim ismi ağır bir Osmanlıca taşır ("Mutlak Talihin Tecessümü…"), ama kaynak bu meleği bilerek bir çocuk sesiyle konuşturur. Çocuk sesi ile melek bilgisi arasındaki fark karakterin kendisidir; yükseltilmiş bir kayıt bu farkı siler. Kader sözleri bile kısa ve sadedir (WIL1.3).
+
+##### WIL1.1 — Çocuk sesi, melek bilgisi
+
+**Kapsam:** 770–1388 · Klein karşısında (rüya, bebek arabası, ev)
+**Yap:** Çocukluk tavırda ve konuda görünür, dil bilgisinde değil: kısa itiraz, sızlanma, istek; "annem", "babam", "annemin karnı" (妈妈的肚子); cümle sonunda "ya", "ki". Konu bir yöntem, kural ya da tarih olunca uzun, sıralı, açık bir anlatıma geçer (770 ¶36–40; 827 ¶64; 1125 ¶17–23) ve o sırada sızlanmaz. İki hâlde de kelimeler sade ve günceldir. Kademeli: cenin ve bebekken (770–1232) huysuzluk baskındır; iki yaşında (1357) iğneleri daha kuru ve yetişkince olur. Klein'ın "Kader Yılanı Bey?" hitabına cinsiyeti sorgulayarak takılır; "Bey" Türkçede cinsiyet taşıdığı için şaka korunur.
+**Yapma:** Peltek, bozuk ya da heceleyen bir bebek dili; açıklamaları Divan ya da ilim kaydına yükseltmek; "efendim", "siz".
+**Örnek:** _"Bey olduğumdan neden bu kadar eminsin?"_ (770 ¶29); _"Daha karar vermedim… Bilirsin, ha, yok, bilmezsin: her yeniden başlayışta kendimi biraz farklı kılmaya çalışırım, ruh hâlim iyi kalsın diye. Çocukken çocuk gibi olmak gerek."_ (770 ¶32–33); _"Annemin karnında sana kâğıt turna mı katlamamı bekliyorsun? Katlasam bile eline geçmez ki!"_ (818 ¶50); _"O da olsa doğanın kanununa uymak lazım!"_ (887 ¶13)
+**Gerekçe:** → N-WIL1.1
+
+##### WIL1.2 — Ağlamak: bir hamle ve bir yara
+
+**Kapsam:** 770–1388
+**Yap:** İki ağlama ayrı yazılır. _Hamle:_ istemediği soruya (göbek kordonu kanı 770, 0-08 937, dondurma 979) tek bir "Ingaa!" ile karşılık verir; soru geri çekilince ağlama anında kesilir ve gülerek konuşur (770 ¶60). _Yara:_ kendine acıdığında ve kaderin oyununu fark ettiğinde (1124–1125, 1388) cümleler kesik, üç noktalı ve tekrarlıdır. Kaynaktaki kesiklik ve tekrar ("依旧，依旧") aynen kalır, fazlası eklenmez.
+**Yapma:** Hamle ağlamasına söz ya da duygu eklemek; gözyaşını teselli bekleyen bir trajediye çevirmek (Klein ifadesiz kalır, Klein.md M3.1); kaynakta düz olan cümleye üç nokta koymak.
+**Örnek:** _"Ingaa!"_ (770 ¶55) → _"Tabii ki öyle, ama önceden değiştireceğim; yoksa orada bulunan herkes ölür."_ (770 ¶60); _"Faydası yok… Çok geç… Çoktan yeniden başladım, Yegâneliği barındırabilmem için en az yirmi iki yıl daha büyümem lazım… Neden bunu daha önce söylemedin…"_ (1124 ¶85); _"Ne kadar da talihsizim… Kesin o aptal yılan Ouroboros talihimin çoğunu çaldı…"_ (1124 ¶86)
+**Gerekçe:** → N-WIL1.2
+
+##### WIL1.3 — Kader sözü: kısa sezgi
+
+**Kapsam:** 818–1388 · önsezi, uyarı, kehanet
+**Yap:** Kader, talih ve önseziye dair sözler kısa, düz, çoğu zaman tek cümledir. Açıklamaz, ipucu verir: balodaki kibirli kızın "bir sorunu var" (818), gelecek hafta kaderinde "inişli çıkışlı" bir şey olacak (991). 预感 → "içime doğuyor"; 预知 → "istişraf" (salahiyet kelimesi). Kehanet ile iyi dileği kendisi ayırır (1388 ¶42).
+**Yapma:** Kehanet kalıpları, "-ecektir" tantanası, mistik süs; sezgiyi uzun bir açıklamaya çevirmek.
+**Örnek:** _"Kaderin sezgisi."_ (936 ¶56); _"Gelecek hafta, çarşamba ya da perşembe, kaderinde biraz iniş çıkış olacak."_ (991 ¶53); _"Kader Çarkı Yolu'nun Aşkınları için önce fiyat listesindekiler ödenir, bağış ondan sonra beklenir."_ (980 ¶11); _"Yok. Ama içime doğuyor, yakında gelecek."_ (1357 ¶50); _"Bir sonraki fırsatın daha iyi olacağı içime doğuyor."_ (1388 ¶39) / _"Hayır, bu bir iyi dilek."_ (1388 ¶42)
+**Gerekçe:** → N-WIL1.3
+
+##### WIL1.4 — Pazarlık, iğne ve küçümseme
+
+**Kapsam:** 770–1388 · Klein'la alışveriş; Ouroboros ve ilahlar hakkında
+**Yap:** Pazarlığı bir oyun gibi oynar: karşısındakini sözünden yakalar (936), seçimi kendi lehine çevirir (827), hediye beğenmez (979, 1370), hediyesiz gelen ziyaretçiye arkasından söylenir (1357). Zaafı dondurmadır: önce reddeder, sonra pazarlıkla kabul eder (1232). Klein'ın sorularını "herkesin bildiği şey" diye iğneler. Ouroboros'tan "o herif", "o aptal yılan" diye söz eder; çocukluğu olmadığı için deli olduğunu söyler (770). İlahlar için büyük harfli O (yayımlanmış bölümlerdeki 祂 biçimi). 嗤笑 / 哼 / 啧 anlatıda kalır; replikte en fazla "hıh", "cık".
+**Yapma:** Huysuzluğu gerçek bir düşmanlığa ya da tehdide çevirmek; Klein'a hürmet etmek; Klein'ın kuru mizahını ona vermek. Şakayı Will başlatır, Klein kısa karşılık verir (Klein.md M0.4).
+**Örnek:** _"Unutma, bu sözleri sen kendin söyledin!"_ (936 ¶62); _"Bu herkesin bildiği bir şey!"_ (937 ¶3); _"Böyle bir hediyenin ne anlamı var? Bana doğrudan Gwadar versene, hiç değilse içilir!"_ (979 ¶57–58); _"…Gelecek hafta ver."_ (1232 ¶9); _"Doğum hediyesi uğur muskası, doğum günü hediyesi uğurlu altın. Hiç yaratıcılığın yok."_ (1370 ¶82)
+**Gerekçe:** → N-WIL1.4
+
+##### WIL1.5 — Yazılı sesi
+
+**Kapsam:** 606 (kâğıt turnaya yazdığı cevap)
+**Yap:** Dostça ve düzenli. Tehlikeyi derece derece sıralar, iki yol önerir, araya bir "haha" ile içten bir itiraf koyar (哈哈，我摊牌). İmzası: "Samimi dostun Will Auceptin."
+**Yapma:** Resmî mektup kalıpları, hürmet sözleri, süslü kapanış.
+**Örnek:** _"Haha, kartlarımı açayım: istişrafıma karşı koyabildiğini çoktan fark ettim. Belki onu mühürlemek için bunu kullanabilirsin."_ (606 ¶82); _"Son olarak, yardımın için teşekkürler. Samimi dostun Will Auceptin."_ (606 ¶86)
+**Gerekçe:** → N-WIL1.5
+
+##### WIL1.6 — Eski beden: hastane çocuğu
+
+**Kapsam:** 326 (Aaron'un aktarımı), 386–388 (Aaron'un rüyası)
+**Yap:** On yaşlarında, korkmuş bir çocuk; melek sesi hiç duyulmaz. Kısa, saf cümleler.
+**Yapma:** Bu satırlara sonraki bebeğin iğnesini ya da bilgiçliğini taşımak.
+**Örnek:** _"Doktor, bak, şansın kötüleşecek."_ (326 ¶22); _"Doktor Aaron, bir yılan beni yemek istiyor!"_ (388 ¶66)
+**Gerekçe:** → N-WIL1.6
+
 ---
 
 ## 4. Moretti Ailesi ve Gece Şahinleri (Tingen Yan Karakterler)

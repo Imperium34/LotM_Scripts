@@ -56,6 +56,9 @@
 - **yaşanmışlık hissi** — déjà vu (似曾相识 / "似乎在哪里见过"); "déjà vu" ve "tanıdıklık hissi" kullanılmaz _44_
 - **habis ruh** — evil spirit (恶灵); "kötü ruh" gündelik kaldığı için elendi
 - **ruhanî varlık** — spirit body, varlık anlamında (灵体); insan bedeninin katmanı olan "Ruhanî Beden" ile karıştırılmaz
+- **barındırmak** — to accommodate (容纳); Yegânelik ve Aşkın hasletleri için sabit fiil: 'Yegâneliği barındırmak'; sozluk.yml Melekler Beyi açıklamasındaki biçim _1125_
+- **İhtimal Zarı** — Die of Probability (概率之骰); Canavar Yolu'nun Yegâneliği, Hayat Ekolü'nün Mühürlü Eseri; salahiyet kelimesi 概率 = İhtimal (salahiyetler.yml) _606_
+- **Kader Çarkı Yolu** — Wheel of Fortune pathway ("命运之轮"途径; kısaca "命运"途径); Canavar Yolu'nun Mertebe 0 adıyla anılışı (609: "怪物"途径又叫"命运之轮"途径) _609_
 - **ışıltı** — büyünün bıraktığı ruhanî ışık (魔法的灵光 → "büyü ışıltısı"); "Hâle" canlının kendi ışımasına ayrılmıştır
 - **ruh göçü** — Transmigration (穿越)
 - **ruh göçmeni** — transmigrator (穿越者)
@@ -344,6 +347,8 @@
 - **Mühürlü Eser** — Sealed Artifact (封印物)
   - **Classification:** Sınıf 0 (0级; Son Derece Tehlikeli / Grade 0: Extremely Dangerous) → Sınıf 1 (1级; Yüksek Tehlikeli / Grade 1: Highly Dangerous) → Sınıf 2 (2级; Tehlikeli / Grade 2: Dangerous) → Sınıf 3 (3级; Dikkate Değer Ölçüde Tehlikeli / Grade 3: Considerably Dangerous)
   - Numbering format "2-125"
+- **Reis** — President of the Life School of Thought (生命学派的议长); Hayat Ekolü'nün başı, Will Auceptin; 议员 'Aza' ile çift kurar _1125_
+- **Kader Azası** — Fate Councilor (命运议员); Hayat Ekolü'nün azası, Ricciardo; 议会 = Meclis (krş. Altılar Meclisi) _611_
 - **Yedinci Birim** — Seventh Unit (第七小组)
 - **Beşinci Birim** — Makine Külli Şuuru'nun Tingen ekibi; üniversite bölgesi ve banliyölerden sorumlu (第五组/组)
 - **Altıncı Birim** — Salahiyetli Tecziyeciler'in Tingen ekibi; rıhtım, doğu ve güney bölgelerinden sorumlu (第六组)
