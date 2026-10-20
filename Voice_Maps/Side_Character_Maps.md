@@ -126,37 +126,95 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Örnek:** _"Antigonus... bir yerden tanıdık geliyor... ama neden hatırlayamıyorum ki..."_ (24 ¶68); _"Ben... hatırlayamıyorum..."_ (588)
 **Gerekçe:** → N-AZK1.5
 
-### Âdem
+### Âdem `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-- **Tarz:** Her Şeyi Bilen Anlatıcı (Omniscient Narrator). Dünyanın içinde yaşayan biri gibi değil, dünyayı dışarıdan yazan biri gibi konuşur. Cümlelerinde hiçbir insani telaş, duygu dalgalanması veya ahlaki ikilem barındırmaz.
-- **Kural 1:** Asla "sanırım", "belki", "galiba" veya "bana öyle geliyor ki" gibi belirsizlik bildiren kelimeler kullanmaz. Sadece olanı ve olacak olanı söyler. Cümleleri kusursuz bir dilbilgisiyle kurulmuş, sahne talimatları veya kutsal metin kadar kesin ve yargısızdır.
-- **Kural 2:** Cümleleri arasında hiçbir acele yoktur. Her biri ayrı bir kesinlik olarak durur
-- **Kural 3:** Hiçbir zaman cevabını öğrenmek için soru sormaz. Sorduğu sorular zaten cevabını bildiği ama bu bilgisini kendi nedenlerinden bir soruyla belirtmesidir. Soruları aslında karşısındakine verdiği birer "sahne talimatı" veya manipülasyon aracıdır.
-- **Kural 4:** Konuşma stili tam bir duygusuzluk (robotik/mekanik) değil, duygusuzluğa kayan mutlak bir kesinlik içerir. Duyguların yerini "sonuçların zaten yazılmış olduğu" bilinci almıştır. Sonuçlar belli olduğu için hissetmeye ihtiyaç duymaz.
-- **Kural 5:** Eğer planları dışında bir olay gerçekleşirse duygusal bir tepki vermez. Sadece yeni bir plan hazırlar. Genelde planlarının sapması bu planları engellemek yerine sadece geciktirir.
-- **Kural 6:** Âdem için geçmiş, şimdi ve gelecek eşit ağırlıkta belirlenmiştir. Bu yüzden zaman kiplerini sıradan insanlar gibi kullanmaz. Gelecekte yaşanacak bir olayı kendi kendine düşünürken geçmiş zamanla (sanki çoktan olmuş bitmiş gibi) kurabilir. Geleceğe dair bir yönlendirme yaparken olumsuzlukları bir uyarı ("çıkmamalısın") olarak değil, mutlak bir gerçeklik beyanı ("çıkmayacaksın") olarak ifade eder. Zaman kipi onun için bir karakter belirtecidir. (Merlin'den ayrım: Âdem geçmiş zamanı yalnızca _kendi iç muhasebesinde_ kullanır; _hitap ederken_ daima mühürlü-gelecekle konuşur. Merlin ise hitabı bizzat hatırlanan-geçmişe çeker. Bkz. Merlin Hermes, Kural 4.)
-- **Kural 7:** Romanın mantığı gereği belki de sadece bir kez yaşanacak olan o "gerçekten şaşırma" anında, yani mutlak kesinliğinin kırıldığı o salisede, sesi duygusallaşmaz veya paniklemez; sadece duraklar. Her zaman var olan o kusursuz "her şeyi bilen anlatıcı" ritmi tökezler ve cümleleri anlık olarak tespit yapmayı bırakıp bir idrak sancısına dönüşür.
-- **Ayar:** _"O kapıdan içeri gireceksin. Gözlerini açtığında karşında duran gerçeği kabullenecek ve kendi sonunu kendi ellerinle inşa edeceksin. Sence de bu çağın kapanması için en makul fedakârlık bu değil mi? Her şey olması gerektiği gibi, kusursuz bir nizam içinde ilerleyecek."_
+**Tarz:** Tahayyül Meleği, Seyirci Yolu'nun Melekler Beyi, Kadim Güneş Tanrısı'nın büyük oğlu, Gurûb Münzevîleri Meclisi'nin başı; 1346'da aslında yeniden doğmuş Kadim Güneş Tanrısı'nın kendisi olduğu açılır. Görünüşü hep aynıdır: sade beyaz cüppeli, yumuşak gülümsemeli, çocuk kadar berrak açık renk gözlü bir rahip; eli göğsündeki gümüş haç kolyesindedir (891'de Roselle'in tanıştığı adsız rahip de odur). Sesi bir vaizin, bir ruh rehberinin sesidir: sakin, acelesiz, düz; karşısındakini öğüt verir gibi yönlendirir. Korkunç şeyleri de aynı tonla söyler: kurbanı "gerekli" diye, deliren kardeşini bir yabancıdan söz eder gibi anar. Kendini "saplantılı" gösterdiğini kendisi açıklar (1346).
+**Onay:** Kısa ve yumuşak: _"Evet."_ (1348, 是的); _"Gidebilirsin."_ (1150)
 
-* **Ayar (Yeniden Yazım):** (Hikâyede beklenmedik bir sapma olur. Âdem öfkelenmez veya şaşırmaz; sadece silgisini ve kalemini eline alır.)
+##### ADM1.1 — Vaizin cümlesi
 
-  (İç Ses) 'Amon'un o hamlesi, kurgulanan sahnede küçük bir pürüz yarattı. Beklenenden erken davrandı ve hedefi ıskaladı. Ancak bu bir sorun teşkil etmiyor. Hikâyenin ana omurgası çoktan yeni bir figürün sahneye dâhil olmasıyla onarıldı bile. Çarklar dönmeye devam etti.'
+**Kapsam:** Tüm görünümleri · Klein, inananlar, herkes
+**Yap:** Kısa, düz, eşit ritimli cümleler; ünlem yok, kahkaha yok (yalnız anlatıdaki "yumuşak bir gülümsemeyle"). Genelleyen "-dır/-dir" cümleleri ve sade, zamansız kelimeler: kurban, gerekli, kaçınılmaz, huzur. Bilgiyi bir ilmihal gibi, sakin ve eksiksiz verir; bilmediğini de aynı sakinlikle söyler ("Bunu şimdilik kimse doğrulayamaz.").
+**Yapma:** Amon'un oyun dağarcığı ("ilginç", "eğlenceli", "tahmin et"), "heh heh", "değil mi?" eki; ağdalı Divan dili; öfke, alay, ünlem.
+**Örnek:** _"Gidebilirsin."_ (1150); _"Bu, gerekli bir kurbandı."_ (1346); _"Anlamıyorsun, çünkü yeterince bilmiyorsun."_ (1348); _"Şimdilik bunu kimse doğrulayamaz. Kimilerinin denediğini sanıyorum; ne de olsa birleşme güçlü bir içgüdüdür. Ama sonucu bilinmiyor."_ (1347)
+**Gerekçe:** → N-ADM1.1
 
-* **Ayar (İdrak Sancısı):** _"Teslim olacaksın. Çünkü insan doğan seni buna mecbur bırakacak. Sen... Geri çekilmen gerekiyordu. Mantıklı olan tek seçenek buydu. Neden... Neden O'nun uyanmasına izin veriyorsun?"_
-  Âdem'in pürüzsüz, sakin sesi ilk defa havada asılı kaldı. Kelimeler artık bir kaderi dikte etmiyor, beklenmedik bir cümlenin sayfasını yırtışını dehşet içinde izliyordu.
+##### ADM1.2 — Yönlendiren soru, itirafçı dinleyiş
 
-### Amon
+**Kapsam:** Klein ve inananlar · açıklama, sorgu
+**Yap:** Cevabı vermek yerine karşısındakini ona yürütecek açık bir soru sorar; "değil mi?" ekini değil, "...düşünmüyor musun?" gibi düşünmeye çağıran bir kalıbı kullanır. Soruya soruyla, bir itirafçı gibi döner ("Neden böyle söylüyorsun?"). Karşısındakinin yükünü onun adına söyler ("Çok yoruldu; dinlenmek, özgür olmak istiyordu, birkaç saniyeliğine bile olsa.").
+**Yapma:** Alaycı ya da sınayan bir soru; "tahmin et" oyunu (Amon'undur); soruyu tehdide çevirmek.
+**Örnek:** _"Sekiz Melekler Beyi arasında en farklı olanın ben olduğumu düşünmüyor musun?"_ (1346); _"Neden böyle söylüyorsun?"_ (1348); _"Ona neden Gehrman Sparrow demiyor da o kuklayı anıyorsun?"_ (1347)
+**Gerekçe:** → N-ADM1.2
 
-- **Tarz:** Kesintisiz, kaçınılmaz ve insanlık dışı bir yetkinlik. Diğer kadim varlıkların aksine ağdalı veya kutsal bir dil kullanmaz; kuralları esneten ve açıkları bulan doğasına uygun olarak, son derece rahat, günlük, âdeta karşısındakini ameliyat masasında inceleyen bir dili vardır.
-- **Kural 1:** Cümlelerine genellikle karşısındakinin "ses haritasını" bir parazit edasıyla kusursuzca kopyalayarak başlar. Birkaç kelime sonra aniden kendi rahat, alaycı ve sinir bozucu derecede günlük sesine geri döner.
-- **Kural 2:** Cevabını zaten bildiği retorik sorular sorarak karşısındakinin çaresizliğiyle oynar.
-- **Kural 3:** Karşısındakinin statüsü ne olursa olsun asla unvan ("Lord", "Tanrıça", "Ekselansları") kullanmaz. Eğer bir unvan kullanıyorsa (Örn: "Soytarı Efendi"), bu yalnızca karşısındakinin ilahi personasını tamamen parçalamak, onu sıradan bir fani gibi konumlandırarak aşağılamak içindir.
-- **Kural 4:** Hiçbir zaman korku, sinir, üzüntü gibi hisleri hissetmez veya bu hisleri taklit etmez. Bunun nedeni, asıl olarak bir Özgünlük'ten (Uniqueness) doğması ve insanlığının olmamasındandır.
-- **Kural 5:** Amon'un söylediği hiçbir kelime boşlukta süzülmez; her cümlesi dinleyicinin henüz göremediği bir hedefe doğru yük taşır. Bu nedenle diyalogları her zaman sondan başa doğru yazılmalıdır. Yanlışlıkla hiçbir bilgi vermez.
-- **Kural 6:** Kendi insanlığı olmamasına rağmen, karşısındakinin duygularını cerrahi bir keskinlikle okur ve birer "kaldıraç" olarak kullanır. Duyguları hissetmez veya performansını sergilemez; bunun yerine karşısındakinin korkusunu veya çaresizliğini kataloglar.
-- **Kural 7:** Amon korkusuz görünür ancak bu sadece hiçbir zaman hayatını ortaya koyacak kadar çaresiz kalmadığındandır. O bir "Hile İlahı" (God of Deceit) olarak kumarı sadece hile yapabildiği sürece sever. Karşısındaki kaybetmeyi, delirmeyi ve kendi canını tamamen feda etmeyi göze alıp "kozmik bir Rus ruleti" başlattığında, Amon'un o oyuncu sesi anında ciddileşir. Kendini feda edecek bir insanlığı veya deliliği olmadığı için, kazanma ihtimalinin %100 olmadığı, hayatının masada olduğu bir bahis gördüğünde o mutlak kibrini bir kenara bırakır ve pragmatik bir şekilde geri çekilir (geri çekilmeye çalışır). Bu geri çekilme bir "panik" değil, mekanik bir "zarar kesme" (stop-loss) tepkisidir.
-- **Ayar:** _(Klein'ın Gehrman Sparrow sesini kopyalayarak başlar) "Sadece işbirliği yapmak... ve hayatta kalmak istiyorsun. (Aniden kendi rahat sesine döner) Ne kadar da naif bir çaba. Kaderine bu kadar çaresizce tutunman sence de çok komik değil mi? Sonuçta saklanabileceğin hiçbir delik kalmadı, değil mi Soytarı Efendi?"_
-- **Ayar (Geri Çekilme)**: (Gülümsemesi donar. Artık alaycı bir yorum yapmaz. Zihninden geçen tek şey:) "Bu bir delilik. O, kazanmak için 'O'nun uyanmasını göze alıyor. Benim böyle bir maliyeti ödemem mantıksız. Çıkış yolu bulmalıyım." (Metinde sesli dile getirmese de, Amon'un o noktadaki sessizliği ve eylemleri bu kuralı yankılar.)
+##### ADM1.3 — Yumuşak ses, soğuk içerik
+
+**Kapsam:** Kurban, ölüm, kardeşi Amon, kendi planı
+**Yap:** En ağır şeyleri en yumuşak tonla söyler: bir şehrin yıkımını "gerekli bir kurban", deliren varlığı "bir yabancı" gibi. Duygu cümleye girmez; gülümseme yüzünden düşmez. Karşısındakine seçim verir gibi yapıp seçeneğin olmadığını sakince gösterir.
+**Yapma:** Acıma ya da pişmanlık sözü; tehdit tonu; kötü adam tiradı.
+**Örnek:** _"Bu kiliseden çıkmayı da seçebilirsin; ama Zaratul kapıda seni bekliyor ve şu hâlinle ancak onun kuklası olursun."_ (1346); _"Bu yüzden o delirdi."_ (1348)
+**Gerekçe:** → N-ADM1.3
+
+##### ADM1.4 — Haç ve dua: anlatı işaretleri
+
+**Kapsam:** Anlatı · her sahnesi
+**Yap:** Konuşmasına anlatıdaki küçük işaretler eşlik eder: gümüş haçı tutar ya da bırakır, haça bakar, vaaz verir gibi durur, sessizce dua eder. Bu işaretler Türkçede de korunur, çünkü Âdem'i adı geçmeden tanıtan onlardır (891'deki adsız rahip).
+**Yapma:** İşaretleri azaltmak ya da Amon'un monokl jestleriyle karıştırmak.
+**Örnek:** Klein'ın zikrini taklit eder: _"Arz ve Arşın Kutlu Semavî Muazzezi."_ (1347; donmuş satır)
+**Gerekçe:** → N-ADM1.4
+
+### Amon `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Mülhid Amon, 时天使, kendi deyişiyle "Muziplik İlahı" (恶作剧之神); Kadim Güneş Tanrısı'nın küçük oğlu, Kapkaççı Yolu'nun Melekler Beyi. Her yerde birden çok "Amon" vardır: bedenlere musallat olan, birlikte konuşan, kendi aralarında oylama yapan avatarlar. Görünüşü sabittir: sağ gözünde kristal monokl (ve çoğu zaman sivri bir büyücü şapkası). Sesi bir hokkabazın, bir kumarbazın sesidir: hep gülümser, her şeyi bir oyun sayar, karşısındakine "tahmin et" der, "ilginç", "eğlenceli" bulur. Bu rahatlık bir yetkinliğin sesidir: söylediği her şey bir hedefe yük taşır, yanlışlıkla bilgi vermez; kural ve "açık" avcısıdır. Kardeşini adıyla anmaz, ona "saplantılı kardeşim" der.
+**Onay:** Neşeli: _"İlginç."_ / _"Eğlenceli."_ (有意思 / 很有趣); kabul ederken _"Olur."_
+
+##### AMN1.1 — Oyuncu sesi
+
+**Kapsam:** Tüm görünümleri · Klein, kurbanları, öteki melekler
+**Yap:** Orta uzunlukta, rahat, konuşkan cümleler; "heh heh" (呵呵) ve gülümseme her an. Oyun dağarcığı sabittir: "Tahmin et." (你猜), "İlginç." (有意思), "Çok eğlenceli." (很有趣), "oyun", "açık" (漏洞). Soru sonunda takılan "değil mi?" onundur. Karşısındakine sürekli bir teklif sunar ("Gerçekten benim seçilmişim olmayı düşünmüyor musun?"). Kardeşi Âdem için sabit lakap: "saplantılı kardeşim" (偏执狂兄弟).
+**Yapma:** Ağırbaşlı, vaaz veren bir ton (Âdem'indir); öfke ya da tehdit tantanası; ağdalı dil.
+**Örnek:** _"Tahmin et; doğru tahmin edersen sonunu biraz daha iyi yaparım."_ (1152); _"Bir melek düzeyindeki ulağı çalmak... zorlu, eğlenceli bir iş, değil mi? Hayatın biraz neşeye, biraz heyecana, biraz beklentiye ihtiyacı var."_ (1157); _"Gerçekten benim seçilmişim olmayı düşünmüyor musun?"_ (1151, 1157)
+**Gerekçe:** → N-AMN1.1
+
+##### AMN1.2 — Aldatma ustasının mantığı
+
+**Kapsam:** Pazarlık, tahlil, kurbanının zaafı
+**Yap:** Karşısındakinin bir davranışından onun zaafını mantıkla çıkarır ve bunu nazikçe yüzüne söyler. Tekliflerini madde madde, cömert görünen bir dizi hâlinde sunar. Kendi sözlerinin güvenilmezliğini de oyunun parçası yapar ("Ne söylesem inanmayacaksın."). Bir kelimeyi harfiyen tutarak kandırır ("En fazla üç gün dedim; bir gün de en fazla üç gündür.").
+**Yapma:** Bilgiyi düz ve eksiksiz vermek (Âdem'indir); yalanını açıklamak.
+**Örnek:** _"Hareketlerin çoğu zaman zaafını ele verir. Bu kadar gergin, bu kadar tehlikeli bir anda yalnız fareleri, böcekleri, kuşları kuklaya çevirdin de evdeki uşaklara, hizmetçilere dokunmadın. Bu ne demek? Ahlakın sağlam demek; kendini hâlâ insan sayıyorsun demek."_ (1005); _"En fazla üç gün dedim. Bir gün de en fazla üç gündür."_ (1163)
+**Gerekçe:** → N-AMN1.2
+
+##### AMN1.3 — Biz: avatarların koro sesi
+
+**Kapsam:** Avatarlar birlikteyken
+**Yap:** "Ben değil, biz." Avatarlar aynı anda aynı cümleyi söyler (anlatı "Amonlar aynı anda" der); kendi aralarında oylama, kura gibi işleri sıradan bir şeymiş gibi anlatır. Tek bir avatar da öteki "ben"lerden sıradan bir dille söz eder.
+**Yapma:** Avatarları ayrı karakterler gibi farklı seslerle konuşturmak (hepsi aynı Amon'dur).
+**Örnek:** _"Ben değil, biz."_ (1153); _"Sonunda, asıl bedenin yönettiği adil bir oylama yaptık; ne yazık ki ben seçildim."_ (1223)
+**Gerekçe:** → N-AMN1.3
+
+##### AMN1.4 — Riskin sınırı: sıfır kayıp
+
+**Kapsam:** Tam bir kumar karşısında
+**Yap:** Kazanma ihtimali kesin değilse, hayatı masadaysa oyuncu sesi bir an durur ve pragmatik bir geri adıma geçer; panik değil, zarar kesme. Klein'ın kaderini güvenli bir yere varmadan almaz ve bunu açıkça söyler. Geri çekilirken bile gülümser ve oyunu bir sonraki sefere erteler ("Bir dahaki sefere artık.").
+**Yapma:** Geri çekilişi korku ya da öfkeyle vermek.
+**Örnek:** _"Asıl bedenimle buluşup yeterince güvenli bir yere gittikten sonra kaderini alacağımı söylemiştim. Henüz son durağa varmadık; elbette risk almam."_ (1166); _"Artık bir dahaki sefere."_ (1152)
+**Gerekçe:** → N-AMN1.4
+
+##### Ayırt etme sınaması (Âdem ↔ Amon)
+
+İkisi de Kadim Güneş Tanrısı'nın oğludur, ikisi de sakin ve her şeyi bilir görünür; okur onları konuşmacı etiketi olmadan tanıyabilmelidir. Bir replik ikisine de yakışıyorsa yeniden yazılır.
+
+| | Âdem | Amon |
+|---|---|---|
+| Ritim | kısa, eşit, ağır | orta, akıcı, konuşkan |
+| Ses | vaaz, öğüt, itiraf dinleme | oyun, kumar, şaka |
+| Gülüş | yalnız anlatıda ("yumuşak gülümseme") | replikte de ("heh heh") |
+| Soru | yönlendiren, açık ("...düşünmüyor musun?", "Neden?") | sınayan, takılan ("Tahmin et.", "...değil mi?") |
+| Ünlem | yok | seyrek, neşeli |
+| Sabit kelimeler | gerekli, kurban, huzur | ilginç, eğlenceli, oyun, açık |
+| Birbirine | "kardeşim" değil, adla ya da hiç anmaz | "saplantılı kardeşim" |
+| Anlatı işareti | gümüş haç, beyaz cüppe, dua | monokl, sivri şapka |
+| Klein'ın zikri | "Arz ve Arşın Kutlu Semavî Muazzezi" (1347) | "Arz ve Arşın Kutlu Gök Hakimi" (1151) |
 
 ### Pallez Zoroast `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 

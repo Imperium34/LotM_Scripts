@@ -1000,3 +1000,13 @@ Ad: 1110 ¶39, 1111 ¶4, ¶10, ¶24, 1275 ¶67, 1359 ¶19, ¶30 索伦·艾因�
 
 942 ¶14–16: 嘴巴就控制不住地张开，对着手中的古典羽毛笔“呵”了一声：要不是你这个蠢货不听我的建议，怎么会弄到现在这个样子！/ 我都不知道你在害怕什么，早点让我向主祈祷…今天就是我们狩猎亚当，而不是相反！ 940 ¶25–30 kalemin anlatısı: Ince ile "barış", 恶灵附身 ve 自我为主 hâlleri arasında geçiş.
 **Denetim:** 940 ¶25–30, 942 ¶14–20 (ZH).
+
+---
+
+## Âdem ve Amon
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.
+> **Kullanıcı kararı (2026-10-20):** ikisi, konuşmacı etiketi olmadan replikten tanınabilecek kadar ayrı sicillerle yazılır; "Ayırt etme sınaması" tablosu bunun ölçüsüdür. Sicil seçimleri (vaiz / hokkabaz) kaynaktaki anlatı işaretlerine dayanan yorumdur.
+> **Eski haritalardan düşenler:** Âdem Kural 1 ("asla belirsizlik bildirmez") 1347 ¶49 ile çelişir (我猜测…结果未知); Kural 7'deki "idrak sancısı" anı ve Merlin'e dayalı zaman kipi kuralı (Kural 6) kaynakta bir sahneye dayanmıyor. Amon Kural 1 ("karşısındakinin sesini kopyalayarak başlar") kaynakta yok. Amon Kural 7 (sıfır kayıp) AMN1.4 olarak korundu. Eski örneklerin hepsi uydurmadır.
+> **Henüz yapılmadı:** ADM/AMN kural başına ayrıntılı N- notları. Ana kanıtlar: Âdem 891 ¶31–40 (adsız rahip), 945 ¶85, 1150 ¶4–12, 1345 ¶43–81, 1346 ¶12–64, 1347 ¶40–78, 1348 ¶59–91, 1375 ¶74. Amon 983 ¶53–76, 1005 ¶13–73, 1151–1166 (Klein'ı Çernobil'e götürüş; 你猜 ×9, 有意思 ×12, 很有趣 ×9, 偏执狂 ×11), 1176–1177 (koro), 1183, 1223 ¶6–61 (oylama), 1359 ¶20–27, 1381–1386.
+> **Açık soru:** 时天使 ve 恶作剧之神 için sözlükte ad yok.
