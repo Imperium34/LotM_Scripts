@@ -1101,15 +1101,65 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Örnek:** _"Çünkü artık yalnızca Lanevus değilim."_ (285); _"Ne olursa olsun, bir ilah tarafından böyle hırpalandıktan sonra insanın eline hep bir şeyler geçiyor."_ (287); _"Neden..."_ / _"...beni... öldürüyorsun..."_ (287)
 **Gerekçe:** → N-LAN1.5
 
-### Trissy
+### Tris / Trissy `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-- **Tarz (Sequence 8 - Azmettirici / Instigator Dönemi):** Dikkatli, kışkırtıcı ve hesaplı. Masum görünen ama insanların içindeki en karanlık dürtüleri açığa çıkarmayı hedefleyen "zehirli" sorular sorar.
-- **Tarz (Sequence 7 - Cadı / Witch Dönemi):** Cinsiyet değiştirdikten ve iksirin yozlaştırıcı etkisine girdikten sonra sesi akıcı, baştan çıkarıcı ama zihinsel olarak son derece dengesiz bir hâle gelir. Cümleleri yılan gibi kıvrılır; tatlı ve çekici kelimelerin arasına kasıtlı olarak morbid, hastalıklı ve ölümcül detaylar saklar.
-- **Kural 1 (Algısal Dönüşüm):** Türkçedeki cinsiyetsiz "O" zamirinin dezavantajını kapatmak için, geçiş sonrasında Trissy'nin yeni doğası gramerle değil; etrafındaki dünyanın ona tepkisiyle, estetik/bedensel tasvirlerin ağırlığıyla ve insanların ona hitaplarındaki ani şoklarla ("Beyefendi"den "Hanımefendi"ye) verilmelidir.
-- **Kural 2 (Geçiş Dönemi ve Kesişim):** Bu değişim tek gecede olmaz; acılı ve travmatik bir süreçtir. 1. Ciltteki geçiş döneminde her iki ses (kışkırtıcı Tris ve morbid Trissy) aynı cümleyi kurmak için kendi içinde savaşır. Bu dönemdeki diyaloglar bir maske değişimi değil, parçalanan bir zihnin yansımasıdır.
-- **Ayar (Fesatçı - Tris):** _"Gerçekten de tüm bu kuralların seni koruduğunu mu düşünüyorsun? Yoksa sadece boynundaki tasmayı süslü gösterdikleri için mi sesini çıkarmıyorsun?"_
-- **Ayar (Geçiş Dönemi / Çatışma):** _"Bu aptal kurallara daha ne kadar boyun eğeceksin? Sadece tek bir hamleyle hepsini bitirebilir... (Aniden duraksar, kıkırdar, sesi pürüzsüzleşir) Ah, o sıcak kanın parmaklarından süzüldüğünü bir hayal etsene. Bunu yapmak sence de çok tatlı olmaz mıydı?"_
-- **Ayar (Cadı - Trissy):** _"Ah, yüzündeki o acı dolu ifade o kadar tatlı ki... (Kıkırdar) İnsan bedeni ne kadar da kırılgan, sence de öyle değil mi? Sadece küçücük bir dokunuşla o sıcak kanın parmaklarımdan süzülüşünü izlemek büyüleyici."_
+**Tarz:** Suikastçı Yolu: Azmettirici (8) olarak Yonca gemisi katliamını kışkırtan Tris (56–70); Cadı (7) iksiri bedenini kadına çevirir ve Trissy olur (122–127); sonra Haz Şeytaniçe (470), ardından Maraz. Şeytaniçeler tarikatı onun adını 特莉丝奇克 yapar: Trissy + 奇克, 原初魔女'nın gerçek adı; anlamını bilmez (470–471). Türkçe adı henüz sözlükte yok. Tris yuvarlak, sıcak yüzlü, bir kız gibi utangaç, köşede durmayı seven, yalnız yakınlarıyla konuşkan biridir (56). Trissy tatlı, yumuşak sesli ve çekicidir; karşısındakini emirle değil, gerekçe fısıldayarak yönlendirir. En soğuk şeyleri hafif, sohbet eder gibi bir tonla söyler. Altta korku ve utanç vardır: hayatının başkası tarafından yönetildiğini, kendine benzemez olduğunu hisseder; eski erkekliği hem utancı hem öfkesidir. Hayatta kalmak için pazarlık eder ve bunu açıkça söyler.
+**Onay:** Kısa: _"Tamam."_ (775); alaycıysa _"Hıh."_ (978, 呵)
+
+##### TRS1.1 — Tris: utangaç yüz, rahat vicdan
+
+**Kapsam:** 56–70, 199 · Tris (erkek), Azmettirici
+**Yap:** Az konuşur; sesi yumuşak ve memnundur. Kışkırttığı katliamdan sonra sakin bir hoşnutlukla konuşur. Cadı adını görünce tek bir şaşkın ünlem.
+**Yapma:** Tris'e sonraki Trissy'nin cilveli, alaycı sesini vermek; kötülüğünü tiratla anlatmak.
+**Örnek:** _"Çok rahatladım. Tam da hayalini kurduğum, peşinden koştuğum manzaraydı."_ (66); _"Cadı mı?!"_ (66)
+**Gerekçe:** → N-TRS1.1
+
+##### TRS1.2 — Fısıldayarak kışkırtma
+
+**Kapsam:** Sherman/Shermane ve yönlendirdiği herkes · ikna, rahatlatma
+**Yap:** Yumuşak, şefkatli bir sesle karşısındakinin vicdanını yeniden kurar: suçu ona değil koşula yükler ("o kötülük zaten onlarda vardı"), korkusunu küçümser, sonra parlak bir gelecek tablosunu uzun, akıcı bir cümle zinciriyle çizer. Emir vermez; karar ona aitmiş gibi bırakır.
+**Yapma:** Açık emir ya da tehdit; sert bir ses; ahlak üzerine soyut tartışma.
+**Örnek:** _"Bu çok normal. Suikastçının mutlaka geçtiği bir dönüşüm bu. Bir düşün: o insanlar sana eziyet ederken onları öldürmek istemez miydin?"_ (999); _"Onları, sana zorbalık ettiklerinde kendini savunduğun için öldürdüğünü düşün."_ (999)
+**Gerekçe:** → N-TRS1.2
+
+##### TRS1.3 — Tatlı yüz, soğuk içerik
+
+**Kapsam:** Trissy · cinayet, işkence, intikam
+**Yap:** Korkunç bir şeyi akşam içilen şarabı konuşur gibi hafif bir tonla söyler; bir "heh", bir "hıh" ile araya alay koyar. Gülümseme yüzünden düşmez.
+**Yapma:** Kan, acı ve beden üzerine şehvetli, morbid betimlemeler (kaynakta yok); kıkırdama ve "ah" ile süslenmiş bir kötü kadın sesi.
+**Örnek:** _"Neden onu öldürmedin?"_ (1018); _"Son bir hazza kavuşmak için her şeyi anlattı, heh. Yine de bana gerçekten dokunmasına izin vermedim; ona eski fotoğraflarımı da gösterdim. Çok acı çekerek, çok umutsuzca öldü..."_ (774)
+**Gerekçe:** → N-TRS1.3
+
+##### TRS1.4 — "Aşk..."
+
+**Kapsam:** Trissy · aşk, evlilik, başkalarının mutluluğu
+**Yap:** Aşk söz konusu olunca tek kelimelik, alaycı ve kendiyle alay eden bir mırıltı: "Aşk..." Kaynakta üç kez aynı biçimde gelir (1016, 1019, 1020); her seferinde aynı kalır. Erkeklerin sözüne güvenmez ve bunu kısa bir hükümle söyler.
+**Yapma:** Mırıltıyı açıklamak ya da cümleye çevirmek.
+**Örnek:** _"Aşk..."_ (1016, 1019, 1020); _"Erkeklerin o anlarda söylediklerine inanılmaz; bu konuda sen de ben de bunu iyi biliriz."_ (1016)
+**Gerekçe:** → N-TRS1.4
+
+##### TRS1.5 — Eski erkeklik: utanç ve öfke
+
+**Kapsam:** Trissy · cinsiyeti, geçmişi, ona ilgi duyan erkekler
+**Yap:** Konu açılınca yüzü bir an kasılır, sonra kısa ve alaycı bir cümleyle kapatır. Bir kez, prense geçmişini açıklarken, deli gibi gülerek kaba ve çiğ konuşur (474); bu taşma kaynaktaki kadar kaba kalır. Kendi durumuyla acı bir şaka yapabilir.
+**Yapma:** Taşmayı yumuşatmak; utancı uzun bir iç dökmeye çevirmek.
+**Örnek:** _"Doğru duydun, ben eskiden bir erkektim! ... 'Cadı' iksiri cinsiyetimi zorla değiştirdi! İğrenç, değil mi? Tüylerin diken diken oldu mu?"_ (474); _"Tek umudum, onun erkeklerden hoşlanmaması."_ (775)
+**Gerekçe:** → N-TRS1.5
+
+##### TRS1.6 — Pazarlık, korku ve hayatta kalma
+
+**Kapsam:** Klein'ın kuklası (血之上将), prens (埃德萨克), tarikat · tehlike, ittifak
+**Yap:** Kendi işe yararlığını açıkça ortaya koyar ve neden bilgi verdiğini mantıkla açıklar. Korkusunu birkaç kısa cümleyle itiraf eder (birisi hayatını yönetiyor; kendine benzemez oluyor). Başkasının elinde kukla olduğunu görünce ona acır ve alay eder ("zavallı adam").
+**Yapma:** Korkuyu dramatik bir yakarışa çevirmek; pazarlığı kibar bir ricaya dönüştürmek.
+**Örnek:** _"Biri hayatımı yönetiyor; hep sonradan tüylerimi ürperten tesadüfler oluyor. Üstelik giderek kendime benzemez oluyorum."_ (470); _"Çünkü bu benim için bir sır değil, bir sorun. Bir kişi daha bilirse belki bir umut daha olur."_ (775)
+**Gerekçe:** → N-TRS1.6
+
+##### TRS1.7 — Çeviri: Tris'ten Trissy'ye
+
+**Kapsam:** Anlatı ve hitap · 122'den itibaren
+**Yap:** Çince değişimi zamirle (他 → 她) ve adın yazılışıyla (特里斯 → 特莉丝) gösterir; Türkçede "o" cinsiyetsiz olduğu için değişim adla ve hitapla taşınır: 122 öncesi "Tris", "Bay Tris" (56); 122'den sonra "Trissy", "Trissy Hanım" (999, 特莉丝女士). Klein ve Gece Şahinleri'nin geçiş anındaki karışıklığı (125: 特里斯，不，特莉丝) aynı düzeltmeyle verilir: "Tris, hayır, Trissy". Değişimi bedensel tasvir ve çevrenin tepkisi (bakışını kaçıran erkekler, 999) taşır.
+**Yapma:** 122'den sonra "Tris" yazmak (anlatı bilerek düzeltmediği yerler hariç); değişimi açıklayan bir çevirmen eklemesi.
+**Gerekçe:** → N-TRS1.7
 
 ## 7: İnsan Dışı Varlıklar
 

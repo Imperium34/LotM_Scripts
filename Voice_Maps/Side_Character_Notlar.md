@@ -820,3 +820,48 @@ Kural, Divan_Rule 1.1'deki kolonizasyon ölçütüne dayanan bir öngörüdür. 
 1216 ¶8 kendi tahliliyle Başbuğ'un niyetini çözer; ¶20 即使您想将我留在白银城，我也要申请前往; ¶18 Colin: 你的成长比我预想得更好. 1266 ¶9–12 Meclis'e girer (带着鼻音道: 是，首席阁下！). 1267 ¶9 再等一等; ¶21 低沉说道: 出发。 1277 ¶20 沉稳说道 (Tarot'ta söz alıp şart koşar). 1298 ¶64 保持着外表的严肃: 我们立刻去找首席…. 1323 ¶22 抱歉，我需要把刚才说的先记下来. 1393 ¶54 Soytarı: 你已经足够成熟和稳重.
 **Denetim:** 1216, 1266, 1267, 1277, 1298, 1323, 1393 (ZH).
 **Açık soru:** 是，首席阁下 için önerilen "Baş üstüne, Başbuğum." (Dede Korkut sicili; modern askerî "Emredersiniz" Kolluk haritasında kullanılıyor).
+
+---
+
+## Tris / Trissy
+
+> **Numaralama:** 56 ZH/TR ¶ (bolum.py hizalı; Tris'in tarifi TR ¶14); diğerleri ZH satır sırası. Çevrildikçe ZH/TR ¶ eklenmeli.
+> **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm:** Tris: 56 (Joyce'un anlatısı), 63–70 (Yonca katliamı soruşturması, kaçış), 66 ¶58–72 (雪伦夫人'dan Cadı formülünü alır; kimliği 199'da açılır), 199 (geri dönüş). Trissy: 122–127 (Tingen'deki ayin ve kaçış; replik yok), 470–478 (prens 埃德萨克'ın yanında, Klein'la karşılaşma, kaçış), 774–788 (kanalizasyonda, Klein'ın kuklasıyla ittifak), 978, 999–1023 (Sherman/Shermane'i yetiştirir, Stafford Vikontu), 1043–1044, 1127–1133 (Kapı Efendi'yle temas). Kendi replikleri yalnızca 66, 470–474, 774–785, 978, 999–1019, 1043, 1127–1133'tedir.
+> **Eski haritadan düşenler:** "Kan, beden ve acı üzerine kıkırdayan, morbid, şehvetli fanteziler" kaynakta yok; Trissy korkunç şeyleri hafif bir tonla ve kısa söyler (1018 ¶90, 774 ¶62). "Geçiş döneminde iki sesin aynı cümlede savaşması" da yok: dönüşüm sahne dışında olur, 122'den sonra Trissy hazır gelir. Üç eski örnek uydurmadır. Eski Kural 1 (Türkçe "o" sorunu) TRS1.7 olarak korundu.
+
+### N-TRS1.1
+
+56 ¶14 (ZH/TR): 圆圆的、和蔼的脸孔，性格腼腆，像个女孩，总是喜欢待在角落里，只有和他非常熟悉的人，才能明白他是一位多么健谈的人. 66 ¶60–61: 露出和善又满足的笑容道：很舒服，那正是我梦想和追求的场景; ¶62 我想我已经完成了任务，并且做好了提升的准备; ¶65 没问题 (早有准备般); ¶70–72 女巫！(愕然出声) ve iç ses 开什么玩笑！ 199 ¶90 圆脸和善.
+**Denetim:** 56 ¶14 (ZH/TR); 66 ¶58–72, 199 ¶90 (ZH).
+
+### N-TRS1.2
+
+999 ¶46–69: 一点也不意外地笑了笑; Sherman'ın geçmiş öfkesini hatırlatır (¶47); 这很正常…这是刺客必然会有的心理蜕变阶段 (¶52, 平静地打断); 你就当你是被欺凌时反抗，才杀掉了他们 (¶55); 酒窝…略显俏皮: 死了又有什么好怕的？ (¶59); 那是他们本来就拥有的恶念，和你没有任何关系 (¶63); 能让他们内讧…是对你和像你一样的东区无辜居民的仁慈与怜悯 (¶64); 嗓音轻柔: 雪曼 adı ve yeni hayat tablosu (¶68–69, tek uzun cümle zinciri). Sherman ¶72 我会按照你吩咐去做的 der, oysa Trissy açık emir vermemiştir. 1016 ¶64–75 aynı yumuşak yönlendirme; 1018 ¶63–65 Shermane onun cümlelerini tekrar eder (特莉丝经常提及的一些话语).
+**Denetim:** 999 ¶33–72, 1016 ¶63–78, 1018 ¶63–65 (ZH).
+
+### N-TRS1.3
+
+1018 ¶90 笑容不见丝毫阴霾地问道，就像在闲聊昨晚喝的是什么酒: 你为什么不杀她？; ¶93 我在保护你. 774 ¶62 嘿…呵呵: Stafford'un adamının ölümünü hafifçe anlatır (他死得很痛苦很绝望). 1019 ¶49 Shermane'e: 这对你也不是什么坏事…至少你能因此确定他是真的爱你. 471 ¶10 带着点委屈，带着点诱惑，带着点恶趣味地笑道 (Klein'a teklif).
+**Denetim:** 471 ¶9–10, 774 ¶62, 1018 ¶90–93, 1019 ¶49 (ZH).
+
+### N-TRS1.4
+
+1016 ¶77–78 低笑了一声，似讥讽似自嘲般道：爱情……; 1019 ¶88 突然笑了一声，似讥讽似自嘲: 爱情……; 1020 ¶32 低笑之后: 爱情……. 1016 ¶71 男人在那种时候的话不能信，这方面，你和我应该都很清楚; ¶72 他如果真的想和你结婚，就不会防备你…呵呵.
+**Denetim:** 1016 ¶70–78, 1019 ¶88, 1020 ¶32 (ZH).
+
+### N-TRS1.5
+
+474 ¶19–25: 戏谑的笑容 → 你是否清楚，我曾经是一个男人，我的真名是特里斯; ¶23 失笑，笑得前俯后仰，极为剧烈，状似疯子: 哈哈，你没有听错，我曾经是个男人！我曾经和你一样，下面比你还长，比你还粗！但是，‘女巫’魔药强制改变了我的性别！是不是很恶心？…; ¶29 擦掉刚才笑出来的眼泪. 775 ¶10 勾了下嘴角: 我只希望他喜欢的不是男人; ¶13 表情呈现出略微扭曲的状态，有种深埋于心底的羞耻被人活生生挖了出来; ¶15–16 呵了一声，低哑: 不愧是‘血之上将’…. 999 ¶37 神情一下变得有点复杂 (Sherman erkeklerden hoşlandığını söyleyince).
+**Denetim:** 474 ¶19–29, 775 ¶9–17, 999 ¶37 (ZH).
+
+### N-TRS1.6
+
+470 ¶63 你尽快去向值夜者…举报我！; ¶69–71 眸子迷离没有焦距: 有人在操纵我的人生，总是有巧合让我事后惊悚。而且我也越来越不像自己了; ¶76–77 自嘲 ile Haz'a yükselişin durumu kötüleştirdiğini anlatır. 474 ¶30–43 prense: 你真是一个可怜的人…就像那牵着线的木偶 / 一个随时可能被放弃的人质怎么可能会知道？(自嘲一笑). 775 ¶5 嗤笑和自嘲: kendi bilgisinin neden işine yaradığını açıklar; ¶27–28 咬了下嘴唇: 如果我需要一定的帮助，该怎么联络你？; ¶46–48 自嘲一笑: 因为这对我来说是问题，不是秘密. 978 ¶46–47 呵: 在贝克兰德，在这场游戏里，力量并不能解决所有问题。当然，我向来不浪费可以利用他人的机会. Kuru zekâ: 785 ¶49 难道你喜欢在睡觉的地方解决个人卫生问题？
+**Denetim:** 470 ¶55–85, 474 ¶3–60, 775 ¶2–48, 785 ¶43–88, 978 ¶39–50 (ZH).
+
+### N-TRS1.7
+
+Ad ve zamir: 64–126'da 特里斯 / 他; 122'den itibaren 特莉丝 / 她. 125 ¶48–56 Klein ve Leonard'ın geçişi: 特里斯，不，特莉丝; 470 ¶50 从“教唆者”特里斯变成“女巫”特莉丝. 56 ¶11 (ZH/TR) 特里斯先生 → "Bay Tris". 999 ¶33 Sherman: 特，特莉丝女士 → "T-Trissy Hanım". Çevrenin tepkisi: 999 ¶36 Sherman bakışını kaçırır; 782 ¶19 ve 785 ¶45–46 Klein'ın kuklası aracılığıyla bile çekiciliğine karşı temkin.
+**Denetim:** 56 ¶11 (ZH/TR); 64, 125, 470, 782, 785, 999 (ZH).
+**Açık soru:** 特莉丝奇克 (Trissy + 奇克) ve 原初魔女 için Türkçe ad yok; 470–471'de ve sonrasında karar gerekecek.
