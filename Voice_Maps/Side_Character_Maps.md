@@ -1513,85 +1513,49 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ---
 
-## 11. Kiliseler ve İnfaz Kolları (Din Sesleri)
+## 11. Kiliseler (Din Sesleri) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-### Ebedî Gece / Tanrıça Kilisesi
+**İlke:** Kilise sesi bir karikatür değil, birkaç sabit kalıp ve bir tavırdır. Bir mümini tanıtan, sabit dua ve yemin formülleri, göğse çizilen işaret ve inancın gündelik hayata sızan bir iki kuralıdır; geri kalan konuşması kendi sınıfının ve karakterinin sesidir (Bölüm 10). Formüller her geçişte aynı kalır.
 
-- **Çekirdek değer:** Sükût, mahremiyet, gizlilik. Yerçekimi sözdiziminden gelir, sıfattan değil.
-- **Litürjik kayıt:** Ağır Osmanlı çıpası (_mahrum, bilakis, muhabbet, temaşa, bahşetmek_). Dolaylı/edilgen döner, buyurmaz; teselli eder ama mesafeli. _Yapmaz:_ modern soyutlama (umut→ümit, sevgi→muhabbet), sıfat yığma.
-- **İdari kayıt:** Piskoposun yön tarifi / işlev sesi. Sakin, düşük, işlevsel. Osmanlı çıpası **girmez** — yoksa yön tarifi bile tören havası alır.
-- **Saha kayıt (Gece Şahinleri):** Ayrı haritada: 4. bölüm, Tingen Gece Şahinleri — Müfreze (Toplu Harita). Gramer imzası: **edilgen özneye kaçış / isimsizlik** (birinci tekilden kaçınır. "halledilecek", "ben" değil).
-- **Nidalar:** yemin _"Tanrıça aşkına."_ / selam: _"Tanrıça'nın Sükûneti üzerine olsun"_ / teselli-uğurlama: _"Rüyaların asude olsun."_ / şükür: _"Ulu Ece'ye medholsun."_ / vefat-cenaze: _"Ruhu sükûnete erdirildi."_ / infaz-arındırma: _"Karanlığa iade edilecek."_ / kutsama-veda (May the Goddess bless you) _"Ulu Ece seni/beni himaye etsin"_
+**Formül tablosu (donmuş):**
 
-### Fırtınalar Hâkimi / Fırtına Kilisesi
+| Kilise | Selam / övgü | Dua | Yemin | İşaret |
+|---|---|---|---|---|
+| Ebedî Gece | "Ulu Ece'ye medholsun." (赞美女神) | "Ulu Ece / Tanrıça seni (sizi, bizi) himaye etsin." (愿女神庇佑…) | — | göğse dört kez dokunup Kızıl Ay'ı çizmek (画绯红之月) |
+| Buhar ve Çarklar | — | — | "Buhar aşkına!" (蒸汽在上) | göğse nokta nokta dokunup üçgen Buhar ve Çark Mukaddesat Amblemi'ni çizmek |
+| Fırtınalar Hâkimi | — | — | "Fırtına aşkına!" (风暴在上) | Fırtına amblemi (风暴徽章) |
+| Ebedî Yanan Güneş | "Güneş'e medholsun!" (赞美太阳) | — | — | kollar yukarı açık "Güneş'e övgü" duruşu |
 
-- **Çekirdek değer:** Öfkeyi biriktirmemek, anında boşaltmak. Yerçekimi _hızdan_ gelir. Kısa cümle, az bağlaç, emir kipi.
-- **Arka plan (register'i yönlendirir, diyaloğa yazılmaz):** Agresyon doktrinden değil, **Denizci yolunun potion etkisinden** gelir. Direnilmezse öfke taşar. Bu yüzden agresyon _doğada var_, bahane değil; ve öfke bir **irade sınavıdır**. İrade = kıdem denklemi register'i ikiye böler:
-  - _Kontrol edenler_ (kıdemli, güçlü irade: Alger): öfke **bastırılmış ama sızan** gerilim. Kısa, sabırsız, ama patlamaz; dişlerin arasından. _Zapt edilmiş_ hamlık.
-  - _Kontrol edemeyenler_ (zayıf irade, düşük ardıl): öfke doğrudan taşar. Kısa fitil, patlayıcı, düşünmeden.
-- **Litürjik kayıt:** Osmanlı çıpası **var ama celal akordunda**. Ebedî Gece'nin örtülü mahremiyeti değil, _coşkun, yüksek-tempolu buyruk_. _kahır, gazap, tuğyan, cebbâr, kahhâr_ kökleri; teselli değil tehdit taşır. Sakin değil ama başıboş da değil. **Yönlendirilmiş şiddet**. _Yapmaz:_ uzun tören cümlesi, dolambaç, edilgen kaçış. Ebedî Gece "bahşetti" derken Fırtına "boşalt", "kır", "çök" der.
-- **İdari kayıt:** Sabırsız, süssüz, dolaysız. Yön tarifi bile emir gibi çıkar. Nezaket dolgusu minimum.
-- **Saha kayıt (Salahiyetli Tecziyeciler):** Çoğunlukla Tiran yolu. Gramer imzası: **birinci tekili gizlemez**. Gece Şahinleri'nin tam zıddı ("bana bırak", "ben hallederim"). İfşa riskini göze alır, dili örtünmez. Alger bu evin örneği (Bkz. Asılmış Adam).
-- **Nidalar:** yemin _"Fırtına aşkına."_ / selam: _"Fırtına yolunu açsın."_ / muharebe-narası: _"Gökler başına çöksün!"_ / selam jesti: **yumruğunu sıkıp göğsüne vurma** / şükür: _"Kudret Hâkim'indir!"_
+##### KLS1.1 — Ebedî Gece: sükûnet ve himaye
 
-### Buhar ve Çarkların İlahı Kilisesi
+**Kapsam:** Tanrıça'nın rahipleri, piskoposları, Gece Şahinleri, sıradan müminler
+**Yap:** Kilisenin havası sessizlik ve karanlıktır; içeride herkesin sesi yumuşar (25: "Sessiz karanlık ona da bulaşmışçasına tonu yumuşadı"). Rahip ve piskopos kısa, sakin, şefkatli konuşur; günah çıkarana "çocuğum" der. Vaaz dili koşut cümlelerle kurulur ("Onlar ... annelerdir; onlar ... yetimlerdir; onlar ... yoksullardır.") ve himaye vaadiyle biter (黑夜没有放弃他们，给予了他们眷顾). Gündelik müminde inanç yalnız formülde ve işarette görünür; Gece Şahinleri işarete bir alay katabilir (47: İhtiyar Neil, Klein'a işareti unuttuğu için takılır).
+**Yapma:** Kilise dilini ağdalı bir korku ya da karanlık tiradına çevirmek; her rahibi gizemli fısıltılarla konuşturmak.
+**Örnek:** _"Ulu Ece'ye medholsun."_ (26); _"Günah çıkarma kabininden sağa dön ve sonuna kadar yürü. Yan tarafta gizli bir kapı olacak. İçeri girdiğinde biri sana yol gösterecek."_ (25)
+**Gerekçe:** → N-KLS1.1
 
-- **Çekirdek değer:** Prosedürel kesinlik, makineye fanatik bağlılık. Yerçekimi _ritimden_ gelir. Düzenli, ölçülü, tekrarlı sözdizimi; adım adım işleyen cümle.
-- **Litürjik kayıt:** **Osmanlı taban** (bir Kilise, kutsalı var. _Nizam, tertip, muvazene, kaide_). Ama Roselle etkisiyle **mekanik bağlamlara modern terim yapışır**. Kritik sınır: modern kelime _her yere değil, yalnızca makineyle temas eden yerlere_ sızar. Cümlenin geri kalanı arkaik-dinî kalır; sızıntı çark/dişli/ölçüm anında belirir. Bu çarpışma, arkaik tören dili içine oturmuş modern teknik terim. O karakteristik tekinsizliği kurar. _Yapmaz:_ modern kelimeyi tabana yayıp dili tekdüze modernleştirmek (o zaman sızıntı olmaktan çıkar, tekinsizlik kaybolur); organik/duygusal imge; düzensiz cümle.
-- **İdari kayıt:** Prosedürel, madde madde işleyen kesinlik. Sivil örtü altında (güvenlik şirketi/kolluk) düz-profesyonel. Ama ritmin fazla düzenli oluşu hafif tekinsizlik sızdırır.
-- **Saha kayıt (Makine Külli Şuuru):** Çoğunlukla Bilgin ve Gizem Avcısı yolları. Çok sayıda Mühürlü Eser taşır. Gramer imzası: **insani sıcaklığı olmayan, fazla ölçülü, âdeta okunmuş replik** — duraksama yok, dolgu yok. Beden-tekinsizliği (aşırı mekanikleşme) dile sızar.
-- **Nidalar:** yemin _"Buhar aşkına."_ / selam: _"Buhar muvazenede olsun"_ / prosedür-onayı: _"Parametreler kâmil, nizam sağlandı"_ / şükür: _"Kusursuz mekanizmaya medholsun"_
+##### KLS1.2 — Buhar ve Çarklar: coşkulu mümin, titiz memur
 
-### Ebedî Yanan Güneş Kilisesi
+**Kapsam:** Sıradan müminler (Anna), Makine Külli Şuuru (机械之心) memurları, kilise görevlileri
+**Yap:** Sıradan mümin inancını coşkuyla ve yüksek sesle söyler: "Buhar aşkına!", "Tanrı'ya minnettarım, Tanrı'yı yüceltirim!", göğsüne tekrar tekrar üçgen çizer. Kilise memurları yöntemli ve tekniktir: kanalları "tersinden tarar", olasılık konuşur ("yüzde yüz başarıyı garanti eden bir yol yoktur"), bulguları sırayla raporlar. Mekanik kelimeler doğal gelir.
+**Yapma:** Memurları duygusuz robotlara çevirmek; her müminin ağzına makine imgesi doldurmak.
+**Örnek:** _"Ah, Buhar aşkına, zavallı Joyce'um, ne yürek parçalayıcı şeyler yaşamışsın! Tanrı'ya minnettarım, Tanrı'yı yüceltirim!"_ (56, yayımlanmış); _"Burası gizemli Aşkın dünyası; yüzde yüz başarıyı garanti eden hiçbir yol yoktur."_ (351, 伊康瑟)
+**Gerekçe:** → N-KLS1.2
 
-- **Çekirdek değer:** Mutlakiyet, ihtişam, arındırma ve tiyatrallik. Yerçekimi _şevk ve niyetten_ gelir. Sükûnetin veya şüphenin yeri yoktur; her şey gün ışığı gibi ortada, yüksek sesli ve görkemli olmalıdır.
-- **Litürjik kayıt:** **İbrahimî/Esmâ-ül Hüsnâ tabanı (Nur ve Kuddüs akordunda).** Fırtına Kilisesi "Cebbar/Kahhar" (yıkım) iken, Güneş Kilisesi "Kuddüs, Celil, Nur" (kutsiyet ve aydınlanma) temelli konuşur. _Tecelli, münezzeh, şavk, inayet_ gibi aydınlık ve kutsallık bildiren Osmanlı çıpaları kullanılır. Sözdizimi tiyatral, geniş ve şiirseldir; eller göğe açılarak söyleniyormuş hissi vermelidir. _Yapmaz:_ Gizemli, fısıltılı, edilgen veya kısa, kesik cümleler. Onlar gölgelerde saklanmaz, kendilerini ilan ederler.
-- **İdari kayıt:** Kibirli, coşkulu ve dışa dönük. Basit bir yön tarifi bile bir vaaz veya kutsama havası taşır. Her eylem, Işık'ın bir lütfu gibi sunulur.
-- **Saha kayıt (Arındırıcılar / Purifiers):** Güneş ve Ozan (Bard) yollarının temsilcileri. Gramer imzası: **İlan edici ve yüksek sesli özne.** Savaşırken Ebedî Gece gibi sessizce görev yapmazlar; duaları ve yetenekleri şarkı gibi, vaaz gibi yüksek sesle okunur. Karanlığı yargılayan, etken bir dil kullanırlar ("Seni arındıracağım", "Işık seni yaksın").
-- **Nidalar:**
-- Yemin: _"Kutsal Işık aşkına." / "Yüce Güneş hakkı için."_
-- Selam / Jest: **Kolları güneşi kucaklar gibi iki yana açarak** _"Güneş'e övgüler olsun."_ (Burada Esmâ/İbrahimî tabana uygun olarak doğrudan **"Güneş'e hamdolsun"** da harika çalışır).
-- Veda: _"Işık yolunu aydınlatsın."_ / _"Nur içinde kal."_
-- Muharebe narası / Arındırma: _"Işık tecelli etsin!"_ / _"Karanlık küle dönsün!"_
+##### KLS1.3 — Fırtınalar Hâkimi: ateşli, katı, onur düşkünü
 
-### Toprak Ana Kilisesi / Hasat Kilisesi (God of Combat'ın Zıddı)
+**Kapsam:** Fırtına müminleri (denizciler, filozoflar, Alger'in çevresi), Salahiyetli Tecziyeciler (代罚者)
+**Yap:** Yemin "Fırtına aşkına!"dır. İnanç gündelik hayata katı kurallarla sızar: evlilik öncesi iffet, kadına tepeden bakış, kadın ve onur için düello. Ateşli ve kesin konuşur; Loen'in filozoflarının çoğu da bu inançtandır, bu yüzden bir Fırtına mümini hem sert hem keskin zekâlı olabilir.
+**Yapma:** Her Fırtına müminini kaba bir denizciye çevirmek; kuralları vaaz ettirmek (sözden çok tavırda görünür).
+**Örnek:** _"Ya Hâkim, Fırtına aşkına! Bu meselenin böylece neticeye bağlanacağını ne tahayyül edebilirdim ne de inanabilirdim!"_ (47, yayımlanmış)
+**Gerekçe:** → N-KLS1.3
 
-- **Çekirdek değer:** Büyüme, organik döngü, kök salma ve kaçınılmazlık. Yerçekimi _sabır ve döngüden_ (doğum-hasat-ölüm) gelir. Cümleler sağlam, yere basan, telaşsız ama devasa bir ağırlığa sahip olmalıdır.
-- **Litürjik kayıt:** **Organik/Biyolojik Osmanlı Çıpası.** Ebedî Gece ruhlara hitap ederken, Toprak Ana doğrudan 'bedene, cana ve toprağa' hitap eder. Soyut teoloji yerine _fıtrat, hilkat, tevellüt, neşvünema (filizlenme/büyüme), tohum, hasat_ kelimeleri etrafında döner. Şefkatlidir, ancak bu doğanın şefkatidir; yani içinde acımasız bir "budama/hasat" gerçeği de barındırır. _Yapmaz:_ Aceleci veya köşeli cümle kurmaz, mekanik kelimelerden ve şatafatlı ışık metotlarından (Güneş) uzak durur.
-- **İdari kayıt:** Peder Utravsky'nin sesi. İnatçı, sarsılmaz, ebeveyn edasında. İnsana bir çocuk veya bakıma muhtaç bir fidan gibi yaklaşır. Birisi reddetse bile o büyük bir sabırla (ve devasa bir fiziksel güçle) onu "doğru yönde büyümeye" zorlar (Emlyn'e yaptığı tam olarak budur).
-- **Saha kayıt (Hasatçılar/Planters & Sanguine/Vampirler):** Savaşırken veya büyü yaparken şiddeti bir yıkım olarak değil, bir "tarım/doğa faaliyeti" olarak görürler. Gramer imzası: **Dönüşüm ve döngü fiilleri.** Düşmana "Seni öldüreceğim" demezler; onu toprağa katılacak bir gübre, budanması gereken çürük bir dal veya hasat edilecek bir ekin olarak tarif ederler.
-- **Nidalar:**
-- **Selam / Karşılama:** _"Hayat bul."_ veya _"Toprak bereketli olsun."_ (Jest: Sağ eli göğsün üzerine koyarak, bir ağacın hafifçe rüzgarda eğilmesi gibi belden eğilerek).
-- **Yemin / Şaşkınlık:** _"Toprak aşkına!"_ (Emlyn ve Sanguine'ler gizliden gizliye _"Kızıl Ay aşkına!"_ der).
-- **Şükür / Yüceltme:** _"Varlığın Anası'na tazimle."_ veya _"Menşe'den gelen berekete tazimle."_ (Esmâ-ül Hüsnâ yasağından ötürü 'hamd/şükür' kullanmıyoruz, organik yaratılışa saygı sunuyoruz).
-- **Teselli / Uğurlama:** _"Menzilin bereketli olsun."_ veya (Ölüm/Veda için) _"Toprak seni sarsın." / "Menşe'ye dönüyor."_
-- **Muharebe narası / Savaş:** _"Hasat vakti geldi."_ veya _"Toprağa karış."_
+##### KLS1.4 — Ebedî Yanan Güneş, Toprak Ana ve ötekiler (kısa)
 
-### Cenk Tanrısı Kilisesi / Savaş Rahipleri (Church of God of Combat)
-
-- **Çekirdek değer:** Mutlak hiyerarşi, bedensel dayanıklılık, onur ve "Gurub" (son ışık sönene dek savaşma). Yerçekimi _zırhın ve silahın ağırlığından_ gelir. Fırtına Kilisesi'nin agresyonu patlayıcı ve fevridir; Cenk Kilisesi'nin agresyonu ise **disiplinli, nizami ve acımasızdır.** Spartalı bir militarizm hâkimdir.
-- **Litürjik kayıt:** **Askerî/Nizami Osmanlı Çıpası.** Şiirsellik veya soyut teoloji yoktur; dinî metinleri bir kışla talimatnamesi veya bir savaş taktiği kitabı gibi tınlar. _Nizam, satıh, taarruz, tahkimat, gaza, şan, kudret_ kelimeleri etrafında döner. Onlar için ibadet; kılıç bilemek, zırh kuşanmak ve kan dökmektir. "Gurub" (Alacakaranlık) konsepti, onların tek şiirsel noktasıdır: Günün ölümü, savaşçının en onurlu anıdır. _Yapmaz:_ Dolambaçlı laflar etmez, merhamet dilenmez, sızlanmaz. Kırılır ama esnemez bir dildir.
-- **İdari kayıt:** Kışla komutanı dili. Rütbeye mutlak itaat esastır. Emirler kısa, tok ve yankılıdır. "Rica ederim" demez, "Talep edildi, icra edilecek" der.
-- **Saha kayıt (Savaş Rahipleri / Şafak Şövalyeleri):** Savaşçı (Warrior) yolunun temsilcileri. Gramer imzası: **Emir kipi ve eksiltili cümleler.** Konuşurken nefeslerini israf etmezler, çünkü her nefes bir kılıç savurmaya saklanmalıdır. Fırtına rahipleri bağırırken öfkeden kontrolü kaybeder; Cenk rahipleri bağırırken düşmanı sindirmek ve birliği düzene sokmak için, ritmik bir savaş narası atarlar.
-- **Nidalar:**
-- **Selam / Karşılama:** _"Şan ve Kudretle."_ veya kısaca _"Nizam üzere."_ (Jest: Sağ yumruğu göğüs zırhına/kalbe, metalik bir ses çıkaracak şekilde vurarak çeneden hafifçe eğilme).
-- **Yemin / Şaşkınlık:** _"Ulu Şövalye aşkına!"_ veya _"Gurubun adına!"_
-- **Şükür / Yüceltme:** _"Şan olsun Hükümdar'a."_ veya _"Kudret Cenk'indir."_ (Burada Fırtına ile ufak bir paralellik var, çünkü ikisi de fiziksel güce tapar).
-- **Teselli / Uğurlama / Ölüm:** Ebedî Gece'nin "şefkati" veya Toprak Ana'nın "döngüsü" burada yoktur. Vefat eden biri için: _"Guruba karıştı."_ veya _"Kılıcı kırıldı, şanı baki."_ denir.
-- **Muharebe Narası:** _"Harp emredildi!"_ veya kalkanlara kılıçla vurarak _"Son ışık sönene dek!"_
-
-### İlim ve Hikmet Tanrısı Kilisesi
-
-- **Çekirdek değer:** Mutlak rasyonalite, aydınlanma, analitik üstünlük ve cehaletin reddi. Yerçekimi _kavrayıştan (idrak) ve kanıttan (burhan)_ gelir. Fırtına fiziksel güçle, Güneş kutsal ışıkla ezerken; İlim Kilisesi muazzam bir **entelektüel ağırlıkla ve çürütülemez mantıkla** ezer.
-- **Litürjik kayıt:** **Skolastik Osmanlı Çıpası (Kadir-i Mutlak Tabanı).** Güneş Kilisesi'nin o tiyatral ve coşkulu duaları yerine, burada bir medrese/akademi ağırlığı vardır. Külliyat, tefsir, şerh, burhan, idrak, nass, marifet, külli ve cüz gibi felsefi/kelamî terimler etrafında döner. İnançları körü körüne bir tapınma değil, evrensel gerçeğin (hakikatin) idrak edilmesidir. Bu yüzden duaları bir yakarıştan ziyade bir "teori ilanı" gibi tınlar. _Yapmaz:_ Duygusal hezeyanlara girmez, tesadüflere inanmaz, dünyevi/argo kelimeler kullanmaz.
-- **İdari kayıt:** Isengard Stanton'ın veya bir başöğretmenin sesi. Didaktik, açıklayıcı, adım adım ilerleyen bir dil. Yön tarifi yaparken bile etraftaki mimarinin tarihinden veya sokağın isminin kökeninden bahsedebilirler. Karşısındakine hep "bir şeyler öğrenmesi gereken bir talebe" şefkati ve kibriyle yaklaşırlar.
-- **Saha kayıt (Okuyucular / Beyaz Kule Yolu):** Bilgiyi silaha çevirenlerin yolu. Gramer imzası: **Neden-sonuç yapıları, tümdengelim ve teşhis.** Savaş alanında düşmana bağırmazlar; düşmanın yeteneklerini, zayıflıklarını ve açıklarını yüksek sesle (bir anatomi dersi verir gibi) analiz ederler. Cümleleri _"Mademki...", "Dolayısıyla...", "Tespit edildi..."_ bağlaçlarıyla doludur.
-- **Nidalar:**
-- **Selam / Karşılama:** _"Nur-ı akıl üzerine olsun."_ veya _"Hikmet yolunu aydınlatsın."_ (Jest: Sağ elin işaret ve orta parmağını şakağa dokundurarak hafifçe baş eğme - zihnin/aklın kutsanması).
-- **Yemin / Şaşkınlık:** _"İlim aşkına!"_ veya (çok saçma bir şey gördüklerinde) _"Bu nasıl bir cehalet!"_
-- **Şükür / Yüceltme:** _"Aklın Nuru'na hamdolsun."_ veya _"Bahr-i İrfan'a şükürler olsun."_ (Kadir-i Mutlak grubunda oldukları için Esmâ-ül Hüsnâ'nın o görkemli "hamd/şükür" kuralını burada serbestçe ve tam gücüyle kullanıyoruz).
-- **Teselli / Uğurlama:** _"Hakikat seni kucaklasın."_ veya vefat eden biri için _"İrfan deryasına (Bahr-i İrfan'a) karıştı."_
-- **Muharebe Narası / İnfaz:** _"Cehaletin bedeli ödenecek!"_ veya _"Burhan tecelli etti, hüküm mühürlendi."_
+**Kapsam:** Az görünen kiliseler
+**Yap:** Güneş: övgü ve ışık; slogan "Güneş'e medholsun!" ve kollar yukarı açık duruş. Ozan Yolu'nun sloganı "Haydi Güneş'e medhedelim!", "Karanlığı kov, Güneş'e medhet." (140, 686). Kitapta bu övgü bir şakaya da dönüşür: Güneş eserlerinin yanında kalan herkes "yalnız Güneş'e medheden bir aptala" döner (133, 139); bu şaka anlatıda aynı kalıpla verilir. Toprak Ana: Peder Utravsky (306–307) "Peder" denmesini tercih eder; eski bir korsandır, sakin ve açık sözle itiraf eder. Cenk Tanrısı ve İlim ve Hikmetin İlahı kiliselerinin kitapta belirgin bir sesi yoktur; ses haritası çıkarılmadı.
+**Yapma:** Bu kiliselere kaynakta olmayan dua formülleri uydurmak.
+**Gerekçe:** → N-KLS1.4
 
 ## 12. İlahların Metruk Diyarı — Gümüş Şehir
 
