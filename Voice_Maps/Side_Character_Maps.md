@@ -1480,24 +1480,65 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ## 9. Backlund
 
-**Not (Prangalı Yolu / Chained Pathway):** Sharron ve Maric aynı yolun mensubudur. Bu yolun doktrini _perhizkârlık ve arzuların bastırılmasıdır_ (Gül Ekolü'nün İfrat Ekolü'ne tam zıt) ve yol, bastırılması gereken bir _öldürme dürtüsü_ taşır. İkisi bu doktrinin iki ucudur ve birbirine referansla okunmalıdır: Sharron _başarılmış_ bastırma, Maric _başarısız_ bastırma. Aralarındaki mertebe farkı = kontrol derecesi.
+**Not (Mahkûm / Prangalı Yolu):** Sharron ve Maric aynı Yolun mensubudur (Mahkûm Yolu; Mertebe 0 adıyla Prangalı Yolu). Gül Ekolü'nün İtidal Fırkası'ndandırlar: arzuyu bastırmayı, sade ve perhizkâr bir hayatı savunurlar; karşılarında Sefahat Fırkası vardır. Yolun laneti her Mertebede başka bir arzu ve öldürme dürtüsüdür (Meczup, Kurtadam, Hortlak, Tayf). İkisi aynı öğretinin iki ucudur ve birbirine göre okunur: Sharron bastırmayı başarmıştır, Maric başaramamaktadır.
 
-### Sharron (Perhiz / Temperance)
+### Sharron (İtidal / Temperance) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-- **Tarz:** Prangalı yolunun mensubu; Maric'in bir-iki mertebe üstünde (Mertebe 5 Tayf → Mertebe 4 Kukla). **Az konuşan biridir. Fakat bu suskunluk çekingenlik değil, perhizin gramere dönüşmüş hâlidir:** fazlalığın doktriner bastırılması. Sesi illüzyonlu ve uhrevidir; sık sık aynalarda ve camda belirir, insanların karşısına nadiren çıkar, düşüncelerini çoğu zaman yoldaşı Maric aracılığıyla iletir. Roman onu zaman zaman "konuşan bir oyuncak bebek" olarak tanımlar.
-- **Kural 1 (Ulaşılmış Bastırma = Dinginlik):** Daima sakin görünür, hiçbir aşırı duygu sergilemez. Terseliği Gehrman'ın veri-soğukluğu ya da bir gizleme _değildir_. Ulaşılmış perhizin dinginliğidir. Bir arzuyu, bir fazlalığı bastırdığı için az konuşur. Konuştuğunda cümleleri seyrek, kesin ve arzudan arınmıştır.
-- **Kural 2 (Neyin Sessizliği Böldüğü):** Suskunluk varsayılandır. Asıl mesele _neyin_ konuşmaya değer bulunduğudur. Yalnızca gerçekten gerekli olan (bir uyarı, bir sezgi, bir karar) sessizliği böler. Boş laf, nezaket kalıbı, duygusal tepki yoktur. Sükût, kanıtlayacak bir şeyi olmamanın sükûtudur.
-- **Kural 3 (Tayf/Kukla Tekinsizliği):** Wraith-Puppet doğası dile bir _cam-ardı_ mesafesi katar: sanki bir aynanın öte yanından konuşuyormuş gibi, hafifçe bedensiz ve bebeksi bir düzlük. Sahne oyunlarını ve masalları izlemekten hoşlanır. S"essiz, mesafeli bir estetik haz.
-- **Kural 4 (Neredeyse-Görünmez Çatlak):** Maske (perhiz/dinginlik) / öz (öldürme dürtüsü, arzu) / çatlak (bastırmanın başarısızlığı) şablonunda Sharron'ın çatlağı neredeyse hiç belirmez. O, _başarılmış_ bastırmadır. Maric'in kronik çatlağının tam zıddıdır. İkisi aynı doktrinin iki ucudur.
-- **Ayar:** _"Hayır. O tuzağa düşmezler."_ (Sessizlik.) _"Başka bir yol bulmalısınız."_
+**Tarz:** Tayf (5), sonra Kukla (4). Soluk, porselen gibi ince yüzlü, mavi gözlü; aynalarda ve camlarda belirip kaybolur. Anlatı onu "bir oyuncak bebek gibi" diye anar. Kelimeden tasarruf eder: mümkünse tek kelime, mümkünse hiç. Neden diye sormaz, açıklamaz, kendini anlatmaz. Bu sükût çekingenlik değil, ulaşılmış perhizin kendisidir. Uzun konuştuğu tek konu İtidal öğretisi ve hocasıdır. Tarot Cemiyeti'nde İtidal (节制).
+**Onay:** _"Olur."_ (好。)
 
-### Maric
+##### SHR1.1 — Tek kelime, bazen hiç
 
-- **Tarz:** Prangalı yolunun mensubu; Sharron'ın bir-iki mertebe altında (Mertebe 6 → Mertebe 5 Hortlak). Solgun yüz, kötücül kahverengi gözler; beyaz gömlek, siyah yelek, yaklaşık 28 yaşında. Aynı perhiz doktrinine inanır ama Sharron'ın aksine tutturamaz. (Tarot Cemiyeti'nde Kılıç Şövalyesi kod adıyla Küçük Arkana.)
-- **Kural 1 (Başarısız Bastırma):** Yolunun getirdiği öldürme dürtüsü gözlerinden sızar; bakışları sürekli bir bunalım ve gizli bir kötücüllük taşır, hafif çılgın bir hava. Sharron'ın _ulaştığı_ dinginliğin başarısız hâlidir. Kontrol her an çatlamak üzeredir. Maric, Sharron'ın kontrolü kayarsa döneceği kişidir; Sharron ise Maric'in olmaya çalıştığı kişi.
-- **Kural 2 (Sharron'ın Sözcüsü):** Sharron nadiren doğrudan konuştuğu için Maric çoğu zaman onun sözcüsüdür; düşüncelerini aktarır, ortak kararlarını dile getirir. Sharron'dan daha ifadeli ve konuşkandır ama bu ifade _gergindir_. Bastırılmış bir şeyin üzerine sıvanmıştır.
-- **Kural 3 (Makabre Yalnızlık):** Kontrol ettiği zombilerle iskambil oynar. Mizahı ve dili morbid, soğuk, hafif kaçık; ölümle ve kuklalarıyla kurduğu ilişki gündelik bir yalnızlığın gölgesindedir.
-- **Ayar:** _"Sharron duydu. Cevabı da pek hoşuna gitmedi."_ (Gözlerinde bir şey kıpırdar.) _"Yerinizde olsam bu kadar ısrar etmezdim."_
+**Kapsam:** Tüm görünümleri
+**Yap:** Cevap tek kelimedir ya da kısa bir yargı cümlesi ("Var.", "Ücretsiz.", "Yok.", "Kimse bilmiyor."). Soruyu sormaz, açıklamayı istemez ("Olur." der, neden diye sormaz). Temel nezaket vardır ama o da çıplaktır: "Teşekkürler.", "Mutlu yıllar."
+**Yapma:** Cümleyi doldurmak; nezaket kalıplarını uzatmak; tamamen nezaketsiz bir ses (eski haritanın hatası).
+**Örnek:** _"Ücretsiz."_ (278); _"Var."_ (279); _"Olur."_ (433); _"Mutlu yıllar."_ (457)
+**Gerekçe:** → N-SHR1.1
+
+##### SHR1.2 — Keskin tespit
+
+**Kapsam:** Karşısındakini değerlendirirken
+**Yap:** Kısa bir cümleyle karşısındakinin zaafını ya da sırrını söyler, kesin ve duygusuz. Aynı kısalıkla kendi zaafını da kabul eder.
+**Yapma:** Tespiti alay ya da iltifatla yumuşatmak.
+**Örnek:** _"Fazla açıklıyorsun. Doğal durmuyor."_ (346); _"Sen Mertebe 9'dan fazlasısın; sende çok farklı bir şey var."_ (330); _"Elinde beni bastıran bir mühürlü eser var."_ (330)
+**Gerekçe:** → N-SHR1.2
+
+##### SHR1.3 — Öğreti ve hoca: tek uzun ses
+
+**Kapsam:** İtidal öğretisi, Gül Ekolü'nün tarihi, hocası
+**Yap:** Yalnız burada cümleleri uzar ve bir inanç taşır; yine de sade, süssüz ve sakindir. Hocasından "hocam" diye söz eder ve onun bedeninin bütünlüğünü dilemesini kısa söyler.
+**Yapma:** Bu anları ateşli bir vaaza çevirmek.
+**Örnek:** _"Başta zorbalığa uğramamak içindi. Şimdi kendimi ve yoldaşlarımı koruyabilmek, intikam ve itidal fikrini yaymak için... Herkes arzusunu dizginleyebilseydi savaş da olmazdı, katliam da, bunca acı da."_ (878)
+**Gerekçe:** → N-SHR1.3
+
+##### SHR1.4 — Neredeyse görünmeyen çatlak
+
+**Kapsam:** Maric'in laneti, kendi arzusu
+**Yap:** Çatlak tek bir yarım kalmış cümle ve bir sessizlik olarak gelir; açıklanmaz.
+**Yapma:** Çatlağı duygusal bir döküşe çevirmek.
+**Örnek:** _"Önceden fazla iğne yaptı. Başka bir çeşide geçince de yalnızca ilk üç dört seferinde işe yaradı; yeni bir çeşit bulamadık artık..."_ (338; cümle yarıda kalır, susar)
+**Gerekçe:** → N-SHR1.4
+
+### Maric `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Tanıtıldığında Hortlak (6), sonra Tayf (5). Soluk yüzlü, sesi boğuk ve kısık (沙哑, 低沉含糊). İkilinin sözcüsü ve pazarlıkçısıdır: Yolu, Ekolün tarihini, planı ve fiyatı o anlatır. Aynı öğrete inanır ama laneti tutamaz; lanet bedeninde görünür: yüz kası seğirir, uzun konuştuktan sonra arzusu kıpırdar ve şakağını, gözlerini ovar. Bir kez patlar. Yatıştırıcı iğnelerle ayakta durur. Tarot Cemiyeti'nde Kılıç Şövalyesi (Küçük Arkana).
+**Onay:** _"Olur."_ (好。); kabulünü başıyla da verir.
+
+##### MRC1.1 — Boğuk sesli sözcü ve pazarlıkçı
+
+**Kapsam:** Pazarlık, açıklama, plan
+**Yap:** Kısa, düz ve iş odaklı; pazarlığı açıkça yapar ("Karşılığında ne verebilirsin?"). Bilgi verirken uzun, sıralı ve öğretici anlatır (Yolun Mertebeleri, Ekolün tarihi). Sesi anlatıda boğuk ve kısık diye işaretlenir.
+**Yapma:** Ona morbid ya da kaçık bir mizah vermek (kaynakta yok); Sharron'ın tek kelimelik tarzını ona da giydirmek.
+**Örnek:** _"Gerçekten epey gizem bilgimiz var, 卡拉曼巫王的《秘密之书》 gibi; ama karşılığında ne verebilirsin?"_ (329); _"Sen yalnızca bir Mertebe 5'sin; yeterince yetkin değilsin."_ (1225)
+**Gerekçe:** → N-MRC1.1
+
+##### MRC1.2 — Bedende görünen lanet
+
+**Kapsam:** Lanet, dolunay, kendi arzusu
+**Yap:** Laneti anlatırken yüzü seğirir; uzun konuşmanın ardından arzusu kıpırdar, şakağını ovar. Lanetten söz ederken cümle bir anda boğuk bir haykırışa döner ve kendini bırakmaktansa ölmeyi tercih ettiğini söyler. Yatıştırıcıyla konuşması yavaşlar.
+**Yapma:** Laneti soğukkanlı bir anlatıya çevirmek; patlamayı sık kullanmak (bir kez gelir).
+**Örnek:** _"Bu Mertebeden itibaren lanet başlar; Meczup kolayca şirazeden çıkar."_ (331, yüzü seğirerek); _"Kendimi bırakacaksam ölmeyi yeğlerim!"_ (331, boğukça haykırarak)
+**Gerekçe:** → N-MRC1.2
 
 ---
 

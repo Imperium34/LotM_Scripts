@@ -1174,3 +1174,35 @@ Güneş: 140 歌颂者…他们的口号是：“让我们赞美太阳吧！”;
 ### N-DAN1.5
 1248 ¶9 达尼兹大人; ¶19 立刻给我准备一个干净安宁的祭坛，我要向神祷告; ¶48 抽签决定，这样最公平; 1270 ¶6–32 kısa buyruklar, misafirlere yemek; 1291 ¶51–56 狗屎！… 这就是文盲的下场…语言天赋这种事情和智商有关; 1381 ¶23 电报局 iç ses. İnanç: 896 ¶14 我信仰的是‘风暴之主’; 935 ¶35 作为一名海盗，或多或少都要信仰‘风暴之主’…远离棺材 (ALG1.7/KLS1.3: Fırtına yemini "Ya Hâkim").
 **Denetim:** 896, 935, 1248, 1270, 1291, 1381 (ZH).
+
+---
+
+## Sharron ve Maric
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.
+> **Ad düzeltmeleri:** Tarot adı "Perhiz" değil "İtidal" (words.md, 节制); fırkalar sozluk.yml'den: İtidal Fırkası / Sefahat Fırkası (eski haritadaki "İfrat Ekolü" yerine). Yol adı Mahkûm Yolu, Mertebe 0 adıyla Prangalı Yolu (kullanıcının Mertebe 9 / 0 kuralı). 卡拉曼巫王, 《秘密之书》 sözlükte yok.
+> **Eski haritadan düşenler:** Sharron "boş laf ve nezaket kalıbı yoktur": teşekkür ve bayram tebriği vardır, yalnızca çıplaktır (457 ¶76, ¶82). Maric "morbid, kaçık mizah": repliklerinde yok; boğuk, kısa ve iş odaklıdır. Diğer gözlemler (Sharron'ın sükûtu, Maric'in sözcülüğü, iki ucun karşıtlığı, zombilerle kâğıt oynaması anlatıda) korundu.
+
+### N-SHR1.1
+278 ¶59 莎伦的回答还是能省单词就省单词的风格: 免费; 279 ¶16 用一个单词给出了肯定的答复: 有; ¶20 1; 278 ¶33 非常简洁地回答; 433 ¶85 好。莎伦没问为什么; 450 ¶47 没有问他要做什么准备; 434 ¶61 没人知道 (用最简洁的言语); 735 ¶15 莎伦就像一个人偶，没什么感情也没什么隐瞒地回答道; 457 ¶76 谢谢, ¶82 新年快乐; 706 ¶73 他过得很好 (没什么情绪起伏).
+**Denetim:** 278, 279, 433, 434, 450, 457, 706, 735 (ZH).
+
+### N-SHR1.2
+330 ¶52 他有一件很克制我的封印物 (坦然回答); ¶58 你不止序列9，你有很特殊的地方 (语气非常笃定); 346 ¶15 你解释得太多了…不够自然 (语气飘忽); ¶72 越简单的计划越有效; 736 ¶45 它很狡诈，它不会留下这么明显的线索.
+**Denetim:** 330, 346, 736 (ZH).
+
+### N-SHR1.3
+878 ¶26 Gül Ekolü'nün tarihi (崇尚节制…清苦低欲的生活); ¶41 …以及，复仇，以及，将节制的理念传扬出去……如果大家都能够节制欲望，就不会有战争…; ¶57 我很崇拜祂; 1041 ¶52 祂是我的老师; ¶64 hocasının hikâyesi; 1140 ¶81 希望能恢复老师身体的完整.
+**Denetim:** 878, 1041, 1140 (ZH).
+
+### N-SHR1.4
+338 ¶91 他以前注射太多…我们已经找不到新的品种了……莎伦说着说着，忽然沉默，似乎想起了什么.
+**Denetim:** 338 (ZH).
+
+### N-MRC1.1
+241 ¶54 沙哑吩咐道; 244 ¶81 低沉含糊地说道 (pazarlık: 1000镑, üç gün); 329 ¶89 …但你能拿什么来换取？; 330 ¶17–33 Ekolün tarihi; 331 ¶4–53 Yolun Mertebeleri; 346 ¶53–74 plan; 1000 ¶75 直截了当地说道; 1225 ¶91 你只是一个序列5，你还不够资格.
+**Denetim:** 241, 244, 329–331, 346, 1000, 1225 (ZH).
+
+### N-MRC1.2
+331 ¶18 从这个序列开始，诅咒逐渐出现，‘疯子’是容易失控。马里奇脸庞肌肉抽动了一下; ¶44 Hortlak laneti (渴望人类温热的血液); ¶67 如果，如果放弃自我，那我宁愿选择死亡！马里奇沙哑着低吼道; 346 ¶22 两支半，再多的话，我会真的镇静 (yatıştırıcı); 877 ¶63 揉了揉额角…刚才的大量话语似乎让他有了精神和欲望上的波动; 1000 ¶75 揉了揉眼睛; 878 ¶72 有些控制不住地抢先问道.
+**Denetim:** 331, 346, 877, 878, 1000 (ZH).
