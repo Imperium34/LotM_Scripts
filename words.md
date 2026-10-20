@@ -83,7 +83,8 @@
 - **istek** — request (请求); Ayinle muhataba ulaşan dilek; 'niyaz' 祈求'e ayrılı _58_
 - **mehtap çiçeği mumu** — Moon Flower Candle (月亮花蜡烛); Ayin malzemesi, tırnaksız _58_
 - **yükselmek / yükseliş** — to advance a Sequence (晋升); teşkilat içindeki yükseliş dâhil, Mertebe değişiyorsa her zaman bu fiil; 'bir üst Mertebeye yükselmek'
-- **koyu kızıl yıldız / koyu kızıllık** — crimson star / crimson (深红星辰/深红); gri sisteki yıldızlar ve üyeleri çağıran ışık; 'koyu' düşmez
+- **koyu kızıl yıldız** — crimson star (深红星辰); gri sisteki yıldızlar; 'koyu' düşmez
+- **koyu kızıllık / koyu kızıl** — crimson (深红); üyeleri çağıran ışık, sıfat olarak 'koyu kızıl ışık / parıltı'; 'koyu' düşmez
 - **bağ** — connection (联系); gri sisle koyu kızıl yıldızlar arasındaki görünmez bağ; bu bağlamda 'irtibat' değil
 - **suret** — figure (身影); gri siste beliren üyeler
 - **hayalî** — illusory (虚幻); gri sisteki suretler, ışık ve burçlar; 'vehmî' değil
@@ -212,6 +213,34 @@
 - **Beş Deniz** — Five Seas (五海); ekler kesmeyle (Beş Deniz'in) _56_
 - **Sis Denizi** — Fog Sea (迷雾海); Intis Cumhuriyeti'nin batısındaki deniz; 'gri sis' ile ilgisi yok _59_
 
+## Forsaken Land — Silver City
+
+- **Gümüş Şehir** — Silver City (白银城 / 白银之城); İlahların Metruk Diyarı'nda iki bin yıldır karanlığın ortasında ayakta kalan şehir _137_
+- **Altılar Meclisi** — Council of Six (六人议事团); Gümüş Şehir'i yöneten altı kişilik ihtiyarlar meclisi; adlandırma Dede Korkut edasında, şehrin ses haritasıyla aynı kaynaktan _138_
+- **Başbuğ** — Chief (首席阁下); Altılar Meclisi'nin başı; hitap 'Başbuğum' (首席阁下), iyelikli hitap 'hazretleri'nin yerini alır; çıplak 首席 de Gümüş Şehir bağlamında Başbuğ'dur, başka yerde (首席秘书 vb.) değildir _386_
+- **Aksakal** — Elder (长老); Altılar Meclisi üyesi; unvan addan önce: 'Aksakal Lovia'; kadın üyeler için de aynı unvan _138_
+- **Yuvarlak Kule** — the round tower (圆塔); altında şirazeden çıkma belirtisi gösterenlerin tecrit edildiği kule; İng. çeviri 'spire' der, Sivri Kule ile karıştırır _342_
+- **Sivri Kule Kitaplığı** — the spire's library (尖塔图书馆); Sivri Kule kitaplığı, ülüş yerini ve erzak dağıtım yerini barındırır; 'kütüphane' değil, öz Türkçe 'kitaplık' _315_
+- **Karayüz Otu** — Black-Faced Grass (黑面草); karanlıkta yetişen, şehri ayakta tutan yiyecek; Demirkalp ağacı / Ejderkanı kalıbında bitişik ad _138_
+- **Şan Tacı** — Glory Crown (荣耀冠冕); yalanı açığa çıkaran mukaddes eşya; 荣耀 bağı Savaşçı Yolu'nun 'Şan' (荣耀者) Mertebesiyle bilerek korunur _400_
+- **hizmet** — contribution, merit (功勋); bütün teşkilatlar için aynı kelime (Gece Şahinleri 155, Fırtına Kilisesi 1014, Gümüş Şehir, Tarot Cemiyeti 1174): terfiye ya da erzaka çevrilen hizmet birikimi; 积攒功勋 'hizmet biriktirmek', 立下功勋 'büyük hizmette bulunmak' _106_
+- **katkı** — contribution (贡献); hizmete yakın ama ayrı: bir işe ya da ganimete düşen katkı payı (939: 'katkıya göre bölüşülür'); 功勋 ile karıştırılmaz _939_
+- **ülüş yeri** — merit exchange point (功勋兑换点); Sivri Kule'de hizmetin erzaka, malzemeye, formüle çevrildiği yer; küçük harf, özel ad değil işlev adı. 'Ülüş' TDK'de eskimiş: kesilen hayvanın etinden alınan pay; av üzerine kurulu bir şehirde bilerek genişletilmiş _315_
+- **erzak dağıtım yeri** — supply distribution office (生活物资发放处); Sivri Kule'de, ülüş yerinin yanında; küçük harf _315_
+- **Ortak Öğreti** — general education (通识教育 / 通识课); Gümüş Şehir'in okulu; 通识者 Mertebe adıyla karıştırılmaz. Ders adları '... Bilgisi' kalıbındadır; 'İlm-i / İlmi' gizli ilimlere ayrılmıştır (İlm-i Esrar, Ayin İlmi) _158_
+- **Şer Bilgisi** — Devil Studies (恶魔学); Ortak Öğreti dersi; Şer Avcısı ile aynı kök: 魔 → şer, 恶魔 ve 魔鬼 için çatı kelime; "İblis" Gulyabani ve Şer Avcısı için terk edilmiş karşılıktır _292_
+- **Mahluk Bilgisi** — Monster Classification (怪物分类学); Ortak Öğreti dersi; 'Canavar' Mertebe adı olduğu için kullanılmaz _315_
+- **Tılsım Bilgisi** — Charms (符咒学); Ortak Öğreti dersi; 'tılsım' Charm'a ayrılıdır _315_
+- **Fevkalade Temeller** — Beyonder Foundations (超凡基础); Ortak Öğreti dersi; Çince 超凡 'fevkalade'dir (bkz. fevkalade mahluk), 非凡 'Aşkın' değil _315_
+- **Söylence Bilgisi** — Mythology (神话学); Ortak Öğreti dersi _315_
+- **İlahkanlı Savaşçı** — Divine Blood Warrior (神血战士); Gümüş Şehir'in Savaşçı Yolu'na verdiği ad; Savaşçı Yolu bağı ve 'İlahın Eli'ndeki 神 → İlah korunur; Ejderkanı kalıbında bitişik. Şehrin Mertebe 9 adı 超凡战士 de Savaşçı'dır _137_
+- **Dev Kralı** — Giant King (巨人王); 王 → Kral sözlük teamülüdür _138_
+- **Dev Kralı Sarayı** — Giant King's Court (巨人王庭); anlatıcı da kullanır, bu yüzden Oğuz ağzına çekilmez _138_
+- **karanlık halkı** — People of the Dark (黑暗之民); duadaki adlandırma; küçük harf, 'Karanlık' Mertebe adıdır _136_
+- **kaderin laneti** — curse of destiny (宿命的诅咒); sabit kalıp, değiştirilmeden tekrarlanır _136_
+- **keşif bölüğü** — exploration team (探索小队); Gümüş Şehir'in karanlığa çıkan keşif birliği; 'akın bölüğü' Demirkan Akıncısı (Avcı Yolu, Mertebe 4) ile çakıştığı için elendi _355_
+- **karakol bölüğü** — patrol team (巡逻小队); şehrin çevresini canavarlara karşı kollayan birlik; 'karakol' eski Türkçe gözcü/devriye anlamında _266_
+
 ## Tingen — Streets & Districts
 
 - **Aşağı Sokak** — Lower Street (下街)
@@ -294,7 +323,8 @@
 - **Yedinci Birim** — Seventh Unit (第七小组)
 - **Beşinci Birim** — Makine Külli Şuuru'nun Tingen ekibi; üniversite bölgesi ve banliyölerden sorumlu (第五组/组)
 - **Altıncı Birim** — Salahiyetli Tecziyeciler'in Tingen ekibi; rıhtım, doğu ve güney bölgelerinden sorumlu (第六组)
-- **müfreze** — Nighthawk squad (小队; bir kaptanın idaresindeki en küçük birim)
+- **müfreze / bölük** — Nighthawk squad (小队; bir kaptanın idaresindeki en küçük birim); şehre göre ayrılır: Gece Şahinleri ve kiliseler 'müfreze', Gümüş Şehir 'bölük'. Denetim şehri ayırt edemez; ayrım ses haritasındadır
+- **Kaptan / bölükbaşı** — squad captain (队长); şehre göre ayrılır: Gece Şahinleri 'Kaptan' (Dunn), Gümüş Şehir 'bölükbaşı'. Gümüş Şehir'de sıralama: bölükbaşı → Aksakal → Başbuğ
   - **aslî üye** — formal member (正式成员/正式队员)
   - **kalem memuru** — civilian staff (文职人员; sahaya çıkmayan, evrak personeli)
 - **müvekkil** — client (委托者 / 委托给)

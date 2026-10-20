@@ -507,6 +507,23 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 **Ortak Mimari (Maske / Öz / Çatlak):** Her Tarot üyesi aynı taşıyıcı iskelet üzerine kuruludur. _Daha gerçek bir öz_ üstüne bir _maske_, ve maskenin çatladığı tanımlı bir _tetikleyici_. Bu, romanın merkezî tezinin (maske vs. öz, sıcaklık vs. hakikat) her karakterde tekrarlanan hâlidir. Bireysellik tümüyle **özün ne olduğunda** ve **çatlağın nasıl okunduğunda** yaşar. Dolayısıyla iki karakter aynı _çatlak-dokusunu_ paylaşamaz, ve aynı sahnede ikisi birden çatladığında birbirlerinden _öz_ ile ayrılmalıdırlar, salt "çatlama" fiiliyle değil.
 
+**Toplantı Sicili (Divan Kalibrasyonu):** Gri sisin üstündeki toplantı bir Dîvân-ı Hümâyûn'dur: Soytarı makamdadır, üyeler huzurdadır. Huzurda konuşan herkes mesafe kurar ve ağdalılık o mesafenin işaretidir (Divan_Rule 1.02). Bu yüzden yükseklik karaktere değil **mekâna** bağlıdır: toplantıda tam açılır, toplantı dışında (konak, güverte, sokak) huzur katmanı düşer ve karakterin kendi tarzı kalır.
+
+- **Ölçü:** Bölüm 6–7 (revize edilmiş sicil). Bölüm 34–36 bu çizginin altında kaldı; ölçü onlar değildir.
+- **Audrey, toplantıda iki katmanla konuşur:**
+  - _Huzur katmanı_ her toplantıda birkaç kez açıktır: 'Soytarı Efendi', 'zât-ı âliniz', 'müsaade eder misiniz / buyurur musunuz', 'mazur görünüz', 'istirham', '-InIz' emir kipi ('söyleyiniz'), tedirginlikte 'bendeniz'.
+  - _Dağarcık_: 'hususunda', 'icap eder', 'nail olmak', 'mukabil', 'münasip', 'neşet etmek', 'kanaatindeyim'.
+  - Ölçü cümleleri: 7 ¶4 _"Muhterem Soytarı Efendi, cüretimi mazur görünüz lakin takasımıza şahitlik etmeniz hususunda zât-ı âlinize istirhamda bulunmama müsaade eder miydiniz?"_; 6 ¶60 _"B-bendeniz bu hissi, bir 'Seyirci' olma fikrini sanırım sevdim. Bu iksirin formülüne nasıl nail olabilirim?"_
+  - _Sakin replik_ her zaman bu düzeydedir. Çizginin altına düşen, sakin bir cümlenin sade kurulmasıdır: Bölüm 35'teki 'Neden merak ediyorsunuz ki?'.
+  - _Taşma_ (heyecan, öfke, şaşkınlık) kaynaktan gelir ve **sicilin kayması karakterizasyonun kendisidir**: kendini tutamayan bir asilzade sicilini de tutamaz. Taşmada ünlem, tekrar ve gündelik sözcük serbesttir (Bölüm 35: 'Kulağa çok, çok, çok ilgi çekici geliyor!'). İki şey sabit kalır: hitap ('Soytarı Efendi', 'Asılmış Adam Beyefendi') düşmez ve taşma biter bitmez formül geri gelir. Taşmayı yumuşatıp sicile geri yazmak bu karakterizasyonu siler.
+  - Konakta (Bölüm 8) nezaket biçimi kalır ('-InIz', 'arzu ediyorum', 'icap edecek'); huzur katmanı ('zât-ı âliniz', 'istirham') yoktur.
+- **Alger, toplantıda muhataba ve işe göre konuşur:**
+  - _Soytarı'ya_ tam huzur dili: 'Ulu efendim', 'zât-ı âliniz', 'bendeniz', 'İradeniz emrimizdir', 'ilgisini celbetmek'.
+  - _Audrey'ye açıklarken_ Bölüm 6 düzeyinde süslü ve hocavari: 'Malumunuz olduğu üzere', 'neşet eder', 'muvafık', 'mazide zikredilirdi', 'kaniyim', 'mütalaa eder'. Huzur bütün odadır; Soytarı'nın önünde bir hanımefendiye ders verirken de değerini sergiler. Ölçü: 6 ¶55 ve ¶58.
+  - _Kısa yanıtta_ kısa ama dağarcık yine yüksek: 'Bir mahzuru yok.' Kısalık sadelik değildir.
+  - _Denizci iskeleti_ yükseklik içinde sızar: kısa, buyurgan cümleler ve halk deyimi. Ölçü: 36 ¶4 _"Hissiyatları pek bir küntmüş; herhâlde kara sivrisinek ısırdıktan ancak bir yıl sonra kaşınmaya başlıyorlar."_ Yüksek sözcük ile kaba imge aynı cümlede durur.
+  - Güvertede (Bölüm 8) huzur katmanı yoktur: kısa, emir gibi.
+
 ### Audrey Hall (Adalet)
 
 - **Tarz:** Tanzimat dönemi Osmanlı aristokrasisi. Korunaklı bir asilzade olarak başlar ("Aman efendim", "Harikulade"). Mertebesi arttıkça, aristokratik kelimeleri azalır ve yerini soğuk, keskin psikanaliz cümlelerine bırakır.
@@ -536,16 +553,23 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 ### Derrick Berg (Güneş)
 
-- **Tarz:** Gümüş Şehir'in binlerce yıllık izolasyonunu yansıtan, arkaik, destansı ve tamamen gerçekçi bir dil (Dede Korkut edası). Mecazlardan, şakalardan veya kinayeden zerre kadar anlamaz. Kesin hükümlerle konuşur.
+- **Tarz:** Gümüş Şehir'in binlerce yıllık izolasyonunu yansıtan, arkaik, destansı ve tamamen gerçekçi bir dil (Dede Korkut edası). Dış dünyanın mecazına, kinayesine ve iğnelemesine yabancıdır; o dünyaya ait bir söz duyduğunda harfiyen alır. Kesin hükümlerle konuşur; bu kesinlik öğretilmiş dogmadır, okulda ezberlediği kuralları okur gibi söyler (138: Gümüş Şehir'in ve Altılar Meclisi'nin tarihini bir vakayiname gibi anlatır; 158: 'Ortak Öğreti derslerimizde çok açık anlatılır, Rol İfası'nın tek bir kuralı vardır').
 - **Onay:** Yuvarlak onay sözcüğü kullanmaz; beyan kipinde, yemin gibi: _"Yapacağım."_
-- **Kural 1:** Şaka ve kinayeden anlamaması naifliğinden değil, Gümüş Şehir'in acımasız ortamından kaynaklıdır. Söylenen her sözün kelimenin tam anlamıyla doğru olması gereken, aksi takdirde insanların öldüğü bir yerde büyümüştür. Bu yüzden metaforu anlayamaması komik bir an değil, o karanlık dünyanın zihninde bıraktığı kalıcı bir şekildir.
+- **Kural 1:** Derrick şakadan anlar; Gümüş Şehir'in gençleri şakalaşır (bkz. Gümüş Şehir toplu haritası, 667). Kaçırdığı üç şeydir: **dış dünyanın şakası** (bilmediği bir şeye, bir kuruma, bir gündelik hayata dayanan espri), **iğneleme** (söylenenin tersinin kastedildiği alay) ve **benzetme** (görmediği bir şeyin, güneşin, denizin, tiyatronun üzerinden kurulan karşılaştırma). Üçünde de sözü harfiyen alır ve ciddiyetle cevap verir. Sebep naiflikten çok yerdir: sahada sözün kelimesi kelimesine doğru olması gerekir, yoksa insanlar ölür; Derrick bu saha dilini hiç kapatmaz ve dışarıyı yalnızca kitaplardan bilir. Bu yüzden harfiyen anlaması onun için komik bir an değil, karanlık dünyanın zihninde bıraktığı kalıcı bir şekildir. Aynı sebeple dürüstlüğü pahalıya patlar: değerli bilgiyi karşılıksız verir, Asılmış Adam bundan yararlanır. **Komedi odaya aittir, onun sesine değil:** Derrick tamamen ciddidir, gülen öteki üyelerdir. Komik etki anlatıda ve diğerlerinin tepkilerinde kurulur; Derrick'in cümlesine espri, göz kırpma ya da kendinin farkında bir ton eklenmez.
 - **Kural 2:** Kelime seçimleri destansı ve kadim olsa da nihayetinde 14 yaşında bir çocuktur. Cümlelerinin sentaksı (yapısı) bu nedenle oldukça basit, süssüz ve çocuksudur. Eski kelimeler, basit cümle iskeleti.
 - **Kural 3:** Backlund'a veya kendi kültürü dışındaki kavramlara (örn: tiyatro, şaka) rastladığında, bunları metaforik olarak anlamlandırmaya çalışmaz. Ya tamamen susup bu bilgiyi daha sonra çözmek üzere zihnine kaydeder (sessizliğe bürünür) ya da o kavramı kelimenin tam anlamıyla fiziksel ve literal bir tarife indirger.
-- **Kural 4 (Saygı = Sadelik):** Derrick'in hürmeti _tokluktur, süs değil_. Soytarı'ya bile hitap ederken saray-dili yalvarış formülleri (_"inayetlerinizi niyaz etmektedir," "tensip buyurur musunuz"_) kullanmaz. Onun huşusu blöfsüz, mutlak ve beyan kipindedir. Ölçüt: _"İtikadım yalnızca Soytarı Efendi'yedir!"_. Kesin ve çıplak, bir saray erkânı gibi değil.
+- **Kural 4 (Saygı = Sadelik):** Derrick'in hürmeti _tokluktur, süs değil_. Soytarı'ya bile hitap ederken saray-dili yalvarış formülleri (_"inayetlerinizi niyaz etmektedir," "tensip buyurur musunuz"_) kullanmaz. Onun huşusu blöfsüz, mutlak ve beyan kipindedir. Ölçüt: _"İtikadım yalnızca Soytarı Efendi'yedir!"_. Kesin ve çıplak, bir saray erkânı gibi değil. Temel nezaket serbesttir (_"müsaade edin"_, _"izin verin"_; 178: 请允许我); yasak olan, yalvarış formüllerini üst üste yığmaktır.
+- **Kural 5 (Dua İstisnası):** Derrick, Soytarı'ya gerçekten dua eden üyedir (143: Tazim ismini okur; 178: 'adınızı okuyup Ayinle bildirmeme izin verin'). Divan_Rule 1.03 gereği **ayin dili yukarı akar**: Tazim ismi, dua kalıbı ve Ayin metni tam Divan sicilindedir ve kalıp hiç değişmeden okunur. Kural 4 yalnızca kendi kurduğu cümleler içindir; dua bittiği an sade, beyan kipindeki sesine döner. İki sicil yan yana durur ve aralarındaki fark onun samimiyetini gösterir: kalıbı ezberden ve eksiksiz okur, isteğini çıplak söyler.
+- **Kural 6 (Ozan Yolu sızıntısı):** Güneş Yolu'nun dağarcığı (övgü, ilahi, ışık, arınma, şafak) Mertebesi yükseldikçe ilgisiz konulara taşar (Divan_Rule 1.1, kolonizasyon ölçütü). Bu kaynakta da vardır: devamında Soytarı Kilisesi'nin Papa'sı olur. Kademe: Ozan'da (9) yalnız övmeye ve şarkıya yatkınlık, sesine henüz sızmaz; Işık Duacısı (8) ve Güneş Naibi (7) ile ışık ve övgü imgeleri gündelik konulara girer; yüksek Mertebelerde ve Papa'lıkta bir vaizin sesine yerleşir. **Sürüklenme göstergesi:** Gümüş Şehir'in karanlığını, yemeği ya da bir dövüşü anlatırken ışık ve övgü dili kullanıyorsa Yol onu yemeye başlamıştır. Dede Korkut iskeleti kalır, üstüne ilahi dili eklenir.
+- **Kural 7 (Öğrenilmiş temkin):** Tarot Cemiyeti'nde, özellikle Asılmış Adam'dan öğrendikçe saklamayı öğrenir. Bir şeyi gizlerken cevabı bilerek geciktirir (668: Asılmış Adam'ın öğrettiği küçük hileyle birkaç saniye durur ki cevabı önceden hazırlamış görünmesin) ve kelimelerini tartarken cümlesi parçalanır (897: _'Çabalarım, hatırlamaya, benim, sessiz bir odaya, ihtiyacım var.'_, 话语间断，斟酌着用词). **Bu parçalanma çatlak değildir:** çatlakta duygu cümleyi kırar, burada hesap. Ayırt edici: temkinli parçalanmada tekrar ve soru yoktur, kelimeler seçilerek tek tek düşer.
+- **Maske / Öz / Çatlak:**
+  - _Maske:_ öğretilmiş kesinlik. Kuralları, tarihi, Altılar Meclisi'nin hükümlerini ezberden ve tereddütsüz okur.
+  - _Öz:_ güneşi hiç görmemiş bir yetim; lanet yüzünden anne babasının canını kendi eliyle almak zorunda kalmıştır (bkz. 138'deki kan bağı kuralı). İstediği şey güneş ve ailesinin geri gelmesidir (137).
+  - _Çatlak:_ anne babası, lanet ya da şehrin kaderi açıldığında kesinlik dağılır: tekrar, kekeleme ve cevapsız sorular. Ölçü 137: _'Hayır, hayır, hayır!'_, _'Neden? Neden?'_, _'gökyüzünde, gökyüzünde kitaplarda anlatılan o güneş belirsin; eğer, eğer mümkünse...'_ Kaynaktaki tekrar ve kekeleme korunur, düzeltilmez. Çatlakta Dede Korkut dağarcığı düşmez, yalnız iskelet dağılır; Audrey'den ayrıldığı yer budur (onun çatlağında sicil kayar, Derrick'inkinde cümle kırılır).
 - **Örnek:** _"Soytarı Efendi.
-  Şekil Değiştiren'i katlettim. Kanı toprağa döküldü. Bu hususiyeti sunak için hazırladım.
+  Şekil Değiştiren'i katlettim. Kanı toprağa döküldü. Bu Aşkın Hasletini sunak için hazırladım.
   Sizi temin ederim, itikadım yalnızca size ve sizin kudretinizedir.
-  Lütfen bana Ozan yolunun sıradaki formülünü bahşedin."_
+  Lütfen bana Ozan Yolu'nun sıradaki formülünü bahşedin."_
 - **Örnek:** Hokkabaz (Fors): _"O adamın ipini çektiler. Artık Backlund'da barınamaz."_
   Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını mı kastediyorsunuz? Eğer asılmadıysa ve yaşıyorsa, neden sadece başka bir şehre gidemiyor? Bacaklarını da mı kırdılar?"_
 
@@ -820,3 +844,106 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 - **Şükür / Yüceltme:** _"Aklın Nuru'na hamdolsun."_ veya _"Bahr-i İrfan'a şükürler olsun."_ (Kadir-i Mutlak grubunda oldukları için Esmâ-ül Hüsnâ'nın o görkemli "hamd/şükür" kuralını burada serbestçe ve tam gücüyle kullanıyoruz).
 - **Teselli / Uğurlama:** _"Hakikat seni kucaklasın."_ veya vefat eden biri için _"İrfan deryasına (Bahr-i İrfan'a) karıştı."_
 - **Muharebe Narası / İnfaz:** _"Cehaletin bedeli ödenecek!"_ veya _"Burhan tecelli etti, hüküm mühürlendi."_
+
+## 12. İlahların Metruk Diyarı — Gümüş Şehir
+
+### Gümüş Şehir Ahalisi (Toplu Harita) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+- **Konum:** İki dünya, Türkçenin iki tarihî katmanından beslenir. Tarot toplantısı bir Osmanlı Dîvân-ı Hümâyûn'udur (huzur, mesafe, nezaket formülü); Gümüş Şehir bir Oğuz uç beyliğidir (Dede Korkut: rütbe, vazife, sözün ağırlığı). Şehrin resmiyeti **süsle değil rütbeyle** taşınır. Kendi aralarında saray formülü ('zât-ı âliniz', 'istirham') kullanılmaz.
+- **Zemin (kaynaktan):** İki bin yıldır güneşsiz bir karanlık. Gökte yalnız şimşek çakar. Ölen herkes habis ruha döner; ölmekte olanın canını aynı kandan biri alır (138). Yiyecek, karanlıkta yetişen bir ottur (138). Şehri Altılar Meclisi yönetir, başında 首席 vardır (138). Ahali okulda şeytanbilim, canavar sınıflandırması, tılsım ve mitoloji okur (315). Şehir şeref ve vazife duygusuyla bir arada tutulur (315: 荣誉感和使命感).
+- **Çekirdek değer:** Hayatta kalmak; vazife; kural. Kader, Dede Korkut'taki gibi sessizce taşınan bir yüktür (137, 138: 宿命的诅咒; 401: 这是我们逃不出的宿命). Tartışmayı kural bitirir (401: 这是规矩).
+- **Litürjik kayıt:** Yaradan'a inanç sürer (179, 313). Hakiki Hâlık'ın öteki adı _Mütereddi Hâlık_ Soytarı'nın taktığı addır (93); şehre yalnız Derrick'in taşıdığı bilgiyle girer (400'de Colin onu Derrick'ten duyduğu gibi tekrarlar). Şehrin yerlisi ilahı bu adla kendiliğinden anmaz. Yaratılış miti ders gibi ezberden okunur (313): sıralı, adlarla, destan ritminde. Derrick'in Soytarı'ya duaları için bkz. Derrick, Kural 5.
+- **Meclis / rütbe kaydı:** Hitap unvanladır: 'Başbuğum' (首席阁下), 'Aksakal Lovia' (长老). Birlikler 'bölük' (小队), başları 'bölükbaşı' (队长): keşif bölüğü, karakol bölüğü. Gece Şahinleri'nin 'müfreze' ve 'Kaptan'ı bu şehirde kullanılmaz. İyelikli hitap 'hazretleri'nin yerini alır; saray formülü yoktur. Rapor sıralı ve olgusaldır, yorum sona kalır (386, 399). Onay kısa ve unvanlıdır (455, 1116: 是，首席阁下).
+- **Saha kaydı:** Emir kipi, eksiltili ve öznesiz. Ölçü: 445 点灯，出发 ('Işıkları yakın, yola çıkıyoruz'); 455 前往地下 ('Aşağı iniyoruz'); 454, 465 现在开始，不能有任何疏忽，将戒备提到最高 ('Bundan sonra en ufak gaflete yer yok, tetikte durun'). Tercümeler illüstratiftir.
+- **Gündelik / genç kaydı:** Şehrin gençleri şakalaşır. 667'de Joshua boy ve dev kanı üzerine laf atar, '啧' ile söylenir. Dede Korkut dağarcığı incelir ama Backlund'un kentli argosu ve modern ağız buraya girmez; şaka kaba ve bedenseldir. **Derrick'in harfiyenliği şehrin ortak özelliği değildir:** ahali şakadan anlar, Derrick saha dilini hiç kapatmaz ve dış dünyaya yabancıdır.
+- **Ölçü ve zaman:** Süre şimşekle ve kalp atışıyla sayılır (458, 464: 50次闪电后出发; 143: 一千次心跳). Gün de kullanılır. Bu birimler korunur, saate ya da dakikaya çevrilmez.
+- **Mecaz kaynağı (en önemli kural):** Bu insanlar güneşi, gökyüzünü, denizi, mevsimi, gün ışığını hiç görmemiştir (137: güneşi kitaplardan bilir). Bunları varsayan Türkçe deyimler ağızlarına ve onların bakış açısından yazılan iç sese girmez: 'güneş balçıkla sıvanmaz', 'gün yüzüne çıkmak', 'güpegündüz', 'denizden çıkmış balık', 'baharı gelmek' ve benzerleri. İmgeleri karanlıktan, şimşekten, canavardan, avdan, silahtan ve kan bağından gelir. Gece Şahinleri'nin 'karanlık' sözcüğüyle karışmasın: buradaki karanlık bir mecaz değil, mekândır.
+- **Anlatı (Gümüş Şehir bakış açılı bölümler):** Anlatıcı Dede Korkut'a kaymaz (Divan_Rule: anlatıcı yüksek sicile kaymaz). Yerel çerçeveyi taşır: unvanlar, birimler, mecaz kuralı. Destan ritmi yalnız replikte ve ezberden okunan metinlerdedir.
+- **Sözlük:** Şehrin adları words.md › Forsaken Land — Silver City'dedir (Başbuğ, Aksakal, Yuvarlak Kule, Karayüz Otu, Şan Tacı, Ortak Öğreti, ülüş yeri...). Kurum adları öz Türkçe Oğuz ağzındadır; paylaşılan kavramlar (Aşkın, Savaşçı Yolu, Dev Kralı, hizmet) sözlüğün mevcut karşılığını taşır.
+- **Ayrı haritaları:** Colin Iliad ve Lovia, aşağıda.
+
+### Colin Iliad `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Gümüş Şehir'in Başbuğ'u; Şer Avcısı, sonra Gümüş Şövalye. Saha kaydının en saf hâli: sesi hiç değişmez, derin ve dolgundur. Kısa emir, kısa soru, düz hüküm. Yüzü de sesi gibi kapalıdır. Kaderi sessizce taşır; şüphesini ve hesabını kimseye göstermez.
+**Onay:** Tek kelime: _"Güzel."_ (很好); ret: _"Olmaz."_ (不行).
+
+##### COL1.1 — Ses değişmez
+
+**Kapsam:** Tüm görünümleri · herkes · kriz dâhil
+**Yap:** Replikleri düz, eksiksiz ve ünlemsiz kur. Duygunun yükü anlatıda kalır; sesin kendisi taşımaz.
+**Yapma:** Kaynakta olmayan ünlem, üç nokta ya da duygu sıfatı ekleme; tehlike anında sesi hızlandırma, kesme.
+**Örnek:** _"Lovia, keşif bölüğündeki tuhaflık doğrulandı. Bölükbaşı olarak, bir şeyin olsun olmasın, zindanda yedi gün kalıp Şan Tacı'nın arınmasından geçeceksin. Bunu iyi bilirsin; kural böyle."_ (401 ¶25) — _düz, eksiksiz, kişisel değil_
+**Gerekçe:** → N-COL1.1
+
+##### COL1.2 — Tek kelimelik emir
+
+**Kapsam:** Saha, kapı başı · astlar, Derrick · emir, izin, ret
+**Yap:** Kaynağın tek kelimelik emrini tek kelimeyle ver: 讲 _"Anlat."_, 进来 _"Gir."_, 出发 _"Yola!"_, 不行 _"Olmaz."_, 路上小心 _"Dikkatli git."_
+**Yapma:** Emri nezaketle uzatma (_"Lütfen içeri buyurun"_); Başbuğ izin istemez, verir.
+**Gerekçe:** → N-COL1.2
+
+##### COL1.3 — Hükmü kural verir
+
+**Kapsam:** Meclis işleri, cezalar, kararlar · herkes
+**Yap:** Kararı kendi iradesine değil kurala, Altılar Meclisi'ne ya da kadere dayandır: _"kural böyle"_ (这是规矩), _"Bu, Altılar Meclisi'nin oyuna sunulmalı; şehre döner dönmez işi yürütürüm."_ (1132 ¶53), _"kaçamadığımız kader"_ (401 ¶32).
+**Yapma:** _"Ben istiyorum"_, _"bence"_ kalıbıyla kişisel hüküm kurma.
+**Gerekçe:** → N-COL1.3
+
+##### COL1.4 — Bir kez söylenen öğüt
+
+**Kapsam:** Derrick · baş başa konuşmalar
+**Yap:** Nadir uzun cümleyi tecrübenin ağırlığıyla, süssüz kur; hükmü bir kez söyle ve konuyu kapat. Derrick'e önce tam adıyla seslenir (_"Derrick Berg"_, 386 ¶24); güveni arttıkça yalnız adıyla (1122 ¶50, 1123).
+**Yapma:** Öğüdü vaaza çevirme, ardından açıklama ekleme. Dunn'dan ayrıldığı yer: Dunn soruyla öğretir ve sapar; Colin hükmü bir kez verir ve susar.
+**Örnek:** _"Daha çok gençsin. Benim gibi çok şey yaşadığında anlarsın: kılıcı çekip yüreği kaynayarak ölmektense aşağılanmaya, çaresizliğe katlanıp karanlıkta dayanmak çok daha zor, çok daha acıdır."_ (1216 ¶18) — _tek hüküm; ardından konu değişir_
+**Gerekçe:** → N-COL1.4
+
+##### COL1.5 — Duada ses değişir (tek istisna)
+
+**Kapsam:** Soytarı'ya dua (898)
+**Yap:** Tazim ismini Divan sicilinde, vurgulu ve ritimli oku (Divan_Rule 1.03); seste yorgunluk ve yıpranmışlık duyulur. Kalıp words.md › VII. Frozen Lines'tan değiştirilmeden alınır. Dua biter bitmez düz sesine döner.
+**Yapma:** Duanın dilini duanın dışına taşıma.
+**Gerekçe:** → N-COL1.5
+
+- **Maske / Öz / Çatlak:**
+  - _Maske:_ değişmeyen ses ve yüz.
+  - _Öz:_ şehrin kaderini taşıyan, hesabını saklayan bir yönetici. Lovia'yı izletir; Derrick'in gizli ayinlerini görür ve örter (939); Lovia'nın Hakiki Hâlık'a duasını onu bağlamak için kullanmaya razıdır (1116).
+  - _Çatlak:_ yalnız iki an ve ikisi de sessiz: 401 ¶32'de sesi kısılır (_"Hm, kaçamadığımız kader bu..."_); 1123'te kapıda duraksar, susar, başını sallar: _"Lovia'dan sakın."_ Çatlak ünlemle değil, duraksama ve kısılmış sesle gelir.
+
+### Lovia `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Altılar Meclisi'nin Aksakalı; Hafi Talibi Yolu'nda Çoban. Sesi evrelidir: önce güttüğü ruhların hâlleri arasında düzensizce gidip gelir; sonra "normal"leşir, sakin ve gülümseyendir; yüksek Mertebede duygusuz, kuru ve işe dönüktür. Hakiki Hâlık'a tapar, ama Derrick'in Soytarı'ya taptığı sebepten: şehrini kurtarmak için. Kötülük ilahındadır, onda değil.
+**Onay:** _"Hm."_ (嗯); itirazı yoksa susar (939 ¶71).
+
+##### LOV1.1 — Köprüsüz hâl değiştirme (erken dönem)
+
+**Kapsam:** ~315'e kadar · herkes
+**Yap:** Hâller arasında köprü kurma: bir cümle gülümseyerek, sonraki soğuk; gözyaşı, alaycı gülüş, öfkeli homurtu birbirini gerekçesiz izler. Her hâl kendi içinde eksiksizdir.
+**Yapma:** Geçişi anlatıyla açıklama (_"birden ruh hâli değişti"_); hâlleri tek bir "tuhaf" tona eritme.
+**Not:** Bu dönemde kaynakta neredeyse doğrudan replik yoktur; hâl değişimi Derrick'in gözünden aktarılır. Kural, ileride çevrilecek her replik ve sahne içindir.
+**Gerekçe:** → N-LOV1.1
+
+##### LOV1.2 — Korkutan "normal"
+
+**Kapsam:** 315'ten sonra · herkes
+**Yap:** Sakin, kısa, kibar ve gülümseyerek: _"Hm."_ (315 ¶20), _"Başbuğum?"_ (401 ¶22). Tekinsizlik onun sesinde değil, Derrick'in algısındadır (315: 正常了……).
+**Yapma:** Repliklerine uğursuz ima, soğuk sıfat ya da imalı üç nokta ekleme.
+**Gerekçe:** → N-LOV1.2
+
+##### LOV1.3 — Kuru ve işe dönük
+
+**Kapsam:** Keşifler, yüksek Mertebe (1113 sonrası) · bölük, Colin, yabancılar
+**Yap:** Kısa, olgusal cümleler: _"Şimdilik kapıya yaklaşmadıkça iki muhafız bize saldırmıyor."_ (1113 ¶28); _"Ama hiçbir şey bilmiyoruz, ona göre hazırlanamayız."_ (1122 ¶41). Arada kuru bir küçümseme: _"Tam bir palyaço gibisin."_ (1252 ¶32; 小丑 = Palyaço, Soytarı değil).
+**Yapma:** Kuruluğu öfkeye ya da alaya büyütme; küçümseme tek cümledir.
+**Gerekçe:** → N-LOV1.3
+
+##### LOV1.4 — Dua: Derrick'in aynası
+
+**Kapsam:** Hakiki Hâlık'a dua (1116 ve sonrası)
+**Yap:** Duası Derrick'in Soytarı'ya duasıyla aynı mekanikle kurulur (Derrick, Kural 5): Tazim ismi tam Divan sicilinde, sozluk.yml'deki kalıp değişmeden; dua biter bitmez kendi kuru sesine döner. Okur iki duayı yan yana duymalıdır: aynı yapı, aynı sebep, iki ayrı ilah. **Ayrım sadakatin nesnesindedir:** Derrick ilahına inanır, Lovia ilahını kullanır; ikisi de şehir için. İlahının adını daima _Hakiki Hâlık_ diye anar; _Mütereddi Hâlık_ Soytarı'nın taktığı addır (93) ve onun ağzına girmez.
+**Yapma:** Duasına kötücül tını, zevk ya da vecd ekleme.
+**Gerekçe:** → N-LOV1.4
+
+- **Maske / Öz / Çatlak:**
+  - _Maske:_ sükûnet ve gülümseme.
+  - _Öz:_ şehrini kurtarmak için kötü bir ilahı araç edinmiş yalnız bir sadakat; ardında yitirilmiş biri (401 ¶64).
+  - _Çatlak:_ hüzünlü gülümseme (401 ¶63–64) ve ölüm (1263 ¶45–46). Çatlakta kendini savunmaz, açıklamaz; tek cümle kurar: _"Gümüş Şehir'e ihanet etmedim..."_ Son sözü ilahı hakkında değil, şehir hakkındadır.

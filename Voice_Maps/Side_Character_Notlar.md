@@ -316,3 +316,64 @@ Dunn'a yönelik hisler burada doğrulanır. Ölüm 4. Cildin sonundadır (945).
 
 İşlevi ofisin arka plan gürültüsünü, vardiya değişimlerini ve Loen Krallığı'nın klasik bürokrasisini yansıtmaktır; Aşkınların dünyasına kıyasla belirgin biçimde dünyevidir. Kadro (19 ¶16): bir muhasebeci ve bir fayton sürücüsü-tedarikçi (profesyoneller, pazarları izinli, nöbet tutmazlar); dönüşümlü çalışan üç sivil memur: Rozanne, Bredt ve İhtiyar Neil. Rozanne ve Neil'in kendi haritaları vardır; bu harita geri kalanlar içindir.
 **Denetim:** kadro 19 ¶16 (ZH); ses için sahne bekliyor.
+
+## Colin Iliad
+
+> **Numaralama:** Bu bölümler henüz çevrilmedi; ¶ numaraları ZH/EN hizalamasındandır (`bolum.py N`). Türkçe çevrildiğinde ZH/TR hizalamasıyla yeniden numaralanmalı.
+
+### N-COL1.1
+
+Sesi adıyla verilir: 嗓音醇厚 (386 ¶24), 沉厚 (1079 ¶17, 1132 ¶28), 低沉 (445 ¶13, 939 ¶11). Değişmezliği defalarca söylenir: 平铺直叙 (401 ¶25), 语气没有一点异常 (637 ¶1), 嗓音如常 (668 ¶13), 语气没有任何变化 (939 ¶11), 语气没有变化 (1116 ¶31), 嗓音平静如常 (1122 ¶74), 嗓音不见异常 (1123 ¶37). Yüzü: 法令纹很重的脸上没什么表情 (668 ¶13), 表面平静 (897 ¶53).
+**Denetim:** 386, 401, 637, 668, 939, 1116, 1122, 1123 (ZH).
+
+### N-COL1.2
+
+Tek kelimelik emirler: 讲。(939 ¶20), 进来。(1079 ¶17, 1123 ¶37), 出发！(1248 ¶74), 不行。(1122 ¶46), 路上小心。(670 ¶9), 很好。(897 ¶66), 点灯，出发。(445). Kısa sorular: 都有哪些？(897 ¶54), 不需要别的仪式材料？(897 ¶60), 你有办法解决吗？(1116 ¶31).
+**Denetim:** 445, 670, 897, 939, 1079, 1116, 1122, 1123, 1248 (ZH).
+
+### N-COL1.3
+
+Kural: 这是规矩 (401 ¶25). Meclis: 这必须通过'六人议事团'的表决 (1132 ¶53). Kader: 嗯，这是我们逃不出的宿命…… (401 ¶32, sesi 沉哑).
+**Denetim:** 401, 1132 (ZH).
+
+### N-COL1.4
+
+1216 ¶18–19: tek uzun öğüt (比起拔出长剑，充满热血地牺牲，忍受屈辱和无奈，在黑暗中坚守，是更加困难更加让人痛苦的一件事情), Hillmon'u örnek gösterir; ardından 未再继续这个话题 ve iksire döner. Hitap: 386 ¶24 tam ad (戴里克·伯格), 1122 ¶50 ve 1123 yalnız ad (戴里克). Övgüsü de düzdür: 你这次贡献非常大 (1123 ¶60).
+**Denetim:** 386, 1122, 1123, 1216 (ZH).
+
+### N-COL1.5
+
+898 ¶20: 带着些许沧桑感的嗓音诵念; ¶24: 很有顿挫感节奏感神秘感的声音; dua sonu 赞美您的存在 (¶37). Ayinden önce bile kararlılığı adıyla verilir: 沉稳，平静，坚定 (¶6). Duanın içinde de temkinlidir: ayin başarısız olursa şehri korumak için kapıya kılıç diker (¶6–8).
+**Denetim:** 898 (ZH).
+
+### N-COL Maske/Öz/Çatlak
+
+Öz: Derrick'in gizli ayinlerini bilir ve örter (939: 如果不是他帮忙遮掩，这肯定瞒不过洛薇雅); Lovia'nın Hakiki Hâlık'a duasını onu kısıtlamak için ister (1116 ¶44). Çatlak: 401 ¶32 沉哑; 1123 kapıda 沉默了一阵，摇了下头 ardından 小心洛薇雅.
+
+## Lovia
+
+> **Numaralama:** N-COL'deki not geçerli.
+
+### N-LOV1.1
+
+202 ¶81: 不断在微笑和冷酷中转变着; ¶82: güttüğü ruhlar arasında yüksek Mertebeli bir habis ruh var. 315 ¶21: 总是在不同的状态间没有规律地切换，有时哭泣，有时冷笑，有时怒哼. 386: Colin'e yapılan raporda 洛薇雅长老也不再时常变换说话的状态了. Not: 897 ¶28'deki parçalı cümle (我会努力，回想的，我，需要，一个安静的房间) Derrick'indir (话语间断，斟酌着用词), Lovia'nın değil.
+**Denetim:** 202, 315, 386, 897 (ZH).
+
+### N-LOV1.2
+
+315 ¶20: 嗯 ile karşılık, sessizce gider; ¶22–24 Derrick'in korkusu: 洛薇雅长老正常了……正常了……. 400 ¶90 yumuşak gülümseme; ¶92–97 yalnızken parmağını koparıp sembolle yer, 愚者？ diye fısıldar. 401 ¶22 微笑问道 '首席'阁下？; ¶26–27 没有丝毫愤怒，平静笑道.
+**Denetim:** 315, 400, 401 (ZH).
+
+### N-LOV1.3
+
+1113 ¶38 淡漠，平静，没含一点情绪; 1115 ¶30 脸色平静. Replikler: 1113 ¶28, 1119 ¶2, 1122 ¶41, 1260 ¶14. Küçümseme: 1252 ¶31–32 眯了一下眼 ardından 你真像一个小丑. 1116 ¶29–30 organlarını kustuktan sonra odaksız gözlerle 是每个人都会有的堕落. 1252 ¶54 嗓音略显低沉.
+**Denetim:** 1113, 1115, 1116, 1119, 1122, 1252, 1260 (ZH).
+
+### N-LOV1.4
+
+1116 ¶42: Hakiki Hâlık'ın tazim ismini okur; 1260 ¶3: dua cevabının baskısını tanır (就如同向'真实造物主'祈祷获得了回应时一样). 904 ¶23: dışarıya açılan yol onun için 白银城逃离'神弃之地'的关键. 1131 ¶6: Dev Kralı Sarayı'na girmeyi şiddetle ister. Son sözü şehir hakkındadır: 1263 ¶46 我没有背叛白银城…… Derrick paraleli: ikisi de şehir için gizli bir ilaha dua eder (Derrick 143, 178; Lovia 1116).
+**Denetim:** 904, 1116, 1131, 1260, 1263 (ZH).
+
+### N-LOV Maske/Öz/Çatlak
+
+401 ¶63–64: 闭了闭眼睛，露出带着些许悲伤的笑容 ardından 我假装与其他队员失散，在那里等了五天，可他都没有异变为恶灵 ('o'nun kim olduğu söylenmez). 401 ¶31 又开始了吗？(迷茫): kaderin tekrarına alışkınlık. 1263 ¶45: 声音虚幻飘渺.
