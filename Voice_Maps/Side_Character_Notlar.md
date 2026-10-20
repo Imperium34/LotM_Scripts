@@ -724,3 +724,49 @@ Mektup 203 ¶67–70, 204 ¶6–8: 哈哈哈，祝贺你们，祝贺你们终于
 
 24 ¶68 (ZH/TR) 用…左手揉动太阳穴; 136/150 ¶24 梦呓般的口吻, şatoyu rüyadan tanır; 170 ¶73–76 金字塔陵寝 duyunca donar: 这给我熟悉的感觉，但并没有让我想起更多的事情; 187 ¶18 我感觉很熟悉…但怎么也想不起来…很苦恼; 588 ¶26 闭了闭眼睛，仿佛在压榨记忆; ¶41–42 不太明显的痛苦表情: 我，我回忆不起来了……; 916 ¶26, ¶29, ¶69 yalnızca 不…….
 **Denetim:** 24 ¶68 (ZH/TR); 150, 170, 187, 588, 916 (ZH).
+
+---
+
+## Xio Derecha
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Çevrildikçe ZH/TR ¶ eklenmeli.
+> **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm:** Fors'la birlikte 107'den itibaren anılır; kendi replikleri 130'da başlar. Yoğun sahneler: 176–178, 193, 226, 244, 269–293 (Lanevus takibi), 381, 452 (ailesi), 750–777 (X Bey toplantıları), 819–862 (Dantès'i koruma), 954–957 (şato, Tarot'a katılış), 1014–1056 (Sherman, Stafford Vikontu, babasının ölümü), 1094, 1184–1193 (Kadı, mahkeme), 1334–1337 ve 1366–1391 (ekip başı, yarı tanrı).
+> **Eski haritadan düşenler:** "Aşırı resmî, otoriter, kısa boyunu telafi etmek için hukuk ve askerî terim kullanır", "OCD'nin en üst hâli" ve "kurallar çökünce kısa devre" kaynakta yok. Xio sade ve dobra konuşur; "hüküm" kelimesini bir kez, bir köpek için yarı şaka kullanır (178 ¶50). Eski örnekler ("Backlund yasalarının 4. maddesi", "Backlund Nezaket Kuralları") uydurmadır.
+> **Atıf uyarısı:** Otomatik çıkarımda bazı satırlar yanlış konuşmacıya düştü (153 ¶29 Fors'undur; 371 ¶15 Stuart'ındır). Kanıtta yalnızca konuşmacısı doğrulanmış satırlar kullanıldı.
+
+### N-XIO1.1
+
+269 ¶30 委托的金额有多少？; ¶35 成交！ (Fors'la birlikte). 381 ¶79 难度和报酬？(熟稔地问道); ¶89 我拒绝这个任务，我很讨厌他！(当即回绝, Kapin'in insan kaçakçılığı yüzünden). 1094 ¶14 我不会拒绝赚钱的机会 (半真半假). 280 ¶12, ¶17, ¶22 ve 283 ¶25–36: muhbirlere art arda net sorular; 283 ¶36 停，停止。…除此之外，你没在别的地方见过那个‘巨人’？ 244 ¶25 说吧，让我听一听是什么大买卖.
+**Denetim:** 244, 269, 280, 283, 381, 1094 (ZH).
+
+### N-XIO1.2
+
+275 ¶43 拔高声音道：停止！ (sarhoş kavgası durur). 283 ¶36 停，停止 (muhbirin lafını keser). 275 ¶25: Williams'a 好好攒钱，娶个不错的姑娘，每天回家都有热水、菜肴和温暖的问候… öğüdü; ¶30 你总有一天要死在酒精和某些奇怪的疾病上. 382 ¶4 吸烟有害健康 (抽了抽鼻子道). 919 ¶23 喝酒不好！ 750 ¶74 Fors'u esrar konusunda azarlar. 1014 ¶40 Fors'a 不能抽烟，不能喝酒，不能太过放纵情绪. 178 ¶50 维持"正义": 我的裁决是，离开它！ (表情严肃地低喊; Susie'yi rahatsız eden kara köpeğe).
+**Denetim:** 178, 275, 283, 382, 750, 919, 1014 (ZH).
+
+### N-XIO1.3
+
+860 ¶59–63: 行为有点异常 → kıyafet/ayakkabı/koltuk altı/ifade sıralaması, 我敢打赌，那里可能藏着一把手枪, ardından görev dağılımı. 856 ¶83: koruma planı üç koşulla (没出门没访客的时候… / 有客人拜访时… / 如果…外出…). 1018 ¶20: Fors'un fikrine soru zinciriyle itiraz (难道你想直接与那名保护者发生冲突？…有多大的把握？会不会很危险？). 1021 ¶14: kaçış planı (我们从不同的方向逃走…). 954 ¶89: duvar resimleri üzerine ödül avcısı tecrübesiyle 语速较缓.
+**Denetim:** 856, 860, 954, 1018, 1021 (ZH).
+
+### N-XIO1.4
+
+452 ¶52 略显艰难地说道: 他曾经，曾经是我父亲的副手; ¶58 脸现光彩地回忆道: ailesinin unvanı ve babasının mevkii (王室卫队的统领和宫廷侍卫长). 856 ¶79 我小时候住的就是这样的地方. 859 ¶55 这是因蒂斯风格…看似华丽，但没有什么内涵. 1031 ¶44 babasının adını temizlemenin umutsuzluğu. 1044 ¶73 怔怔出神，嘴唇翕动了一阵道: 我父亲，他，究竟是什么样一个人？
+**Denetim:** 452, 856, 859, 1031, 1044 (ZH).
+
+### N-XIO1.5
+
+193 ¶32 呆了一下道: 所以，你这段时间是在陪我？ 226 ¶65 佛尔思，今晚我们一起，算了，我还是自己睡…… 862 ¶22 你才真的成熟了…你做事靠直觉，仲裁靠拳头… (Fors'un sözünü ona çevirir). 1021 ¶40 表情复杂地说道: 你没必要回来的. 1170 ¶66 认真地回应道: 更重要的是你要尽快成为半神. 777 ¶54 是不是每一位作家都有拖延症？ Fors'un alayına saf cevap: 176 ¶33 我没见过这么像狗的神奇生物……(相当正经).
+**Denetim:** 176, 193, 226, 777, 862, 1021, 1170 (ZH).
+
+### N-XIO1.6
+
+1189 ¶20–33: mahkemedeki vakayı düz ve ölçülü anlatır, 简洁回应道 可以请假. 1336 ¶51 请进 (宽大的座椅); 1337 ¶58 为了表现自己的重视，休站了起来: 洛克，立刻召集你小队的成员… emirleri sırayla; ¶82 去告诉文德尔，之后的两周，他将在这里度过. 1391 ¶71 认真地回答: plan, MI9'u kullanma niyeti.
+**Denetim:** 1189, 1336, 1337, 1391 (ZH).
+
+### N-XIO1.7
+
+956 ¶111 没有多问，没有多说，当即点头道: 是，‘愚者’先生。 957 ¶16 遵照各种宗教仪式里的描述，恭敬行礼道: 您的意愿就是我的意志。 1321 ¶40 尊敬的‘愚者’先生，我平时没感觉到有什么异常… Toplantıda kısa, saygılı, sade.
+**Denetim:** 956, 957, 1321 (ZH).
+**Açık soru:** 957'deki kalıp "Arzunuz, benim irademdir." diye önerildi; tekrar ederse donmuş satır yapılabilir.

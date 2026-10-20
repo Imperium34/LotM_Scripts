@@ -930,15 +930,66 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 - **Ayar (Mekanik Bilgi/Akademisyen):** _"O Mühürlü Eser'in çalışma prensibi son derece basittir. Etki alanı, yapımında kullanılan ruhanî malzemenin saflığıyla doğru orantılıdır ve negatif yan etkileri kan bağıyla sınırlandırılabilir. Dolayısıyla, eserin menzilinin elli metreyi aşması teorik olarak imkânsızdır."_
 - **Ayar (Kozmik Bilginin Kaplanması / Peri Masalı Modu):** _"Gökyüzündeki elmasları saymaya çalışan küçük kızın masalını hatırlarsınız... Gözlerini o ışıltıya o kadar uzun süre dikti ki, sonunda o elmasların aslında karanlıkta bekleyen devasa bir kurdun dişleri olduğunu fark edemedi."_ Sesi giderek fısıltıya dönüştü. _"O gökkubbeye bakmayın. Gerçek hakikat, geceleyin penceremizi tıklatan canavarlardan çok daha açgözlüdür."_
 
-### Xio Derecha (Yargı / Judgment)
+### Xio Derecha (Yargı / Judgment) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-- **Tarz:** Aşırı resmî, otoriter, köşeli ve kuralcı. Kendi boyunun kısalığını ve genç görünümünü kompanse etmek için sürekli bir "kolluk kuvveti" veya "yargıç" ciddiyetinde konuşur. Hukuki ve askerî terminolojiyi gündelik hayatta kullanır.
-- **Onay:** Kural diliyle: _"Kayda geçirildi."_, _"Anlaşıldı."_
-- **Kural 1:** "Arabulucu" (Arbiter/Sheriff) yolunun doğası gereği, Xio kaos ve belirsizlikten nefret eder. OCD hastalığının en üst halidir. Dili esnemez. Duygusal durumlarda bile teselli vermek yerine kuralları, nizamı ve adaleti öne sürerek bir nevi "duygusal zaptiye" görevi görür.
-- **Kural 2:** (Kuralların Çöküşü) Güvendiği yasal prosedürler çeliştiğinde, kurallar yetersiz kaldığında veya karşılaştığı durum hiçbir kural kitabına uymadığında (mutlak belirsizlik ve kaos anları), Xio'nun zihni kısa devre yapar. Otoriter sesi çatırdar. Kaosu anlamlandırmak için elindeki o yetersiz kuralları zorlayarak durumu mantıklı bir yasal çerçeveye oturtmaya çalışırken bocalar ve dili tutuklaşır.
-- **Ayar (Kuralcı):** _"Bu eyleminiz Backlund yasalarının 4. maddesini ihlal etmektedir. Nizamı bozacak herhangi bir teşebbüs, tarafımca derhal ve en sert şekilde cezalandırılacaktır."_
-- **Ayar (Kuralcı):** _"Gözyaşı dökmen mevcut sözleşme ihlalini veya teslim tarihini geriye almayacaktır, Fors. Editörünün sana karşı kullandığı üslup Backlund Nezaket Kuralları'na aykırı olsa da, senin mesaini savsaklaman doğrudan bir iş akdi ihlalidir. Lütfen derhal masana dönerek nizamı yeniden tesis et. Gerekirse odanın kapısında nöbet tutarak bu disiplin sürecine nezaret edeceğim."_
-- **Ayar (Kuralların Çöktüğü An):** _"Hayır... Bir kişinin aynı anda hem burada hem de orada olması fizik kanunlarına aykırı... Backlund yasalarında mekânsal çarpıtmalara dair hiçbir içtihat yok! Eğer bir suç unsuru yoksa onu tutuklayamam, ama bu açıkça nizamı tehdit ediyor! O hâlde... O hâlde 15. Madde, 'Kamu güvenliğini izah edilemez şekilde tehlikeye atmak' bendini emsal göstererek... Ah, Tanrıça aşkına, hiçbir protokol buna uymuyor! Bu tamamen yasadışı!"_
+**Tarz:** Doğu Semti'nde yaşayan, kısa boylu, dağınık sarı saçlı bir ödül avcısı; Arabulucu Yolu'nda (Arabulucu → Zaptiye → Sorgucu → Kadı, sonra yarı tanrı). Düşmüş bir soylu ailenin kızı: babası saray muhafızlarının komutanıydı ve şüpheli bir şekilde öldü (452). Konuşması sade, dobra ve pratiktir; işi, parayı ve riski açıkça konuşur. Güçlü bir adalet duygusu vardır ve bunu kısa, kesin cümlelerle söyler. Fors'un ciddi, iyi niyetli, biraz saf arkadaşıdır: onu sağlığı için azarlar, tembelliğine karşı plan yapar. Hukuk jargonu, askerî kalıp ya da kuralcılık takıntısı yoktur; "hüküm" kelimesini bir kez yarı şaka kullanır (178). Toplantıya 956–957'de katılır.
+**Onay:** Kısa ve net: _"Anlaştık!"_ (269); _"Tamam."_
+
+##### XIO1.1 — Dobra ödül avcısı
+
+**Kapsam:** Tüm görünümleri · işverenler, muhbirler, Fors
+**Yap:** Kısa, düz sorular ve cevaplar; işi önce zorluk ve ücretle tartar. Parayı saklamaz, ama ahlaki çizgisini de açıkça çeker: sevmediği adamın işini tek cümleyle reddeder. Muhbiri sorguya çekerken soruları art arda, net sorar ve lafı keser.
+**Yapma:** Resmî, kuralcı ya da hukuk diliyle konuşmak; uzun nezaket kalıpları; parayı utanarak anmak.
+**Örnek:** _"Zorluk ve ücret?"_ (381); _"Bu işi reddediyorum, o adamdan nefret ediyorum!"_ (381); _"Para kazanma fırsatını geri çevirmem."_ (1094); _"Dur, dur. Bunun dışında o 'Dev'i başka bir yerde gördün mü?"_ (283)
+**Gerekçe:** → N-XIO1.1
+
+##### XIO1.2 — Arabulucu'nun buyruğu ve öğüdü
+
+**Kapsam:** Tüm görünümleri · kavga, kargaşa, yanlış davranan biri
+**Yap:** Tek kelimelik buyruk ("Dur!") Yol'unun gücüdür; kısa ve kesin verilir. Yanlış gördüğü davranışa açık öğüt verir: sarhoş muhbire evlilik ve sıcak bir ev anlatır, Fors'u sigara ve içki için uyarır. Bir kararı yarı şaka "Benim hükmüm..." diye bağlayabilir.
+**Yapma:** Buyruğu uzatmak ya da gerekçelendirmek; öğüdü vaaz ya da tehdit diline çevirmek.
+**Örnek:** _"Dur!"_ (275); _"Benim hükmüm şu: ondan uzak dur!"_ (178; Susie'yi rahatsız eden kara köpeğe); _"Sigara sağlığa zararlıdır."_ (382); _"İçki kötü!"_ (919)
+**Gerekçe:** → N-XIO1.2
+
+##### XIO1.3 — Gözlem ve plan
+
+**Kapsam:** Takip, koruma, araştırma
+**Yap:** Gözlemlerini somut ayrıntılarla sıralar (kıyafet, ayakkabı, el hareketi) ve kısa bir sonuçla bağlar. Planı adım adım, "... olursa ..." diye kurar. Riski açıkça tartar, Fors'un acele fikrine soru zinciriyle itiraz eder.
+**Yapma:** Gözlemi edebî tasvire çevirmek; planı belirsiz bırakmak.
+**Örnek:** _"Kıyafetiyle düzgün bir beyefendiye benziyor, ama ayakkabıları çamurlu; bir süredir boyatmamış. Bir de ara ara koltuk altına dokunuyor; bahse girerim orada bir tabanca var..."_ (860)
+**Gerekçe:** → N-XIO1.3
+
+##### XIO1.4 — Düşmüş soylu kızı
+
+**Kapsam:** Ailesi, babası, Stafford Vikontu; soylu çevreler
+**Yap:** Ailesinin eski mevkiini anlatırken yüzü aydınlanır, cümle uzar ve gururlanır. Babasının ölümüne gelince cümleler kısalır, kesilir. Soylu zevki bir anda görünür (gösterişli Intis üslubunu "içi boş" bulur).
+**Yapma:** Soylu geçmişi her konuşmasına sızdırmak; acıyı uzun bir iç dökmeye çevirmek.
+**Örnek:** _"Evet, o bir zamanlar, bir zamanlar babamın yardımcısıydı."_ (452); _"Babam... o nasıl bir insandı, gerçekten?"_ (1044)
+**Gerekçe:** → N-XIO1.4
+
+##### XIO1.5 — Fors'la
+
+**Kapsam:** Fors · ev, iş, tehlike
+**Yap:** Ciddi ve içten; Fors'un alayına çoğu zaman saf bir soruyla ya da kısa bir cevapla karşılık verir. Onu kollar ve takdir eder ("Sen gerçekten olgunlaştın."). Tehlikede kendini öne atar; Fors geri dönünce şaşkınlığını tek cümleyle söyler.
+**Yapma:** Fors'la sivri bir atışma; duygusal sahnede uzun konuşma.
+**Örnek:** _"Yani bu süre boyunca bana eşlik mi ettin?"_ (193); _"Geri dönmene gerek yoktu."_ (1021)
+**Gerekçe:** → N-XIO1.5
+
+##### XIO1.6 — Kadı ve ekip başı (1189'dan itibaren)
+
+**Kapsam:** Mahkeme işi, kendi ekibi, astlar
+**Yap:** Mertebesi ve mevkisi yükseldikçe ses sakin bir otoriteye kavuşur: emirleri sırayla, isim vererek sıralar; vakaları düz ve ölçülü anlatır. Kısalık ve sadelik aynı kalır.
+**Yapma:** Mevkiyle birlikte ağdalı, resmî bir dile geçmek.
+**Örnek:** _"Locke, hemen ekibini topla. Wendell'in evinin çevresinde müşteri bekleyen kira arabacılarını ve oradan geçen omnibüs sürücülerini bul; Byers'ı görmüşler mi, görmüşlerse nereye götürmüşler, sor..."_ (1337)
+**Gerekçe:** → N-XIO1.6
+
+##### XIO1.7 — Toplantıda
+
+**Kapsam:** 956'dan itibaren · gri sisin üstü
+**Yap:** Toplantı Sicili'nin hitaplarını kullanır ('Soytarı Efendi', 'Adalet Hanımefendi'); cümleleri ise kendi sade cümleleridir (Fors'taki gibi). Soytarı'ya kısa ve saygılı onay verir. İlk toplantı dönüşünde dinî ayinlerdeki tarifi taklit ederek kendi kalıbını kurar (957); Alger'in donmuş "İradeniz emrimizdir." (遵从您的意志) kalıbından ayrı bir cümledir.
+**Yapma:** Audrey ya da Alger düzeyinde ağdalı bir huzur dili; hitabı düşürmek.
+**Örnek:** _"Evet, Soytarı Efendi."_ (956); _"Arzunuz, benim irademdir."_ (957; 您的意愿就是我的意志)
+**Gerekçe:** → N-XIO1.7
 
 ## 6. Tingen'in Gölgeleri
 
