@@ -454,3 +454,86 @@ Kural: 这是规矩 (401 ¶25). Meclis: 这必须通过'六人议事团'的表�
 
 196 ¶62–63: 略显紧绷地感慨道 这是我第一次参与这么危险的行动; 197 ¶34 并不平静. Ölüm 199; yas 201–202 (nişanlısı ve ailesi), 207 ¶70 Dunn onu yanında savaşanlar arasında sayar.
 **Denetim:** 196, 197, 199, 201, 202, 207 (ZH).
+
+## Fors Wall
+
+> **Numaralama:** Fors 107'de girer; bu bölümler henüz çevrilmedi, bu yüzden notlar bölüm düzeyinde verilir. Çevrildikçe ZH/TR ¶ numaraları eklenmeli.
+> **Yazar notu (1353, 第七部总结):** 之前我其实有考虑在这一卷让阿尔杰牺牲的，再附加一个佛尔思，都是围绕"门"先生这条线……至于佛尔思，实在太咸了，咸到我都不知道该怎么推动她去冒险. 咸 = 咸鱼 (tuzlu balık), kıpırdatılamayan miskin.
+
+### N-FOR1.1
+
+107: 我认为冒险营救不是一个好主意，人生本来就很短暂了，需要做的事情却很多. 153: 三次 kalkmaya çalışıp başaramaz; 我们可以请专业人士来做！…这只需要付出咨询费用. 177: 只要不耽搁我的午餐. 178: 我只是懒得思考，而你是靠肌肉来思考. 332: Audrey'nin gözünden 依然慵懒.
+**Denetim:** 107, 153, 177, 178, 332 (ZH).
+
+### N-FOR1.2
+
+107: tanıtım 冷静，智慧，慵懒 (茜茜女士 gibi); 似戏谑似玩味的笑意; 诊所医生; sarı lekeli parmaklar (卷烟), kalem nasırı, güçlü kollar; 俯视 hissi; 你的美貌真是让我印象深刻，我想我已经拥有了下一本小说的素材; 让我们坦诚地交流吧，留给我们的时间并不多; Xio'nun suçunu anlatırken 唔，额 ile bocalar. 177: 作为曾经的诊所医生…见过比这更加恶心的死亡场景, 沉声说道. 178: 这两年创作小说的经历告诉我，抓住了关键，事情将变得简单; Hall Kontu'nun unvanlarını 等等，等等 ile sayıp 没好气 bitirir, 我以神的名义发誓.
+**Denetim:** 107, 177, 178 (ZH).
+
+### N-FOR1.3
+
+178: 你对自己的认知非常正确…足以让你提升到序列8; 193: 不，被盯上的只会是你…而我，佛尔思·沃尔，始终是最近颇受欢迎的畅销书作者; 你竟然完全相信报纸上的描述…… (怜悯地看了好友一眼); 你猜。 153: 你怎么忍心让一个纤细敏感的作家…你知道我为了那段推理，掉了多少根头发，失了多少次眠吗？ 188: 宽慰笑道 等你完成了心愿，请允许我将你的经历写成故事. 332: 喜欢打击休.
+**Denetim:** 153, 178, 188, 193, 332 (ZH).
+
+### N-FOR1.4
+
+188, 193: 这次的经历给了我不少创作的灵感，我下一部小说就写…. 342: 必须作者吸食了大麻…我要以白银城为蓝本写一部小说. 816: 作为一名以言情为核心的畅销小说作家，她的第一反应是，"世界"格尔曼·斯帕罗是不是在追求自己. 950: Gehrman'ın biyografisini hayal eder ama 要是我真写了《格尔曼·斯帕罗》，肯定会被官方非凡者盯上……佛尔思自娱自乐地想着 — tehlikeyi aynı anda görür, yazmaz. (Eski Kural 3'ün 'yazar, sonra fark eder' iddiası kaynakta yok.) 1101: Gehrman ona hastane hayalet hikâyelerini roman olarak yazmayı görev verir. Devam kitabı (bu kaynakta yok; wiki): Soytarı Kilisesi'nin özel olarak tuttuğu yazar olarak Gehrman Sparrow'un maceralarını 'The Adventurer' dizisinde yazar (en az altı cilt). Yazma cüreti yalnız emirle gelir.
+**Denetim:** 188, 193, 342, 816, 950, 1101 (ZH).
+
+### N-FOR1.5
+
+310: ilk toplantıda 谨慎戒备, sonra kendini rahatlatır. 311–313: 一愣一愣, 我怎么都没听说过, 骗人的吧？; 312: 我想要'药师'和'戏法大师'的配方，用金钱交易; '世界'先生，希望你能尽快找到…我该怎么支付报酬？; 我相信'愚者'先生; Audrey'ye 谢谢你的提醒，你的称号就是你的品格; 想！ / 成交！ (又惊又喜…害怕对方反悔); 今天的聚会让我感觉自己就像刚到贝克兰德的乡下姑娘. 313: 也许是个不怀好意，隐藏得很深的邪神 diye kendini uyarır. Not: 药师 (Apothecary) sözlükte yok; haritadaki 'Eczacı' yer tutucudur.
+**Denetim:** 310, 311, 312, 313 (ZH).
+
+### N-FOR1.6
+
+188: 满月时就会出现的呓语 sakin bir bilmece gibi anılır; 336: fısıltılar bilezikten başlamıştır. 226 颤抖着想; 297 强忍着内心的恐惧，半起身行了一礼; 391 çığlık atma dürtüsü (iç); 392 又恐惧又兴奋，就跟小时候听母亲讲鬼故事时的状态一样; 869, 962 略显结巴; 1170 felaketle biten senaryolar, hepsi 满月呓语'ye dönüşüyle biter; 1231 脸色苍白 ardından Tefekkür ile 深层次的睡眠.
+**Denetim:** 188, 226, 297, 336, 391, 392, 869, 962, 1170, 1231 (ZH).
+
+### N-FOR Maske/Öz/Çatlak
+
+332: 她之前偶尔会显得颓废，忧郁，对未来好像没抱什么希望，而现在，这方面的表现彻底消失了 (Audrey'nin okuması). 313: 只觉自己的未来充满希望的光辉.
+
+## Kehanet Kulübü
+
+> **Numaralama:** 1–58 ZH/TR, sonrası ZH/EN. 38–56 örnekleri yayımlanmış metinden alındı. Not: yayımlanmış metin genel 药师'yi 'aktar' diye karşılıyor (38 ¶64, 49 ¶39); Mertebe adı 药师 (Apothecary) ayrı bir karar ister.
+
+### N-KUL1.1
+
+48 ¶19–27: Angelica üyelik, ücret ve ikram seçeneklerini sıralar; 48 ¶63–64 ücret değişikliği; 54 ¶55–59 müşteri yönlendirme. Hitap 'Bay Moretti', 'Bay Glacis', 'Bay Steve'; Klein'dan 'Angelica Hanım'.
+**Denetim:** 48, 53, 54 (ZH/TR).
+
+### N-ANG1.1
+
+48 ¶19, ¶22 (保持着礼貌性的微笑), ¶27, ¶64 (深深看了他一眼); 82 ¶13 (礼貌性笑道), ¶21 (温婉笑道); 56 ¶31 识趣地没有靠拢.
+**Denetim:** 48, 56, 82 (ZH).
+
+### N-ANG1.2
+
+53 ¶55 一直在悄然观察他…忍不住压低嗓音，好奇问道, Glacis'in 非常，非常，非常'sini tekrarlar; 54 ¶1 越说越是小声，最终闭上了嘴巴; 62 ¶11 短促地惊呼了一声，旋即绽开笑容.
+**Denetim:** 53, 54, 62 (ZH).
+
+### N-ANG1.3
+
+54 ¶17–23: Klein'ın 有的悲伤，有的痛苦，不要密封于心里 sözünden sonra 嗓音还有些低哑，描述也仅是说了几个关键词. 95 ¶28 略显茫然地呢喃; ¶35 擦了擦眼睛和鼻子 ardından 拔高声音道 您要喝什么？. 153 ¶50–51 仿佛在思考般笑道 锡伯红茶？.
+**Denetim:** 54, 95, 153 (ZH).
+
+### N-GLA1.1
+
+49 ¶47 语气激昂 他是一位非常，非常，非常神奇的……; 53 ¶55 Angelica aktarır; 95 ¶67 我的体验非常，非常，非常完美. Yayımlanmış metin: 'çok, çok, çok'.
+**Denetim:** 49, 53, 95 (ZH/TR).
+
+### N-GLA1.2
+
+38 ¶64 好笑摇头; 38 ¶67 一个不那么让人喜欢的玩笑; 49 ¶39 后怕和庆幸; 49 ¶45 激动地踱了两步; 62 ¶45–46 斟酌着语气 ile kehanet ister; 95 ¶67 Rosen'in dükkânını 颇感兴趣 tavsiye eder; 115 ¶35 我真的很后悔…这是我第二次说这句话了，希望，不，我坚信不会有第三次.
+**Denetim:** 38, 49, 62, 95, 115 (ZH).
+
+### N-HAN1.1
+
+48 ¶25 gök haritası dersi; 48 ¶47 揉了揉眉心; 49 ¶16 语气正常地将事前的准备详细说了一遍 (Sihirli Ayna Kehaneti); 88 ¶76 ölümü.
+**Denetim:** 48, 49, 88 (ZH/TR).
+
+### N-EDW1.1
+
+48 ¶48 笑着起身 kendini tanıtır; 49: yorumların muğlaklığı ve 'ölüler itiraz etmez' esprisi (yayımlanmış metin).
+**Denetim:** 48, 49 (ZH/TR).

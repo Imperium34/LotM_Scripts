@@ -574,6 +574,41 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 - **KEN1.2 — Gerginlik açıkça söylenir:** _"Katıldığım en tehlikeli görev bu."_ (196 ¶63). → N-KEN1.2
 - **Not:** Ölümünden önce sesine bir önsezi yazılmaz. Sıradanlığı kaybın kendisidir; trajedi anlatıda ve Klein'ın yasında kurulur (199–202).
 
+### Kehanet Kulübü (Toplu Harita) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Tingen'in orta ve üst orta sınıf hobi kulübü. Nazik, rahat ve kehanet meraklısı; üyeler ücretlerden, yöntemlerden, birbirlerinin falından konuşur. Hitap 'Bay' ve 'Hanım'dır (Bay Moretti, Angelica Hanım). Kehanet terimleri sözlüktedir: kehanet, kâhin, falcı, gök haritası, Sihirli Ayna Kehaneti. Klein burada bir üfürükçü rolü oynar; onun sesi Klein haritasındadır. Örnekler 38–56 için yayımlanmış metindendir.
+**Onay:** Kibar ve kısa: _"Pekâlâ, lütfen biraz bekleyin."_ (54 ¶59)
+
+##### KUL1.1 — Kulüp nezaketi
+
+**Kapsam:** Kulüp · üyeler, müşteriler, görevli
+**Yap:** Nazik, açık ve pratik konuş; ikramı ve ücreti dolandırmadan söyle.
+**Yapma:** Kulüp nezaketini saray diline ya da kilise ağırlığına çıkarma; burası bir hobi kulübüdür.
+**Gerekçe:** → N-KUL1.1
+
+#### Angelica
+
+- **Tarz:** Kulübün güzel ve nazik görevlisi. Ev sahibi gibi ağırlar, ikram eder, seçenek sunar; kuralları da nezaketle ama açıkça söyler. Merakını sesini alçaltarak gösterir. Altında bir yara vardır; işine döndüğü an toparlanır.
+- **ANG1.1 — Ev sahibi nezaketi, açık kural:** _"Bay Moretti, kahve mi alırsınız, çay mı? Sibe Çayı, Southville Kahvesi ve Desi Kahvesi ücretsiz ikramımızdır."_ (48 ¶27); _"Talebinizi yerine getiririz; ancak müşterilere kulübümüze yeni katıldığınızı da belirtiriz."_ (48 ¶64). Nezaket kuralı gizlemez. → N-ANG1.1
+- **ANG1.2 — Alçak sesle merak:** Duyduğu dedikoduyu sözcüğü sözcüğüne aktarır: _"Bay Glacis dedi ki, dedi ki siz çok, çok, çok mucizevi bir hekimmişsiniz. Öyle mi?"_ (53 ¶55). Yanılınca sesi kısılır ve susar (54 ¶1). → N-ANG1.2
+- **ANG1.3 — Yara ve toparlanma:** Kederde sesi boğuklaşır, yalnız anahtar sözcükleri sıralar: _"Pazar öğleden sonrası... En az elli üye..."_ (54 ¶23). Ağladıktan sonra sesini yükseltip ikram ederek toparlanır (95 ¶35). İkramı zamanla Klein'la arasında bir bağa döner: tek sözcüklük bir soru, _"Sibe Çayı?"_ (153 ¶51). → N-ANG1.3
+
+#### Glacis
+
+- **Tarz:** Monokllu, varlıklı, coşkulu bir üye. Minnetini, pişmanlığını ve tavsiyesini aynı hevesle söyler; biraz saftır.
+- **GLA1.1 — Üçlü pekiştirme:** İmzası _"çok, çok, çok"_tur: _"O çok, çok, çok mucizevi bir..."_ (49 ¶47); 95 ¶67'de yine (非常，非常，非常完美). Her geçişte aynı biçimde korunur, kısaltılmaz. → N-GLA1.1
+- **GLA1.2 — Coşku ve saflık:** Hafif şaka: _"Ruhsatsız bir hekim mi, yoksa köy aktarı mı?"_ (38 ¶64); heyecanlı rica: _"Bir daha geldiğinde şayet kulüpte yoksam, lütfen ne zaman tekrar geleceğini muhakkak öğrenin!"_ (49 ¶45). Pişmanlığını kendiyle alay ederek söyler (115 ¶35: ikinci kez pişman olduğunu, üçüncüsünün olmayacağına inandığını söyler). → N-GLA1.2
+
+#### Hanass Vincent
+
+- **Tarz:** Tanınmış kâhin; kulüpte ders verir. Yorgun, sabırlı, açıklayıcı.
+- **HAN1.1 — Ders sesi:** Sıralı ve uygulamalı anlatır (_"İlk olarak… İkinci olarak…"_, 49); ders bitince yorgun ve kısa: _"Belki de kendi gök haritanızı çizmeyi denemelisiniz. Bir sorunuz olursa yanıma gelebilirsiniz, Beyaz Kristal Odası'nda olacağım."_ (48 ¶47). 88'de ölür. → N-HAN1.1
+
+#### Edward Steve
+
+- **Tarz:** Genç, güler yüzlü bir üye; mesleğe alaycı bir mesafeyle bakar.
+- **EDW1.1 — Alaycı itiraf:** Kehanet yorumlarının muğlaklığını açıkça söyler ve bir espriyle bağlar: _"…Ölüler gelip bana itiraz etmez."_ (49). → N-EDW1.1
+
 ## Tingen Şubesi — Destek Personeli
 
 ### Tingen Şubesi — Destek Personeli (Toplu Harita) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -660,16 +695,62 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 - **Örnek:** Hokkabaz (Fors): _"O adamın ipini çektiler. Artık Backlund'da barınamaz."_
   Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını mı kastediyorsunuz? Eğer asılmadıysa ve yaşıyorsa, neden sadece başka bir şehre gidemiyor? Bacaklarını da mı kırdılar?"_
 
-### Fors Wall (Hokkabaz / The Magician)
+### Fors Wall (Hokkabaz / The Magician) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-- **Tarz:** Üşengeç yazar, bohem ve kinayeli. Gündelik dili oldukça modern, hafif bıkkın ve rahatına düşkündür. Ancak durumları analiz ederken dünyayı bir roman kurgusuymuş gibi değerlendirir; edebi klişelerden ve yazar argosundan beslenir.
-- **Onay:** Bıkkın-modern: _"Peki, peki."_, _"Olur, ne yapalım."_ Klein'dan sonra modern sese en yakın karakterdir; yine de "tamamdır" demez.
-- **Kural 1:** Fors temelde bir "hayatta kalma" uzmanından ziyade, olayların içine kazara sürüklenmiş sıradan bir insan gibi hissettirir. Kozmik dehşeti ve Tarot Cemiyeti'nin ağırbaşlı, ilahi havasını iç sesinde sürekli **profesyonel kaygılara** (teslim tarihleri, kelime kotaları, geçim derdi) indirgeyerek komik bir kontrast yaratır. Olaylar onun sadece sabah kahvesini değil, doğrudan ekmek teknesini ve yazar mesaisini bölüyordur.
-- **Kural 2:** Bu bohem ve rahat maske, Abraham ailesinin laneti (Dolunay hezeyanları) veya doğrudan hayatını tehdit eden kozmik bir dehşet söz konusu olduğunda tamamen paramparça olur. O anki dili panik dolu, kesik kesik ve saf bir hayatta kalma güdüsüyle şekillenir.
-- **Kural 3:** Karşısında Gehrman veya korktuğu başka birisi olduğunda kekelemeye ve kelimeleri yutmaya başlar. Ancak bu korktuğu kişilerin arkasından onları hafife alan utanç verici kurgular yazma dürtüsü, hayatta kalma içgüdüsünü tamamen ezip geçer. Riski _göze alarak_ yazmaz. Yazar krizine girip metni bitirir ve ölümcül tehlikeyi ancak metin ortaya çıktıktan sonra idrak edip dehşete düşer. Bu iflah olmaz dürtü onun trajikomedisidir.
-- **Tetikleyici Ayrımı (K2 vs K3):** İki korku modu tetikleyiciyle ayrılır. _Akut, doğrudan fiziksel/hayati tehdit_ (Dolunay hezeyanı, canına kast) → **panik** (Kural 2): kesik kesik, saf hayatta kalma. _Çevresel dehşet veya korkulan biriyle ani-olmayan bağlamda yan yana olmak_ → **yazma dürtüsü** (Kural 3): maske düşmez, kalem devreye girer. Aynı "korku" iki zıt çıktı verir. Hangisinin geldiğini tehdidin _aciliyeti_ belirler.
-- **Örnek (Gündelik/İç Ses):** _(İç Ses) "Harika. Yine üçüncü sınıf bir korku romanı klişesinin tam ortasındayız. Oysa şu an sıcak yatağımda uzanıp, editörüme teslim tarihimi neden kaçırdığıma dair muazzam bahanemi kurguluyor olmalıydım. Bu kahrolası gizem dünyasının bir yazarın mesaisine ve uyku düzenine zerre kadar saygısı yok."_
-- **Örnek (Korku Anı):** _(Kesik kesik, nefes nefese) "Yine başlıyor... O fısıltılar. Hayır, dinlemek istemiyorum. Kafamın içinde bir şeyler geziniyor... Beynimi deşiyorlar! Lütfen... Lütfen sussun! Aklımı yitirmek üzereyim..."_
+**Tarz:** Aşk romanı ağırlıklı çok satan bir yazar (《暴风山庄》; karşılığı sözlükte yok), eski bir muayenehane hekimi, Çırak Yolu'nda. Yazarın kendi teşhisiyle "tuzlu balık" (咸, 1353 yazar notu): tembelliği huyudur ve onu hayatta tutan şey de odur, çünkü onu riske itmek mümkün değildir. Kalabalıkta sakin, zeki ve miskin görünür, Aşkın'ın sıradan insana bakışıyla hafifçe tepeden ve alaycı bir gülümsemeyle durur (107). Xio'yu yere indirmeyi sever. İç sesi her şeyi bir roman malzemesine, bir telif ödemesine ya da bir öğle yemeğine indirger. Altında bir lanet (bileziği ve dolunay fısıltıları) ve Tarot'tan önce ara ara görülen bir umutsuzluk vardır (332). 1890'ların orta sınıf dilidir: Klein'dan sonra modern sese en yakın karakterdir, ama modern argo kullanmaz ve "tamamdır" demez.
+**Onay:** Şartlı ve miskin: _"Öğle yemeğimi aksatmamak şartıyla."_ (177); sevindiğinde çıplak: _"Anlaştık!"_ (312)
+
+##### FOR1.1 — Tuzlu balık felsefesi
+
+**Kapsam:** Tüm görünümleri · herkes · risk, iş, karar
+**Yap:** Riskten kaçışı bir hayat bilgeliği gibi kur. Tembelliği kısa yol üretsin: işi yapmak yerine yapacak birini bulur. Kendi tembelliğini bilir ve rahatça söyler.
+**Yapma:** Tembelliği beceriksizlik ya da korkaklık gibi gösterme; Fors gerektiğinde yetkindir, sadece gerekmesini istemez.
+**Örnek:** _"Ayrıca bence kendini tehlikeye atıp kurtarmaya kalkmak iyi bir fikir değil; hayat zaten kısa, yapılacak iş çok."_ (107); _"Bunu bir uzmana yaptırırız! Bilgileri topla, adları sil, iyi bir dedektife götür; yalnızca danışma ücreti öderiz!"_ (153); _"Ben senden farklıyım; ben düşünmeye üşeniyorum, sen kaslarınla düşünüyorsun."_ (178)
+**Gerekçe:** → N-FOR1.1
+
+##### FOR1.2 — Kalabalıkta maske
+
+**Kapsam:** Tüm görünümleri · yabancılar, soylular, iş görüşmeleri
+**Yap:** Sakin, kısa ve açık konuş; iltifatı bir yazarın gözünden yap. Kanlı bir sahnede hekim soğukkanlılığıyla dur; düşünmesi gerektiğinde yazarlık tecrübesine dayanarak düşün.
+**Yapma:** Maskeyi üşengeç iç sesle karıştırma; kalabalıkta bıkkınlık göstermez.
+**Örnek:** _"Tünaydın Audrey Hanım; güzelliğiniz beni çok etkiledi, sanırım bir sonraki romanımın malzemesini buldum."_ (107); _"Açık konuşalım, fazla vaktimiz yok."_ (107); _"Bu iki yıllık roman yazma tecrübesi bana şunu öğretti: işin anahtarını bulursan gerisi kolaylaşır."_ (178)
+**Gerekçe:** → N-FOR1.2
+
+##### FOR1.3 — Xio'yu yere indirmek
+
+**Kapsam:** Xio · baş başa, iş üstünde
+**Yap:** Kuru alayla ve mantıkla indir; bazen yalnızca iki kelimeyle. Şakanın altında şefkat durur; bir de Xio iş yüklemeye kalkınca abartılı bir "narin yazar" sızlanması.
+**Yapma:** Alayı acımasızlığa ya da gerçek bir küçümsemeye çevirme.
+**Örnek:** _"Kendini çok doğru tanıyorsun; böyle çok iş yaptın ve kaybettiklerin seni Mertebe 8'e çıkarmaya yeterdi."_ (178); _"Tahmin et."_ (193); _"Hassas, narin bir yazara böyle tümevarım, akıl yürütme işi yaptırmaya nasıl gönlün razı olur? O akıl yürütme için kaç tel saç döktüğümü, kaç gece uykusuz kaldığımı biliyor musun?"_ (153); _"Dileğine kavuşunca hikâyeni yazmama izin ver; çok heyecanlı, çok eğlenceli olur."_ (188)
+**Gerekçe:** → N-FOR1.3
+
+##### FOR1.4 — Her şey malzemedir
+
+**Kapsam:** İç ses · her an
+**Yap:** Olayı, insanı, tehlikeyi bir romanın malzemesi olarak gör; bir aşk romancısının refleksiyle (816: Gehrman'ın ona kur yapıp yapmadığını düşünür). İç sesi saygısızca eğlenebilir (342: Gümüş Şehir'i ancak kafayı bulmuş bir yazar uydurabilir).
+**Yapma:** Bu dürtüyü riskli bir eyleme çevirme. Korktuğu biri hakkında yazmayı hayal eder, ama tehlikeyi aynı anda görür ve hayalde bırakır (950). Gehrman Sparrow'u sonunda yazar, ama yalnız Soytarı'nın emriyle ve Soytarı Kilisesi'nin kiraladığı yazar olarak (_Maceracı_ dizisi, devam kitabı); kendi başına cüret etmez.
+**Gerekçe:** → N-FOR1.4
+
+##### FOR1.5 — Toplantıda: orta sınıf kibarlığı
+
+**Kapsam:** Tarot toplantısı · Soytarı ve üyeler
+**Yap:** Kısa, kibar ve ticari konuş; hitap öteki üyelerle aynıdır ('Dünya Beyefendi'). Divan formülü kullanmaz: Audrey ve Alger'in saray dili ile onun sade kibarlığı arasındaki fark, odadaki yabancılığını gösterir. İç sesi kendini Backlund'a yeni gelmiş taşralı bir kız gibi hisseder ve Soytarı'ya hem hayranlıkla hem temkinle bakar. Sevinç patlaması tek kelimedir.
+**Yapma:** Ona saray formülü yükleme; Toplantı Sicili'nin huzur katmanı ona açılmaz.
+**Örnek:** _"Eczacı ve Hilebaz formüllerini istiyorum, para ile."_ (312); _"Soytarı Efendi'ye güveniyorum."_ (312); Audrey'ye: _"Uyarın için teşekkürler; unvanın karakterinin ta kendisi."_ (312); _"İsterim!"_ … _"Anlaştık!"_ (312)
+**Gerekçe:** → N-FOR1.5
+
+##### FOR1.6 — Korku
+
+**Kapsam:** Tüm görünümleri · tehlike, tekinsizlik
+**Yap:** İki biçimi var. _Tekinsiz olan karşısında_ korku ile heyecan karışır, merak ağır basar (392). _Doğrudan tehdit karşısında_ cümle kısalır, hafif kekeler (869, 962), ama nezaketi düşmez (297: korkusuna rağmen yarı doğrulup selam verir). Kaygılı hayal gücü felaket sonları yazar (1170); kaçışı uyku ve Tefekkür'dür (1231).
+**Yapma:** Kaynakta olmayan bir çığlık, isteri ya da uzun panik monoloğu yazma.
+**Gerekçe:** → N-FOR1.6
+
+- **Maske / Öz / Çatlak:**
+  - _Maske:_ sakin, zeki, miskin yazar; alaycı gülümseme.
+  - _Öz:_ üzerinde bir lanet taşıyan ve Tarot'tan önce geleceğe dair umudunu yitirmiş biri (332). Tembellik hem huyu hem kalkanıdır: risk almamak hayatta kalmaktır.
+  - _Çatlak:_ umut ve hırs onu bir anda çıplak bırakır (312: _"İsterim!"_, _"Anlaştık!"_); korkuda cümle kısalır ve kekeler.
+- **Seeka'dan ayrımı:** İkisi de yazar. Seeka bir kilise müfrezesinin disiplinli üyesidir ve esprisi derli topludur; Fors bohem, miskindir ve esprisi Xio'yu indirmek içindir.
 
 ### Emlyn White (Ay / The Moon)
 
