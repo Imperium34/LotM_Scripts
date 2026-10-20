@@ -233,7 +233,7 @@
 - **Tılsım Bilgisi** — Charms (符咒学); Ortak Öğreti dersi; 'tılsım' Charm'a ayrılıdır _315_
 - **Fevkalade Temeller** — Beyonder Foundations (超凡基础); Ortak Öğreti dersi; Çince 超凡 'fevkalade'dir (bkz. fevkalade mahluk), 非凡 'Aşkın' değil _315_
 - **Söylence Bilgisi** — Mythology (神话学); Ortak Öğreti dersi _315_
-- **İlahkanlı Savaşçı** — Divine Blood Warrior (神血战士); Gümüş Şehir'in Savaşçı Yolu'na verdiği ad; Savaşçı Yolu bağı ve 'İlahın Eli'ndeki 神 → İlah korunur; Ejderkanı kalıbında bitişik. Şehrin Mertebe 9 adı 超凡战士 de Savaşçı'dır _137_
+- **İlahkanlı Savaşçı** — Divine Blood Warrior (神血战士); Gümüş Şehir'in Savaşçı Yolu'na verdiği ad; Savaşçı Yolu bağı ve 'İlahın Eli'ndeki 神 → İlah korunur; Ejderkanı kalıbında bitişik. Şehrin Mertebe 9 adı 超凡战士 → Fevkalade Savaşçı (sozluk.yml'de Savaşçı'nın alternatif adı; 超凡 → fevkalade) _137_
 - **Dev Kralı** — Giant King (巨人王); 王 → Kral sözlük teamülüdür _138_
 - **Dev Kralı Sarayı** — Giant King's Court (巨人王庭); anlatıcı da kullanır, bu yüzden Oğuz ağzına çekilmez _138_
 - **karanlık halkı** — People of the Dark (黑暗之民); duadaki adlandırma; küçük harf, 'Karanlık' Mertebe adıdır _136_
