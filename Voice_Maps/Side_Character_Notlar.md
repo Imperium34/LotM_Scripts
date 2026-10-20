@@ -1008,7 +1008,7 @@ Ad: 1110 ¶39, 1111 ¶4, ¶10, ¶24, 1275 ¶67, 1359 ¶19, ¶30 索伦·艾因�
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.
 > **Kullanıcı kararı (2026-10-20):** ikisi, konuşmacı etiketi olmadan replikten tanınabilecek kadar ayrı sicillerle yazılır; "Ayırt etme sınaması" tablosu bunun ölçüsüdür. Sicil seçimleri (vaiz / hokkabaz) kaynaktaki anlatı işaretlerine dayanan yorumdur.
 > **Eski haritalardan düşenler:** Âdem Kural 1 ("asla belirsizlik bildirmez") 1347 ¶49 ile çelişir (我猜测…结果未知); Kural 7'deki "idrak sancısı" anı ve Merlin'e dayalı zaman kipi kuralı (Kural 6) kaynakta bir sahneye dayanmıyor. Amon Kural 1 ("karşısındakinin sesini kopyalayarak başlar") kaynakta yok. Amon Kural 7 (sıfır kayıp) AMN1.4 olarak korundu. Eski örneklerin hepsi uydurmadır.
-> **Açık soru:** 时天使 ve 恶作剧之神 için sözlükte ad yok.
+> **Karar** (kullanıcı, 2026-10-20): 时天使 → "Zaman Meleği"; 欺诈之神 → "Hilekârlık İlahı", 恶作剧之神 → "Aldatmaca İlahı" (sozluk.yml'deki "Hilekârlık ve Aldatmaca İlahı" birleşik unvanının parçaları). words.md › Key Figures.
 
 ### N-ADM1.1
 

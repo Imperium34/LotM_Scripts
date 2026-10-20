@@ -154,6 +154,9 @@
 - **Lanevus** — Lanevus (兰尔乌斯); demir madeni dolandırıcısı, Kapkaççı Yolu Mertebe 8 Dolandırıcı _62_
 - **Hood Eugen** — Hood Eugen (胡德·欧根); Ruhiyat Simyagerleri'nden Mertebe 7 Ruh Hekimi, tımarhanede _175_
 - **Megose** — Megose (梅高欧丝); Lanevus'un nişanlısı, Christina'nın yeğeni _116_
+- **Zaman Meleği** — Angel of Time (时天使); Amon'un melek unvanı _466_
+- **Hilekârlık İlahı** — God of Deceit (欺诈之神); Amon'un unvanı; sozluk.yml'deki "Hilekârlık ve Aldatmaca İlahı"nın parçası _1156_
+- **Aldatmaca İlahı** — God of Mischief (恶作剧之神); Amon'un unvanı; aynı birleşik unvanın parçası _1063_
 - **Grimm** — Grimm (格林); Roselle'in gemi arkadaşı _59_
 - **Edwards** — Edwards (爱德华兹); Roselle'in gemi arkadaşı _59_
 - **Matilda** — Matilda (玛蒂尔达); Abel ailesinden, Roselle'in nişanlısı; 'Matilda Hanım' _59_

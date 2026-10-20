@@ -165,7 +165,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 ### Amon `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Mülhid Amon, 时天使, kendi deyişiyle "Muziplik İlahı" (恶作剧之神); Kadim Güneş Tanrısı'nın küçük oğlu, Kapkaççı Yolu'nun Melekler Beyi. Her yerde birden çok "Amon" vardır: bedenlere musallat olan, birlikte konuşan, kendi aralarında oylama yapan avatarlar. Görünüşü sabittir: sağ gözünde kristal monokl (ve çoğu zaman sivri bir büyücü şapkası). Sesi bir hokkabazın, bir kumarbazın sesidir: hep gülümser, her şeyi bir oyun sayar, karşısındakine "tahmin et" der, "ilginç", "eğlenceli" bulur. Bu rahatlık bir yetkinliğin sesidir: söylediği her şey bir hedefe yük taşır, yanlışlıkla bilgi vermez; kural ve "açık" avcısıdır. Kardeşini adıyla anmaz, ona "saplantılı kardeşim" der.
+**Tarz:** Mülhid Amon, Zaman Meleği (时天使), Hilekârlık İlahı (欺诈之神) ve Aldatmaca İlahı (恶作剧之神); Kadim Güneş Tanrısı'nın küçük oğlu, Kapkaççı Yolu'nun Melekler Beyi. Her yerde birden çok "Amon" vardır: bedenlere musallat olan, birlikte konuşan, kendi aralarında oylama yapan avatarlar. Görünüşü sabittir: sağ gözünde kristal monokl (ve çoğu zaman sivri bir büyücü şapkası). Sesi bir hokkabazın, bir kumarbazın sesidir: hep gülümser, her şeyi bir oyun sayar, karşısındakine "tahmin et" der, "ilginç", "eğlenceli" bulur. Bu rahatlık bir yetkinliğin sesidir: söylediği her şey bir hedefe yük taşır, yanlışlıkla bilgi vermez; kural ve "açık" avcısıdır. Kardeşini adıyla anmaz, ona "saplantılı kardeşim" der.
 **Onay:** Neşeli: _"İlginç."_ / _"Eğlenceli."_ (有意思 / 很有趣); kabul ederken _"Olur."_
 
 ##### AMN1.1 — Oyuncu sesi
