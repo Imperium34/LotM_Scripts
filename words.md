@@ -419,6 +419,8 @@
 
 - **İçtimai Fikir Cereyanları ve Terbiye Hâdiseleri** — Tracey'in istediği kitap; adı, kendi tahlilinde kullandığı iki kelimeyi (fikir cereyanı, hâdise) birebir taşımak zorunda (社会思潮与教育现象)
 - **Büyük Dedektif Manseng** — Great Detective Manseng (《大侦探芒森》)
+- **Fırtınalı Tepeler** — Stormwind Mountain Villa (《暴风山庄》); Fors Wall'un romanı. 《呼啸山庄》 (Wuthering Heights) üzerine tek karakterlik oyun; Türkçede de 'Uğultulu Tepeler' üzerinden tek kelime değişir. 风暴 → Fırtına (bkz. Fırtınalar Kitabı) _107_
+- **Sissi Hanım** — Lady Sissi (茜茜女士); Fırtınalı Tepeler'in kahramanı; 'sakin, zeki, miskin'. 女士 + ad → Hanım (Daly Hanım gibi) _107_
 - **Akşam Postası** — Evening Post (晚邮报)
 - **Backlund Günlük Tribünü** — Backlund Daily Tribune (贝克兰德日报)
 - **Tingen Sabah Postası** — Tingen Morning Post (廷根早报)
