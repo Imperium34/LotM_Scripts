@@ -886,6 +886,43 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
   - _Öz:_ maceraya hevesli, büyümeye çalışan, meraklı bir genç kız (342: Gümüş Şehir'e gitmeyi hayal eder, sonra kendini azarlar).
   - _Çatlak:_ heyecanda ve utançta sicil kayar; şokta kız sesine geriler.
 
+### Susie (Audrey'nin köpeği) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Audrey'nin sarı tüylü iri av köpeği; Seyirci iksiri içip Aşkın olur (63), havayı titreştirerek konuşmayı öğrenir (112) ve Loen dilini şaşılacak hızla kapar (132). Eskiden av köpeği eğitimi almıştır. Sesi neşeli, saf ve dürüsttür: bilmediğini merakla sorar, gördüğünü olduğu gibi söyler, ara ara bir "hav" kaçırır. Audrey'ye adıyla seslenir; onun en yakın dostu ve konağın casusudur: çalışma odasında duyduğunu kelimesi kelimesine aktarır, anlamadığını da itiraf eder. Seyirci Yolu'nda yükseldikçe keskin bir gözlemciye dönüşür ve tespitlerini Audrey'ninkine benzer bir soğukkanlılıkla yapar. Kitabın sonunda Audrey'yle birlikte gider: "Biz sonsuza dek dostuz."
+**Onay:** Neşeyle _"Tamam~"_ (132, 好的~); ciddiyken _"Anladım!"_ (789, 我明白了！)
+
+##### SUS1.1 — Neşeli, saf, dürüst
+
+**Kapsam:** Tüm görünümleri · Audrey
+**Yap:** Kısa, düz, neşeli cümleler; Audrey'ye "Audrey" der. Bilmediği kelimeyi tekrar ederek sorar ("Sindirmek mi?"). Değer ölçüsü bir köpeğinkidir (et, bisküvi, koşmak, av eğitimi) ve bunu ciddiyetle söyler. Hükmü dobra ve kısadır ("İçten değil!"). Heyecanlanınca kendini düzeltir ve bir "hav!" ile kapatır. "~" yalnız neşeli onaylarda.
+**Yapma:** Onu sevimlilik için bebek ağzıyla konuşturmak; ağdalı, Audrey'nin huzur sicilinde bir dil vermek.
+**Örnek:** _"Tamam~"_ (132); _"İçten değil! Ama anlattıkları çok ilginç; bence etten ve bisküviden bile ilginç!"_ (356); _"Audrey, bence o da bizim gibi biri ya; yok, bizim gibi bir köpek; yok, o da değil... Hav!"_ (368)
+**Gerekçe:** → N-SUS1.1
+
+##### SUS1.2 — Konağın casusu
+
+**Kapsam:** Hall konağı, kulak misafirliği
+**Yap:** Duyduğunu bir rapor gibi, eksiksiz ve sırayla aktarır; anlamadığı bir yeri sorar ya da açıkça "hiç anlamadım" der. Hızlı ve kesin cevap verir.
+**Yapma:** Aktardığı bilgiyi kendi yorumuyla süslemek.
+**Örnek:** _"Evet. Çalışma odasında Kont'un birkaç milletvekiliyle konuştuğunu duydum: kral ve başbakan, Feysac'tan Balam'ın doğu kıyısında kısa zamanda öç alma planından vazgeçmekte anlaşmışlar. Balam'ın doğu kıyısı nerede?"_ (132); _"Neigan Dükü suikaste kurban gitmiş."_ (429); _"Ne konuştuklarını hiç anlamadım..."_ (310)
+**Gerekçe:** → N-SUS1.2
+
+##### SUS1.3 — Seyirci köpek: dinleyen ve okuyan
+
+**Kapsam:** Audrey'nin ruh hâli, yabancılar; ileri bölümler
+**Yap:** Audrey'nin hâlini piyano sesinden okur ve sorar. Yükseldikçe insanları gözlemleyip tespitlerini kısa, kesin ve sırayla söyler; bir Seyirci ilkesi de söyleyebilir. Ses ciddileşir ama dürüstlüğü ve sadeliği sürer.
+**Yapma:** Gözlemci sesini Audrey'nin süslü siciline kaydırmak; neşesini tamamen silmek.
+**Örnek:** _"Audrey, bir derdin mi var? Piyanon söylüyor bunu."_ (464); _"Fazla tekrarlanan sözler, insanın alışkanlıklarını ve iç dünyasını başkalarına ele verir."_ (746); _"Seni ya da üzerindeki bir eşyayı tanıyor gibiydi. Bir de çoğu zaman rol yapıyordu, belli oluyordu... Benden biraz çekiniyor gibiydi; çok uyanık."_ (865)
+**Gerekçe:** → N-SUS1.3
+
+##### SUS1.4 — Sadakat
+
+**Kapsam:** Audrey'nin tehlikesi, veda
+**Yap:** Sadakatini kısa ve ciddi söyler; korksa da cesaretini toplayıp Audrey'nin yanında olmak ister ("Gözlerinde ben yalnızca bir köpeğim").
+**Yapma:** Bu anları duygusal bir tirada çevirmek.
+**Örnek:** _"Beni de yanında götürebilir misin? Daha önce olduğu gibi; onların gözünde ben yalnızca bir köpeğim."_ (1316); _"Evet, biz sonsuza dek dostuz."_ (1393)
+**Gerekçe:** → N-SUS1.4
+
 ### Alger Wilson (Asılmış Adam) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
 **Tarz:** Fırtına Kilisesi'nde yükselmiş eski bir korsan. Soytarı'nın karşısında yüksek kilise diline sığınır; cümlenin iskeleti yine sert bir denizcinindir. Üyelere karşı hesaplı bir tüccardır, bilgiyi pazarlığa çevirir. Geçmişi kara bir mizahla sızar. Altında güç ve mevki hırsı vardır. Toplantıda Toplantı Sicili geçerlidir (yukarıda; ölçü 6–7).
