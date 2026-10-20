@@ -571,6 +571,7 @@
 - **整个人** — çoğunlukla düşer
 - **有所 / 有些 / 一丝** — korunur
 - **微微 + jest** — düşer
+- **ifa** — 'Rol İfası'na (扮演法) ayrılıdır; gündelik fiil olarak kullanılmaz ('vazifesini ifa etmek' değil, 'yerine getirmek'), terimin ağırlığı korunur.
 - **Erken Mertebe = meslek** — düşük Mertebe adlarının çoğu sıradan bir meslekle aynı kelimedir, çünkü bu Aşkınlar biraz güçlenmiş sıradan insanlardır ve öyle sanılabilir. Ayrım yalnız harftedir: Mertebe büyük harf, meslek küçük harf (Kâhin/kâhin, Hekim/hekim, Aktar/aktar, Ruh Aracısı/ruh aracısı). Hangisi olduğu, konuşanın kişiyi Aşkın olarak mı yoksa mesleğiyle mi andığına bakılarak seçilir.
 
 ---
