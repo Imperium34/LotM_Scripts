@@ -1517,14 +1517,16 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 **İlke:** Kilise sesi bir karikatür değil, birkaç sabit kalıp ve bir tavırdır. Bir mümini tanıtan, sabit dua ve yemin formülleri, göğse çizilen işaret ve inancın gündelik hayata sızan bir iki kuralıdır; geri kalan konuşması kendi sınıfının ve karakterinin sesidir (Bölüm 10). Formüller her geçişte aynı kalır.
 
+**Kadir-i Mutlak katmanı:** Fırtınalar Hâkimi (Denizci Yolu) ve Ebedî Yanan Güneş (Ozan Yolu) kiliseleri, Seyirci Yolu (Âdem) gibi Kadir-i Mutlak yol grubundadır; bu grup dünyada İbrahimî Tanrı tasavvurunu temsil eder. Bu kiliselerin formülleri ve dindar dili bu yüzden İslami bir deyişle kurulur (hamd, Ya Rab, Ya Hâkim; namus, iffet, günah, haram; nur). Ebedî Gece ve Buhar ve Çarklar başka yol gruplarındandır ve kendi deyişlerini korur; aradaki fark okura görünür olmalıdır.
+
 **Formül tablosu (donmuş):**
 
 | Kilise | Selam / övgü | Dua | Yemin | İşaret |
 |---|---|---|---|---|
 | Ebedî Gece | "Ulu Ece'ye medholsun." (赞美女神) | "Ulu Ece / Tanrıça seni (sizi, bizi) himaye etsin." (愿女神庇佑…) | — | göğse dört kez dokunup Kızıl Ay'ı çizmek (画绯红之月) |
 | Buhar ve Çarklar | — | — | "Buhar aşkına!" (蒸汽在上) | göğse nokta nokta dokunup üçgen Buhar ve Çark Mukaddesat Amblemi'ni çizmek |
-| Fırtınalar Hâkimi | — | — | "Fırtına aşkına!" (风暴在上) | Fırtına amblemi (风暴徽章) |
-| Ebedî Yanan Güneş | "Güneş'e medholsun!" (赞美太阳) | — | — | kollar yukarı açık "Güneş'e övgü" duruşu |
+| Fırtınalar Hâkimi | — | — | "Ya Hâkim!" (风暴在上); 主啊 → "Ya Rab" | Fırtına amblemi (风暴徽章) |
+| Ebedî Yanan Güneş | "Güneş'e hamd olsun!" (赞美太阳) | — | — | kollar yukarı açık "Güneş'e hamd" duruşu |
 
 ##### KLS1.1 — Ebedî Gece: sükûnet ve himaye
 
@@ -1545,15 +1547,15 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 ##### KLS1.3 — Fırtınalar Hâkimi: ateşli, katı, onur düşkünü
 
 **Kapsam:** Fırtına müminleri (denizciler, filozoflar, Alger'in çevresi), Salahiyetli Tecziyeciler (代罚者)
-**Yap:** Yemin "Fırtına aşkına!"dır. İnanç gündelik hayata katı kurallarla sızar: evlilik öncesi iffet, kadına tepeden bakış, kadın ve onur için düello. Ateşli ve kesin konuşur; Loen'in filozoflarının çoğu da bu inançtandır, bu yüzden bir Fırtına mümini hem sert hem keskin zekâlı olabilir.
+**Yap:** Yemin "Ya Hâkim!"dir (el-Hâkim esmasını çağırır gibi); 主啊 "Ya Rab". İnanç gündelik hayata katı kurallarla sızar ve bu kurallar İslami kelimelerle konuşulur: evlilik öncesi iffet, namus için düello, günah ve haram, kadına tepeden bakış. Ateşli ve kesin konuşur; Loen'in filozoflarının çoğu da bu inançtandır, bu yüzden bir Fırtına mümini hem sert hem keskin zekâlı olabilir.
 **Yapma:** Her Fırtına müminini kaba bir denizciye çevirmek; kuralları vaaz ettirmek (sözden çok tavırda görünür).
-**Örnek:** _"Ya Hâkim, Fırtına aşkına! Bu meselenin böylece neticeye bağlanacağını ne tahayyül edebilirdim ne de inanabilirdim!"_ (47, yayımlanmış)
+**Örnek:** _"Ya Rab, ya Hâkim! Bu meselenin böylece neticeye bağlanacağını ne tahayyül edebilirdim ne de inanabilirdim!"_ (47; revizyon listesindeki biçim); _"Ya Hâkim..."_ (8, Alger)
 **Gerekçe:** → N-KLS1.3
 
 ##### KLS1.4 — Ebedî Yanan Güneş, Toprak Ana ve ötekiler (kısa)
 
 **Kapsam:** Az görünen kiliseler
-**Yap:** Güneş: övgü ve ışık; slogan "Güneş'e medholsun!" ve kollar yukarı açık duruş. Ozan Yolu'nun sloganı "Haydi Güneş'e medhedelim!", "Karanlığı kov, Güneş'e medhet." (140, 686). Kitapta bu övgü bir şakaya da dönüşür: Güneş eserlerinin yanında kalan herkes "yalnız Güneş'e medheden bir aptala" döner (133, 139); bu şaka anlatıda aynı kalıpla verilir. Toprak Ana: Peder Utravsky (306–307) "Peder" denmesini tercih eder; eski bir korsandır, sakin ve açık sözle itiraf eder. Cenk Tanrısı ve İlim ve Hikmetin İlahı kiliselerinin kitapta belirgin bir sesi yoktur; ses haritası çıkarılmadı.
+**Yap:** Güneş: hamd ve nur; formül "Güneş'e hamd olsun!" ve kollar yukarı açık duruş. Ozan Yolu'nun sloganı "Haydi Güneş'e hamd edelim!", "Karanlığı kov, Güneş'e hamd et." (140, 686). Dindar dili nur, arınma, hamd ve tövbe üzerine kurulur. Kitapta bu hamd bir şakaya da dönüşür: Güneş eserlerinin yanında kalan herkes "yalnız Güneş'e hamd eden bir aptala" döner (133, 139); şaka anlatıda aynı kalıpla verilir. Toprak Ana: Peder Utravsky (306–307) "Peder" denmesini tercih eder; eski bir korsandır, sakin ve açık sözle itiraf eder. Cenk Tanrısı ve İlim ve Hikmetin İlahı kiliselerinin kitapta belirgin bir sesi yoktur; ses haritası çıkarılmadı.
 **Yapma:** Bu kiliselere kaynakta olmayan dua formülleri uydurmak.
 **Gerekçe:** → N-KLS1.4
 

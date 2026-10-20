@@ -1109,7 +1109,7 @@ Walter: 741 ¶50 先生，有什么能为您效劳的吗？; ¶57 önce ev, sonr
 ### N-KLS1.1
 25 ¶71–74 (ZH/TR) vaaz: 他们是孩子被夺走的母亲，他们是失去了希望的孤儿，他们是被逼离开了正道的穷人。黑夜没有放弃他们，给予了他们眷顾。 ¶82 孩子，你想说些什么？; ¶84 仿佛被幽暗熏染，他的语气也变得轻柔; ¶85 piskoposun kısa, sakin yönlendirmesi. 26 ¶5–7 (ZH/TR) selam ve karşılık (同样的动作). 47 ¶10 (ZH/TR) Neil'ın takılması; ¶12 dört dokunuş + 赞美女神. 39 ¶13 (ZH/TR) Leonard.
 **Denetim:** 25, 26, 39, 47 (ZH/TR).
-**Revizyon adayı:** 绯红之月 işaretinin yazımı yayımlanmış bölümlerde değişiyor: "kızıl ay işaretini çizdi" (26), "Kızıl Ay çizip" (47), "Kızıl Ay şeklini çizdi", "bir kızıl ay çizdi", "kızıl ayı simgeleyen bir daire" (39). words.md'de gök cismi "Kızıl Ay" (büyük harf). Öneri: işarette de "Kızıl Ay". Karar kullanıcının; liste hâlinde ayrıca sunulacak.
+**Karar** (kullanıcı, 2026-10-20): işarette de "Kızıl Ay". Yayımlanmış satırlar Scripts/Reports/kilise_formulleri.md listesinde (26, 39, 46).
 
 ### N-KLS1.2
 56 ¶16 (ZH/TR) Anna: 蒸汽在上…感谢神，膜拜神… / 不断地在胸口点出三角形的蒸汽与机械圣徽. 55 ¶75 (ZH/TR) 蒸汽在上啊. 116 ¶7 Buhar müminleri evlilik öncesi iffeti şart koşmaz (Fırtına'nın aksine). 伊康瑟 (Makine Külli Şuuru): 351 ¶23 没有什么办法是能保证百分之百成功的; 420 ¶4 我们反向排查了消息和资料泄露的各个渠道…初步锁定了一个嫌疑对象; ¶12–56 sıralı rapor.
@@ -1118,8 +1118,8 @@ Walter: 741 ¶50 先生，有什么能为您效劳的吗？; ¶57 önce ev, sonr
 ### N-KLS1.3
 47 ¶24 (ZH/TR) 主啊，风暴在上 → "Ya Hâkim, Fırtına aşkına!". 8 ¶83 (ZH/TR) 风暴在上…… → "Yüce Fırtınalar Hâkimi...". 116 ¶7 恋人之间在婚前必须守贞 (Fırtına müminleri için). 15 卢尔弥这个风暴之主的信徒对女性的态度让人厌恶. 467 ¶77 在风暴之主的信徒中，为女士为荣誉决斗，是一件很常见的事情. 752 哈米德先生是风暴之主的信徒，著名学者卢尔弥也是，鲁恩王国很大一部分哲学家同样是. 111 风暴徽章. 299 ¶65 风暴之主的教士…洒圣水，做仪式.
 **Denetim:** 8, 47 (ZH/TR); 15, 111, 116, 299, 467, 752 (ZH).
-**Revizyon adayı:** 风暴在上 iki biçimde yayımlanmış: "Yüce Fırtınalar Hâkimi..." (8) ve "Fırtına aşkına" (47). "Buhar aşkına" (words.md: "Tanrıça aşkına kalıbı") ile koşut olan "Fırtına aşkına" önerildi; 8'in değiştirilip değiştirilmeyeceği kullanıcının kararı.
+**Karar** (kullanıcı, 2026-10-20): Fırtına ve Güneş, Kadir-i Mutlak yol grubunda olduğu için İslami deyişle konuşur. 风暴在上 → "Ya Hâkim", 主啊 → "Ya Rab". Yayımlanmış 8 ¶83 ve 47 ¶24 kilise_formulleri.md listesinde.
 
 ### N-KLS1.4
-Güneş: 140 歌颂者…他们的口号是：“让我们赞美太阳吧！”; 686 驱除黑暗，赞美太阳; 230, 548 赞美太阳的姿势 (双臂张开，往上簇拥); şaka kalıbı 133, 139, 160, 343, 1033–1034, 1079, 1227 (只知道“赞美太阳”的白痴). "Güneş'e medholsun!" önerisi "Ulu Ece'ye medholsun." ile koşuttur; kullanıcı onayı bekliyor. Toprak Ana: 306 ¶41 我更喜欢别人称呼我神父; ¶45–51 eski korsanlık itirafı; 307 sakin ve açık anlatım. Cenk Tanrısı, İlim ve Hikmetin İlahı: belirgin replik bulunamadı.
+Güneş: 140 歌颂者…他们的口号是：“让我们赞美太阳吧！”; 686 驱除黑暗，赞美太阳; 230, 548 赞美太阳的姿势 (双臂张开，往上簇拥); şaka kalıbı 133, 139, 160, 343, 1033–1034, 1079, 1227 (只知道“赞美太阳”的白痴). Karar (kullanıcı, 2026-10-20): 赞美太阳 → "Güneş'e hamd olsun!" (Kadir-i Mutlak katmanı; hamd yalnız Tanrı'ya edilen övgüdür ve Ebedî Gece'nin "medholsun"undan ayrılır). Toprak Ana: 306 ¶41 我更喜欢别人称呼我神父; ¶45–51 eski korsanlık itirafı; 307 sakin ve açık anlatım. Cenk Tanrısı, İlim ve Hikmetin İlahı: belirgin replik bulunamadı.
 **Denetim:** 140, 230, 306–307, 686 (ZH).
