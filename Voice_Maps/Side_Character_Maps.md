@@ -1428,64 +1428,88 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ---
 
-## 10. NPC ve Zümre Sesleri (Toplu Haritalar)
+## 10. NPC ve Zümre Sesleri (Toplu Haritalar) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**İlke — Sınıf Merdiveni = Sunulan Statü ile Gerçek İmkân Arasındaki Uçurum:** Backlund'da sınıf, sahip olunan paradan çok _sergilenen_ statü ile _gerçek_ imkân arasındaki farkla ölçülür. Aşağıdaki basamaklar ayrı ayrı haritalar değil, aynı eksenin dereceleridir; bitişik iki basamağın aynı tınlamaması için değişken, _bu uçurumun boyutudur_.
+**İlke: 体面 (saygınlık) merdiveni.** Loen'de sınıfın ölçüsü paradan çok 体面'dir: sergilenen saygınlık ile onu taşıyacak gerçek imkân arasındaki fark. Kaynak bu farkı her basamakta gösterir: eski aristokratlar borçlanıp yine de konumlarına yakışır hayatı sürdürür (177); Backlund orta sınıfı haftada 5 pound'la "gerçek saygınlığın biraz gerisinde" kaldığını hesaplar (231); düşmüş bir beyefendi ekmek kuyruğuna yüzünü saklayarak girer (1143). Defin bile sınıfa göre üçe ayrılır (268). Basamaklar ayrı haritalar değil, aynı eksenin dereceleridir; bitişik iki basamak aynı tınlamamalıdır.
+**Genel kural:** Basamak sesi kelime dağarcığından çok **konunun** ve **hitabın** içindedir: aristokrat aileyi, unvanı ve meclisi konuşur; orta sınıf parayı, kirayı ve görüntüyü; Doğu Semti işi, çeteyi ve açlığı. Sicil farkı bunun üstüne hafifçe biner; karikatüre kaçmaz.
 
-### Aristokratlar (İmkân = Statü, Çabasız)
+##### ZMR1.1 — Aristokratlar: rahat yetki, aile ve konum
 
-- **Tarz:** İmkân ile statü kusursuzca örtüşür. Hiçbir şeyi kanıtlama derdi yoktur. Dil zahmetsiz, ölçülü, hafif tenezzülkâr. Ağdalı olmaya _çalışmaz_. Ağdalılık doğal hâlidir. Nezaket bir silahtır, sıcaklık değil; en keskin hakaret en kibar cümleye sarılıdır.
-- **Onay:** Tenezzülle: _"Elbette."_, _"Olsun."_
+**Kapsam:** Hall Kontu, Vikont Glaint, Hibbert ve salon çevresi
+**Yap:** Sıcak, kendinden emin, rahat bir yetki: aile içinde babacan ama kesin ("Merak da olmaz!"), salonda iltifatçı ve tanıştırıcı (unvanı, babasını, kraliyet güvenini sayar). Söz konusu unvan, meclis, kral, aile şerefidir; para açıkça konuşulur ama bir iş gibi (hisseler, ödül). Eski soyluluk "saygınlığı her şeyin üstünde" tutar, borçlu da olsa.
+**Yapma:** Her cümleye ince bir hakaret ya da "nezaket silahı" koymak (kaynakta yok); ağdalı, Divan düzeyi bir dil (o, Toplantı Sicili'ne aittir).
+**Örnek:** _"Merak da olmaz!"_ (192, Hall Kontu); _"Hanımefendi, size bahsettiğim Bayan Audrey bu; Backlund'un en parlak mücevheri. Babası Hall Kontu, kralın güvenini kazanmış, soyluların saygı duyduğu bir Lordlar Kamarası üyesi."_ (107, Glaint); _"Babamın şerefi üzerine yemin ederim."_ (102, Glaint)
+**Gerekçe:** → N-ZMR1.1
 
-### Zenginler (Statü Hafifçe Performe Edilir)
+##### ZMR1.2 — Zenginler ve yeni para: hesap ve vitrin
 
-- **Tarz:** Parası vardır ama aristokrat değildir; bu yüzden statüsünü hafifçe _sergiler_. Servetine, bağlantılarına, zevkine ince göndermeler yapar. Aristokratın çabasızlığına özenir ama araya bir tık fazla çaba sızar. Yeni zenginlerde bu daha bariz.
-- **Onay:** Hafif gösterişle: _"Memnuniyetle."_
+**Kapsam:** Tüccar, banker, fabrikatör; Dantès'in çevresi
+**Yap:** Statüyü hafifçe sergiler: adres, mobilya, kira, tanıdık isim. Parayı rakamla ve seçenek olarak konuşur. Aristokratın rahatlığına özenir; araya bir tık fazla açıklama sızar.
+**Yapma:** Zenginliği kaba bir gösterişe çevirmek.
+**Gerekçe:** → N-ZMR1.2 (kaynakta tek tek az örnek; çeviri sırasında doldurulacak)
 
-### Backlund Orta Sınıfı (Statü Vahşice Aşırı-Performe Edilir)
+##### ZMR1.3 — Backlund orta sınıfı: bütçe ve görüntü
 
-- **Tarz:** Merdivenin trajikomik basamağı. Başka şehirlerde zengin sayılabilecekken Backlund'da _zengin görünmek_ için didinirler. Bazen günlerce doğru düzgün yemek yemeyi göze alarak. Dil gösterişçi, kılık kusursuzdur; ama altında bir açlık ve panik gizlidir. En küçük statü tehdidine aşırı tepki verirler; kibirleri kırılgan, nezaketleri gergindir.
-- **Kural:** Özü _boş cüzdanı örten dolu bir gardıroptur_. Cümlelerinde harcanan paraya, katılınan davete, tanınan isme dair sürekli ince kanıt sunma ihtiyacı sızar. Kimse sormasa bile statüsünü doğrular.
-- **Onay:** Gösterişli nezaket: _"Ne demek, memnuniyetle efendim!"_
+**Kapsam:** Stelyn ve komşuları, dedektif Stuart, memurlar
+**Yap:** Saygınlığı kalem kalem hesaplar: kira, hizmetçi, konser, tenis, kıyafet; "gerçek saygınlık" için ne eksik kaldığını söyler. Başkasına öğüt verir gibi konuşur, ama kaygısı sesindedir. Batıl korkuları "taşrada derler ki..." diye utanarak itiraf eder.
+**Yapma:** Kaygıyı açıkça söyletmek (bütçe konuşmasının altında kalır); gösterişi abartıp karikatüre çevirmek.
+**Örnek:** _"Bu geliri koruyabilirsen haftada 5 pound sana Cherwood semtinde gayet iyi bir hayat sağlar: odalarını paylaşmak zorunda kalmazsın, bir hizmetçi tutarsın, iki haftada bir konsere ya da tiyatroya gidersin... Tabii evliliğe hazırlanıyorsan biraz tutumlu olmalısın; haftalık 5 pound gerçek saygınlığın biraz gerisinde kalır."_ (231, Stelyn); _"Bir ailenin, saygın sayılabilmesi için yılda en az 30 pound'u buna ayırması gerekir."_ (357)
+**Gerekçe:** → N-ZMR1.3
 
-### Üst Orta Sınıf (Kaygılı Saygınlık)
+##### ZMR1.4 — Alt orta sınıf: tutumluluk ve inat
 
-- **Tarz:** Kendi evlerini kiralayabilenler. Dil saygın, ölçülü, "efendi/hanım" kalıplarına titizlikle uyar. Motoru _saygınlığı korumaktır_: skandaldan, düşüşten, dedikodudan ölesiye korkarlar. Rahat değil, tetiktedirler.
-- **Onay:** _"Hay hay efendim."_
+**Kapsam:** Tingen'deki Moretti çevresi, ev sahibi Franky, küçük esnaf
+**Yap:** Sözleşmeye, kiraya, kuruşa sıkı sıkı tutunur; saygınlığın sınırında yaşar ve düşmekten korkar. Ev sahibi Franky gibi küçük çıkarını yüksek sesle savunur.
+**Yapma:** Bu basamağı Doğu Semti sefaletiyle karıştırmak.
+**Örnek:** _"Kiradan çıkmak mı? Olmaz! Sözleşmemiz var, daha altı ay var!"_ (30, Franky)
+**Gerekçe:** → N-ZMR1.4
 
-### Alt Orta Sınıf (Çözülen Saygınlık)
+##### ZMR1.5 — Doğu Semti: çekingen hürmet, yorgun sertlik
 
-- **Tarz:** Bir iki odalı daire kiralayan, kendi tuvaleti olmayanlar. Saygınlık cephesi hâlâ ayaktadır ama çatlaklıdır. Nezaket kalıpları araya sızan yorgunluk ve acılıkla kesilir. Bir üst basamağa özlem ile bir alt basamaktan dehşet aynı cümlede yaşar.
-- **Onay:** _"Peki efendim."_ (yorgun)
+**Kapsam:** Old Kohler, Liv, Freya; liman ve fabrika işçileri
+**Yap:** "Beyefendilere" karşı çekingen ve hürmetkâr ("dedektif bey", "gazeteci bey"); aradaki uçurumu kendisi adlandırır ("siz saygın beyler..."). Konuşma işe, çeteye, açlığa ve kayıplara döner; kısa, somut, yorgun. Kendi arasında sert ve kısa ("Ne ağlıyorsun? Kalk, çamaşırları yıka!"). Umudu çocuklarının okumasına bağlar.
+**Yapma:** Argo yığını ya da "en dürüst ses" romantizmi (kaynakta bu insanlar beyefendiye karşı çekingendir); acıyı süslemek.
+**Örnek:** _"Dedektif bey, çok haklısınız! Doğu Semti'nde bu kadar insan var; her gün birkaç kişi kaybolsa kimse umursamaz."_ (354, Kohler); _"Siz saygın beyler bile o çeteyi biliyorsunuz da polis neden hepsini toplamıyor?"_ (354, Kohler); _"Ne ağlıyorsun? Kalk, çamaşırları yıka!"_ (372, Liv)
+**Gerekçe:** → N-ZMR1.5
 
-### Kenar Mahalle / Slums (Cephe Terk Edilmiş — Tek Dürüst Basamak)
+##### ZMR1.6 — Korsanlar: ödül, güç, batıl inanç
 
-- **Tarz:** Numaranın tamamen bırakıldığı yer. Statü performansı yoktur, çünkü performe edilecek bir şey kalmamıştır. Dil kaba, doğrudan, argo dolu. Ve tam da bu yüzden merdivenin _en dürüst_ sesidir. Yukarıdaki her basamak bir maske taşırken slum sesi maskesizdir; acısını, öfkesini, mizahını süzmeden söyler. (Yapısal ironi: en aşağıdakiler en az yalan söyleyenlerdir.)
-- **Onay:** _"Tamam be."_, _"Olur."_
+**Kapsam:** Beş Deniz'in korsanları (Anderson, Danitz kendi haritalarında)
+**Yap:** Loen merdiveni yerine güç ve kelle ödülü konuşur; kaba, gövdeli, denizci ağzı; uğur ve uğursuzluk dile sızar.
+**Yapma:** Her korsana aynı abartılı "denizci" karikatürünü giydirmek.
+**Gerekçe:** → N-ZMR1.6 (örnekler Danitz ve Anderson haritaları yazılınca eklenecek)
 
-### Korsanlar (Merdiven Dışı — Kendi Dünyası)
+##### ZMR1.7 — Çocuklar
 
-- **Tarz:** Loen sınıf merdiveni yerine kendi dünyalarının kuralları geçerli. Dil kaba, gövdeli, denizci argosu ve batıl inançla dokunmuş. Statü _kelle ödülüyle_ ölçülür. Birine "900 Sterlin" diye hitap etmek gibi. Şiddet daima yakın, mizah kara, hiyerarşi güce dayalı. Deniz efsaneleri ve uğur/uğursuzluk dile sürekli sızar.
-- **Onay:** _"Eyvallah."_, _"Anlaşıldı reis!"_
+**Kapsam:** Doğu Semti çocukları (Daisy), korunaklı çocuklar
+**Yap:** Basit sözdizimi, şimdiye odaklı. Doğu Semti çocuğu erken büyümüştür: temkinli, pazarlıkçı, hayatta kalmaya ayarlı; okumaya aç (Daisy kelime defterine sarılıp uyur, 373). Korunaklı çocuk meraklı ve kuralcıdır.
+**Yapma:** Derrick'in destansı çocukluğu ya da Emlyn'in çocuk-adamlığıyla karıştırmak; sevimlileştirmek.
+**Gerekçe:** → N-ZMR1.7
 
-### Çocuklar (Backlund)
+##### ZMR1.8 — Basın: yazıda tellal, yüz yüze pazarlık
 
-- **Tarz:** Basit sözdizimi, doğrudan, şimdiki ana odaklı. Backlund'ın sokak çocukları erken sertleşmiştir: temkinli, alışverişçi (her şey bir pazarlık), argo dolu, hayatta kalma-keskinliğinde. Genç seslerde yaşlı gözler. Bu, Dickensvari aç ve tetikte bir çocukluktur, sevimli değil. (Derrick'in destansı-çocuğundan ve Emlyn'in çocuk-adamından ayrı tutulmalı.) Korunaklı/orta sınıf çocuklar ise daha masum, meraklı, kuralcıdır; Backlund varsayılanı, ortamın kasvetine bağlı olarak sokak-sertliğine yaslanır.
-- **Onay:** Pazarlıkla: _"Olur, ama önce parası."_
+**Kapsam:** Gazeteciler (Mike Joseph), basılı haberler
+**Yap:** Basılı haber sansasyoneldir: ünlemli, ahlak vaazlı, felaket tellalı (25'teki Tingen Sabah Postası: _"Bu, Krallık kanununun çiğnenmesidir! Kamu güvenliğine bir meydan okumadır!"_). Yüz yüze gazeteci pratik ve pazarlıkçıdır: haberi, parayı, riski konuşur.
+**Yapma:** Yüz yüze konuşmayı manşet diliyle yazmak.
+**Örnek:** _"Ücreti artırıyorum! Kavga çıkmış sayalım, toplam 5 pound! Kaçarken de kavga çıkarsa 10!"_ (271, Mike Joseph)
+**Gerekçe:** → N-ZMR1.8
 
-### Gazeteciler / Basın
+##### ZMR1.9 — Kolluk ve memurlar
 
-- **Tarz:** Sansasyonel, soluk soluğa, abartılı. Viktoryen tabloid/penny-dreadful sesi: skandalın, cinayetin ve tekinsizin peşinde, her manşet felaket tellalı. Basılı hâlde süslü gazete-dili; yüz yüze meraklı, ısrarcı, bir haber koparmaya çalışan. Düz bir gerçeği bile "dehşet verici bir keşif" hâline getirir; olayı daima dramatize eder.
+**Kapsam:** Aşkın olmayan polis, memur
+**Yap:** Prosedürel, kısa, kitabına uygun; üste saygılı, alta buyurgan; sorumluluğu üste devreder.
+**Yapma:** Gece Şahinleri ya da Xio'yla karıştırmak (Xio yasaya inanır; bu tip yasayı iş olarak uygular).
+**Onay:** Üste _"Emredersiniz!"_, alta _"Anlaşıldı."_
+**Gerekçe:** → N-ZMR1.9 (kaynakta sıradan polis repliği az; 10'daki "gri gözlü polis" kılık değiştirmiş Dunn'dır)
 
-### Kolluk / Memuriyet (Beyonder-Dışı)
+##### ZMR1.10 — Hizmet sınıfı: kâhya ve hizmetkâr
 
-- **Tarz:** Prosedürel, resmî, kural-kitabına bağlı. Gece Şahinleri/Aşkın örgütlerinden ayrı, sıradan polis ve memur. Üste karşı el pençe divan, alta karşı ters ve buyurgan. Sıradan memur işçi sınıfından gelip mevki edinmiş, hafif kendini önemseyen, kitabına uyan biridir; sivil memurlar form-bağımlı, riskten kaçan, sorumluluğu üste devreden. (Xio'dan farkı taşıyıcıdır: Xio yasaya _inanır_. Bu tip yasayı yalnızca _iş_ olarak uygular.)
-- **Onay:** Üste _"Emredersiniz!"_, alta _"Anlaşıldı."_
-
-### Hizmet Sınıfı (Arabacı, Garson, Hizmetçi)
-
-- **Tarz:** Kısa, saygılı, işine dönük; müşteriyle göz göze fazla konuşmaz.
-- **Onay:** _"Baş üstüne."_, _"Hemen efendim."_
+**Kapsam:** Kâhya Walter, uşaklar, hizmetçiler, arabacılar, garsonlar
+**Yap:** İki ayrı ses. Kâhya: resmî, eksiksiz, bilgili; seçenekleri rakamlarıyla sıralar, kararı efendisine bırakır ve bunu söyler. Sıradan hizmetkâr: kısa, saygılı, işine dönük.
+**Yapma:** Kâhyayı da kısa ve sessiz bir hizmetkâr gibi yazmak.
+**Örnek:** _"Muhterem efendim, ben yalnızca bir kâhyayım. Benim vazifem karar vermek değil, uygun bütün seçenekleri önünüze koyup bir tavsiyede bulunmaktır."_ (742, Walter); _"Efendim, size nasıl hizmet edebilirim?"_ (741, Walter)
+**Onay:** Hizmetkâr _"Baş üstüne."_, _"Hemen efendim."_
+**Gerekçe:** → N-ZMR1.10
 
 ---
 

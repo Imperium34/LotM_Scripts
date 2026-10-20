@@ -1050,3 +1050,50 @@ Gülüş ve monokl: neredeyse her replik 笑 ile; 1151 ¶43, ¶53, ¶79, ¶89; 1
 
 1151 ¶75 我想与你和平达成交易…带你去见我的本体，去一个足够安全的地方，然后再拿走你的命运. 1166 ¶13 (Klein'ın tahlili: 源堡 riskini almak istemez); ¶22 鼓掌: 完美的推理…现在，我们还没有抵达最终的目的地，我当然不会冒险尝试. 1005 ¶26 我又不是‘暴君’途径的非凡者，肯定不会那么鲁莽…直接顶替你会发生一些我不愿意看到的事情. 1152 ¶43 只能等下一次了.
 **Denetim:** 1005, 1151, 1152, 1166 (ZH).
+
+---
+
+## NPC ve Zümre Sesleri (Bölüm 10)
+
+> **Numaralama:** 25 ve 30 ZH/TR; diğerleri ZH satır sırası. Örnekler (25 hariç) Claude'un çevirisidir.
+> **Adlar:** Glaint, Hibbert, Stelyn, Stuart, Old Kohler, Liv, Freya, Daisy, Mike Joseph, Walter, Cherwood words.md'de yok; İngilizce biçimler kullanıldı (kullanıcı onayı, 2026-10-20).
+> **Eski haritadan düşenler:** "Aristokrat: imkân = statü, çabasız; nezaket silahtır" (177 eski soyluluğun borçlanarak görüntü sürdürdüğünü söyler; Hall Kontu ve Glaint sıcak ve açıktır); "Slum: argo dolu, merdivenin tek dürüst sesi" (Kohler ve Liv beyefendilere karşı çekingen ve hürmetkârdır); "Basın: yüz yüze de soluk soluğa sansasyonel" (Mike Joseph yüz yüze pratik ve pazarlıkçıdır; sansasyon basılı metindedir); "Hizmet: kısa, göz göze konuşmaz" (kâhya Walter resmî, eksiksiz ve bilgilidir). İlke (sergilenen saygınlık / gerçek imkân) kaynakla örtüşür ve 体面 üzerine yeniden kuruldu.
+
+### N-ZMR1.1
+177: 他们以拥有土地为荣…体面胜过一切，即使负债，也要维持足以匹配本身地位的生活. Hall Kontu: 8 ¶87 这是作为父亲的骄傲; 191 ¶94 事情解决了，我的孩子; 192 ¶15–17 Audrey'ye kesin uyarı, 好奇也不行！(ardından 无奈的笑容); ¶21 ödül ve para açıkça. Glaint: 102 ¶54 iltifat; ¶60 我用我父亲的名誉保证; 107 ¶29 tanıştırma (unvan, kraliyet güveni). Hibbert: 310 ¶40 爵位，财富，商业地位，以及在政府和军队内的关系？; 760 ¶55 hisse pazarlığını 不甚在意 anlatır; 367 ¶79 öfkeli dürüstlük.
+**Denetim:** 8, 102, 107, 177, 191, 192, 310, 367, 760 (ZH).
+
+### N-ZMR1.2
+741–742: Walter'ın Klein'a (Dantès) sunduğu adres, kira ve mobilya sıralaması zengin yaşamın ölçüsünü verir (伯克伦德街32号…附近居住着从男爵、下议院议员、资深大律师; yıllık kiralar 220 ve 315 pound). Zengin NPC replikleri bu taramada az; çeviri sırasında doldurulacak.
+**Denetim:** 741–742 (ZH); eksik.
+
+### N-ZMR1.3
+231 ¶64 Stelyn: 每周5镑可以让你…拥有相当不错的生活，不需要再分租房间，能够雇佣一位女仆…5镑的周薪距离真正的体面还差一些. 357 ¶50–51: 难道你不带你的夫人去听音乐会…一个家庭，每年至少得在这上面花费30镑，才能称得上体面. 111: 年收入在100镑左右的家庭该如何平衡…200镑的家庭又应该增加哪些支出，让自身看起来更加体面. Stuart: 299 ¶65 按照乡下的说法，被鬼魂邪灵缠上了，坦白地讲，我很害怕这个. 377 orta sınıfın banliyöden trenle gidip gelmesi.
+**Denetim:** 111, 231, 299, 357, 377 (ZH).
+
+### N-ZMR1.4
+30 ¶56 (ZH/TR) Franky: 退租？不！我们有合约的，还有半年！ 24 (ZH/TR) Melissa'nın tutumluluk öğütleri (28 yaşından önce evlenemeyen kâtipler, şirket iflası korkusu) bu basamağın sesi. 1143 ¶60 Thomas Bey: 体面的绅士 yüzünü saklayarak ekmek kuyruğuna gider.
+**Denetim:** 24, 30 (ZH/TR); 1143 (ZH).
+
+### N-ZMR1.5
+Kohler: 353 ¶104 我不认识单词…; 354 ¶16 侦探先生，你说的太对了！东区那么多人，每天失踪几个，不会有谁在意的; ¶29 çete uyarısı; ¶36 你们这些体面的绅士都知道了兹曼格党，为什么警察不把他们都抓走？(以底层人民的思维); ¶74 生病之前，我也住在这种地方…. Liv: 372 ¶95 哭什么哭？快起来洗衣服！; 373 ¶9 你相信东区的警察会真正用心地寻找黛西吗？; ¶42 我有让弗莱娅和黛西去晚上的免费学校…她们不能始终这样. Freya: 373 ¶49 Daisy'nin okuma tutkusu; 476 ¶50 iş kaybı. 221: 很多人衣衫褴褛，面黄肌瘦.
+**Denetim:** 221, 353–356, 372–373, 383, 476 (ZH).
+
+### N-ZMR1.6
+Bekliyor: korsan replikleri Danitz ve Anderson haritalarıyla birlikte toplanacak.
+
+### N-ZMR1.7
+373 ¶49 Daisy'nin kelime defteri (每天枕着它们抱着它们睡觉…就着清晨的光芒背诵). Daisy'nin kendi replikleri bu taramada çıkmadı; çeviri sırasında eklenecek.
+**Denetim:** 373 (ZH); eksik.
+
+### N-ZMR1.8
+25 ¶28–30 (ZH/TR) Tingen Sabah Postası: 这是对王国法律的践踏！这是对公众安全的挑衅！ (yayımlanmış: "Bu, Krallık kanununun çiğnenmesidir! Kamu güvenliğine bir meydan okumadır!"). Mike Joseph: 270 ¶51 yazısını tanıtır; 271 ¶64 咬了咬牙齿道：我加钱！按照有打斗算，总共5镑！….
+**Denetim:** 25 (ZH/TR); 270, 271 (ZH).
+
+### N-ZMR1.9
+Sıradan polis repliği bu taramada az; 10'daki gri gözlü polis Dunn'dır. 115 ¶73 polis ödülü (Christina'nın aktarımı). Kural eski haritadan korundu; çeviri sırasında sınanmalı.
+**Denetim:** eksik.
+
+### N-ZMR1.10
+Walter: 741 ¶50 先生，有什么能为您效劳的吗？; ¶57 önce ev, sonra hizmetkâr sayısı; ¶63, 742 ¶6, ¶12 seçenekleri adres, oda sayısı ve kirayla sıralar; 742 ¶22 尊敬的先生，我只是一个管家，我的责任不是做决定，而是展现所有合适的选项，并提出一定的建议供您参考.
+**Denetim:** 741–742 (ZH).
