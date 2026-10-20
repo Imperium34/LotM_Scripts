@@ -1484,7 +1484,10 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ### Sharron (İtidal / Temperance) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Tayf (5), sonra Kukla (4). Soluk, porselen gibi ince yüzlü, mavi gözlü; aynalarda ve camlarda belirip kaybolur. Anlatı onu "bir oyuncak bebek gibi" diye anar. Kelimeden tasarruf eder: mümkünse tek kelime, mümkünse hiç. Neden diye sormaz, açıklamaz, kendini anlatmaz. Bu sükût çekingenlik değil, ulaşılmış perhizin kendisidir. Uzun konuştuğu tek konu İtidal öğretisi ve hocasıdır. Tarot Cemiyeti'nde İtidal (节制).
+**Tarz:** Tayf (5), 1016'da Kukla (4). Soluk, ince yüzlü, mavi gözlü; aynalarda ve camlarda belirip kaybolur. Bebek benzetmesi iki aşamada farklı ağırlıktadır:
+- _Tayf aşaması (338–1015):_ hayalet baskındır (soluk, saydam, aynadan beliren), bebek bir benzetmedir: "bebek gibi bir güzellik", "konuşan bir bebek gibi" (338, 434). Klein bunu sonradan Kukla rolünün önceden oynanması diye yorumlar (1140).
+- _Kukla aşaması (1016'dan itibaren):_ bebek hayaleti geçer: yüzü daha az solgun, "kadın hayaletten çok bebeğe yakın" (1041); sustuğunda "en kusursuz bebek" (1140); dövüşte gerçekten insan boyunda kuklalara dönüşür (1235–1236).
+Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" ile gelir. Kelimeden tasarruf eder: mümkünse tek kelime, mümkünse hiç. Neden diye sormaz, açıklamaz, kendini anlatmaz. Bu sükût çekingenlik değil, ulaşılmış perhizin kendisidir. Uzun konuştuğu tek konu İtidal öğretisi ve hocasıdır. Tarot Cemiyeti'nde İtidal (节制).
 **Onay:** _"Olur."_ (好。)
 
 ##### SHR1.1 — Tek kelime, bazen hiç

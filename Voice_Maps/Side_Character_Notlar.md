@@ -1183,6 +1183,10 @@ Güneş: 140 歌颂者…他们的口号是：“让我们赞美太阳吧！”;
 > **Ad düzeltmeleri:** Tarot adı "Perhiz" değil "İtidal" (words.md, 节制); fırkalar sozluk.yml'den: İtidal Fırkası / Sefahat Fırkası (eski haritadaki "İfrat Ekolü" yerine). Yol adı Mahkûm Yolu, Mertebe 0 adıyla Prangalı Yolu (kullanıcının Mertebe 9 / 0 kuralı). 卡拉曼巫王, 《秘密之书》 sözlükte yok.
 > **Eski haritadan düşenler:** Sharron "boş laf ve nezaket kalıbı yoktur": teşekkür ve bayram tebriği vardır, yalnızca çıplaktır (457 ¶76, ¶82). Maric "morbid, kaçık mizah": repliklerinde yok; boğuk, kısa ve iş odaklıdır. Diğer gözlemler (Sharron'ın sükûtu, Maric'in sözcülüğü, iki ucun karşıtlığı, zombilerle kâğıt oynaması anlatıda) korundu.
 
+### N-SHR (Tarz: bebek benzetmesi)
+Tayf aşaması: 338 苍白的脸孔，精致的五官，有种人偶般的美感; 347 人偶般小姐; 433 宛若人偶; 434 就像会说话的人偶一样; 456 就像变身成了真正的人偶; 735 ¶15 就像一个人偶; 751 人偶般的脸庞; 875 依旧像人偶胜过活人. Kukla'ya yükseliş: 1016 (Klein'a mektup). Kukla aşaması: 1041 脸色不再苍白得那么厉害…愈发偏离女性鬼魂形象而更接近人偶; 1140 若她不说话，不开口，那就是最标准最精致的人偶 / 初见莎伦小姐，他就觉得对方像人偶…都算是一种提前扮演; 1235–1236 变成了真人大小的木偶. Kullanıcı sorusu (2026-10-20): benzetme Kukla'dan önce de var; aşamalar arasında ağırlığı değişir.
+**Denetim:** 338–1236 (ZH).
+
 ### N-SHR1.1
 278 ¶59 莎伦的回答还是能省单词就省单词的风格: 免费; 279 ¶16 用一个单词给出了肯定的答复: 有; ¶20 1; 278 ¶33 非常简洁地回答; 433 ¶85 好。莎伦没问为什么; 450 ¶47 没有问他要做什么准备; 434 ¶61 没人知道 (用最简洁的言语); 735 ¶15 莎伦就像一个人偶，没什么感情也没什么隐瞒地回答道; 457 ¶76 谢谢, ¶82 新年快乐; 706 ¶73 他过得很好 (没什么情绪起伏).
 **Denetim:** 278, 279, 433, 434, 450, 457, 706, 735 (ZH).
