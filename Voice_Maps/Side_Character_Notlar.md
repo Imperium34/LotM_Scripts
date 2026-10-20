@@ -1016,7 +1016,7 @@ Ad: 1110 ¶39, 1111 ¶4, ¶10, ¶24, 1275 ¶67, 1359 ¶19, ¶30 索伦·艾因�
 > **Klein.md ile bağ:** Klein'ın Will'e karşı sesi Klein.md M3.1'dedir (bilen akran). İki harita aynı sahneleri paylaşır: 991 ¶36–37 (Klein merasimi savar), 1125 ¶28 (iç ses "üfürükçü"), 1125 ¶31 (kâğıt turna pazarlığı), 1388 (Klein ifadesiz, Will ağlar). Will'in tarafı burada, Klein'ınki orada. 神棍 / "üfürükçü" Klein'ın iç sesinin kelimesidir, Will'in ağzına girmez.
 > **Ad kararları (2026-10-21):** 概率之骰 → "İhtimal Zarı" (Canavar Yolu'nun Yegâneliği, 609 ¶33; salahiyet kelimesi 概率 = İhtimal); 哇 → "Ingaa!"; '命运'途径 → "Kader Çarkı Yolu" (609 ¶33 “怪物”途径又叫“命运之轮”途径; Mertebe 0 adı).
 > **Ad kararları (devam):** 议长 → "Reis" (Hayat Ekolü'nün Reisi), 命运议员 → "Kader Azası"; 容纳 → "barındırmak" (words.md).
-> **Açık soru:** 昨日重现 (Klein'ın tılsımı, Yesterday Once More): Türk okura tanıdık bir göndermeyle değiştirilmesi düşünülüyor. 神话生物 sözlükte yok; örneklerden kaçınıldı.
+> 昨日重现 → "Dönence" (Klein'ın tılsımı; words.md). 神话生物 sözlükte yok; örneklerden kaçınıldı.
 
 ### N-WIL1.1
 
