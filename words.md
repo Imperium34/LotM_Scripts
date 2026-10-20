@@ -7,11 +7,12 @@
 - **Epochs:** Heyûlâ Çağı (第一纪) → Karanlık Çağ (第二纪 / 黑暗纪元) → Helak Çağı (第三纪 / 灾变纪元) → İlahlar Çağı (第四纪) → Demir Çağı (第五纪, current)
 - **Karanlık Çağ / İkinci Çağ** — Dark Epoch (第二纪 / 黑暗纪元); İng. çeviri 'Second Epoch' da der; sıra adı ile tema adı eşanlamlı, ikisi de kullanılır; insanlığın karanlık çağı, gök, deniz ve karada ejderlerin, devlerin, elflerin hüküm sürdüğü devir; "Karanlık" Mertebe adıyla aynı kelime, Çince de aynı 黑暗'yı kullanır _180_
 - **Helak Çağı / Üçüncü Çağ** — Cataclysm Epoch (第三纪 / 灾变纪元); İng. çeviri 'Third Epoch' da der; sıra adı ile tema adı eşanlamlı _60_
-- **Şaşaa Devri** — Glorious Era (光辉年代); Helak Çağı'nın başlangıcı; "Çağ" 纪/纪元'ye, "Devir" 年代'ya ayrılı; "Nur" Güneş Kilisesi'nin akoruna ayrılı olduğu için kullanılmaz; İng. çeviri bu devri Helak'la birleştirir, yanlış
+- **Şaşaa Devri** — Glorious Era (光辉年代); Helak Çağı'nın başlangıcı; "Çağ" 纪/纪元'ye, "Devir" 年代'ya ayrılı; "Nur" Güneş Kilisesi'nin akoruna ayrılı olduğu için kullanılmaz (bilinen istisna: Yedi Nur); İng. çeviri bu devri Helak'la birleştirir, yanlış
 - **Büyük Helak** — the Great Cataclysm (大灾变); Şaşaa Devri'nden sonra gelen felaket; Helak Çağı adını ondan alır
 - **İlahlar Çağı / Dördüncü Çağ** — Fourth Epoch (第四纪); 9'da "İlahlar Çağı olarak da bilinen Dördüncü Çağ"; sıra adı ile tema adı eşanlamlı, "Beşinci Çağ / Demir Çağı" gibi _9_
 - **Ebedi Zulmet Nehri** — River of Eternal Darkness (永暗之河); salahiyetler.yml Kural 9: özel adlarda 暗 → 'Zulmet'
 - **Âlem-i Berzah** — Underworld (冥界); sozluk.yml / salahiyetler.yml; içinden Berzah Nehri (冥河) geçer
+- **Yedi Nur** — the Seven Lights of the spirit world (灵界七光); tekil adlar renkle: **Kızıl Nur** (红光; sozluk.yml 'Kızıl Nur (Aiur Moria)'), **Sarı Nur** (黄光) vb. BİLİNEN İSTİSNA: 'Nur' Güneş Kilisesi'ne ve 神圣 (Kudsiyet) kaydına ayrılıdır (bkz. Şaşaa Devri; salahiyetler.yml 光 notu). Yedi Nur bilinçli bir istisnadır: Işık salahiyetiyle bağı yoktur, kaynak bunları sıradan ışık değil varlık olarak anar; 'Kızıl Işık' bir lamba gibi okunur, 'Kızıl Nur' bir varlık gibi. Müphem Sis'in 'Nur ile Zulmet'i gibi kabul edilmiş bir çakışmadır.
 
 ## Religion / Church
 
