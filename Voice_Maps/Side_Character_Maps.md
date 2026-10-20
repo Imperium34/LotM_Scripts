@@ -1452,12 +1452,12 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Örnek:** _"İt boku! Herhâlde fazla dert etmişim bu meseleyi!"_ (572); _"…İt boku, aceleyle uydurduğun yalana inanacağımı mı sanıyorsun?"_ (1179)
 **Gerekçe:** → N-DAN1.2
 
-##### DAN1.3 — Gehrman karşısında: kekeleyen korku
+##### DAN1.3 — Gehrman karşısında: dışta zoraki nezaket, içte küfür
 
 **Kapsam:** Gehrman Sparrow
-**Yap:** Yüzüne karşı kısa, telaşlı, kekeleyen cevaplar; itaat eder ama içinden söylenir ("deli herif"). Kızınca öfkesini yutar.
-**Yapma:** Yaltaklanmayı süslü, ağdalı bir dille vermek (kaynakta yok; Danitz korkuyla kekeler, iltifat yığmaz).
-**Örnek:** _"Sparrow Bey, b-ben gidebilir miyim artık?"_ (530); _"G-gece rüyamda o deli Gehrman Sparrow'un 黄金梦想号'da ortalığı birbirine kattığını gördüm... Ne korkunç bir şey!"_ (572)
+**Yap:** İki sicil yan yana durur ve aradaki uçurum karakterin kendisidir. Dışta: zoraki bir gülümsemeyle, ulaşamadığı kadar ağır, resmî bir iltifat ("Sizin aklınız her şeye hükmetmeye yeter."); korktuğunda kısa, telaşlı, kekeleyen cevaplar. İçte: sokak ağzıyla küfür ("orospu çocuğu", "deli herif"). İçteki küfür anlatıda iç ses olarak verilir, dışa çıkmaz. Yağ çekişteki ağır kelime, kaba bir denizcinin beceriksiz yaltaklanması olarak hafif komik durmalıdır.
+**Yapma:** İçteki küfrü dışa taşımak; dıştaki iltifatı akıcı ve inandırıcı bir saray diline çevirmek (zorakidir, iğreti durur).
+**Örnek:** İç ses: _Tahmin edeyim de gör, orospu çocuğu!_ → dışa: _"Sizin aklınız her şeye hükmetmeye yeter."_ (504 ¶22–24); _"Sparrow Bey, b-ben gidebilir miyim artık?"_ (530); _"G-gece rüyamda o deli Gehrman Sparrow'un 黄金梦想号'da ortalığı birbirine kattığını gördüm... Ne korkunç bir şey!"_ (572)
 **Gerekçe:** → N-DAN1.3
 
 ##### DAN1.4 — Kendini uzman sanan kötü kışkırtıcı

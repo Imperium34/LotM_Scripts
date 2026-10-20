@@ -1136,7 +1136,7 @@ Güneş: 140 歌颂者…他们的口号是：“让我们赞美太阳吧！”;
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.
 > **Adlar:** 黄金梦想号, 疾病中将 ve korsan lakapları (海狼, 独眼, 红骷髅海贼团) sözlükte yok, Çince bırakıldı. Edwina, Segar İngilizce biçim.
-> **Eski haritalardan düşenler:** Anderson: "her iğneleme bir olta atışı, asla keyfî değil" ve "kibri sarsılınca öfke" kaynakla örtüşmüyor; kışkırtma çoğunlukla huydur (1095 ¶37, ¶61) ve güçlü karşısında anında, şakayla teslim olur (677 ¶44, 707 ¶65). Danitz: "Gehrman'a Osmanlıca, süslü yaltaklanma" kaynakta yok; Danitz Gehrman karşısında kekeler (530 ¶55, 558 ¶12). "Kışkırtmada berbat" ise doğrudur (kullanıcı hatırlatması, 2026-10-20): Danitz bununla övünür ama beceremez (N-DAN1.4); açık hüküm Klein'ındır, Anderson'ın iğnelemesi dolaylıdır (707). Eski Danitz haritasındaki "İt boku!" ise 狗屎'ün sabit karşılığı olarak korundu.
+> **Eski haritalardan düşenler:** Anderson: "her iğneleme bir olta atışı, asla keyfî değil" ve "kibri sarsılınca öfke" kaynakla örtüşmüyor; kışkırtma çoğunlukla huydur (1095 ¶37, ¶61) ve güçlü karşısında anında, şakayla teslim olur (677 ¶44, 707 ¶65). Danitz: eski Kural 1 (dışta ağır iltifat / içte küfür) kaynakta vardır ve DAN1.3'te geri getirildi (504 ¶22–24; kullanıcı hatırlatması, 2026-10-20); önceki taslakta yanlışlıkla düşürülmüştü. "Kışkırtmada berbat" ise doğrudur (kullanıcı hatırlatması, 2026-10-20): Danitz bununla övünür ama beceremez (N-DAN1.4); açık hüküm Klein'ındır, Anderson'ın iğnelemesi dolaylıdır (707). Eski Danitz haritasındaki "İt boku!" ise 狗屎'ün sabit karşılığı olarak korundu.
 
 ### N-AND1.1
 651 ¶77 哭笑不得…我就想开个玩笑…你不觉得环境一下变得很恐怖的体验非常棒吗？当然，我是指让对方; 653 ¶71 强行笑道：我知道，我的厄运会让我不好的话语应验，好了，别看我，我不说了; 656 ¶21 好，好，我闭嘴，闭嘴; 676 ¶46 …有点烦人，哈哈，开个玩笑; 677 ¶67 什么烦恼也不能影响吃饭和睡觉！; 689 ¶70 kumarhane; 691 ¶10 portre teklifi (大师级的水准); 694 ¶74 哈哈，刚才开玩笑的; 696 ¶6 我大概没法做巨龙猎手，只能做巨龙粪便了; 1040 ¶60 它已经会叫爸爸了 → ¶63 开个玩笑.
@@ -1163,6 +1163,7 @@ Güneş: 140 歌颂者…他们的口号是：“让我们赞美太阳吧！”;
 **Denetim:** 521, 544, 572, 577, 690, 692, 903, 1095, 1107, 1179, 1291 (ZH).
 
 ### N-DAN1.3
+504 ¶20–24: Klein 你猜。→ iç ses 我猜你个婊子养的！达尼兹一阵恼怒，险些脱口喝骂 → 他保持着笑容道：你的智慧足以判断一切。 ¶8 iç ses 会不会聊天！…挤出笑容; ¶50 iç ses 你想做什么？不要这样笑！; ¶72 咬牙笑道：我自己来; ¶96 iç ses 你等着被“冰山中将”教训吧！; ¶99 ……这个疯子……. Bu bölümde Anderson yok (ilk 650) ve kışkırtma konusu geçmez.
 499 ¶47 我，我在度假……(本能却使他吐出了理由); 530 ¶55 斯帕罗先生，我，我可以离开了吗？; ¶64 又愤怒又憋屈; 556 ¶24 你，你什么时候出来的？(话语结巴); 558 ¶12 是，好的！(忙不迭); 572 ¶38 格尔曼·斯帕罗那个疯子; 690 ¶38 无法用正常逻辑猜测的疯子.
 **Denetim:** 499, 530, 556, 558, 572, 690 (ZH).
 
