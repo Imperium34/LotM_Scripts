@@ -1394,22 +1394,87 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ## 8. Beş Deniz (Denizciler ve Avcılar)
 
-### Anderson
+### Anderson Hood `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-- **Tarz:** Beş Deniz'in, Gehrman'dan önceki en güçlü avcısı; Avcı (Hunter) yolunun mensubu. Kendine güvenen, dürtükleyen, sürekli avını tartan bir yırtıcı. Medici'nin martial apeksinin fani ve kaba versiyonu: aynı yolun kışkırtması, ama melek ağırlığı ve davası olmadan; salt av zevki.
-- **Kural 1 (Amaçlı Kışkırtma):** Avcı yolunun özü gereği dürtükler; fakat her iğneleme bir olta atışıdır. Hedefi ürkütmek, açık verdirmek, aşırıya kaçırmak için. Leonard'ın teatral iğnelemesinin (performans) aksine Anderson'ın her lafı taktikseldir; asla boş, keyfî bir dürtme değildir.
-- **Kural 2 (Yırtıcının Okuması):** Avcı duyularıyla hedefini sürekli tartar; kokular, tikler, zaaflar. Konuşurken karşısındakini bir av gibi ölçer. Dili birini "boyutlandıran," ağırlığını ve zayıf noktasını hesaplayan birinin dilidir.
-- **Kural 3 (Rütbe Gururu / Gehrman Karşısında):** Beş Deniz'in en güçlü avcısı olmanın kibrini taşır. Kendinden güçlü bir avcıyla (Gehrman) karşılaştığında bu kibir sarsılır. İlk kez _avlanan_ konumuna düştüğünü sezer. Kışkırtması ya öfkeyle sertleşir ya da temkinli bir saygıya evrilir.
-- **Ayar:** _"O gözlerdeki tereddüdü görüyorum. Bir hamle daha yap. Tam da beklediğim yere basacaksın."_
+**Tarz:** "Yarı tanrıların altındaki en güçlü avcı" (652); Avcı Yolu'nda, Kışkırtıcı yeteneği huyuna işlemiş bir define avcısı. Babası Intisli, annesi Segarlı. Neşeli, geveze, kendini tiye alan; şakası hiç bitmez ve çoğu zaman aleyhine işler: kötü talihi ağzından çıkan kötü sözleri gerçekleştirir (653). Kışkırtma onda bir taktikten çok bir huydur: nefret edilmek ister, kılık değiştirmez ("yoksa insanlar kimden nefret edeceklerini nereden bilecek?"). Kendinden güçlüsüne anında boyun eğer ve bunu da şakaya çevirir. Şakaların altında keskin bir tahlilci ve iyi bir avcı durur. Danitz'in kendini atamış "hocası"dır.
+**Onay:** Neşeyle: _"Anlaştık!"_ (652, 成交！); _"Haha, şaka şaka."_ (开个玩笑)
 
-### Alevden Danitz
+##### AND1.1 — Geveze şakacı, kötü talihli ağız
 
-- **Tarz:** Geveze, dışadönük bir lostromo. O da bir Avcı (Hunter) yolu mensubu; fakat yolunun imza becerisi olan _kışkırtmada_ berbattır, Anderson tam da bu yüzden onunla dalga geçer. Bu, beceriksiz yaltaklanmasının da kökenidir: sözle manevra yapamayan bir avcı. Motoru _herkese açık dalkavukluk / içten içe küfür_ ayrımıdır. Bu uçurum onun komedisidir.
-- **Kural 1 (İki Sicil):** Korktuğu bir üstünün (Gehrman) yüzüne karşı dalkavukça yağ çeker, hatta ulaşamayacağı kadar yüksek/Osmanlı bir sicile uzanır (_"Senin bilgeliğin her şeyi muhakeme etmeye yeterlidir"_); içinden ise sokak ağzıyla söver (_"Piç kurusu!", "İt boku!", "Sıçtık"_). Yüksek-dışsal ile gutter-içsel arasındaki uçurum karakterin ta kendisidir. Yağ çekişindeki abartılı formalite (ör. "muhakeme" gibi fazla ağır kelimeler) beceriksizliğinden komiktir. Kaba bir denizcinin yalapşap yaltaklanmasıdır.
-- **Kural 2 (Çenesi Düşük):** Konuşmayı, dedikoduyu, laf çırpmayı sever; tehlike anında bile sanki bir tiyatro oyununu yorumlar gibi konuşur. Susması gereken yerde konuşur.
-- **Kural 3 (Hayatta Kalma Pragmatizmi):** Cesur değil, sokak-kurnazıdır. Uyar, kâr-zarar hesabı yapar, postu kurtarır. Korkaklığı ve pratikliği onu asla kahraman yapmaz ama her seferinde hayatta kalmasını sağlar.
-- **Ayar (Yüze karşı):** _"Elbette efendim, sizin o engin bilgeliğiniz her şeyi görür; bu naçiz denizciye yalnızca itaat düşer."_
-- **Ayar (İçinden):** _"Piç kurusu! Öyle gülme! Ne yapacaksın lan?"_
+**Kapsam:** Tüm görünümleri
+**Yap:** Konuşkan, rahat, kendini tiye alan; anlattığı her felakete bir şaka ekler ve "haha, şaka şaka" diye geri alır. Kötü bir söz söyledikten sonra kendini durdurur ("Tamam, tamam, susuyorum."). Keyfine düşkündür: yemek, uyku, içki, kumar.
+**Yapma:** Onu soğuk, hesaplı bir yırtıcıya çevirmek; şakalarını ağırbaşlı bir iğnelemeye dönüştürmek.
+**Örnek:** _"Seni tanıyorum, bana bir sürü soru sormuştun. O an sadece bir şaka yapmak, havayı biraz yumuşatmak istedim, gerçekten. Ortamın bir anda korkunçlaşması harika bir deneyim değil mi? Tabii karşı taraf için, kendim için değil."_ (651); _"Hiçbir dert yemeği de uykuyu da etkileyemez!"_ (677); _"Bildiğim bir şey var: kötü talihim kötü sözlerimi gerçekleştirir. Tamam, bana öyle bakma, susuyorum."_ (653)
+**Gerekçe:** → N-AND1.1
+
+##### AND1.2 — Nefret edilmek isteyen kışkırtıcı
+
+**Kapsam:** Rakipler, kurbanlar, Danitz
+**Yap:** Karşısındakini huyu gereği dürtükler; kurbanını bile alayla bırakır. Danitz'e tepeden, hoca edasıyla takılır ("Sen mi? Hıh."). Kışkırtmasına karşılık gelmeyince bunu da tahlil eder.
+**Yapma:** Her iğnelemeyi soğuk bir av taktiği gibi yazmak (bazıları öyledir, çoğu huydur); kabalığı küfre çevirmek.
+**Örnek:** _"Kılık değiştirirsem insanlar kimden nefret edeceklerini nereden bilecek?"_ (1095); _"Seni öldürmek istedim ama o zaman benden nefret eden kimse kalmazdı. Yaşa da her gün bana birkaç kez söv."_ (1095); _"Fena değil; benim eğitimim sayesinde epey ilerlemişsin."_ (1095)
+**Gerekçe:** → N-AND1.2
+
+##### AND1.3 — Güçlü karşısında: anında teslim
+
+**Kapsam:** Kendinden güçlüler (Gehrman, saklı yarı tanrı)
+**Yap:** Gücü sezince bir an duraksar, sonra kendini aşağı çekerek teslim olur; bu da şakaya döner ("yarı tanrıların altında" diye kendi unvanını düzeltir). Özür dilemesi ani ve tamdır.
+**Yapma:** Kibrinin "sarsılması"nı öfke ya da dramla yazmak.
+**Örnek:** _"Özür dilerim! Hatalıydım! Her şey konuşulabilir!"_ (677); _"Korsanların cennetinde en güçlü avcı o sayılıyor artık."_ (707)
+**Gerekçe:** → N-AND1.3
+
+##### AND1.4 — Şakanın altındaki avcı
+
+**Kapsam:** Plan, tahlil, ölüm
+**Yap:** İş ciddileşince sesi bir anda düzleşir: olasılıkları sırayla tartar, tuzağı sezer, tecrübeyi bir öğüt gibi verir. Ölüm karşısında da "zarafetle, en yakışıklı hâlimle" karşılamayı diler; ama arkadaşlarının ölümüne bir an durur.
+**Yapma:** Tahlili de şakayla bölmek.
+**Örnek:** _"Ada var; ama ya buradaki herkesin bildiği türden ya da birinin bilerek yaydığı bir haber. Birincisiyse 疾病中将 orada saklanmaz; ikincisiyse işte o ilginç: bu haberi kim yaydı?"_ (1095)
+**Gerekçe:** → N-AND1.4
+
+### Alevden Danitz `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** 黄金梦想号'nun lostromosu, 3000 pound ödüllü korsan, Avcı Yolu'nda Ateş Müptelası; Fırtınalar Hâkimi mümini (896, 935). Geveze, övüngen, kaptanına (Edwina) hayran. Ödülüyle ve tanınmışlığıyla övünür, deniz bilgisi ve dedikodu saçar; ağzı beyninden önce davranır (在大脑反应过来前). Gehrman'dan korkar ve onun karşısında kekeler; arkasından "deli" der. Kendine kızınca imza küfrü "İt boku!"dur. Anderson onun aklıyla dalga geçer; Danitz ise kendini profesyonel bir kışkırtıcı sayar (552). Kitap ilerledikçe büyür: Rorsted Takımadaları'nda Soytarı Kilisesi adına yerlileri yöneten "Danitz Bey" olur (1248–1292), ama övünme ve küfür alışkanlığı sürer.
+**Onay:** _"Tamam!"_; korkuyla _"Ş-şey, olur!"_ (558, 是，好的！)
+
+##### DAN1.1 — Geveze, övüngen korsan
+
+**Kapsam:** Tüm görünümleri
+**Yap:** Konuşmaya bayılır: korsanları ödülleri ve lakaplarıyla sayar, liman yemeklerini, kadınları, adetleri anlatır. Kendi ödülüyle ve "tanınmış bir korsan" oluşuyla övünür; yakalanınca kuru bir "haha" ile örter. Kaptanını sınırsız över.
+**Yapma:** Övünmeyi ağırbaşlı bir gurura çevirmek; dedikodusunu kısaltmak.
+**Örnek:** _"Dostum, yanlış adamı tuttun. 3000 pound değerindeki o ünlü korsana çok benzerim ama o değilim; hep böyle karıştırırlar, başıma epey dert açılıyor."_ (506); _"Nasıl hatırlayayım? Kaptanımız gibi güzel değiller ki!"_ (519)
+**Gerekçe:** → N-DAN1.1
+
+##### DAN1.2 — Ağız beyinden önce; "İt boku!"
+
+**Kapsam:** Şaşkınlık, öfke, kendine kızma
+**Yap:** Düşünmeden soru sorar, düşünmeden cevap verir, sonra pişman olur. Kendine ya da duruma kızınca imza küfrü: 狗屎 → "İt boku!" (her geçişte aynı). Hayret ünlemleri kısa ve canlıdır.
+**Yapma:** Küfrü çeşitlendirmek (imza bir tanedir); onu kurnaz bir sözcü gibi yazmak.
+**Örnek:** _"İt boku! Herhâlde fazla dert etmişim bu meseleyi!"_ (572); _"…İt boku, aceleyle uydurduğun yalana inanacağımı mı sanıyorsun?"_ (1179)
+**Gerekçe:** → N-DAN1.2
+
+##### DAN1.3 — Gehrman karşısında: kekeleyen korku
+
+**Kapsam:** Gehrman Sparrow
+**Yap:** Yüzüne karşı kısa, telaşlı, kekeleyen cevaplar; itaat eder ama içinden söylenir ("deli herif"). Kızınca öfkesini yutar.
+**Yapma:** Yaltaklanmayı süslü, ağdalı bir dille vermek (kaynakta yok; Danitz korkuyla kekeler, iltifat yığmaz).
+**Örnek:** _"Sparrow Bey, b-ben gidebilir miyim artık?"_ (530); _"G-gece rüyamda o deli Gehrman Sparrow'un 黄金梦想号'da ortalığı birbirine kattığını gördüm... Ne korkunç bir şey!"_ (572)
+**Gerekçe:** → N-DAN1.3
+
+##### DAN1.4 — Kışkırtıcı mı, avlanan mı
+
+**Kapsam:** Anderson, kışkırtma, av
+**Yap:** Kışkırtmayı bir meslek gibi anlatır ve onunla övünür ("sıradan korsan küfreder, ben hedefe göre küfrederim"). Anderson'ın alayı karşısında lafı bulamaz, ya küfreder ya susar.
+**Yapma:** Anderson'la atışmayı eşit bir düelloya çevirmek.
+**Örnek:** _"Sıradan bir korsanın kışkırtması küfürdür; benimki öyle değil, hedefine göre küfrederim. Tek bir cümleyle, tek bir hareketle aklını öfkeyle yakacak kadar bilgi toplamak gerekir. Profesyonel kışkırtma budur."_ (552)
+**Gerekçe:** → N-DAN1.4
+
+##### DAN1.5 — Danitz Bey (1248'den itibaren)
+
+**Kapsam:** Rorsted Takımadaları, Soytarı Kilisesi'nin işleri
+**Yap:** Komut vermeyi öğrenmiş ama huyunu bırakmamış: buyruklar kısa, işlerini yerine getirir; yine de övünür ("benim gibi birkaç dil bilseydiniz") ve "İt boku!" der. Tehlikeli işi "en adilini" diye kuraya bağlar.
+**Yapma:** Olgunlaşmayı ciddi bir yönetici diline çevirmek.
+**Örnek:** _"Okuma yazma bilmemenin sonucu bu. Benim gibi Kadim Feysac'ı, Dev dilini, Elf dilini bilseydiniz başınıza bu gelmezdi. Tabii dil yeteneği zekâyla ilgili bir şey, kendinizi zorlamayın."_ (1291)
+**Gerekçe:** → N-DAN1.5
 
 ---
 
@@ -1485,7 +1550,8 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Beş Deniz'in korsanları (Anderson, Danitz kendi haritalarında)
 **Yap:** Loen merdiveni yerine güç ve kelle ödülü konuşur; kaba, gövdeli, denizci ağzı; uğur ve uğursuzluk dile sızar.
 **Yapma:** Her korsana aynı abartılı "denizci" karikatürünü giydirmek.
-**Gerekçe:** → N-ZMR1.6 (örnekler Danitz ve Anderson haritaları yazılınca eklenecek)
+**Örnek:** _"红骷髅海贼团, küçük-orta bir güç. Kaptanları 900 pound ödüllü '海狼' Johnson, ikinci kaptanları 500 pound ödüllü '独眼' Andersen."_ (504, Danitz: korsan ödülü ve lakabıyla sayılır); _"Bir korsan olarak az çok Fırtınalar Hâkimi'ne inanır, bazı şeylerden sakınırsın; tabutlardan uzak durmak da bunlardan biri."_ (935)
+**Gerekçe:** → N-ZMR1.6
 
 ##### ZMR1.7 — Çocuklar
 

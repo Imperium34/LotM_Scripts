@@ -1085,7 +1085,8 @@ Kohler: 353 ¶104 我不认识单词…; 354 ¶16 侦探先生，你说的太对
 **Denetim:** 221, 353–356, 372–373, 383, 476 (ZH).
 
 ### N-ZMR1.6
-Bekliyor: korsan replikleri Danitz ve Anderson haritalarıyla birlikte toplanacak.
+504 ¶34 Danitz: korsanları ödül ve lakapla sayar (赏金900镑的‘海狼’约翰逊，大副是赏金500镑的‘独眼’安德尔森); 506 ¶72 kendi ödülü (3000镑); 935 ¶35 作为一名海盗，或多或少都要信仰‘风暴之主’，避讳一些事情，其中就有远离棺材; 676 ¶52 Anderson: 我真是太喜欢这片海盗的乐园了 (korsanların kelle ödülleri); 539 ¶65 liman kadınları. Ayrıntı: N-DAN1.1, N-AND1.2.
+**Denetim:** 504, 506, 539, 676, 935 (ZH).
 
 ### N-ZMR1.7
 373 ¶49 Daisy'nin kelime defteri (每天枕着它们抱着它们睡觉…就着清晨的光芒背诵). Daisy'nin kendi replikleri bu taramada çıkmadı; çeviri sırasında eklenecek.
@@ -1128,3 +1129,47 @@ Walter: 741 ¶50 先生，有什么能为您效劳的吗？; ¶57 önce ev, sonr
 ### N-KLS1.4
 Güneş: 140 歌颂者…他们的口号是：“让我们赞美太阳吧！”; 686 驱除黑暗，赞美太阳; 230, 548 赞美太阳的姿势 (双臂张开，往上簇拥); şaka kalıbı 133, 139, 160, 343, 1033–1034, 1079, 1227 (只知道“赞美太阳”的白痴). Karar (kullanıcı, 2026-10-20): 赞美太阳 → "Güneş'e hamd olsun!" (Kadir-i Mutlak katmanı; hamd yalnız Tanrı'ya edilen övgüdür ve Ebedî Gece'nin "medholsun"undan ayrılır). Toprak Ana: 306 ¶41 我更喜欢别人称呼我神父; ¶45–51 eski korsanlık itirafı; 307 sakin ve açık anlatım. Cenk Tanrısı, İlim ve Hikmetin İlahı: belirgin replik bulunamadı.
 **Denetim:** 140, 230, 306–307, 686 (ZH).
+
+---
+
+## Anderson Hood ve Alevden Danitz
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.
+> **Adlar:** 黄金梦想号, 疾病中将 ve korsan lakapları (海狼, 独眼, 红骷髅海贼团) sözlükte yok, Çince bırakıldı. Edwina, Segar İngilizce biçim.
+> **Eski haritalardan düşenler:** Anderson: "her iğneleme bir olta atışı, asla keyfî değil" ve "kibri sarsılınca öfke" kaynakla örtüşmüyor; kışkırtma çoğunlukla huydur (1095 ¶37, ¶61) ve güçlü karşısında anında, şakayla teslim olur (677 ¶44, 707 ¶65). Danitz: "kışkırtmada berbat" ve "Gehrman'a Osmanlıca, süslü yaltaklanma" kaynakta yok; Danitz kışkırtmayla övünür (552) ve Gehrman karşısında kekeler (530 ¶55, 558 ¶12). Eski Danitz haritasındaki "İt boku!" ise 狗屎'ün sabit karşılığı olarak korundu.
+
+### N-AND1.1
+651 ¶77 哭笑不得…我就想开个玩笑…你不觉得环境一下变得很恐怖的体验非常棒吗？当然，我是指让对方; 653 ¶71 强行笑道：我知道，我的厄运会让我不好的话语应验，好了，别看我，我不说了; 656 ¶21 好，好，我闭嘴，闭嘴; 676 ¶46 …有点烦人，哈哈，开个玩笑; 677 ¶67 什么烦恼也不能影响吃饭和睡觉！; 689 ¶70 kumarhane; 691 ¶10 portre teklifi (大师级的水准); 694 ¶74 哈哈，刚才开玩笑的; 696 ¶6 我大概没法做巨龙猎手，只能做巨龙粪便了; 1040 ¶60 它已经会叫爸爸了 → ¶63 开个玩笑.
+**Denetim:** 651, 653, 656, 676, 677, 689, 691, 694, 696, 1040 (ZH).
+
+### N-AND1.2
+1095 ¶37 伪装了怎么能让别人知道该痛恨谁？; ¶61 本来想杀了你，但这样就没人痛恨我了。好好活着吧，每天多咒骂我几遍; ¶17 经过我的教导，你已经有不小的进步了; 1096 ¶34 你？呵; 707 ¶28 我觉得你就到此为止了; 703 ¶13 没必要自卑; 1107 ¶25 还不笨……; 1259 ¶8 竟然没有回应我的挑衅。这说明你们在策划一场阴谋; 698 ¶10 我感觉他很有挑衅者的天赋.
+**Denetim:** 698, 703, 707, 1095, 1096, 1107, 1259 (ZH).
+
+### N-AND1.3
+652 ¶10 最好在前面加一个限定词：半神以下; 677 ¶41–44 道歉？…在迷雾海，我的名声还是很响亮的 → 对不起！我错了！有什么事情都可以商量！; 687 ¶39 他们都选择了你; 707 ¶65 自嘲一笑：在海盗的乐园，他才是公认的最强猎人.
+**Denetim:** 652, 677, 687, 707 (ZH).
+
+### N-AND1.4
+1095 ¶6–22 olasılık tahlili (要么…要么…谁会放出这个消息呢？); 1107 ¶42 永远不要小看这种…每一位海盗将军都是必须慎重对待的目标; 682 ¶59 我虽然在你面前表现得满不在乎，但实际上，我提前有调查猎物的背景; 703 ¶60–64 arkadaşlarının ölümü, sonra 如果哪一天我面对了死亡，我一定要从容，潇洒，不丢失风度，用最帅的姿态去迎接它.
+**Denetim:** 682, 703, 1095, 1107 (ZH).
+
+### N-DAN1.1
+503 ¶104 gemi yemekleri ve ishal hikâyesi; ¶114 我也算是较为知名的海盗; 504 ¶34 korsan sayımı (赏金900镑的‘海狼’约翰逊…); 506 ¶72 3000镑 inkârı; 519 ¶78 我怎么可能记得住？他们又不是船长那样的美女！; 529 ¶19 gazeteye kendi adını "kahraman" diye yazdırması; 539 ¶65–68 kadınlar ve 这都是海盗们吹牛时说的; 536 ¶70 Rorsted'in Deniz İlahı inancı üzerine uzun bilgi; 552 ¶86 哈哈…我不认识他.
+**Denetim:** 503–539, 552 (ZH).
+
+### N-DAN1.2
+狗屎: 521 ¶34, 572 ¶21, ¶38, 577 ¶43, 690 ¶34, ¶38 (自骂), 692 ¶29 (iç ses), 1095 ¶40, ¶80, 1107 ¶10, 1179 ¶57, 1291 ¶51. 903 ¶67 在大脑反应过来前，已开口问道; 544 ¶76 你疯了吗？…脱口问道.
+**Denetim:** 521, 544, 572, 577, 690, 692, 903, 1095, 1107, 1179, 1291 (ZH).
+
+### N-DAN1.3
+499 ¶47 我，我在度假……(本能却使他吐出了理由); 530 ¶55 斯帕罗先生，我，我可以离开了吗？; ¶64 又愤怒又憋屈; 556 ¶24 你，你什么时候出来的？(话语结巴); 558 ¶12 是，好的！(忙不迭); 572 ¶38 格尔曼·斯帕罗那个疯子; 690 ¶38 无法用正常逻辑猜测的疯子.
+**Denetim:** 499, 530, 556, 558, 572, 690 (ZH).
+
+### N-DAN1.4
+552 ¶3 一般海盗的挑衅就是辱骂，而我不同，是有针对性地辱骂…; ¶10 这才叫专业的挑衅; 1096 ¶40 Anderson karşısında 直觉地放弃了这句话; 1107 ¶10 küfür; 1179 ¶57 差点被说服.
+**Denetim:** 552, 1096, 1107, 1179 (ZH).
+
+### N-DAN1.5
+1248 ¶9 达尼兹大人; ¶19 立刻给我准备一个干净安宁的祭坛，我要向神祷告; ¶48 抽签决定，这样最公平; 1270 ¶6–32 kısa buyruklar, misafirlere yemek; 1291 ¶51–56 狗屎！… 这就是文盲的下场…语言天赋这种事情和智商有关; 1381 ¶23 电报局 iç ses. İnanç: 896 ¶14 我信仰的是‘风暴之主’; 935 ¶35 作为一名海盗，或多或少都要信仰‘风暴之主’…远离棺材 (ALG1.7/KLS1.3: Fırtına yemini "Ya Hâkim").
+**Denetim:** 896, 935, 1248, 1270, 1291, 1381 (ZH).
