@@ -564,12 +564,14 @@
 - **hizmetkâr** — 仆役/仆人
 - **efendi/sahip** — a servant's master (主人); the butler speaks of him with the respectful plural
 - **hekim** — doctor (医生); küçük harf, sıradan meslek; Mertebe adı Hekim büyük harf 53
+- **aktar** — herbalist, apothecary (药师); küçük harf, sıradan meslek (38, 49: 'köy aktarı', 'usta bir aktar'); Mertebe adı Aktar büyük harf
 
 ## Çeviri Alışkanlıkları (Style Rules)
 
 - **整个人** — çoğunlukla düşer
 - **有所 / 有些 / 一丝** — korunur
 - **微微 + jest** — düşer
+- **Erken Mertebe = meslek** — düşük Mertebe adlarının çoğu sıradan bir meslekle aynı kelimedir, çünkü bu Aşkınlar biraz güçlenmiş sıradan insanlardır ve öyle sanılabilir. Ayrım yalnız harftedir: Mertebe büyük harf, meslek küçük harf (Kâhin/kâhin, Hekim/hekim, Aktar/aktar, Ruh Aracısı/ruh aracısı). Hangisi olduğu, konuşanın kişiyi Aşkın olarak mı yoksa mesleğiyle mi andığına bakılarak seçilir.
 
 ---
 

@@ -482,7 +482,7 @@ Kural: 这是规矩 (401 ¶25). Meclis: 这必须通过'六人议事团'的表�
 
 ### N-FOR1.5
 
-310: ilk toplantıda 谨慎戒备, sonra kendini rahatlatır. 311–313: 一愣一愣, 我怎么都没听说过, 骗人的吧？; 312: 我想要'药师'和'戏法大师'的配方，用金钱交易; '世界'先生，希望你能尽快找到…我该怎么支付报酬？; 我相信'愚者'先生; Audrey'ye 谢谢你的提醒，你的称号就是你的品格; 想！ / 成交！ (又惊又喜…害怕对方反悔); 今天的聚会让我感觉自己就像刚到贝克兰德的乡下姑娘. 313: 也许是个不怀好意，隐藏得很深的邪神 diye kendini uyarır. Not: 药师 (Apothecary) sözlükte yok; haritadaki 'Eczacı' yer tutucudur.
+310: ilk toplantıda 谨慎戒备, sonra kendini rahatlatır. 311–313: 一愣一愣, 我怎么都没听说过, 骗人的吧？; 312: 我想要'药师'和'戏法大师'的配方，用金钱交易; '世界'先生，希望你能尽快找到…我该怎么支付报酬？; 我相信'愚者'先生; Audrey'ye 谢谢你的提醒，你的称号就是你的品格; 想！ / 成交！ (又惊又喜…害怕对方反悔); 今天的聚会让我感觉自己就像刚到贝克兰德的乡下姑娘. 313: 也许是个不怀好意，隐藏得很深的邪神 diye kendini uyarır. 药师 = Aktar (Aktar Yolu, Mertebe 9); meslek anlamında küçük harf aktar.
 **Denetim:** 310, 311, 312, 313 (ZH).
 
 ### N-FOR1.6
@@ -537,3 +537,69 @@ Kural: 这是规矩 (401 ¶25). Meclis: 这必须通过'六人议事团'的表�
 
 48 ¶48 笑着起身 kendini tanıtır; 49: yorumların muğlaklığı ve 'ölüler itiraz etmez' esprisi (yayımlanmış metin).
 **Denetim:** 48, 49 (ZH/TR).
+
+## Audrey Hall
+
+> **Numaralama:** 1–58 ZH/TR; sonrası bölüm düzeyinde (çevrildikçe ¶ eklenmeli). Ölçü sicili için bkz. Side_Character_Maps › Toplantı Sicili.
+
+### N-AUD1.1
+
+Doğal dil: 5 ilk sözü 阁下，这是哪里？; 6 ¶16, ¶69; 7 ¶4, ¶18, ¶32 (yayımlanmış metin). Bilerek oynanan saflık: 107 对自己的虚伪翻了个白眼; 242 故作天真地感慨道 他真厉害啊！; 338 故作惊喜 + 赞美女神 ve kızıl ay jesti; 339 装做什么都不知道; 418 适时表现出了自己的诧异和慌乱…是'读心者'的基本功. Babasıyla: 8 故意露出几分苦恼的神色.
+**Denetim:** 5, 6, 7, 8, 107, 242, 338, 339, 418 (ZH).
+
+### N-AUD1.2
+
+60: 如果，我是说如果，一只普通的动物喝了序列9的魔药; 114: 愚者先生，如果，我是说如果，我有机会加入别的组织. Yayımlanmış karşılık: 6 ¶62 'Şayet bunu temin edebilirsem—ki şayet diyorum—'.
+**Denetim:** 6, 60, 114 (ZH/TR).
+
+### N-AUD1.3
+
+59: 情绪稍有激动的她立刻就脱离了'观众'的状态 ardından 真是出类拔萃的方法啊，我觉得，我觉得…; 60: 突然保持不住'观众'状态，有点腼腆; 93: 惊魂未定，哪还记得自己是'观众'; 236: 我，我还欠，欠您的眷者一份赏金. Bedensel tik: 6 下意识鼓了鼓腮帮子，接着慌乱地左看右看; 179 鼓了下腮帮子. Yayımlanmış: 6 ¶60, 35 (bkz. Toplantı Sicili).
+**Denetim:** 6, 35, 59, 60, 93, 179, 236 (ZH/TR).
+
+### N-AUD1.4
+
+107: Fors'u ayrıntıdan okur (熏黄的痕迹, 厚茧, 力气). 61: 无声分析 → 颤抖 → 心情飞快变好 → 哼了段轻快的旋律. 67: 第一…第二…第三…. 218: 醒醒，奥黛丽，你不能再天真了！; 342: 不行不行，奥黛丽，你已经不是天真烂漫的少女了 (ve önce Gümüş Şehir'e macera hayali); 112: 不再是天真无知的少女了. 238: 饶有兴趣地瞎想 ve 故意没急着表态 (pazarlık taktiği).
+**Denetim:** 61, 67, 107, 112, 218, 238, 342 (ZH).
+
+### N-AUD1.5
+
+418: duyguyu yerinde oynamak 读心者 temeli. 1074 ¶26: Leonard'ın özeti 比较散漫，随意…这并不矛盾，很多人都是这样的'综合体' (klinik özetleme sesi). 859: önceki korkudan ders almış, 没有慌乱，始终保持着一丝清醒. Haritadaki klinik örnek cümleler illüstratiftir.
+**Denetim:** 418, 859, 1074 (ZH).
+
+### N-AUD1.6
+
+Tasarım kararı (çevirmen). Kaynakta yakın anlar: 519 Susie'ye sarılıp 谢谢，谢谢…… (sonra 我们以后互相治疗); 1393 sesi 略显低哑, öteki Audrey 带着哭腔.
+
+## Alger Wilson
+
+> **Numaralama:** N-AUD'daki not geçerli.
+
+### N-ALG1.1
+
+Yayımlanmış: 6 ¶71, 7 ¶6, ¶13, ¶54 (İradeniz emrimizdir, dondurulmuş). 159: Soytarı'ya doğrudan söyleyemez, 委婉地点一下. 748: Fırtına Kilisesi merkezinde Soytarı'nın tazim ismini okumaya cesaret edemez. 1355: Soytarı'nın onayı olmadan kiliseden ayrılmaya cesaret edemez (神谴).
+**Denetim:** 6, 7, 159, 748, 1355 (ZH/TR).
+
+### N-ALG1.2
+
+Yayımlanmış: 6 ¶55, ¶58, ¶59. Not: 6'da kaynağın tonu daha kabadır (低笑了一声，含糊道 哪有不想付出代价就成为非凡者的？); yayımlanmış metnin yükseltmesi Toplantı Sicili kararıdır. 93: Audrey'ye 第一…第二… düzeniyle öğüt.
+**Denetim:** 6, 93 (ZH/TR).
+
+### N-ALG1.3
+
+179: 你将来会清楚的，或者现在付出报酬换取这个情报？; 145: 没有问题。(毫不啰嗦); 342: 低沉平缓地说道. Derrick'i 'sömürmesi' wiki ve kaynakta tekrar eden bir motif.
+**Denetim:** 145, 179, 342 (ZH).
+
+### N-ALG1.4
+
+60: 难得地笑了一声 ardından 知道，他沉在苏尼亚岛附近，我亲手沉下去的. 36 ¶4 (yayımlanmış). 524: barda 这该死的家伙…呸，他竟然敢骗我！ 8: güvertede nefes nefese, 懊恼.
+**Denetim:** 8, 36, 60, 524 (ZH/TR).
+
+### N-ALG1.5
+
+Tasarım kararı (çevirmen). Toplantıda doğrudan örneği henüz bulunmadı; gerçek dünyadaki kaba sicil için bkz. 524.
+
+### N-ALG1.6
+
+1172: 心跳陡地加快 → 低下脑袋，让自己嗓音轻微有些颤抖地开口道 是我们不够虔诚，想得太多。 393: 为之前的浅薄冒冷汗. 1185: 额头布满冷汗.
+**Denetim:** 393, 1172, 1185 (ZH).

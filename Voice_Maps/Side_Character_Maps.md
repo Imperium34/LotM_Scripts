@@ -646,32 +646,111 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
   - _Denizci iskeleti_ yükseklik içinde sızar: kısa, buyurgan cümleler ve halk deyimi. Ölçü: 36 ¶4 _"Hissiyatları pek bir küntmüş; herhâlde kara sivrisinek ısırdıktan ancak bir yıl sonra kaşınmaya başlıyorlar."_ Yüksek sözcük ile kaba imge aynı cümlede durur.
   - Güvertede (Bölüm 8) huzur katmanı yoktur: kısa, emir gibi.
 
-### Audrey Hall (Adalet)
+### Audrey Hall (Adalet) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-- **Tarz:** Tanzimat dönemi Osmanlı aristokrasisi. Korunaklı bir asilzade olarak başlar ("Aman efendim", "Harikulade"). Mertebesi arttıkça, aristokratik kelimeleri azalır ve yerini soğuk, keskin psikanaliz cümlelerine bırakır.
-- **Onay:** Başlangıçta _"Elbette."_, _"Hay hay."_, _"Hazırım."_; ilerleyen dönemde kısa ve klinik: _"Anlaşıldı."_
-- **Kural 1:** Asilzade konuşma şekli yakın olduğu kişilerle birlikteyken düşen bir maske değildir; bu dil asla terk edilmez, sadece işlevi değişir. Başlangıçta kendi doğal dili budur, zamanla insanların ondan beklediği ve psikolojik manipülasyona en açık oldukları form olduğu için bilinçli kullanılır..
-- **Kural 2:** Mertebesi arttıkça ve Aşkınlar dünyasına alıştıkça, içgüdüsel olarak olayları kişiselleştirmeyi bırakır. Düşüncelerinde "Ben" öznesini siler ve bunun yerine durumu nesnelleştiren, klinik bir dil kullanır. Örneğin; hislerini "Buna çok üzülüyorum" veya "Korkuyorum" şeklinde birinci şahısla ifade etmek yerine, kendi duygularını dahi dışarıdan bir hastayı inceliyormuş gibi "Bu durum bariz bir keder tablosu çiziyor" veya "Şu anki kalp atış hızım korku refleksinin tetiklendiğini gösteriyor" şeklinde formüle eder.
-- **Kural 3:** Klinik mesafeye geçiş doğrusal değildir. Audrey gerçek, sarsıcı bir duygusal şok veya travma yaşadığında, o soğuk klinik mesafe anında çöker ve Başlangıç seviyesindeki o aristokratik kız çocuğu sesine geriler. Bu gerileme bir performans değil, saf bir reflekstir ve onun en insani, en savunmasız anlarını işaret eder. **Tetikleyici _taze/akut_ travmadır, hatırlanan değil:** aylar önce yaşanmış, zihninin çoktan metabolize ettiği bir acıyı (örn. geçmiş bir Büyük Pus anısı) artık klinik mesafeyle işleyebilir. Gerileme tetiklenmez. Zırhın sertleştiğini gösteren de budur; eski yaralar çözümlenebilir, yalnızca yeni ve ani olanlar kalkanı çatlatır.
-- **Örnek (Başlangıç):** _"Aman efendim, ne kadar da harikulade bir buluşma! Lütfen tecrübesizliğimi mazur görünüz."_
-- **Örnek (Başlangıç):** _"Asılmış Adam Beyefendi'nin anlattığı deniz maceraları tek kelimeyle harikulade! Lütfen bu toy hanımefendinin sonsuz merakını ve cehaletini mazur görünüz."_
-- **Örnek (Başlangıç)** _"Bence bu çok üzücü..."_
-- **Örnek (İlerleyen):** _"Omuzlarındaki asimetrik gerginlik, yalan söylediğini açıkça belli ediyor. Savunma mekanizması devrede."_
-- **Örnek (ilerleyen):** _"Bu durum bariz bir keder tablosu çiziyor"_
-- **Örnek (İlerleyen):** (Dışından, nazikçe) _"Ah, ne kadar talihsiz bir hâdise... Eminim beyefendi elinden geleni yapmıştır."_
-  (İç Ses) _"Omuzlarındaki asimetrik gerginlik ve yutkunma sıklığı, yalan söylediğini ve yoğun bir suçluluk duyduğunu kanıtlıyor. Savunma mekanizması devrede. Ayrıca şu an kalp atış hızımın artması, ortamdaki gizli tehlikeye dair empatik bir alarm refleksinin tetiklendiğini gösteriyor. Geri çekilmek en mantıklı hamle."_
+**Tarz:** Tanzimat dönemi Osmanlı aristokrasisi. Korunaklı, meraklı, maceraya hevesli genç bir asilzade; Seyirci, sonra Telepat ve Ruh Hekimi. Toplantıda Toplantı Sicili geçerlidir (yukarıda; ölçü 6–7). Gözlemci bakışı önce iç seste başlar, Mertebe yükseldikçe dışa, klinik bir mesafeye taşar. Bedensel tikleri (yanağını şişirmek, kimse görmedi mi diye bakınmak) anlatıdadır, replikte değil.
+**Onay:** _"Elbette."_; _"Hazırım, başlayabilirsiniz."_ (34); ilerleyen dönemde kısa ve klinik: _"Anlaşıldı."_
 
-### Alger Wilson (Asılmış Adam)
+##### AUD1.1 — Asilzade dili kalıcıdır, işlevi değişir
 
-- **Tarz:** Sahtekar sendromu. Soytarı'yı etkilemek için yüksek kilise dili kullanmaya çalışır ama cümlenin iskeleti sert bir denizciye aittir. Maskesi düştüğünde kaba ve emir vericidir.
-- **Onay:** Soytarı'ya _"Emredersiniz, Yüce Soytarı."_; güvertede kaba ve emir gibi: _"Anlaşıldı!"_
-- **Kural 1:** Soytarı'nın karşısında yüksek kilise dili kullanmasının asıl nedeni Fırtına Kilisesi geçmişidir. Fırtınalar Hakimi itaatsizliği yıldırımla cezalandıran agresif bir tanrı olduğu için, Alger bir tanrı (Soytarı) gördüğünde hayatta kalmak adına bildiği tek "kutsal saygı" diline (reverence register) sığınır. Bu onu sadece komik değil, aynı zamanda sempatik kılar.
-- **Kural 2:** Alger o yüksek resmî dille konuşurken aniden tehlikeli veya şok edici bir durumla karşılaştığında, iki dili birbirine çarpar. Cümlenin iskeleti ve grameri yarım saniyelik bir süre daha resmî kalmaya devam ederken, kullandığı kelimeler aniden kaba denizci argosuna kayar. Maskenin tamamen çökmeden önceki o "ara formu", karakterinin en şeffaf anıdır.
-- **Kural 3 (Hakiki Nedamet):** Alger _gerçekten_ Soytarı'ya karşı bir kabahat işlediğine inandığında, saygı sicili komik-sempatikten çıkar, kaba sızıntı da olmaz — geriye yalnızca yargıladığına inandığı bir tanrının önündeki saf dehşet ve nedamet kalır. Aynı reverans dili, komik değil trajik iş görür. (Strut değil, çıplak korku.)
-- **Örnek (Kulüpte):** _"Kudretli Soytarı, lütfederseniz bu naçizane kulunuz size Fırtına Kilisesi'nin son hamlelerini arz etmek ister."_
-- **Örnek (Maske Kırılması)** _"Yüce Soytarı'nın tasarıları o kadar engin ve hesaba gelmez ki... Lanet olsun, o piç kurusu korsanlar daha en başından beri O'nun avucunun içindeymiş! Benim gibi dar kafalı bir ahmak bu ihtişamlı kudret karşısında kör kalmış!"_
-- **Örnek (Gerçekte):** _"Yüce Soytarı, lütfederseniz şu lanet olası piç kurularının bağırsaklarını güverteye sermeme müsaade ediniz!"_
-- **Örnek (Kabahat):** _"Aptal... Ne kadar aptalsın Alger! O bir İlah, senin o sefil korsan aklınla sınayabileceğin veya hesap sorabileceğin biri değil! Eğer merhamet dilenmezsem beni tek bir düşüncesiyle denizin dibindeki çamura gömecek. Lütfen... Küstahlığımı bağışlayın Yüce Soytarı Efendim..."_
+**Kapsam:** Tüm görünümleri · herkes · ömür boyu
+**Yap:** Asilzade dilini hiçbir zaman bırakma. Başta kendi doğal dilidir; zamanla bilerek kullanılır, çünkü insanların ondan beklediği ve en kolay manipüle oldukları biçim odur. Saf ve şaşkın tepkiyi gerektiğinde oynar.
+**Yapma:** Yakın olduğu kişilerle bu dili maske gibi düşürme.
+**Örnek:** _"Muhterem Soytarı Efendi, cüretimi mazur görünüz lakin takasımıza şahitlik etmeniz hususunda zât-ı âlinize istirhamda bulunmama müsaade eder miydiniz?"_ (7 ¶4)
+**Gerekçe:** → N-AUD1.1
+
+##### AUD1.2 — "Şayet" kalıbı
+
+**Kapsam:** Tüm görünümleri · herkes · rica, varsayım, tehlikeli soru
+**Yap:** 如果，我是说如果 her geçişte aynı çekinceyle verilir: _"Şayet bunu temin edebilirsem—ki şayet diyorum—size nasıl teslim edeceğim?"_ (6 ¶62). Çekince asilzadenin dilidir; soruyu yumuşatır ama geri çekmez.
+**Yapma:** Kalıbı her geçişte başka bir biçimle çevirme.
+**Gerekçe:** → N-AUD1.2
+
+##### AUD1.3 — Sakin replik ve taşma
+
+**Kapsam:** Toplantı ve sosyete · herkes · heyecan, utanç
+**Yap:** Sakin replik Toplantı Sicili düzeyindedir. Taşmada sicil kayar ve bu karakterizasyondur: ünlem, tekrar, kekeleme (_"B-bendeniz…"_, 6 ¶60; _"Kulağa çok, çok, çok ilgi çekici geliyor!"_, 35). Hitap düşmez, taşma bitince formül geri gelir. Utançta kekeler (236: borcunu itiraf ederken).
+**Yapma:** Taşmayı yumuşatıp sicile geri yazma; sakin bir cümleyi sade kurma.
+**Gerekçe:** → N-AUD1.3
+
+##### AUD1.4 — İç ses: gözlemci ve kendini azarlayan
+
+**Kapsam:** İç ses · her an
+**Yap:** Karşısındakini ayrıntıdan okur (107: parmaktaki lekeler, nasırlar, kollar); planını madde madde kurar (67: birinci, ikinci, üçüncü). Kendini adıyla azarlar: _"Uyan Audrey, artık o saf kız olamazsın!"_ (218); _"Olmaz olmaz Audrey, sen artık toy bir kız değilsin."_ (342). Korkudan çabuk toparlanır, bir ezgi mırıldanır (61).
+**Yapma:** İç sesi dışarıdaki nezaketle aynı tona getirme; içeride dürüst, eğlenceli ve keskindir.
+**Gerekçe:** → N-AUD1.4
+
+##### AUD1.5 — Klinik mesafe
+
+**Kapsam:** Mertebe yükseldikçe · önce iç ses, sonra replik
+**Yap:** Olayları kişiselleştirmeyi bırakır; kendi duygusunu bile dışarıdan bir hastayı inceler gibi formüle eder, 'ben' öznesi silinir: _"Bu durum bariz bir keder tablosu çiziyor."_ (illüstratif). Duyguyu yerinde ve zamanında oynamak Telepat'ın temel işidir (418).
+**Yapma:** Bu mesafeyi erken dönem repliklerine taşıma.
+**Gerekçe:** → N-AUD1.5
+
+##### AUD1.6 — Gerileme
+
+**Kapsam:** Klinik dönem · taze, ani travma
+**Yap:** Gerçek ve sarsıcı bir şokta klinik mesafe anında çöker, Başlangıç dönemindeki aristokrat kız sesine geriler. Bu bir refleks, onun en savunmasız anıdır. **Tetikleyici taze travmadır, hatırlanan değil:** aylar önceki bir acıyı artık klinik mesafeyle işler.
+**Yapma:** Gerilemeyi hatırlanan bir acıyla tetikleme.
+**Gerekçe:** → N-AUD1.6 (tasarım kararı)
+
+- **Maske / Öz / Çatlak:**
+  - _Maske:_ Seyirci sükûneti ve asilzade nezaketi.
+  - _Öz:_ maceraya hevesli, büyümeye çalışan, meraklı bir genç kız (342: Gümüş Şehir'e gitmeyi hayal eder, sonra kendini azarlar).
+  - _Çatlak:_ heyecanda ve utançta sicil kayar; şokta kız sesine geriler.
+
+### Alger Wilson (Asılmış Adam) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Fırtına Kilisesi'nde yükselmiş eski bir korsan. Soytarı'nın karşısında yüksek kilise diline sığınır; cümlenin iskeleti yine sert bir denizcinindir. Üyelere karşı hesaplı bir tüccardır, bilgiyi pazarlığa çevirir. Geçmişi kara bir mizahla sızar. Altında güç ve mevki hırsı vardır. Toplantıda Toplantı Sicili geçerlidir (yukarıda; ölçü 6–7).
+**Onay:** Soytarı'ya dondurulmuş kalıp: _"İradeniz emrimizdir."_ (7 ¶54); üyelere kısa: _"Sorun yok."_ (145); güvertede emir gibi: _"Anlaşıldı!"_
+
+##### ALG1.1 — Soytarı'ya huzur dili
+
+**Kapsam:** Toplantı · Soytarı
+**Yap:** Tam huzur dilini kullan; bir tanrının önündeki hayatta kalma içgüdüsüdür, çünkü Fırtınalar Hâkimi itaatsizliği yıldırımla cezalandırır. İsteğini doğrudan söylemez, ima eder (159).
+**Yapma:** Soytarı'ya düz bir talep ya da pazarlık dili kurma.
+**Örnek:** _"Ulu efendim, zât-ı âlinize nasıl hitap etmemiz icap eder?"_ (6 ¶71); _"Soytarı Efendi, böylesi 'toplantılar' zât-ı âlinize de ilgisini celbetmiyor mu?"_ (7 ¶13)
+**Gerekçe:** → N-ALG1.1
+
+##### ALG1.2 — Audrey'ye hocavari
+
+**Kapsam:** Toplantı · Audrey ve öteki üyeler · açıklama
+**Yap:** Açıklarken Bölüm 6 düzeyinde süslü ve hocavari konuş: _"Malumunuz olduğu üzere…"_ (6 ¶55), _"…anlayabileceğinize kaniyim."_ (6 ¶58). Kısa yanıtta kısa ama dağarcık yüksektir (_"Bir mahzuru yok."_).
+**Yapma:** Açıklamayı sade bir sohbete indirme.
+**Gerekçe:** → N-ALG1.2
+
+##### ALG1.3 — Tüccar
+
+**Kapsam:** Toplantı ve dışı · üyeler, özellikle Derrick ve Audrey
+**Yap:** Bilgiyi bir bedele bağla; ölçülü, alçak ve sakin konuş: _"İleride anlarsınız; ya da bu bilgiyi şimdi bir bedel karşılığında almak ister misiniz?"_ (179). Onay kısa ve dolandırmasızdır (145).
+**Yapma:** Bilgiyi karşılıksız verme; Derrick'in yaptığını Alger yapmaz.
+**Gerekçe:** → N-ALG1.3
+
+##### ALG1.4 — Denizci iskeleti sızar
+
+**Kapsam:** Tüm görünümleri · herkes
+**Yap:** Yüksek dilin içinden kara mizah ve kaba imge sızsın: _"Biliyorum; Sonia Adası açıklarında yatıyor. Oraya bizzat ben batırdım."_ (60); _"Hissiyatları pek bir küntmüş; herhâlde kara sivrisinek ısırdıktan ancak bir yıl sonra kaşınmaya başlıyorlar."_ (36 ¶4). Gerçek dünyada, denizciler ve korsanlar arasında kaba konuşur, söver (524: _"Lanet herif… pıh, bana yalan söylemeye cüret etti!"_).
+**Yapma:** Soytarı'nın huzurunda küfretme.
+**Gerekçe:** → N-ALG1.4
+
+##### ALG1.5 — Çarpışma
+
+**Kapsam:** Toplantı · şok anı
+**Yap:** Yüksek dille konuşurken tehlikeli ya da şok edici bir şeyle karşılaşınca iki dil çarpışır: cümlenin iskeleti yarım saniye daha resmî kalır, sözcükler denizci argosuna kayar. Maskenin tamamen düşmeden önceki ara biçimi, en şeffaf anıdır.
+**Örnek (illüstratif):** _"Soytarı Efendi'nin tasarıları o kadar engin ki... Lanet olsun, o piç kurusu korsanlar en başından beri O'nun avucunun içindeymiş!"_
+**Gerekçe:** → N-ALG1.5 (tasarım kararı)
+
+##### ALG1.6 — Hakiki nedamet
+
+**Kapsam:** Toplantı · Soytarı · bir kabahat işlediğine inandığında
+**Yap:** Saygı sicili komik olmaktan çıkar, kaba sızıntı da olmaz; geriye bir tanrının önündeki dehşet ve pişmanlık kalır. Başını eğer, sesi hafifçe titrer, suçu kısa bir cümleyle üstlenir: _"Yeterince sadık olmayan bizdik; fazla düşündük."_ (1172)
+**Yapma:** Pişmanlığı süslü bir yalvarışa ya da komediye çevirme.
+**Gerekçe:** → N-ALG1.6
+
+- **Maske / Öz / Çatlak:**
+  - _Maske:_ dindar bir Fırtına Kilisesi mensubu ve saygılı bir hizmetkâr.
+  - _Öz:_ hırslı, hesaplı bir eski korsan; mevki ve güç ister (1101).
+  - _Çatlak:_ bir tanrının önündeki çıplak korku (1172, 393) ve şokta denizci dilinin sızması.
 
 ### Derrick Berg (Güneş)
 
@@ -734,9 +813,9 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 ##### FOR1.5 — Toplantıda: orta sınıf kibarlığı
 
 **Kapsam:** Tarot toplantısı · Soytarı ve üyeler
-**Yap:** Kısa, kibar ve ticari konuş; hitap öteki üyelerle aynıdır ('Dünya Beyefendi'). Divan formülü kullanmaz: Audrey ve Alger'in saray dili ile onun sade kibarlığı arasındaki fark, odadaki yabancılığını gösterir. İç sesi kendini Backlund'a yeni gelmiş taşralı bir kız gibi hisseder ve Soytarı'ya hem hayranlıkla hem temkinle bakar. Sevinç patlaması tek kelimedir.
+**Yap:** Kısa, kibar ve ticari konuş. Hitap öteki üyelerle aynıdır ('Dünya Beyefendi', 'Adalet Hanımefendi') ve kendi siciline uymaz: yeni geldiğinde odanın adetinin bu olduğunu sanır ve uyar. Hitap ile cümle arasındaki bu uyumsuzluk, yabancının odayı taklit etmesidir. Divan formülü kullanmaz: Audrey ve Alger'in saray dili ile onun sade kibarlığı arasındaki fark, odadaki yabancılığını gösterir. İç sesi kendini Backlund'a yeni gelmiş taşralı bir kız gibi hisseder ve Soytarı'ya hem hayranlıkla hem temkinle bakar. Sevinç patlaması tek kelimedir.
 **Yapma:** Ona saray formülü yükleme; Toplantı Sicili'nin huzur katmanı ona açılmaz.
-**Örnek:** _"Eczacı ve Hilebaz formüllerini istiyorum, para ile."_ (312); _"Soytarı Efendi'ye güveniyorum."_ (312); Audrey'ye: _"Uyarın için teşekkürler; unvanın karakterinin ta kendisi."_ (312); _"İsterim!"_ … _"Anlaştık!"_ (312)
+**Örnek:** _"Aktar ve Hilebaz formüllerini istiyorum, para ile."_ (312); _"Soytarı Efendi'ye güveniyorum."_ (312); Audrey'ye: _"Uyarın için teşekkürler; unvanın karakterinin ta kendisi."_ (312); _"İsterim!"_ … _"Anlaştık!"_ (312)
 **Gerekçe:** → N-FOR1.5
 
 ##### FOR1.6 — Korku
