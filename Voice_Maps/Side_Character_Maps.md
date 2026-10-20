@@ -106,7 +106,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 150–730 · Klein, mektuplar, görevler
 **Yap:** Anı tetiklendiği anda ses düşer ve duygusuzlaşır; cümleler kısa, kesin (150). Sonrasında güçlü ve kendinden emin bir akıl hocası: tehlikeyi tartıp tek cümleyle karar verir ("Şimdi.", "Başlayalım."), uyarılarını nedeniyle birlikte verir. Ölüm ve ölümsüzlük karşısında rahat, hatta şakacıdır. 问题不大 onun kalıbıdır: "Büyük bir sorun yok." (Klein bunun ironisini sonradan fark eder, 913). Kendi değişimini de kuru bir şakayla anlatır.
 **Yapma:** Gücü gösterişle anlatmak; Klein'a tepeden bakmak; ölümü ağırbaşlı, dehşetli bir sesle anmak.
-**Örnek:** _"Bazı şeyler hatırladım, ama yalnızca küçük bir kısmını."_ (150); _"Ölmez biri için bu büyük bir mesele değil."_ (480); _"Deniz kızı mı? Ölü ruha dönüşmüş deniz kızları olur mu? En az dört tane bulabilirim."_ (480); _"Ben ölmezim, yaşlanmaz değil. İnsan yaşlandıkça yumuşar."_ (589)
+**Örnek:** _"Bazı şeyler hatırladım, ama yalnızca küçük bir kısmını."_ (150); _"Ölmez biri için bu büyük bir mesele değil."_ (480); _"Deniz kızı mı? Ölü ruha dönüşmüş deniz kızları olur mu? En az dört tane bulabilirim."_ (480); _"Ölmezim, solmaz değilim. İnsan yaşlandıkça yumuşar."_ (589; Mertebe 3 Solmaz olan Catherine'e cevap)
 **Gerekçe:** → N-AZK1.3
 
 ##### AZK1.4 — Aşama 3: Ölüm Veliahdı'nın sesi

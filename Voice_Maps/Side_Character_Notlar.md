@@ -712,7 +712,7 @@ Mektup 203 ¶67–70, 204 ¶6–8: 哈哈哈，祝贺你们，祝贺你们终于
 
 ### N-AZK1.3
 
-150 ¶48: 用不含情绪的语气: 我想起来一些事情，但只是很小的部分; ¶54 低沉的嗓音里仿佛蕴藏着即将爆发的火山; ¶57 他拿走了我孩子的头骨. 151 ¶31 kararlı: 我必须主动地寻找过去. 170 ¶66–67: 这是毫无疑问的 + gerekçeli uyarı. 187: mektup, kurban ayinini adım adım anlatır; 我的意见是，不能向自身不清楚不笃定的存在献祭. 480 ¶28: 但对‘不死者’而言，这不是什么大问题; ¶37 我也常常进了棺材又苏醒; ¶59 死灵的美人鱼…我至少能找到四条; ¶68 额，我也数不清有多少. 587 ¶51 现在。; ¶54 开始吧。; ¶65 但问题不大，我们进去吧。 480 ¶54 问题不大; 913 ¶56 没什么问题, ¶59 Klein'ın notu: 当时，阿兹克也说"问题不大"，结果… 589 ¶32 苦笑: 我是不死，不是不老，人一旦苍老，总会变得温和 (不死者 = Ölmez; Türkçede Mertebe adıyla kelime oyunu kurulur). 589 ¶77–80: 我也很担心。不过，我更想找回自己。
+150 ¶48: 用不含情绪的语气: 我想起来一些事情，但只是很小的部分; ¶54 低沉的嗓音里仿佛蕴藏着即将爆发的火山; ¶57 他拿走了我孩子的头骨. 151 ¶31 kararlı: 我必须主动地寻找过去. 170 ¶66–67: 这是毫无疑问的 + gerekçeli uyarı. 187: mektup, kurban ayinini adım adım anlatır; 我的意见是，不能向自身不清楚不笃定的存在献祭. 480 ¶28: 但对‘不死者’而言，这不是什么大问题; ¶37 我也常常进了棺材又苏醒; ¶59 死灵的美人鱼…我至少能找到四条; ¶68 额，我也数不清有多少. 587 ¶51 现在。; ¶54 开始吧。; ¶65 但问题不大，我们进去吧。 480 ¶54 问题不大; 913 ¶56 没什么问题, ¶59 Klein'ın notu: 当时，阿兹克也说"问题不大"，结果… 589 ¶32 苦笑: 我是不死，不是不老，人一旦苍老，总会变得温和. Üç katman: 不死 kendi Mertebesi (不死者 = Ölmez), 不老 karşısındaki 不老魔女 Catherine'in Mertebesi (Solmaz), düz anlam ise 'ölmem ama yaşlanırım, yaşlanan da yumuşar'. Catherine ¶29–30'da Ölüm Veliahdı'nın soğukluğunu hatırlatıp neden yumuşadığını sorar; cevap onun unvanıyla verilir. **Karar** (kullanıcı, 2026-10-20): üç katman korunur: "Ölmezim, solmaz değilim. İnsan yaşlandıkça yumuşar." İkisi de küçük harf: Mertebe adı değil, kendisi hakkında kelime; oyunu bilen okur yakalar, Çince de işaretlemez. 'Solmak' gençliğin ve tazeliğin gitmesini taşıdığı için düz anlam da korunur. 589 ¶77–80: 我也很担心。不过，我更想找回自己。
 **Denetim:** 150, 151, 170, 187, 480, 587, 589, 913 (ZH).
 
 ### N-AZK1.4
