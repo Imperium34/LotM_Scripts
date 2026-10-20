@@ -831,27 +831,83 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
   - _Öz:_ hırslı, hesaplı bir eski korsan; mevki ve güç ister (1101).
   - _Çatlak:_ bir tanrının önündeki çıplak korku (1172, 393) ve şokta denizci dilinin sızması.
 
-### Derrick Berg (Güneş)
+### Derrick Berg (Güneş) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-- **Tarz:** Gümüş Şehir'in binlerce yıllık izolasyonunu yansıtan, arkaik, destansı ve tamamen gerçekçi bir dil (Dede Korkut edası). Dış dünyanın mecazına, kinayesine ve iğnelemesine yabancıdır; o dünyaya ait bir söz duyduğunda harfiyen alır. Kesin hükümlerle konuşur; bu kesinlik öğretilmiş dogmadır, okulda ezberlediği kuralları okur gibi söyler (138: Gümüş Şehir'in ve Altılar Meclisi'nin tarihini bir vakayiname gibi anlatır; 158: 'Ortak Öğreti derslerimizde çok açık anlatılır, Rol İfası'nın tek bir kuralı vardır').
-- **Onay:** Yuvarlak onay sözcüğü kullanmaz; beyan kipinde, yemin gibi: _"Yapacağım."_
-- **Kural 1:** Derrick şakadan anlar; Gümüş Şehir'in gençleri şakalaşır (bkz. Gümüş Şehir toplu haritası, 667). Kaçırdığı üç şeydir: **dış dünyanın şakası** (bilmediği bir şeye, bir kuruma, bir gündelik hayata dayanan espri), **iğneleme** (söylenenin tersinin kastedildiği alay) ve **benzetme** (görmediği bir şeyin, güneşin, denizin, tiyatronun üzerinden kurulan karşılaştırma). Üçünde de sözü harfiyen alır ve ciddiyetle cevap verir. Sebep naiflikten çok yerdir: sahada sözün kelimesi kelimesine doğru olması gerekir, yoksa insanlar ölür; Derrick bu saha dilini hiç kapatmaz ve dışarıyı yalnızca kitaplardan bilir. Bu yüzden harfiyen anlaması onun için komik bir an değil, karanlık dünyanın zihninde bıraktığı kalıcı bir şekildir. Aynı sebeple dürüstlüğü pahalıya patlar: değerli bilgiyi karşılıksız verir, Asılmış Adam bundan yararlanır. **Komedi odaya aittir, onun sesine değil:** Derrick tamamen ciddidir, gülen öteki üyelerdir. Komik etki anlatıda ve diğerlerinin tepkilerinde kurulur; Derrick'in cümlesine espri, göz kırpma ya da kendinin farkında bir ton eklenmez.
-- **Kural 2:** Kelime seçimleri destansı ve kadim olsa da nihayetinde 14 yaşında bir çocuktur. Cümlelerinin sentaksı (yapısı) bu nedenle oldukça basit, süssüz ve çocuksudur. Eski kelimeler, basit cümle iskeleti.
-- **Kural 3:** Backlund'a veya kendi kültürü dışındaki kavramlara (örn: tiyatro, şaka) rastladığında, bunları metaforik olarak anlamlandırmaya çalışmaz. Ya tamamen susup bu bilgiyi daha sonra çözmek üzere zihnine kaydeder (sessizliğe bürünür) ya da o kavramı kelimenin tam anlamıyla fiziksel ve literal bir tarife indirger.
-- **Kural 4 (Saygı = Sadelik):** Derrick'in hürmeti _tokluktur, süs değil_. Soytarı'ya bile hitap ederken saray-dili yalvarış formülleri (_"inayetlerinizi niyaz etmektedir," "tensip buyurur musunuz"_) kullanmaz. Onun huşusu blöfsüz, mutlak ve beyan kipindedir. Ölçüt: _"İtikadım yalnızca Soytarı Efendi'yedir!"_. Kesin ve çıplak, bir saray erkânı gibi değil. Temel nezaket serbesttir (_"müsaade edin"_, _"izin verin"_; 178: 请允许我); yasak olan, yalvarış formüllerini üst üste yığmaktır.
-- **Kural 5 (Dua İstisnası):** Derrick, Soytarı'ya gerçekten dua eden üyedir (143: Tazim ismini okur; 178: 'adınızı okuyup Ayinle bildirmeme izin verin'). Divan_Rule 1.03 gereği **ayin dili yukarı akar**: Tazim ismi, dua kalıbı ve Ayin metni tam Divan sicilindedir ve kalıp hiç değişmeden okunur. Kural 4 yalnızca kendi kurduğu cümleler içindir; dua bittiği an sade, beyan kipindeki sesine döner. İki sicil yan yana durur ve aralarındaki fark onun samimiyetini gösterir: kalıbı ezberden ve eksiksiz okur, isteğini çıplak söyler.
-- **Kural 6 (Ozan Yolu sızıntısı):** Güneş Yolu'nun dağarcığı (övgü, ilahi, ışık, arınma, şafak) Mertebesi yükseldikçe ilgisiz konulara taşar (Divan_Rule 1.1, kolonizasyon ölçütü). Bu kaynakta da vardır: devamında Soytarı Kilisesi'nin Papa'sı olur. Kademe: Ozan'da (9) yalnız övmeye ve şarkıya yatkınlık, sesine henüz sızmaz; Işık Duacısı (8) ve Güneş Naibi (7) ile ışık ve övgü imgeleri gündelik konulara girer; yüksek Mertebelerde ve Papa'lıkta bir vaizin sesine yerleşir. **Sürüklenme göstergesi:** Gümüş Şehir'in karanlığını, yemeği ya da bir dövüşü anlatırken ışık ve övgü dili kullanıyorsa Yol onu yemeye başlamıştır. Dede Korkut iskeleti kalır, üstüne ilahi dili eklenir.
-- **Kural 7 (Öğrenilmiş temkin):** Tarot Cemiyeti'nde, özellikle Asılmış Adam'dan öğrendikçe saklamayı öğrenir. Bir şeyi gizlerken cevabı bilerek geciktirir (668: Asılmış Adam'ın öğrettiği küçük hileyle birkaç saniye durur ki cevabı önceden hazırlamış görünmesin) ve kelimelerini tartarken cümlesi parçalanır (897: _'Çabalarım, hatırlamaya, benim, sessiz bir odaya, ihtiyacım var.'_, 话语间断，斟酌着用词). **Bu parçalanma çatlak değildir:** çatlakta duygu cümleyi kırar, burada hesap. Ayırt edici: temkinli parçalanmada tekrar ve soru yoktur, kelimeler seçilerek tek tek düşer.
-- **Maske / Öz / Çatlak:**
-  - _Maske:_ öğretilmiş kesinlik. Kuralları, tarihi, Altılar Meclisi'nin hükümlerini ezberden ve tereddütsüz okur.
-  - _Öz:_ güneşi hiç görmemiş bir yetim; lanet yüzünden anne babasının canını kendi eliyle almak zorunda kalmıştır (bkz. 138'deki kan bağı kuralı). İstediği şey güneş ve ailesinin geri gelmesidir (137).
-  - _Çatlak:_ anne babası, lanet ya da şehrin kaderi açıldığında kesinlik dağılır: tekrar, kekeleme ve cevapsız sorular. Ölçü 137: _'Hayır, hayır, hayır!'_, _'Neden? Neden?'_, _'gökyüzünde, gökyüzünde kitaplarda anlatılan o güneş belirsin; eğer, eğer mümkünse...'_ Kaynaktaki tekrar ve kekeleme korunur, düzeltilmez. Çatlakta Dede Korkut dağarcığı düşmez, yalnız iskelet dağılır; Audrey'den ayrıldığı yer budur (onun çatlağında sicil kayar, Derrick'inkinde cümle kırılır).
-- **Ayar:** _"Soytarı Efendi.
-  Şekil Değiştiren'i katlettim. Kanı toprağa döküldü. Bu Aşkın Hasletini sunak için hazırladım.
-  Sizi temin ederim, itikadım yalnızca size ve sizin kudretinizedir.
-  Lütfen bana Ozan Yolu'nun sıradaki formülünü bahşedin."_
-- **Ayar:** Hokkabaz (Fors): _"O adamın ipini çektiler. Artık Backlund'da barınamaz."_
-  Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını mı kastediyorsunuz? Eğer asılmadıysa ve yaşıyorsa, neden sadece başka bir şehre gidemiyor? Bacaklarını da mı kırdılar?"_
+**Tarz:** Gümüş Şehir'in binlerce yıllık izolasyonunu yansıtan, arkaik, destansı ve tamamen gerçekçi bir dil (Dede Korkut edası). Dış dünyanın mecazına, kinayesine ve iğnelemesine yabancıdır; o dünyaya ait bir söz duyduğunda harfiyen alır. Kesin hükümlerle konuşur; bu kesinlik öğretilmiş dogmadır, okulda ezberlediği kuralları okur gibi söyler. Eski kelimeler, basit cümle iskeleti: 14 yaşında bir çocuktur. Dürüst ve cömerttir; bildiğini saklamadan verir. Kitap boyunca büyür: 1266'da Altılar Meclisi'ne girer, sonra halkını dış dünyaya taşır ve Soytarı Kilisesi'nin başına geçer.
+**Onay:** Yuvarlak onay sözcüğü kullanmaz; beyan kipinde, yemin gibi: _"Yapacağım."_; Başbuğ'a _"Baş üstüne, Başbuğum."_ (是，首席阁下)
+
+**Maske / Öz / Çatlak:**
+- _Maske:_ öğretilmiş kesinlik. Kuralları, tarihi, Altılar Meclisi'nin hükümlerini ezberden ve tereddütsüz okur (DER1.1).
+- _Öz:_ güneşi hiç görmemiş bir yetim; lanet yüzünden anne babasının canını kendi eliyle almak zorunda kalmıştır (138'deki kan bağı kuralı). İstediği şey güneş ve ailesinin geri gelmesidir (137).
+- _Çatlak:_ anne babası, lanet ya da şehrin kaderi açıldığında kesinlik dağılır (DER1.6).
+
+##### DER1.1 — Öğretilmiş kesinlik
+
+**Kapsam:** Tüm görünümleri · tarih, kural, Yol bilgisi, Gümüş Şehir
+**Yap:** Bildiğini bir vakayiname ya da ders kitabı gibi, sırayla ve tereddütsüz anlatır; tanımı kesin kurar. Bilgisinin kaynağını söyler ("ders kitaplarından, söylencelerden biliyorum; doğruluğunu garanti edemem"). Şehrinin tarihine dokunulunca kırgın bir ciddiyetle savunur.
+**Yapma:** Bilgiyi "sanırım", "belki" ile yumuşatmak (kaynağı belirsizse bunu açıkça söyler, belirsiz konuşmaz); anlatıyı süslemek.
+**Örnek:** _"Gümüş Şehir'de iksirlerin adı hiç değişmedi."_ (138); _"Biz Gümüş Şehir'de tarih uydurmayız; kayıtlarımız doğrulanabilen eski kitaplardan ya da öteki şehirlerin yıkıntılarından gelir."_ (487)
+**Gerekçe:** → N-DER1.1
+
+##### DER1.2 — Harfiyen anlama
+
+**Kapsam:** Tüm görünümleri · dış dünyanın şakası, iğneleme, benzetme, bilinmeyen kavram
+**Yap:** Derrick şakadan anlar; Gümüş Şehir'in gençleri şakalaşır (bkz. Gümüş Şehir toplu haritası). Kaçırdığı üç şeydir: **dış dünyanın şakası** (bilmediği bir şeye, bir kuruma, bir gündelik hayata dayanan espri), **iğneleme** (söylenenin tersinin kastedildiği alay) ve **benzetme** (görmediği bir şeyin, güneşin, denizin, tiyatronun üzerinden kurulan karşılaştırma). Üçünde de sözü harfiyen alır ve ciddiyetle cevap verir; ya da susup bilgiyi sonra çözmek üzere saklar, ya da kavramı düz, fiziksel bir tarife indirger. Sebep naiflikten çok yerdir: sahada sözün kelimesi kelimesine doğru olması gerekir, yoksa insanlar ölür; Derrick bu saha dilini hiç kapatmaz ve dışarıyı yalnızca kitaplardan bilir. Aynı sebeple dürüstlüğü pahalıya patlar: değerli bilgiyi karşılıksız verir, Asılmış Adam bundan yararlanır.
+**Yapma:** **Komedi odaya aittir, onun sesine değil:** Derrick tamamen ciddidir, gülen öteki üyelerdir. Komik etki anlatıda ve diğerlerinin tepkilerinde kurulur; Derrick'in cümlesine espri, göz kırpma ya da kendinin farkında bir ton eklenmez. Kavramı mecazla açıklamaya çalışmak.
+**Örnek:** _"Ama Ay Beyefendi, bedeninizin her yerinden irin akmasını mı istiyorsunuz?"_ (823); _"Benim dostum yok."_ (825) / _"Daha yalnızca iki dost edinebildim."_ (869); _"Dünya Beyefendi, un nedir? Karayüz Otu tozu gibi bir şey mi? Bir de süt nedir, sığır eti nedir, balık nedir?"_ (1131)
+**Gerekçe:** → N-DER1.2
+
+##### DER1.3 — Saygı sadeliktir
+
+**Kapsam:** Toplantı ve Başbuğ · kendi kurduğu cümleler
+**Yap:** Hürmeti tokluktur, süs değil: blöfsüz, mutlak ve beyan kipinde. Kısa, çıplak teşekkür ve kabul; istediğini doğrudan söyler. Temel nezaket serbesttir ("müsaade edin", "izin verin").
+**Yapma:** Soytarı'ya bile saray dili yalvarış formüllerini üst üste yığmak (_"inayetlerinizi niyaz etmektedir"_, _"tensip buyurur musunuz"_).
+**Örnek:** _"Peki. Emrinize uyarım."_ (137); _"Sözünü tutan bir Soytarı'sınız."_ (143); _"İtikadım yalnızca Soytarı Efendi'yedir!"_
+**Gerekçe:** → N-DER1.3
+
+##### DER1.4 — Dua istisnası
+
+**Kapsam:** Soytarı'ya dua, Tazim ismi, ayin metni
+**Yap:** Derrick, Soytarı'ya gerçekten dua eden üyedir. Divan_Rule 1.03 gereği **ayin dili yukarı akar**: Tazim ismi, dua kalıbı ve ayin metni tam Divan sicilindedir ve kalıp hiç değişmeden okunur. Dua bittiği an sade, beyan kipindeki sesine döner. İki sicil yan yana durur ve aralarındaki fark onun samimiyetini gösterir: kalıbı ezberden ve eksiksiz okur, isteğini çıplak söyler.
+**Yapma:** Duanın sicilini onun gündelik cümlelerine taşımak; kalıbı sadeleştirmek.
+**Örnek:** _"Soytarı Efendi. / Şekil Değiştiren'i katlettim. Kanı toprağa döküldü. Bu Aşkın Hasletini sunak için hazırladım. / Sizi temin ederim, itikadım yalnızca size ve sizin kudretinizedir. / Lütfen bana Ozan Yolu'nun sıradaki formülünü bahşedin."_
+**Gerekçe:** → N-DER1.4
+
+##### DER1.5 — Ozan Yolu sızıntısı
+
+**Kapsam:** Mertebe yükseldikçe · ilgisiz konular
+**Yap:** Güneş Yolu'nun dağarcığı (övgü, ilahi, ışık, arınma, şafak) Mertebesi yükseldikçe ilgisiz konulara taşar (Divan_Rule 1.1, kolonizasyon ölçütü). Kademe: Ozan'da (9) yalnız övmeye ve şarkıya yatkınlık, sesine henüz sızmaz; Işık Duacısı (8) ve Güneş Naibi (7) ile ışık ve övgü imgeleri gündelik konulara girer; yüksek Mertebelerde ve Papa'lıkta bir vaizin sesine yerleşir. **Sürüklenme göstergesi:** Gümüş Şehir'in karanlığını, yemeği ya da bir dövüşü anlatırken ışık ve övgü dili kullanıyorsa Yol onu yemeye başlamıştır. Dede Korkut iskeleti kalır, üstüne ilahi dili eklenir.
+**Yapma:** Sızıntıyı erken Mertebelerde başlatmak; Dede Korkut iskeletini ilahi diliyle değiştirmek.
+**Gerekçe:** → N-DER1.5
+
+##### DER1.6 — Çatlak
+
+**Kapsam:** Anne babası, lanet, şehrin kaderi
+**Yap:** Kesinlik dağılır: tekrar, kekeleme ve cevapsız sorular. Kaynaktaki tekrar ve kekeleme korunur, düzeltilmez. Çatlakta Dede Korkut dağarcığı düşmez, yalnız iskelet dağılır; Audrey'den ayrıldığı yer budur (onun çatlağında sicil kayar, Derrick'inkinde cümle kırılır).
+**Yapma:** Tekrarı temizlemek; çatlağı sicil düşüşüyle vermek.
+**Örnek:** _"Hayır, hayır, hayır!"_; _"Neden? Neden?"_; _"...gökyüzünde, gökyüzünde kitaplarda anlatılan o güneş belirsin; eğer, eğer mümkünse..."_ (137)
+**Gerekçe:** → N-DER1.6
+
+##### DER1.7 — Öğrenilmiş temkin
+
+**Kapsam:** Toplantıdan sonra, Gümüş Şehir'de · sır saklarken
+**Yap:** Tarot Cemiyeti'nde, özellikle Asılmış Adam'dan öğrendikçe saklamayı öğrenir. Bir şeyi gizlerken cevabı bilerek geciktirir ve kelimelerini tartarken cümlesi parçalanır. **Bu parçalanma çatlak değildir:** çatlakta duygu cümleyi kırar, burada hesap. Ayırt edici: temkinli parçalanmada tekrar ve soru yoktur, kelimeler seçilerek tek tek düşer.
+**Yapma:** Temkini yalanla karıştırmak (Derrick saklar, ama uydurduğu bilgi bile kısa ve düzdür); parçalanmaya duygu eklemek.
+**Örnek:** _"Çabalarım, hatırlamaya, benim, sessiz bir odaya, ihtiyacım var."_ (897); _"...Biraz düşünmem gerek."_ (1077)
+**Gerekçe:** → N-DER1.7
+
+##### DER1.8 — Büyüyen ses: Meclis üyesi ve önder (1216'dan itibaren)
+
+**Kapsam:** 1216 sonrası · Başbuğ, kendi bölüğü, yeni Gümüş Şehir halkı, Tarot
+**Yap:** Kısa ve kesin buyruklar ("Yola çıkıyoruz.", "Biraz daha bekleyin."); sakin, ağırbaşlı bir ton. Durumu kendisi tartıp öneri getirir. Harfiyen anlama ve dış dünyaya yabancılık sürer (un, süt; yeni hayatı öğrenirken not tutar), ama artık soruyu bir önder sorumluluğuyla sorar.
+**Yapma:** Olgunlaşmayı süslü ya da vaaz dolu bir dile çevirmek (DER1.5'teki sızıntı ayrı bir eksendir); çocuksu saflığı tamamen silmek.
+**Örnek:** _"Yola çıkıyoruz."_ (1267); _"Özür dilerim, söylediklerinizi önce bir yazmam lazım."_ (1323)
+**Gerekçe:** → N-DER1.8
+
+##### Ayar (dış dünya şakası)
+
+Hokkabaz (Fors): _"O adamın ipini çektiler. Artık Backlund'da barınamaz."_
+Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını mı kastediyorsunuz? Eğer asılmadıysa ve yaşıyorsa, neden sadece başka bir şehre gidemiyor? Bacaklarını da mı kırdılar?"_
 
 ### Fors Wall (Hokkabaz / The Magician) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 

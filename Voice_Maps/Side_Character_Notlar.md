@@ -771,3 +771,52 @@ Mektup 203 ¶67–70, 204 ¶6–8: 哈哈哈，祝贺你们，祝贺你们终于
 **Denetim:** 956, 957, 1321 (ZH).
 **Karar** (kullanıcı, 2026-10-20): Toplantı sicili Fors düzeyindedir: hitaplar açık, cümleler sade.
 **Karar** (kullanıcı, 2026-10-20): 957'deki 您的意愿就是我的意志 Alger'le ortak bir toplantı kalıbıdır (783 ¶17, 1278 ¶35); words.md › Frozen Lines: "Arzunuz, benim irademdir." Koro cevabı 遵从您的意志 / 遵从您的意愿 ise "İradeniz emrimizdir."
+
+---
+
+## Derrick Berg
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi (ilk 137); ¶ numaraları ZH satır sırasıdır. Çevrildikçe ZH/TR ¶ eklenmeli.
+> **Örnekler:** Kural metinleri ve 137, 897 örnekleri önceki oturumlarda kullanıcıyla karara bağlandı; diğer örnek satırlar Claude'un çevirisidir, bölümler çevrildikçe değiştirilmeli.
+> **Atıf düzeltmesi:** Eski haritada Kural 4 ve 5, 178'deki 请允许我诵念您的名，用仪式告知您 satırını Derrick'e veriyordu. O satır Alger'indir; Derrick 目光茫然、有听没有懂 dinler (178 ¶76–77). Derrick'in kendi duaları: 667 ¶69, 1014 ¶67, 1112 ¶47 (Tazim ismini okur); ayini 143'te öğrenir.
+
+### N-DER1.1
+
+138 ¶14–41: Gümüş Şehir'in tarihini, Altılar Meclisi'ni ve iki Yol'un Mertebe adlarını sırayla sayar; ¶38 本能反驳: 在白银之城，魔药的名称从未改变. 238 ¶28–48: 回忆着教材, ejderhaları ve Dev Kralı Sarayı'nı ders gibi anlatır; ¶45 我所知道的都来源于课本，来源于传说，不保证真实. 292 ¶39–44 ve 311 ¶51–69, 314 ¶21–40: Şeytan ve Mutant Yolu tanımları kesin ve sıralı (最低限度是13个人，最高是49个). 487 ¶15 有些委屈地强调道: 我们白银城不会编造历史…. 359 ¶9: sekiz kadim ilahı ezberden sayar.
+**Denetim:** 138, 238, 292, 311, 314, 359, 487 (ZH).
+
+### N-DER1.2
+
+Harfiyen: 143 ¶63 一千次心跳？(不像是反问地自言自语). 823 ¶70 Emlyn'in yapay vampir hasleti sorusuna 但是，‘月亮’先生，你想浑身流脓吗？ (ciddi). 825 ¶7 我没有朋友 → 869 ¶71 有些羞愧地: 我才交到两个朋友 (Alger'in "dostlarından öğren" tavsiyesine). 1131 ¶29 什么是面粉？就像黑面草粉末一样吗？…什么是牛奶，什么是牛肉，什么是鱼？ Susma: 178 ¶76 目光茫然、有听没有懂; 570 ¶16 Deniz İlahı'nı bilmez, herkes Soytarı'ya bakınca o da bakar. Dürüst cömertlik: 593 ¶13 Asılmış Adam'a bilgiyi karşılıksız verir (这就当做是我的感谢); Alger'in onu kullanması 179, 442 (Alger notları N-ALG). 489 ¶3 ve ¶22: teşekkür el işaretini sorar, sonra kendisi 抱歉，我问了一个愚蠢的问题 diye çözer.
+**Denetim:** 143, 178, 489, 570, 593, 823, 825, 869, 1131 (ZH).
+
+### N-DER1.3
+
+137 ¶76 低头回答，没有提出异议: 好的，服从您的吩咐. 143 ¶52 低下头颅: 您是一位守信的愚者. 157 ¶82 内敛而谦卑: 这都源于您的帮助，这只是开始. 363 ¶49 感谢您，‘愚者’先生！ 485 ¶55: tek uzun teşekkür (伟大的‘愚者’先生，万分感谢您的指导…), yine de yığma formül yok. Başbuğ'a: 466 ¶19, 1077 ¶37, 1113 ¶62, 1123 ¶77 是，首席阁下 (毫不犹豫 / 发自内心). 266 ¶73 小声地补了一句: ……谢谢.
+**Denetim:** 137, 143, 157, 266, 363, 466, 485, 1077, 1113, 1123 (ZH).
+
+### N-DER1.4
+
+143: ayini ve Tazim ismini öğrenir (¶59 在心里反复默念). 667 ¶69 虔诚低语: 不属于这个时代的愚者；灰雾之上的神秘主宰；执掌好运的黄黑之王…… 1014 ¶67 虔诚地祈祷; 1112 ¶47 交握双手…低声诵念. 897 ¶60–69: Başbuğ'a ismi parça parça aktarır (天使 sorusu üzerine üç satırı ayrı ayrı). 937 ¶37 Dev dilinde ayin sözü: 神说，有效！ (庄重严肃).
+**Denetim:** 143, 667, 897, 937, 1014, 1112 (ZH).
+
+### N-DER1.5
+
+Kural, Divan_Rule 1.1'deki kolonizasyon ölçütüne dayanan bir öngörüdür. Konuşma satırlarında açık bir ışık/övgü sızıntısı henüz bulunmadı (Mertebe 7'ye kadar dili sade kalır; 1267 ¶21 身上自然散发纯净光辉 anlatıda). Papa'lık dönemi (1389, 1393) kaynakta replik olarak az; kural çeviri sırasında bu bölümlerle sınanmalı.
+**Denetim:** 1267, 1389, 1393 (ZH); öngörü, kanıt bekliyor.
+
+### N-DER1.6
+
+137 ¶7 连续摇头，每说一个单词就退开一步: 不，不，不！; ¶12 茫然又绝望: 为什么？为什么？…刚一出生就注定要弑父杀母……; ¶53 艰难说道: 希望天空中出现，出现那些书籍里描述的太阳，如果，如果可以…. 138 ¶46 艰难又痛苦地低语: 所以，我想成为太阳，成为太阳……. 824 ¶63 iç ses: 因为，神死了，被吃了，永远也回不来了…….
+**Denetim:** 137 ¶7–57, 138 ¶46, 824 ¶63 (ZH).
+
+### N-DER1.7
+
+668 ¶17: 没立刻作答，那会显得他早就编织好说辞，他按照“倒吊人”传授的小技巧，故意停顿了几秒，边回忆边描述般断断续续道; ¶21: 他说的全部是真话，甚至很完整，只是隐瞒了如何返回的细节 (saklar, yalan söylemez); ¶23 外面的世界真的好复杂，我最近才能真正理解他们的思路. 897 ¶32 话语间断，斟酌着用词: 我会努力，回想的，我，需要，一个安静的房间. 1077 ¶37 已是相当熟练地回答道: ……我需要一段时间来思考. 400 ¶81 没有一点心虚: baltanın ve formülün kaynağı hakkında kısa, düz bir örtü hikâyesi. 625 ¶34 思绪一转，诚恳说道: 没有.
+**Denetim:** 400, 625, 668, 897, 1077 (ZH).
+
+### N-DER1.8
+
+1216 ¶8 kendi tahliliyle Başbuğ'un niyetini çözer; ¶20 即使您想将我留在白银城，我也要申请前往; ¶18 Colin: 你的成长比我预想得更好. 1266 ¶9–12 Meclis'e girer (带着鼻音道: 是，首席阁下！). 1267 ¶9 再等一等; ¶21 低沉说道: 出发。 1277 ¶20 沉稳说道 (Tarot'ta söz alıp şart koşar). 1298 ¶64 保持着外表的严肃: 我们立刻去找首席…. 1323 ¶22 抱歉，我需要把刚才说的先记下来. 1393 ¶54 Soytarı: 你已经足够成熟和稳重.
+**Denetim:** 1216, 1266, 1267, 1277, 1298, 1323, 1393 (ZH).
+**Açık soru:** 是，首席阁下 için önerilen "Baş üstüne, Başbuğum." (Dede Korkut sicili; modern askerî "Emredersiniz" Kolluk haritasında kullanılıyor).
