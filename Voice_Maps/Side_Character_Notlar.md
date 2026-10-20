@@ -689,3 +689,38 @@ Mektup 203 ¶67–70, 204 ¶6–8: 哈哈哈，祝贺你们，祝贺你们终于
 
 285 ¶108: 表情淡漠而平静，没有一丁点恐惧; ¶110–112 标志性的嘲讽笑容: 这很简单。/ 因为我不再是纯粹的兰尔乌斯。 286 ¶84: kaçmak için kılıcı baygın Gece Şahini'ne fırlatır. 287 ¶10, ¶18, ¶55: kısa, hesaplı iç ses (他能预知我的动作？/ 不能再耽搁了 / 他在欺诈我？), 头脑非常清醒. 287 ¶24 半笑半讥讽: 不管怎么样，被神灵这么折腾了一次后，总是有些收获的. Ölüm 287 ¶81–86: 非常疑惑地断断续续地问道: 为什么…… / 要……杀……我…… / 不…… (双眼圆睁，难以释怀). Görünüş: 嘴角常含讥讽笑意 (185 ¶70), 噙着嘲讽意味 (264 ¶39), 始终噙着俯视和嘲讽的笑意 (284 ¶74).
 **Denetim:** 185 ¶70, 264 ¶39, 284 ¶74, 285 ¶108–112, 286 ¶84, 287 ¶10–86 (ZH).
+
+---
+
+## Azik Eggers
+
+> **Numaralama:** 24–25 ZH/TR ¶ (bolum.py hizalı); diğerleri ZH satır sırası. Çevrildikçe ZH/TR ¶ eklenmeli.
+> **Örnekler:** 24–25 dışındaki örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm:** 268 bölümde adı geçer; konuştuğu ana sahneler 24–25, 98, 112–113, 150–151, 170, 187 (mektup), 480, 587–589, 730, 913–917. 917'den sonra uykudadır: 1145 tarihî yansıma (konuşmaz), 1368 永暗之河 kıyısındaki gölgeler.
+> **Aşama sınırları:** 150 ¶46–48: anılar ilk kez döner, Klein onu 更加深沉，更加威严 bulur. 588 ¶18: hâlâ 正在寻回它们的途中. 914 ¶65: 之前的沉眠让我回想起了更多的事情; Ölüm Veliahdı'nın soğukluğunu kendi geçmişi olarak tanır. 917 ¶25: 我选择三 → yeniden uyku.
+> **Eski haritadan düşenler:** "Ölüm Yolu kelimelerinin (naaş, berzah, zulmet) konuşmasına sızması" kaynakta yok: Azik her aşamada sade konuşur; soğukluk içerikte ve muhatapta görünür (914 ¶22–23, ¶65–67). Ince Zangwill'le yüzleşme örneği uydurmadır (o karşılaşma 480'de sahne dışında geçer).
+
+### N-AZK1.1
+
+25 ¶12 (ZH/TR): 记得写信…哈哈 → "Mektup yazmayı unutma… Haha." 98: kahve getirir, 自己加糖和牛奶; 呵呵笑道 ile 你比以前精神了许多，更加像一位绅士了. 113 ¶20: 呵，我请客; ¶26: Desi Körfezi yerine kayak ve fok avı. 730 ¶29–30: uyarı adım adım, ardından 最后开了句玩笑，就像正常的鲁恩绅士一样; 这一次人生的经历似乎对他烙印最深. Hitap: 24 ¶62 莫雷蒂 (soyadı), sonra 克莱恩 (24 ¶73, 98, 112).
+**Denetim:** 24 ¶57–68, 25 ¶3–12 (ZH/TR); 98, 113, 730 (ZH).
+
+### N-AZK1.2
+
+112 ¶74–76: 有时候，我会梦见… / 有时候，我梦见我是… (dört kez); ¶78 嗓音不再飘忽道 ile Toprak Ana inancına geçer. ¶58 略显忧伤; ¶61 没有笑意地笑了笑. 113 ¶11 gemi benzetmesi: 那就像是漂泊在大海上的船只，最可怕的事情不是遇到暴风雨，而是找不到港口. ¶14–15 自嘲一笑: 因为我害怕危险，害怕死亡. ¶56 有些人总是特殊的…而我应该就是这样的人; ¶58 或许. 24 ¶68 / 25 ¶3: 感觉很熟悉……但怎么都想不起来 / 也许只是词根相类，自嘲一笑.
+**Denetim:** 24 ¶68, 25 ¶3 (ZH/TR); 112 ¶44–86, 113 ¶6–26 (ZH).
+
+### N-AZK1.3
+
+150 ¶48: 用不含情绪的语气: 我想起来一些事情，但只是很小的部分; ¶54 低沉的嗓音里仿佛蕴藏着即将爆发的火山; ¶57 他拿走了我孩子的头骨. 151 ¶31 kararlı: 我必须主动地寻找过去. 170 ¶66–67: 这是毫无疑问的 + gerekçeli uyarı. 187: mektup, kurban ayinini adım adım anlatır; 我的意见是，不能向自身不清楚不笃定的存在献祭. 480 ¶28: 但对‘不死者’而言，这不是什么大问题; ¶37 我也常常进了棺材又苏醒; ¶59 死灵的美人鱼…我至少能找到四条; ¶68 额，我也数不清有多少. 587 ¶51 现在。; ¶54 开始吧。; ¶65 但问题不大，我们进去吧。 480 ¶54 问题不大; 913 ¶56 没什么问题, ¶59 Klein'ın notu: 当时，阿兹克也说"问题不大"，结果… 589 ¶32 苦笑: 我是不死，不是不老，人一旦苍老，总会变得温和 (不死者 = Ölmez; Türkçede Mertebe adıyla kelime oyunu kurulur). 589 ¶77–80: 我也很担心。不过，我更想找回自己。
+**Denetim:** 150, 151, 170, 187, 480, 587, 589, 913 (ZH).
+
+### N-AZK1.4
+
+914 ¶12 tek soru; ¶22–23: 你做他一年的秘偶，到了时限，可以回归灵界 — 说的平平淡淡…无需在意被命令者的心情. ¶32 语速缓慢: 高位者对下位者有很强的压制能力. ¶41 狂暴海。(平静回答). ¶51 那里有声音在呼唤我. ¶65–67 语气平静没有起伏: 头骨王座, 冷酷地注视着，没有一点情绪的波动 / 这或许才是真正的自己. 915 ¶11–18: evlilik ve oğul anısında 表情逐渐柔和…嘴角不知不觉翘了起来, 呵呵，他太小看他的父亲了. ¶28: 我内心似乎分裂成两个人. 917 ¶24–25 平和笑道: 或许是已经习惯现在的生活，我选择三; ¶36 疲惫地微笑; ¶53 沉眠…还在为那个爱撒娇的小家伙打造秋千; ¶55–56 记得写信。但我睡醒之前，不会回你。
+**Denetim:** 914 ¶10–70, 915 ¶2–50, 917 ¶21–57 (ZH).
+
+### N-AZK1.5
+
+24 ¶68 (ZH/TR) 用…左手揉动太阳穴; 136/150 ¶24 梦呓般的口吻, şatoyu rüyadan tanır; 170 ¶73–76 金字塔陵寝 duyunca donar: 这给我熟悉的感觉，但并没有让我想起更多的事情; 187 ¶18 我感觉很熟悉…但怎么也想不起来…很苦恼; 588 ¶26 闭了闭眼睛，仿佛在压榨记忆; ¶41–42 不太明显的痛苦表情: 我，我回忆不起来了……; 916 ¶26, ¶29, ¶69 yalnızca 不…….
+**Denetim:** 24 ¶68 (ZH/TR); 150, 170, 187, 588, 916 (ZH).

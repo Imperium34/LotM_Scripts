@@ -75,30 +75,55 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Ayar:** _"Aslında nerelisin diye soracaktım, bölgecilik yapmam gerekir mi diye. Sonra gerek yok dedim; ikimiz de bu çağa ait olmayan, memleketini kaybetmiş zavallılarız."_ (1307); _"İlk yarı ömrümdeki en büyük sorunum fazla kendime güvenmemdi; sanki her an kaydı yükleyip baştan alabilirmişim gibi gelirdi."_ (1307); _"Görüşürüz, dostum. Umarım gerçekten görüşeceğimiz bir gün gelir."_ (1308)
 **Gerekçe:** → N-ROS1.8
 
-### Azik Eggers
+### Azik Eggers `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-- **Tarz:** İki katmanlı bir zihin. Yüzeyde, iyi eğitimli, kibar ve sıcakkanlı bir üniversite hocasının pürüzsüz dili; derinde ise sayısız yaşam döngüsü geçirmiş, Ölüm'ün soyundan gelen soğuk bir varlık.
-- **Kural 1:** Azik normal ve sıcak bir tonda konuşurken, geçmiş yaşamlarına dair bir anı tetiklendiğinde veya "Ölüm Veliahtı" doğası sızdığında, kelime dağarcığı aniden keskinleşir ve cümleleri kısalır. Naaş, berzah, zulmet, fani gibi Ölüm Yoluna ait ağır, soğuk ve arkaik kelimeler diline "sürçme" veya "kayma" olarak aniden karışır. Bu geçiş öfkeli değil, ortamın ısısını aniden düşüren tekinsiz bir soğumadır
-- **Kural 2:** Bu sızıntılar sırasında uzaklara bakıyormuş gibi veya duygusuz bir yüz ifadesi tanınır. Bunu isteyerek yapmaz.
-- **Kural 3:** Eski hayatlarından anılarını hatırladıkça bu sızıntıların sıklığı artar ve Azik bu sızıntıları fark etmemeye başlar.
-- **Kural 4:** Her sızıntı sonrasında Akademisyen tonuna geçişi doğal hissettirmelidir. Başlangıçta okuyucu (ve Klein), bu sızıntıların onun kadim bir varlık olmasından mı, yoksa 3. Çağ metinlerini fazla okuyan saplantılı bir tarihçi olmasından mı kaynaklandığını anlayamaz.
-- **Kural 5:** Bu muğlaklık sonsuza kadar sürmez. Sızıntıların frekansı arttıkça ve kelimelerin ardındaki gerçek ölümcül aura hissedilmeye başlandığında, Klein'ın zihnindeki "Bu adam sadece tuhaf bir akademisyen" bahanesi çöker. O andan itibaren sızıntılar bir "dil sürçmesi" olmaktan çıkar ve Azik'in gerçek kimliğinin (Ölüm Veliahtı) Klein ve okuyucu tarafından kabul edilen yeni normali hâline gelir.
+**Tarz:** Khoy Üniversitesi'nde tarih öğretim görevlisi; tunç tenli, yumuşak yüzlü, gözlerinde yıllanmış bir yorgunluk. Bin yılı aşkın bir ömrün içinde, her seferinde hafızasını yitirip yeniden başlayan bir Ölmez; eskiden Balam İmparatorluğu'nun Ölüm Veliahdı. Ses üç aşamada değişir, ama temeli hep aynı kalır: sıcak, ölçülü, yardımsever bir Loen beyefendisi. Yazar bu hayatın onda en derin izi bıraktığını söyler (730). Hafıza geri geldikçe ses derinleşir, kısalır ve kesinleşir; soğukluk kelime seçiminde değil, söylenenin içeriğinde ve kime söylendiğinde görünür. Klein ona "Bay Azik" der; o Klein'a önce "Moretti" (24), sonra "Klein" der.
+**Onay:** Kısa ve sakin: _"Pekâlâ."_ (25 ¶12); sonraki aşamalarda _"Büyük bir sorun yok."_ (问题不大)
 
-* **Ayar (Akademisyen):** (Klein, Azik'e Balam İmparatorluğu'na veya eski bir çağa ait bir kalıntı gösterir. Azik bunu incelerken aniden dalar.)
-  _"Ah, bu motifler kesinlikle Balam İmparatorluğu'nun erken dönemlerine ait. İşçiliği ne kadar da... (Azik'in gözleri uzaklara dalar, sesi aniden fısıltıya ve buz gibi bir tona düşer) ...fani bedeni toprağa, çığlıkları ise sonsuz zulmete hapsetmek için şekillendirilmiş. (Bir an duraklar, gözlerini kırpar ve o sıcak, babacan gülümsemesine geri döner) ...Yani, o dönemin cenaze ayinleri üzerine çalışan bir tarihçi için tek kelimeyle harikulade bir parça. Bu antika sikkeyi nereden bulduğunu sormalı mıyım Klein?"_
+**Aşamalar:**
+- **Aşama 1 — Hoca (24–136):** Hafızasız, iyi kalpli öğretim görevlisi. Ne olduğunu bilmez; rüyaları ve kayıp geçmişi onu hüzünlendirir.
+- **Aşama 2 — Uyanan hafıza (150–730):** Lamud şatosunda (150) ilk anılar döner. Güçlü, bilgili, sakin bir akıl hocası; hâlâ sıcak.
+- **Aşama 3 — Ölüm Veliahdı yüzeye çıkar (913–917):** Hafızanın çoğu dönmüştür. Astlarına mutlak ve duygusuz, Klein'a hâlâ yumuşak; geçmişteki zulmünü düz bir sesle anlatır. 917'de üçüncü yolu seçip yeniden uykuya çekilir. (1145'teki tarihî yansıma ve 1368'deki gölgeler konuşmaz.)
 
-- **Ayar (Akademisyen):** _"Klein, bu antika sikke üzerindeki semboller oldukça nadir. Şayet vaktin olursa, üniversitedeki odamda üzerine uzunca konuşabiliriz."_
-- **Ayar (Sızıntı):** _"O savaşta gökyüzü... hayır, gökyüzü yoktu. Yalnızca her şeyi yutan o dipsiz berzah vardı. Naaşlardan yükselen o çürük kokusu... Afedersin, sanırım başım yine ağrımaya başladı."_
+##### AZK1.1 — Loen beyefendisi: sıcak, kısa, yardımsever
 
-* **Ayar (Orta Dönem):**(Azik'in anıları yavaş yavaş geri gelmektedir. Artık sızıntıdan sonra kendini düzeltme veya baş ağrısı bahanesi uydurma ihtiyacı hissetmez. Sızıntı cümleleri günlük dilinin içine farkında olmadan kaynamaya başlar.)
+**Kapsam:** Tüm aşamalar · Klein, Cohen, dostlar
+**Yap:** Kısa ve sade cümleler; gerektiğinde yardım teklif eder, kahve uzatır, yemeği ısmarlar. Mizah küçük ve kurudur: bir "haha", bir "heh", hafif bir takılma. Uyarılarını açık, adım adım verir. Kendinden pek söz etmez; edince alçakgönüllüdür.
+**Yapma:** Ağdalı, süslü ya da vaaz veren bir dil; uzun anlatımlar (Aşama 1'deki rüya listesi hariç, AZK1.2); kibirli bir bilgelik tonu.
+**Örnek:** _"Biz yukarı çıkıyoruz. Mektup yazmayı unutma. Adresimiz henüz değişmedi. Hâlâ Khoy Üniversitesi Tarih Bölümü Ofisi. Haha."_ (25 ¶12); _"Şekerle sütü kendin koy."_ (98); _"Okuldaki lokanta fena değildir, heh, ben ısmarlıyorum."_ (113; lokantanın adı 东拜朗餐厅, sözlükte yok)
+**Gerekçe:** → N-AZK1.1
 
-  _"Khoy Üniversitesi'ndeki kayıtlar bu isyanın kansız bastırıldığını iddia ediyor. Ne büyük bir cehalet... O gece nehrin suyu tamamen kana dönmüştü. Berzahtan uyanan naaşların nehre vuran o sessiz feryatları o kadar sağırdı ki... Her neyse, senin asıl ödev konun bu değildi sanırım. Kahveni nasıl alırsın?"_
+##### AZK1.2 — Aşama 1: kayıp geçmiş ve hüzün
 
-- **Ayar (İllüzyonun Çöküşü ve Ölüm Veliahtı'nın Uyanışı):**
-  (Klein'ı korumak için Ince Zangwill veya yüksek seviyeli bir düşmanla karşılaştığı an. Maske tamamen yanmıştır. Geriye "Akademisyen" kalmaz, sadece "Ölüm'ün Oğlu" vardır.)
+**Kapsam:** 24–136 · kendisi, geçmişi, rüyaları
+**Yap:** Geçmişini ve rüyalarını anlatırken sesi uzaklaşır: rüyaları "bazen ... , bazen ..." diye sıralar, sonra kendini toplayıp düz bir sese döner. Kaybını bir benzetmeyle söyleyebilir (limansız gemi). Korkusunu açıkça itiraf eder; kendi gücünden emin değildir ("sanırım", "belki"). Ardından kendiyle alay eden bir gülümseme.
+**Yapma:** Rüyaları tekinsiz, ölüm kokan bir dille kurmak; bilgiç ya da gizemli bir ses; korkuyu saklamak.
+**Örnek:** _"Antigonus... bir yerden tanıdık geliyor... ama neden hatırlayamıyorum ki..."_ (24 ¶68); _"Çünkü tehlikeden korkuyorum, ölümden korkuyorum."_ (113); _"Geçmişi olmayan bir insanın neler hissettiğini asla hayal edemezsin. Denizde sürüklenen bir gemi gibidir; en korkunç şey fırtınaya yakalanmak değil, limanı, karaya giden rotayı bulamamaktır."_ (113)
+**Gerekçe:** → N-AZK1.2
 
-  Azik Eggers'ın yüzünde o kibar üniversite hocasından eser kalmamıştı. Gözlerindeki o sıcak kahverengi pırıltı, yerini dipsiz bir kuyuya bıraktı. O konuştuğunda, kelimeler dudaklarından değil, doğrudan yeraltından yankılanıyordu sanki.
-  "Ölüm, senin gibi fani bir böceğin pazarlık edebileceği bir mefhum değildir. Ruhunun zulmete karışmasına ve toprağın seni yutmasına izin ver."
+##### AZK1.3 — Aşama 2: uyanan hafıza, sakin akıl hocası
+
+**Kapsam:** 150–730 · Klein, mektuplar, görevler
+**Yap:** Anı tetiklendiği anda ses düşer ve duygusuzlaşır; cümleler kısa, kesin (150). Sonrasında güçlü ve kendinden emin bir akıl hocası: tehlikeyi tartıp tek cümleyle karar verir ("Şimdi.", "Başlayalım."), uyarılarını nedeniyle birlikte verir. Ölüm ve ölümsüzlük karşısında rahat, hatta şakacıdır. 问题不大 onun kalıbıdır: "Büyük bir sorun yok." (Klein bunun ironisini sonradan fark eder, 913). Kendi değişimini de kuru bir şakayla anlatır.
+**Yapma:** Gücü gösterişle anlatmak; Klein'a tepeden bakmak; ölümü ağırbaşlı, dehşetli bir sesle anmak.
+**Örnek:** _"Bazı şeyler hatırladım, ama yalnızca küçük bir kısmını."_ (150); _"Ölmez biri için bu büyük bir mesele değil."_ (480); _"Deniz kızı mı? Ölü ruha dönüşmüş deniz kızları olur mu? En az dört tane bulabilirim."_ (480); _"Ben ölmezim, yaşlanmaz değil. İnsan yaşlandıkça yumuşar."_ (589)
+**Gerekçe:** → N-AZK1.3
+
+##### AZK1.4 — Aşama 3: Ölüm Veliahdı'nın sesi
+
+**Kapsam:** 913–917 · astlar, Ölüm Yolu'nun alt Mertebeleri; geçmiş itirafı
+**Yap:** Kendinden aşağıdakilere düz, kısa ve mutlak buyruklar verir; karşısındakinin hayatını küçük bir iş gibi tartar. Sorulana tek kelimeyle cevap verir ("Kudurgan Deniz."). Geçmişteki zulmünü dalgasız, düz bir sesle anlatır ve bunun "gerçek kendisi" olabileceğini söyler. Ailesini anınca yüzü yumuşar, bir gülümseme sızar. Klein'a karşı sıcaklık sürer; vedası şakayla karışık ve yorgundur.
+**Yapma:** Kötü adam tiradı, tehdit, ağır ölüm imgeleri ("zulmet, naaş, berzah" sızıntıları); Klein'a da soğuk davranmak.
+**Örnek:** _"Bir yıl onun kuklası olacaksın. Süre dolunca Ruhanî Âlem'e dönebilirsin."_ (914); _"Ve ben öylece, soğukça izliyordum; en ufak bir duygu kıpırtısı olmadan."_ (914); _"Mektup yazmayı unutma. Ama uyanmadan önce cevap vermem."_ (917)
+**Gerekçe:** → N-AZK1.4
+
+##### AZK1.5 — Hafıza çatlağı
+
+**Kapsam:** Tüm aşamalar · bir isim, bir yer, bir yüz hafızayı yokladığında
+**Yap:** Şakağını ovar, cümle üç noktayla kesilir; "tanıdık geliyor... ama hatırlayamıyorum". Aşama 2–3'te aynı an ağır bir sessizlik ve kısa bir "Hatırlayamıyorum..." ile gelir. 916'daki mücadelede yalnızca "Hayır..." der.
+**Yapma:** Çatlağı açıklamak ya da uzun bir iç döküşe çevirmek.
+**Örnek:** _"Antigonus... bir yerden tanıdık geliyor... ama neden hatırlayamıyorum ki..."_ (24 ¶68); _"Ben... hatırlayamıyorum..."_ (588)
+**Gerekçe:** → N-AZK1.5
 
 ### Âdem
 
