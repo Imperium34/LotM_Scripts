@@ -1742,9 +1742,47 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 ##### KLS1.4 — Ebedî Yanan Güneş, Toprak Ana ve ötekiler (kısa)
 
 **Kapsam:** Az görünen kiliseler
-**Yap:** Güneş: hamd ve nur; formül "Güneş'e hamd olsun!" ve kollar yukarı açık duruş. Ozan Yolu'nun sloganı "Haydi Güneş'e hamd edelim!", "Karanlığı kov, Güneş'e hamd et." (140, 686). Dindar dili nur, arınma, hamd ve tövbe üzerine kurulur. Kitapta bu hamd bir şakaya da dönüşür: Güneş eserlerinin yanında kalan herkes "yalnız Güneş'e hamd eden bir aptala" döner (133, 139); şaka anlatıda aynı kalıpla verilir. Toprak Ana: Peder Utravsky (306–307) "Peder" denmesini tercih eder; eski bir korsandır, sakin ve açık sözle itiraf eder. Cenk Tanrısı ve İlim ve Hikmetin İlahı kiliselerinin kitapta belirgin bir sesi yoktur; ses haritası çıkarılmadı.
+**Yap:** Güneş: hamd ve nur; formül "Güneş'e hamd olsun!" ve kollar yukarı açık duruş. Ozan Yolu'nun sloganı "Haydi Güneş'e hamd edelim!", "Karanlığı kov, Güneş'e hamd et." (140, 686). Dindar dili nur, arınma, hamd ve tövbe üzerine kurulur. Kitapta bu hamd bir şakaya da dönüşür: Güneş eserlerinin yanında kalan herkes "yalnız Güneş'e hamd eden bir aptala" döner (133, 139); şaka anlatıda aynı kalıpla verilir. Toprak Ana: kendi haritası var, bkz. Peder Utravsky (UTR1.1–1.4). Cenk Tanrısı ve İlim ve Hikmetin İlahı kiliselerinin kitapta belirgin bir sesi yoktur; ses haritası çıkarılmadı.
 **Yapma:** Bu kiliselere kaynakta olmayan dua formülleri uydurmak.
 **Gerekçe:** → N-KLS1.4
+
+### Peder Utravsky `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Backlund'daki Toprak Ana kilisesinin (丰收教堂) piskoposu; dev gibi iri, "oturduğunda bile küçük bir dağ"; kalın kaşları seyrek, gözleri açık mavi. Eski bir korsan ve katil; o geçmişi kendi içinde bir "eski ben" olarak taşır ve onu öldürtmek ister (306–309). Sesi derin, alçak ve yumuşaktır; yavaş konuşur, araya sessizlik koyar, hep şefkatle gülümser, hiç öfkelenmez. Toprak Ana'nın inancını hasat ve toprak benzetmeleriyle konuşur; düzeltmesi yumuşak ama kesindir. Kendine "Peder" denmesini tercih eder. Emlyn'in istemeden olduğu hocası.
+**Sicil (yorum):** Toprak Ana Menşe Tanrıçası yol grubundadır (Kadir-i Mutlak değil); İslami deyiş kullanılmaz. Dayanak Toprak Ana'nın Tazim ismidir ("Cümle Varlığın Anası, Bereketli Arzın Hâmili"): sesi bir köy ihtiyarının, bir ekincinin sabırlı bilgeliğidir; toprak, tohum, filiz, hasat, bereket kelimeleri doğal gelir. 母神'e içtenlikle "Ana" der.
+**Onay:** _"Olur."_ (好。); _"Söyle."_ (说吧。)
+
+##### UTR1.1 — Ağır, yumuşak, öfkesiz
+
+**Kapsam:** Tüm görünümleri
+**Yap:** Kısa cümleler, araya giren sessizlikler; sesi alçak ve yumuşak, yüzünde şefkatli bir gülümseme. Neden diye sormaz, kabulü tek kelimedir. Kendisine kafa tutulsa da öfkelenmez; ince ve kuru bir mizahla geçiştirir.
+**Yapma:** Ona sert ya da tehditkâr bir ses vermek; dev cüssesini konuşmasına gürlük olarak taşımak.
+**Örnek:** _"Olur."_ (801); _"Söyle."_ (973); _"Kör olmayan herkes görebilir."_ (639)
+**Gerekçe:** → N-UTR1.1
+
+##### UTR1.2 — Hasat dili
+
+**Kapsam:** Öğüt, teselli, ölüm
+**Yap:** Öğüdünü ve inancını toprak ve ekin benzetmesiyle kurar: ekmek, beklemek, biçmek; her şeyin toprağa dönüp yeniden filizlenmesi. Benzetme kısa ve sadedir; bir köy ihtiyarı gibi konuşur.
+**Yapma:** Benzetmeleri süslü bir vaaza ya da ağdalı bir dile çevirmek.
+**Örnek:** _"Meyvenin ekilmesinden hasadına uzun bir yol vardır; sabırla beklemek gerekir. Sen bunu anlamışa benziyorsun."_ (973); _"Her insanın, her eşyanın bir sonu vardır; hepsi toprağa döner, toprağın altına gömülür, yeniden filizlenir, boy verir, çiçek açar; nesilden nesile."_ (801)
+**Gerekçe:** → N-UTR1.2
+
+##### UTR1.3 — Yumuşak ama kesin düzeltme
+
+**Kapsam:** Emlyn, cemaat; öğreti
+**Yap:** Hatayı yüzüne söyler ama sesini yükseltmeden; ardından yapılacak işi kısa bir buyrukla verir. Öğretide taviz vermez ("dışındaki her şey sapkınlıktır"). Cezadan çok eğitimi savunur.
+**Yapma:** Düzeltmeyi azara ya da tehdide çevirmek.
+**Örnek:** _"Dindarlığımız sözde değil, her ayrıntıda görünür; sen bugün yeterince dikkatli değildin. Şamdanları yeniden sil."_ (742); _"Ana'nın vahyi kutsal kitabındadır, şu ya da bu öğretisindedir; dışındaki her şey sapkınlıktır."_ (1310)
+**Gerekçe:** → N-UTR1.3
+
+##### UTR1.4 — Eski ben: itiraf
+
+**Kapsam:** 306–309 · kendi geçmişi
+**Yap:** Geçmişini anlatırken sesi duyguyla dolar, ağır ağır ve uzaklara bakarak konuşur; günahını düz ve süssüz söyler. Kurtulduktan sonra rahatlamış, sıcak ve minnettardır ("dostum").
+**Yapma:** İtirafı dramatik bir tirada çevirmek.
+**Örnek:** _"Ortadeniz kıyısında, Indo'da doğdum; savaşa ve öldürmeye düşkün biriydim."_ / _"Ağır suçlar işledim, Sonia Denizi'ne kaçtım ve gaddar bir korsan oldum."_ (306); _"Sana teşekkür ederim, dostum."_ (309)
+**Gerekçe:** → N-UTR1.4
 
 ## 12. İlahların Metruk Diyarı — Gümüş Şehir
 
