@@ -1049,12 +1049,33 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ## 6. Tingen'in Gölgeleri
 
-### Ince Zangwill
+### Ince Zangwill `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-- **Tarz:** Gece Tanrıçası'nın uhrevi ve ağır kilise dilini kullanır, ancak bu dili bilinçli bir şekilde yozlaştırır. O sadece hırslı, gözden düşmüş bir eski başpiskopos değildir; aynı zamanda kendi yaptığı kutsalata saygısızlığın (desecration) tamamen farkında olan ve bunu kendi içinde kusursuzca rasyonalize etmiş biridir.
-- **Kural 1 (Rasyonalize Edilmiş İhanet):** Cümlelerindeki tekinsizlik öfkeden değil, kendi ihanetini mutlak bir doğru olarak görmesinden gelir. Tanrıça'nın dilini bir alay aracı olarak değil, kendi yeni gerçekliğini meşrulaştırmak için kullanır. Sessiz, hesaplı ve kendi günahlarıyla tamamen barışık bir otoritesi vardır. İkiyüzlü (hypocrite) değildir; ne yaptığını bilir ve bunun doğru olduğuna çoktan karar vermiştir.
-- **Kural 2 (Taktiksel Sessizlik):** Zangwill konuşurken cümlenin ortasında duraksadığında veya hemen cevap vermediğinde, bu asla bir tereddüt, şüphe veya vicdan azabı olarak okunmamalıdır. Üzerine düşüneceği veya şüphe duyacağı hiçbir şey yoktur. Onun sessizlikleri tamamen _taktiksel birer hesaplamadır_.
-- **Ayar:** _"Gece'nin sükûneti sadece boyun eğenler içindir. Benim yolum ise bu sükûneti yırtıp atmayı gerektiriyor. Gecenin gözleri üzerimde olabilir ama o karanlığı asıl yönlendiren benim irademdir."_
+**Tarz:** Ebedî Gece Tanrıçası Kilisesi'nin eski başpiskoposu; Serhad Bekçisi Mertebesine yükselemeyince düşmüş, "0-08"i çalıp kaçmıştır (19). Tingen'de Dunn'ın ve Klein'ın ölümünü planlar, Azize Selena'nın küllerini alıp Gece Bekçisi olur (210–212). Hikâye boyunca neredeyse hiç konuşmaz: varlığı başkalarının tarifinden, kalemin yazdıklarından ve kendi defterine düştüğü birkaç kısa satırdan gelir. Sesini ilk ve son kez köşeye sıkıştığında duyarız (944–945): kısa lanetler ve tehditler. Klein ona son söz fırsatı vermez (945).
+**Onay:** yok
+
+##### INC1.1 — Yazan Ince: kısa, kesin, üçüncü şahıs
+
+**Kapsam:** Defter ve kalemle kendi bedenine yazdığı satırlar · 210, 940, 943
+**Yap:** Kısa, düz, geçmiş ya da gelecek kipinde hüküm cümleleri; bir hikâyeyi kapatır ya da olacak olanı buyurur. Kendinden üçüncü şahısla, tam adıyla söz eder. Yorum, ünlem ve makullük damgası yoktur (onlar kalemindir, KLM1.1–1.2).
+**Yapma:** Satırlarını süslemek; kalemin alaycı yorumunu ona vermek.
+**Örnek:** _"Tingen'in hikâyesi burada sona erdi."_ (210); _"Bugün her şey yolunda gidecek."_ (940); _"Ince Zangwill bugün çok iyi durumdaydı; mitolojik suretini rahatça idare edebiliyordu. Bu yüzden hiçbir şeyi geri tutmamaya, bütün gücüyle buradan kaçmaya karar verdi!"_ (943)
+**Gerekçe:** → N-INC1.1
+
+##### INC1.2 — Köşeye sıkışmış
+
+**Kapsam:** 944–945 · son dövüş
+**Yap:** Kısa, kaba lanetler ve tehditler; tekrar ("Lanet olsun, lanet olsun!"); zalim bir gülümsemeyle "Hepiniz öleceksiniz!" (Kadim Feysac dilinde). Pişmanlığını bir lanetle söyler ve hedefini tanıyınca öfkeyle haykırır. Son sözü yoktur: anlatı onu kesip atar.
+**Yapma:** Ona kilise dili, vaaz ya da kendini haklı çıkaran bir tirat vermek; ölüm anına bir vasiyet ya da itiraf eklemek.
+**Örnek:** _"Hepiniz öleceksiniz!"_ (944); _"Lanet olsun! Tingen'de baygın yatarken seni öldürmeliydim! O kadın ölmek üzere, sen de öleceksin!"_ (945); _"Sen, demek sensin! Demek hâlâ yaşıyorsun! Birlikte ölelim!"_ (945)
+**Gerekçe:** → N-INC1.2
+
+##### INC1.3 — Konuşmayan gölge
+
+**Kapsam:** 19–940 · Ince'in sahne dışı varlığı
+**Yap:** Ince'e replik uydurulmaz. Ağzından çıkan başka sesler başkalarına aittir: 941–942'de onun ağzıyla konuşan ve kalemi azarlayan Ahmer Melek'in ruhudur (Medici haritasına bakın).
+**Yapma:** Kaynakta olmayan Ince replikleri eklemek; Medici'nin sesini Ince'e yazmak.
+**Gerekçe:** → N-INC1.3
 
 ### Lanevus `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 

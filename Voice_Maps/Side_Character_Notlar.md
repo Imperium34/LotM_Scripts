@@ -928,3 +928,27 @@ Anlatı fiilleri: 勾勒于镜面 (417), 浮现 (429), 呈现 (608), 凝成了�
 
 210 ¶93–95: Ince kalemi alır, 简简单单落下了一句话：廷根市的故事到此结束。 940 ¶55–56: 苍白的手掌抓起一支羽毛笔，在后面续上了一句话：今天一切都会顺利。 943 ¶40–41 Ince kendi giysisine yazar: 因斯·赞格威尔今天的状态非常好…; ¶68–69 一个未知的存在…决定出手帮他. 944 ¶20 那支羽毛笔自行书写了起来 (bundan sonrası kalemindir); ¶24–25 Ince yeniden yazar, ¶26 kalem 自行往下写道.
 **Denetim:** 210 ¶93–96, 940 ¶55–56, 943 ¶40–69, 944 ¶20–28 (ZH).
+
+---
+
+## Ince Zangwill
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi (19'daki tarif hariç); ¶ numaraları ZH satır sırasıdır.
+> **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm:** 19 (Dunn'ın tarifi: 前大主教，晋升失败的‘看门人’，被魔鬼引诱，堕落成恶，带着封印物‘0-08’潜逃), 210–213 (Tingen planı ve Gece Bekçisi'ne yükselişi; kalemin anlatısı), 480 (Azik'le çatışma, sahne dışı), 604 (kalemin notu), 930–945 (Ahmer Melek'in ruhuyla ortaklık, Klein'ın tuzağı, ölüm).
+> **Eski haritadan düşenler:** "Gece Tanrıçası'nın kilise dilini bilinçli olarak yozlaştırır", "rasyonalize edilmiş ihanetin sakin otoritesi" ve "taktiksel sessizlikler" kaynakta yok: Ince'in tek konuşmaları 944–945'teki lanetlerdir ve hiçbirinde kilise dili geçmez. Eski örnek uydurmadır.
+
+### N-INC1.1
+
+210 ¶93–95: 用略显苍白的手掌郑重拿起一支古典的羽毛笔…简简单单落下了一句话：廷根市的故事到此结束。 940 ¶55–56: 在后面续上了一句话：今天一切都会顺利。 943 ¶40–41: 因斯·赞格威尔今天的状态非常好，能有效驾驭住自己的神话生物形态，所以，他决定不做任何保留，拼尽全力，逃离这里！; ¶68–69: 一个未知的存在被战斗吸引了过来，对因斯·赞格威尔的遭遇非常同情… (ikisi de üçüncü şahıs, kendi eliyle).
+**Denetim:** 210 ¶93–96, 940 ¶55–56, 943 ¶40–69 (ZH).
+
+### N-INC1.2
+
+944 ¶43–44 脸上露出了残忍的笑容，边高速奔跑，边用古弗萨克语低沉说道：你们都要死！ 945 ¶7 啊！(çığlık); ¶22 该死，该死！(咆哮); ¶25 露出了残忍的笑容; ¶36 咬牙切齿般诅咒道：该死！当初在廷根市，我就应该杀死昏迷的你！那个女人快死了，你也快了！; ¶48 你，果然是你！你果然还活着！一起死吧！ ¶79 他没给对方交代遗言的机会，他并不想知道因斯·赞格威尔有什么辛酸往事.
+**Denetim:** 944 ¶43–46, 945 ¶7–80 (ZH).
+
+### N-INC1.3
+
+Ince'in 19–940 arasında kendi repliği yok (konuşmacı etiketli tarama: 932, 941, 942, 945 dışında sonuç yok; 932 ve 941 başkalarınındır). 941–942: Ahmer Melek'in ruhu Ince'in ağzını kullanır: 942 ¶14–16 嘴巴就控制不住地张开，对着手中的古典羽毛笔“呵”了一声：要不是你这个蠢货不听我的建议… Bu satırlar Medici'nindir.
+**Denetim:** 932, 941, 942 ¶14–16 (ZH).
