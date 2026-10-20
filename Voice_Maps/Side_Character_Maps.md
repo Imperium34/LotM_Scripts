@@ -988,7 +988,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 956'dan itibaren · gri sisin üstü
 **Yap:** Toplantı Sicili'nin hitaplarını kullanır ('Soytarı Efendi', 'Adalet Hanımefendi'); cümleleri ise kendi sade cümleleridir (Fors'taki gibi). Soytarı'ya kısa ve saygılı onay verir. İlk toplantı dönüşünde dinî ayinlerdeki tarifi taklit ederek selam verir (957); cümlesi (您的意愿就是我的意志) Alger'in de kullandığı bir toplantı kalıbıdır (783, 1278), Türkçesi o kalıpla aynı olmalı.
 **Yapma:** Audrey ya da Alger düzeyinde ağdalı bir huzur dili; hitabı düşürmek.
-**Örnek:** _"Evet, Soytarı Efendi."_ (956); _"Arzunuz, benim irademdir."_ (957; 您的意愿就是我的意志)
+**Örnek:** _"Evet, Soytarı Efendi."_ (956); _"Arzunuz, benim irademdir."_ (957; donmuş satır, words.md)
 **Gerekçe:** → N-XIO1.7
 
 ## 6. Tingen'in Gölgeleri
