@@ -61,6 +61,11 @@
 - **Dönence** — Yesterday Once More (昨日重现); Klein'ın tılsımı, Mazinin Dehlizleri'ndeki geçmiş benliğinden güç ödünç aldırır. Çince ad Carpenters şarkısının Çince adıdır; Türkçede tanıdık bir şarkı adıyla (Barış Manço, "Dönence") yerelleştirildi, Mertebe adlarındaki yerelleştirmenin eşyalara uzanan ilk örneği (kullanıcı kararı, 2026-10-21) _1124_
 - **ulak** — messenger (信使); Ruhanî Âlem'den çağrılan, mektup taşıyan varlık; çağırma duası için bkz. §VII _561_
 - **Ulak Hanım** — Miss Messenger (信使小姐); Klein'ın anlatıda Reinette Tinekerr'e verdiği ad _690_
+- **Groselle'in Gezileri** — Groselle's Travels (格罗塞尔游记); Edwina'nın koleksiyonundaki, içinde bir dünya barındıran kitap; dev Groselle ve yol arkadaşlarının hikâyesi. 'Gezileri', Güliver'in Gezileri (格列佛游记) yankısını taşır _576_
+- **Leymano'nun Seyahatnamesi** — Leymano's Travels (莱曼诺的旅行笔记 / 莱曼诺旅行笔记); Fors'un kayıt kitabı, kabiliyetleri sayfalarına kaydeder (646, 777). Çırak Yolu'nun Gezgin / Âlem Seyyahı adlarını ve kayıt işini yankılar; Groselle'in Gezileri'nden ayrı kelime, Çincedeki 游记 / 旅行笔记 ayrımı gibi _646_
+- **Hulûl Ayini** — Soulfall Ritual (降灵仪式); bir ruhun Ruhanî Âlem'den geçip başkasının bedenine girdiği ayin (534) _534_
+- **Roselle'in Rüyada Tebliğ Usulü** — Roselle's Dream Spell (罗塞尔托梦术); 托梦 = rüyada haber iletmek; 术 'usul' ('büyü' 魔法'e ayrılı) _536_
+- **Şimal Kralı** — King of the North (北方之王); Groselle'in Gezileri'ndeki buz ejderi Ulyssan _576_
 - **Kader Çarkı Yolu** — Wheel of Fortune pathway ("命运之轮"途径; kısaca "命运"途径); Canavar Yolu'nun Mertebe 0 adıyla anılışı (609: "怪物"途径又叫"命运之轮"途径) _609_
 - **Solgun Mevt** — Pale Death (苍白之死); Bernadette'in Sınıf 0 Mühürlü Eseri, Naaş Toplayıcı Yolu'na ait bir maske; 苍白 = Solgun, 死亡 = Mevt (salahiyet kelimeleri) _1304_
 - **Bilge Alınlığı** — Sage Frontlet (贤者额饰); Bernadette'in Sınıf 0 Mühürlü Eseri; 贤者 = Bilge (Gizem Avcısı Mertebe 2) _1303_
@@ -388,6 +393,7 @@
 - **Korsan unvanları** — rütbe + lakap; lakap adın yerine geçer (ZH'de unvan neredeyse hep tek başına kullanılır, ör. 星之上将 280 kez). 上将 → Amiral, 中将 → Koramiral; 之 bağlaçtır, çevrilmez:
   - **Amiral Cehennem** Ludwell (地狱上将 路德维尔); **Amiral Kan** Senor (血之上将); **Amiral Yıldız** Cattleya (星之上将)
   - **Koramiral Buzdağı** Edwina (冰山中将); **Koramiral Kasırga** Qilangos (飓风中将); **Koramiral Hastalık** Tracy (疾病中将; 疾病 = Hastalık salahiyeti, Maraz değil); **Koramiral Alacakaranlık** Bulatov (黄昏中将; 黄昏 = Alacakaranlık); **Koramiral Derin Deniz** (深海中将)
+  - **Dört Kral ve Yedi Amiral** — Four Kings and Seven Admirals (四王七将); 将 hem 上将 hem 中将'i kapsar, 'Amiral' ikisinin şemsiyesidir
   - **Gizem Kraliçesi** Bernadette (神秘女王; 神秘知识 = Gizem Marifeti)
 - **Kızıl Kafatası Korsanları** — Red Skull Pirate Crew (红骷髅海贼团); kaptanı 'Deniz Kurdu' Johnson (海狼), ikinci kaptanı 'Tek Göz' Andersen (独眼)
 
@@ -493,6 +499,8 @@
 - **Jotun** — Jotun (巨人语)
 - **Çince** — Chinese (汉语 / 中文)
 - **sanal arkadaşlık sitesi** — online dating/friend site (交友平台)
+- **Kaptan Hanım** — Ma'am Captain (船长女士); Klein'ın Edwina'ya hitabı _575_
+- **Gehrman Bey** — Mr. Gehrman (格尔曼先生); Edwina'nın Klein'a hitabı _575_
 - **Majesteleri** — Your Majesty (陛下); Cattleya'nın Bernadette'e hitabı: 女王陛下 → 'Majesteleri' _1238_
 - **Prensesim** — Your Highness, a princess (公主殿下); Roselle'in şövalyelerinin Bernadette'e hitabı; Roselle'in 'küçük prensesim'iyle yankı _1302_
 - **zât-ı âliniz / Ulu efendim / Efendi hazretleri** — formal honorific (您 / 阁下; standardized spelling. can use other translations like )

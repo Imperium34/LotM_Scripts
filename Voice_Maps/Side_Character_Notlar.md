@@ -1295,6 +1295,41 @@ Güneş: 140 歌颂者…他们的口号是：“让我们赞美太阳吧！”;
 
 ---
 
+## Edwina Edwards (Koramiral Buzdağı)
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
+> **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm (konuşan):** 534–536 (Danitz'in rüyası; Roselle'in rüya büyüsü), 555 (Danitz'e ruh inişi), 575–577 (Altın Rüya), 596–597, 696–707 (Groselle'in kitabının içi ve sonrası), 765, 871. Anılır: 504, 584, 586, 690–695 (kayboluşu), 755, 930, 1099, 1300 (Bernadette'e atası Edwards'ı anlatmıştır).
+> **Başka haritalarla bağ:** Danitz haritası (kaptanına hayranlık); Isengard (İlim ehli sicili, koleksiyon gösterme: Klein ikisini 576 ¶46–47'de karşılaştırır); Bernadette (BER1.6, "Edwards Amca"). Klein ona Gehrman maskesiyle konuşur.
+> **Ad kararları (2026-10-21, words.md):** 四王七将 → Dört Kral ve Yedi Amiral, 降灵仪式 → Hulûl Ayini, 罗塞尔托梦术 → Roselle'in Rüyada Tebliğ Usulü, 格罗塞尔游记 → Groselle'in Gezileri, 北方之王 → Şimal Kralı; hitap: 船长女士 → Kaptan Hanım, 格尔曼先生 → Gehrman Bey. Sicil (yorum) gücü onaylandı (Mertebe 5, yalnız ders anında).
+
+### N-EDW1.1
+
+534 ¶36 简洁问道：发生了什么事情？; ¶41 一直安静听着…末了轻轻颔首道：他没有恶意。; ¶44 “不确定。”艾德雯娜非常平静地回应。; ¶45 (EN) Danitz: people who he couldn't engage in a conversation with (Gehrman'la benzerlik); ¶46 表情不见异常; 535 ¶38 “很遗憾，没有实践过，只能是设想。”艾德雯娜少有地使用了表达情绪的单词。; 555 ¶49 语气已恢复正常，也就是正常地没有感情; 577 ¶2 不用着急。; 707 ¶6 交流到此结束。; 765 ¶41 具体的经过。, ¶47 没有异常。; 706 ¶81 清冷开口道：拜亚姆到了。; 704 ¶63 除了“上课”，也不是擅于交流的人.
+**Denetim:** 534–535, 555, 577, 704, 706–707, 765 (ZH).
+
+### N-EDW1.2
+
+534 ¶30 (EN) Danitz derse dönmüş gibi hisseder; ¶33 似乎有详细描述具体方法的倾向; ¶54–57 (ruh inişi ayini: Mavi Yıldız, cumartesi, saatler); 535 ¶17 语速不快不慢地解释道：我必须结合你的知识水平来考虑如何回答问题，方便你较为轻松地理解。; ¶31–33 不知道。/ 但我曾经有过一个设想…/ 可惜的是，能办到这种事情的只有诸神; ¶53 一点也不烦躁，充满了耐心，但表情依旧冷淡; ¶55, ¶59 依旧是不快不慢的语速; 577 ¶10 详细地解释了罗塞尔这个名字的词源由来…有种回到学校课堂的感觉; ¶13–15, ¶18 罗塞尔大帝曾经说过一句话：凡分离的必聚合，凡聚合的必分离。; ¶23 真是一个好老师啊，简直有问必答！; ¶62–64 (ulak duası: 你的咒文给了我不少灵感。); 597 ¶26 以后我会考核这方面的内容。; 703 ¶35 就像一位教师，认真地讲解了原因. Sicil dayanağı: 596 ¶21 追逐知识的导师，灵界生物的研究者，大海之上的冰山中将，来自伦堡的艾德雯娜·爱德华兹; 690 ¶18 (Altın Rüya'nın arkasındaki İlim ve Hikmetin İlahı Kilisesi); 696 ¶9 Okur Yolu'nun Mertebe 5'i; 703 ¶31 神秘学专家 → Havas Müdebbiri (sozluk.yml).
+**Denetim:** 534–535, 577, 596–597, 690, 696, 703 (ZH).
+
+### N-EDW1.3
+
+576 ¶40 看似冷淡，却解释地非常详细，很有种怕对方听不懂…的精神; ¶41 提及“研究”这个单词的时候…眼眸明显亮了一点; ¶43 这枚是第四纪所罗门帝国的金币。; ¶46 就像一位喜欢炫耀自己收藏的主人 (Klein: Isengard gibi); ¶49 你可以研究一下。; ¶59–63 如果你有研究出什么，请务必告诉我结果，让我不再疑惑。; ¶66 “8000镑。”艾德雯娜一脸平静地说道。; 703 ¶35 我唯一的请求是…告诉我答案。; 704 ¶66 我可以先借给你研究; 705 ¶3 唯一的条件是，如果研究出什么，告诉我答案。; ¶45 眉毛微动，眼睛睁大，霍然明亮道：你有结果了？; ¶48 眸光闪亮; ¶53 我唯一的条件是，你有空闲的时候，和我交流一下历史。; ¶56 嘴角微动，表情竟生动了不少; 698 ¶29 (EN) a strong desire to learn from him.
+**Denetim:** 576, 698, 703–705 (ZH).
+
+### N-EDW1.4
+
+536 ¶22–25 (Danitz başkasını önerirken eliyle kulağını kapatır) 没什么表情地说道：你在说什么？/ 我听不到了。/ ‘罗塞尔托梦术’接近极限了……; 576 ¶29 给你准备有早餐。; 577 ¶28 (yoğurt, deniz dibinden adı konmamış balık kurusu); 696 ¶87 知名水手达尼兹 (¶88 Klein: hiç yalan söylemez sanırdım); 703 ¶48 清冷的表情里不知不觉多了些笑意; 704 ¶62 我理解，我也不会去参加，不是每个人都像安德森一样，可以迅速摆脱自己的低落情绪。
+**Denetim:** 536, 576–577, 696, 703–704 (ZH).
+
+### N-EDW1.5
+
+576 ¶12 我会委托他全权处理，包括联络反抗军，确定时间，安排私港，我希望你能提供一定的保护。; ¶16 你是位冒险家，我想你不会排斥价格不错的雇佣。; 703 ¶10, ¶17 我拿斯诺曼的。, ¶27 收下吧。; 871 ¶48–52 (kapıyı çalmadan "Gir." der: 请进。; 你想问西拜朗的情况？); 694 ¶38 (EN) sailors infatuated with her. Hitap: 575 ¶35 船长女士 (Klein), ¶36 早上好，格尔曼先生。(Edwina, gülümseyerek); Klein ile karşılıklı 你.
+**Denetim:** 575–576, 694, 703, 871 (ZH).
+
+---
+
 ## Sharron ve Maric
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.

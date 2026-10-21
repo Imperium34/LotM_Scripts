@@ -1735,6 +1735,52 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Örnek:** _"Okuma yazma bilmemenin sonucu bu. Benim gibi Kadim Feysac'ı, Dev dilini, Elf dilini bilseydiniz başınıza bu gelmezdi. Tabii dil yeteneği zekâyla ilgili bir şey, kendinizi zorlamayın."_ (1291)
 **Gerekçe:** → N-DAN1.5
 
+### Edwina Edwards (Koramiral Buzdağı) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Altın Rüya'nın kaptanı ve Dört Kral ve Yedi Amiral'den biri; korsandan çok hazine avcısı ve araştırmacıdır. Okur Yolu'nda Mertebe 5, Havas Müdebbiri (696). Lenburg'da okumuştur ve arkasında İlim ve Hikmetin İlahı Kilisesi vardır (690); atası Roselle'in şövalyesi Edwards'tır (536, 1300). Klein'ın ruh inişi duasındaki tarif onu "ilmin peşindeki hoca, Ruhanî Âlem varlıklarının araştırmacısı" diye anar (596). İki sesi vardır. Sohbette buz gibidir: kısa, düz, duygusuz cümleler; Danitz onunla da Gehrman'la olduğu gibi "sohbet edilemeyeceğini" düşünür (534). Ders anlatırken ise sabırlı, ayrıntılı ve sıralı bir hocadır; "her soruya cevap veren iyi bir öğretmen" (577). Duygusu yalnız araştırma, tarih ve çözülmemiş bir bilmece karşısında görünür: gözleri parlar, yüzü canlanır. Ders dışında sosyal değildir (704). Klein'a "sen" ve "Gehrman Bey" der; Klein ona "Kaptan Hanım", Danitz "Kaptan" der.
+**Onay:** _"Evet."_ (535, 嗯。); _"Olur."_ (704, 好。)
+**Sicil (yorum): ilim ehli, ders anında.** Dayanak: Okur Yolu, İlim ve Hikmetin İlahı Kilisesi (Kadir-i Mutlak yol grubu), Lenburg eğitimi; Isengard'la aynı kilise ve aynı okul (krş. ISG). Havas Müdebbiri (Mertebe 5) olduğu için katman Isengard'dan biraz daha görünürdür, ama yalnız ders, araştırma ve tarih konuşurken: ilim, malumat, faraziye, tetkik gibi kelimeler orada doğaldır. Sohbet ve kaptanlık sade kalır. Isengard'ın bilgi gururu ona verilmez; o bir müfettiş değil bir hocadır. Yakarış formülleri (Ya Rab, hamd) verilmez.
+
+##### EDW1.1 — Buz: kısa, düz, duygusuz
+
+**Kapsam:** 534–871 · sohbet, sorgu, iş
+**Yap:** Cümleler kısa ve düzdür; çoğu zaman tek bir tespit ya da tek bir soru. Kanaatini kesin söyler, kesin olmadığını da düz kabul eder. Duygu bildiren kelimeyi nadiren kullanır (anlatı bunu not eder, 535 ¶38). Görüşmeyi tek cümleyle bitirir.
+**Yapma:** Nezaket dolgusu, ünlem, gülümseyen bir hitap tonu; sohbeti uzatmak.
+**Örnek:** _"Kötü niyeti yok."_ / _"Emin değilim."_ / _"Bu yalnızca benim tahminim ve kanaatim."_ (534 ¶41–46); _"Ayrıntıları anlat."_ (765 ¶41); _"Konuşma burada bitti."_ (707 ¶6)
+**Gerekçe:** → N-EDW1.1
+
+##### EDW1.2 — Hoca: sıralı, sabırlı ders
+
+**Kapsam:** 534–707 · mistisizm, tarih, ritüel anlatırken
+**Yap:** Buz çözülür ama ton değişmez: yavaş ve sabit hızla (不快不慢), eksiksiz ve sıralı anlatır. Anlatımı dinleyenin bilgisine göre ayarladığını açıkça söyler (535 ¶17). Bilmediğini önce düz söyler, sonra faraziyesini kurar (535 ¶31–33). Etimolojiye, karşılıklara (gezegen, gün, saat, bitki) iner. Danitz'e ders verir ve sınav yapar.
+**Yapma:** Bilgiyi bilmeceye ya da gösterişe çevirmek; açıklamayı kesip geçmek; Isengard'ın bilgi gururunu vermek.
+**Örnek:** _"Sorularını, cevaplarımı senin bilgi seviyene göre kurarak cevaplamam gerek; böylece daha kolay anlarsın."_ (535 ¶17); _"Bilmiyorum. Ama bir zamanlar şöyle bir faraziyem olmuştu…"_ (535 ¶31–32); _"Mavi Yıldız cumartesiye karşılık gelir; Mavi Yıldız saatleri cuma gece yarısından bire, cumartesi on birden on ikiye kadardır…"_ (534 ¶57); _"Bu, benzer ayinlere alışmana yardım eder. İleride bunu da sınavda soracağım."_ (597 ¶26)
+**Gerekçe:** → N-EDW1.2
+
+##### EDW1.3 — Merak: koleksiyon, araştırma, tarih
+
+**Kapsam:** 576–705 · koleksiyon odası, satış, Groselle'in Gezileri
+**Yap:** Duygusu yalnız burada görünür ve anlatıda kalır: "araştırma" kelimesinde gözleri parlar, bir sonuç duyunca yüzü canlanır. Koleksiyonunu bir ev sahibi gibi tek tek tanıtır. Sattığı şeye hep aynı şartı koyar: bir şey çözersen bana söyle. Fiyatı düz söyler.
+**Yapma:** Merakı ünlemli bir heyecana çevirmek; şartı pazarlık süsüyle sunmak.
+**Örnek:** _"Bu, Dördüncü Çağ'daki Solomon İmparatorluğu'ndan bir altın."_ (576 ¶43); _"Bir şey çözersen sonucunu mutlaka bana söyle ki artık kafam karışmasın."_ (576 ¶62); _"8000 pound."_ (576 ¶66); _"Bir sonuç mu buldun?"_ (705 ¶45); _"Tek şartım, boş vaktin olduğunda benimle tarih konuşman."_ (705 ¶53)
+**Gerekçe:** → N-EDW1.3
+
+##### EDW1.4 — İfadesiz şaka ve incelik
+
+**Kapsam:** 536–704 · Danitz, misafirler
+**Yap:** Şakası ifadesizdir ve bir eylemle gelir: Danitz'in itirazını duymamış gibi yapıp rüyadan çekilir (536). İnceliği de kısadır: kahvaltıyı gösterir, yemekleri bir ders gibi tanıtır, Danitz'i yabancılara "ünlü denizci" diye takdim eder (696). Kederi paylaşırken yine kısadır (704 ¶62).
+**Yapma:** Şakayı açık bir espri ya da gülüşle vermek; inceliği sıcak sözlerle uzatmak.
+**Örnek:** _"Ne dedin? Duyamıyorum. Roselle'in Rüyada Tebliğ Usulü sınırına geldi…"_ (536 ¶23–25); _"Sana kahvaltı hazırlattım."_ (576 ¶29); _"En güçlü maceracı Gehrman Sparrow, hazine avcısı Anderson Hood ve ünlü denizci Danitz."_ (696 ¶87)
+**Gerekçe:** → N-EDW1.4
+
+##### EDW1.5 — Kaptan
+
+**Kapsam:** Altın Rüya, tayfa, Danitz
+**Yap:** Kısa görev dağıtımı ve kısa buyruk. Danitz'in ne soracağını önceden bilir ve ondan önce söyler (871). Tayfası ona hayrandır (694; Danitz haritası).
+**Yapma:** Kaptanlığı sert bir korsan ağzına çevirmek; buyruğa gerekçe eklemek.
+**Örnek:** _"Bu işi tamamen ona bırakacağım: Direniş'le bağlantı, zamanlama, özel liman."_ (576 ¶12); _"Al onu."_ (703 ¶27); _"Batı Balam'ı soracaksın, değil mi?"_ (871 ¶52)
+**Gerekçe:** → N-EDW1.5
+
 ---
 
 ## 9. Backlund
