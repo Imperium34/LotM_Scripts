@@ -59,6 +59,8 @@
 - **barındırmak** — to accommodate (容纳); Yegânelik ve Aşkın hasletleri için sabit fiil: 'Yegâneliği barındırmak'; sozluk.yml Melekler Beyi açıklamasındaki biçim _1125_
 - **İhtimal Zarı** — Die of Probability (概率之骰); Canavar Yolu'nun Yegâneliği, Hayat Ekolü'nün Mühürlü Eseri; salahiyet kelimesi 概率 = İhtimal (salahiyetler.yml) _606_
 - **Dönence** — Yesterday Once More (昨日重现); Klein'ın tılsımı, Mazinin Dehlizleri'ndeki geçmiş benliğinden güç ödünç aldırır. Çince ad Carpenters şarkısının Çince adıdır; Türkçede tanıdık bir şarkı adıyla (Barış Manço, "Dönence") yerelleştirildi, Mertebe adlarındaki yerelleştirmenin eşyalara uzanan ilk örneği (kullanıcı kararı, 2026-10-21) _1124_
+- **ulak** — messenger (信使); Ruhanî Âlem'den çağrılan, mektup taşıyan varlık; çağırma duası için bkz. §VII _561_
+- **Ulak Hanım** — Miss Messenger (信使小姐); Klein'ın anlatıda Reinette Tinekerr'e verdiği ad _690_
 - **Kader Çarkı Yolu** — Wheel of Fortune pathway ("命运之轮"途径; kısaca "命运"途径); Canavar Yolu'nun Mertebe 0 adıyla anılışı (609: "怪物"途径又叫"命运之轮"途径) _609_
 - **Solgun Mevt** — Pale Death (苍白之死); Bernadette'in Sınıf 0 Mühürlü Eseri, Naaş Toplayıcı Yolu'na ait bir maske; 苍白 = Solgun, 死亡 = Mevt (salahiyet kelimeleri) _1304_
 - **Bilge Alınlığı** — Sage Frontlet (贤者额饰); Bernadette'in Sınıf 0 Mühürlü Eseri; 贤者 = Bilge (Gizem Avcısı Mertebe 2) _1303_
@@ -641,6 +643,8 @@
 - **İradeniz emrimizdir.** — (遵从您的意志 / 遵从您的意愿); dondurulmuş. Toplantıyı kapatan koro cevabı; yazar 意志 (7, 36, 571, 682) ile 意愿 (159, 395, 489, 564) arasında rastgele gidip gelir, ikisi de bu satırla karşılanır. 364'teki 遵从您的意志，首席阁下 toplantı dışıdır, bağlamına göre çevrilir.
 - **Arzunuz, benim irademdir.** — (您的意愿就是我的意志); dondurulmuş. Bir üyenin Soytarı'dan aldığı görevi tek başına kabul etmesi, birinci tekil (Alger 783, 1278; Xio 957). Koro satırından ayrıdır; çevresindeki cümle konuşanın siciline uyar.
 - **Her şeyi bilmek, her şeye kadir olmaktır.** — 全知意味着全能 ("omniscience means omnipotence"); dondurulmuş. İlim ve Hikmetin İlahı Kilisesi'nin vecizesi (Isengard, 415 ¶24). "Kadir" Kadir-i Mutlak yol grubunu yankılar; bilerek seçildi. Klein'ın 257 ¶55'teki 知识等于力量…全知等于全能 düşüncesi bu satırı önceden yankılar ve aynı kalıpla verilir.
+- **Ben! Kendi adımla çağırıyorum:** — 我！我以我的名义召唤： ; ulak çağrısının ve Klein'ın kendi kendini çağırma ayininin açılışı (561, 690, 885; Kadim Hermes Dili'yle okunur). Onay bekliyor: aynı açılış Soytarı'nın tazim ismiyle de kullanılır.
+- **Vehmin içinde gezinen ruh, emre amade dost mahluk, yalnızca Gehrman Sparrow'a ait ulak.** — 徘徊于虚妄之中的灵，可供驱使的友善生物，独属于格尔曼·斯帕罗的信使。; dondurulmuş. Reinette Tinekerr'in çağırma duası (561 ¶90, 690 ¶39, 885 ¶51). Ad yuvası değişir, kalıp değişmez. İlk çağrıdaki genel biçim (561 ¶46): "…, ulağım olmaya razı eşsiz varlık." ("yegâne" Yegânelik'e ayrılı olduğu için kullanılmaz). Bernadette'in ulağının duası ayrı bir kalıptır (1093 ¶3): **Üst âlemlerde dolaşan görünmez mahluk, insana dost garip ruhanî varlık, yalnızca Bernadette Gustav'a ait ulak.** (遨游于上界的无形生物，对人类友善的奇异灵体，独属于贝尔纳黛·古斯塔夫的信使)
 - **şans artırma ayini** — luck enhancement ritual (转运仪式 / 福生玄黄), four steps, counter-clockwise:
   1. **Arz ve Arşın Kutlu Baki Efendisi** — 仙尊
   2. **Arz ve Arşın Kutlu Gök Hakimi** — 天君

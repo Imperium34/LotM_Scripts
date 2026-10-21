@@ -229,6 +229,8 @@ Taramanın sınırı: yalnızca Dünya'yı ya da 梗'yi adıyla anan yerleri yak
 
 **N-M9.** 992 ¶37–62, aynayla sıradan bir konuşma: Arrodes her seferinde yeni bir gösterişle (havai fişek, dalkavukça karşılama) belirir, Klein içinden "bu sefer de epey coşkulu… her seferinde yeni bir numara" diye geçirir ve sadece başını sallar (¶42). Replikleri kısa ve sakindir ("我有个问题", "对"). Arrodes Tanrıça'dan söz etmemeyi rica ettiğinde Klein tam da bunu istemektedir (正合我意) ama iki saniye düşünüyormuş gibi yapıp "好" der (¶59–62). Aynanın zorunlu sorusuna ("Tanrılardan Terk Edilmiş Topraklar'ı mı kastediyorsunuz?") tek kelimeyle, doğru cevap verir (¶47–48). 1390 ¶78–84. Kaynağın cevapları 不怕 / 怕'tır: aynı fiil önce olumsuz, sonra olumlu. İngilizce "No / Yes" diye düzleştirir ve eski harita onu izlemişti. "Korkmuyorum / Korkuyorum" hem tek kelime kuralını hem kaynağın yankısını korur. 嘴角微动: ağzının kenarı hafifçe kıpırdar ("seğirir" biraz fazla güçlüdür). Yankı #9 (Arrodes'in kural gereği soru sorması) bu sahnenin kurulumudur.
 
+**N-M10.** Klein'ın Reinette'e bütün replikleri 您'lüdür ve 女士 hitaplıdır: 763 ¶29 女士，这是第一笔款项，总计价值4013镑。; 923 ¶70 不知道能否雇佣您帮忙？代价是什么？; 924 ¶3 我明白了，感谢您的告知。; 1044 ¶23, ¶26 您有标记她吗？; 1058 ¶5; 1125 ¶42 关键时刻可能需要您提供帮助。; 1231 ¶13 女士，您和我一起…, ¶18 缇尼科尔女士, ¶70 您可以离开了。 Nezaketin nedeni: 721 ¶36 (EN) He was very courteous with his powerful messenger… He didn't wish to be strangled to death one day. Posta şakası: 691 ¶32 那枚金币由达尼兹支付。; 721 ¶47 (EN) The postage will be paid by Frank. İç ses: 561 ¶59 都有产业了，怎么还来“应聘”信使？; 724 ¶50 信使小姐竟这么时髦; 1080 ¶48 这外号还进化了？ Reinette'in tarafı: Side_Character_Maps › Reinette Tinekerr (REI1.1–1.5).
+
 ---
 
 ### N-A — Aşamalar

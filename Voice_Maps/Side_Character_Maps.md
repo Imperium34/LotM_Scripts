@@ -1604,6 +1604,51 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Örnek:** Ince: _"Tingen'in hikâyesi burada sona erdi."_ (210); _"Bugün her şey yolunda gidecek."_ (940)
 **Gerekçe:** → N-KLM1.4
 
+### Reinette Tinekerr (Gehrman Sparrow'un ulağı) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Ruhanî Âlem'den, ağır ve karmaşık siyah bir elbise giymiş başsız bir kadın; ellerinde birbirinin aynı dört baş taşır (sarı saçlı, kırmızı gözlü). Ruhanî Âlem'de bir şatosu vardır (561). Sharron'un hocasıdır (1041) ve Mahkûm Yolu'nda, gücünü yitirmiş bir melektir (1041). 561'de Klein'ın ulak çağrısına cevap verir ve sözleşmeyle Gehrman Sparrow'un ulağı olur. Sesi bir mekanizmadır: dört baş cümleyi sırayla, birer kelime söyler. Az ve kuru konuşur. Her işin bir fiyatı vardır ve hesabı unutmaz. Göndereni adıyla değil, bir lakapla anar. Herkese "sen" der. Klein ona "siz" ve "Hanım" der (Klein.md M10).
+**Onay:** _"Olur…"_ (可以 / 好, 561, 691, 924, 1188); tek baştan.
+**Sicil (yorum):** yok. Sesin tuhaflığı kaynağın kendi mekanizmasıdır; kayıt sade ve kurudur.
+
+##### REI1.1 — Dört baş, sırayla birer kelime
+
+**Kapsam:** 561–1366 · bütün replikler
+**Yap:** Cümle dört başa sırayla bölüştürülür. Her parça bir, en fazla iki kelimedir ve çoğu "…" ile biter; son parça bazen "." ya da "?" alır. Parçalar Türkçe kelime sırasını izler ve sayısı Türkçe kelimelere göre belirlenir. Dörde tamamlanmaz, dörde de kırpılmaz. Kısa cümlede artan baş yalnızca ağzını açar (1044 ¶24). Uzun cümlede sıra başa döner (763, 856). Ağzında mektup ya da altın tutan baş konuşamaz, o zaman kalan üç baş konuşur (1010, 1041, 1096). Tek istisna büyük bir şaşkınlıktır: dört baş tek bir cümleyi birlikte söyler (1231 ¶67). Tek kelimelik cevap tek başın ağzından çıkar.
+**Yapma:** Çince parça sınırlarını Türkçeye birebir taşıyıp kelime sırasını bozmak; parça sayısını dörde tamamlamak için kelime eklemek; parçalara "şey", tekrar ya da dolgu koymak; anlatının "başlar sırayla" işaretini atmak.
+**Örnek:** _"Hemen…" "cevap…" "yazacak…" "mısın…"_ (721 ¶36; dört parça, soru eki ayrı baştan); _"Kalan…" "beş bin…" "dokuz yüz…" "seksen…" "yedi…"_ (763 ¶31; sıra başa döner); _"Çok…" "korktu…"_ (1044 ¶24; artan baş ağzını açar)
+**Gerekçe:** → N-REI1.1
+
+##### REI1.2 — Hesap defteri
+
+**Kapsam:** 561–1366 · ücret, borç, iş teklifi
+**Yap:** Her iş bir fiyattır: mektup başına bir altın (561), iş tehlikeliyse ücret artar (966, 1125). Taksit, faiz, kalan borç ve tarihli borç kaydı düz ve kuru söylenir. Çağdaş finans kelimeleri (taksit, faiz) bilerek yerindedir: Klein bunu "ulağım zamana ayak uydurmuş" diye şaşkınlıkla karşılar (724 ¶50). Mizah durumdan gelir, sesten değil.
+**Yapma:** Pazarlığa sıcaklık ya da şaka tonu katmak; hesabı yuvarlamak (kuruşuna kadar söyler).
+**Örnek:** _"Taksitle…" "ödeyebilirsin…"_ (724 ¶49); _"Acele…" "etme…" "faiz…" "yok…"_ (752 ¶15); _"Bu…" "kulağa…" "çok…" "tehlikeli…" "geliyor…"_ / _"Ücret…" "artar…"_ (1125 ¶44–45); _"Hesap…" "kaydı…" "1351…" "yılı…"_ / _"Eylül…" "Gehrman…" "Sparrow…"_ / _"bana…" "bir…" "altın…" "borçlu…"_ (1231 ¶72–74)
+**Gerekçe:** → N-REI1.2
+
+##### REI1.3 — Ad yerine lakap
+
+**Kapsam:** "Kimden?" sorusuna cevap · mektup gönderenler
+**Yap:** Göndereni adıyla değil, lakabıyla anar: tek bir huyu yakalayan kuru, çoğu zaman aşağılayıcı bir tamlama. Alışkanlık sonradan başlar (1016) ve lakap gelişebilir: Patrick Bryan önce "ölümsüz aptal", sonra "aptallar kralı" olur (1016, 1080). Lakap Türkçede tamlama olarak kurulur, sonra parçalara bölünür. Lakap almayan tek kişi Sharron'dur ve onu da "lakap sevmeyen Sharron" diye anar (1040).
+**Yapma:** Lakabı süslemek ya da açıklamak; yanına gerçek adı eklemek.
+**Örnek:** _"Mantar…" "Kralı'nın…" "amiri…"_ (1010 ¶4; Mantar Kralı = Frank Lee, amiri Cattleya); _"Şu…" "ölümsüz…" "aptal…"_ (1016 ¶12, Patrick Bryan) → _"Aptallar…" "kralı…"_ (1080 ¶47, aynı kişi); _"Lakap…" "sevmeyen…" "Sharron…"_ (1040 ¶76); _"Şu…" "beyinsiz…" "hizmetkârın…"_ (1096 ¶4–5, Danitz)
+**Gerekçe:** → N-REI1.3
+
+##### REI1.4 — Kısa tespit, kuru gözlem
+
+**Kapsam:** bilgi verirken, tehlikede, Klein hakkında
+**Yap:** Gördüğünü tek bir kısa yargıyla söyler. Tehlikede parçalar hızlanır (anlatı, 1231 ¶10). Ara sıra Klein hakkında kuru bir gözlem yapar; övgü de değildir, yergi de.
+**Yapma:** Tespiti açıklamak, duygu eklemek.
+**Örnek:** _"Kayboluşu…" "çok…" "tuhaf…"_ (690 ¶69); _"Pis…" "karanlık…" "bir…" "kap…"_ (1044 ¶13; gönderen Trissy); _"Son…" "zamanlarda…" "biraz…" "neşelendin…"_ / _"Yüzün…" "de…" "epey…" "canlandı…"_ (1000 ¶38–39)
+**Gerekçe:** → N-REI1.4
+
+##### REI1.5 — İlk görünüş
+
+**Kapsam:** 561
+**Yap:** İlk çağrıda Kadim Feysac Dili konuşur (anlatıda belirtilir). Sözleşmeyi en kısa yoldan kurar, adını kalemi bir başına ısırtarak yazar.
+**Örnek:** _"Beni…" "sen mi…" "çağırdın?"_ (561 ¶58); _"Olur." "Fena…" "değil."_ (561 ¶65); _"Olur." "Her…" "seferinde…" "bir…" "altın."_ (561 ¶69)
+**Gerekçe:** → N-REI1.5
+
 ---
 
 ## 8. Beş Deniz (Denizciler ve Avcılar)

@@ -943,6 +943,41 @@ Anlatı fiilleri: 勾勒于镜面 (417), 浮现 (429), 呈现 (608), 凝成了�
 
 ---
 
+## Reinette Tinekerr (Gehrman Sparrow'un ulağı)
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
+> **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm (konuşan):** 561 (ilk çağrı, sözleşme), 690–691, 721, 724, 729, 752, 763 (taksitler), 856, 885, 923–924 (Calderón şehri), 966, 1000, 1008, 1010, 1016, 1040–1044, 1058, 1060, 1080, 1096, 1125, 1127–1128, 1162 (Bernadette'in kehaneti, Leonard'a aktarma), 1188, 1231 (Gül Ekolü'ne karşı plan), 1290, 1324, 1366. Daha önce Kalvetua yolunda şato kadar büyük görülür (561 ¶55). 0-08'in yazısında: 944.
+> **Klein.md ile bağ:** Klein'ın ona sesi Klein.md M10'dadır ("siz", "Hanım", kibar ve temkinli). Sharron haritasında hocasıdır.
+> **Ad kararları (2026-10-21):** 信使 → "ulak", 信使小姐 → "Ulak Hanım" (words.md); çağırma duası words.md §VII'de dondurulmuştur. Parçalama kuralı (REI1.1) onaylandı.
+
+### N-REI1.1
+
+561 ¶58 “是……”“你……”“在召唤……”“我吗？”…垂下去的四个脑袋依次开口; 721 ¶36 “你……”“要……”“立刻……”“回信吗……”…依次轻启嘴唇，吐出单词; 763 ¶31 “很好……”“还剩……”“五千……”“九百……”“八十……”“七……” (altı parça); 856 ¶50 sekiz parça (是……那个……什么……都想……种到……土里……的……人吗？); 1231 ¶10 yedi parça, 语速加快. Artan baş: 1044 ¶24 三个脑袋相继开口，没能轮上的那个只能简单张了张嘴巴; 1125 ¶47 没能加入最后一句的脑袋晃了晃 (“三……”). Ağzı dolu baş: 1010 ¶4, 1080 ¶46 (还未接过信，只能用三个脑袋回答), 1096 ¶4, 1127 ¶44, 1041 ¶11, 1058 ¶6. Birlikte: 1231 ¶67 (EN) four heads answered in unison. Tek baş: 691 ¶33, 924 ¶36, 1188 ¶35 (“好……”). Son parçanın noktalaması: 561 ¶65 “可以。”“还……”“不错。”, ¶69 …“金币。”; 885 ¶55 …“寄信？”, ¶58 …“金币。”
+**Denetim:** 561, 690, 721, 763, 856, 885, 924, 1010, 1041, 1044, 1080, 1096, 1125, 1127, 1188, 1231 (ZH).
+
+### N-REI1.2
+
+561 ¶69 可以。每次……一个……金币。; 724 ¶46 “可以……”“支付……”“金币……”“一万枚……”, ¶49 “你……”“可以……”“分期……”“付款……”, ¶50 (Klein: 信使挺与时俱进); 729 ¶61 “已经……”“安全……”“之后……”“记得……”“付款……”; 752 ¶15 “不用……”“着急……”“没有……”“利息……”; 763 ¶29–31 (Klein 4013 pound öder; Reinette kalanı söyler); 885 ¶58; 966 ¶20 “很好……”“以后……”“任务……”“加价……”, ¶23 “任务……”“定价……”“取决于……”“你……”“赚钱……”“的……”“能力……”; 1041 ¶11–12 “你……”“这次……”“还……”/“没有……”“支付……”“邮费……”; 1125 ¶44–45 “这……”“听起来……”“非常……”“危险……”/“要……”“加……”“报酬……”; 1188 ¶45 “需要……”“付钱……”“八百……”“金币……”, ¶52 “对……”“你……”“可以……”“欠着……”; 1231 ¶72–74 “账单……”“记录……”“1351……”“年……”/“9……”“月……”“格尔曼……”“斯帕罗……”/“欠……”“我……”“一枚……”“金币……”. Klein'ın gözünde: 1041 ¶60 neden hâlâ paraya ihtiyaç duyduğunu sormaz.
+**Denetim:** 561, 724, 729, 752, 763, 885, 966, 1041, 1125, 1188, 1231 (ZH).
+
+### N-REI1.3
+
+Hep "Kimden?" (谁寄的？) sorusuna: 1010 ¶3–4 “蘑菇……”“大王……”“的……”“上司……” (Cattleya; ¶5–7 Klein 蘑菇大王'nın Frank Lee olduğunu anlar; 1128 ¶30 Frank'in kendi mektubu: “蘑菇……”“之……”“王……”); 1016 ¶12 “那个……”“不死……”“的……”“傻子……” (Patrick Bryan; ¶14–15 lakap alışkanlığı burada başlar, Sharron dışında herkese lakap takar); 1040 ¶76 “不喜欢……”“绰号……”“的……”“莎伦……”; 1044 ¶13 “肮脏……”“黑暗……”“的……”“容器……” (Trissy, 1044 ¶36); 1080 ¶47 “傻子……”“之……”“王……” (aynı Patrick; ¶48 Klein: 这外号还进化了？); 1096 ¶4–5 “你……”“那个……”“没有……”/“脑子……”“的……”“仆人……” (Danitz, ¶6); 1127 ¶44 “被诱惑……”“的……”“笨蛋……” (Trissy'nin baştan çıkarıp mektubu taşıttığı adam, ¶47–48). Frank'e ilk izlenim: 721 ¶47 “希望……”“他……”“还没……”“死……”; 856 ¶50 (her şeyi toprağa ekmek isteyen adam).
+**Denetim:** 721, 856, 1010, 1016, 1040, 1044, 1080, 1096, 1127, 1128 (ZH).
+
+### N-REI1.4
+
+690 ¶69 “她的……”“失踪……”“非常……”“奇怪……”; 690 ¶61 (öldürüp kuklaya çevirip yol gösterttirebilir); 924 ¶40 “没有……”“知道……”“这……”“很……”“容易……”“找。”; 1000 ¶38–39 “你……”“最近……”“活泼了……”“一点……”/ (EN) Your expression… Has also… Become much… Richer…; 1044 ¶13, ¶28–29 (“因为……”“她……”“有……”/“原初……”“的……”“气息……”); 1162 ¶58–72 (Gehrman'ın kayboluşunu Leonard'a aktarır, Bernadette'in kehanetini kelimesi kelimesine tekrarlar, ¶72); 1231 ¶10 (EN) at a faster pace; 1324 ¶41–56.
+**Denetim:** 690, 924, 1000, 1044, 1162, 1231, 1324 (ZH).
+
+### N-REI1.5
+
+561 ¶55–58 (Kalvetua harabeleri yolunda görülen şato boyundaki başsız kadın; 用的是古弗萨克语); ¶59 (Klein: şatosu olan biri neden ulaklığa "başvuruyor"); ¶65, ¶69; ¶85 (bir başına kalemi ısırtıp adını yazar: Reinette Tinekerr).
+**Denetim:** 561 (ZH).
+
+---
+
 ## Ince Zangwill
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi (19'daki tarif hariç); ¶ numaraları ZH satır sırasıdır.

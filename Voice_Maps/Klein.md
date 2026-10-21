@@ -402,6 +402,14 @@ Klein'ın dış sicili aşamaya değil, **karşısındakinin ona ne gözle bakt�
 **Örnek:** _"Korkuyor musun?"_ / _"Korkmuyorum."_ / _"Yüce Efendim, siz korkuyor musunuz?"_ / (ağzının kenarı hafifçe kıpırdadı) / _"Korkuyorum."_ — _1390 ¶78–84: 害怕吗 / 不怕 / 伟大的主人，您害怕吗 / 嘴角微动 / 怕_
 **Gerekçe:** → N-M9
 
+##### M10 — Reinette Tinekerr (güçlü ulak)
+
+**Kapsam:** 561–1366 · replik ve iç ses · ulağıyla
+**Yap:** "Siz" (您) ve "Hanım" (女士): "Hanımefendi", "Tinekerr Hanım". Kibar ve temkinlidir, çünkü ulağının gücünü bilir ve bir gün boğulmak istemez (721). İş isterken rica eder ve bedeli sorar ("…yardımınızı kiralayabilir miyim? Bedeli nedir?"), bilgi için teşekkür eder. Onunla yalnızken maske oynamaz: Gehrman'ı oynamasına gerek yoktur, bu yüzden Gehrman'ın kuralları (bağlaç yasağı, "Anlıyorum" yasağı) burada geçerli değildir. Yanında başkaları varken (Anderson 690, Leonard 885, Xio ve Fors 1188) o sahnenin maskesi geçerlidir; Reinette'e hitap yine "siz"dir. Dışarı çıkan tek mizah, posta ücretini başkasına yükleyen kuru bir cümledir. Asıl alay iç sestedir: şatosu olan birinin ulaklığa neden "başvurduğu", ulağının taksitle "zamana ayak uydurduğu", lakapların "evrimleşmesi".
+**Yapma:** "Sen"; buyurgan bir efendi sesi; ona karşı açık şaka.
+**Örnek:** _"Altını Danitz ödeyecek."_ (691 ¶32) · _"Hanımefendi, bu ilk taksit; toplam 4013 pound."_ (763 ¶29) · _"Anlıyorum, haber verdiğiniz için teşekkürler."_ (924 ¶3; yalnızken) ↔ iç ses: _Şatosu olan biri neden ulaklığa başvurur?_ (561 ¶59)
+**Gerekçe:** → N-M10
+
 ---
 
 ### 3. Aşamalar `kaynak: metin | mudahale: ceviri | denetim: eklenecek`
