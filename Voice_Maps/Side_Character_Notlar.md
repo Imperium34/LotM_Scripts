@@ -1167,7 +1167,7 @@ Köken: yazarın 2020 soru-cevabı (S1: 黑夜女神在大灾变前是什么国�
 
 ### N-ECE1.7
 
-祂: 1358 ¶19 祂请了亚当和阿蒙帮忙。, ¶54; 1387 ¶70 祂确实是真正的‘欺诈之神’。 (→ Hilekârlık İlahı); 他: 1370 ¶19 也是因为他知道旧日、外神们的事情太迟了 (Roselle). Not: 1370 ¶38 他天性喜欢冒险 Amon için 他 kullanır; ¶1 ve 1387'de Amon 祂'dır. Kullanıcı kararı (2026-10-21): yazar hatası sayılır, Amon her yerde O'dur; Hata Yolu'nun Yegâneliğinden doğmuş, baştan sona bir melektir. "Biz": 1358 ¶1 我们无法战胜和阻止，只能对抗和压制; 1369 ¶37 比我们曾经生存的那个年代更加古老 (kendisi ve Klein: ışık kapısından gelenler).
+祂: 1358 ¶19 祂请了亚当和阿蒙帮忙。, ¶54; 1387 ¶70 祂确实是真正的‘欺诈之神’。 (→ Hilekârlık İlahı); 他: 1370 ¶19 也是因为他知道旧日、外神们的事情太迟了 (Roselle). Not: 1370 ¶38 他天性喜欢冒险 Amon için 他 kullanır; ¶1 ve 1387'de Amon 祂'dır. Kullanıcı kararı (2026-10-21): yazar hatası sayılır, Amon her yerde O'dur; Kapkaççı Yolu'nun (Mertebe 0: Kusur) Yegâneliğinden doğmuş, baştan sona bir melektir. "Biz": 1358 ¶1 我们无法战胜和阻止，只能对抗和压制; 1369 ¶37 比我们曾经生存的那个年代更加古老 (kendisi ve Klein: ışık kapısından gelenler).
 **Denetim:** 1358, 1369–1370, 1387 (ZH).
 
 ---
