@@ -68,6 +68,7 @@
 - **Şimal Kralı** — King of the North (北方之王); Groselle'in Gezileri'ndeki buz ejderi Ulyssan _576_
 - **mesh olmak** — to mutate (异变); salahiyet kelimesi Mesh'in fiili; gündelik başkalaşma için de aynı kelime (Frank'in mantarları, 656), Celp kararıyla aynı mantık _656_
 - **melezleme** — cross-breeding (杂交); Frank Lee'nin işi; 'melez' sıfatı _638_
+- **Aslî Menşe** — sefirah (源质; çoğul Aslî Menşeler, sefirot); Kabala göndermesi ile Çince ad arasında bir orta yol (kullanıcı kararı); Aslî Kale (源堡) bunlardan biridir; salahiyetler.yml'de zaten bu biçimde _1358_
 - **Kader Çarkı Yolu** — Wheel of Fortune pathway ("命运之轮"途径; kısaca "命运"途径); Canavar Yolu'nun Mertebe 0 adıyla anılışı (609: "怪物"途径又叫"命运之轮"途径) _609_
 - **Solgun Mevt** — Pale Death (苍白之死); Bernadette'in Sınıf 0 Mühürlü Eseri, Naaş Toplayıcı Yolu'na ait bir maske; 苍白 = Solgun, 死亡 = Mevt (salahiyet kelimeleri) _1304_
 - **Bilge Alınlığı** — Sage Frontlet (贤者额饰); Bernadette'in Sınıf 0 Mühürlü Eseri; 贤者 = Bilge (Gizem Avcısı Mertebe 2) _1303_

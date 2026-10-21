@@ -432,6 +432,66 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Örnek:** _"Bu William Amca. Yüzünü hatırlıyorum; bana kılıç kullanmayı o öğretmişti…"_ (1300 ¶50); _"Edwards Amca, burada ne işin var?"_ (1302 ¶2); _"Torunların iyi yaşıyor. Hepsi bir şekilde bir yere geldi."_ (1303 ¶16); _"Ne müthiş bir ironi…"_ (1309 ¶5)
 **Gerekçe:** → N-BER1.6
 
+### Ebedî Gece Tanrıçası (Ece) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Yedi Ortodoks İlah'tan biri, Sermedi Zulmet yol grubunun Mertebe 0'ı; Klein'ın en eski hamisi. Kitabın büyük bölümünde konuşmaz: kilisesinin dualarında, tazim isminde ve Klein'ın tahminlerinde vardır. Doğrudan sesi az ve geç gelir: 917'de Azik'e seçenek sunan, kim olduğu söylenmeyen bir kadın sesi; 1357–1370'te Klein'ın rüyasında bir izdüşüm; 1387–1388'de krallığının sınırında. Klein'la konuştuğu her sahnede sesi yumuşak, ağır ve yatıştırıcıdır (柔和, 轻缓, "ninni gibi", 安抚); sık sık hafif bir gülümsemeyle konuşur. Kozmoloji anlatırken sıralı ve kesin, bilmediği yerde açık sözlüdür. Seçimi Klein'a bırakır. Kendisi de ışık kapısından gelmiştir ve "eskiden yaşadığımız çağ"dan söz eder (1357, 1369). Asıl adı Amanises'tir ve hiç değişmemiştir: Göçten önce Kuzey Avrupalı, otuzlarında, büyük bir şirketin üst yönetiminde bir kadındır (yazarın soru-cevapları: 2020'de "Avrupalıya daha yakın kurgulandı", sonra "Kuzey Avrupalı"; wiki). Göçü İkinci Çağ'ın sonuna düşer; o çağda Flegrea'nın tâbi ilahı, Şeamet Tanrıçası Amanises'tir. Roselle ve Klein gibi Dünyalıdır, ama Çinli değildir; ikisinin ortak Çince söz dağarcığını paylaşmaz. Klein'a "sen" der; Klein ona "siz" der (Klein.md M4).
+**Onay:** baş sallama (颔首, anlatıda); sözlü onayı yoktur.
+**Sicil (yorum): Ece katmanı.** Dayanak: sozluk.yml'deki "Ece" kararı. Unvan, öbür hükümranlık kelimelerinin Osmanlı katmanından bilerek daha eski bir Türkçeye çekilmiştir; Tazim ismi de "bekadan daha baki" diye kıdemden eski görünmeye çalışır. Konuşmasında bu, gündelik kelimelerde öz Türkçeye bir meyil olarak görünür (uyku, karanlık, sessizlik, düş): ninni ritmi, kısa ve yumuşak sesli kelimeler, acelesiz cümleler. Sözlük terimleri olduğu gibi kalır (Aslî Kale, Aslî Menşe, Kader, Ebedi Zulmet Nehri); "kader" yerine "yazgı" gibi bir öz Türkçe karşılık terimin yerine geçmez. Divan süsü yoktur: Klein'a yakındır, uzak değildir (Divan_Rule 1.02). Kilisenin dua dili (Ulu Ece'ye medholsun) onun ağzına girmez.
+
+##### ECE1.1 — Ninni: yumuşak, acelesiz, yatıştırıcı
+
+**Kapsam:** 1357–1388 · Klein'la
+**Yap:** Cümleler tam, sakin ve acelesizdir. Anlatı sesini "yumuşak", "ağır", "ninni gibi", "yatıştırır gibi" diye işaretler; bu işaretler kalır. Kısa öğütleri ve buyrukları bir annenin sakinliğiyle verir. Gülümsemesi anlatıdadır; repliğe ünlem ya da gülüş sesi girmez.
+**Yapma:** Tanrısal bir tantana, uzak bir saray dili; ünlem; duygusal bir şefkat tiradı (şefkat tonda, kelimede değil).
+**Örnek:** _"İnsanlığını iyi korumuşsun."_ (1370 ¶30); _"Hazırlığını yap. Bir an önce Antigonus'la görüş."_ (1370 ¶34); _"Senin için orada olağan dışı bir tehlike var. Ruhun dinginleşene kadar beklesen iyi olur."_ (1358 ¶50)
+**Gerekçe:** → N-ECE1.1
+
+##### ECE1.2 — Kozmoloji: sıralı, karşıtlıklı, kesin
+
+**Kapsam:** 1357–1387 · Esrarın Hükümdarı, Aslî Yaradan, Yüce Kadimler, Yegânelik
+**Yap:** Uzun anlatımı sıralı ve sakin kurar. Kaynağın karşıtlık dizileri (是…也是…) korunur ve Türkçede de aynı ritimle döner. Kesin olanı kesin, bilinmeyeni bilinmeyen diye söyler ("kimse bilmez; Yedi Nur bile"). Sıralamayı en iyiden en kötüye düz bir merdiven gibi verir (1387).
+**Yapma:** Anlatımı bilmeceye ya da vaaza çevirmek; karşıtlık dizisini kısaltmak ya da süslemek.
+**Örnek:** _"Birleşmek bir içgüdüdür. Derece yükseldikçe içgüdü de güçlenir."_ (1369 ¶31); _"Aslî Yaradan kâinatın hem kurucusu hem yıkıcısıydı; gündüzdü, geceydi; kudsiyetin ışığıydı, tereddinin hâviyesiydi; bütün çelişik kavramların ve simgelerin toplamıydı."_ (1369 ¶35); _"En kötüsü, Aslî Menşe'yle ancak en son adımda bütünleşmektir."_ (1387 ¶75)
+**Gerekçe:** → N-ECE1.2
+
+##### ECE1.3 — Açık sözlü belirsizlik, kesin risk
+
+**Kapsam:** 1358–1370 · Klein'ın soruları
+**Yap:** Bilmediğini düz ve kısa söyler, aynı tonda. Riski ölçüyle verir: bir saniye erken, bir saniye geç; yarı yarıya. Kendi hesabını da saklamaz (Amon'a yatırım yapmak daha akıllıca olurdu, 1370).
+**Yapma:** Belirsizliği gizemli bir kaçamağa çevirmek; riski yumuşatmak.
+**Örnek:** _"Sana kesin bir cevap veremem."_ (1370 ¶24); _"Bilmiyorum."_ (1370 ¶26); _"Başka biri olsa kesinlikle hayır. Ama Amon'sa ihtimal yarı yarıya."_ (1370 ¶36–37); _"Bir saniye erken alırsan ayin hiçbir işe yaramaz; bir saniye geç alırsan Antigonus şirazeden çıkma kaderini sırtlanır."_ (1358 ¶29)
+**Gerekçe:** → N-ECE1.3
+
+##### ECE1.4 — Seçimi Klein'a bırakmak
+
+**Kapsam:** 1370, 1387 · Klein'ın yolu
+**Yap:** Yolları sayar, artısıyla eksisiyle söyler, kararı ona bırakır ve bunu açıkça söyler. Yardımının sınırını da söyler: "asıl iş sende".
+**Yapma:** Buyurmak ya da bir yolu dayatmak; seçimi duygusal bir baskıyla yönlendirmek.
+**Örnek:** _"Elbette ne seçeceğin senin özgürlüğün; kimse seni zorlamaz, kimse zorlayamaz da."_ (1370 ¶9); _"Bir yolun daha var: Pallez'in yöntemiyle kendi dereceni düşürür, Aslî Kale'yi Amon'a çaldırırsın."_ (1370 ¶20)
+**Gerekçe:** → N-ECE1.4
+
+##### ECE1.5 — Gizli ses (917)
+
+**Kapsam:** 916–917 · Azik'e, Klein dinlerken
+**Yap:** Kim olduğu söylenmez; anlatı yalnız "inişsiz çıkışsız, belli ki bir kadına ait bir ses" der. Seçenekleri numaralı ve düz sayar, sonuçlarını tek tek söyler. ECE1.1'in yumuşaklığı burada yoktur. Okur bu sesi, kimliği açıklanmadan 1357'deki izdüşümle aynı kişi diye tanımamalıdır (0.7: gizli kimlik).
+**Yapma:** Bu sese ninni tonu, gülümseme ya da Ece katmanının sıcaklığını vermek.
+**Örnek:** _"Üç seçeneğin var. Birincisi, yoluna devam edip bütünlüğü aramak; Salinger senin içinden yeniden doğar."_ (917 ¶5); _"Üçüncüsü, her şeyden vazgeçip hemen gitmek. Bulunduğun mertebede sonsuza dek kalırsın…"_ (917 ¶7)
+**Gerekçe:** → N-ECE1.5
+
+##### ECE1.6 — Dünyalı, ama hemşehri değil
+
+**Kapsam:** 1357–1388 · Klein'la, Dünya'dan söz ederken
+**Yap:** Dünya'dan genel ve kısa söz eder ("eskiden yaşadığımız çağ", "insanlığımızın filizlendiği dönem"); Çin'e özgü bir gönderme, deyim ya da atasözü kullanmaz. Klein'la Jotunca konuşur (1370). Klein'ın Çince bir atasözünü ona aktarması bu yüzden tuhaf kaçar ve anlatı bunu söyler; o tuhaflık çeviride korunur (Klein.md M4).
+**Yapma:** Ona Klein'ın ya da Roselle'in Dünya ağzını (internet dili, Çince deyim, "hemşehri") vermek; Türkçe yerelleştirmede ona Türk halk deyimleri ya da atasözleri yükleyip Klein'la ortak bir "memleket" dili kurmak.
+**Gerekçe:** → N-ECE1.6
+
+##### ECE1.7 — Zamirler
+
+**Kapsam:** bütün replikler
+**Yap:** İlahlar ve Yüce Kadimler için büyük harfli O (祂): Amon, Âdem, Antigonus, Esrarın Hükümdarı. Roselle için küçük harfli "o" (他, 1370 ¶19). "Biz" yalnız sıradan birinci çoğuldur (我们无法战胜…, 1358 ¶1); Soytarı'nın "Biz"i değildir (Klein.md M0.3).
+**Yapma:** Roselle'e büyük harf vermek; kendinden üçüncü şahısla söz etmek.
+**Gerekçe:** → N-ECE1.7
+
 ---
 
 ## 4. Moretti Ailesi ve Gece Şahinleri (Tingen Yan Karakterler)

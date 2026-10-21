@@ -1126,6 +1126,52 @@ Kapanış: 669 ¶57 嗓音未变地说道：梦境要结束了。; 1011 ¶57 如
 
 ---
 
+## Ebedî Gece Tanrıçası (Ece)
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
+> **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm (konuşan):** 916–917 (Azik'e seçenekler; kimliği gizli), 1357 (izdüşüm, ışık kapısı), 1358 (Antigonus, Âdem ve Amon, Ebedi Zulmet Nehri), 1369–1370 (Calderón'un derinliği; Esrarın Hükümdarı ile Kadir-i Mutlak; seçenekler), 1387–1388 (krallığının sınırında). Görünür, konuşmaz: 1376 (Hornacis zirvesinde Amon'a karşı). Kimliği: 918, 1118 (Klein'ın tahminleri; Amanises).
+> **Klein.md ile bağ:** Klein'ın sesi M4'tedir ("siz", saygılı, sakin; eli göğsünde selam). 1357–1370 arasında Klein'ın ona 8 replikte 您 vardır; 1387–1388'de doğrudan hitap yoktur.
+> **Kararlar (2026-10-21):** Ece katmanı onaylandı; 源质 → "Aslî Menşe" (çoğul "Aslî Menşeler"; words.md); Amon için büyük harfli O (ECE1.7).
+> **Sözlükte olmayanlar (soru):** 永眠 (eternal slumber; örnekte "ebedî uyku"), 层次 (level; örnekte "derece", Mertebe 序列'e ayrılı), 支柱 (pillar; kullanılmadı).
+
+### N-ECE1.1
+
+Ses: 1357 ¶83 嗓音轻缓地说道; 1358 ¶8 (EN) gently like a lullaby; ¶19 嗓音柔和地回应道; ¶54 轻柔舒缓地说道; 1369 ¶31 嗓音轻柔舒缓地说道; ¶35 用带着安抚意味的嗓音道; 1387 ¶66 嗓音轻柔地提醒道; ¶69 用一种似乎在安抚克莱恩精神的语气道. Gülümseme: 1357 ¶79 带着一点笑意; 1358 ¶45 语含些许笑意; 1369 ¶16 (Klein onun gülümsediğini hisseder), ¶50–51; 1370 ¶1 语带少许笑意, ¶33 轻笑. Öğüt ve buyruk: 1358 ¶49 有的事情，等你回来再问。; ¶50 于你而言，那里有不同寻常的危险，你最好等精神状态稳定下来再去。; ¶52 等你醒来，举行一个祈求赐予的仪式…; ¶57 你暂时不用关注。; 1370 ¶30 你的人性维持得不错。; ¶34 去做准备吧，尽快去见安提哥努斯。 Sicil dayanağı: sozluk.yml › Ebedî Gece Tanrıçası, cevirmen_notu ('Ece' öz/eski Türkçe katmanı).
+**Denetim:** 1357–1358, 1369–1370, 1387 (ZH).
+
+### N-ECE1.2
+
+1369 ¶20 除了‘源堡’和‘混沌海’，其余所有源质都被那位‘诡秘之主’封印在了西大陆。; ¶26–28 并非没有声息。…; ¶31 聚合是本能。/ 层次越高，本能越强。; ¶35 最初那位造物主是宇宙的开创者，也是终结者，是白昼，也是黑夜，是神圣之光，也是堕落深渊，是所有矛盾概念和象征的聚集体。 (神圣 = Kudsiyet, 堕落 = Tereddi, 深渊 = Hâviye; salahiyetler.yml); ¶36–43 (sıralı tarih anlatımı); ¶41 没谁知晓，就连灵界七光都无从了解; ¶54–56; 1357 ¶83–84; 1358 ¶1, ¶5, ¶8–10, ¶13, ¶19–26; 1387 ¶70–75 (先成为一条途径的序列0…是最优的顺序。/ …是不好也不坏的顺序。/ 到最后一步才融合源质，是最差的选择。).
+**Denetim:** 1357–1358, 1369, 1387 (ZH).
+
+### N-ECE1.3
+
+1358 ¶29 “有很大的风险。”…平静回应道，“命运并不好承受。如果不能在目标将要失控的那极短暂时间内收回命运，事情将毫无疑问地失败：早一秒收回，仪式不会有任何效果；晚一秒收回，安提哥努斯将背负上失控疯狂的命运…”; 1370 ¶1 如果只是为了扶持一位‘诡秘之主’出来，那我更应该押注阿蒙，至少祂成功的可能要比你高很多。; ¶24 坦然说道：我无法给你确定的答案。; ¶26 “我不知道。”…以同样的口吻回答道。; ¶36–38 如果是别的存在，那肯定没有。/ 但若是阿蒙，有一半的概率。/ 他天性喜欢冒险，寻求刺激。 (概率 = İhtimal salahiyeti, gündelik anlamda); 1387 ¶66 这不能维持太久，只是将事情推迟一段时间。
+**Denetim:** 1358, 1370, 1387 (ZH).
+
+### N-ECE1.4
+
+1370 ¶9 当然，怎么选择是你的自由，没有谁会逼迫你，也没有谁能逼迫你。你完全可以选择停在某一个阶段…‘漫游’去别的星系别的星球…再造一个文明。; ¶17; ¶19–20 你还有另外的选择：利用帕列斯的办法，自降位格，并让阿蒙窃取走‘源堡’。…也不用太累。; 1387 ¶71 我可以给你施加一定的祝福，但最关键的还是你自己。; 1358 ¶42–43 我可以尝试帮你，但我需要媒介才能有足够的把握.
+**Denetim:** 1358, 1370, 1387 (ZH).
+
+### N-ECE1.5
+
+916 ¶68 一只纤细白皙的女性手掌凭空出现，按在了阿兹克额头的鸟型黄金饰品之上。; 917 ¶5 一道没有起伏但明显属于女性的声音响了起来：你有三个选择：一是继续向前，寻求完整，让萨林格尔从你体内重生；; ¶6 二是由我帮你抽出那一半灵魂…; ¶7 三是放弃所有，直接离开，你将永远停在当前层次，无法再往上晋升…; ¶12 (Klein: 说话的‘女士’). Kimlik sonradan: 918 ¶13–18 (Klein'ın tahmini), 1118 (Amanises). Kuş biçimli altın süs: 1369 ¶10 Tanrıça aynı süsü elinde tutar.
+**Denetim:** 916–917, 918, 1369 (ZH).
+
+### N-ECE1.6
+
+Köken: yazarın 2020 soru-cevabı (S1: 黑夜女神在大灾变前是什么国籍? Cuttlefish: 设定上更接近欧洲人; İng. "She's set to be closer to being a European"); daha sonraki soru-cevap (kullanıcının aktardığı, 2025): 阿曼尼西斯是真名，没变过，北欧人 (aynı cevapta: Farbauti Avustralyalı, gerçek adı henüz belirlenmemiş); wiki (Evernight Goddess/History, Pre-Epoch, spoiler bölümü): Kuzey Avrupa, büyük bir şirketin üst yönetimi, otuzlarında, Hela'nın yakın dostu; ruhu Arz ve Arşın Kutlu Semavî Muazzezi (福生玄黄天尊; sozluk.yml: Semavî Muazzez) tarafından ele geçirilip Aslî Kale'nin üstüne asılmış. Uyanış: İkinci Çağ'ın sonu (wiki; Ortodoks kiliselerin mitine göre). Metin: 1357 ¶79 我不确定你在那扇光门之上悬吊于哪个位置。从那里离开后，我就再也没有回去过。; 1369 ¶37 比我们曾经生存的那个年代更加古老的历史; 1370 ¶11–13 (Klein: 我不清楚罗塞尔有没有说过一句话：躲得了一时，躲不了一世。/ 他和“黑夜女神”对话用的是巨人语，那句俗语翻译过来略有点奇怪：/ 躲避只是临时的策略，无法作为长久的纲领。). Okuma notu (kural değil): seçenekleri artısı eksisiyle sayıp en iyiden en kötüye sıralaması (1370 ¶9–20, 1387 ¶73–75) eski bir yöneticinin alışkanlığı gibi okunabilir; kaynak bunu söylemez.
+**Denetim:** 1357, 1369–1370 (ZH); köken bilgisi metin dışı (yazar soru-cevabı, wiki).
+
+### N-ECE1.7
+
+祂: 1358 ¶19 祂请了亚当和阿蒙帮忙。, ¶54; 1387 ¶70 祂确实是真正的‘欺诈之神’。 (→ Hilekârlık İlahı); 他: 1370 ¶19 也是因为他知道旧日、外神们的事情太迟了 (Roselle). Not: 1370 ¶38 他天性喜欢冒险 Amon için 他 kullanır; ¶1 ve 1387'de Amon 祂'dır. Kullanıcı kararı (2026-10-21): yazar hatası sayılır, Amon her yerde O'dur; Hata Yolu'nun Yegâneliğinden doğmuş, baştan sona bir melektir. "Biz": 1358 ¶1 我们无法战胜和阻止，只能对抗和压制; 1369 ¶37 比我们曾经生存的那个年代更加古老 (kendisi ve Klein: ışık kapısından gelenler).
+**Denetim:** 1358, 1369–1370, 1387 (ZH).
+
+---
+
 ## Âdem ve Amon
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi; ¶ numaraları ZH satır sırasıdır. Bütün örnekler Claude'un çevirisidir.
@@ -1335,6 +1381,7 @@ Güneş: 140 歌颂者…他们的口号是：“让我们赞美太阳吧！”;
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
 > **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
 > **Görünüm (konuşan):** 638–657 (İstikbal'de yolculuk), 671–675, 721 (mektup; Reinette'i inceler), 825, 859 (mektup), 995 (Zanaatkâr Cielf), 1013 (mantar odası), 1089 (hayali), 1128 (mektup), 1219, 1240, 1309, 1324, 1391. Klein'ın iç sesindeki Frank şakaları Klein.md'dedir (4. Aşama: "Frank kendini ekerse bir sürü Frank çıkar", 816 ¶22).
+> **Metin dışı:** yazarın soru-cevabı (kullanıcının aktardığı, 2025): 肯定还活着，母亲途径 (kitap sonrası hâlâ hayatta, Ana Yolu'nda).
 > **Başka haritalarla bağ:** Cattleya (CAT; kaptanı), Reinette (REI1.3, Mantar Kralı), Klein.md (Gehrman maskesi; 1128 ¶41–43 Klein'ın cevap mektubu).
 > **Ad kararları (2026-10-21, words.md):** 异变 → "mesh olmak" (salahiyetler.yml 异变 = Mesh; Celp kararıyla aynı mantık), 杂交 → "melezleme", 毒素专家 → "Zehir Uzmanı", 大副 → "ikinci kaptan", 未来号 → "İstikbal"; 蔷薇主教 = Gül Ruhbanı (sozluk.yml). Yakarışta 您 → "sen" onaylandı.
 

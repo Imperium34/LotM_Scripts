@@ -356,9 +356,10 @@ Klein'ın dış sicili aşamaya değil, **karşısındakinin ona ne gözle bakt�
 
 ##### M4 — Saygı duyulan üst (Ebedî Gece Tanrıçası)
 
-**Kapsam:** Tanrıça'yla doğrudan konuşma · replik · en açık hâli 1387–1388
-**Yap:** Saygılı ve sakin: eli göğsünde eğilerek selam verir, kısa onaylar ("Anladım."). Kendi kaderini gülümseyerek ve kuru bir mizahla anabilir; kararını kısa ve düz söyler.
-**Yapma:** "Biz" ya da Soytarı sicili (M0.3); ağdalı, dalkavukça hitap; kaderini anarken dramatize etme.
+**Kapsam:** Tanrıça'yla doğrudan konuşma · replik · 1357–1370 (rüya izdüşümü), 1387–1388
+**Yap:** "Siz" (您; 1357–1370'te her hitapta). Saygılı ve sakin: eli göğsünde eğilerek selam verir, kısa onaylar ("Anladım."). Kendi kaderini gülümseyerek ve kuru bir mizahla anabilir; kararını kısa ve düz söyler.
+Tanrıça Dünyalıdır ama Çinli değildir (Kuzey Avrupalı; yazarın soru-cevabı) ve onunla Jotunca konuşur: Klein bir Çince atasözünü "Roselle böyle bir söz söylemiş miydi" diye aktarır, söz Jotuncaya çevrilince tuhaf kaçar ve anlatı bunu belirtir (1370 ¶11–13). Türkçede atasözü verilir, ardından anlatıdaki tuhaf Jotunca karşılığı düz ve kuru kalır.
+**Yapma:** "Biz" ya da Soytarı sicili (M0.3); ağdalı, dalkavukça hitap; kaderini anarken dramatize etme. Tanrıça'ya "hemşehri" (老乡, yalnız Roselle'e, M3.2) ya da ortak bir Dünya şakası.
 **Örnek:** _"Bu iyi bir yöntem; kim uyanırsa uyansın, bir Gizemlerin Efendisi doğacak."_ … _"Bu benim kendi seçimim."_ — _1387 ¶76–80: 这是一个好办法… / 这是我自己的选择; gülümseyerek, kuru ve kararlı_
 **Gerekçe:** → N-M4
 
