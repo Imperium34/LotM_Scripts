@@ -441,7 +441,7 @@ def denetle(kayitlar, bolumler, cumle_ici_yuksek=False, maske=()) -> Bulgular:
 
     # En uzun terim once denenir ve kapsadigi aralik isaretlenir. Boylece
     # "Gizem Avcısı" araligi tuketir ve "Avcı" o konumu goremez. Ayni sorun
-    # Ana/Toprak Ana, Güneş/Ebedi Yanan Güneş, Ölüm/Ölüm Sefiri, Ay/Kadim Ay
+    # Ana/Toprak Ana, Güneş/Ebedî Yanan Güneş, Ölüm/Ölüm Sefiri, Ay/Kadim Ay
     # ciftlerinde de var: kisa ad uzun adin icinde sayiliyordu.
     uzun_once = sorted(kayitlar, key=lambda k: -len(k.tr))
 

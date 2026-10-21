@@ -562,6 +562,7 @@ DUSEN = frozenset(
         "oğul",
         "ömür",
         "resim",
+        "rükün",
         "sabır",
         "şehir",
         "şekil",

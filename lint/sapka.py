@@ -175,7 +175,7 @@ NISBET_GUVENLI = {
     "mizahi": "mizahî",            # keşif; "mizah"ın belirtmesi "mizahı"
     "asli": "aslî",                # keşif; "asıl"ın belirtmesi "aslı"
     "semavi": "semavî",            # keşif; sözlükte "Semavi Muazzez"
-    "ebedi": "ebedî",              # keşif; sözlükte "Ebedi Gece Tanrıçası".
+    "ebedi": "ebedî",              # keşif; sözlükte "Ebedî Gece Tanrıçası".
                                    # "ebed"in belirtmesi "ebedi" olur ama
                                    # o isim metinde fiilen kullanılmıyor
 }
