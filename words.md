@@ -60,6 +60,13 @@
 - **İhtimal Zarı** — Die of Probability (概率之骰); Canavar Yolu'nun Yegâneliği, Hayat Ekolü'nün Mühürlü Eseri; salahiyet kelimesi 概率 = İhtimal (salahiyetler.yml) _606_
 - **Dönence** — Yesterday Once More (昨日重现); Klein'ın tılsımı, Mazinin Dehlizleri'ndeki geçmiş benliğinden güç ödünç aldırır. Çince ad Carpenters şarkısının Çince adıdır; Türkçede tanıdık bir şarkı adıyla (Barış Manço, "Dönence") yerelleştirildi, Mertebe adlarındaki yerelleştirmenin eşyalara uzanan ilk örneği (kullanıcı kararı, 2026-10-21) _1124_
 - **Kader Çarkı Yolu** — Wheel of Fortune pathway ("命运之轮"途径; kısaca "命运"途径); Canavar Yolu'nun Mertebe 0 adıyla anılışı (609: "怪物"途径又叫"命运之轮"途径) _609_
+- **Solgun Mevt** — Pale Death (苍白之死); Bernadette'in Sınıf 0 Mühürlü Eseri, Ölüm Yolu maskesi; 苍白 = Solgun, 死亡 = Mevt (salahiyet kelimeleri) _1304_
+- **Bilge Alınlığı** — Sage Frontlet (贤者额饰); Bernadette'in Sınıf 0 Mühürlü Eseri; 贤者 = Bilge (Gizem Avcısı Mertebe 2) _1303_
+- **Sihirli Dilek Lambası** — Magic Wishing Lamp (许愿神灯), 0-05; 神灯 Alaaddin'in lambasını çağırır, 'sihirli lamba' aynı işi görür; içindeki 灯神 = Lamba Cini _1145_
+- **Görünmez Hizmetkâr** — Invisible Servant (无形仆役); Bernadette'in çağırdığı ruhanî hizmetkâr; 无形 sade 'görünmez' ('Ketm' 隐匿'ye, 'Sırrakadem' 隐秘'ye ayrılı) _1300_
+- **Huzurlu Uyku Borazanı** — Sleep Bugle (安眠号角); insan kafatasından borazan; 安眠'ın 'derin uyku / huzur içinde uyu' ikiliği 'huzurlu uyku'da korunur _828_
+- **Gençlik Pınarı** — Fountain of Unaging (不老泉); Agalito'nun iddiası; tanıdık deyim seçildi, Solmaz (不老魔女) bağı bağlamdan anlaşılır (kullanıcı kararı, 2026-10-21) _674_
+- **Gizem Canlandırması** — Mystical Re-enactment (神秘重现); masalların gerçeğe dönüştüğü Gizem Avcısı kabiliyeti; 'canlandırma' hem temsil hem hayat vermek _1199_
 - **ışıltı** — büyünün bıraktığı ruhanî ışık (魔法的灵光 → "büyü ışıltısı"); "Hâle" canlının kendi ışımasına ayrılmıştır
 - **ruh göçü** — Transmigration (穿越)
 - **ruh göçmeni** — transmigrator (穿越者)
@@ -221,6 +228,7 @@
 
 ## Cities & Geography
 
+- **Zümrüt Şehir** — Emerald City (翡翠城); Bernadette'in yurdu; Oz göndermesi, Türkçe Oz çevirilerindeki ad _1238_
 - **Sonia Denizi** — Sonia Sea (苏尼亚海)
 - **Desi Körfezi** — Desi Bay (迪西海湾)
 - **Enmat Limanı** — Enmat Port (恩马特港)
@@ -585,6 +593,7 @@
 
 ## Transport & Ships
 
+- **Fecr** — the Dawn (黎明号); Bernadette'in gemisi; Fecr-i Anasır ile aynı 黎明 → Fecr istisnası (salahiyet kelimesi Şafak olurdu); 黎明号的主人 → 'Fecr'in Sahibi' (678) _669_
 - **umumî at araba** — public carriage (公共马车); raylı/raysız belirtilmediğinde _56_
 - **raylı umumî at araba** — railed public carriages (轨道公共马车)
 - **raysız umumî at araba** — unrailed public carriages (无轨公共马车)

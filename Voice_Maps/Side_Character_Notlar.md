@@ -1057,7 +1057,7 @@ Hamle: 770 ¶55–60 (Klein 您的脐带血…… der demez 哇！; Klein geri �
 > **Görünüm (konuşan):** 662–663 (Sonia Denizi rüyasındaki kütüphane), 668–669 (kara manastır), 674 (Future'da), 828 (Backlund, bezelye sarmaşıkları), 1011, 1092–1093 (Backlund; Roselle, George III), 1145 (lamba dileği), 1161–1162 (kehanet), 1238–1239 (Cattleya'ya veda), 1300–1306 (ilkel ada, Roselle'in mezarı; büyük ölçüde onun bakış açısı), 1309 (Bilge), 1349, 1372, 1388. Anılır: 264, 323, 714, 866 (Roselle'in günlükleri; Roselle haritası), 678 (Tarot'ta "Şafağın sahibi").
 > **Başka haritalarla bağ:** Roselle haritası (ROS) babanın tarafını tutar (küçük prensesim, kendinden "baban" diye söz etmesi). Cattleya haritası (CAT1.5) Bernadette'i "hem kaptan, hem hoca, hem anne" diye anar. Klein ona her zaman Gehrman Sparrow olarak "sen" der; Klein.md'deki Gehrman maskesi kuralları geçerlidir.
 > **Hitap kararları (2026-10-21):** 女王陛下 → "Majesteleri" (Cattleya, 1238 ¶64; "Tünaydın, Majesteleri."); 公主殿下 → "Prensesim" (Edwards, 1302 ¶22; Roselle'in "küçük prensesim"iyle yankı). Sicil (yorum) katmanı onaylandı; aile konularına girmez.
-> **Sözlükte olmayanlar (soru):** 无形仆役 (Invisible Servant), 许愿神灯 (Magic Wishing Lamp, 0-05), 苍白之死 (Pale Death), 贤者额饰 (Sage Frontlet), 安眠号角 (Sleep Bugle), 黎明号 (gemisi Dawn), 翡翠城 (Emerald City), 不老泉, 神秘重现 (Mystical Re-enactment). Örneklerden kaçınıldı.
+> **Ad kararları (2026-10-21, words.md):** 无形仆役 → Görünmez Hizmetkâr, 许愿神灯 → Sihirli Dilek Lambası (0-05), 苍白之死 → Solgun Mevt, 贤者额饰 → Bilge Alınlığı, 安眠号角 → Huzurlu Uyku Borazanı, 黎明号 → Fecr ("Fecr'in Sahibi", 678), 翡翠城 → Zümrüt Şehir, 不老泉 → Gençlik Pınarı, 神秘重现 → Gizem Canlandırması.
 
 ### N-BER1.1
 
