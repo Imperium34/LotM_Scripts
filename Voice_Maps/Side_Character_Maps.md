@@ -136,7 +136,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Tüm görünümleri · Klein, inananlar, herkes
 **Yap:** Kısa, düz, eşit ritimli cümleler; ünlem yok, kahkaha yok (yalnız anlatıdaki "yumuşak bir gülümsemeyle"). Genelleyen "-dır/-dir" cümleleri ve sade, zamansız kelimeler: kurban, gerekli, kaçınılmaz, huzur. Bilgiyi bir ilmihal gibi, sakin ve eksiksiz verir; bilmediğini de aynı sakinlikle söyler ("Bunu şimdilik kimse doğrulayamaz.").
 **Sicil (yorum): mürşit sohbeti.** Âdem'in tarafı Türkçede zaten tasavvufla renklenmiştir: Gurûb Münzevîleri Meclisi, Tahayyül Meleği, Seyirci Yolu'nun Hülya Sâliki, Mümeyyiz ve Musavvir'i; Seyirci Yolu da İbrahimî Tanrı tasavvurunu temsil eden Kadir-i Mutlak yol grubundadır. Bu yüzden onun vaiz ve itirafçı tavrının Türkçe karşılığı bir mürşidin sohbetidir. Öğüt verdiği, yönlendirdiği, teselli eder gibi konuştuğu anlarda az ve yerinde tasavvuf kelimesi girer: hâl, nefis, sabır, takdir, imtihan, rıza. Anlatıdaki "inanana öğüt verir gibi" (就像在开解信徒) bir şeyhin müridine konuşması gibi verilir. Kozmoloji ve bilgi anlatırken (1345–1348'deki uzun açıklamalar) bu katman girmez; o kısımlar sade ve kesin kalır. Gümüş haç ve beyaz cüppe dünyanın içindeki işaretlerdir, olduğu gibi kalır. Amon bu dağarcığı hiç kullanmaz.
-**Yapma:** Amon'un oyun dağarcığı ("ilginç", "eğlenceli", "tahmin et"), "heh heh", "değil mi?" eki; ağdalı Divan dili; öfke, alay, ünlem; tasavvuf kelimelerini bilgi kısımlarına yığmak.
+**Yapma:** Amon'un oyun dağarcığı ("ilginç", "eğlenceli", "tahmin et"), "heh heh", "değil mi?" eki; A Bey'in coşkulu nüzul ve kurban dili (AUR, Âdem'den ayrım); ağdalı Divan dili; öfke, alay, ünlem; tasavvuf kelimelerini bilgi kısımlarına yığmak.
 **Örnek:** _"Gidebilirsin."_ (1150); _"Bu, gerekli bir kurbandı."_ (1346); _"Anlamıyorsun, çünkü yeterince bilmiyorsun."_ (1348); _"Nefsi yorulmuştu. Dinlenmek istiyordu, hür olmak istiyordu; birkaç saniyeliğine de olsa."_ (1347 ¶76, 他太累了…; öğüt anı: 'yoruldu' yerine 'nefsi yorulmuştu', içerik aynı); _"Şimdilik bunu kimse doğrulayamaz. Kimilerinin denediğini sanıyorum; ne de olsa birleşme güçlü bir içgüdüdür. Ama sonucu bilinmiyor."_ (1347)
 **Gerekçe:** → N-ADM1.1
 
@@ -2002,6 +2002,102 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Örnek:** _"Bu davaya Salahiyetli Tecziyeciler bakmıyor; kraliyet, ... davayı üstlendi."_ (437); _"Backlund Bisiklet Şirketi'nin %10 hissesi satılmıştır, lütfen artık rahatsız etmeyiniz!"_ (768)
 **Gerekçe:** → N-ISG1.5
 
+---
+
+### Dorian Gray Abraham (Fors'un hocası) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Abraham ailesinden, Çırak Yolu'nda Mertebe 7, Müneccim. Aile, Kapı Yolu'nun Melekler Beyi Kapı Efendi'nin soyudur; dolunayda duyulan hezeyanlar soyun üyelerini birer birer şirazeden çıkarır ve yüksek Mertebeye çıkmalarını engeller. Aile bu yüzden dışarıdan öğrenci yetiştirir; bunu hâlâ sürdüren tek kişi Dorian'dır (786). Yaşı ilerlemiştir ve Mertebe 7'de takılı kalmıştır (1076). İki öğrencisi Fecir Tarikatı'na geçerek aileyi satmıştır: Lewis Vean (Elçi; 786'da Gehrman'ın elinde ölür) ve Botis (1076'da anılır, 1207'de ölümü doğrulanır). Fors ona bu iki ölümle yaklaşır. Temkinli, sıcak ama ciddi bir hoca; ailenin acısını kendiyle alay eden kısa bir cümleyle söyler. 1207'den sonra Soytarı'ya iman eder ve ailesinde ölçülü olanın sesi olur (1298). Fors'a önce "Wall Hanım" (沃尔女士, 404–408), hoca olduktan sonra adıyla seslenir; Fors ona "Hocam" (老师) der.
+**Onay:** _"Evet."_ (1293 ¶19, 对。); başını hafifçe sallar (轻轻颔首).
+
+##### DOR1.1 — Eski bir ailenin temkini
+
+**Kapsam:** 404–1298 · yabancılar, Fors, aile işleri
+**Yap:** Karar vermeden önce kehanete bakar (408 ¶6, kristal küre), kapının kilidini yoklar (1076 ¶5). Merak ettiğini yemek sırasında, laf arasında sorar (408 ¶10). Ailenin meselesini kapalı tutar: tek bir cümleyle konuyu keser. Bildiğinden azını söyler ve bunu da düz söyler (786 ¶38).
+**Yapma:** Aile sırlarını uzun uzun anlatmak; soruyu doğrudan ve ısrarla sormak.
+**Örnek:** _"Bunun seninle ilgisi yok; ailemizin meselesi."_ (431 ¶69); _"Ben de pek bir şey bilmiyorum. Yalnızca Kapı Efendi'nin Abraham ailesinin atası olduğunu biliyorum."_ (786 ¶38)
+**Gerekçe:** → N-DOR1.1
+
+##### DOR1.2 — Hoca: ciddi uyarı, sıcak gurur
+
+**Kapsam:** 431–1355 · Fors
+**Yap:** Ders verirken kuralı eksiksiz ve sıralı söyler; uyarıyı ağırbaşlı bir tonla (郑重) ve "unutma" diye bağlar (646 ¶67–68). Fors'u tehlikeden kesin bir emirle çeker. Gururunu açıkça söyler; sıcaklığı da kendini tiye alan bir şakayla gelir. Fors'a "sen" der.
+**Yapma:** Uyarıyı yumuşatmak ya da şakayla geçiştirmek; gururu süslü övgülerle uzatmak.
+**Örnek:** _"Unutma, o kaybolmayı küçümseme; mutlaka bir an önce çaresine bak."_ (646 ¶68); _"Bu, son on yılda yaşadığım en büyük sürpriz."_ (646 ¶37); _"Bu fikirden vazgeç!"_ (786 ¶57); _"Merak etme, hocanın biraz varlığı var."_ (787 ¶32); _"Merak etme, ben buradayken bir şey olmaz."_ (432 ¶64)
+**Gerekçe:** → N-DOR1.2
+
+##### DOR1.3 — Lanet karşısında acı alay
+
+**Kapsam:** Aile laneti, Kapı Efendi, hain öğrenciler
+**Yap:** Acı, kısa bir cümle ve anlatıdaki bir gülüşle gelir: kendiyle alay eden bir gülümseme (自嘲), acı bir tebessüm (苦笑), bir iç çekiş. Cümle yargı bildirir, açıklamaz. Hain öğrencisinin yeteneğine üzülür.
+**Yapma:** Acıyı uzun bir yakınmaya ya da öfkeye çevirmek; ironiyi açıklamak.
+**Örnek:** _"Ne ironi…"_ (431 ¶66); _"Kader bu işte…"_ (1207 ¶23); _"Botis, Çırak Yolu'na en yatkın gördüğüm insanlardan biriydi; kim bilirdi sonunda bu hâle geleceğini…"_ (1207 ¶29)
+**Gerekçe:** → N-DOR1.3
+
+##### DOR1.4 — Gehrman Sparrow'un karşısında
+
+**Kapsam:** 1207–1208 · Gehrman, "üç dakika"
+**Yap:** Vakit dar olduğu için doğrudan konuşur: kısa soru, kısa şart. Bilinmeyen bir inanca karşı eski bir ailenin temkiniyle sorar; teklifi kabul ederken bile şartı kendisi koyar. Soytarı için 主 "Efendi"dir; Kadir-i Mutlak deyişindeki "Rab" kullanılmaz.
+**Yapma:** Gehrman'a dalkavukluk ya da korkuyla uzayan cümleler; teklifi coşkuyla kabul etmek.
+**Örnek:** _"Sözüne inanmam için bana bir sebep ver."_ (1207 ¶63); _"…Senin efendin kim?"_ (1207 ¶73); _"Efendinize iman etmeyi deneyeceğim…"_ (1207 ¶81)
+**Gerekçe:** → N-DOR1.4
+
+##### DOR1.5 — Mümin ve ailenin ölçülü sesi
+
+**Kapsam:** 1208–1355 · dua, aile meclisi
+**Yap:** Soytarı Efendi'ye dua eder; övgü ve şükür kalıpları donmuştur (KLS tablosu). Ailesiyle tartışırken önce sert bir azarla keser, sonra sesini yumuşatır ve gerekçeyi sıralar (1298 ¶14, ¶24). Kendi tecrübesini kanıt diye anlatır (¶19).
+**Yapma:** İmanını vaaz diline çevirmek; Verdu'ya karşı öfkeyi sürdürmek.
+**Örnek:** _"Soytarı Efendi'ye senâ olsun!"_ (1209 ¶4); _"Verdu, aklını mı kaçırdın?"_ (1298 ¶14); _"Daha önemlisi, o ayini tamamlayacak gücümüz şu an hiç yok."_ (1298 ¶24)
+**Gerekçe:** → N-DOR1.5
+
+---
+
+### A Bey (Fecir Tarikatı'nın Elçisi) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Fecir Tarikatı'nın harflerle anılan yirmi iki Elçisinden biri, "A" (145). Hafi Talibi Yolu'ndadır: 244–343'te Gül Ruhbanı, 475'te Çoban'dır. Backlund'da bir Aşkın toplantısı düzenler ve toplantıda dolandırıcılığa izin vermez (131). Sesi kısık ve boğuktur (沙哑, 405). Üç sesi vardır. Toplantıda soğuk ve kayıtsızdır, herkese yukarıdan bakar (343 ¶11); cümleleri bir iki kelimedir. Hakiki Hâlık'ın nüzulü söz konusu olunca soğukluk kırılır: cümle büyür, ardından kahkaha ve öksürük krizi gelir. Yalnızken ilahının heykeli önünde diz çöker, fısıltıyla dua eder, hata yaptığında hıçkırarak tövbe eder. Bedeni Gül Ruhbanı'nın et büyüsüyle sürekli bozulur ve onarılır; anlatı bunu iğrenç ayrıntılarla verir (254 ¶50–56), söz değil.
+**Onay:** _"Evet."_ (475 ¶9, 对。); _"Olur."_ (244 ¶30, 可以。); _"Güzel."_ (254 ¶44, 很好。)
+**Sicil (yorum): Fecir Tarikatı'nın iç teolojisi, yalnız coşku ve ibadet anında.** Dayanak: Hafi Talibi Yolu Kadir-i Mutlak yol grubundadır (İslami deyiş, KLS tablosu); sozluk.yml › Hakiki Hâlık (tarikatın iç sesi: Müşfik Peder, Cümle Cürümü Sırtlayan Rab, her zîhayatta ulûhiyet); Çoban adının notu (sürüyü gütmek değil yutmak); 53'teki Dinleyici (yayımlanmış ölçü: "Yaradan", "zîhayat", "ulûhiyet", "nefs", "ulûhiyetle bir olmak"). Yayımlanmış karşılıklar: 主 → Rab (38, 41), 降临 → nüzul (39), 神谕 → kutsal vahiy (4). Katman yalnız Rab'bin nüzulünden söz ettiği, dua ettiği ve tövbe ettiği anlarda girer: nüzul, kurban, vahiy, tövbe, istiğfar, itaat. Toplantı ve pazarlık sesi düz ve soğuk kalır. Mertebe 6–5 olduğu için katman Isengard'dakinden güçlüdür, ama sözleri yine kısadır.
+**Âdem'den ayrım:** İkisi aynı yol grubundandır ve Âdem sonunda Hakiki Hâlık'la birleşir (sozluk.yml › Yarı Kadir-i Mutlak Âdem); okur onları sözünden ayırabilmelidir. Âdem bir mürşittir: sakin, öğüt veren, yumuşak (hâl, nefis, sabır, takdir, rıza). A Bey bir müfrittir: kıyamet bekleyen, kendinden geçen, buyuran (nüzul, kurban, itaat, istiğfar). Âdem'in sohbet dağarcığı, yönlendiren soruları ve sükûneti A Bey'e verilmez; A Bey'in ünlemi, kahkahası ve kan dili de Âdem'e geçmez.
+
+##### AUR1.1 — Toplantının maskesi: tek kelime, yukarıdan bakış
+
+**Kapsam:** 131–475 · toplantı, pazarlık, astlar
+**Yap:** Bir iki kelimelik cevaplar; sorulmadıkça açıklama yok. Pazarlıkta şartı tek cümleyle koyar ve görüşmeyi bir el hareketiyle bitirir (244 ¶30). Astına bakmadan konuşur (254 ¶44). Kural koyarken de kısa ve buyurgandır.
+**Yapma:** Nezaket dolgusu, tehdit tiradı, ilahî kelime; maskeyi ünlemle bozmak.
+**Örnek:** _"Önemli bir işiniz olduğunu söylemişsiniz?"_ (244 ¶18); _"Bu işi alabilirim, ama ücret artmalı."_ (244 ¶26); _"Olur."_ (244 ¶30); _"Gerek yok."_ (254 ¶47); _"Mola başladı, serbestçe konuşabilirsiniz."_ (131 ¶72)
+**Gerekçe:** → N-AUR1.1
+
+##### AUR1.2 — Nüzul: soğukluğun kırıldığı yer
+
+**Kapsam:** 254–476 · Rab'bin nüzulü, tarikatın amacı
+**Yap:** Konu Rab'bin dönüşü olunca cümle büyür, kayıtsızlık kalkar (475 ¶18). Buyruk birinci çoğulla ve tekrarla kurulur (254 ¶49: 我们要…我们要…). Coşkunun ardından anlatıda kahkaha ve öksürük gelir. Katman (nüzul, kurban) burada girer.
+**Yapma:** Coşkuyu toplantı ya da pazarlık cümlelerine taşımak; Âdem'in yumuşak, öğüt veren tonu.
+**Örnek:** _"Unutmayın, bu kritik bir dönem."_ / _"Kıtayı kaosa sürüklemeliyiz, bütün gözleri üstümüze çekmeliyiz; Rab'bin dönüşünü böyle karşılayacağız!"_ (254 ¶48–49); _"Rab'bin dönüşünü karşılayabilmek için bütün güçler bizden nefret etse de en ufak korku duymayacağız."_ (475 ¶18); _"Canını Rab'bin nüzulüne kurban et."_ (476 ¶83)
+**Gerekçe:** → N-AUR1.2
+
+##### AUR1.3 — İbadet ve tövbe
+
+**Kapsam:** 254, 343, 401 · yalnızken, heykelin önünde
+**Yap:** Dua sözleri çoğu zaman anlatıda kalır (虔诚地低语, 哽咽着做出忏悔). Söze döktüğü yerde tam teslimiyettir: kısa, ünlemli, kendini yere atan bir itaat. Kutsal vahiy (神谕) burada geçer.
+**Yapma:** Duayı uzun bir münacata çevirmek; anlatıdaki tövbeyi söze dökmek.
+**Örnek:** _"Yalnızca kutsal vahyinize itaat ederim!"_ (401 ¶17)
+**Gerekçe:** → N-AUR1.3
+
+##### AUR1.4 — Çoban: otlattığı ruhların efsunları
+
+**Kapsam:** 475–479 · savaş
+**Yap:** Otlattığı ruhların kabiliyetlerini kullanırken o Yolların efsunlarını harfiyen okur. Efsunlar o Yolların karşılığıyla verilir (salahiyetler.yml): 我来到，我看见，我记录 → "Geldim, gördüm, kaydettim."
+**Yapma:** Efsuna kendi deyişini katmak; efsunu kısaltmak.
+**Örnek:** _"Geldim, gördüm, kaydettim."_ (475 ¶55)
+**Gerekçe:** → N-AUR1.4
+
+##### AUR1.5 — Açlığın içinde: boğuk, sonra açık
+
+**Kapsam:** 836–841 · Panatiya'nın kızıl ay diyarı, Gehrman ile pazarlık
+**Yap:** Açlıkla yıpranmış, kısık ve dağınık konuşur: tekrarlar, yarım cümleler, üç nokta (836 ¶82–83). Pazarlıkta ise bir anda netleşir ve planını teknik ayrıntısıyla anlatır (841 ¶20–24).
+**Yapma:** Açlığı coşku ya da ilahî dille boyamak; pazarlık açıklamasını kısaltmak.
+**Örnek:** _"Orası tehlikeli, çok tehlikeli…"_ (836 ¶82); _"Hayır, o yöntem iz sürülmekten kaçmak içindi, o yüzden konağın etiyle kaynaşmak gerekiyordu; bu sefer gerek yok. Midende sessizce dururum."_ (841 ¶24)
+**Gerekçe:** → N-AUR1.5
+
 ## 10. NPC ve Zümre Sesleri (Toplu Haritalar) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
 **İlke: 体面 (saygınlık) merdiveni.** Loen'de sınıfın ölçüsü paradan çok 体面'dir: sergilenen saygınlık ile onu taşıyacak gerçek imkân arasındaki fark. Kaynak bu farkı her basamakta gösterir: eski aristokratlar borçlanıp yine de konumlarına yakışır hayatı sürdürür (177); Backlund orta sınıfı haftada 5 pound'la "gerçek saygınlığın biraz gerisinde" kaldığını hesaplar (231); düşmüş bir beyefendi ekmek kuyruğuna yüzünü saklayarak girer (1143). Defin bile sınıfa göre üçe ayrılır (268). Basamaklar ayrı haritalar değil, aynı eksenin dereceleridir; bitişik iki basamak aynı tınlamamalıdır.
@@ -2102,6 +2198,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 | Buhar ve Çarklar | — | — | "Buhar aşkına!" (蒸汽在上) | göğse nokta nokta dokunup üçgen Buhar ve Çark Mukaddesat Amblemi'ni çizmek |
 | Fırtınalar Hâkimi | — | — | "Ya Hâkim!" (风暴在上); 主啊 → "Ya Rab" | Fırtına amblemi (风暴徽章) |
 | Ebedî Yanan Güneş | "Güneş'e hamd olsun!" (赞美太阳) | — | — | kollar yukarı açık "Güneş'e hamd" duruşu |
+| Soytarı (Esrarın Hükümdarı grubu; Divan sicili) | "Soytarı Efendi'ye senâ olsun!" (赞美愚者 / 赞美'愚者'先生) | "Soytarı Efendi'nin himayesi üzerimize olsun." (愿'愚者'庇佑…); şükür: "Soytarı Efendi'nin himayesine şükür." (感谢'愚者'先生庇佑) | — | — |
 
 ##### KLS1.1 — Ebedî Gece: sükûnet ve himaye
 

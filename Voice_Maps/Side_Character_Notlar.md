@@ -1570,3 +1570,74 @@ Tayf aşaması: 338 苍白的脸孔，精致的五官，有种人偶般的美感
 ### N-ISG1.5
 437 ¶89–90 信上只有一句话：这个案子不是‘代罚者’处理的，王室以…的名义，将案子要了过去; 768 ¶55–60 ilan: 贝克兰德脚踏车公司10%的股份已经售出，各位朋友请勿再打扰！ — 艾辛格先生是一个非常注意细节的人…他刻意用了这个感叹号…他在做警示？
 **Denetim:** 437, 768 (ZH).
+
+## Dorian Gray Abraham
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
+> **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm (konuşan):** 408 (Fors'la öğle yemeği), 431–432 (mezarlık; Çırak iksiri), 646 (Leymano'nun Seyahatnamesi), 786–787 (Kapı Efendi, Lewis Vean'ın başı), 1076 (Kâtip; Botis uyarısı), 1207–1209 (Botis'in gözleri; Gehrman; iman), 1293–1294 (Sır Efsuncusu ayini), 1298 (Verdu ile tartışma), 1354–1355 (Kapı Efendi'nin mirası). Anılır: 404 (Lawrence'ın vasiyeti), 406–407.
+> **Başka haritalarla bağ:** Fors haritası (FOR; hocası); A Bey haritası (AUR; aileyi satan öğrenciler Fecir Tarikatı'na geçmiştir). Klein ona Gehrman maskesiyle konuşur (1207, "üç dakika").
+> **Kullanıcı bilgisi (2026-10-21):** Abraham ailesi Kapı Efendi'nin soyudur; Kapı Efendi'nin bozulması soyun yüksek Mertebeye çıkmasını engeller, aile bu yüzden dışarıdan öğrenci yetiştirir (Fors bunlardan biridir). Botis aileyi satıp Fecir Tarikatı'na geçmiştir; Klein onu öldürür, Fors bu ölümü aileye yaklaşmak için kullanır. Kaynakta ikinci bir hain öğrenci de vardır: Lewis Vean (路易斯·维恩, Elçi; 786'da Gehrman'ın elinde ölür).
+> **Ad kararları (2026-10-21):** 老师 → "Hocam"; 赞美'愚者'先生 → "Soytarı Efendi'ye senâ olsun!" (words.md §VII); Soytarı için 主 → "Efendi" (Rab değil). Mertebe adları sozluk.yml'den: Müneccim (占星人), Kâtip (记录官), Gezgin (旅行家), Sır Efsuncusu (秘法师), Müstekşif (漫游者), Âlem Seyyahı (旅法师). Sicil (yorum) verilmedi: Mertebe 7 (Lanevus ve Isengard emsali).
+> **Sözlükte olmayanlar (soru):** 马尔莫斯 (Malmouth; EN), çağırma duası 遨游于上界的奇特灵体，喜爱音乐的虚空生物，多里安·格雷·亚伯拉罕的契约伙伴。(432 ¶38; 虚空生物 ve 契约伙伴 karşılıksız); 莱曼诺的魔法书 (646 ¶51, Leymano'nun Seyahatnamesi'nin ailedeki adı); 秘之圣者 (Botis'in unvanı; Aziz + 秘 = Sır, onaysız); 普利兹港渔民协会 (404 ¶22); 维尔杜 Verdu, 维洛斯 (1354 ¶83). Bunlar haritada kullanılmadı.
+
+### N-DOR1.1
+
+Kehanet: 408 ¶6 水晶球的光芒渐渐暗灭，多里安站了起来，心中已然有了决定。 Laf arası soru: 408 ¶10 边动刀叉，边状似不经意地说道：安丽萨很喜欢神秘学… Kilit: 1076 ¶5 谨慎地检查了下门锁. Kapalı aile meselesi: 431 ¶69 这和你没有关系，是我们家族的事情。(自嘲一笑). Az bilgi: 786 ¶38 我了解的情况也不多，只知道'门'先生应该是亚伯拉罕家族的先祖… Gehrman'ın teklifine karşı: 1207 ¶79 (anlatı) 作为古老家族的成员，他很清楚信仰一位未知存在有多么危险.
+**Denetim:** 408, 431, 786, 1076, 1207 (ZH).
+
+### N-DOR1.2
+
+646 ¶37 这是我最近十年最大的惊喜; ¶52–53 (kitabın kuralları sıralı); ¶64–66 (sayfa sayıları, yüzdeler); ¶67 表情严肃地说道：给你之前，我必须郑重提醒，它有负面作用…; ¶68 记住，不要小看那种迷路，一定要尽快处理。; ¶71 这就是我的礼物。; ¶74 不，不要想这件事情，你比他弱太多… 786 ¶57 放弃这个想法！(一下坐直). 787 ¶31–32 你想让我愧疚和不安吗？/ 不用担心，你老师我还是有些身家的。 432 ¶63 用一种平淡却极有诱惑力的口吻; ¶64 不用担心，有我在这里，不会出现问题。 1076 ¶11 我又不是只教过你一个学生…; ¶13 我对你有更高的期待; ¶46 如果，我是说如果… 1293 ¶8, ¶25 (依旧有点不放心地叮嘱), ¶31 郑重. 1355 ¶4 (Müstekşif teklifi; 是否需要晋升，由你自己决定).
+**Denetim:** 432, 646, 786, 787, 1076, 1293, 1355 (ZH).
+
+### N-DOR1.3
+
+431 ¶65–66 沉默良久，好半天才叹了口气道：真是讽刺啊……; ¶69 自嘲一笑. 786 ¶45 露出一抹苦笑道：很显然，我也在疑惑这个问题，如果你能找到答案，记得告诉我。 1207 ¶21–23 叹息着笑道：他最终是死于'旧日之盒'吗？/ 这真是宿命啊……; ¶29 布提斯是我见过最有'学徒'天赋的人之一，谁知最后变成了这个样子……
+**Denetim:** 431, 786, 1207 (ZH).
+
+### N-DOR1.4
+
+1207 ¶62 Gehrman: 你有三分钟的时间。; ¶63 没敢耽搁时间，直截了当地说道：给我一个相信你承诺的理由。; ¶69 什么办法？(忍耐住澎湃激动的心情); ¶73 ……你的主是哪位？; ¶76 '愚者'……你们是安提哥努斯家族的人？; ¶78 信仰了那位就能让我们免受诅咒的困扰？; ¶81 我会试着信仰你们的主…如果这真能暂时解决诅咒，我们再完成'0'级封印物的交易。 主 burada Soytarı içindir; Kadir-i Mutlak deyişindeki "Rab" verilmez, "Efendi" (Soytarı Efendi) kullanılır.
+**Denetim:** 1207 (ZH).
+
+### N-DOR1.5
+
+Dua: 1208 ¶69 用巨人语诵念道：不属于这个时代的愚者…… (tazim ismi, donmuş satır); 1209 ¶4 虔诚自语道：赞美'愚者'先生！; 1294 ¶59 很有信徒风范地说道：感谢'愚者'先生庇佑。; 1355 ¶18 我到旁边向'愚者'先生祷告。 Aile: 1298 ¶9 多年的放逐和封印已经让始祖疯掉了…; ¶14 维尔杜，你疯了吗？…忍不住斥责了对方一句; ¶19 自从信仰了'愚者'先生…我已经有很多个月没再受到'满月呓语'的影响; ¶24 放缓了语气道：更重要的是，我们现在根本没有完成那个仪式的实力…
+**Denetim:** 1208–1209, 1294, 1298, 1355 (ZH).
+
+---
+
+## A Bey (Fecir Tarikatı)
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
+> **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm (konuşan):** 131 (toplantı), 244 (suikast pazarlığı), 254 (yeraltı mabedi), 405 (Soytarı'nın müminlerine ödül), 475–479 (Backlund; Gehrman'la savaş), 836–843 (Panatiya'nın diyarı). Anlatıda: 343 (değişim ve tövbe), 401 (vahiy). Kimliği: 145 (Alger: 极光会有五位圣者和二十二个神使…), 254 ¶29–30, 405 ¶15.
+> **Başka haritalarla bağ:** Âdem (ADM; ayrım haritada yazılı); Dorian (DOR; Lewis Vean de bir Elçi'dir); 53'teki adsız Dinleyici (yayımlanmış Fecir Tarikatı ölçüsü). Klein onunla Gehrman ve kuklası Senior üzerinden konuşur (841).
+> **Kullanıcı bilgisi (2026-10-21):** Fecir Tarikatı'nın bir üyesi 53'te çevrildi (Mertebe 8, Dinleyici). sozluk.yml › Hakiki Hâlık notu tarikatın iç sesinin ölçüsüdür.
+> **Ad kararları (2026-10-21, words.md):** A先生 → "A Bey"; 神使 → "Elçi"; 圣者 → "Aziz/Azize" (kilise unvanı ve güç katmanı aynı kelime, Melek gibi). Yayımlanmış karşılıklar: 主 → Rab (38 ¶24, 41 ¶59), 降临 → nüzul (39 ¶5, ¶9), 神谕 → kutsal vahiy (4 ¶91), 造物主 → Yaradan (18, 53). 我来到，我看见，我记录 → "Geldim, gördüm, kaydettim" (salahiyetler.yml).
+
+### N-AUR1.1
+
+131 ¶72 进入休息阶段，可以随意交流。 (Hugh 131 ¶36: A先生不允许他组织的聚会里有欺诈的情况出现). 244 ¶18 你们说找我有重要的事情？; ¶26 低笑道：我可以接这个任务，但报酬必须提高。; ¶27 (iki seçenek, düz); ¶30 可以。(送客的手势); ¶34 (Hugh: 手下 için para). 254 ¶44 很好。(没有侧头地说道); ¶47 语气淡漠地开口道：不需要。 343 ¶11 过去…悠闲淡漠，总是以一种俯视般的态度看着大家. 405 ¶7 用沙哑到让人颇不舒服的嗓音道：不要用赫密斯语念出上面的内容…; ¶8 帮我寻找那些信仰'愚者'的人…我给予的报酬将超乎你们想象的丰厚！ 475 ¶9 对。(毫不客气地回应); ¶11 漠然说道; ¶14 过了一秒…烧掉那栋房屋，将所有的线索都埋葬在里面。; ¶54 没有问题。(情绪缺乏起伏).
+**Denetim:** 131, 244, 254, 343, 405, 475 (ZH).
+
+### N-AUR1.2
+
+254 ¶48 你们必须记住，这是一个关键的时期。; ¶49 我们要让大陆混乱，我们要尽量吸引别人的目光，以此迎接主的回归！; ¶50–51 哈哈哈，咳咳咳…A先生忽然笑了起来，接着剧烈咳嗽; ¶53–56 (et parçaları; anlatı). 475 ¶11 并不需要，让别人目睹这样的行为正是我们的目的。; ¶18 只要能迎接主的归来，即使被所有势力憎恶，我们也不会有任何的胆怯。A先生的语气不再那么淡漠和疏离。 476 ¶83 为主的降临献出生命吧。
+**Denetim:** 254, 475, 476 (ZH).
+
+### N-AUR1.3
+
+254 ¶40–42 跪坐于幽暗里，虔诚地低语着什么 (双腿被链条绑着的倒吊之人, dev tek gözlü heykel). 343 ¶47–55 (bedeni çözülür, toparlanır) 匍匐前进，跪到了地下室内，又一次哽咽着做出忏悔。/ 忏悔之前的事情出现失误，不够警惕，让主降临之事遭到破坏。 401 ¶15 随着'神启'内容的结束，A先生停止了颤抖…; ¶17 唯服从您的神谕！A先生谦卑地匍匐于地，似乎又找到了存在的意义。
+**Denetim:** 254, 343, 401 (ZH).
+
+### N-AUR1.4
+
+475 ¶55 身前迅速浮现出一本透明模糊的书册，并伴随悠远飘渺的吟唱：我来到，我看见，我记录。 (Kâtip efsunu; salahiyetler.yml: "Geldim, gördüm, kaydettim"). 477 ¶94 '牧羊人'A先生; 478 ¶39 (Gül Ruhbanı et büyüsü; anlatı); 478 ¶57 化作血色长毯.
+**Denetim:** 475, 477, 478 (ZH).
+
+### N-AUR1.5
+
+836 ¶79 短暂的静默后，A先生略显低哑的嗓音终于响起：他也被'送'进来了吗？; ¶82 嘶哑含糊地说道：那里很危险，非常危险……; ¶83 外面也是，同样的危险，所有的危险都源于那里，所有消失的人都会在红月下重新出现…… 841 ¶20 拉了下兜帽，低沉笑道：我使用'血肉魔法'，钻进你的体内，监控你的状态…; ¶21; ¶24 不，用那种方式是为了规避探查，所以必须和宿主的血肉融合，而这次没有必要，我会安静地待在你的胃袋里。A先生相当详细地解释了一句。 (Açlık: 836 ¶62, ¶68 anlatı.)
+**Denetim:** 836, 841 (ZH).

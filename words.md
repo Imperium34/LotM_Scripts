@@ -229,6 +229,9 @@
 - **Solomon İmparatorluğu** — Solomon Empire (所罗门帝国)
 - **Soren ailesi** — Sauron family (索伦家族); eski Intis kraliyet hanedanı; İngilizce ad kuralının istisnası: Tolkien çakışmasından kaçınmak için değiştirildi, "Sauron" yazılmaz
 - **Abraham ailesi** — Abraham family (亚伯拉罕家族); İngilizce ad korunur, "İbrahim" yazılmaz
+- **Elçi** — divine envoy (神使); Fecir Tarikatı'nın harflerle anılan yirmi iki Elçisi (A Bey, X Bey...), Mertebe 7–5; ulak (信使) ile karışmaz _145_
+- **A Bey**: Mr. A (A先生); Fecir Tarikatı'nın Elçisi; 先生 hitabı 'Bey' (Gehrman Bey, Kader Yılanı Bey gibi). Terim satırı değildir: Çince anahtarı yalnız 先生 kalırdı. _130_
+- **Aziz / Azize** — Saint (圣者); hem kilise unvanı (Azize Selena, 18) hem Mertebe 4–3 güç katmanı (圣者层次 = Aziz derecesi); Melek gibi iki anlam aynı kelimededir. Fecir Tarikatı'nın beş Azizi (145) _18_
 
 ## Regions & Counties
 
@@ -657,6 +660,7 @@
 - **Bu, zamanların en kötüsü, ama aynı zamanda en iyisi.** — 这是最坏的时代，也是最好的时代 (Lanevus; 185, 203). Dickens'ın *İki Şehrin Hikâyesi* açılışının ters sırası (Türkçe yerleşik: "Zamanların en iyisiydi, zamanların en kötüsüydü"). 482 İkinci Cildi anlatıcı ağzından aynı tersine çevrilmiş cümleyle kapatır (这是最坏的时代，这是最好的时代。) ve yazar notu bu yankıyı bilerek kurduğunu söyler; 482 biçimi Lanevus'unkini yankılamalı. 482 biçimi (anlatıcı, geçmiş zaman, Çincedeki paralel yapı korunur): **"Bu, zamanların en kötüsüydü; bu, zamanların en iyisiydi."**
 - **Bu asra mensup olmayan Soytarı, Gri sislerin fevkindeki esrarlı Hükümdar, Talihe hükmeden Sarı ve Siyahın Kralı** — the Fool's honorific name (不属于这个时代的愚者/灰雾之上的神秘主宰/执掌好运的黄黑之王); Klein 58'de kurar; 58'deki kendi okuyuşu 'Ey …, sen …sın, sen …sın' biçiminde _58_
 - **Ben dâhil herkes ölecek** — 所有人都会死，包括我 (Klein's notebook; 1:54, 2:54, 3:4)
+- **Soytarı Efendi'ye senâ olsun!** — 赞美愚者 ; dondurulmuş. Kaynakta çoğunlukla tırnaklı yazılır (赞美‘愚者’先生). Soytarı'ya övgü (28 geçiş, 179'dan; Dorian 1209). 'hamd' Güneş'e, 'medh' Ebedî Gece'ye ayrılıdır. Dua: 愿'愚者'庇佑 → "Soytarı Efendi'nin himayesi üzerimize (seni / sizi) olsun."; şükür: 感谢'愚者'先生庇佑 → "Soytarı Efendi'nin himayesine şükür." (1294)
 - **İradeniz emrimizdir.** — (遵从您的意志 / 遵从您的意愿); dondurulmuş. Toplantıyı kapatan koro cevabı; yazar 意志 (7, 36, 571, 682) ile 意愿 (159, 395, 489, 564) arasında rastgele gidip gelir, ikisi de bu satırla karşılanır. 364'teki 遵从您的意志，首席阁下 toplantı dışıdır, bağlamına göre çevrilir.
 - **Arzunuz, benim irademdir.** — (您的意愿就是我的意志); dondurulmuş. Bir üyenin Soytarı'dan aldığı görevi tek başına kabul etmesi, birinci tekil (Alger 783, 1278; Xio 957). Koro satırından ayrıdır; çevresindeki cümle konuşanın siciline uyar.
 - **Her şeyi bilmek, her şeye kadir olmaktır.** — 全知意味着全能 ("omniscience means omnipotence"); dondurulmuş. İlim ve Hikmetin İlahı Kilisesi'nin vecizesi (Isengard, 415 ¶24). "Kadir" Kadir-i Mutlak yol grubunu yankılar; bilerek seçildi. Klein'ın 257 ¶55'teki 知识等于力量…全知等于全能 düşüncesi bu satırı önceden yankılar ve aynı kalıpla verilir.
