@@ -66,6 +66,8 @@
 - **Hulûl Ayini** — Soulfall Ritual (降灵仪式); bir ruhun Ruhanî Âlem'den geçip başkasının bedenine girdiği ayin (534) _534_
 - **Roselle'in Rüyada Tebliğ Usulü** — Roselle's Dream Spell (罗塞尔托梦术); 托梦 = rüyada haber iletmek; 术 'usul' ('büyü' 魔法'e ayrılı) _536_
 - **Şimal Kralı** — King of the North (北方之王); Groselle'in Gezileri'ndeki buz ejderi Ulyssan _576_
+- **mesh olmak** — to mutate (异变); salahiyet kelimesi Mesh'in fiili; gündelik başkalaşma için de aynı kelime (Frank'in mantarları, 656), Celp kararıyla aynı mantık _656_
+- **melezleme** — cross-breeding (杂交); Frank Lee'nin işi; 'melez' sıfatı _638_
 - **Kader Çarkı Yolu** — Wheel of Fortune pathway ("命运之轮"途径; kısaca "命运"途径); Canavar Yolu'nun Mertebe 0 adıyla anılışı (609: "怪物"途径又叫"命运之轮"途径) _609_
 - **Solgun Mevt** — Pale Death (苍白之死); Bernadette'in Sınıf 0 Mühürlü Eseri, Naaş Toplayıcı Yolu'na ait bir maske; 苍白 = Solgun, 死亡 = Mevt (salahiyet kelimeleri) _1304_
 - **Bilge Alınlığı** — Sage Frontlet (贤者额饰); Bernadette'in Sınıf 0 Mühürlü Eseri; 贤者 = Bilge (Gizem Avcısı Mertebe 2) _1303_
@@ -394,6 +396,7 @@
   - **Amiral Cehennem** Ludwell (地狱上将 路德维尔); **Amiral Kan** Senor (血之上将); **Amiral Yıldız** Cattleya (星之上将)
   - **Koramiral Buzdağı** Edwina (冰山中将); **Koramiral Kasırga** Qilangos (飓风中将); **Koramiral Hastalık** Tracy (疾病中将; 疾病 = Hastalık salahiyeti, Maraz değil); **Koramiral Alacakaranlık** Bulatov (黄昏中将; 黄昏 = Alacakaranlık); **Koramiral Derin Deniz** (深海中将)
   - **Dört Kral ve Yedi Amiral** — Four Kings and Seven Admirals (四王七将); 将 hem 上将 hem 中将'i kapsar, 'Amiral' ikisinin şemsiyesidir
+  - **'Zehir Uzmanı'** Frank Lee (毒素专家); İstikbal'in ikinci kaptanı
   - **Gizem Kraliçesi** Bernadette (神秘女王; 神秘知识 = Gizem Marifeti)
 - **Kızıl Kafatası Korsanları** — Red Skull Pirate Crew (红骷髅海贼团); kaptanı 'Deniz Kurdu' Johnson (海狼), ikinci kaptanı 'Tek Göz' Andersen (独眼)
 
@@ -603,6 +606,7 @@
 
 ## Transport & Ships
 
+- **İstikbal** — the Future (未来号); Cattleya'nın gemisi; gemi adları çevrilir (krş. Altın Rüya) _638_
 - **Fecr** — the Dawn (黎明号); Bernadette'in gemisi; Fecr-i Anasır ile aynı 黎明 → Fecr istisnası (salahiyet kelimesi Şafak olurdu); 黎明号的主人 → 'Fecr'in Sahibi' (678) _669_
 - **umumî at araba** — public carriage (公共马车); raylı/raysız belirtilmediğinde _56_
 - **raylı umumî at araba** — railed public carriages (轨道公共马车)
@@ -623,6 +627,7 @@
 
 ## Household & Social Roles
 
+- **ikinci kaptan** — first mate (大副); gemide kaptandan sonra gelen zabit _638_
 - **kâhya** — butler (管家); "uşak" alt basamak hizmetlidir, kullanılmaz
 - **ziyaret kartı** — calling card (名片); "kartvizit" fazla modern, kullanılmaz _50_
 - **sabah ziyareti** — morning call (晨访); öğleden sonra ikiyle altı arası yapılır; şaka buna ve "sabah elbisesi"ne dayanır _50_

@@ -1089,7 +1089,7 @@ Hamle: 770 ¶55–60 (Klein 您的脐带血…… der demez 哇！; Klein geri �
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır (Will Auceptin notlarıyla aynı).
 > **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
-> **Görünüm (konuşan):** 662–663 (Sonia Denizi rüyasındaki kütüphane), 668–669 (kara manastır), 674 (Future'da), 828 (Backlund, bezelye sarmaşıkları), 1011, 1092–1093 (Backlund; Roselle, George III), 1145 (lamba dileği), 1161–1162 (kehanet), 1238–1239 (Cattleya'ya veda), 1300–1306 (ilkel ada, Roselle'in mezarı; büyük ölçüde onun bakış açısı), 1309 (Bilge), 1349, 1372, 1388. Anılır: 264, 323, 714, 866 (Roselle'in günlükleri; Roselle haritası), 678 (Tarot'ta "Şafağın sahibi").
+> **Görünüm (konuşan):** 662–663 (Sonia Denizi rüyasındaki kütüphane), 668–669 (kara manastır), 674 (İstikbal'de), 828 (Backlund, bezelye sarmaşıkları), 1011, 1092–1093 (Backlund; Roselle, George III), 1145 (lamba dileği), 1161–1162 (kehanet), 1238–1239 (Cattleya'ya veda), 1300–1306 (ilkel ada, Roselle'in mezarı; büyük ölçüde onun bakış açısı), 1309 (Bilge), 1349, 1372, 1388. Anılır: 264, 323, 714, 866 (Roselle'in günlükleri; Roselle haritası), 678 (Tarot'ta "Şafağın sahibi").
 > **Başka haritalarla bağ:** Roselle haritası (ROS) babanın tarafını tutar (küçük prensesim, kendinden "baban" diye söz etmesi). Cattleya haritası (CAT1.5) Bernadette'i "hem kaptan, hem hoca, hem anne" diye anar. Klein ona her zaman Gehrman Sparrow olarak "sen" der; Klein.md'deki Gehrman maskesi kuralları geçerlidir.
 > **Hitap kararları (2026-10-21):** 女王陛下 → "Majesteleri" (Cattleya, 1238 ¶64; "Tünaydın, Majesteleri."); 公主殿下 → "Prensesim" (Edwards, 1302 ¶22; Roselle'in "küçük prensesim"iyle yankı). Sicil (yorum) katmanı onaylandı; aile konularına girmez.
 > **Ad kararları (2026-10-21, words.md):** 无形仆役 → Görünmez Hizmetkâr, 许愿神灯 → Sihirli Dilek Lambası (0-05), 苍白之死 → Solgun Mevt, 贤者额饰 → Bilge Alınlığı, 安眠号角 → Huzurlu Uyku Borazanı, 黎明号 → Fecr ("Fecr'in Sahibi", 678), 翡翠城 → Zümrüt Şehir, 不老泉 → Gençlik Pınarı, 神秘重现 → Gizem Canlandırması.
@@ -1327,6 +1327,41 @@ Güneş: 140 歌颂者…他们的口号是：“让我们赞美太阳吧！”;
 
 576 ¶12 我会委托他全权处理，包括联络反抗军，确定时间，安排私港，我希望你能提供一定的保护。; ¶16 你是位冒险家，我想你不会排斥价格不错的雇佣。; 703 ¶10, ¶17 我拿斯诺曼的。, ¶27 收下吧。; 871 ¶48–52 (kapıyı çalmadan "Gir." der: 请进。; 你想问西拜朗的情况？); 694 ¶38 (EN) sailors infatuated with her. Hitap: 575 ¶35 船长女士 (Klein), ¶36 早上好，格尔曼先生。(Edwina, gülümseyerek); Klein ile karşılıklı 你.
 **Denetim:** 575–576, 694, 703, 871 (ZH).
+
+---
+
+## Frank Lee (İstikbal'in ikinci kaptanı)
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
+> **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm (konuşan):** 638–657 (İstikbal'de yolculuk), 671–675, 721 (mektup; Reinette'i inceler), 825, 859 (mektup), 995 (Zanaatkâr Cielf), 1013 (mantar odası), 1089 (hayali), 1128 (mektup), 1219, 1240, 1309, 1324, 1391. Klein'ın iç sesindeki Frank şakaları Klein.md'dedir (4. Aşama: "Frank kendini ekerse bir sürü Frank çıkar", 816 ¶22).
+> **Başka haritalarla bağ:** Cattleya (CAT; kaptanı), Reinette (REI1.3, Mantar Kralı), Klein.md (Gehrman maskesi; 1128 ¶41–43 Klein'ın cevap mektubu).
+> **Ad kararları (2026-10-21, words.md):** 异变 → "mesh olmak" (salahiyetler.yml 异变 = Mesh; Celp kararıyla aynı mantık), 杂交 → "melezleme", 毒素专家 → "Zehir Uzmanı", 大副 → "ikinci kaptan", 未来号 → "İstikbal"; 蔷薇主教 = Gül Ruhbanı (sozluk.yml). Yakarışta 您 → "sen" onaylandı.
+
+### N-FRK1.1
+
+638 ¶32 我是一个很友好的人…相信我，这才是人类的未来。; ¶35 非常棒，非常棒！这个世界上就是你这样的人太少了！; ¶55 (Klein'a gece yemeği olarak sığır eti tadında patates önerir: 它的口感像牛肉，它的味道像牛肉，但它确确实实是土豆。); 640 ¶10 来，看看我最新的成果，这绝对是大海上最受欢迎的事物！; ¶15 闻到了吗？多么令人陶醉的酒香！…狂热地说道; ¶17 (her biri başka içki veren balık cinsleri; bira için köpekbalığı ya da balina şart); ¶27 哈哈，她的序列名称就叫‘航海家’！; ¶55 (ilaç-meyve melezi elma); 651 ¶14 要杯牛奶吗？; 656 ¶35 这，这简直是神迹！, ¶66 它们，它们也异变了！; 671 ¶2–4 (parmaklı balık) 语速极快; 675 ¶12 非常好！; 995 ¶33 这就是我想要的效果！; 1324 ¶2 (alkolsüz bira).
+**Denetim:** 638, 640, 651, 656, 671, 675, 995, 1324 (ZH).
+
+### N-FRK1.2
+
+638 ¶35 我只是试图把公牛、母牛和小麦杂交在一起，让小牛可以像麦子一样长出来，就差点被母神教会的人送上审判庭; 645 ¶10 (tayfanın bira fıçılarının çoğuna yatıştırıcı katmıştır); ¶14 (EN Klein) he doesn't believe that what he does is evil; ¶29 我哪里粗鲁了？; 649 ¶44–48 它们是一种杂交的细菌，可以让公牛也产奶，这样一来…让更多人喝到好的牛奶。/ 我很担心它们也许不会繁殖; 721 ¶2–3 (mantar, balık olduğu sürece ürer; tek kusuru kendi balığını tutamaması); ¶19 (yüzündeki toprağı ağzına alır, tadar: 有点偏酸了……); 825 ¶72–76 理论上不会，因为没谁会生吃它们。/ 很多时候，我的能力已经严重制约了我的想法！; 995 ¶68–71 强烈的繁殖欲望？…我太喜欢他这个特点了！; 1013 ¶48 要是能让自己身上长蘑菇，不就省事很多吗？; 1089 ¶32–34 让人类不再有饥荒，让人与人之间变得平等，你能够做的，我也能够做，你能长的，我也能长…呵呵，每个人都会有自己的倾向嘛，我更喜欢鱼类、牛类、孢子类…… (Zanaatkâr Cielf kusar; ¶38 你这个魔鬼！).
+**Denetim:** 638, 645, 649, 721, 825, 995, 1013, 1089 (ZH).
+
+### N-FRK1.3
+
+638 ¶35 仁慈的母亲啊，他们根本没有真正理解您的意志！ (Ana'ya 您 der; Türkçede yakarışta "sen" doğal olduğu için örnekte "senin iradeni"; Toprak Ana deyişi Schema 0.7); 656 ¶78 “噢，仁慈的母亲啊。”弗兰克双手交叉，做出怀抱婴儿的姿势。; 1324 ¶8 仁慈母亲的意志在小麦结穗中，在奶牛产奶中，在蘑菇生长中，在大自然的每个角落每件事情中，不需要神启就能感受到。; ¶12, ¶20 (kilisenin yargılaması; Klein onun Sefahat Ana Tanrıça'dan etkilenip etkilenmediğini tartar, ¶42 sonuç: yalnızca deli).
+**Denetim:** 638, 656, 1324 (ZH).
+
+### N-FRK1.4
+
+721 ¶2 我亲爱的朋友格尔曼·斯帕罗，我要告诉你一个好消息，我利用‘蔷薇主教’的血肉，成功培育出了一种全新的蘑菇…; ¶3 (kusuru ve Nina'nın itirazı: 好吧，就当她说的是对的); 859 ¶11–12 这还属于半成品…/ 愿你一切顺利，冒险丰收，你最真挚的朋友，弗兰克·李。; 1128 ¶36–39 (on bir mantar; 必须记住，不能生吃，不能在未熟时吃掉，要不然它们会在你的体内繁衍，以你的血肉为温床……/ 如果你还有什么适合我的想法，请务必和我分享，你永远的朋友，弗兰克·李。).
+**Denetim:** 721, 859, 1128 (ZH).
+
+### N-FRK1.5
+
+638 ¶28 晚上好，斯帕罗先生。 → 640 ¶10 上午好，格尔曼。; 645 ¶17 格尔曼，帮个忙…; ¶32 格尔曼，你不介意参与这件事情吧？; ¶45 (EN Nina) your thoughts are… closer to those of Frank's. This is probably why he's able to treat you as a friend; 995 ¶49 船长，我和你一起。; 1089 ¶44 呃，船长，我目前只攒到3000镑，你能借我2000镑吗？; 1219 ¶9–12 我在重新审视我这么多年来的发明和创造。/ 有太多需要反省的地方。; ¶27 我会努力的！; ¶31–32 他是我的好朋友！; 1240 ¶58, ¶66 (Nina şikâyet eder; Cattleya'nın buyruğuna uyar).
+**Denetim:** 638, 640, 645, 995, 1089, 1219, 1240 (ZH).
 
 ---
 

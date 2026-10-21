@@ -1781,6 +1781,52 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Örnek:** _"Bu işi tamamen ona bırakacağım: Direniş'le bağlantı, zamanlama, özel liman."_ (576 ¶12); _"Al onu."_ (703 ¶27); _"Batı Balam'ı soracaksın, değil mi?"_ (871 ¶52)
 **Gerekçe:** → N-EDW1.5
 
+### Frank Lee (İstikbal'in ikinci kaptanı) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Amiral Yıldız Cattleya'nın gemisi İstikbal'de ikinci kaptan; "Zehir Uzmanı" lakaplı, 7000 pound ödüllü korsan (638). Çiftçi Yolu'nda: Hayatşinas; Orman Dervişi hasletini satın alır (823) ve 1128'den önce Orman Dervişi olur. Toprak Ana Kilisesi yasak deneyleri yüzünden onu yargılamış ve aranan kişiler listesine koymuştur (638, 1324). Gemide hem hekim hem aşçıdır. Sesi sıcak, gürültülü ve heyecanlıdır: her yeni "ürününü" bir pazarcı gibi tanıtır, karşısındakine tattırır, "Bana inan" der. Tutkusu toprak, ekin ve melezlemedir; amacı hep iyiliktir (kıtlık bitsin, herkes iyi süt içsin), vardığı sonuç ise dehşet vericidir: boğa, inek ve buğdayı melezlemek, kanı şarap olan balık, insanın üstünde mantar yetiştirmek. Bunu kötülük saymaz, saf bir ciddiyetle anlatır; Klein'ın gözünde "şeytandan da korkunç, çünkü yaptığını kötü sanmıyor" (645). Klein'ı içtenlikle dostu sayar. Reinette'in lakabıyla Mantar Kralı (REI1.3). Klein'a "sen" der: önce "Sparrow Bey", sonra yalnızca "Gehrman". Cattleya'ya "Kaptan" der.
+**Onay:** _"Çok iyi!"_ (675, 非常好！); _"Elimden geleni yapacağım!"_ (1219, 我会努力的！)
+**Sicil (yorum): çiftçi ile laboratuvar.** Dayanak: Çiftçi Yolu ve Hayatşinas adı, Toprak Ana Kilisesi (Schema 0.7: ekinci deyişi). Ayırt edici iz, iki dağarcığın aynı cümlede buluşmasıdır: toprağın ve ahırın kelimeleri (toprak, tohum, başak, döl, ahır, mahsul) ile deneyin kelimeleri (deney, melezleme, üreme, verim, aktiflik). Bu karışım bütün repliklerine yayılmaz; ürününü tanıtırken ve deneyini anlatırken görünür. Dindarlığı İslami değildir; Toprak Ana deyişidir ve "Ana" diye hitap eder.
+
+##### FRK1.1 — Pazarcı mucit
+
+**Kapsam:** 638–1391 · yeni ürün, deney sonucu, misafir
+**Yap:** Ürünü bir pazar tezgâhındaki gibi tanıtır: "Al, şunu bir dene", koklatır, tattırır, en büyük sıfatı kullanır. Sevinç ünlemi kaynakta ikiyse ikidir ("Harika, harika!", 638 ¶35). Heyecanlanınca hızlı konuşur (671 ¶4, 语速极快) ve kekeler ("Bu, bu…", 656). Gülüşü "haha"dır.
+**Yapma:** Her repliğe ünlem ya da "harika" serpmek; heyecanı kaynağın olmadığı yere taşımak (0.5 §2: sıklık kaynaktadır).
+**Örnek:** _"Günaydın, Gehrman! Gel, son ürünüme bir bak; bu, denizlerde herkesin kapışacağı bir şey!"_ (640 ¶10); _"Kokusunu aldın mı? Ne baş döndürücü bir şarap kokusu! Bu, kanı kırmızı şarap olan bir balık!"_ (640 ¶15); _"Bu, bu düpedüz bir mucize!"_ (656 ¶35) / _"Onlar, onlar da mesh oldu!"_ (656 ¶66; 异变 = Mesh)
+**Gerekçe:** → N-FRK1.1
+
+##### FRK1.2 — İyi niyetin dehşeti
+
+**Kapsam:** 638–1324 · deneyini ve hayalini anlatırken
+**Yap:** Akıl yürütmesi iyi bir amaçla başlar ve aynı içtenlikle korkunç bir sonuca varır; ton hiç değişmez, cümle "böylece…" diye bir iyilikle kapanır. Kendisine kaba ya da tehlikeli denince gerçekten şaşırır ("Neresi kaba?"). Tehlikeyi de bir deney sorusu gibi tartar ("Teoride hayır, çünkü kimse onları çiğ yemez.").
+**Yapma:** Ona kötü niyet, sinsilik ya da delice bir kahkaha vermek; dehşeti bir göz kırpmayla ya da alayla işaretlemek. Mizah, onun ciddiyetinden doğar.
+**Örnek:** _"Bunlar melez bir bakteri; boğaya bile süt verdirir. Böylece daha çok süt elde ederiz, daha çok insan iyi süt içer."_ (649 ¶46); _"Ben yalnızca boğa, inek ve buğdayı melezlemeye çalıştım, buzağılar buğday gibi bitsin diye; Ana Kilisesi'nin adamları az kalsın beni mahkemeye çıkarıyordu!"_ (638 ¶35); _"Kıra çıktığında karnını doyurmak için azık taşımak ya da av avlamak çok zahmetli; insanın kendi üstünde mantar bitse, iş çok kolaylaşmaz mı?"_ (1013 ¶48)
+**Gerekçe:** → N-FRK1.2
+
+##### FRK1.3 — Toprak Ana'nın mümini
+
+**Kapsam:** 638, 656, 1324 · dua anı ve inanç sözü
+**Yap:** Yakarışı "Ah, merhametli Ana!" (仁慈的母亲啊) biçimindedir; anlatı ellerini kucağında bebek tutar gibi kavuşturduğunu söyler (656). İnancı bir çiftçinin inancıdır: Ana'nın iradesini vahiyde değil, başakta, sütte ve mantarda görür. Kiliseyle kavgası Ana'yla değil, onu "anlamayan" adamlarıyladır.
+**Yapma:** İslami formül (Ya Rab, hamd, inşallah); Toprak Ana'ya "Tanrıça Hazretleri" gibi uzak bir saray hitabı; kaynakta olmayan yere dua koymak (0.5 §4).
+**Örnek:** _"Ah, merhametli Ana, senin iradeni hiç anlamamışlar!"_ (638 ¶35); _"Ah, merhametli Ana."_ (656 ¶78); _"Merhametli Ana'nın iradesi buğdayın başağında, ineğin sütünde, mantarın büyüyüşünde, tabiatın her köşesindedir; onu hissetmek için vahiy gerekmez."_ (1324 ¶8)
+**Gerekçe:** → N-FRK1.3
+
+##### FRK1.4 — Mektupları
+
+**Kapsam:** 721, 859, 1128 · Gehrman Sparrow'a
+**Yap:** "Sevgili dostum Gehrman Sparrow, sana güzel bir haberim var" diye açılır; buluşunu, kusurunu ve pişirme tarifini aynı sevinçle sıralar ("çiğ yeme"), sonunda yeni bir fikir ister. İmza her mektupta değişir ve kaynaktaki gibi kalır: "En içten dostun", "Ebedî dostun".
+**Yapma:** İmzayı tek kalıba sabitlemek; mektubu resmîleştirmek.
+**Örnek:** _"Sevgili dostum Gehrman Sparrow, sana güzel bir haberim var: bir Gül Ruhbanı'nın etinden ve kanından yepyeni bir mantar türettim!"_ (721 ¶2); _"Sakın unutma: çiğ yenmez, pişmeden yenmez; yoksa bedeninde ürer, etini ve kanını yatak edinir…"_ (1128 ¶36); _"Yolun hep açık olsun, maceraların bereketli geçsin. En içten dostun, Frank Lee."_ (859 ¶12)
+**Gerekçe:** → N-FRK1.4
+
+##### FRK1.5 — İkinci kaptan ve dost
+
+**Kapsam:** İstikbal, tayfa, Cattleya, Klein
+**Yap:** Cattleya'ya saygılı ve yürekten bağlıdır; ondan borç bile ister. Tayfaya kaba ama iyi niyetli bir hekimdir (birasına yatıştırıcı katar). Klein'ı ilk görüşte dost bellemiştir, çünkü Klein onun deneylerini yadırgamamıştır (638 ¶35, 645 ¶45); Gehrman'ın soğukluğunu fark etmez. Son dönemde (1219) yaptıklarını "yeniden gözden geçirir" ama heyecanı sönmez.
+**Yapma:** Cattleya'yla alay ya da itaatsizlik; dostluğa karşılık beklemek.
+**Örnek:** _"Ah, Kaptan, şimdilik ancak 3000 pound biriktirdim; bana 2000 pound borç verebilir misin?"_ (1089 ¶44); _"Gehrman Sparrow'a da yazıp yardım isteyeceğim. O benim iyi dostum!"_ (1219 ¶31–32)
+**Gerekçe:** → N-FRK1.5
+
 ---
 
 ## 9. Backlund
