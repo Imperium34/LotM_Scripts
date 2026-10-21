@@ -378,6 +378,60 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Örnek:** _"Doktor, bak, şansın kötüleşecek."_ (326 ¶22); _"Doktor Aaron, bir yılan beni yemek istiyor!"_ (388 ¶66)
 **Gerekçe:** → N-WIL1.6
 
+### Bernadette Gustav (Gizem Kraliçesi) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Roselle'in büyük kızı; Gizem Avcısı Yolu'nda, yüz yılı aşkın süredir denizlerde "Gizem Kraliçesi" diye bilinir. Fecr-i Anasır'ın başıdır, Cattleya'yı yanında büyütmüştür (CAT). Görünümlerinde Mertebe 3, Durugören'dir (1011); 1309'da Mertebe 2, Bilge olur. Sesi yumuşak ama duygusuzdur (柔和但不含感情), ne hızlı ne yavaş konuşur (不快不慢). Az ve ölçülü konuşur: bilgiyi kısa, kesin cümlelerle verir, tanıdığı terimleri açıklamaz, görüşmeyi kendisi bitirir. Kehanetini kısa ve somut söyler. Babasına yüz yıllık bir küskünlük ve özlem taşır; ondan "o" diye söz eder, ilah gibi değil (1011). Duygusu nadiren ve yalnız içerikte görünür: babasını anlattığı birkaç uzun cümle (1011, 1092), Cattleya'ya veda (1239), mezarda tek bir "Baba…" (1306). Ona hitap: Cattleya "Majesteleri" (女王陛下, 1238), babasının şövalyeleri "Prensesim" (公主殿下, 1302; Roselle'in "küçük prensesim"iyle yankı).
+**Onay:** _"Tamam."_ (1092, 1302; 好。); _"Biliyorum."_ (1011, 我知道。); _"Unutmam."_ (1239, 我会记住的。)
+**Sicil (yorum): ölçülü saray ve ilim dili.** Dayanak: "Kraliçe" unvanı, Intis sarayında büyümüş bir prenses, Marifet İfriti yol grubu (sozluk.yml). Ölçülülük süsle değil sözdizimiyle kurulur: tam ve düzgün cümleler, ünlem yok, dolgu yok, laubali kelime yok. Mistisizm ve kehanet anlatırken ilim kelimeleri (marifet, malum, ihtimal) doğal gelir; babası, Cattleya ve çocukluğu söz konusu olunca kelimeler sadeleşir. Divan süsü verilmez; tazim ismindeki ağır Osmanlıca ("İlme talip Mukaddes Ruh…") onun konuşmasına taşınmaz.
+
+##### BER1.1 — Yumuşak, duygusuz, ölçülü bilgi
+
+**Kapsam:** 662–1388 · Gehrman, Cattleya, Klein'ın kuklaları
+**Yap:** Kısa, kesin, düz cümleler; konuşma hızı sabit. Bilgiyi sorulmadan, yerinde ve az sözle verir; karşısındakinin bildiğini varsaydığı terimi açıklamaz (674 ¶16). Bir tespiti ağırlık vermek için bir kez aynen tekrarlar (668). Tahminini "sanırım", "hissediyorum" (我猜测, 我感觉) diye açıkça işaretler. Klein'la karşılıklı "sen".
+**Yapma:** Ünlem, dolgu, sıcak nezaket kalıpları; bilgiyi bilmeceye çevirmek; açıklamayı uzatmak.
+**Örnek:** _"Özgüven bazen bir kusurdur. O bakır düdüğe de o kâğıt turnaya da fazla güveniyorsun; belki bir gün tehlike tam oradan gelir."_ (668 ¶57–58); _"Bu sular, bu kara manastır pek çok sır saklıyor. Benim bildiğim belki yüzde birine bile varmaz."_ (669 ¶49); _"Cevabın ruh hâlimi etkileyeceğini hissediyorum; kötü bir ruh hâli de başarısızlık getirir."_ (1011 ¶37)
+**Gerekçe:** → N-BER1.1
+
+##### BER1.2 — Kısa buyruk, kendi kapattığı görüşme
+
+**Kapsam:** 669–1388 · görüşme sonları, yardım ederken, Mühürlü Eser çağırırken
+**Yap:** Görüşmeyi kendisi bitirir, tek cümleyle. Talimatı gerekçesiz ve kısa verir. Mühürlü Eseri çağırırken yalnız adını söyler (anlatı: yumuşak ama içinde gizli bir buyruk, 轻柔但威严暗藏). Yardımın sınırını tek bir ölçüyle koyar.
+**Yapma:** Kapanışa veda ya da nezaket sözü eklemek; buyruğu açıklamak.
+**Örnek:** _"Rüya sona eriyor."_ (669 ¶57); _"Başka bir işin yoksa bugünlük bu kadar."_ (1011 ¶57); _"En fazla iki ay."_ (828 ¶65); _"En az elli metre geri çekil."_ (828 ¶76)
+**Gerekçe:** → N-BER1.2
+
+##### BER1.3 — Durugören: kehanet
+
+**Kapsam:** 662, 1162 ve kehanet anları · Durugören (Mertebe 3) ve Bilge (Mertebe 2)
+**Yap:** Kehanet kısa, somut ve imgelidir; yorumlamaz. Gözleri kapalıyken ses "biraz uçucu"dur (anlatıda kalır). Anlamı sorulunca yalnız bir dizi tek kelimeyle cevap verir.
+**Yapma:** Kehanete "-ecektir" tantanası ya da mistik süs; imgeyi açıklamak.
+**Örnek:** _"Kaderin, Hornacis sıradağlarının ana zirvesinde."_ (662 ¶61); _"Gehrman Sparrow büyük bir tehlikede. Karanlık aydınlığı yutuyor; geriye yalnızca ince bir şafak kaldı."_ (1162 ¶5) / _"Issızlık, başkalaşma, kıyamet, menfilik, hata."_ (1162 ¶10)
+**Gerekçe:** → N-BER1.3
+
+##### BER1.4 — Babası: "o", "babam", ve tek bir "Baba…"
+
+**Kapsam:** 1011–1309 · Roselle'den söz ederken
+**Yap:** Roselle'den hep "o" (他) diye söz eder; ilahlar için kullanılan büyük harfli O (祂) ona verilmez (1011 ¶13). Başkasına "babam" (我父亲) der. 1092'de yıllarca ona "baba" demediğini söyler; 1306'da mezarda tek kelimeyle "Baba…" der. İki yerde aynı kelime kalır ki yankı duyulsun (0.5 §5). Çocukluğun hitapları kendiliğinden döner: babasının şövalyelerine "William Amca", "Edwards Amca" (叔叔).
+**Yapma:** Roselle için "O" ya da "İmparator Hazretleri"; "babacığım" gibi bir sevgi biçimi (yankıyı bozar); 1306'dan önce "baba" diye hitap.
+**Örnek:** _"Onun gerçekten, tamamen ölmediğini hissediyorum."_ (1011 ¶11); _"Bir zamanlar ondan nefret ediyordum, onu anlayamıyordum; o yüzden yıllarca ona baba demedim."_ (1092 ¶35); _"O benim babam. Bu yalnız bana ait bir iş."_ (1238 ¶76); _"Baba…"_ (1306 ¶95)
+**Gerekçe:** → N-BER1.4
+
+##### BER1.5 — Açılma anları
+
+**Kapsam:** 1011, 1092, 1239 · babası ve Cattleya
+**Yap:** Nadiren açılır; açıldığında cümleler uzar ve anılarla dolar, ama ton aynı kalır: ünlem yok, duygu içerikte. Anlatı bunun alışılmadık olduğunu söyler (1092 ¶39). Cattleya'ya vedasında sertliği bir anlığına yumuşar ve tek bir soruyla ona kapı açar.
+**Yapma:** Bu anları gözyaşlı bir itiraf tiradına çevirmek; yumuşamayı bütün sahneye yaymak.
+**Örnek:** _"Onun ne kadar umutsuz, acı içinde ve yalnız olduğunu, boğulan biri gibi yalnızca içgüdüyle, var gücüyle çırpındığını şimdi biraz anlıyorum."_ (1092 ¶36); _"Diriltilen ben belki yalnızca bir canavar olurum."_ (1239 ¶23); _"Bunca yıl başına gelenleri hep benimle paylaşmak istemiyor muydun?"_ (1239 ¶30)
+**Gerekçe:** → N-BER1.5
+
+##### BER1.6 — İç ses ve hizmetkârın ağzı
+
+**Kapsam:** 1300–1309 · kendi bakış açısından anlatılan bölümler
+**Yap:** İç ses kısa parçalardır: ad, anı, tek bir duygu. Duygusunu birkaç saniyede bastırır (anlatı); soruları yine duygusuz kalır. Hizmetkârın ağzından konuşurken ses "kuru ve donuk"tur (anlatı), cümleler kısalır. 1309'da kendine tek bir acı tespit.
+**Yapma:** İç sese uzun bir yas monoloğu; hizmetkârın ağzındaki sese duygu vermek.
+**Örnek:** _"Bu William Amca. Yüzünü hatırlıyorum; bana kılıç kullanmayı o öğretmişti…"_ (1300 ¶50); _"Edwards Amca, burada ne işin var?"_ (1302 ¶2); _"Torunların iyi yaşıyor. Hepsi bir şekilde bir yere geldi."_ (1303 ¶16); _"Ne müthiş bir ironi…"_ (1309 ¶5)
+**Gerekçe:** → N-BER1.6
+
 ---
 
 ## 4. Moretti Ailesi ve Gece Şahinleri (Tingen Yan Karakterler)

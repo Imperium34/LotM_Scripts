@@ -483,6 +483,8 @@
 - **Jotun** — Jotun (巨人语)
 - **Çince** — Chinese (汉语 / 中文)
 - **sanal arkadaşlık sitesi** — online dating/friend site (交友平台)
+- **Majesteleri** — Your Majesty (陛下); Cattleya'nın Bernadette'e hitabı: 女王陛下 → 'Majesteleri' _1238_
+- **Prensesim** — Your Highness, a princess (公主殿下); Roselle'in şövalyelerinin Bernadette'e hitabı; Roselle'in 'küçük prensesim'iyle yankı _1302_
 - **zât-ı âliniz / Ulu efendim / Efendi hazretleri** — formal honorific (您 / 阁下; standardized spelling. can use other translations like )
 - **fikir cereyanı** — current of thought (思潮)
 - **hâdise** — phenomenon; devrin içtimai ilim dilinde "içtimai hâdise" (现象)

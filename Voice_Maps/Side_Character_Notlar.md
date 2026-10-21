@@ -1020,7 +1020,7 @@ Ad: 1110 ¶39, 1111 ¶4, ¶10, ¶24, 1275 ¶67, 1359 ¶19, ¶30 索伦·艾因�
 
 ### N-WIL1.1
 
-Tavır: 770 ¶28–29 (Klein: ‘命运之蛇’先生？ / Will: 你为什么肯定是先生？); ¶32–33 我还没有决定……你知道的，哦，你不知道，每一次重新开始，我都尽量让自己有点不同，以便保持良好的心理状态，小孩阶段就该有小孩的样子。; 818 ¶50 难道你指望我在妈妈的肚子里给你折千纸鹤？就算能折，你也拿不到啊！; ¶53 好了，作为一个还没出生的胎儿，我该补眠了; ¶57 你厨师做的冰淇淋太甜了……; 887 ¶2 我也没有办法，我还在妈妈肚子里啊！; ¶9 你觉得这现实吗？不仅让一个刚出生的婴儿提笔给你写信，还要布置仪式，召唤信使？; ¶13 那也得尊重自然规律！; 936 ¶49 你这句话应该对我父母说！ Açıklama: 770 ¶36 (yeniden başlamak deliliği yıkar ama inanç çıpası gerekir), ¶40 (Ouroboros'un çocukluğu yok); 827 ¶64 (Gizem Talibi Yolu'nun 5→4 ritüeli); 1125 ¶17–23 (Yegâneliği barındırmanın üç yolu; Yolun ilahlaşma ritüeli). Anlatı: 清亮的声音/嗓音 (818 ¶40, 827 ¶40, 886 ¶66, 936 ¶49); 吸了下拇指/手指 (818 ¶34, 827 ¶52, 886 ¶70, 936 ¶73). İki yaş: 1357 ¶39 我总觉得你会说：你尽情呼救吧，没有谁能听见。; ¶41 欺负小孩并不符合你现在的身份。; ¶46 你为什么不蹲下来？在我这个年纪，如果一直这么扬着头，会对颈椎发育不好。 Hitap: Will Klein'a her sahnede 你 der; ad ya da unvan kullanmaz.
+Tavır: 770 ¶28–29 (Klein: ‘命运之蛇’先生？ / Will: 你为什么肯定是先生？); ¶32–33 我还没有决定……你知道的，哦，你不知道，每一次重新开始，我都尽量让自己有点不同，以便保持良好的心理状态，小孩阶段就该有小孩的样子。; 818 ¶50 难道你指望我在妈妈的肚子里给你折千纸鹤？就算能折，你也拿不到啊！; ¶53 好了，作为一个还没出生的胎儿，我该补眠了; ¶57 你厨师做的冰淇淋太甜了……; 887 ¶2 我也没有办法，我还在妈妈肚子里啊！; ¶9 你觉得这现实吗？不仅让一个刚出生的婴儿提笔给你写信，还要布置仪式，召唤信使？; ¶13 那也得尊重自然规律！; 936 ¶49 你这句话应该对我父母说！ Açıklama: 770 ¶36 (yeniden başlamak deliliği yıkar ama inanç çıpası gerekir), ¶40 (Ouroboros'un çocukluğu yok); 827 ¶64 (Gizem Avcısı Yolu'nun 5→4 ritüeli); 1125 ¶17–23 (Yegâneliği barındırmanın üç yolu; Yolun ilahlaşma ritüeli). Anlatı: 清亮的声音/嗓音 (818 ¶40, 827 ¶40, 886 ¶66, 936 ¶49); 吸了下拇指/手指 (818 ¶34, 827 ¶52, 886 ¶70, 936 ¶73). İki yaş: 1357 ¶39 我总觉得你会说：你尽情呼救吧，没有谁能听见。; ¶41 欺负小孩并不符合你现在的身份。; ¶46 你为什么不蹲下来？在我这个年纪，如果一直这么扬着头，会对颈椎发育不好。 Hitap: Will Klein'a her sahnede 你 der; ad ya da unvan kullanmaz.
 **Denetim:** 770, 818, 827, 886–887, 936, 1125, 1357 (ZH).
 
 ### N-WIL1.2
@@ -1047,6 +1047,47 @@ Hamle: 770 ¶55–60 (Klein 您的脐带血…… der demez 哇！; Klein geri �
 
 326 ¶22 医生，你的运气会变差诶。 (Aaron'un aktarımı; ¶23'te Talim tekrar eder); 386 ¶53 (Aaron'un rüyası: 艾伦医生，有蛇想吃我！); 388 ¶65–66 aynı satır, Klein rüyada görür (又惊又喜，又畏惧又惶恐). 403'te bu bedenin cesedi bulunur; Will sonradan Aaron'un çocuğu olarak yeniden doğar (591).
 **Denetim:** 326, 386, 388 (ZH).
+
+---
+
+## Bernadette Gustav (Gizem Kraliçesi)
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır (Will Auceptin notlarıyla aynı).
+> **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm (konuşan):** 662–663 (Sonia Denizi rüyasındaki kütüphane), 668–669 (kara manastır), 674 (Future'da), 828 (Backlund, bezelye sarmaşıkları), 1011, 1092–1093 (Backlund; Roselle, George III), 1145 (lamba dileği), 1161–1162 (kehanet), 1238–1239 (Cattleya'ya veda), 1300–1306 (ilkel ada, Roselle'in mezarı; büyük ölçüde onun bakış açısı), 1309 (Bilge), 1349, 1372, 1388. Anılır: 264, 323, 714, 866 (Roselle'in günlükleri; Roselle haritası), 678 (Tarot'ta "Şafağın sahibi").
+> **Başka haritalarla bağ:** Roselle haritası (ROS) babanın tarafını tutar (küçük prensesim, kendinden "baban" diye söz etmesi). Cattleya haritası (CAT1.5) Bernadette'i "hem kaptan, hem hoca, hem anne" diye anar. Klein ona her zaman Gehrman Sparrow olarak "sen" der; Klein.md'deki Gehrman maskesi kuralları geçerlidir.
+> **Hitap kararları (2026-10-21):** 女王陛下 → "Majesteleri" (Cattleya, 1238 ¶64; "Tünaydın, Majesteleri."); 公主殿下 → "Prensesim" (Edwards, 1302 ¶22; Roselle'in "küçük prensesim"iyle yankı). Sicil (yorum) katmanı onaylandı; aile konularına girmez.
+> **Sözlükte olmayanlar (soru):** 无形仆役 (Invisible Servant), 许愿神灯 (Magic Wishing Lamp, 0-05), 苍白之死 (Pale Death), 贤者额饰 (Sage Frontlet), 安眠号角 (Sleep Bugle), 黎明号 (gemisi Dawn), 翡翠城 (Emerald City), 不老泉, 神秘重现 (Mystical Re-enactment). Örneklerden kaçınıldı.
+
+### N-BER1.1
+
+Ses: 669 ¶21 语气柔和但不含感情地说道; 828 ¶51 柔和但不含情绪地开口道; 1011 ¶10 嗓音柔和但不带感情; 1093 ¶5 嗓音不含感情地问道; hız: 669 ¶27, ¶57 不快不慢; 1092 ¶12 语速不快不慢. Tekrar: 668 ¶57 自信有的时候是缺点。→ ¶61 aynı cümle, 重复了一遍. Açıklamasız terim: 674 ¶15–16 (不老魔女'yı açıklamaz: 似乎确信格尔曼·斯帕罗肯定知道). Bilgi: 669 ¶17, ¶22, ¶31, ¶33, ¶39, ¶49; 674 ¶24; 828 ¶57–59 (iki kısa soru: 是‘黑夜’途径，还是‘死神’途径的，或者其他？/ 是教区主教堂，还是一般城市中心教堂？); 1011 ¶47–48, ¶52, ¶54; 1092 ¶12, ¶14; 1239 ¶11, ¶15–16, ¶19. Tahmin işareti: 669 ¶21 这是我的猜测; ¶39 我一直怀疑; 1011 ¶11 我感觉; ¶37 我感觉答案会影响我的心情，而心情的不佳会导致我的失败。 Hitap: Klein'a her sahnede 你; Klein da ona 你 (662–1388 arasında Klein'ın ona tek 您'ü yoktur).
+**Denetim:** 662, 668–669, 674, 828, 1011, 1092–1093, 1239 (ZH).
+
+### N-BER1.2
+
+Kapanış: 669 ¶57 嗓音未变地说道：梦境要结束了。; 1011 ¶57 如果你没别的事情，今天就到这里吧。; 1093 ¶45 那就各自开始搜集相应的情报，保持书信的交流。 Buyruk: 828 ¶76 你后退至少50米。; 1239 ¶12 绝对不能！ (tek ünlem; lamba kuralını vurgular). Sınır: 828 ¶65 神情平淡地说道：最长两个月。 Mühürlü Eser çağrısı: 828 ¶72 “安眠号角。”贝尔纳黛嗓音轻柔但威严暗藏地说道。; 1303 ¶63 “贤者额饰。”贝尔纳黛语气平和，嗓音威严地吩咐道。 Teklif: 662 ¶59 我希望你将罗塞尔大帝自创的那种文字的解读方式分享给我，我可以满足你绝大部分的要求。; ¶64 当你需要一些帮助或者几张‘亵渎之牌’的线索时，告诉我答案。; 1092 ¶62 在阻止乔治三世上，我们可以合作。
+**Denetim:** 662, 669, 828, 1011, 1092–1093, 1239, 1303 (ZH).
+
+### N-BER1.3
+
+662 ¶61 气势内敛但气质不减地看着他道：你的命运在霍纳奇斯山脉的主峰。; 1162 ¶5 紧闭双眸，用一种略显飘渺的嗓音开口道：格尔曼·斯帕罗陷入了极大的危机，黑暗在吞噬光明，只剩下了一线曙光。; ¶10 (Reinette 什么…代表…黑暗…象征 diye sorar) 保持着刚才的姿态道：荒芜，畸变，末日，负面，错误。; 1161 ¶59 kendi kendine: 这不是阻止灾难，也没有加剧灾难……; 1092 ¶14 我预言的是今年下半年; 1011 ¶52 ‘窥探命运的秘密’换一种说法就是‘预言’，‘窥秘人’的序列3名称叫做‘预言大师’; 1388 ¶15 bir şey görür ve susarak lambayı alır. Mertebe adları: 预言大师 → Durugören, 贤者 → Bilge (sozluk.yml).
+**Denetim:** 662, 1011, 1092, 1161–1162, 1388 (ZH).
+
+### N-BER1.4
+
+1011 ¶13 贝尔纳黛用的是“他”而非“祂”来形容罗塞尔大帝 (Klein bunu onun gözünde Roselle'in bir melek değil bir baba olduğu diye okur); ¶11 我感觉，他没有真正地，彻底地陨落。, ¶15, ¶18, ¶29 (你们为什么对他的事情那么感兴趣？), ¶40–41; 1093 ¶47 他会不会已经初步复活; ¶34 (Klein ise Roselle için 祂 kullanır, kimliğini saklamak için). 1092 ¶35 我曾经很痛恨他，无法理解他，以至于很多年没有叫过他爸爸… 我不能接受我心目中英雄一样的父亲变成一个疯狂的暴君……; 1238 ¶72 我父亲当年; ¶76 那是我的父亲，这是属于我一个人的事情。; 1306 ¶95 压在喉咙里般的声音：爸爸…… (父亲 → "babam", 爸爸 → "baba"; 1092 ¶35 ile 1306 ¶95 aynı kelimedir). Çocukluk hitapları: 1300 ¶50 这是威廉叔叔，我记得他的样子，他曾经教过我剑术……; ¶51 珀利叔叔……; 1302 ¶2 爱德华兹叔叔，你为什么会在这里？; ¶18 威廉叔叔他们没和你在一起？
+**Denetim:** 1011, 1092–1093, 1238, 1300, 1302, 1306 (ZH).
+
+### N-BER1.5
+
+1011 ¶40–41 (他写那几页日记之一时，我就坐在他对面…只是揉了下我的头发，那时候，我已经成年了……); 1092 ¶34–36 (我依旧不喜欢战争…我有些明白他的处境了，明白他承受着绝望、痛苦和孤独，明白他像个溺水之人，只是在本能地、竭力地挣扎。), ¶39 这位王女从未说过这么多话，从未这么直接地打开自己的心灵，顶多就是吹响乐章，含蓄内敛地宣泄些许悲伤 (kederini sözle değil müzikle döker; krş. 1093 ¶53, Klein ayrılırken duyulan ezgi), ¶42 (星辰大海 anısı); 1239 ¶1 这是你的选择，也是你的自由。, ¶7 我会记住的。, ¶23 复活的我也许只是一个怪物。, ¶29–30 表情突然柔和了一点：你不是一直想把这么多年来遭遇的事情分享给我吗？
+**Denetim:** 1011, 1092, 1239 (ZH).
+
+### N-BER1.6
+
+İç ses: 1300 ¶49–51 (格林，他真的是格林… / 这是威廉叔叔… / 珀利叔叔……); ¶57 爱德华兹叔叔也回到了这座岛屿……. Bastırma: 1302 ¶38 立刻挑了下眉毛，足足用了三秒才控制住了情绪; ¶39 不含丝毫感情地继续问道. Hizmetkârın sesi: 1302 ¶4 (EN) It was dry, dull, and completely different from normal; ¶31 干涩暗哑的声音. Kısa sorular: 1302 ¶14, ¶18, ¶25 我父亲的陵寝在哪里？我想去看一看。, ¶35; 1303 ¶16 你的后裔们过得都还不错，都有了一定的成就。 1306 ¶52 (gözleri dolar), ¶55 异常冷静地做出了决断. 1309 ¶5 这真是一个绝妙的讽刺啊…… (Bilge ritüelini tamamlamıştır: babasının felaketini önleyerek).
+**Denetim:** 1300, 1302–1303, 1306, 1309 (ZH).
 
 ---
 
