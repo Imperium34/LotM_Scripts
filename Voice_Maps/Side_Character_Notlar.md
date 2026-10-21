@@ -701,7 +701,7 @@ Mektup 203 ¶67–70, 204 ¶6–8: 哈哈哈，祝贺你们，祝贺你们终于
 
 > **Numaralama:** 24–25 ZH/TR ¶ (bolum.py hizalı); diğerleri ZH satır sırası. Çevrildikçe ZH/TR ¶ eklenmeli.
 > **Örnekler:** 24–25 dışındaki örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
-> **Görünüm:** 268 bölümde adı geçer; konuştuğu ana sahneler 24–25, 98, 112–113, 150–151, 170, 187 (mektup), 480, 587–589, 730, 913–917. 917'den sonra uykudadır: 1145 tarihî yansıma (konuşmaz), 1368 Ebedi Zulmet Nehri kıyısındaki gölgeler.
+> **Görünüm:** 268 bölümde adı geçer; konuştuğu ana sahneler 24–25, 98, 112–113, 150–151, 170, 187 (mektup), 480, 587–589, 730, 913–917. 917'den sonra uykudadır: 1145 tarihî yansıma (konuşmaz), 1368 Ebedî Zulmet Nehri kıyısındaki gölgeler.
 > **Aşama sınırları:** 150 ¶46–48: anılar ilk kez döner, Klein onu 更加深沉，更加威严 bulur. 588 ¶18: hâlâ 正在寻回它们的途中. 914 ¶65: 之前的沉眠让我回想起了更多的事情; Ölüm Veliahdı'nın soğukluğunu kendi geçmişi olarak tanır. 917 ¶25: 我选择三 → yeniden uyku.
 > **Eski haritadan düşenler:** "Ölüm Yolu kelimelerinin (naaş, berzah, zulmet) konuşmasına sızması" kaynakta yok: Azik her aşamada sade konuşur; soğukluk içerikte ve muhatapta görünür (914 ¶22–23, ¶65–67). Ince Zangwill'le yüzleşme örneği uydurmadır (o karşılaşma 480'de sahne dışında geçer).
 
@@ -1130,10 +1130,10 @@ Kapanış: 669 ¶57 嗓音未变地说道：梦境要结束了。; 1011 ¶57 如
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
 > **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
-> **Görünüm (konuşan):** 916–917 (Azik'e seçenekler; kimliği gizli), 1357 (izdüşüm, ışık kapısı), 1358 (Antigonus, Âdem ve Amon, Ebedi Zulmet Nehri), 1369–1370 (Calderón'un derinliği; Esrarın Hükümdarı ile Kadir-i Mutlak; seçenekler), 1387–1388 (krallığının sınırında). Görünür, konuşmaz: 1376 (Hornacis zirvesinde Amon'a karşı). Kimliği: 918, 1118 (Klein'ın tahminleri; Amanises).
+> **Görünüm (konuşan):** 916–917 (Azik'e seçenekler; kimliği gizli), 1357 (izdüşüm, ışık kapısı), 1358 (Antigonus, Âdem ve Amon, Ebedî Zulmet Nehri), 1369–1370 (Calderón'un derinliği; Esrarın Hükümdarı ile Kadir-i Mutlak; seçenekler), 1387–1388 (krallığının sınırında). Görünür, konuşmaz: 1376 (Hornacis zirvesinde Amon'a karşı). Kimliği: 918, 1118 (Klein'ın tahminleri; Amanises).
 > **Klein.md ile bağ:** Klein'ın sesi M4'tedir ("siz", saygılı, sakin; eli göğsünde selam). 1357–1370 arasında Klein'ın ona 8 replikte 您 vardır; 1387–1388'de doğrudan hitap yoktur.
 > **Kararlar (2026-10-21):** Ece katmanı onaylandı; 源质 → "Aslî Menşe" (çoğul "Aslî Menşeler"; words.md); Amon için büyük harfli O (ECE1.7).
-> **Sözlükte olmayanlar (soru):** 永眠 (eternal slumber; örnekte "ebedî uyku"), 层次 (level; örnekte "derece", Mertebe 序列'e ayrılı), 支柱 (pillar; kullanılmadı).
+> **Terimler (2026-10-21, words.md):** 永眠 → "ebedî uyku"; 层次 → "derece" (güç basamağı anlamında; Mertebe 序列'e ayrılı); 支柱 → "Rükün" (1369 ¶31 sonrası: 支柱是自身状态能稳定的最高层次, 宇宙支柱, 支柱级旧日).
 
 ### N-ECE1.1
 

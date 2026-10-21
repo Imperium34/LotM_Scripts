@@ -10,7 +10,7 @@
 - **Şaşaa Devri** — Glorious Era (光辉年代); Helak Çağı'nın başlangıcı; "Çağ" 纪/纪元'ye, "Devir" 年代'ya ayrılı; "Nur" Güneş Kilisesi'nin akoruna ayrılı olduğu için kullanılmaz (bilinen istisna: Yedi Nur); İng. çeviri bu devri Helak'la birleştirir, yanlış
 - **Büyük Helak** — the Great Cataclysm (大灾变); Şaşaa Devri'nden sonra gelen felaket; Helak Çağı adını ondan alır
 - **İlahlar Çağı / Dördüncü Çağ** — Fourth Epoch (第四纪); 9'da "İlahlar Çağı olarak da bilinen Dördüncü Çağ"; sıra adı ile tema adı eşanlamlı, "Beşinci Çağ / Demir Çağı" gibi _9_
-- **Ebedi Zulmet Nehri** — River of Eternal Darkness (永暗之河); salahiyetler.yml Kural 9: özel adlarda 暗 → 'Zulmet'
+- **Ebedî Zulmet Nehri** — River of Eternal Darkness (永暗之河); salahiyetler.yml Kural 9: özel adlarda 暗 → 'Zulmet'
 - **Âlem-i Berzah** — Underworld (冥界); sozluk.yml / salahiyetler.yml; içinden Berzah Nehri (冥河) geçer
 - **Yedi Nur** — the Seven Lights of the spirit world (灵界七光); tekil adlar renkle: **Kızıl Nur** (红光; sozluk.yml 'Kızıl Nur (Aiur Moria)'), **Sarı Nur** (黄光) vb. BİLİNEN İSTİSNA: 'Nur' Güneş Kilisesi'ne ve 神圣 (Kudsiyet) kaydına ayrılıdır (bkz. Şaşaa Devri; salahiyetler.yml 光 notu). Yedi Nur bilinçli bir istisnadır: Işık salahiyetiyle bağı yoktur, kaynak bunları sıradan ışık değil varlık olarak anar; 'Kızıl Işık' bir lamba gibi okunur, 'Kızıl Nur' bir varlık gibi. Müphem Sis'in 'Nur ile Zulmet'i gibi kabul edilmiş bir çakışmadır.
 
@@ -68,6 +68,8 @@
 - **Şimal Kralı** — King of the North (北方之王); Groselle'in Gezileri'ndeki buz ejderi Ulyssan _576_
 - **mesh olmak** — to mutate (异变); salahiyet kelimesi Mesh'in fiili; gündelik başkalaşma için de aynı kelime (Frank'in mantarları, 656), Celp kararıyla aynı mantık _656_
 - **melezleme** — cross-breeding (杂交); Frank Lee'nin işi; 'melez' sıfatı _638_
+- **ebedî uyku** — eternal slumber (永眠); Ebedi Zulmet Nehri'nin simgelediği ölümsüz uyku, Antigonus'un 永眠状态'i (1358, 1373–1375), 永眠的国度 = ebedî uykunun ülkesi; Ölüm Yolu'nun bölgesel adı Ebedî Uykucu (永眠者) ile aynı kök. Gündelik uyku 沉眠 = uyku / derin uyku (沉眠符咒 dahil), 'ebedî' almaz; ölüm örtmecesi 长眠 = son uyku / ölüm uykusu (173, 702, 1233) _754_
+- **Rükün** — Pillar (支柱; kozmik ve Aşkın anlamı); çoğul Rükünler, ünlü düşer: rüknü, rükne. Üç Rükün (三支柱: Kadir-i Mutlak, Esrarın Hükümdarı, Sefahat Ana Tanrıça), Dördüncü Rükün (第四支柱), kâinatın Rüknü (宇宙支柱), Rükün derecesinde bir Yüce Kadim (支柱级旧日; 层次 = derece). Mos Çilekeş Tarikatı'nın On Rüknü (十支柱; Cattleya'nın rütbesi, 1276, 1323, 1391). Arrodes'in 支柱，支配 satırı (936, 1075, 1274) aynı kelimeyi kullanır, 1347'deki çözülme buna dayanır. Klein'ın hasletleri taşıyan 支柱'u (1380) küçük harfle 'rükün'. Gündelik ve yapı anlamı 'sütun': ailenin, ekonominin sütunu (111, 222, 517, 1335), Gümüş Şehir'in sütunlarından biri (899), Tarot Kulübü'nün sütunu (1388), harabedeki sütunlar (538, 547) _1347_
 - **Aslî Menşe** — sefirah (源质; çoğul Aslî Menşeler, sefirot); Kabala göndermesi ile Çince ad arasında bir orta yol (kullanıcı kararı); Aslî Kale (源堡) bunlardan biridir; salahiyetler.yml'de zaten bu biçimde _1358_
 - **Kader Çarkı Yolu** — Wheel of Fortune pathway ("命运之轮"途径; kısaca "命运"途径); Canavar Yolu'nun Mertebe 0 adıyla anılışı (609: "怪物"途径又叫"命运之轮"途径) _609_
 - **Solgun Mevt** — Pale Death (苍白之死); Bernadette'in Sınıf 0 Mühürlü Eseri, Naaş Toplayıcı Yolu'na ait bir maske; 苍白 = Solgun, 死亡 = Mevt (salahiyet kelimeleri) _1304_
@@ -646,6 +648,7 @@
 - **微微 + jest** — düşer
 - **ifa** — 'Rol İfası'na (扮演法) ayrılıdır; gündelik fiil olarak kullanılmaz ('vazifesini ifa etmek' değil, 'yerine getirmek'), terimin ağırlığı korunur.
 - **Erken Mertebe = meslek** — düşük Mertebe adlarının çoğu sıradan bir meslekle aynı kelimedir, çünkü bu Aşkınlar biraz güçlenmiş sıradan insanlardır ve öyle sanılabilir. Ayrım yalnız harftedir: Mertebe büyük harf, meslek küçük harf (Kâhin/kâhin, Hekim/hekim, Aktar/aktar, Ruh Aracısı/ruh aracısı). Hangisi olduğu, konuşanın kişiyi Aşkın olarak mı yoksa mesleğiyle mi andığına bakılarak seçilir.
+- **层次**: kavram değil, sıradan kelime; bağlama göre çevrilir (seviye, katman, kat kat, derin; ch7, 35, 38, 52, 57). Güç basamağı anlamında varsayılan 'derece' (层次越高 = derece yükseldikçe; 停在当前层次 = bulunduğu derecede kalmak). 'Mertebe' 序列'e ayrılıdır, burada kullanılmaz.
 
 ---
 
