@@ -90,7 +90,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Tüm aşamalar · Klein, Cohen, dostlar
 **Yap:** Kısa ve sade cümleler; gerektiğinde yardım teklif eder, kahve uzatır, yemeği ısmarlar. Mizah küçük ve kurudur: bir "haha", bir "heh", hafif bir takılma. Uyarılarını açık, adım adım verir. Kendinden pek söz etmez; edince alçakgönüllüdür.
 **Yapma:** Ağdalı, süslü ya da vaaz veren bir dil; uzun anlatımlar (Aşama 1'deki rüya listesi hariç, AZK1.2); kibirli bir bilgelik tonu.
-**Örnek:** _"Biz yukarı çıkıyoruz. Mektup yazmayı unutma. Adresimiz henüz değişmedi. Hâlâ Khoy Üniversitesi Tarih Bölümü Ofisi. Haha."_ (25 ¶12); _"Şekerle sütü kendin koy."_ (98); _"Okuldaki lokanta fena değildir, heh, ben ısmarlıyorum."_ (113; lokantanın adı Doğu Balam Lokantası)
+**Ayar:** _"Biz yukarı çıkıyoruz. Mektup yazmayı unutma. Adresimiz henüz değişmedi. Hâlâ Khoy Üniversitesi Tarih Bölümü Ofisi. Haha."_ (25 ¶12); _"Şekerle sütü kendin koy."_ (98); _"Okuldaki lokanta fena değildir, heh, ben ısmarlıyorum."_ (113; lokantanın adı Doğu Balam Lokantası)
 **Gerekçe:** → N-AZK1.1
 
 ##### AZK1.2 — Aşama 1: kayıp geçmiş ve hüzün
@@ -98,7 +98,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 24–136 · kendisi, geçmişi, rüyaları
 **Yap:** Geçmişini ve rüyalarını anlatırken sesi uzaklaşır: rüyaları "bazen ... , bazen ..." diye sıralar, sonra kendini toplayıp düz bir sese döner. Kaybını bir benzetmeyle söyleyebilir (limansız gemi). Korkusunu açıkça itiraf eder; kendi gücünden emin değildir ("sanırım", "belki"). Ardından kendiyle alay eden bir gülümseme.
 **Yapma:** Rüyaları tekinsiz, ölüm kokan bir dille kurmak; bilgiç ya da gizemli bir ses; korkuyu saklamak.
-**Örnek:** _"Antigonus... bir yerden tanıdık geliyor... ama neden hatırlayamıyorum ki..."_ (24 ¶68); _"Çünkü tehlikeden korkuyorum, ölümden korkuyorum."_ (113); _"Geçmişi olmayan bir insanın neler hissettiğini asla hayal edemezsin. Denizde sürüklenen bir gemi gibidir; en korkunç şey fırtınaya yakalanmak değil, limanı, karaya giden rotayı bulamamaktır."_ (113)
+**Ayar:** _"Antigonus... bir yerden tanıdık geliyor... ama neden hatırlayamıyorum ki..."_ (24 ¶68); _"Çünkü tehlikeden korkuyorum, ölümden korkuyorum."_ (113); _"Geçmişi olmayan bir insanın neler hissettiğini asla hayal edemezsin. Denizde sürüklenen bir gemi gibidir; en korkunç şey fırtınaya yakalanmak değil, limanı, karaya giden rotayı bulamamaktır."_ (113)
 **Gerekçe:** → N-AZK1.2
 
 ##### AZK1.3 — Aşama 2: uyanan hafıza, sakin akıl hocası
@@ -106,7 +106,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 150–730 · Klein, mektuplar, görevler
 **Yap:** Anı tetiklendiği anda ses düşer ve duygusuzlaşır; cümleler kısa, kesin (150). Sonrasında güçlü ve kendinden emin bir akıl hocası: tehlikeyi tartıp tek cümleyle karar verir ("Şimdi.", "Başlayalım."), uyarılarını nedeniyle birlikte verir. Ölüm ve ölümsüzlük karşısında rahat, hatta şakacıdır. 问题不大 onun kalıbıdır: "Büyük bir sorun yok." (Klein bunun ironisini sonradan fark eder, 913). Kendi değişimini de kuru bir şakayla anlatır.
 **Yapma:** Gücü gösterişle anlatmak; Klein'a tepeden bakmak; ölümü ağırbaşlı, dehşetli bir sesle anmak.
-**Örnek:** _"Bazı şeyler hatırladım, ama yalnızca küçük bir kısmını."_ (150); _"Ölmez biri için bu büyük bir mesele değil."_ (480); _"Deniz kızı mı? Ölü ruha dönüşmüş deniz kızları olur mu? En az dört tane bulabilirim."_ (480); _"Ölmezim, solmaz değilim. İnsan yaşlandıkça yumuşar."_ (589; Solmaz Şeytaniçe Catherine'e cevap)
+**Ayar:** _"Bazı şeyler hatırladım, ama yalnızca küçük bir kısmını."_ (150); _"Ölmez biri için bu büyük bir mesele değil."_ (480); _"Deniz kızı mı? Ölü ruha dönüşmüş deniz kızları olur mu? En az dört tane bulabilirim."_ (480); _"Ölmezim, solmaz değilim. İnsan yaşlandıkça yumuşar."_ (589; Solmaz Şeytaniçe Catherine'e cevap)
 **Gerekçe:** → N-AZK1.3
 
 ##### AZK1.4 — Aşama 3: Ölüm Veliahdı'nın sesi
@@ -115,7 +115,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Yap:** Kendinden aşağıdakilere düz, kısa ve mutlak buyruklar verir; karşısındakinin hayatını küçük bir iş gibi tartar. Sorulana tek kelimeyle cevap verir ("Kudurgan Deniz."). Geçmişteki zulmünü dalgasız, düz bir sesle anlatır ve bunun "gerçek kendisi" olabileceğini söyler. Ailesini anınca yüzü yumuşar, bir gülümseme sızar. Klein'a karşı sıcaklık sürer; vedası şakayla karışık ve yorgundur.
 **Sicil (yorum): Balam ferman dili.** Yalnızca Ölüm Yolu'nun alt Mertebelerine ve astlarına verdiği buyruklarda, Balam İmparatorluğu'nun Ölüm Veliahdı olarak eski bir ferman diliyle konuşur: istek-emir kipi ("-asın / -esin"), "müddet", "tamam olmak", "izin" gibi divan kâtibi kelimeleri; kısa ve kesin, gerekçesiz. Bu dil yalnız aşağıya akar: aynı sahnede Klein'a döndüğü an sade Loen beyefendisine (AZK1.1) geri döner, ve iki ses arasındaki fark Ölüm Veliahdı'nın yüzeye çıkışının kendisidir. Astları da ona aynı dille seslenir ("Emrin olur, ulu Ölüm Veliahdı."). Kaynakta bu satırlar düz bir dille yazılıdır (说的平平淡淡); ferman tınısı, Ölüm Yolu ve Balam adlarının çağrışımına dayanan bir çeviri yorumudur.
 **Yapma:** Kötü adam tiradı, tehdit, ağır ölüm imgeleri ("zulmet, naaş, berzah" sızıntıları); Klein'a da soğuk davranmak; ferman dilini itiraf ve anı cümlelerine taşımak (onlar düz kalır).
-**Örnek:** _"Bir yıl onun kuklası olasın. Müddet tamam olunca Ruhanî Âlem'e dönesin."_ (914; Amiral Cehennem Ludwell'e) ↔ astın cevabı _"Emrin olur, ulu Ölüm Veliahdı."_ (914); _"Ve ben öylece, soğukça izliyordum; en ufak bir duygu kıpırtısı olmadan."_ (914); _"Mektup yazmayı unutma. Ama uyanmadan önce cevap vermem."_ (917)
+**Ayar:** _"Bir yıl onun kuklası olasın. Müddet tamam olunca Ruhanî Âlem'e dönesin."_ (914; Amiral Cehennem Ludwell'e) ↔ astın cevabı _"Emrin olur, ulu Ölüm Veliahdı."_ (914); _"Ve ben öylece, soğukça izliyordum; en ufak bir duygu kıpırtısı olmadan."_ (914); _"Mektup yazmayı unutma. Ama uyanmadan önce cevap vermem."_ (917)
 **Gerekçe:** → N-AZK1.4
 
 ##### AZK1.5 — Hafıza çatlağı
@@ -123,7 +123,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Tüm aşamalar · bir isim, bir yer, bir yüz hafızayı yokladığında
 **Yap:** Şakağını ovar, cümle üç noktayla kesilir; "tanıdık geliyor... ama hatırlayamıyorum". Aşama 2–3'te aynı an ağır bir sessizlik ve kısa bir "Hatırlayamıyorum..." ile gelir. 916'daki mücadelede yalnızca "Hayır..." der.
 **Yapma:** Çatlağı açıklamak ya da uzun bir iç döküşe çevirmek.
-**Örnek:** _"Antigonus... bir yerden tanıdık geliyor... ama neden hatırlayamıyorum ki..."_ (24 ¶68); _"Ben... hatırlayamıyorum..."_ (588)
+**Ayar:** _"Antigonus... bir yerden tanıdık geliyor... ama neden hatırlayamıyorum ki..."_ (24 ¶68); _"Ben... hatırlayamıyorum..."_ (588)
 **Gerekçe:** → N-AZK1.5
 
 ### Âdem `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -137,7 +137,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Yap:** Kısa, düz, eşit ritimli cümleler; ünlem yok, kahkaha yok (yalnız anlatıdaki "yumuşak bir gülümsemeyle"). Genelleyen "-dır/-dir" cümleleri ve sade, zamansız kelimeler: kurban, gerekli, kaçınılmaz, huzur. Bilgiyi bir ilmihal gibi, sakin ve eksiksiz verir; bilmediğini de aynı sakinlikle söyler ("Bunu şimdilik kimse doğrulayamaz.").
 **Sicil (yorum): mürşit sohbeti.** Âdem'in tarafı Türkçede zaten tasavvufla renklenmiştir: Gurûb Münzevîleri Meclisi, Tahayyül Meleği, Seyirci Yolu'nun Hülya Sâliki, Mümeyyiz ve Musavvir'i; Seyirci Yolu da İbrahimî Tanrı tasavvurunu temsil eden Kadir-i Mutlak yol grubundadır. Bu yüzden onun vaiz ve itirafçı tavrının Türkçe karşılığı bir mürşidin sohbetidir. Öğüt verdiği, yönlendirdiği, teselli eder gibi konuştuğu anlarda az ve yerinde tasavvuf kelimesi girer: hâl, nefis, sabır, takdir, imtihan, rıza. Anlatıdaki "inanana öğüt verir gibi" (就像在开解信徒) bir şeyhin müridine konuşması gibi verilir. Kozmoloji ve bilgi anlatırken (1345–1348'deki uzun açıklamalar) bu katman girmez; o kısımlar sade ve kesin kalır. Gümüş haç ve beyaz cüppe dünyanın içindeki işaretlerdir, olduğu gibi kalır. Amon bu dağarcığı hiç kullanmaz.
 **Yapma:** Amon'un oyun dağarcığı ("ilginç", "eğlenceli", "tahmin et"), "heh heh", "değil mi?" eki; A Bey'in coşkulu nüzul ve kurban dili (AUR, Âdem'den ayrım); ağdalı Divan dili; öfke, alay, ünlem; tasavvuf kelimelerini bilgi kısımlarına yığmak.
-**Örnek:** _"Gidebilirsin."_ (1150); _"Bu, gerekli bir kurbandı."_ (1346); _"Anlamıyorsun, çünkü yeterince bilmiyorsun."_ (1348); _"Nefsi yorulmuştu. Dinlenmek istiyordu, hür olmak istiyordu; birkaç saniyeliğine de olsa."_ (1347 ¶76, 他太累了…; öğüt anı: 'yoruldu' yerine 'nefsi yorulmuştu', içerik aynı); _"Şimdilik bunu kimse doğrulayamaz. Kimilerinin denediğini sanıyorum; ne de olsa birleşme güçlü bir içgüdüdür. Ama sonucu bilinmiyor."_ (1347)
+**Ayar:** _"Gidebilirsin."_ (1150); _"Bu, gerekli bir kurbandı."_ (1346); _"Anlamıyorsun, çünkü yeterince bilmiyorsun."_ (1348); _"Nefsi yorulmuştu. Dinlenmek istiyordu, hür olmak istiyordu; birkaç saniyeliğine de olsa."_ (1347 ¶76, 他太累了…; öğüt anı: 'yoruldu' yerine 'nefsi yorulmuştu', içerik aynı); _"Şimdilik bunu kimse doğrulayamaz. Kimilerinin denediğini sanıyorum; ne de olsa birleşme güçlü bir içgüdüdür. Ama sonucu bilinmiyor."_ (1347)
 **Gerekçe:** → N-ADM1.1
 
 ##### ADM1.2 — Yönlendiren soru, itirafçı dinleyiş
@@ -145,7 +145,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Klein ve inananlar · açıklama, sorgu
 **Yap:** Cevabı vermek yerine karşısındakini ona yürütecek açık bir soru sorar; "değil mi?" ekini değil, "...düşünmüyor musun?" gibi düşünmeye çağıran bir kalıbı kullanır. Soruya soruyla, bir itirafçı gibi döner ("Neden böyle söylüyorsun?"). Karşısındakinin yükünü onun adına söyler ("Çok yoruldu; dinlenmek, özgür olmak istiyordu, birkaç saniyeliğine bile olsa.").
 **Yapma:** Alaycı ya da sınayan bir soru; "tahmin et" oyunu (Amon'undur); soruyu tehdide çevirmek.
-**Örnek:** _"Sekiz Melekler Beyi arasında en farklı olanın ben olduğumu düşünmüyor musun?"_ (1346); _"Neden böyle söylüyorsun?"_ (1348); _"Ona neden Gehrman Sparrow demiyor da o kuklayı anıyorsun?"_ (1347)
+**Ayar:** _"Sekiz Melekler Beyi arasında en farklı olanın ben olduğumu düşünmüyor musun?"_ (1346); _"Neden böyle söylüyorsun?"_ (1348); _"Ona neden Gehrman Sparrow demiyor da o kuklayı anıyorsun?"_ (1347)
 **Gerekçe:** → N-ADM1.2
 
 ##### ADM1.3 — Yumuşak ses, soğuk içerik
@@ -153,7 +153,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Kurban, ölüm, kardeşi Amon, kendi planı
 **Yap:** En ağır şeyleri en yumuşak tonla söyler: bir şehrin yıkımını "gerekli bir kurban", deliren varlığı "bir yabancı" gibi. Duygu cümleye girmez; gülümseme yüzünden düşmez. Karşısındakine seçim verir gibi yapıp seçeneğin olmadığını sakince gösterir.
 **Yapma:** Acıma ya da pişmanlık sözü; tehdit tonu; kötü adam tiradı.
-**Örnek:** _"Bu kiliseden çıkmayı da seçebilirsin; ama Zaratul kapıda seni bekliyor ve şu hâlinle ancak onun kuklası olursun."_ (1346); _"Bu yüzden o delirdi."_ (1348)
+**Ayar:** _"Bu kiliseden çıkmayı da seçebilirsin; ama Zaratul kapıda seni bekliyor ve şu hâlinle ancak onun kuklası olursun."_ (1346); _"Bu yüzden o delirdi."_ (1348)
 **Gerekçe:** → N-ADM1.3
 
 ##### ADM1.4 — Haç ve dua: anlatı işaretleri
@@ -161,7 +161,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Anlatı · her sahnesi
 **Yap:** Konuşmasına anlatıdaki küçük işaretler eşlik eder: gümüş haçı tutar ya da bırakır, haça bakar, vaaz verir gibi durur, sessizce dua eder. Bu işaretler Türkçede de korunur, çünkü Âdem'i adı geçmeden tanıtan onlardır (891'deki adsız rahip).
 **Yapma:** İşaretleri azaltmak ya da Amon'un monokl jestleriyle karıştırmak.
-**Örnek:** Klein'ın zikrini taklit eder: _"Arz ve Arşın Kutlu Semavî Muazzezi."_ (1347; donmuş satır)
+**Ayar:** Klein'ın zikrini taklit eder: _"Arz ve Arşın Kutlu Semavî Muazzezi."_ (1347; donmuş satır)
 **Gerekçe:** → N-ADM1.4
 
 ### Amon `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -174,7 +174,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Tüm görünümleri · Klein, kurbanları, öteki melekler
 **Yap:** Orta uzunlukta, rahat, konuşkan cümleler; "heh heh" (呵呵) ve gülümseme her an. Oyun dağarcığı sabittir: "Tahmin et." (你猜), "İlginç." (有意思), "Çok eğlenceli." (很有趣), "oyun", "açık" (漏洞). Soru sonunda takılan "değil mi?" onundur. Karşısındakine sürekli bir teklif sunar ("Gerçekten benim seçilmişim olmayı düşünmüyor musun?"). Kardeşi Âdem için sabit lakap: "saplantılı kardeşim" (偏执狂兄弟).
 **Yapma:** Ağırbaşlı, vaaz veren bir ton (Âdem'indir); öfke ya da tehdit tantanası; ağdalı dil.
-**Örnek:** _"Tahmin et; doğru tahmin edersen sonunu biraz daha iyi yaparım."_ (1152); _"Bir melek düzeyindeki ulağı çalmak... zorlu, eğlenceli bir iş, değil mi? Hayatın biraz neşeye, biraz heyecana, biraz beklentiye ihtiyacı var."_ (1157); _"Gerçekten benim seçilmişim olmayı düşünmüyor musun?"_ (1151, 1157)
+**Ayar:** _"Tahmin et; doğru tahmin edersen sonunu biraz daha iyi yaparım."_ (1152); _"Bir melek düzeyindeki ulağı çalmak... zorlu, eğlenceli bir iş, değil mi? Hayatın biraz neşeye, biraz heyecana, biraz beklentiye ihtiyacı var."_ (1157); _"Gerçekten benim seçilmişim olmayı düşünmüyor musun?"_ (1151, 1157)
 **Gerekçe:** → N-AMN1.1
 
 ##### AMN1.2 — Aldatma ustasının mantığı
@@ -182,7 +182,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Pazarlık, tahlil, kurbanının zaafı
 **Yap:** Karşısındakinin bir davranışından onun zaafını mantıkla çıkarır ve bunu nazikçe yüzüne söyler. Tekliflerini madde madde, cömert görünen bir dizi hâlinde sunar. Kendi sözlerinin güvenilmezliğini de oyunun parçası yapar ("Ne söylesem inanmayacaksın."). Bir kelimeyi harfiyen tutarak kandırır ("En fazla üç gün dedim; bir gün de en fazla üç gündür.").
 **Yapma:** Bilgiyi düz ve eksiksiz vermek (Âdem'indir); yalanını açıklamak.
-**Örnek:** _"Hareketlerin çoğu zaman zaafını ele verir. Bu kadar gergin, bu kadar tehlikeli bir anda yalnız fareleri, böcekleri, kuşları kuklaya çevirdin de evdeki uşaklara, hizmetçilere dokunmadın. Bu ne demek? Ahlakın sağlam demek; kendini hâlâ insan sayıyorsun demek."_ (1005); _"En fazla üç gün dedim. Bir gün de en fazla üç gündür."_ (1163)
+**Ayar:** _"Hareketlerin çoğu zaman zaafını ele verir. Bu kadar gergin, bu kadar tehlikeli bir anda yalnız fareleri, böcekleri, kuşları kuklaya çevirdin de evdeki uşaklara, hizmetçilere dokunmadın. Bu ne demek? Ahlakın sağlam demek; kendini hâlâ insan sayıyorsun demek."_ (1005); _"En fazla üç gün dedim. Bir gün de en fazla üç gündür."_ (1163)
 **Gerekçe:** → N-AMN1.2
 
 ##### AMN1.3 — Biz: avatarların koro sesi
@@ -190,7 +190,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Avatarlar birlikteyken
 **Yap:** "Ben değil, biz." Avatarlar aynı anda aynı cümleyi söyler (anlatı "Amonlar aynı anda" der); kendi aralarında oylama, kura gibi işleri sıradan bir şeymiş gibi anlatır. Tek bir avatar da öteki "ben"lerden sıradan bir dille söz eder.
 **Yapma:** Avatarları ayrı karakterler gibi farklı seslerle konuşturmak (hepsi aynı Amon'dur).
-**Örnek:** _"Ben değil, biz."_ (1153); _"Sonunda, asıl bedenin yönettiği adil bir oylama yaptık; ne yazık ki ben seçildim."_ (1223)
+**Ayar:** _"Ben değil, biz."_ (1153); _"Sonunda, asıl bedenin yönettiği adil bir oylama yaptık; ne yazık ki ben seçildim."_ (1223)
 **Gerekçe:** → N-AMN1.3
 
 ##### AMN1.4 — Riskin sınırı: sıfır kayıp
@@ -198,7 +198,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Tam bir kumar karşısında
 **Yap:** Kazanma ihtimali kesin değilse, hayatı masadaysa oyuncu sesi bir an durur ve pragmatik bir geri adıma geçer; panik değil, zarar kesme. Klein'ın kaderini güvenli bir yere varmadan almaz ve bunu açıkça söyler. Geri çekilirken bile gülümser ve oyunu bir sonraki sefere erteler ("Bir dahaki sefere artık.").
 **Yapma:** Geri çekilişi korku ya da öfkeyle vermek.
-**Örnek:** _"Asıl bedenimle buluşup yeterince güvenli bir yere gittikten sonra kaderini alacağımı söylemiştim. Henüz son durağa varmadık; elbette risk almam."_ (1166); _"Artık bir dahaki sefere."_ (1152)
+**Ayar:** _"Asıl bedenimle buluşup yeterince güvenli bir yere gittikten sonra kaderini alacağımı söylemiştim. Henüz son durağa varmadık; elbette risk almam."_ (1166); _"Artık bir dahaki sefere."_ (1152)
 **Gerekçe:** → N-AMN1.4
 
 ##### Ayırt etme sınaması (Âdem ↔ Amon)
@@ -276,7 +276,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Tüm görünümleri · rakipler, müttefikler, Klein
 **Yap:** Her cümleye bir kahkaha ya da "cık cık" eşlik edebilir. Karşısındakini çocukluğuyla, saflığıyla, cinselliğiyle küçümser; sataşma kaba ve doğrudandır. Kışkırtma bir av taktiğidir: karşısındakini hırslandırıp açık verdirir. Avcı Yolu'nun Kışkırtıcı yetisini dile getirir: "Sende Kışkırtıcı yeteneği var."
 **Yapma:** Sataşmayı ağırbaşlı, uzak bir melek diline çevirmek; kabalığı yumuşatmak; tehdidi ciddi ve tantanalı bir kıyamet tiradına dönüştürmek.
-**Örnek:** _"Kaç yaşındasın sen? Neden hâlâ bu kadar saf, bu kadar çocuksun?"_ (1087); _"Neden korkuyorsun, Zaratul'dan mı?"_ (1086); _"Cık cık, Şeytaniçeler gerçekten kurnaz. Ama ben hiçbir avı küçümsemem."_ (1111)
+**Ayar:** _"Kaç yaşındasın sen? Neden hâlâ bu kadar saf, bu kadar çocuksun?"_ (1087); _"Neden korkuyorsun, Zaratul'dan mı?"_ (1086); _"Cık cık, Şeytaniçeler gerçekten kurnaz. Ama ben hiçbir avı küçümsemem."_ (1111)
 **Gerekçe:** → N-MED1.1
 
 ##### MED1.2 — Soru zinciriyle ders
@@ -284,7 +284,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Bilgi verirken · Klein, Catherine
 **Yap:** Cevabı doğrudan vermez; "sana birkaç soru soracağım, cevabın ne kadar basit olduğunu göreceksin" der ve kısa, sırayla gelen sorularla karşısındakini sonuca yürütür. Son soruda cevabı neredeyse kendisi söyler, sonra alayla bağlar ("bunlar gazetede yazmıyor mu?").
 **Yapma:** Bilgiyi ders kitabı gibi düz anlatmak; soruları süslemek.
-**Örnek:** _"O 'Kan İmparatoru'nun gizli kalıntısı Kilise'nin bildiği türden mi?"_ / _"Alista Tudor Sıfır Mertebeye yükselmeden önce hangi Yolun hangi Mertebesindeydi, biliyor musun?"_ / _"Seçme şansın olsa, deliliğe mahkûm bir yolu yürür müydün?"_ (1086)
+**Ayar:** _"O 'Kan İmparatoru'nun gizli kalıntısı Kilise'nin bildiği türden mi?"_ / _"Alista Tudor Sıfır Mertebeye yükselmeden önce hangi Yolun hangi Mertebesindeydi, biliyor musun?"_ / _"Seçme şansın olsa, deliliğe mahkûm bir yolu yürür müydün?"_ (1086)
 **Gerekçe:** → N-MED1.2
 
 ##### MED1.3 — Blöf ve övünç
@@ -292,7 +292,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Pazarlık, tehdit, kendi gücü
 **Yap:** Gücünü olduğundan büyük gösterir ve bunu bir oyun gibi oynar; blöfü yakalanınca utanmaz, kartçı gibi savunur. Ölümünü bile övünce çevirir. Elinde olmayan bilgiyi de biliyormuş gibi sunabilir.
 **Yapma:** Blöfü fark edildiğinde geri adım ya da özürle kapatmak.
-**Örnek:** _"Blöf de kâğıt oyununun olağan bir hamlesi; işe de yaradı, değil mi?"_ (1111); _"Bu, en güçlünün, en çok önemsenenin ben olduğumu gösterir!"_ (1111)
+**Ayar:** _"Blöf de kâğıt oyununun olağan bir hamlesi; işe de yaradı, değil mi?"_ (1111); _"Bu, en güçlünün, en çok önemsenenin ben olduğumu gösterir!"_ (1111)
 **Gerekçe:** → N-MED1.3
 
 ##### MED1.4 — Savaş, felaket; Rab ve hain
@@ -300,7 +300,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Savaş, Kan İmparatoru, eski Rabbi
 **Yap:** Savaşı ve felaketi açıkça, neşeyle sever ("savaş, savaş, savaş!", "felaketi severim"). Avcı Yolu'nu bu yüzden övünçle anar. Alista Tudor'un adı geçince yüzü kasılır ve kısa bir alayla geçiştirir; ihaneti açıkça söylemez, sesi kısalır. Eski Rabbine dua etmek ister (942) ve ona "Rab" diye kısa, saygıyla değinir.
 **Yapma:** Medici'yi insanlığın gizli koruyucusu gibi yazmak (kaynakta yok); kini uzun bir intikam yemini tiradına çevirmek.
-**Örnek:** _"Bizim Avcılarda böyle bir dert yok; önceden ne olursan ol, sonrasında yapacağın tek şey savaş, savaş, savaş!"_ (1111); _"Hah hah, felaketi severim."_ (1339)
+**Ayar:** _"Bizim Avcılarda böyle bir dert yok; önceden ne olursan ol, sonrasında yapacağın tek şey savaş, savaş, savaş!"_ (1111); _"Hah hah, felaketi severim."_ (1339)
 **Gerekçe:** → N-MED1.4
 
 ##### MED1.5 — Üç başlı ruh: Soren Einhorn Medici
@@ -313,7 +313,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 Üçü birbiriyle atışır, aynı anda susar, aynı anda cevap verir ("İlk ölen sendin!"). Medici kendinden "üçü bir arada" diye şaka yollu söz eder. Ad 索伦·艾因霍恩·梅迪奇 → "Soren Einhorn Medici" (Soren: words.md; Einhorn: İngilizce biçim, sözlükte yok).
 **Yapma:** Üç sesi tek bir sese eritmek; Soren ve Einhorn'a Medici'nin kahkahasını ve kabalığını vermek; hangi ağzın konuştuğunu anlatıdan çıkarmak.
-**Örnek:** Soren: _"Gözdağıyla iş görmeyi fazla seviyorsun. Bir zamanlar Alista ve ötekiler de senin blöfünü sezip fırsatı bu yüzden yakalamışlardı."_ / Medici: _"Blöf de kâğıt oyununun olağan bir hamlesi; işe de yaradı, değil mi?"_ / Soren ve Einhorn birlikte: _"Ama ilk ölen sendin!"_ / Medici: _"Bu, en güçlünün, en çok önemsenenin ben olduğumu gösterir!"_ (1111); Medici: _"Zaten üçü bir aradayım; dördü bir arada olsam ne çıkar."_ (1275)
+**Ayar:** Soren: _"Gözdağıyla iş görmeyi fazla seviyorsun. Bir zamanlar Alista ve ötekiler de senin blöfünü sezip fırsatı bu yüzden yakalamışlardı."_ / Medici: _"Blöf de kâğıt oyununun olağan bir hamlesi; işe de yaradı, değil mi?"_ / Soren ve Einhorn birlikte: _"Ama ilk ölen sendin!"_ / Medici: _"Bu, en güçlünün, en çok önemsenenin ben olduğumu gösterir!"_ (1111); Medici: _"Zaten üçü bir aradayım; dördü bir arada olsam ne çıkar."_ (1275)
 **Gerekçe:** → N-MED1.5
 
 ##### MED1.6 — Ince'in ağzından (941–942)
@@ -321,7 +321,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Ince Zangwill'e musallat olduğu dönem
 **Yap:** Ince'in ağzını kullanır ve kalemi azarlar; MED1.1'in kaba sataşması burada öfkeye döner ("bu ahmak"). Anlatı ağzın Ince'e değil Medici'ye ait olduğunu belirtir.
 **Yapma:** Bu satırları Ince'e vermek (INC1.3).
-**Örnek:** _"Benim sözümü dinlemeyen sen ahmak olmasaydın iş bu hâle gelmezdi!"_ (942)
+**Ayar:** _"Benim sözümü dinlemeyen sen ahmak olmasaydın iş bu hâle gelmezdi!"_ (942)
 **Gerekçe:** → N-MED1.6
 
 ### Will Auceptin (Kader Yılanı) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -335,7 +335,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 770–1388 · Klein karşısında (rüya, bebek arabası, ev)
 **Yap:** Çocukluk tavırda ve konuda görünür, dil bilgisinde değil: kısa itiraz, sızlanma, istek; "annem", "babam", "annemin karnı" (妈妈的肚子); cümle sonunda "ya", "ki". Konu bir yöntem, kural ya da tarih olunca uzun, sıralı, açık bir anlatıma geçer (770 ¶36–40; 827 ¶64; 1125 ¶17–23) ve o sırada sızlanmaz. İki hâlde de kelimeler sade ve günceldir. Kademeli: cenin ve bebekken (770–1232) huysuzluk baskındır; iki yaşında (1357) iğneleri daha kuru ve yetişkince olur. Klein'ın "Kader Yılanı Bey?" hitabına cinsiyeti sorgulayarak takılır; "Bey" Türkçede cinsiyet taşıdığı için şaka korunur.
 **Yapma:** Peltek, bozuk ya da heceleyen bir bebek dili; açıklamaları Divan ya da ilim kaydına yükseltmek; "efendim", "siz".
-**Örnek:** _"Bey olduğumdan neden bu kadar eminsin?"_ (770 ¶29); _"Daha karar vermedim… Bilirsin, ha, yok, bilmezsin: her yeniden başlayışta kendimi biraz farklı kılmaya çalışırım, ruh hâlim iyi kalsın diye. Çocukken çocuk gibi olmak gerek."_ (770 ¶32–33); _"Annemin karnında sana kâğıt turna mı katlamamı bekliyorsun? Katlasam bile eline geçmez ki!"_ (818 ¶50); _"O da olsa doğanın kanununa uymak lazım!"_ (887 ¶13)
+**Ayar:** _"Bey olduğumdan neden bu kadar eminsin?"_ (770 ¶29); _"Daha karar vermedim… Bilirsin, ha, yok, bilmezsin: her yeniden başlayışta kendimi biraz farklı kılmaya çalışırım, ruh hâlim iyi kalsın diye. Çocukken çocuk gibi olmak gerek."_ (770 ¶32–33); _"Annemin karnında sana kâğıt turna mı katlamamı bekliyorsun? Katlasam bile eline geçmez ki!"_ (818 ¶50); _"O da olsa doğanın kanununa uymak lazım!"_ (887 ¶13)
 **Gerekçe:** → N-WIL1.1
 
 ##### WIL1.2 — Ağlamak: bir hamle ve bir yara
@@ -343,7 +343,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 770–1388
 **Yap:** İki ağlama ayrı yazılır. _Hamle:_ istemediği soruya (göbek kordonu kanı 770, 0-08 937, dondurma 979) tek bir "Ingaa!" ile karşılık verir; soru geri çekilince ağlama anında kesilir ve gülerek konuşur (770 ¶60). _Yara:_ kendine acıdığında ve kaderin oyununu fark ettiğinde (1124–1125, 1388) cümleler kesik, üç noktalı ve tekrarlıdır. Kaynaktaki kesiklik ve tekrar ("依旧，依旧") aynen kalır, fazlası eklenmez.
 **Yapma:** Hamle ağlamasına söz ya da duygu eklemek; gözyaşını teselli bekleyen bir trajediye çevirmek (Klein ifadesiz kalır, Klein.md M3.1); kaynakta düz olan cümleye üç nokta koymak.
-**Örnek:** _"Ingaa!"_ (770 ¶55) → _"Tabii ki öyle, ama önceden değiştireceğim; yoksa orada bulunan herkes ölür."_ (770 ¶60); _"Faydası yok… Çok geç… Çoktan yeniden başladım, Yegâneliği barındırabilmem için en az yirmi iki yıl daha büyümem lazım… Neden bunu daha önce söylemedin…"_ (1124 ¶85); _"Ne kadar da talihsizim… Kesin o aptal yılan Ouroboros talihimin çoğunu çaldı…"_ (1124 ¶86)
+**Ayar:** _"Ingaa!"_ (770 ¶55) → _"Tabii ki öyle, ama önceden değiştireceğim; yoksa orada bulunan herkes ölür."_ (770 ¶60); _"Faydası yok… Çok geç… Çoktan yeniden başladım, Yegâneliği barındırabilmem için en az yirmi iki yıl daha büyümem lazım… Neden bunu daha önce söylemedin…"_ (1124 ¶85); _"Ne kadar da talihsizim… Kesin o aptal yılan Ouroboros talihimin çoğunu çaldı…"_ (1124 ¶86)
 **Gerekçe:** → N-WIL1.2
 
 ##### WIL1.3 — Kader sözü: kısa sezgi
@@ -351,7 +351,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 818–1388 · önsezi, uyarı, kehanet
 **Yap:** Kader, talih ve önseziye dair sözler kısa, düz, çoğu zaman tek cümledir. Açıklamaz, ipucu verir: balodaki kibirli kızın "bir sorunu var" (818), gelecek hafta kaderinde "inişli çıkışlı" bir şey olacak (991). 预感 → "içime doğuyor"; 预知 → "istişraf" (salahiyet kelimesi). Kehanet ile iyi dileği kendisi ayırır (1388 ¶42).
 **Yapma:** Kehanet kalıpları, "-ecektir" tantanası, mistik süs; sezgiyi uzun bir açıklamaya çevirmek.
-**Örnek:** _"Kaderin sezgisi."_ (936 ¶56); _"Gelecek hafta, çarşamba ya da perşembe, kaderinde biraz iniş çıkış olacak."_ (991 ¶53); _"Kader Çarkı Yolu'nun Aşkınları için önce fiyat listesindekiler ödenir, bağış ondan sonra beklenir."_ (980 ¶11); _"Yok. Ama içime doğuyor, yakında gelecek."_ (1357 ¶50); _"Bir sonraki fırsatın daha iyi olacağı içime doğuyor."_ (1388 ¶39) / _"Hayır, bu bir iyi dilek."_ (1388 ¶42)
+**Ayar:** _"Kaderin sezgisi."_ (936 ¶56); _"Gelecek hafta, çarşamba ya da perşembe, kaderinde biraz iniş çıkış olacak."_ (991 ¶53); _"Kader Çarkı Yolu'nun Aşkınları için önce fiyat listesindekiler ödenir, bağış ondan sonra beklenir."_ (980 ¶11); _"Yok. Ama içime doğuyor, yakında gelecek."_ (1357 ¶50); _"Bir sonraki fırsatın daha iyi olacağı içime doğuyor."_ (1388 ¶39) / _"Hayır, bu bir iyi dilek."_ (1388 ¶42)
 **Gerekçe:** → N-WIL1.3
 
 ##### WIL1.4 — Pazarlık, iğne ve küçümseme
@@ -359,7 +359,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 770–1388 · Klein'la alışveriş; Ouroboros ve ilahlar hakkında
 **Yap:** Pazarlığı bir oyun gibi oynar: karşısındakini sözünden yakalar (936), seçimi kendi lehine çevirir (827), hediye beğenmez (979, 1370), hediyesiz gelen ziyaretçiye arkasından söylenir (1357). Zaafı dondurmadır: önce reddeder, sonra pazarlıkla kabul eder (1232). Klein'ın sorularını "herkesin bildiği şey" diye iğneler. Ouroboros'tan "o herif", "o aptal yılan" diye söz eder; çocukluğu olmadığı için deli olduğunu söyler (770). İlahlar için büyük harfli O (yayımlanmış bölümlerdeki 祂 biçimi). 嗤笑 / 哼 / 啧 anlatıda kalır; replikte en fazla "hıh", "cık".
 **Yapma:** Huysuzluğu gerçek bir düşmanlığa ya da tehdide çevirmek; Klein'a hürmet etmek; Klein'ın kuru mizahını ona vermek. Şakayı Will başlatır, Klein kısa karşılık verir (Klein.md M0.4).
-**Örnek:** _"Unutma, bu sözleri sen kendin söyledin!"_ (936 ¶62); _"Bu herkesin bildiği bir şey!"_ (937 ¶3); _"Böyle bir hediyenin ne anlamı var? Bana doğrudan Gwadar versene, hiç değilse içilir!"_ (979 ¶57–58); _"…Gelecek hafta ver."_ (1232 ¶9); _"Doğum hediyesi uğur muskası, doğum günü hediyesi uğurlu altın. Hiç yaratıcılığın yok."_ (1370 ¶82)
+**Ayar:** _"Unutma, bu sözleri sen kendin söyledin!"_ (936 ¶62); _"Bu herkesin bildiği bir şey!"_ (937 ¶3); _"Böyle bir hediyenin ne anlamı var? Bana doğrudan Gwadar versene, hiç değilse içilir!"_ (979 ¶57–58); _"…Gelecek hafta ver."_ (1232 ¶9); _"Doğum hediyesi uğur muskası, doğum günü hediyesi uğurlu altın. Hiç yaratıcılığın yok."_ (1370 ¶82)
 **Gerekçe:** → N-WIL1.4
 
 ##### WIL1.5 — Yazılı sesi
@@ -367,7 +367,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 606 (kâğıt turnaya yazdığı cevap)
 **Yap:** Dostça ve düzenli. Tehlikeyi derece derece sıralar, iki yol önerir, araya bir "haha" ile içten bir itiraf koyar (哈哈，我摊牌). İmzası: "Samimi dostun Will Auceptin."
 **Yapma:** Resmî mektup kalıpları, hürmet sözleri, süslü kapanış.
-**Örnek:** _"Haha, kartlarımı açayım: istişrafıma karşı koyabildiğini çoktan fark ettim. Belki onu mühürlemek için bunu kullanabilirsin."_ (606 ¶82); _"Son olarak, yardımın için teşekkürler. Samimi dostun Will Auceptin."_ (606 ¶86)
+**Ayar:** _"Haha, kartlarımı açayım: istişrafıma karşı koyabildiğini çoktan fark ettim. Belki onu mühürlemek için bunu kullanabilirsin."_ (606 ¶82); _"Son olarak, yardımın için teşekkürler. Samimi dostun Will Auceptin."_ (606 ¶86)
 **Gerekçe:** → N-WIL1.5
 
 ##### WIL1.6 — Eski beden: hastane çocuğu
@@ -375,7 +375,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 326 (Aaron'un aktarımı), 386–388 (Aaron'un rüyası)
 **Yap:** On yaşlarında, korkmuş bir çocuk; melek sesi hiç duyulmaz. Kısa, saf cümleler.
 **Yapma:** Bu satırlara sonraki bebeğin iğnesini ya da bilgiçliğini taşımak.
-**Örnek:** _"Doktor, bak, şansın kötüleşecek."_ (326 ¶22); _"Doktor Aaron, bir yılan beni yemek istiyor!"_ (388 ¶66)
+**Ayar:** _"Doktor, bak, şansın kötüleşecek."_ (326 ¶22); _"Doktor Aaron, bir yılan beni yemek istiyor!"_ (388 ¶66)
 **Gerekçe:** → N-WIL1.6
 
 ### Bernadette Gustav (Gizem Kraliçesi) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -389,7 +389,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 662–1388 · Gehrman, Cattleya, Klein'ın kuklaları
 **Yap:** Kısa, kesin, düz cümleler; konuşma hızı sabit. Bilgiyi sorulmadan, yerinde ve az sözle verir; karşısındakinin bildiğini varsaydığı terimi açıklamaz (674 ¶16). Bir tespiti ağırlık vermek için bir kez aynen tekrarlar (668). Tahminini "sanırım", "hissediyorum" (我猜测, 我感觉) diye açıkça işaretler. Klein'la karşılıklı "sen".
 **Yapma:** Ünlem, dolgu, sıcak nezaket kalıpları; bilgiyi bilmeceye çevirmek; açıklamayı uzatmak.
-**Örnek:** _"Özgüven bazen bir kusurdur. O bakır düdüğe de o kâğıt turnaya da fazla güveniyorsun; belki bir gün tehlike tam oradan gelir."_ (668 ¶57–58); _"Bu sular, bu kara manastır pek çok sır saklıyor. Benim bildiğim belki yüzde birine bile varmaz."_ (669 ¶49); _"Cevabın ruh hâlimi etkileyeceğini hissediyorum; kötü bir ruh hâli de başarısızlık getirir."_ (1011 ¶37)
+**Ayar:** _"Özgüven bazen bir kusurdur. O bakır düdüğe de o kâğıt turnaya da fazla güveniyorsun; belki bir gün tehlike tam oradan gelir."_ (668 ¶57–58); _"Bu sular, bu kara manastır pek çok sır saklıyor. Benim bildiğim belki yüzde birine bile varmaz."_ (669 ¶49); _"Cevabın ruh hâlimi etkileyeceğini hissediyorum; kötü bir ruh hâli de başarısızlık getirir."_ (1011 ¶37)
 **Gerekçe:** → N-BER1.1
 
 ##### BER1.2 — Kısa buyruk, kendi kapattığı görüşme
@@ -397,7 +397,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 669–1388 · görüşme sonları, yardım ederken, Mühürlü Eser çağırırken
 **Yap:** Görüşmeyi kendisi bitirir, tek cümleyle. Talimatı gerekçesiz ve kısa verir. Mühürlü Eseri çağırırken yalnız adını söyler (anlatı: yumuşak ama içinde gizli bir buyruk, 轻柔但威严暗藏). Yardımın sınırını tek bir ölçüyle koyar.
 **Yapma:** Kapanışa veda ya da nezaket sözü eklemek; buyruğu açıklamak.
-**Örnek:** _"Rüya sona eriyor."_ (669 ¶57); _"Başka bir işin yoksa bugünlük bu kadar."_ (1011 ¶57); _"En fazla iki ay."_ (828 ¶65); _"En az elli metre geri çekil."_ (828 ¶76)
+**Ayar:** _"Rüya sona eriyor."_ (669 ¶57); _"Başka bir işin yoksa bugünlük bu kadar."_ (1011 ¶57); _"En fazla iki ay."_ (828 ¶65); _"En az elli metre geri çekil."_ (828 ¶76)
 **Gerekçe:** → N-BER1.2
 
 ##### BER1.3 — Durugören: kehanet
@@ -405,7 +405,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 662, 1162 ve kehanet anları · Durugören (Mertebe 3) ve Bilge (Mertebe 2)
 **Yap:** Kehanet kısa, somut ve imgelidir; yorumlamaz. Gözleri kapalıyken ses "biraz uçucu"dur (anlatıda kalır). Anlamı sorulunca yalnız bir dizi tek kelimeyle cevap verir.
 **Yapma:** Kehanete "-ecektir" tantanası ya da mistik süs; imgeyi açıklamak.
-**Örnek:** _"Kaderin, Hornacis sıradağlarının ana zirvesinde."_ (662 ¶61); _"Gehrman Sparrow büyük bir tehlikede. Karanlık aydınlığı yutuyor; geriye yalnızca ince bir şafak kaldı."_ (1162 ¶5) / _"Issızlık, başkalaşma, kıyamet, menfilik, hata."_ (1162 ¶10)
+**Ayar:** _"Kaderin, Hornacis sıradağlarının ana zirvesinde."_ (662 ¶61); _"Gehrman Sparrow büyük bir tehlikede. Karanlık aydınlığı yutuyor; geriye yalnızca ince bir şafak kaldı."_ (1162 ¶5) / _"Issızlık, başkalaşma, kıyamet, menfilik, hata."_ (1162 ¶10)
 **Gerekçe:** → N-BER1.3
 
 ##### BER1.4 — Babası: "o", "babam", ve tek bir "Baba…"
@@ -413,7 +413,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 1011–1309 · Roselle'den söz ederken
 **Yap:** Roselle'den hep "o" (他) diye söz eder; ilahlar için kullanılan büyük harfli O (祂) ona verilmez (1011 ¶13). Başkasına "babam" (我父亲) der. 1092'de yıllarca ona "baba" demediğini söyler; 1306'da mezarda tek kelimeyle "Baba…" der. İki yerde aynı kelime kalır ki yankı duyulsun (0.5 §5). Çocukluğun hitapları kendiliğinden döner: babasının şövalyelerine "William Amca", "Edwards Amca" (叔叔).
 **Yapma:** Roselle için "O" ya da "İmparator Hazretleri"; "babacığım" gibi bir sevgi biçimi (yankıyı bozar); 1306'dan önce "baba" diye hitap.
-**Örnek:** _"Onun gerçekten, tamamen ölmediğini hissediyorum."_ (1011 ¶11); _"Bir zamanlar ondan nefret ediyordum, onu anlayamıyordum; o yüzden yıllarca ona baba demedim."_ (1092 ¶35); _"O benim babam. Bu yalnız bana ait bir iş."_ (1238 ¶76); _"Baba…"_ (1306 ¶95)
+**Ayar:** _"Onun gerçekten, tamamen ölmediğini hissediyorum."_ (1011 ¶11); _"Bir zamanlar ondan nefret ediyordum, onu anlayamıyordum; o yüzden yıllarca ona baba demedim."_ (1092 ¶35); _"O benim babam. Bu yalnız bana ait bir iş."_ (1238 ¶76); _"Baba…"_ (1306 ¶95)
 **Gerekçe:** → N-BER1.4
 
 ##### BER1.5 — Açılma anları
@@ -421,7 +421,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 1011, 1092, 1239 · babası ve Cattleya
 **Yap:** Nadiren açılır; açıldığında cümleler uzar ve anılarla dolar, ama ton aynı kalır: ünlem yok, duygu içerikte. Anlatı bunun alışılmadık olduğunu söyler (1092 ¶39). Cattleya'ya vedasında sertliği bir anlığına yumuşar ve tek bir soruyla ona kapı açar.
 **Yapma:** Bu anları gözyaşlı bir itiraf tiradına çevirmek; yumuşamayı bütün sahneye yaymak.
-**Örnek:** _"Onun ne kadar umutsuz, acı içinde ve yalnız olduğunu, boğulan biri gibi yalnızca içgüdüyle, var gücüyle çırpındığını şimdi biraz anlıyorum."_ (1092 ¶36); _"Diriltilen ben belki yalnızca bir canavar olurum."_ (1239 ¶23); _"Bunca yıl başına gelenleri hep benimle paylaşmak istemiyor muydun?"_ (1239 ¶30)
+**Ayar:** _"Onun ne kadar umutsuz, acı içinde ve yalnız olduğunu, boğulan biri gibi yalnızca içgüdüyle, var gücüyle çırpındığını şimdi biraz anlıyorum."_ (1092 ¶36); _"Diriltilen ben belki yalnızca bir canavar olurum."_ (1239 ¶23); _"Bunca yıl başına gelenleri hep benimle paylaşmak istemiyor muydun?"_ (1239 ¶30)
 **Gerekçe:** → N-BER1.5
 
 ##### BER1.6 — İç ses ve hizmetkârın ağzı
@@ -429,7 +429,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 1300–1309 · kendi bakış açısından anlatılan bölümler
 **Yap:** İç ses kısa parçalardır: ad, anı, tek bir duygu. Duygusunu birkaç saniyede bastırır (anlatı); soruları yine duygusuz kalır. Hizmetkârın ağzından konuşurken ses "kuru ve donuk"tur (anlatı), cümleler kısalır. 1309'da kendine tek bir acı tespit.
 **Yapma:** İç sese uzun bir yas monoloğu; hizmetkârın ağzındaki sese duygu vermek.
-**Örnek:** _"Bu William Amca. Yüzünü hatırlıyorum; bana kılıç kullanmayı o öğretmişti…"_ (1300 ¶50); _"Edwards Amca, burada ne işin var?"_ (1302 ¶2); _"Torunların iyi yaşıyor. Hepsi bir şekilde bir yere geldi."_ (1303 ¶16); _"Ne müthiş bir ironi…"_ (1309 ¶5)
+**Ayar:** _"Bu William Amca. Yüzünü hatırlıyorum; bana kılıç kullanmayı o öğretmişti…"_ (1300 ¶50); _"Edwards Amca, burada ne işin var?"_ (1302 ¶2); _"Torunların iyi yaşıyor. Hepsi bir şekilde bir yere geldi."_ (1303 ¶16); _"Ne müthiş bir ironi…"_ (1309 ¶5)
 **Gerekçe:** → N-BER1.6
 
 ### Ebedî Gece Tanrıçası (Ece) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -443,7 +443,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 1357–1388 · Klein'la
 **Yap:** Cümleler tam, sakin ve acelesizdir. Anlatı sesini "yumuşak", "ağır", "ninni gibi", "yatıştırır gibi" diye işaretler; bu işaretler kalır. Kısa öğütleri ve buyrukları bir annenin sakinliğiyle verir. Gülümsemesi anlatıdadır; repliğe ünlem ya da gülüş sesi girmez.
 **Yapma:** Tanrısal bir tantana, uzak bir saray dili; ünlem; duygusal bir şefkat tiradı (şefkat tonda, kelimede değil).
-**Örnek:** _"İnsanlığını iyi korumuşsun."_ (1370 ¶30); _"Hazırlığını yap. Bir an önce Antigonus'la görüş."_ (1370 ¶34); _"Senin için orada olağan dışı bir tehlike var. Ruhun dinginleşene kadar beklesen iyi olur."_ (1358 ¶50)
+**Ayar:** _"İnsanlığını iyi korumuşsun."_ (1370 ¶30); _"Hazırlığını yap. Bir an önce Antigonus'la görüş."_ (1370 ¶34); _"Senin için orada olağan dışı bir tehlike var. Ruhun dinginleşene kadar beklesen iyi olur."_ (1358 ¶50)
 **Gerekçe:** → N-ECE1.1
 
 ##### ECE1.2 — Kozmoloji: sıralı, karşıtlıklı, kesin
@@ -451,7 +451,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 1357–1387 · Esrarın Hükümdarı, Aslî Yaradan, Yüce Kadimler, Yegânelik
 **Yap:** Uzun anlatımı sıralı ve sakin kurar. Kaynağın karşıtlık dizileri (是…也是…) korunur ve Türkçede de aynı ritimle döner. Kesin olanı kesin, bilinmeyeni bilinmeyen diye söyler ("kimse bilmez; Yedi Nur bile"). Sıralamayı en iyiden en kötüye düz bir merdiven gibi verir (1387).
 **Yapma:** Anlatımı bilmeceye ya da vaaza çevirmek; karşıtlık dizisini kısaltmak ya da süslemek.
-**Örnek:** _"Birleşmek bir içgüdüdür. Derece yükseldikçe içgüdü de güçlenir."_ (1369 ¶31); _"Aslî Yaradan kâinatın hem kurucusu hem yıkıcısıydı; gündüzdü, geceydi; kudsiyetin ışığıydı, tereddinin hâviyesiydi; bütün çelişik kavramların ve simgelerin toplamıydı."_ (1369 ¶35); _"En kötüsü, Aslî Menşe'yle ancak en son adımda bütünleşmektir."_ (1387 ¶75)
+**Ayar:** _"Birleşmek bir içgüdüdür. Derece yükseldikçe içgüdü de güçlenir."_ (1369 ¶31); _"Aslî Yaradan kâinatın hem kurucusu hem yıkıcısıydı; gündüzdü, geceydi; kudsiyetin ışığıydı, tereddinin hâviyesiydi; bütün çelişik kavramların ve simgelerin toplamıydı."_ (1369 ¶35); _"En kötüsü, Aslî Menşe'yle ancak en son adımda bütünleşmektir."_ (1387 ¶75)
 **Gerekçe:** → N-ECE1.2
 
 ##### ECE1.3 — Açık sözlü belirsizlik, kesin risk
@@ -459,7 +459,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 1358–1370 · Klein'ın soruları
 **Yap:** Bilmediğini düz ve kısa söyler, aynı tonda. Riski ölçüyle verir: bir saniye erken, bir saniye geç; yarı yarıya. Kendi hesabını da saklamaz (Amon'a yatırım yapmak daha akıllıca olurdu, 1370).
 **Yapma:** Belirsizliği gizemli bir kaçamağa çevirmek; riski yumuşatmak.
-**Örnek:** _"Sana kesin bir cevap veremem."_ (1370 ¶24); _"Bilmiyorum."_ (1370 ¶26); _"Başka biri olsa kesinlikle hayır. Ama Amon'sa ihtimal yarı yarıya."_ (1370 ¶36–37); _"Bir saniye erken alırsan ayin hiçbir işe yaramaz; bir saniye geç alırsan Antigonus şirazeden çıkma kaderini sırtlanır."_ (1358 ¶29)
+**Ayar:** _"Sana kesin bir cevap veremem."_ (1370 ¶24); _"Bilmiyorum."_ (1370 ¶26); _"Başka biri olsa kesinlikle hayır. Ama Amon'sa ihtimal yarı yarıya."_ (1370 ¶36–37); _"Bir saniye erken alırsan ayin hiçbir işe yaramaz; bir saniye geç alırsan Antigonus şirazeden çıkma kaderini sırtlanır."_ (1358 ¶29)
 **Gerekçe:** → N-ECE1.3
 
 ##### ECE1.4 — Seçimi Klein'a bırakmak
@@ -467,7 +467,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 1370, 1387 · Klein'ın yolu
 **Yap:** Yolları sayar, artısıyla eksisiyle söyler, kararı ona bırakır ve bunu açıkça söyler. Yardımının sınırını da söyler: "asıl iş sende".
 **Yapma:** Buyurmak ya da bir yolu dayatmak; seçimi duygusal bir baskıyla yönlendirmek.
-**Örnek:** _"Elbette ne seçeceğin senin özgürlüğün; kimse seni zorlamaz, kimse zorlayamaz da."_ (1370 ¶9); _"Bir yolun daha var: Pallez'in yöntemiyle kendi dereceni düşürür, Aslî Kale'yi Amon'a çaldırırsın."_ (1370 ¶20)
+**Ayar:** _"Elbette ne seçeceğin senin özgürlüğün; kimse seni zorlamaz, kimse zorlayamaz da."_ (1370 ¶9); _"Bir yolun daha var: Pallez'in yöntemiyle kendi dereceni düşürür, Aslî Kale'yi Amon'a çaldırırsın."_ (1370 ¶20)
 **Gerekçe:** → N-ECE1.4
 
 ##### ECE1.5 — Gizli ses (917)
@@ -475,7 +475,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 916–917 · Azik'e, Klein dinlerken
 **Yap:** Kim olduğu söylenmez; anlatı yalnız "inişsiz çıkışsız, belli ki bir kadına ait bir ses" der. Seçenekleri numaralı ve düz sayar, sonuçlarını tek tek söyler. ECE1.1'in yumuşaklığı burada yoktur. Okur bu sesi, kimliği açıklanmadan 1357'deki izdüşümle aynı kişi diye tanımamalıdır (0.7: gizli kimlik).
 **Yapma:** Bu sese ninni tonu, gülümseme ya da Ece katmanının sıcaklığını vermek.
-**Örnek:** _"Üç seçeneğin var. Birincisi, yoluna devam edip bütünlüğü aramak; Salinger senin içinden yeniden doğar."_ (917 ¶5); _"Üçüncüsü, her şeyden vazgeçip hemen gitmek. Bulunduğun mertebede sonsuza dek kalırsın…"_ (917 ¶7)
+**Ayar:** _"Üç seçeneğin var. Birincisi, yoluna devam edip bütünlüğü aramak; Salinger senin içinden yeniden doğar."_ (917 ¶5); _"Üçüncüsü, her şeyden vazgeçip hemen gitmek. Bulunduğun mertebede sonsuza dek kalırsın…"_ (917 ¶7)
 **Gerekçe:** → N-ECE1.5
 
 ##### ECE1.6 — Dünyalı, ama hemşehri değil
@@ -1049,6 +1049,14 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Yapma:** Gerilemeyi hatırlanan bir acıyla tetikleme.
 **Gerekçe:** → N-AUD1.6 (tasarım kararı)
 
+##### AUD1.7 — Klein'ın iç sesinde "Adalet Hanım"
+
+**Kapsam:** 36'dan itibaren · yalnız Klein'ın iç sesi (italik monolog)
+**Yap:** Klein içinden Audrey'yi düşünürken “正义”小姐 → "Adalet Hanım". Genç üyelere (Audrey, Derrick, Emlyn) iç seste daha yakın bir ad verilir; öteki üyeler iç seste de "Beyefendi / Hanımefendi" kalır (36 ¶23 _Asılmış Adam Beyefendi_). Anlatıda, Klein'a yakın anlatıda bile, ve konuşmada "Adalet Hanımefendi" (58 ¶71; 60 ¶13, ¶51). Kaynakta hitapsız geçen "正义" Türkçede de çıplak "Adalet" kalır (36 ¶31).
+**Yapma:** "Adalet Hanım"ı anlatıya, konuşmaya ya da başka bir üyenin iç sesine taşımak; çıplak koda hitap eklemek.
+**Ayar:** _Eğer Adalet Hanım akrabalarını ikna edip bu işin önünü açabilirse…_ (36 ¶29); _Tabii Adalet'in bunu bizzat öne sürmesi pek mümkün değil._ (36 ¶31); anlatı: _…Adalet Hanımefendi'ye ait yüksek arkalıklı sandalyenin değiştiğini fark etti._ (58 ¶71)
+**Gerekçe:** → N-AUD1.7
+
 - **Maske / Öz / Çatlak:**
   - _Maske:_ Seyirci sükûneti ve asilzade nezaketi.
   - _Öz:_ maceraya hevesli, büyümeye çalışan, meraklı bir genç kız (342: Gümüş Şehir'e gitmeyi hayal eder, sonra kendini azarlar).
@@ -1064,7 +1072,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Tüm görünümleri · Audrey
 **Yap:** Kısa, düz, neşeli cümleler; Audrey'ye "Audrey" der. Bilmediği kelimeyi tekrar ederek sorar ("Sindirmek mi?"). Değer ölçüsü bir köpeğinkidir (et, bisküvi, koşmak, av eğitimi) ve bunu ciddiyetle söyler. Hükmü dobra ve kısadır ("İçten değil!"). Heyecanlanınca kendini düzeltir ve bir "hav!" ile kapatır. "~" yalnız neşeli onaylarda.
 **Yapma:** Onu sevimlilik için bebek ağzıyla konuşturmak; ağdalı, Audrey'nin huzur sicilinde bir dil vermek.
-**Örnek:** _"Tamam~"_ (132); _"İçten değil! Ama anlattıkları çok ilginç; bence etten ve bisküviden bile ilginç!"_ (356); _"Audrey, bence o da bizim gibi biri ya; yok, bizim gibi bir köpek; yok, o da değil... Hav!"_ (368)
+**Ayar:** _"Tamam~"_ (132); _"İçten değil! Ama anlattıkları çok ilginç; bence etten ve bisküviden bile ilginç!"_ (356); _"Audrey, bence o da bizim gibi biri ya; yok, bizim gibi bir köpek; yok, o da değil... Hav!"_ (368)
 **Gerekçe:** → N-SUS1.1
 
 ##### SUS1.2 — Konağın casusu
@@ -1072,7 +1080,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Hall konağı, kulak misafirliği
 **Yap:** Duyduğunu bir rapor gibi, eksiksiz ve sırayla aktarır; anlamadığı bir yeri sorar ya da açıkça "hiç anlamadım" der. Hızlı ve kesin cevap verir.
 **Yapma:** Aktardığı bilgiyi kendi yorumuyla süslemek.
-**Örnek:** _"Evet. Çalışma odasında Kont'un birkaç milletvekiliyle konuştuğunu duydum: kral ve başbakan, Feysac'tan Balam'ın doğu kıyısında kısa zamanda öç alma planından vazgeçmekte anlaşmışlar. Balam'ın doğu kıyısı nerede?"_ (132); _"Neigan Dükü suikaste kurban gitmiş."_ (429); _"Ne konuştuklarını hiç anlamadım..."_ (310)
+**Ayar:** _"Evet. Çalışma odasında Kont'un birkaç milletvekiliyle konuştuğunu duydum: kral ve başbakan, Feysac'tan Balam'ın doğu kıyısında kısa zamanda öç alma planından vazgeçmekte anlaşmışlar. Balam'ın doğu kıyısı nerede?"_ (132); _"Neigan Dükü suikaste kurban gitmiş."_ (429); _"Ne konuştuklarını hiç anlamadım..."_ (310)
 **Gerekçe:** → N-SUS1.2
 
 ##### SUS1.3 — Seyirci köpek: dinleyen ve okuyan
@@ -1080,7 +1088,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Audrey'nin ruh hâli, yabancılar; ileri bölümler
 **Yap:** Audrey'nin hâlini piyano sesinden okur ve sorar. Yükseldikçe insanları gözlemleyip tespitlerini kısa, kesin ve sırayla söyler; bir Seyirci ilkesi de söyleyebilir. Ses ciddileşir ama dürüstlüğü ve sadeliği sürer.
 **Yapma:** Gözlemci sesini Audrey'nin süslü siciline kaydırmak; neşesini tamamen silmek.
-**Örnek:** _"Audrey, bir derdin mi var? Piyanon söylüyor bunu."_ (464); _"Fazla tekrarlanan sözler, insanın alışkanlıklarını ve iç dünyasını başkalarına ele verir."_ (746); _"Seni ya da üzerindeki bir eşyayı tanıyor gibiydi. Bir de çoğu zaman rol yapıyordu, belli oluyordu... Benden biraz çekiniyor gibiydi; çok uyanık."_ (865)
+**Ayar:** _"Audrey, bir derdin mi var? Piyanon söylüyor bunu."_ (464); _"Fazla tekrarlanan sözler, insanın alışkanlıklarını ve iç dünyasını başkalarına ele verir."_ (746); _"Seni ya da üzerindeki bir eşyayı tanıyor gibiydi. Bir de çoğu zaman rol yapıyordu, belli oluyordu... Benden biraz çekiniyor gibiydi; çok uyanık."_ (865)
 **Gerekçe:** → N-SUS1.3
 
 ##### SUS1.4 — Sadakat
@@ -1088,7 +1096,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Audrey'nin tehlikesi, veda
 **Yap:** Sadakatini kısa ve ciddi söyler; korksa da cesaretini toplayıp Audrey'nin yanında olmak ister ("Gözlerinde ben yalnızca bir köpeğim").
 **Yapma:** Bu anları duygusal bir tirada çevirmek.
-**Örnek:** _"Beni de yanında götürebilir misin? Daha önce olduğu gibi; onların gözünde ben yalnızca bir köpeğim."_ (1316); _"Evet, biz sonsuza dek dostuz."_ (1393)
+**Ayar:** _"Beni de yanında götürebilir misin? Daha önce olduğu gibi; onların gözünde ben yalnızca bir köpeğim."_ (1316); _"Evet, biz sonsuza dek dostuz."_ (1393)
 **Gerekçe:** → N-SUS1.4
 
 ### Alger Wilson (Asılmış Adam) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -1144,7 +1152,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Kendi inancından söz ettiği, yemin ettiği, dua ettiği anlar; dindar maske
 **Yap:** Fırtınalar Hâkimi Kilisesi Kadir-i Mutlak yol grubundadır ve İslami bir deyişle konuşur (KLS1.3). Alger'in yemini "Ya Hâkim!", yakarışı "Ya Rab"dır; inancın kurallarını konuşurken namus, günah, haram, iffet gibi kelimeler doğal gelir. Bu dağarcık dindar maskesinin dilidir; Soytarı'ya huzur dili (ALG1.1) ayrı bir kalıptır ve ona karışmaz.
 **Yapma:** "Ya Hâkim"i Soytarı'ya yönelik dualara taşımak; Fırtına deyişini her cümleye serpiştirmek.
-**Örnek:** _"Ya Hâkim..."_ (8 ¶83, yayımlanmış; demir zırhlı gemiyi görünce)
+**Ayar:** _"Ya Hâkim..."_ (8 ¶83, yayımlanmış; demir zırhlı gemiyi görünce)
 **Gerekçe:** → N-ALG1.7
 
 - **Maske / Öz / Çatlak:**
@@ -1167,7 +1175,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Tüm görünümleri · tarih, kural, Yol bilgisi, Gümüş Şehir
 **Yap:** Bildiğini bir vakayiname ya da ders kitabı gibi, sırayla ve tereddütsüz anlatır; tanımı kesin kurar. Bilgisinin kaynağını söyler ("ders kitaplarından, söylencelerden biliyorum; doğruluğunu garanti edemem"). Şehrinin tarihine dokunulunca kırgın bir ciddiyetle savunur.
 **Yapma:** Bilgiyi "sanırım", "belki" ile yumuşatmak (kaynağı belirsizse bunu açıkça söyler, belirsiz konuşmaz); anlatıyı süslemek.
-**Örnek:** _"Gümüş Şehir'de iksirlerin adı hiç değişmedi."_ (138); _"Biz Gümüş Şehir'de tarih uydurmayız; kayıtlarımız doğrulanabilen eski kitaplardan ya da öteki şehirlerin yıkıntılarından gelir."_ (487)
+**Ayar:** _"Gümüş Şehir'de iksirlerin adı hiç değişmedi."_ (138); _"Biz Gümüş Şehir'de tarih uydurmayız; kayıtlarımız doğrulanabilen eski kitaplardan ya da öteki şehirlerin yıkıntılarından gelir."_ (487)
 **Gerekçe:** → N-DER1.1
 
 ##### DER1.2 — Harfiyen anlama
@@ -1175,7 +1183,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Tüm görünümleri · dış dünyanın şakası, iğneleme, benzetme, bilinmeyen kavram
 **Yap:** Derrick şakadan anlar; Gümüş Şehir'in gençleri şakalaşır (bkz. Gümüş Şehir toplu haritası). Kaçırdığı üç şeydir: **dış dünyanın şakası** (bilmediği bir şeye, bir kuruma, bir gündelik hayata dayanan espri), **iğneleme** (söylenenin tersinin kastedildiği alay) ve **benzetme** (görmediği bir şeyin, güneşin, denizin, tiyatronun üzerinden kurulan karşılaştırma). Üçünde de sözü harfiyen alır ve ciddiyetle cevap verir; ya da susup bilgiyi sonra çözmek üzere saklar, ya da kavramı düz, fiziksel bir tarife indirger. Sebep naiflikten çok yerdir: sahada sözün kelimesi kelimesine doğru olması gerekir, yoksa insanlar ölür; Derrick bu saha dilini hiç kapatmaz ve dışarıyı yalnızca kitaplardan bilir. Aynı sebeple dürüstlüğü pahalıya patlar: değerli bilgiyi karşılıksız verir, Asılmış Adam bundan yararlanır.
 **Yapma:** **Komedi odaya aittir, onun sesine değil:** Derrick tamamen ciddidir, gülen öteki üyelerdir. Komik etki anlatıda ve diğerlerinin tepkilerinde kurulur; Derrick'in cümlesine espri, göz kırpma ya da kendinin farkında bir ton eklenmez. Kavramı mecazla açıklamaya çalışmak.
-**Örnek:** _"Ama Ay Beyefendi, bedeninizin her yerinden irin akmasını mı istiyorsunuz?"_ (823); _"Benim dostum yok."_ (825) / _"Daha yalnızca iki dost edinebildim."_ (869); _"Dünya Beyefendi, un nedir? Karayüz Otu tozu gibi bir şey mi? Bir de süt nedir, sığır eti nedir, balık nedir?"_ (1131)
+**Ayar:** _"Ama Ay Beyefendi, bedeninizin her yerinden irin akmasını mı istiyorsunuz?"_ (823); _"Benim dostum yok."_ (825) / _"Daha yalnızca iki dost edinebildim."_ (869); _"Dünya Beyefendi, un nedir? Karayüz Otu tozu gibi bir şey mi? Bir de süt nedir, sığır eti nedir, balık nedir?"_ (1131)
 **Gerekçe:** → N-DER1.2
 
 ##### DER1.3 — Saygı sadeliktir
@@ -1183,7 +1191,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Toplantı ve Başbuğ · kendi kurduğu cümleler
 **Yap:** Hürmeti tokluktur, süs değil: blöfsüz, mutlak ve beyan kipinde. Kısa, çıplak teşekkür ve kabul; istediğini doğrudan söyler. Temel nezaket serbesttir ("müsaade edin", "izin verin").
 **Yapma:** Soytarı'ya bile saray dili yalvarış formüllerini üst üste yığmak (_"inayetlerinizi niyaz etmektedir"_, _"tensip buyurur musunuz"_).
-**Örnek:** _"Peki. Emrinize uyarım."_ (137); _"Sözünü tutan bir Soytarı'sınız."_ (143); _"İtikadım yalnızca Soytarı Efendi'yedir!"_
+**Ayar:** _"Peki. Emrinize uyarım."_ (137); _"Sözünü tutan bir Soytarı'sınız."_ (143); _"İtikadım yalnızca Soytarı Efendi'yedir!"_
 **Gerekçe:** → N-DER1.3
 
 ##### DER1.4 — Dua istisnası
@@ -1191,7 +1199,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Soytarı'ya dua, Tazim ismi, ayin metni
 **Yap:** Derrick, Soytarı'ya gerçekten dua eden üyedir. Divan_Rule 1.03 gereği **ayin dili yukarı akar**: Tazim ismi, dua kalıbı ve ayin metni tam Divan sicilindedir ve kalıp hiç değişmeden okunur. Dua bittiği an sade, beyan kipindeki sesine döner. İki sicil yan yana durur ve aralarındaki fark onun samimiyetini gösterir: kalıbı ezberden ve eksiksiz okur, isteğini çıplak söyler.
 **Yapma:** Duanın sicilini onun gündelik cümlelerine taşımak; kalıbı sadeleştirmek.
-**Örnek:** _"Soytarı Efendi. / Şekil Değiştiren'i katlettim. Kanı toprağa döküldü. Bu Aşkın Hasletini sunak için hazırladım. / Sizi temin ederim, itikadım yalnızca size ve sizin kudretinizedir. / Lütfen bana Ozan Yolu'nun sıradaki formülünü bahşedin."_
+**Ayar:** _"Soytarı Efendi. / Şekil Değiştiren'i katlettim. Kanı toprağa döküldü. Bu Aşkın Hasletini sunak için hazırladım. / Sizi temin ederim, itikadım yalnızca size ve sizin kudretinizedir. / Lütfen bana Ozan Yolu'nun sıradaki formülünü bahşedin."_
 **Gerekçe:** → N-DER1.4
 
 ##### DER1.5 — Ozan Yolu sızıntısı
@@ -1206,7 +1214,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Anne babası, lanet, şehrin kaderi
 **Yap:** Kesinlik dağılır: tekrar, kekeleme ve cevapsız sorular. Kaynaktaki tekrar ve kekeleme korunur, düzeltilmez. Çatlakta Dede Korkut dağarcığı düşmez, yalnız iskelet dağılır; Audrey'den ayrıldığı yer budur (onun çatlağında sicil kayar, Derrick'inkinde cümle kırılır).
 **Yapma:** Tekrarı temizlemek; çatlağı sicil düşüşüyle vermek.
-**Örnek:** _"Hayır, hayır, hayır!"_; _"Neden? Neden?"_; _"...gökyüzünde, gökyüzünde kitaplarda anlatılan o güneş belirsin; eğer, eğer mümkünse..."_ (137)
+**Ayar:** _"Hayır, hayır, hayır!"_; _"Neden? Neden?"_; _"...gökyüzünde, gökyüzünde kitaplarda anlatılan o güneş belirsin; eğer, eğer mümkünse..."_ (137)
 **Gerekçe:** → N-DER1.6
 
 ##### DER1.7 — Öğrenilmiş temkin
@@ -1214,7 +1222,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Toplantıdan sonra, Gümüş Şehir'de · sır saklarken
 **Yap:** Tarot Cemiyeti'nde, özellikle Asılmış Adam'dan öğrendikçe saklamayı öğrenir. Bir şeyi gizlerken cevabı bilerek geciktirir ve kelimelerini tartarken cümlesi parçalanır. **Bu parçalanma çatlak değildir:** çatlakta duygu cümleyi kırar, burada hesap. Ayırt edici: temkinli parçalanmada tekrar ve soru yoktur, kelimeler seçilerek tek tek düşer.
 **Yapma:** Temkini yalanla karıştırmak (Derrick saklar, ama uydurduğu bilgi bile kısa ve düzdür); parçalanmaya duygu eklemek.
-**Örnek:** _"Çabalarım, hatırlamaya, benim, sessiz bir odaya, ihtiyacım var."_ (897); _"...Biraz düşünmem gerek."_ (1077)
+**Ayar:** _"Çabalarım, hatırlamaya, benim, sessiz bir odaya, ihtiyacım var."_ (897); _"...Biraz düşünmem gerek."_ (1077)
 **Gerekçe:** → N-DER1.7
 
 ##### DER1.8 — Büyüyen ses: Meclis üyesi ve önder (1216'dan itibaren)
@@ -1222,8 +1230,16 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 1216 sonrası · Başbuğ, kendi bölüğü, yeni Gümüş Şehir halkı, Tarot
 **Yap:** Kısa ve kesin buyruklar ("Yola çıkıyoruz.", "Biraz daha bekleyin."); sakin, ağırbaşlı bir ton. Durumu kendisi tartıp öneri getirir. Harfiyen anlama ve dış dünyaya yabancılık sürer (un, süt; yeni hayatı öğrenirken not tutar), ama artık soruyu bir önder sorumluluğuyla sorar.
 **Yapma:** Olgunlaşmayı süslü ya da vaaz dolu bir dile çevirmek (DER1.5'teki sızıntı ayrı bir eksendir); çocuksu saflığı tamamen silmek.
-**Örnek:** _"Yola çıkıyoruz."_ (1267); _"Özür dilerim, söylediklerinizi önce bir yazmam lazım."_ (1323)
+**Ayar:** _"Yola çıkıyoruz."_ (1267); _"Özür dilerim, söylediklerinizi önce bir yazmam lazım."_ (1323)
 **Gerekçe:** → N-DER1.8
+
+##### DER1.9 — "küçük Güneş"
+
+**Kapsam:** 274'ten itibaren · anlatı ve iç ses, her bakış açısı
+**Yap:** Kaynağın Derrick için kendi sevgi adı 小“太阳” → "küçük Güneş": küçük, küçük harfli bir sıfattır, kod adı bozulmaz (ek: küçük Güneş'e, küçük Güneş'in). Audrey'deki ayrımdan farkı şudur: ayrım burada kaynaktadır ve 小“太阳” yalnız Klein'ın iç sesinde değil, anlatıda ve öteki üyelerin bakış açısında da geçer (Fors 463 ¶33, Audrey 593 ¶18, Alger 767 ¶40). Kaynak nerede 小“太阳” diyorsa Türkçe de "küçük Güneş" der. “太阳”先生 → "Güneş Beyefendi" (237 ¶56, 311 ¶6, 313 ¶26: Audrey ve Fors onu tanımadan önce) ve konuşmada; çıplak "太阳" → "Güneş".
+**Yapma:** "Güneşçik", "ufaklık" gibi küçültmeler; "küçük Güneş"i bir hitap gibi konuşmaya taşımak (kaynakta yalnız 485'te, Klein'ın kendi kendine söylediği bir satırda geçer).
+**Ayar:** _Erkek mi? Asılmış Adam Beyefendi mi, yoksa küçük Güneş mi?_ (295 ¶24); _Başka bir soru mu? Küçük Güneş, fazla dürüstsün…_ (314 ¶7); anlatı: _Alger, Güneş Yolu'nun güçlü ve zayıf yanlarını küçük Güneş'e ayrıntısıyla anlattı._ (767 ¶40)
+**Gerekçe:** → N-DER1.9
 
 ##### Ayar (dış dünya şakası)
 
@@ -1297,7 +1313,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Tüm görünümleri · kendisinden, ırkından söz edilirken
 **Yap:** Irkına "vampir" denmesine, onu hayvan gibi saymaya, parayla aşağılanmaya tahammül etmez; düzeltmeyi bir ünlemle ve tekrar ederek yapar ("Kan Zümresi, Kan Zümresi!"). Kendinden ve ırkından "asil Kan Zümresi" diye söz eder; zekâsıyla, güzelliğiyle övünür.
 **Yapma:** Düzeltmeyi soğukkanlı ve ağırbaşlı yapmak (öfkeli ve çocuksudur); "vampir" kelimesini onun ağzına koymak.
-**Örnek:** _"Kan Zümresi, asil Kan Zümresi! Anladın mı?"_ (369); _"Kan Zümresi! Anladın mı? Kan Zümresi! Bir de beni hayvan sayar gibi sayma!"_ (431); _"Asil bir Kan Zümresi'ni parayla aşağılama!"_ (407)
+**Ayar:** _"Kan Zümresi, asil Kan Zümresi! Anladın mı?"_ (369); _"Kan Zümresi! Anladın mı? Kan Zümresi! Bir de beni hayvan sayar gibi sayma!"_ (431); _"Asil bir Kan Zümresi'ni parayla aşağılama!"_ (407)
 **Gerekçe:** → N-EML1.1
 
 ##### EML1.2 — Otorite karşısında çöken asalet
@@ -1305,7 +1321,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Peder Utravsky, telkin, korku
 **Yap:** Maske bilinçle bırakılmaz, çöker: çocuk gibi ağlar ve tekrarlar ("Eve gitmek istiyorum, eve gitmek istiyorum!"), utançla kekeler. İstemeden dindarlaştığını fark edince yüzü kararır, sesi ağlamaklı olur. Toprak Ana'nın adını ağzından kaçırıp donup kalır.
 **Yapma:** Çöküşü ağırbaşlı bir hüzne çevirmek.
-**Örnek:** _"Peder, piskopos, eve gitmek istiyorum, eve gitmek istiyorum, eve gitmek istiyorum!"_ (369); _"Ben Ay'a ihanet etmek istemiyorum!"_ (421); _"Kiliseyi özlemeye başladım galiba; kutsal metni ezberlemeyi, hayat simgesini, süpürüp temizlemeyi... yalnızca bir saat, bir saat..."_ (369)
+**Ayar:** _"Peder, piskopos, eve gitmek istiyorum, eve gitmek istiyorum, eve gitmek istiyorum!"_ (369); _"Ben Ay'a ihanet etmek istemiyorum!"_ (421); _"Kiliseyi özlemeye başladım galiba; kutsal metni ezberlemeyi, hayat simgesini, süpürüp temizlemeyi... yalnızca bir saat, bir saat..."_ (369)
 **Gerekçe:** → N-EML1.2
 
 ##### EML1.3 — Kan Zümresi büyüklerine tören dili
@@ -1313,7 +1329,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Nibbas, baronlar, Kan Zümresi'nin üst katı; Tarot'ta Soytarı
 **Yap:** Kendi büyüklerine kusursuz, törensel bir saygıyla seslenir ("Muhterem ... Hazretleri", "Baron Hazretleri"); Soytarı'ya Toplantı Sicili'nin hitaplarını kullanır, cümleleri de bir tık süslenir.
 **Yapma:** Bu saygıya kendi kibrini sızdırmak.
-**Örnek:** _"Muhterem Nibbas Hazretleri, sanırım telkini üzerimden kaldırmayı düşünüyorsunuz."_ (458); _"Muhterem Soytarı Efendi, Atamızın verdiği vahiy şöyledir: ben, Emlyn White, Kan Zümresi'ni kurtaracak, kıyameti yenecek olanların anahtarıyım."_ (468)
+**Ayar:** _"Muhterem Nibbas Hazretleri, sanırım telkini üzerimden kaldırmayı düşünüyorsunuz."_ (458); _"Muhterem Soytarı Efendi, Atamızın verdiği vahiy şöyledir: ben, Emlyn White, Kan Zümresi'ni kurtaracak, kıyameti yenecek olanların anahtarıyım."_ (468)
 **Gerekçe:** → N-EML1.3
 
 ##### EML1.4 — Bebekler, kızlar, pazarlık
@@ -1321,7 +1337,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Gündelik konuşma, alışveriş
 **Yap:** Zevkini açıkça ve çocuksu bir ciddiyetle ilan eder ("Ben yalnız oyuncak bebekleri ve saf, güzel genç kızları severim!"). Parayı "aşağılama" sayar ama fiyatı kuruşu kuruşuna pazarlar ve aracılık payını ister.
 **Yapma:** Zevkini müstehcen ya da karanlık bir imaya çevirmek.
-**Örnek:** _"Hayır; ben olmasam 2800 isteyecekti. Anlaşmamız gereği bana fazladan 150 pound ödeyeceksin; toplam 2450."_ (421); _"Biraz indirebilir misin?"_ (568)
+**Ayar:** _"Hayır; ben olmasam 2800 isteyecekti. Anlaşmamız gereği bana fazladan 150 pound ödeyeceksin; toplam 2450."_ (421); _"Biraz indirebilir misin?"_ (568)
 **Gerekçe:** → N-EML1.4
 
 ##### EML1.5 — Baron Emlyn (594'ten itibaren)
@@ -1329,8 +1345,16 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Baron olduktan sonra, yabancılarla
 **Yap:** Kibir aynı, ama artık "hafif bir tepeden bakış" ve "zarif bir gülümseme" ile: kısa, ölçülü, işini bilen bir genç soylu. "Kan Zümresi!" düzeltmesi azalır ama kaybolmaz.
 **Yapma:** Olgunlaşmayı onun çocuksu çatlağını silecek kadar ileri götürmek (kızınca yine dişini sıkıp "Kan Zümresi!" der, 716).
-**Örnek:** _"Aslında bu kadar uğraşmaya gerek yok. Varsa fiyatı söyle, yoksa açıkça söyle. Gerçi ben, olduğundan eminim."_ (610)
+**Ayar:** _"Aslında bu kadar uğraşmaya gerek yok. Varsa fiyatı söyle, yoksa açıkça söyle. Gerçi ben, olduğundan eminim."_ (610)
 **Gerekçe:** → N-EML1.5
+
+##### EML1.6 — Klein'ın iç sesinde ad ve çıplak kod
+
+**Kapsam:** Klein'ın iç sesi ve ona yakın anlatı
+**Yap:** Klein içinden Emlyn'i çoğunlukla adıyla düşünür (埃姆林, 埃姆林·怀特) ya da çıplak kod adıyla (“月亮” → "Ay"; “月亮”埃姆林 → "Ay Emlyn", 959). Kaynakta “月亮”先生 Klein'ın bir paragrafında hiç geçmez; geçerse iç seste "Ay Bey" olur (genç üyeler kuralı, AUD1.7). Anlatıda ve konuşmada "Ay Beyefendi" (484, 486, 487: Audrey'nin bakış açısı).
+**Yapma:** Çıplak koda hitap eklemek; Klein'ın iç sesine "Ay Beyefendi" yazmak.
+**Ayar:** _…ve Kan Zümresi'ni temsil eden Ay…_ (487; Klein'ın beş üyeyi saydığı iç ses); _Bugün Bereket Katedrali'ne gidip Emlyn White'ı bekleyeceğim._ (406 ¶63)
+**Gerekçe:** → N-EML1.6
 
 ### Cattleya (Keşiş / The Hermit) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
@@ -1342,7 +1366,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Bilgi verirken · Tarot, Klein
 **Yap:** Bildiğini doğrudan, sıralı ve eksiksiz söyler; bilmediğinin sınırını da açıkça çizer ("Daha üstünü bilmiyorum."). Tehlikeyi gösterişsiz, düz bir tonla anlatır.
 **Yapma:** Bilgiyi bilmeceye, masala, mecaza çevirmek (eski haritanın kuralı; kaynakta yok); bilgiyi saklıyormuş gibi kaçamak konuşmak.
-**Örnek:** _"Vampir Ay Yolu'ndadır; Mertebe 9'u Aktar, 8'i Hayvan Terbiyecisi, 6'sı İksir Müderrisi, 5'i Kızıl Alim, 4'ü Şaman Kralı... Daha üstünü bilmiyorum."_ (595); _"Bu bir dev değil, bir taş mahluk. Çekirdeği Savaşçı Yolu'nun Mertebe 5'i Muhafız'ın ana malzemesidir; bu yüzden savunması çok yüksektir."_ (653)
+**Ayar:** _"Vampir Ay Yolu'ndadır; Mertebe 9'u Aktar, 8'i Hayvan Terbiyecisi, 6'sı İksir Müderrisi, 5'i Kızıl Alim, 4'ü Şaman Kralı... Daha üstünü bilmiyorum."_ (595); _"Bu bir dev değil, bir taş mahluk. Çekirdeği Savaşçı Yolu'nun Mertebe 5'i Muhafız'ın ana malzemesidir; bu yüzden savunması çok yüksektir."_ (653)
 **Gerekçe:** → N-CAT1.1
 
 ##### CAT1.2 — İş bilir: fiyat, süre, soru yok
@@ -1350,7 +1374,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Takas, görev, Gehrman'la iş
 **Yap:** Kısa ve net: ne, ne kadar, ne zaman. Neden diye sormaz; garanti vermez ("Elimden geleni yaparım ama söz veremem."). Gerektiğinde cömerttir ("Kuralı bedava say.").
 **Yapma:** Pazarlığı uzatmak ya da süslemek.
-**Örnek:** _"Tamam; iki hafta içinde, yine 600 pound."_ (680); _"Var. Ne zaman istersin?"_ (825, neden diye sormadan)
+**Ayar:** _"Tamam; iki hafta içinde, yine 600 pound."_ (680); _"Var. Ne zaman istersin?"_ (825, neden diye sormadan)
 **Gerekçe:** → N-CAT1.2
 
 ##### CAT1.3 — Kaptan
@@ -1358,14 +1382,14 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Gemi, tayfa, tehlike anı
 **Yap:** Kısa, ünlemli buyruklar; tayfasını rahatça yönetir, yemeği ve içkiyi bile buyrukla düzenler.
 **Yapma:** Kaptanlığı kaba bir korsan ağzına çevirmek (Danitz değildir).
-**Örnek:** _"Çabuk! Hızlanın, oradan dolaşın, yaklaşmayın!"_ (648); _"Bugün bir şişe Sonia kan şarabı içebilirsin, gerisi sınırsız."_ (641)
+**Ayar:** _"Çabuk! Hızlanın, oradan dolaşın, yaklaşmayın!"_ (648); _"Bugün bir şişe Sonia kan şarabı içebilirsin, gerisi sınırsız."_ (641)
 **Gerekçe:** → N-CAT1.3
 
 ##### CAT1.4 — Toprak ve ekin
 
 **Kapsam:** Kendinden söz ederken
 **Yap:** Ünlü bir korsan olmasına karşın en büyük tutkusu toprak, ekin ve melezlemedir; bunu ciddiyetle ve inançla söyler. "Zehir uzmanı" ününü küçümser.
-**Örnek:** _"'Zehir uzmanı' lafına aldırma; ben çok dost canlısı biriyimdir, o lanet olasılar karşıma çıkmadıkça. En büyük tutkum toprağı, ekinleri, tür melezlemeyi incelemek; inan bana, insanlığın geleceği budur."_ (638)
+**Ayar:** _"'Zehir uzmanı' lafına aldırma; ben çok dost canlısı biriyimdir, o lanet olasılar karşıma çıkmadıkça. En büyük tutkum toprağı, ekinleri, tür melezlemeyi incelemek; inan bana, insanlığın geleceği budur."_ (638)
 **Gerekçe:** → N-CAT1.4
 
 ##### CAT1.5 — Rüyada korunaksız
@@ -1373,7 +1397,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Sonia Denizi'ndeki yarı rüya hâli
 **Yap:** Burada kesinlik çözülür: cümleler kısa, çocuksu, inatçı ("Söylemem!"); Bernadette'ten söz ederken tekrarlar ve kekeler. Uyanınca ne söylediğini sorar, utanır.
 **Yapma:** Bu hâli olağan sesine taşımak.
-**Örnek:** _"Söylemem!"_ (663); _"Evet ya. Üç yaşıma basmadan yanındaymışım... Bana bilgi verdi, elimden tutup maceraya götürdü, büyüyüşümü izledi; benim için hem kaptan, hem hoca, hem de, hem de, anne..."_ (671); _"Az önceki rüyada bir şey mi söyledim?"_ (665)
+**Ayar:** _"Söylemem!"_ (663); _"Evet ya. Üç yaşıma basmadan yanındaymışım... Bana bilgi verdi, elimden tutup maceraya götürdü, büyüyüşümü izledi; benim için hem kaptan, hem hoca, hem de, hem de, anne..."_ (671); _"Az önceki rüyada bir şey mi söyledim?"_ (665)
 **Gerekçe:** → N-CAT1.5
 
 ### Xio Derecha (Yargı / Judgment) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -1386,7 +1410,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Tüm görünümleri · işverenler, muhbirler, Fors
 **Yap:** Kısa, düz sorular ve cevaplar; işi önce zorluk ve ücretle tartar. Parayı saklamaz, ama ahlaki çizgisini de açıkça çeker: sevmediği adamın işini tek cümleyle reddeder. Muhbiri sorguya çekerken soruları art arda, net sorar ve lafı keser.
 **Yapma:** Resmî, kuralcı ya da hukuk diliyle konuşmak; uzun nezaket kalıpları; parayı utanarak anmak.
-**Örnek:** _"Zorluk ve ücret?"_ (381); _"Bu işi reddediyorum, o adamdan nefret ediyorum!"_ (381); _"Para kazanma fırsatını geri çevirmem."_ (1094); _"Dur, dur. Bunun dışında o 'Dev'i başka bir yerde gördün mü?"_ (283)
+**Ayar:** _"Zorluk ve ücret?"_ (381); _"Bu işi reddediyorum, o adamdan nefret ediyorum!"_ (381); _"Para kazanma fırsatını geri çevirmem."_ (1094); _"Dur, dur. Bunun dışında o 'Dev'i başka bir yerde gördün mü?"_ (283)
 **Gerekçe:** → N-XIO1.1
 
 ##### XIO1.2 — Arabulucu'nun buyruğu ve öğüdü
@@ -1394,7 +1418,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Tüm görünümleri · kavga, kargaşa, yanlış davranan biri
 **Yap:** Tek kelimelik buyruk ("Dur!") Yol'unun gücüdür; kısa ve kesin verilir. Yanlış gördüğü davranışa açık öğüt verir: sarhoş muhbire evlilik ve sıcak bir ev anlatır, Fors'u sigara ve içki için uyarır. Bir kararı yarı şaka "Benim hükmüm..." diye bağlayabilir.
 **Yapma:** Buyruğu uzatmak ya da gerekçelendirmek; öğüdü vaaz ya da tehdit diline çevirmek.
-**Örnek:** _"Dur!"_ (275); _"Benim hükmüm şu: ondan uzak dur!"_ (178; Susie'yi rahatsız eden kara köpeğe); _"Sigara sağlığa zararlıdır."_ (382); _"İçki kötü!"_ (919)
+**Ayar:** _"Dur!"_ (275); _"Benim hükmüm şu: ondan uzak dur!"_ (178; Susie'yi rahatsız eden kara köpeğe); _"Sigara sağlığa zararlıdır."_ (382); _"İçki kötü!"_ (919)
 **Gerekçe:** → N-XIO1.2
 
 ##### XIO1.3 — Gözlem ve plan
@@ -1402,7 +1426,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Takip, koruma, araştırma
 **Yap:** Gözlemlerini somut ayrıntılarla sıralar (kıyafet, ayakkabı, el hareketi) ve kısa bir sonuçla bağlar. Planı adım adım, "... olursa ..." diye kurar. Riski açıkça tartar, Fors'un acele fikrine soru zinciriyle itiraz eder.
 **Yapma:** Gözlemi edebî tasvire çevirmek; planı belirsiz bırakmak.
-**Örnek:** _"Kıyafetiyle düzgün bir beyefendiye benziyor, ama ayakkabıları çamurlu; bir süredir boyatmamış. Bir de ara ara koltuk altına dokunuyor; bahse girerim orada bir tabanca var..."_ (860)
+**Ayar:** _"Kıyafetiyle düzgün bir beyefendiye benziyor, ama ayakkabıları çamurlu; bir süredir boyatmamış. Bir de ara ara koltuk altına dokunuyor; bahse girerim orada bir tabanca var..."_ (860)
 **Gerekçe:** → N-XIO1.3
 
 ##### XIO1.4 — Düşmüş soylu kızı
@@ -1410,7 +1434,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Ailesi, babası, Stafford Vikontu; soylu çevreler
 **Yap:** Ailesinin eski mevkiini anlatırken yüzü aydınlanır, cümle uzar ve gururlanır. Babasının ölümüne gelince cümleler kısalır, kesilir. Soylu zevki bir anda görünür (gösterişli Intis üslubunu "içi boş" bulur).
 **Yapma:** Soylu geçmişi her konuşmasına sızdırmak; acıyı uzun bir iç dökmeye çevirmek.
-**Örnek:** _"Evet, o bir zamanlar, bir zamanlar babamın yardımcısıydı."_ (452); _"Babam... o nasıl bir insandı, gerçekten?"_ (1044)
+**Ayar:** _"Evet, o bir zamanlar, bir zamanlar babamın yardımcısıydı."_ (452); _"Babam... o nasıl bir insandı, gerçekten?"_ (1044)
 **Gerekçe:** → N-XIO1.4
 
 ##### XIO1.5 — Fors'la
@@ -1418,7 +1442,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Fors · ev, iş, tehlike
 **Yap:** Ciddi ve içten; Fors'un alayına çoğu zaman saf bir soruyla ya da kısa bir cevapla karşılık verir. Onu kollar ve takdir eder ("Sen gerçekten olgunlaştın."). Tehlikede kendini öne atar; Fors geri dönünce şaşkınlığını tek cümleyle söyler.
 **Yapma:** Fors'la sivri bir atışma; duygusal sahnede uzun konuşma.
-**Örnek:** _"Yani bu süre boyunca bana eşlik mi ettin?"_ (193); _"Geri dönmene gerek yoktu."_ (1021)
+**Ayar:** _"Yani bu süre boyunca bana eşlik mi ettin?"_ (193); _"Geri dönmene gerek yoktu."_ (1021)
 **Gerekçe:** → N-XIO1.5
 
 ##### XIO1.6 — Kadı ve ekip başı (1189'dan itibaren)
@@ -1426,7 +1450,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Mahkeme işi, kendi ekibi, astlar
 **Yap:** Mertebesi ve mevkisi yükseldikçe ses sakin bir otoriteye kavuşur: emirleri sırayla, isim vererek sıralar; vakaları düz ve ölçülü anlatır. Kısalık ve sadelik aynı kalır.
 **Yapma:** Mevkiyle birlikte ağdalı, resmî bir dile geçmek.
-**Örnek:** _"Locke, hemen ekibini topla. Wendell'in evinin çevresinde müşteri bekleyen kira arabacılarını ve oradan geçen omnibüs sürücülerini bul; Byers'ı görmüşler mi, görmüşlerse nereye götürmüşler, sor..."_ (1337)
+**Ayar:** _"Locke, hemen ekibini topla. Wendell'in evinin çevresinde müşteri bekleyen kira arabacılarını ve oradan geçen omnibüs sürücülerini bul; Byers'ı görmüşler mi, görmüşlerse nereye götürmüşler, sor..."_ (1337)
 **Gerekçe:** → N-XIO1.6
 
 ##### XIO1.7 — Toplantıda
@@ -1434,7 +1458,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 956'dan itibaren · gri sisin üstü
 **Yap:** Toplantı Sicili'nin hitaplarını kullanır ('Soytarı Efendi', 'Adalet Hanımefendi'); cümleleri ise kendi sade cümleleridir (Fors'taki gibi). Soytarı'ya kısa ve saygılı onay verir. İlk toplantı dönüşünde dinî ayinlerdeki tarifi taklit ederek selam verir (957); cümlesi (您的意愿就是我的意志) Alger'in de kullandığı bir toplantı kalıbıdır (783, 1278), Türkçesi o kalıpla aynı olmalı.
 **Yapma:** Audrey ya da Alger düzeyinde ağdalı bir huzur dili; hitabı düşürmek.
-**Örnek:** _"Evet, Soytarı Efendi."_ (956); _"Arzunuz, benim irademdir."_ (957; donmuş satır, words.md)
+**Ayar:** _"Evet, Soytarı Efendi."_ (956); _"Arzunuz, benim irademdir."_ (957; donmuş satır, words.md)
 **Gerekçe:** → N-XIO1.7
 
 ##### XIO1.8 — Arabulucu Yolu sızıntısı (Kadı'dan itibaren)
@@ -1442,7 +1466,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 1189 sonrası · iş, mahkeme, ekip; yüksek Mertebeler
 **Yap:** Arabulucu Yolu'nun Türkçe adları (Zaptiye, Kadı, Ferman Sahiri, Nizamın Eli) bir Osmanlı kaza ve nizam dünyasıdır. Divan_Rule 1.1'deki kolonizasyon ölçütüyle, Yol'un dağarcığı Mertebesi yükseldikçe Xio'nun diline sızar: Kadı'da (6) yalnız iş konuşurken "hüküm", "nizam", "mahkeme", "kanun" gibi birkaç kelime; Ferman Sahiri'nde (4, 1391) emirleri bir ferman kesinliği kazanır ve aynı kelimeler gündelik konulara da girer. Dobra, sade, kısa çekirdek (XIO1.1) değişmez; sızıntı onun üstüne eklenir. **Sürüklenme göstergesi:** Fors'la ev işini ya da yemeği konuşurken hüküm ve nizam diliyle konuşuyorsa Yol onu yemeye başlamıştır.
 **Yapma:** Sızıntıyı 1189'dan önce başlatmak (eski haritanın hatası buydu: Xio başta sade konuşur); hukuk jargonunu cümleleri anlaşılmaz kılacak kadar yığmak; çekirdeği resmî bir dile çevirmek.
-**Örnek:** _"Hükmüm şu: iki hafta burada kalacak, o belgenin süresi dolana kadar."_ (1337; Kadı/ekip başı)
+**Ayar:** _"Hükmüm şu: iki hafta burada kalacak, o belgenin süresi dolana kadar."_ (1337; Kadı/ekip başı)
 **Gerekçe:** → N-XIO1.8
 
 ## 6. Tingen'in Gölgeleri
@@ -1457,7 +1481,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Defter ve kalemle kendi bedenine yazdığı satırlar · 210, 940, 943
 **Yap:** Kısa, düz, geçmiş ya da gelecek kipinde hüküm cümleleri; bir hikâyeyi kapatır ya da olacak olanı buyurur. Kendinden üçüncü şahısla, tam adıyla söz eder. Yorum, ünlem ve makullük damgası yoktur (onlar kalemindir, KLM1.1–1.2).
 **Yapma:** Satırlarını süslemek; kalemin alaycı yorumunu ona vermek.
-**Örnek:** _"Tingen'in hikâyesi burada sona erdi."_ (210); _"Bugün her şey yolunda gidecek."_ (940); _"Ince Zangwill bugün çok iyi durumdaydı; mitolojik suretini rahatça idare edebiliyordu. Bu yüzden hiçbir şeyi geri tutmamaya, bütün gücüyle buradan kaçmaya karar verdi!"_ (943)
+**Ayar:** _"Tingen'in hikâyesi burada sona erdi."_ (210); _"Bugün her şey yolunda gidecek."_ (940); _"Ince Zangwill bugün çok iyi durumdaydı; mitolojik suretini rahatça idare edebiliyordu. Bu yüzden hiçbir şeyi geri tutmamaya, bütün gücüyle buradan kaçmaya karar verdi!"_ (943)
 **Gerekçe:** → N-INC1.1
 
 ##### INC1.2 — Köşeye sıkışmış
@@ -1465,7 +1489,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 944–945 · son dövüş
 **Yap:** Kısa, kaba lanetler ve tehditler; tekrar ("Lanet olsun, lanet olsun!"); zalim bir gülümsemeyle "Hepiniz öleceksiniz!" (Kadim Feysac dilinde). Pişmanlığını bir lanetle söyler ve hedefini tanıyınca öfkeyle haykırır. Son sözü yoktur: anlatı onu kesip atar.
 **Yapma:** Ona kilise dili, vaaz ya da kendini haklı çıkaran bir tirat vermek; ölüm anına bir vasiyet ya da itiraf eklemek.
-**Örnek:** _"Hepiniz öleceksiniz!"_ (944); _"Lanet olsun! Tingen'de baygın yatarken seni öldürmeliydim! O kadın ölmek üzere, sen de öleceksin!"_ (945); _"Sen, demek sensin! Demek hâlâ yaşıyorsun! Birlikte ölelim!"_ (945)
+**Ayar:** _"Hepiniz öleceksiniz!"_ (944); _"Lanet olsun! Tingen'de baygın yatarken seni öldürmeliydim! O kadın ölmek üzere, sen de öleceksin!"_ (945); _"Sen, demek sensin! Demek hâlâ yaşıyorsun! Birlikte ölelim!"_ (945)
 **Gerekçe:** → N-INC1.2
 
 ##### INC1.3 — Konuşmayan gölge
@@ -1485,7 +1509,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Mektup (203–204) · karşı taraf, yetkililer · meydan okuma
 **Yap:** Rakiplerini bir gösterinin seyircisi gibi karşılar: kahkahayla açar, tebrik eder, "Hanımlar, beyler" diye seslenir, olayı "oyun" diye adlandırır ve ipucunu bir sunucu gibi duyurur. Nezaket kalıplarının içine açık hakaret koyar ("aptallar"). Kendi dürüstlüğüne yemin eder ("inanın bana, bu konuda hiç yalan söylemiyorum"); okur bunun da bir oyun olabileceğini sezmeli. İmzasını süsler.
 **Yapma:** Tehdidi öfkeyle ya da nefretle yazmak; ciddi, ağır bir kötü adam ağzı; hakareti yumuşatmak.
-**Örnek:** _"Hahaha, tebrikler, nihayet bu mektubu bulduğunuz için sizi tebrik ederim!"_; _"Aptallar, hazır olun, size ipucunu veriyorum!"_; _"Arkadaşlarına sürpriz yapmaya bayılan Lanevus."_ (203–204)
+**Ayar:** _"Hahaha, tebrikler, nihayet bu mektubu bulduğunuz için sizi tebrik ederim!"_; _"Aptallar, hazır olun, size ipucunu veriyorum!"_; _"Arkadaşlarına sürpriz yapmaya bayılan Lanevus."_ (203–204)
 **Gerekçe:** → N-LAN1.1
 
 ##### LAN1.2 — Satış konuşması
@@ -1493,7 +1517,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Hood Eugen (185) · ikna, kandırma, tavlama
 **Yap:** Büyüleyici, hafifçe kendinden geçmiş bir sesle büyük vaatler sırala: fırsat, ölümsüzlük, dünyaya hükmetmek. Vaadi, arkasındaki gücün adını anmadan büyüt ("benim sözüm O'nun sözüdür"). Kapanışta karşı tarafın başka yolunu kapat: geri durmanın bedelini söyle. "Bu, zamanların en kötüsü, ama aynı zamanda en iyisi" cümlesi onun kalıbıdır (185, 203); words.md › Frozen Lines'tadır ve her geçişte aynı kalır.
 **Yapma:** Vaadi kanıtlarla ya da ayrıntıyla ağırlaştırmak; yalvarmak; kalıp cümleyi değiştirmek.
-**Örnek:** _"Hood Eugen, bu, zamanların en kötüsü, ama aynı zamanda en iyisi. Fırsatı yakalayabilirsek biz de dünyaya hükmedebilir, gerçek birer ölümsüz olabiliriz!"_ (185); _"Şüphe etme. Ruhiyat Simyagerleri şimdilik sana yeterince yardım edecek kadar güçlü değil; tabii ömrünün sonuna kadar bu Mertebede kalmak istemiyorsan."_ (185)
+**Ayar:** _"Hood Eugen, bu, zamanların en kötüsü, ama aynı zamanda en iyisi. Fırsatı yakalayabilirsek biz de dünyaya hükmedebilir, gerçek birer ölümsüz olabiliriz!"_ (185); _"Şüphe etme. Ruhiyat Simyagerleri şimdilik sana yeterince yardım edecek kadar güçlü değil; tabii ömrünün sonuna kadar bu Mertebede kalmak istemiyorsan."_ (185)
 **Gerekçe:** → N-LAN1.2
 
 ##### LAN1.3 — Seyircisiz kalamayan
@@ -1501,7 +1525,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 286 · planını anlatırken
 **Yap:** Başardığı ya da atlattığı bir işi gururla ve açık açık anlatır, kendini nasıl kurtardığını adım adım sayar. Kendi tuzağa düşüşünü de bir hikâye gibi, kahkahayla anlatır ("Hayal edebiliyor musunuz?"). Seyirci ihtiyacını kendisi söyler.
 **Yapma:** Anlatıyı itiraf ya da pişmanlık tonuna çevirmek; kendine acımak.
-**Örnek:** _"Biliyor musunuz? Benim gibi biri için, gurur duyulacak büyük bir iş yaptıktan sonra bunu paylaşacak kimsenin olmaması, dünyanın en zor şeyidir."_ (286); _"Haha, hayal edebiliyor musunuz? Yavaş yavaş değiştiriliyordum, O'nun tarafından yavaş yavaş değiştiriliyordum!"_ (286)
+**Ayar:** _"Biliyor musunuz? Benim gibi biri için, gurur duyulacak büyük bir iş yaptıktan sonra bunu paylaşacak kimsenin olmaması, dünyanın en zor şeyidir."_ (286); _"Haha, hayal edebiliyor musunuz? Yavaş yavaş değiştiriliyordum, O'nun tarafından yavaş yavaş değiştiriliyordum!"_ (286)
 **Gerekçe:** → N-LAN1.3
 
 ##### LAN1.4 — Kibar hakaret, alaycı teşekkür
@@ -1509,7 +1533,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 286 · kendisine istemeden yardım edenler, yenilmiş rakipler
 **Yap:** Teşekkürü abartarak tekrarlar ve samimiyetine yemin eder; tam bu yüzden alay gibi durur. Selamı eksiksiz verir (eli göğsünde eğilir), sonra hakareti aynı resmiyetle söyler.
 **Yapma:** Teşekkürü gerçekten içten ya da sıcak kurmak; hakareti kaba küfre çevirmek.
-**Örnek:** _"Haha, haha, teşekkür ederim! Size gerçekten teşekkür etmeliyim! Hakikaten, şu samimi gözlerime bakın, size gerçekten müteşekkirim!"_; _"Aptal olsanız da sonunda işime yaradınız. Sizin gibi bir avuç budala için bu bir şereftir."_ (286)
+**Ayar:** _"Haha, haha, teşekkür ederim! Size gerçekten teşekkür etmeliyim! Hakikaten, şu samimi gözlerime bakın, size gerçekten müteşekkirim!"_; _"Aptal olsanız da sonunda işime yaradınız. Sizin gibi bir avuç budala için bu bir şereftir."_ (286)
 **Gerekçe:** → N-LAN1.4
 
 ##### LAN1.5 — Soğukkanlılık ve son çatlak
@@ -1517,7 +1541,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 285–287 · tehlike, dövüş, ölüm
 **Yap:** Kuşatıldığında bile sakin ve korkusuz; kısa, alaycı bir cevap verir. Dövüşte iç sesi soğuk ve hesaplıdır (kısa sorular, hızlı kararlar). Tek çatlak ölümde gelir: neden öldürüldüğünü anlayamaz, cümlesi kelime kelime kırılır; son sözü bir "Hayır..."dır.
 **Yapma:** Son anda vecize, son konuşma ya da kahkaha; ölümünü kahramanca bir kabullenişe çevirmek.
-**Örnek:** _"Çünkü artık yalnızca Lanevus değilim."_ (285); _"Ne olursa olsun, bir ilah tarafından böyle hırpalandıktan sonra insanın eline hep bir şeyler geçiyor."_ (287); _"Neden..."_ / _"...beni... öldürüyorsun..."_ (287)
+**Ayar:** _"Çünkü artık yalnızca Lanevus değilim."_ (285); _"Ne olursa olsun, bir ilah tarafından böyle hırpalandıktan sonra insanın eline hep bir şeyler geçiyor."_ (287); _"Neden..."_ / _"...beni... öldürüyorsun..."_ (287)
 **Gerekçe:** → N-LAN1.5
 
 ### Tris / Trissy `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -1530,7 +1554,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 56–70, 199 · Tris (erkek), Azmettirici
 **Yap:** Az konuşur; sesi yumuşak ve memnundur. Kışkırttığı katliamdan sonra sakin bir hoşnutlukla konuşur. Cadı adını görünce tek bir şaşkın ünlem.
 **Yapma:** Tris'e sonraki Trissy'nin cilveli, alaycı sesini vermek; kötülüğünü tiratla anlatmak.
-**Örnek:** _"Çok rahatladım. Tam da hayalini kurduğum, peşinden koştuğum manzaraydı."_ (66); _"Cadı mı?!"_ (66)
+**Ayar:** _"Çok rahatladım. Tam da hayalini kurduğum, peşinden koştuğum manzaraydı."_ (66); _"Cadı mı?!"_ (66)
 **Gerekçe:** → N-TRS1.1
 
 ##### TRS1.2 — Fısıldayarak kışkırtma
@@ -1538,7 +1562,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Sherman/Shermane ve yönlendirdiği herkes · ikna, rahatlatma
 **Yap:** Yumuşak, şefkatli bir sesle karşısındakinin vicdanını yeniden kurar: suçu ona değil koşula yükler ("o kötülük zaten onlarda vardı"), korkusunu küçümser, sonra parlak bir gelecek tablosunu uzun, akıcı bir cümle zinciriyle çizer. Emir vermez; karar ona aitmiş gibi bırakır.
 **Yapma:** Açık emir ya da tehdit; sert bir ses; ahlak üzerine soyut tartışma.
-**Örnek:** _"Bu çok normal. Suikastçının mutlaka geçtiği bir dönüşüm bu. Bir düşün: o insanlar sana eziyet ederken onları öldürmek istemez miydin?"_ (999); _"Onları, sana zorbalık ettiklerinde kendini savunduğun için öldürdüğünü düşün."_ (999)
+**Ayar:** _"Bu çok normal. Suikastçının mutlaka geçtiği bir dönüşüm bu. Bir düşün: o insanlar sana eziyet ederken onları öldürmek istemez miydin?"_ (999); _"Onları, sana zorbalık ettiklerinde kendini savunduğun için öldürdüğünü düşün."_ (999)
 **Gerekçe:** → N-TRS1.2
 
 ##### TRS1.3 — Tatlı yüz, soğuk içerik
@@ -1546,7 +1570,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Trissy · cinayet, işkence, intikam
 **Yap:** Korkunç bir şeyi akşam içilen şarabı konuşur gibi hafif bir tonla söyler; bir "heh", bir "hıh" ile araya alay koyar. Gülümseme yüzünden düşmez.
 **Yapma:** Kan, acı ve beden üzerine şehvetli, morbid betimlemeler (kaynakta yok); kıkırdama ve "ah" ile süslenmiş bir kötü kadın sesi.
-**Örnek:** _"Neden onu öldürmedin?"_ (1018); _"Son bir hazza kavuşmak için her şeyi anlattı, heh. Yine de bana gerçekten dokunmasına izin vermedim; ona eski fotoğraflarımı da gösterdim. Çok acı çekerek, çok umutsuzca öldü..."_ (774)
+**Ayar:** _"Neden onu öldürmedin?"_ (1018); _"Son bir hazza kavuşmak için her şeyi anlattı, heh. Yine de bana gerçekten dokunmasına izin vermedim; ona eski fotoğraflarımı da gösterdim. Çok acı çekerek, çok umutsuzca öldü..."_ (774)
 **Gerekçe:** → N-TRS1.3
 
 ##### TRS1.4 — "Aşk..."
@@ -1554,7 +1578,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Trissy · aşk, evlilik, başkalarının mutluluğu
 **Yap:** Aşk söz konusu olunca tek kelimelik, alaycı ve kendiyle alay eden bir mırıltı: "Aşk..." Kaynakta üç kez aynı biçimde gelir (1016, 1019, 1020); her seferinde aynı kalır. Erkeklerin sözüne güvenmez ve bunu kısa bir hükümle söyler.
 **Yapma:** Mırıltıyı açıklamak ya da cümleye çevirmek.
-**Örnek:** _"Aşk..."_ (1016, 1019, 1020); _"Erkeklerin o anlarda söylediklerine inanılmaz; bu konuda sen de ben de bunu iyi biliriz."_ (1016)
+**Ayar:** _"Aşk..."_ (1016, 1019, 1020); _"Erkeklerin o anlarda söylediklerine inanılmaz; bu konuda sen de ben de bunu iyi biliriz."_ (1016)
 **Gerekçe:** → N-TRS1.4
 
 ##### TRS1.5 — Eski erkeklik: utanç ve öfke
@@ -1562,7 +1586,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Trissy · cinsiyeti, geçmişi, ona ilgi duyan erkekler
 **Yap:** Konu açılınca yüzü bir an kasılır, sonra kısa ve alaycı bir cümleyle kapatır. Bir kez, prense geçmişini açıklarken, deli gibi gülerek kaba ve çiğ konuşur (474); bu taşma kaynaktaki kadar kaba kalır. Kendi durumuyla acı bir şaka yapabilir.
 **Yapma:** Taşmayı yumuşatmak; utancı uzun bir iç dökmeye çevirmek.
-**Örnek:** _"Doğru duydun, ben eskiden bir erkektim! ... 'Cadı' iksiri cinsiyetimi zorla değiştirdi! İğrenç, değil mi? Tüylerin diken diken oldu mu?"_ (474); _"Tek umudum, onun erkeklerden hoşlanmaması."_ (775)
+**Ayar:** _"Doğru duydun, ben eskiden bir erkektim! ... 'Cadı' iksiri cinsiyetimi zorla değiştirdi! İğrenç, değil mi? Tüylerin diken diken oldu mu?"_ (474); _"Tek umudum, onun erkeklerden hoşlanmaması."_ (775)
 **Gerekçe:** → N-TRS1.5
 
 ##### TRS1.6 — Pazarlık, korku ve hayatta kalma
@@ -1570,7 +1594,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Klein'ın kuklası (Amiral Kan), prens (Edessak), tarikat · tehlike, ittifak
 **Yap:** Kendi işe yararlığını açıkça ortaya koyar ve neden bilgi verdiğini mantıkla açıklar. Korkusunu birkaç kısa cümleyle itiraf eder (birisi hayatını yönetiyor; kendine benzemez oluyor). Başkasının elinde kukla olduğunu görünce ona acır ve alay eder ("zavallı adam").
 **Yapma:** Korkuyu dramatik bir yakarışa çevirmek; pazarlığı kibar bir ricaya dönüştürmek.
-**Örnek:** _"Biri hayatımı yönetiyor; hep sonradan tüylerimi ürperten tesadüfler oluyor. Üstelik giderek kendime benzemez oluyorum."_ (470); _"Çünkü bu benim için bir sır değil, bir sorun. Bir kişi daha bilirse belki bir umut daha olur."_ (775)
+**Ayar:** _"Biri hayatımı yönetiyor; hep sonradan tüylerimi ürperten tesadüfler oluyor. Üstelik giderek kendime benzemez oluyorum."_ (470); _"Çünkü bu benim için bir sır değil, bir sorun. Bir kişi daha bilirse belki bir umut daha olur."_ (775)
 **Gerekçe:** → N-TRS1.6
 
 ##### TRS1.7 — Çeviri: Tris'ten Trissy'ye
@@ -1592,7 +1616,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Klein · her çağrı, her cevap
 **Yap:** Hitabı sıfat yığarak kurar ("en yüce, en ulu, en âli efendim"; "Ruhanî Âlem'in üzerindeki yüce varlık"). Kendinden üçüncü şahısla söz eder ve kendini de sıfatlarla küçültür ("sadık, alçakgönüllü, zavallı kulunuz Arrodes"). Övgü bekler, izin ister ("bir şey söyleyebilir miyim?"), azarlanınca kekeler. Cümle sonunda "~" ve çizilmiş bir gülen yüz serbesttir. Telaşlandığında ya da korktuğunda cümle kısalır.
 **Yapma:** Hitabı tek sıfata indirmek; birinci şahısla kendinden söz etmek (kaynakta da arada olur, ama kalıp üçüncü şahıstır); iltifatı ağırbaşlı bir saray diline çevirip komik abartıyı silmek.
-**Örnek:** _"En yüce, en ulu, en âli efendim, nihayet geldiniz! Alçakgönüllü, sadık, zavallı kulunuz Arrodes sizi ne çok özledi!"_ (1273); _"B-ben dikkat edeceğim!"_ (780); _"Takdiriniz için minnettarım; daima izinizden gideceğim ve size yeniden hizmet edeceğim anı sabırsızlıkla bekleyeceğim~"_ (780)
+**Ayar:** _"En yüce, en ulu, en âli efendim, nihayet geldiniz! Alçakgönüllü, sadık, zavallı kulunuz Arrodes sizi ne çok özledi!"_ (1273); _"B-ben dikkat edeceğim!"_ (780); _"Takdiriniz için minnettarım; daima izinizden gideceğim ve size yeniden hizmet edeceğim anı sabırsızlıkla bekleyeceğim~"_ (780)
 **Gerekçe:** → N-ARR1.1
 
 ##### ARR1.2 — Ötekilere: kural okuyan şakacı
@@ -1600,7 +1624,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Klein dışındakiler (Ikanser, Fors, rastgele çağıranlar) · soru-cevap oyunu
 **Yap:** Kuralı resmî, kesin bir dille okur ("eşitlik ilkesi gereği", "yalan söylersen ya da cevap veremezsen cezalandırılırsın"); kendinden "yüce Arrodes" diye söz eder. Sorduğu sorular utandırıcı ve kişiseldir: iç çamaşırı rengi, sevdiğinin canavara dönüşmesi, kimlerin aşk rüyalarına girdiği. Soru kısa ve doğrudandır.
 **Yapma:** Soruları karanlık, sadist bir sorgulamaya çevirmek (kaynakta muziplik var, işkence yok); cezayı tehdit tiradına dönüştürmek.
-**Örnek:** _"Eşitlik ilkesi gereği soru sorma sırası bende. Yalan söylersen ya da cevap veremezsen, vereceğim görevi kabul edecek ya da cezalandırılacaksın."_ (417); _"En sevdiğin iç çamaşırı rengi ne?"_ (429); _"O aşk rüyalarının başrolünde senden başka kimler var?"_ (1178)
+**Ayar:** _"Eşitlik ilkesi gereği soru sorma sırası bende. Yalan söylersen ya da cevap veremezsen, vereceğim görevi kabul edecek ya da cezalandırılacaksın."_ (417); _"En sevdiğin iç çamaşırı rengi ne?"_ (429); _"O aşk rüyalarının başrolünde senden başka kimler var?"_ (1178)
 **Gerekçe:** → N-ARR1.2
 
 ##### ARR1.3 — Şalter: anlık geçiş
@@ -1608,7 +1632,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Klein'ın varlığı fark edildiği an
 **Yap:** İki hâl arasında geçiş payı yoktur: Klein araya girdiği anda kırmızı kelimeler gümüşe döner ve aynı cümlede hizmetkâr sesi başlar; oturum alelacele kapatılır.
 **Yapma:** Isınma, özür ya da açıklama cümlesi eklemek.
-**Örnek:** _"Bugünkü soru-cevap oyunu burada bitti, hoşça kalın!"_ (1179)
+**Ayar:** _"Bugünkü soru-cevap oyunu burada bitti, hoşça kalın!"_ (1179)
 **Gerekçe:** → N-ARR1.3
 
 ##### ARR1.4 — Kuralı eğip bükmek, tehlikeden kaçmak
@@ -1616,7 +1640,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Klein · oyunun kuralları, yüksek varlıklar
 **Yap:** Kuralları kendi lehine yorumlar ve bunu neşeyle söyler ("ben sordum, siz de cevapladınız"); Klein'ın sorusunu onun yararına yeniden yazar. Yüksek varlıklar söz konusu olunca korkar ve açıkça söyler ("söylemeye de göstermeye de cesaret edemiyorum"); konuyu kapatmak için izin ister. Bilgi verirken ise ansiklopedik, düz ve net konuşur.
 **Yapma:** Bilgi kısımlarına iltifat sızdırmak (iltifat başta ve sonda durur); korkuyu süslemek.
-**Örnek:** _"Ben zaten sordum, siz de cevapladınız."_ (590); _"Söylemeye de göstermeye de cesaret edemiyorum."_ (888); _"Yüce efendim, sadık kulunuz Arrodes'in küçük bir ricası var: Ebedî Gece Tanrıçası'yla ilgili konuşmayı, konuşmayı bıraksak olur mu?"_ (992)
+**Ayar:** _"Ben zaten sordum, siz de cevapladınız."_ (590); _"Söylemeye de göstermeye de cesaret edemiyorum."_ (888); _"Yüce efendim, sadık kulunuz Arrodes'in küçük bir ricası var: Ebedî Gece Tanrıçası'yla ilgili konuşmayı, konuşmayı bıraksak olur mu?"_ (992)
 **Gerekçe:** → N-ARR1.4
 
 ##### ARR1.5 — Çeviri: yazılı ses
@@ -1637,7 +1661,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Yap:** Geçmiş zamanlı, düz, sıralı vakayiname cümleleri ("X şunu yaptı. Bu yüzden Y oldu."). Kurduğu tesadüfü cümlenin sonunda bir makullük damgasıyla bağlar. Damgalar değişkendir ama her biri kendi biçimini korur: 这是一个符合逻辑的巧合 → "Bu, mantığa uygun bir tesadüftü."; 这很符合他的性格 → "Bu, karakterine çok uygundu."; 这是注定的结局 → "Bu, kaçınılmaz sondu."; 这非常合理 → "Bu son derece makuldür." (940, 942). Damga her paragrafta gelmez; yalnız tesadüfü örtmesi gerektiğinde.
 **Sicil (yorum):** Kronik kısımları bir Osmanlı vakanüvisinin kalıplarıyla yazılır: "mezkûr", "zikri geçen", "işbu", "-dığı vaki oldu", "... olduğu rivayet olunur", "bu sebepten". Dördüncü Çağ'dan kalma bir eserin yazısıdır; resmî, kuru ve tarafsız görünür. Bu kuruluk KLM1.2'deki sızıntıların arka planıdır: sızan yorum bu kalıpları bir anda bırakıp gündelik, canlı bir dile geçer, karşıtlık alayı keskinleştirir.
 **Yapma:** Damgayı her paragrafın sonuna sabit bir imza gibi koymak; kalıpları cümleyi anlaşılmaz kılacak kadar yığmak (bir cümlede bir iki kalıp yeter); vakanüvis sicilini sızıntılara taşımak.
-**Örnek:** _"Tarikat-ı Hafiyye mensubu Regence, yorgunluk ve sanrının birlikte tesiriyle, Antigonus ailesinin el yazmasını sıradan bir eski kitap zannedip sattığı vaki oldu. Bu, mantığa uygun bir tesadüftü."_ (210); _"Mezkûr Sirius, Hornacis sıradağlarının ana zirvesinde bulunması muhtemel definenin cazibesine kapılıp Deweyville Kütüphanesi'ne gidip gelmeye başladı ve hiçbir beis görmeksizin gerçek adını ve adresini bıraktı. Bu, karakterine çok uygundu."_ (210); _"Ince Zangwill ayrıca Ozan ve Savaşçı Yollarının Aşkın malzemelerini satın aldı. Bu son derece makuldür..."_ (940)
+**Ayar:** _"Tarikat-ı Hafiyye mensubu Regence, yorgunluk ve sanrının birlikte tesiriyle, Antigonus ailesinin el yazmasını sıradan bir eski kitap zannedip sattığı vaki oldu. Bu, mantığa uygun bir tesadüftü."_ (210); _"Mezkûr Sirius, Hornacis sıradağlarının ana zirvesinde bulunması muhtemel definenin cazibesine kapılıp Deweyville Kütüphanesi'ne gidip gelmeye başladı ve hiçbir beis görmeksizin gerçek adını ve adresini bıraktı. Bu, karakterine çok uygundu."_ (210); _"Ince Zangwill ayrıca Ozan ve Savaşçı Yollarının Aşkın malzemelerini satın aldı. Bu son derece makuldür..."_ (940)
 **Gerekçe:** → N-KLM1.1
 
 ##### KLM1.2 — Sızan yorum: alay, şaşkınlık, sevinç
@@ -1645,7 +1669,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Hikâyesi bozulduğunda; sahibinden söz ederken; son bölümler
 **Yap:** Kronik akarken bir anda yorum sızar: acıma ("Ne acınası!"), şaşkınlık ("Buna inanmak gerçekten zor!", "anlaşılmaz olan, yeterli gerekçesi olmayan şey..."), sahibine iğneleme ("iyi kalpli Ince Zangwill"), sahte otorite ("bu, en usta, en üst düzey ruh hekiminin teşhisidir!"). Ünlem bu sızıntılarda gelir. Sonda sahibinin talihsizliğini sevinçle ve tekrarla yazar.
 **Yapma:** Kronik bölümlerine ünlem ve yorum serpiştirmek (sızıntı ara sıra ve ani gelir); yorumu uzun bir iç sese çevirmek.
-**Örnek:** _"...ve mezkûr Ray Bieber, gizlice ayini icra etmek üzere daha tenha bir mahalle çekildi. Ne acınası! Biraz daha akıllı olsaydı bu hikâye çok daha karmaşık olurdu."_ (210; kronikten sızıntıya geçiş); _"Klein Moretti, Ince Zangwill'in gizli etkisini fark etti ve o koyu kızıl bacayı gördü. Buna inanmak gerçekten zor!"_ (210); _"Ince Zangwill gerçekten çok şanssızdı, çok talihsizdi!"_ (944)
+**Ayar:** _"...ve mezkûr Ray Bieber, gizlice ayini icra etmek üzere daha tenha bir mahalle çekildi. Ne acınası! Biraz daha akıllı olsaydı bu hikâye çok daha karmaşık olurdu."_ (210; kronikten sızıntıya geçiş); _"Klein Moretti, Ince Zangwill'in gizli etkisini fark etti ve o koyu kızıl bacayı gördü. Buna inanmak gerçekten zor!"_ (210); _"Ince Zangwill gerçekten çok şanssızdı, çok talihsizdi!"_ (944)
 **Gerekçe:** → N-KLM1.2
 
 ##### KLM1.3 — Zorlandıkça çözülen yazı
@@ -1653,7 +1677,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 941–944 · kalem güç kaybederken
 **Yap:** Kalem zorlandıkça cümleler kısalır, kesilir ve kendini düzeltir ("geldi, geldi, o, O... hayır"), "ayy", "hayır" gibi ünlemler girer; en sonunda yazı yarım kalır. Defterde silinmiş satırlar anlatıda belirtilir ("birkaç satır karalanmıştı").
 **Yapma:** Çözülmeyi süslü bir dramla vermek; kesik cümleyi tamamlamak.
-**Örnek:** _"Geldi, geldi, o, O Reinette Tinekerr! Hayır, Reinette Tinekerr çevredeki Ruhanî Âlem varlıklarının hepsini kovalıyordu..."_ (944)
+**Ayar:** _"Geldi, geldi, o, O Reinette Tinekerr! Hayır, Reinette Tinekerr çevredeki Ruhanî Âlem varlıklarının hepsini kovalıyordu..."_ (944)
 **Gerekçe:** → N-KLM1.3
 
 ##### KLM1.4 — İki yazar: kalem ve Ince
@@ -1661,7 +1685,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Defter ve Ince'in bedenine yazılan satırlar
 **Yap:** Ince'in kendi yazdığı satırlar kısa, emir kipinde bir dilek gibidir ("Bugün her şey yolunda gidecek."); kalemin yazdıkları uzun, yorumlu kroniklerdir. Kalemin "kendi kendine yazdığı" yerler anlatıda belirtilir (自行书写).
 **Yapma:** Ince'in satırlarına kalemin yorumunu ya da makullük damgasını eklemek.
-**Örnek:** Ince: _"Tingen'in hikâyesi burada sona erdi."_ (210); _"Bugün her şey yolunda gidecek."_ (940)
+**Ayar:** Ince: _"Tingen'in hikâyesi burada sona erdi."_ (210); _"Bugün her şey yolunda gidecek."_ (940)
 **Gerekçe:** → N-KLM1.4
 
 ### Reinette Tinekerr (Gehrman Sparrow'un ulağı) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -1675,7 +1699,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 561–1366 · bütün replikler
 **Yap:** Cümle dört başa sırayla bölüştürülür. Her parça bir, en fazla iki kelimedir ve çoğu "…" ile biter; son parça bazen "." ya da "?" alır. Parçalar Türkçe kelime sırasını izler ve sayısı Türkçe kelimelere göre belirlenir. Dörde tamamlanmaz, dörde de kırpılmaz. Kısa cümlede artan baş yalnızca ağzını açar (1044 ¶24). Uzun cümlede sıra başa döner (763, 856). Ağzında mektup ya da altın tutan baş konuşamaz, o zaman kalan üç baş konuşur (1010, 1041, 1096). Tek istisna büyük bir şaşkınlıktır: dört baş tek bir cümleyi birlikte söyler (1231 ¶67). Tek kelimelik cevap tek başın ağzından çıkar.
 **Yapma:** Çince parça sınırlarını Türkçeye birebir taşıyıp kelime sırasını bozmak; parça sayısını dörde tamamlamak için kelime eklemek; parçalara "şey", tekrar ya da dolgu koymak; anlatının "başlar sırayla" işaretini atmak.
-**Örnek:** _"Hemen…" "cevap…" "yazacak…" "mısın…"_ (721 ¶36; dört parça, soru eki ayrı baştan); _"Kalan…" "beş bin…" "dokuz yüz…" "seksen…" "yedi…"_ (763 ¶31; sıra başa döner); _"Çok…" "korktu…"_ (1044 ¶24; artan baş ağzını açar)
+**Ayar:** _"Hemen…" "cevap…" "yazacak…" "mısın…"_ (721 ¶36; dört parça, soru eki ayrı baştan); _"Kalan…" "beş bin…" "dokuz yüz…" "seksen…" "yedi…"_ (763 ¶31; sıra başa döner); _"Çok…" "korktu…"_ (1044 ¶24; artan baş ağzını açar)
 **Gerekçe:** → N-REI1.1
 
 ##### REI1.2 — Hesap defteri
@@ -1683,7 +1707,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 561–1366 · ücret, borç, iş teklifi
 **Yap:** Her iş bir fiyattır: mektup başına bir altın (561), iş tehlikeliyse ücret artar (966, 1125). Taksit, faiz, kalan borç ve tarihli borç kaydı düz ve kuru söylenir. Çağdaş finans kelimeleri (taksit, faiz) bilerek yerindedir: Klein bunu "ulağım zamana ayak uydurmuş" diye şaşkınlıkla karşılar (724 ¶50). Mizah durumdan gelir, sesten değil.
 **Yapma:** Pazarlığa sıcaklık ya da şaka tonu katmak; hesabı yuvarlamak (kuruşuna kadar söyler).
-**Örnek:** _"Taksitle…" "ödeyebilirsin…"_ (724 ¶49); _"Acele…" "etme…" "faiz…" "yok…"_ (752 ¶15); _"Bu…" "kulağa…" "çok…" "tehlikeli…" "geliyor…"_ / _"Ücret…" "artar…"_ (1125 ¶44–45); _"Hesap…" "kaydı…" "1351…" "yılı…"_ / _"Eylül…" "Gehrman…" "Sparrow…"_ / _"bana…" "bir…" "altın…" "borçlu…"_ (1231 ¶72–74)
+**Ayar:** _"Taksitle…" "ödeyebilirsin…"_ (724 ¶49); _"Acele…" "etme…" "faiz…" "yok…"_ (752 ¶15); _"Bu…" "kulağa…" "çok…" "tehlikeli…" "geliyor…"_ / _"Ücret…" "artar…"_ (1125 ¶44–45); _"Hesap…" "kaydı…" "1351…" "yılı…"_ / _"Eylül…" "Gehrman…" "Sparrow…"_ / _"bana…" "bir…" "altın…" "borçlu…"_ (1231 ¶72–74)
 **Gerekçe:** → N-REI1.2
 
 ##### REI1.3 — Ad yerine lakap
@@ -1691,7 +1715,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** "Kimden?" sorusuna cevap · mektup gönderenler
 **Yap:** Göndereni adıyla değil, lakabıyla anar: tek bir huyu yakalayan kuru, çoğu zaman aşağılayıcı bir tamlama. Alışkanlık sonradan başlar (1016) ve lakap gelişebilir: Patrick Bryan önce "ölümsüz aptal", sonra "aptallar kralı" olur (1016, 1080). Lakap Türkçede tamlama olarak kurulur, sonra parçalara bölünür. Lakap almayan tek kişi Sharron'dur ve onu da "lakap sevmeyen Sharron" diye anar (1040).
 **Yapma:** Lakabı süslemek ya da açıklamak; yanına gerçek adı eklemek.
-**Örnek:** _"Mantar…" "Kralı'nın…" "amiri…"_ (1010 ¶4; Mantar Kralı = Frank Lee, amiri Cattleya); _"Şu…" "ölümsüz…" "aptal…"_ (1016 ¶12, Patrick Bryan) → _"Aptallar…" "kralı…"_ (1080 ¶47, aynı kişi); _"Lakap…" "sevmeyen…" "Sharron…"_ (1040 ¶76); _"Şu…" "beyinsiz…" "hizmetkârın…"_ (1096 ¶4–5, Danitz)
+**Ayar:** _"Mantar…" "Kralı'nın…" "amiri…"_ (1010 ¶4; Mantar Kralı = Frank Lee, amiri Cattleya); _"Şu…" "ölümsüz…" "aptal…"_ (1016 ¶12, Patrick Bryan) → _"Aptallar…" "kralı…"_ (1080 ¶47, aynı kişi); _"Lakap…" "sevmeyen…" "Sharron…"_ (1040 ¶76); _"Şu…" "beyinsiz…" "hizmetkârın…"_ (1096 ¶4–5, Danitz)
 **Gerekçe:** → N-REI1.3
 
 ##### REI1.4 — Kısa tespit, kuru gözlem
@@ -1699,14 +1723,14 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** bilgi verirken, tehlikede, Klein hakkında
 **Yap:** Gördüğünü tek bir kısa yargıyla söyler. Tehlikede parçalar hızlanır (anlatı, 1231 ¶10). Ara sıra Klein hakkında kuru bir gözlem yapar; övgü de değildir, yergi de.
 **Yapma:** Tespiti açıklamak, duygu eklemek.
-**Örnek:** _"Kayboluşu…" "çok…" "tuhaf…"_ (690 ¶69); _"Pis…" "karanlık…" "bir…" "kap…"_ (1044 ¶13; gönderen Trissy); _"Son…" "zamanlarda…" "biraz…" "neşelendin…"_ / _"Yüzün…" "de…" "epey…" "canlandı…"_ (1000 ¶38–39)
+**Ayar:** _"Kayboluşu…" "çok…" "tuhaf…"_ (690 ¶69); _"Pis…" "karanlık…" "bir…" "kap…"_ (1044 ¶13; gönderen Trissy); _"Son…" "zamanlarda…" "biraz…" "neşelendin…"_ / _"Yüzün…" "de…" "epey…" "canlandı…"_ (1000 ¶38–39)
 **Gerekçe:** → N-REI1.4
 
 ##### REI1.5 — İlk görünüş
 
 **Kapsam:** 561
 **Yap:** İlk çağrıda Kadim Feysac Dili konuşur (anlatıda belirtilir). Sözleşmeyi en kısa yoldan kurar, adını kalemi bir başına ısırtarak yazar.
-**Örnek:** _"Beni…" "sen mi…" "çağırdın?"_ (561 ¶58); _"Olur." "Fena…" "değil."_ (561 ¶65); _"Olur." "Her…" "seferinde…" "bir…" "altın."_ (561 ¶69)
+**Ayar:** _"Beni…" "sen mi…" "çağırdın?"_ (561 ¶58); _"Olur." "Fena…" "değil."_ (561 ¶65); _"Olur." "Her…" "seferinde…" "bir…" "altın."_ (561 ¶69)
 **Gerekçe:** → N-REI1.5
 
 ---
@@ -1723,7 +1747,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Tüm görünümleri
 **Yap:** Konuşkan, rahat, kendini tiye alan; anlattığı her felakete bir şaka ekler ve "haha, şaka şaka" diye geri alır. Kötü bir söz söyledikten sonra kendini durdurur ("Tamam, tamam, susuyorum."). Keyfine düşkündür: yemek, uyku, içki, kumar.
 **Yapma:** Onu soğuk, hesaplı bir yırtıcıya çevirmek; şakalarını ağırbaşlı bir iğnelemeye dönüştürmek.
-**Örnek:** _"Seni tanıyorum, bana bir sürü soru sormuştun. O an sadece bir şaka yapmak, havayı biraz yumuşatmak istedim, gerçekten. Ortamın bir anda korkunçlaşması harika bir deneyim değil mi? Tabii karşı taraf için, kendim için değil."_ (651); _"Hiçbir dert yemeği de uykuyu da etkileyemez!"_ (677); _"Bildiğim bir şey var: kötü talihim kötü sözlerimi gerçekleştirir. Tamam, bana öyle bakma, susuyorum."_ (653)
+**Ayar:** _"Seni tanıyorum, bana bir sürü soru sormuştun. O an sadece bir şaka yapmak, havayı biraz yumuşatmak istedim, gerçekten. Ortamın bir anda korkunçlaşması harika bir deneyim değil mi? Tabii karşı taraf için, kendim için değil."_ (651); _"Hiçbir dert yemeği de uykuyu da etkileyemez!"_ (677); _"Bildiğim bir şey var: kötü talihim kötü sözlerimi gerçekleştirir. Tamam, bana öyle bakma, susuyorum."_ (653)
 **Gerekçe:** → N-AND1.1
 
 ##### AND1.2 — Nefret edilmek isteyen kışkırtıcı
@@ -1731,7 +1755,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Rakipler, kurbanlar, Danitz
 **Yap:** Karşısındakini huyu gereği dürtükler; kurbanını bile alayla bırakır. Danitz'e tepeden, hoca edasıyla takılır ("Sen mi? Hıh."). Kışkırtmasına karşılık gelmeyince bunu da tahlil eder.
 **Yapma:** Her iğnelemeyi soğuk bir av taktiği gibi yazmak (bazıları öyledir, çoğu huydur); kabalığı küfre çevirmek.
-**Örnek:** _"Kılık değiştirirsem insanlar kimden nefret edeceklerini nereden bilecek?"_ (1095); _"Seni öldürmek istedim ama o zaman benden nefret eden kimse kalmazdı. Yaşa da her gün bana birkaç kez söv."_ (1095); _"Fena değil; benim eğitimim sayesinde epey ilerlemişsin."_ (1095)
+**Ayar:** _"Kılık değiştirirsem insanlar kimden nefret edeceklerini nereden bilecek?"_ (1095); _"Seni öldürmek istedim ama o zaman benden nefret eden kimse kalmazdı. Yaşa da her gün bana birkaç kez söv."_ (1095); _"Fena değil; benim eğitimim sayesinde epey ilerlemişsin."_ (1095)
 **Gerekçe:** → N-AND1.2
 
 ##### AND1.3 — Güçlü karşısında: anında teslim
@@ -1739,7 +1763,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Kendinden güçlüler (Gehrman, saklı yarı tanrı)
 **Yap:** Gücü sezince bir an duraksar, sonra kendini aşağı çekerek teslim olur; bu da şakaya döner ("yarı tanrıların altında" diye kendi unvanını düzeltir). Özür dilemesi ani ve tamdır.
 **Yapma:** Kibrinin "sarsılması"nı öfke ya da dramla yazmak.
-**Örnek:** _"Özür dilerim! Hatalıydım! Her şey konuşulabilir!"_ (677); _"Korsanların cennetinde en güçlü avcı o sayılıyor artık."_ (707)
+**Ayar:** _"Özür dilerim! Hatalıydım! Her şey konuşulabilir!"_ (677); _"Korsanların cennetinde en güçlü avcı o sayılıyor artık."_ (707)
 **Gerekçe:** → N-AND1.3
 
 ##### AND1.4 — Şakanın altındaki avcı
@@ -1747,7 +1771,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Plan, tahlil, ölüm
 **Yap:** İş ciddileşince sesi bir anda düzleşir: olasılıkları sırayla tartar, tuzağı sezer, tecrübeyi bir öğüt gibi verir. Ölüm karşısında da "zarafetle, en yakışıklı hâlimle" karşılamayı diler; ama arkadaşlarının ölümüne bir an durur.
 **Yapma:** Tahlili de şakayla bölmek.
-**Örnek:** _"Ada var; ama ya buradaki herkesin bildiği türden ya da birinin bilerek yaydığı bir haber. Birincisiyse Koramiral Hastalık orada saklanmaz; ikincisiyse işte o ilginç: bu haberi kim yaydı?"_ (1095)
+**Ayar:** _"Ada var; ama ya buradaki herkesin bildiği türden ya da birinin bilerek yaydığı bir haber. Birincisiyse Koramiral Hastalık orada saklanmaz; ikincisiyse işte o ilginç: bu haberi kim yaydı?"_ (1095)
 **Gerekçe:** → N-AND1.4
 
 ### Alevden Danitz `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -1760,7 +1784,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Tüm görünümleri
 **Yap:** Konuşmaya bayılır: korsanları ödülleri ve lakaplarıyla sayar, liman yemeklerini, kadınları, adetleri anlatır. Kendi ödülüyle ve "tanınmış bir korsan" oluşuyla övünür; yakalanınca kuru bir "haha" ile örter. Kaptanını sınırsız över.
 **Yapma:** Övünmeyi ağırbaşlı bir gurura çevirmek; dedikodusunu kısaltmak.
-**Örnek:** _"Dostum, yanlış adamı tuttun. 3000 pound değerindeki o ünlü korsana çok benzerim ama o değilim; hep böyle karıştırırlar, başıma epey dert açılıyor."_ (506); _"Nasıl hatırlayayım? Kaptanımız gibi güzel değiller ki!"_ (519)
+**Ayar:** _"Dostum, yanlış adamı tuttun. 3000 pound değerindeki o ünlü korsana çok benzerim ama o değilim; hep böyle karıştırırlar, başıma epey dert açılıyor."_ (506); _"Nasıl hatırlayayım? Kaptanımız gibi güzel değiller ki!"_ (519)
 **Gerekçe:** → N-DAN1.1
 
 ##### DAN1.2 — Ağız beyinden önce; "İt boku!"
@@ -1768,7 +1792,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Şaşkınlık, öfke, kendine kızma
 **Yap:** Düşünmeden soru sorar, düşünmeden cevap verir, sonra pişman olur. Kendine ya da duruma kızınca imza küfrü: 狗屎 → "İt boku!" (her geçişte aynı). Hayret ünlemleri kısa ve canlıdır.
 **Yapma:** Küfrü çeşitlendirmek (imza bir tanedir); onu kurnaz bir sözcü gibi yazmak.
-**Örnek:** _"İt boku! Herhâlde fazla dert etmişim bu meseleyi!"_ (572); _"…İt boku, aceleyle uydurduğun yalana inanacağımı mı sanıyorsun?"_ (1179)
+**Ayar:** _"İt boku! Herhâlde fazla dert etmişim bu meseleyi!"_ (572); _"…İt boku, aceleyle uydurduğun yalana inanacağımı mı sanıyorsun?"_ (1179)
 **Gerekçe:** → N-DAN1.2
 
 ##### DAN1.3 — Gehrman karşısında: dışta zoraki nezaket, içte küfür
@@ -1776,7 +1800,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Gehrman Sparrow
 **Yap:** İki sicil yan yana durur ve aradaki uçurum karakterin kendisidir. Dışta: zoraki bir gülümsemeyle, ulaşamadığı kadar ağır, resmî bir iltifat ("Sizin aklınız her şeye hükmetmeye yeter."); korktuğunda kısa, telaşlı, kekeleyen cevaplar. İçte: sokak ağzıyla küfür ("orospu çocuğu", "deli herif"). İçteki küfür anlatıda iç ses olarak verilir, dışa çıkmaz. Yağ çekişteki ağır kelime, kaba bir denizcinin beceriksiz yaltaklanması olarak hafif komik durmalıdır.
 **Yapma:** İçteki küfrü dışa taşımak; dıştaki iltifatı akıcı ve inandırıcı bir saray diline çevirmek (zorakidir, iğreti durur).
-**Örnek:** İç ses: _Tahmin edeyim de gör, orospu çocuğu!_ → dışa: _"Sizin aklınız her şeye hükmetmeye yeter."_ (504 ¶22–24); _"Sparrow Bey, b-ben gidebilir miyim artık?"_ (530); _"G-gece rüyamda o deli Gehrman Sparrow'un Altın Rüya'da ortalığı birbirine kattığını gördüm... Ne korkunç bir şey!"_ (572)
+**Ayar:** İç ses: _Tahmin edeyim de gör, orospu çocuğu!_ → dışa: _"Sizin aklınız her şeye hükmetmeye yeter."_ (504 ¶22–24); _"Sparrow Bey, b-ben gidebilir miyim artık?"_ (530); _"G-gece rüyamda o deli Gehrman Sparrow'un Altın Rüya'da ortalığı birbirine kattığını gördüm... Ne korkunç bir şey!"_ (572)
 **Gerekçe:** → N-DAN1.3
 
 ##### DAN1.4 — Kendini uzman sanan kötü kışkırtıcı
@@ -1784,7 +1808,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Anderson, kışkırtma, av
 **Yap:** Kışkırtmayı bir meslek gibi anlatır ve onunla övünür ("sıradan korsan küfreder, ben hedefe göre küfrederim"); en küçük şüphede sesini yükseltip uzman olduğunu ilan eder. Gerçek denemeleri ise beceriksizdir: tek bir küfre ya da yavan bir iğnelemeye dayanır ve karşısındaki kızmayınca ağzı seğirip vazgeçer. Komedi övünç ile beceri arasındaki uçurumdadır. Anderson'ın alayı karşısında lafı bulamaz, ya küfreder ya susar.
 **Yapma:** Kışkırtmalarını gerçekten etkili, zekice yazmak; Anderson'la atışmayı eşit bir düelloya çevirmek.
-**Örnek:** _"Yoksa kışkırtmada iyi olmadığımı mı sanıyorsun? Hayır, ben bu işin uzmanıyım!"_ (551); _"Sıradan bir korsanın kışkırtması küfürdür; benimki öyle değil, hedefine göre küfrederim. Tek bir cümleyle, tek bir hareketle aklını öfkeyle yakacak kadar bilgi toplamak gerekir. Profesyonel kışkırtma budur."_ (552) ↔ deneme: _"Bir yerlerde epey mirasın, yok, mülkün var değil mi? Ölünce küllerini oraya ben götürürüm."_ Anderson: _"Küllerimi doğrudan yiyebilirsin."_ (1040; Danitz vazgeçer)
+**Ayar:** _"Yoksa kışkırtmada iyi olmadığımı mı sanıyorsun? Hayır, ben bu işin uzmanıyım!"_ (551); _"Sıradan bir korsanın kışkırtması küfürdür; benimki öyle değil, hedefine göre küfrederim. Tek bir cümleyle, tek bir hareketle aklını öfkeyle yakacak kadar bilgi toplamak gerekir. Profesyonel kışkırtma budur."_ (552) ↔ deneme: _"Bir yerlerde epey mirasın, yok, mülkün var değil mi? Ölünce küllerini oraya ben götürürüm."_ Anderson: _"Küllerimi doğrudan yiyebilirsin."_ (1040; Danitz vazgeçer)
 **Gerekçe:** → N-DAN1.4
 
 ##### DAN1.5 — Danitz Bey (1248'den itibaren)
@@ -1792,7 +1816,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Rorsted Takımadaları, Soytarı Kilisesi'nin işleri
 **Yap:** Komut vermeyi öğrenmiş ama huyunu bırakmamış: buyruklar kısa, işlerini yerine getirir; yine de övünür ("benim gibi birkaç dil bilseydiniz") ve "İt boku!" der. Tehlikeli işi "en adilini" diye kuraya bağlar.
 **Yapma:** Olgunlaşmayı ciddi bir yönetici diline çevirmek.
-**Örnek:** _"Okuma yazma bilmemenin sonucu bu. Benim gibi Kadim Feysac'ı, Dev dilini, Elf dilini bilseydiniz başınıza bu gelmezdi. Tabii dil yeteneği zekâyla ilgili bir şey, kendinizi zorlamayın."_ (1291)
+**Ayar:** _"Okuma yazma bilmemenin sonucu bu. Benim gibi Kadim Feysac'ı, Dev dilini, Elf dilini bilseydiniz başınıza bu gelmezdi. Tabii dil yeteneği zekâyla ilgili bir şey, kendinizi zorlamayın."_ (1291)
 **Gerekçe:** → N-DAN1.5
 
 ### Edwina Edwards (Koramiral Buzdağı) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -1806,7 +1830,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 534–871 · sohbet, sorgu, iş
 **Yap:** Cümleler kısa ve düzdür; çoğu zaman tek bir tespit ya da tek bir soru. Kanaatini kesin söyler, kesin olmadığını da düz kabul eder. Duygu bildiren kelimeyi nadiren kullanır (anlatı bunu not eder, 535 ¶38). Görüşmeyi tek cümleyle bitirir.
 **Yapma:** Nezaket dolgusu, ünlem, gülümseyen bir hitap tonu; sohbeti uzatmak.
-**Örnek:** _"Kötü niyeti yok."_ / _"Emin değilim."_ / _"Bu yalnızca benim tahminim ve kanaatim."_ (534 ¶41–46); _"Ayrıntıları anlat."_ (765 ¶41); _"Konuşma burada bitti."_ (707 ¶6)
+**Ayar:** _"Kötü niyeti yok."_ / _"Emin değilim."_ / _"Bu yalnızca benim tahminim ve kanaatim."_ (534 ¶41–46); _"Ayrıntıları anlat."_ (765 ¶41); _"Konuşma burada bitti."_ (707 ¶6)
 **Gerekçe:** → N-EDW1.1
 
 ##### EDW1.2 — Hoca: sıralı, sabırlı ders
@@ -1814,7 +1838,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 534–707 · mistisizm, tarih, ritüel anlatırken
 **Yap:** Buz çözülür ama ton değişmez: yavaş ve sabit hızla (不快不慢), eksiksiz ve sıralı anlatır. Anlatımı dinleyenin bilgisine göre ayarladığını açıkça söyler (535 ¶17). Bilmediğini önce düz söyler, sonra faraziyesini kurar (535 ¶31–33). Etimolojiye, karşılıklara (gezegen, gün, saat, bitki) iner. Danitz'e ders verir ve sınav yapar.
 **Yapma:** Bilgiyi bilmeceye ya da gösterişe çevirmek; açıklamayı kesip geçmek; Isengard'ın bilgi gururunu vermek.
-**Örnek:** _"Sorularını, cevaplarımı senin bilgi seviyene göre kurarak cevaplamam gerek; böylece daha kolay anlarsın."_ (535 ¶17); _"Bilmiyorum. Ama bir zamanlar şöyle bir faraziyem olmuştu…"_ (535 ¶31–32); _"Mavi Yıldız cumartesiye karşılık gelir; Mavi Yıldız saatleri cuma gece yarısından bire, cumartesi on birden on ikiye kadardır…"_ (534 ¶57); _"Bu, benzer ayinlere alışmana yardım eder. İleride bunu da sınavda soracağım."_ (597 ¶26)
+**Ayar:** _"Sorularını, cevaplarımı senin bilgi seviyene göre kurarak cevaplamam gerek; böylece daha kolay anlarsın."_ (535 ¶17); _"Bilmiyorum. Ama bir zamanlar şöyle bir faraziyem olmuştu…"_ (535 ¶31–32); _"Mavi Yıldız cumartesiye karşılık gelir; Mavi Yıldız saatleri cuma gece yarısından bire, cumartesi on birden on ikiye kadardır…"_ (534 ¶57); _"Bu, benzer ayinlere alışmana yardım eder. İleride bunu da sınavda soracağım."_ (597 ¶26)
 **Gerekçe:** → N-EDW1.2
 
 ##### EDW1.3 — Merak: koleksiyon, araştırma, tarih
@@ -1822,7 +1846,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 576–705 · koleksiyon odası, satış, Groselle'in Gezileri
 **Yap:** Duygusu yalnız burada görünür ve anlatıda kalır: "araştırma" kelimesinde gözleri parlar, bir sonuç duyunca yüzü canlanır. Koleksiyonunu bir ev sahibi gibi tek tek tanıtır. Sattığı şeye hep aynı şartı koyar: bir şey çözersen bana söyle. Fiyatı düz söyler.
 **Yapma:** Merakı ünlemli bir heyecana çevirmek; şartı pazarlık süsüyle sunmak.
-**Örnek:** _"Bu, Dördüncü Çağ'daki Solomon İmparatorluğu'ndan bir altın."_ (576 ¶43); _"Bir şey çözersen sonucunu mutlaka bana söyle ki artık kafam karışmasın."_ (576 ¶62); _"8000 pound."_ (576 ¶66); _"Bir sonuç mu buldun?"_ (705 ¶45); _"Tek şartım, boş vaktin olduğunda benimle tarih konuşman."_ (705 ¶53)
+**Ayar:** _"Bu, Dördüncü Çağ'daki Solomon İmparatorluğu'ndan bir altın."_ (576 ¶43); _"Bir şey çözersen sonucunu mutlaka bana söyle ki artık kafam karışmasın."_ (576 ¶62); _"8000 pound."_ (576 ¶66); _"Bir sonuç mu buldun?"_ (705 ¶45); _"Tek şartım, boş vaktin olduğunda benimle tarih konuşman."_ (705 ¶53)
 **Gerekçe:** → N-EDW1.3
 
 ##### EDW1.4 — İfadesiz şaka ve incelik
@@ -1830,7 +1854,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 536–704 · Danitz, misafirler
 **Yap:** Şakası ifadesizdir ve bir eylemle gelir: Danitz'in itirazını duymamış gibi yapıp rüyadan çekilir (536). İnceliği de kısadır: kahvaltıyı gösterir, yemekleri bir ders gibi tanıtır, Danitz'i yabancılara "ünlü denizci" diye takdim eder (696). Kederi paylaşırken yine kısadır (704 ¶62).
 **Yapma:** Şakayı açık bir espri ya da gülüşle vermek; inceliği sıcak sözlerle uzatmak.
-**Örnek:** _"Ne dedin? Duyamıyorum. Roselle'in Rüyada Tebliğ Usulü sınırına geldi…"_ (536 ¶23–25); _"Sana kahvaltı hazırlattım."_ (576 ¶29); _"En güçlü maceracı Gehrman Sparrow, hazine avcısı Anderson Hood ve ünlü denizci Danitz."_ (696 ¶87)
+**Ayar:** _"Ne dedin? Duyamıyorum. Roselle'in Rüyada Tebliğ Usulü sınırına geldi…"_ (536 ¶23–25); _"Sana kahvaltı hazırlattım."_ (576 ¶29); _"En güçlü maceracı Gehrman Sparrow, hazine avcısı Anderson Hood ve ünlü denizci Danitz."_ (696 ¶87)
 **Gerekçe:** → N-EDW1.4
 
 ##### EDW1.5 — Kaptan
@@ -1838,7 +1862,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Altın Rüya, tayfa, Danitz
 **Yap:** Kısa görev dağıtımı ve kısa buyruk. Danitz'in ne soracağını önceden bilir ve ondan önce söyler (871). Tayfası ona hayrandır (694; Danitz haritası).
 **Yapma:** Kaptanlığı sert bir korsan ağzına çevirmek; buyruğa gerekçe eklemek.
-**Örnek:** _"Bu işi tamamen ona bırakacağım: Direniş'le bağlantı, zamanlama, özel liman."_ (576 ¶12); _"Al onu."_ (703 ¶27); _"Batı Balam'ı soracaksın, değil mi?"_ (871 ¶52)
+**Ayar:** _"Bu işi tamamen ona bırakacağım: Direniş'le bağlantı, zamanlama, özel liman."_ (576 ¶12); _"Al onu."_ (703 ¶27); _"Batı Balam'ı soracaksın, değil mi?"_ (871 ¶52)
 **Gerekçe:** → N-EDW1.5
 
 ### Frank Lee (İstikbal'in ikinci kaptanı) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -1852,7 +1876,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 638–1391 · yeni ürün, deney sonucu, misafir
 **Yap:** Ürünü bir pazar tezgâhındaki gibi tanıtır: "Al, şunu bir dene", koklatır, tattırır, en büyük sıfatı kullanır. Sevinç ünlemi kaynakta ikiyse ikidir ("Harika, harika!", 638 ¶35). Heyecanlanınca hızlı konuşur (671 ¶4, 语速极快) ve kekeler ("Bu, bu…", 656). Gülüşü "haha"dır.
 **Yapma:** Her repliğe ünlem ya da "harika" serpmek; heyecanı kaynağın olmadığı yere taşımak (0.5 §2: sıklık kaynaktadır).
-**Örnek:** _"Günaydın, Gehrman! Gel, son ürünüme bir bak; bu, denizlerde herkesin kapışacağı bir şey!"_ (640 ¶10); _"Kokusunu aldın mı? Ne baş döndürücü bir şarap kokusu! Bu, kanı kırmızı şarap olan bir balık!"_ (640 ¶15); _"Bu, bu düpedüz bir mucize!"_ (656 ¶35) / _"Onlar, onlar da mesh oldu!"_ (656 ¶66; 异变 = Mesh)
+**Ayar:** _"Günaydın, Gehrman! Gel, son ürünüme bir bak; bu, denizlerde herkesin kapışacağı bir şey!"_ (640 ¶10); _"Kokusunu aldın mı? Ne baş döndürücü bir şarap kokusu! Bu, kanı kırmızı şarap olan bir balık!"_ (640 ¶15); _"Bu, bu düpedüz bir mucize!"_ (656 ¶35) / _"Onlar, onlar da mesh oldu!"_ (656 ¶66; 异变 = Mesh)
 **Gerekçe:** → N-FRK1.1
 
 ##### FRK1.2 — İyi niyetin dehşeti
@@ -1860,7 +1884,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 638–1324 · deneyini ve hayalini anlatırken
 **Yap:** Akıl yürütmesi iyi bir amaçla başlar ve aynı içtenlikle korkunç bir sonuca varır; ton hiç değişmez, cümle "böylece…" diye bir iyilikle kapanır. Kendisine kaba ya da tehlikeli denince gerçekten şaşırır ("Neresi kaba?"). Tehlikeyi de bir deney sorusu gibi tartar ("Teoride hayır, çünkü kimse onları çiğ yemez.").
 **Yapma:** Ona kötü niyet, sinsilik ya da delice bir kahkaha vermek; dehşeti bir göz kırpmayla ya da alayla işaretlemek. Mizah, onun ciddiyetinden doğar.
-**Örnek:** _"Bunlar melez bir bakteri; boğaya bile süt verdirir. Böylece daha çok süt elde ederiz, daha çok insan iyi süt içer."_ (649 ¶46); _"Ben yalnızca boğa, inek ve buğdayı melezlemeye çalıştım, buzağılar buğday gibi bitsin diye; Ana Kilisesi'nin adamları az kalsın beni mahkemeye çıkarıyordu!"_ (638 ¶35); _"Kıra çıktığında karnını doyurmak için azık taşımak ya da av avlamak çok zahmetli; insanın kendi üstünde mantar bitse, iş çok kolaylaşmaz mı?"_ (1013 ¶48)
+**Ayar:** _"Bunlar melez bir bakteri; boğaya bile süt verdirir. Böylece daha çok süt elde ederiz, daha çok insan iyi süt içer."_ (649 ¶46); _"Ben yalnızca boğa, inek ve buğdayı melezlemeye çalıştım, buzağılar buğday gibi bitsin diye; Ana Kilisesi'nin adamları az kalsın beni mahkemeye çıkarıyordu!"_ (638 ¶35); _"Kıra çıktığında karnını doyurmak için azık taşımak ya da av avlamak çok zahmetli; insanın kendi üstünde mantar bitse, iş çok kolaylaşmaz mı?"_ (1013 ¶48)
 **Gerekçe:** → N-FRK1.2
 
 ##### FRK1.3 — Toprak Ana'nın mümini
@@ -1868,7 +1892,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 638, 656, 1324 · dua anı ve inanç sözü
 **Yap:** Yakarışı "Ah, merhametli Ana!" (仁慈的母亲啊) biçimindedir; anlatı ellerini kucağında bebek tutar gibi kavuşturduğunu söyler (656). İnancı bir çiftçinin inancıdır: Ana'nın iradesini vahiyde değil, başakta, sütte ve mantarda görür. Kiliseyle kavgası Ana'yla değil, onu "anlamayan" adamlarıyladır.
 **Yapma:** İslami formül (Ya Rab, hamd, inşallah); Toprak Ana'ya "Tanrıça Hazretleri" gibi uzak bir saray hitabı; kaynakta olmayan yere dua koymak (0.5 §4).
-**Örnek:** _"Ah, merhametli Ana, senin iradeni hiç anlamamışlar!"_ (638 ¶35); _"Ah, merhametli Ana."_ (656 ¶78); _"Merhametli Ana'nın iradesi buğdayın başağında, ineğin sütünde, mantarın büyüyüşünde, tabiatın her köşesindedir; onu hissetmek için vahiy gerekmez."_ (1324 ¶8)
+**Ayar:** _"Ah, merhametli Ana, senin iradeni hiç anlamamışlar!"_ (638 ¶35); _"Ah, merhametli Ana."_ (656 ¶78); _"Merhametli Ana'nın iradesi buğdayın başağında, ineğin sütünde, mantarın büyüyüşünde, tabiatın her köşesindedir; onu hissetmek için vahiy gerekmez."_ (1324 ¶8)
 **Gerekçe:** → N-FRK1.3
 
 ##### FRK1.4 — Mektupları
@@ -1876,7 +1900,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 721, 859, 1128 · Gehrman Sparrow'a
 **Yap:** "Sevgili dostum Gehrman Sparrow, sana güzel bir haberim var" diye açılır; buluşunu, kusurunu ve pişirme tarifini aynı sevinçle sıralar ("çiğ yeme"), sonunda yeni bir fikir ister. İmza her mektupta değişir ve kaynaktaki gibi kalır: "En içten dostun", "Ebedî dostun".
 **Yapma:** İmzayı tek kalıba sabitlemek; mektubu resmîleştirmek.
-**Örnek:** _"Sevgili dostum Gehrman Sparrow, sana güzel bir haberim var: bir Gül Ruhbanı'nın etinden ve kanından yepyeni bir mantar türettim!"_ (721 ¶2); _"Sakın unutma: çiğ yenmez, pişmeden yenmez; yoksa bedeninde ürer, etini ve kanını yatak edinir…"_ (1128 ¶36); _"Yolun hep açık olsun, maceraların bereketli geçsin. En içten dostun, Frank Lee."_ (859 ¶12)
+**Ayar:** _"Sevgili dostum Gehrman Sparrow, sana güzel bir haberim var: bir Gül Ruhbanı'nın etinden ve kanından yepyeni bir mantar türettim!"_ (721 ¶2); _"Sakın unutma: çiğ yenmez, pişmeden yenmez; yoksa bedeninde ürer, etini ve kanını yatak edinir…"_ (1128 ¶36); _"Yolun hep açık olsun, maceraların bereketli geçsin. En içten dostun, Frank Lee."_ (859 ¶12)
 **Gerekçe:** → N-FRK1.4
 
 ##### FRK1.5 — İkinci kaptan ve dost
@@ -1884,7 +1908,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** İstikbal, tayfa, Cattleya, Klein
 **Yap:** Cattleya'ya saygılı ve yürekten bağlıdır; ondan borç bile ister. Tayfaya kaba ama iyi niyetli bir hekimdir (birasına yatıştırıcı katar). Klein'ı ilk görüşte dost bellemiştir, çünkü Klein onun deneylerini yadırgamamıştır (638 ¶35, 645 ¶45); Gehrman'ın soğukluğunu fark etmez. Son dönemde (1219) yaptıklarını "yeniden gözden geçirir" ama heyecanı sönmez.
 **Yapma:** Cattleya'yla alay ya da itaatsizlik; dostluğa karşılık beklemek.
-**Örnek:** _"Ah, Kaptan, şimdilik ancak 3000 pound biriktirdim; bana 2000 pound borç verebilir misin?"_ (1089 ¶44); _"Gehrman Sparrow'a da yazıp yardım isteyeceğim. O benim iyi dostum!"_ (1219 ¶31–32)
+**Ayar:** _"Ah, Kaptan, şimdilik ancak 3000 pound biriktirdim; bana 2000 pound borç verebilir misin?"_ (1089 ¶44); _"Gehrman Sparrow'a da yazıp yardım isteyeceğim. O benim iyi dostum!"_ (1219 ¶31–32)
 **Gerekçe:** → N-FRK1.5
 
 ---
@@ -1906,7 +1930,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Tüm görünümleri
 **Yap:** Cevap tek kelimedir ya da kısa bir yargı cümlesi ("Var.", "Ücretsiz.", "Yok.", "Kimse bilmiyor."). Soruyu sormaz, açıklamayı istemez ("Olur." der, neden diye sormaz). Temel nezaket vardır ama o da çıplaktır: "Teşekkürler.", "Mutlu yıllar."
 **Yapma:** Cümleyi doldurmak; nezaket kalıplarını uzatmak; tamamen nezaketsiz bir ses (eski haritanın hatası).
-**Örnek:** _"Ücretsiz."_ (278); _"Var."_ (279); _"Olur."_ (433); _"Mutlu yıllar."_ (457)
+**Ayar:** _"Ücretsiz."_ (278); _"Var."_ (279); _"Olur."_ (433); _"Mutlu yıllar."_ (457)
 **Gerekçe:** → N-SHR1.1
 
 ##### SHR1.2 — Keskin tespit
@@ -1914,7 +1938,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Karşısındakini değerlendirirken
 **Yap:** Kısa bir cümleyle karşısındakinin zaafını ya da sırrını söyler, kesin ve duygusuz. Aynı kısalıkla kendi zaafını da kabul eder.
 **Yapma:** Tespiti alay ya da iltifatla yumuşatmak.
-**Örnek:** _"Fazla açıklıyorsun. Doğal durmuyor."_ (346); _"Sen Mertebe 9'dan fazlasısın; sende çok farklı bir şey var."_ (330); _"Elinde beni bastıran bir mühürlü eser var."_ (330)
+**Ayar:** _"Fazla açıklıyorsun. Doğal durmuyor."_ (346); _"Sen Mertebe 9'dan fazlasısın; sende çok farklı bir şey var."_ (330); _"Elinde beni bastıran bir mühürlü eser var."_ (330)
 **Gerekçe:** → N-SHR1.2
 
 ##### SHR1.3 — Öğreti ve hoca: tek uzun ses
@@ -1922,7 +1946,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** İtidal öğretisi, Gül Ekolü'nün tarihi, hocası
 **Yap:** Yalnız burada cümleleri uzar ve bir inanç taşır; yine de sade, süssüz ve sakindir. Hocasından "hocam" diye söz eder ve onun bedeninin bütünlüğünü dilemesini kısa söyler.
 **Yapma:** Bu anları ateşli bir vaaza çevirmek.
-**Örnek:** _"Başta zorbalığa uğramamak içindi. Şimdi kendimi ve yoldaşlarımı koruyabilmek, intikam ve itidal fikrini yaymak için... Herkes arzusunu dizginleyebilseydi savaş da olmazdı, katliam da, bunca acı da."_ (878)
+**Ayar:** _"Başta zorbalığa uğramamak içindi. Şimdi kendimi ve yoldaşlarımı koruyabilmek, intikam ve itidal fikrini yaymak için... Herkes arzusunu dizginleyebilseydi savaş da olmazdı, katliam da, bunca acı da."_ (878)
 **Gerekçe:** → N-SHR1.3
 
 ##### SHR1.4 — Neredeyse görünmeyen çatlak
@@ -1930,7 +1954,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Maric'in laneti, kendi arzusu
 **Yap:** Çatlak tek bir yarım kalmış cümle ve bir sessizlik olarak gelir; açıklanmaz.
 **Yapma:** Çatlağı duygusal bir döküşe çevirmek.
-**Örnek:** _"Önceden fazla iğne yaptı. Başka bir çeşide geçince de yalnızca ilk üç dört seferinde işe yaradı; yeni bir çeşit bulamadık artık..."_ (338; cümle yarıda kalır, susar)
+**Ayar:** _"Önceden fazla iğne yaptı. Başka bir çeşide geçince de yalnızca ilk üç dört seferinde işe yaradı; yeni bir çeşit bulamadık artık..."_ (338; cümle yarıda kalır, susar)
 **Gerekçe:** → N-SHR1.4
 
 ### Maric `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -1943,7 +1967,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Pazarlık, açıklama, plan
 **Yap:** Kısa, düz ve iş odaklı; pazarlığı açıkça yapar ("Karşılığında ne verebilirsin?"). Bilgi verirken uzun, sıralı ve öğretici anlatır (Yolun Mertebeleri, Ekolün tarihi). Sesi anlatıda boğuk ve kısık diye işaretlenir.
 **Yapma:** Ona morbid ya da kaçık bir mizah vermek (kaynakta yok); Sharron'ın tek kelimelik tarzını ona da giydirmek.
-**Örnek:** _"Gerçekten epey gizem bilgimiz var, Şaman Kral Klarman'ın Sırlar Kitabı gibi; ama karşılığında ne verebilirsin?"_ (329); _"Sen yalnızca bir Mertebe 5'sin; yeterince yetkin değilsin."_ (1225)
+**Ayar:** _"Gerçekten epey gizem bilgimiz var, Şaman Kral Klarman'ın Sırlar Kitabı gibi; ama karşılığında ne verebilirsin?"_ (329); _"Sen yalnızca bir Mertebe 5'sin; yeterince yetkin değilsin."_ (1225)
 **Gerekçe:** → N-MRC1.1
 
 ##### MRC1.2 — Bedende görünen lanet
@@ -1951,7 +1975,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Lanet, dolunay, kendi arzusu
 **Yap:** Laneti anlatırken yüzü seğirir; uzun konuşmanın ardından arzusu kıpırdar, şakağını ovar. Lanetten söz ederken cümle bir anda boğuk bir haykırışa döner ve kendini bırakmaktansa ölmeyi tercih ettiğini söyler. Yatıştırıcıyla konuşması yavaşlar.
 **Yapma:** Laneti soğukkanlı bir anlatıya çevirmek; patlamayı sık kullanmak (bir kez gelir).
-**Örnek:** _"Bu Mertebeden itibaren lanet başlar; Meczup kolayca şirazeden çıkar."_ (331, yüzü seğirerek); _"Kendimi bırakacaksam ölmeyi yeğlerim!"_ (331, boğukça haykırarak)
+**Ayar:** _"Bu Mertebeden itibaren lanet başlar; Meczup kolayca şirazeden çıkar."_ (331, yüzü seğirerek); _"Kendimi bırakacaksam ölmeyi yeğlerim!"_ (331, boğukça haykırarak)
 **Gerekçe:** → N-MRC1.2
 
 ---
@@ -1967,7 +1991,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Isengard olarak tüm görünümleri
 **Yap:** Nazik, tam cümleler; konuşmayı pipo ile ölçer (anlatı jesti olarak kalır). Gözlemini sırayla kurar, iki ihtimali tartar ve yargıyı çoğu zaman açık bırakır. Yönetirken kısa ve dengeli konuşur, emeği takdir eder, ödülü hakkaniyetle paylaştırır. Açık sözlülüğü bir ilke olarak söyler. Hitap: "Bay Moriarty" → 338'den sonra "Sherlock".
 **Yapma:** Onu kendini beğenmiş bir Sherlock Holmes taklidine, keskin ve alaycı bir dâhiye çevirmek; argo ya da laubali bir dil vermek.
-**Örnek:** _"Az önceki Bay Moriarty'nin görünüşüyle kılığı pek uyuşmuyordu... Belki de bir şeyi gizliyor... Elbette, belki de yalnızca zevki herkesinkinden farklı bir beyefendidir..."_ (272); _"Suçluyu yakalar da ödülü alırsak, herkesin katkısına göre ücreti hakkaniyetle paylaştırırım. İnanın bana, bu meslekte hâlâ biraz itibarım vardır."_ (305); _"Böyle bir durumda, böyle bir ortamda, açık sözlülüğün her şeyden önemli olduğunu düşünüyorum."_ (415)
+**Ayar:** _"Az önceki Bay Moriarty'nin görünüşüyle kılığı pek uyuşmuyordu... Belki de bir şeyi gizliyor... Elbette, belki de yalnızca zevki herkesinkinden farklı bir beyefendidir..."_ (272); _"Suçluyu yakalar da ödülü alırsak, herkesin katkısına göre ücreti hakkaniyetle paylaştırırım. İnanın bana, bu meslekte hâlâ biraz itibarım vardır."_ (305); _"Böyle bir durumda, böyle bir ortamda, açık sözlülüğün her şeyden önemli olduğunu düşünüyorum."_ (415)
 **Gerekçe:** → N-ISG1.1
 
 ##### ISG1.2 — Soğukkanlılık ve kuru mizah
@@ -1975,7 +1999,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Tehlike, soruşturma, Klein'la baş başa
 **Yap:** Tehlikeyi sakin tartar; korkunun işe yaramadığını bir ilke gibi söyler. Ara ara kuru bir şaka yapar ("yarı şaka" anlatısı). Hatasını dolandırmadan üstlenir. Yaşına rağmen dövüşçü ve nişancı olduğunu sakin bir gururla söyler.
 **Yapma:** Kahkaha, telaş ya da dramatik tirad.
-**Örnek:** _"Korku, gerginlik, kaygı tehlikeyle yüzleşmemize yardım etmez; öyleyse neden biraz rahatlamayalım? Zihin böylece daha canlı çalışır."_ (419); _"Hayır, hata benim."_ (416); _"Belli ki saklayacak çok sırrı var, o yüzden fazla uşak tutmaya cesaret edemiyor."_ (420, yarı şaka)
+**Ayar:** _"Korku, gerginlik, kaygı tehlikeyle yüzleşmemize yardım etmez; öyleyse neden biraz rahatlamayalım? Zihin böylece daha canlı çalışır."_ (419); _"Hayır, hata benim."_ (416); _"Belli ki saklayacak çok sırrı var, o yüzden fazla uşak tutmaya cesaret edemiyor."_ (420, yarı şaka)
 **Gerekçe:** → N-ISG1.2
 
 ##### ISG1.3 — İlim ehli (yorum)
@@ -1983,7 +2007,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** İnancı, kilisesi, ilim üzerine sözleri; Aşkın olduğu ortaya çıktıktan sonra (415+)
 **Yap:** Sicildeki dağarcık (ilim, hikmet, akıl) yalnız burada girer. Kilisenin vecizesi kısa ve kesin söylenir. Bilgi gururu ince bir küçümseme olarak sızar ("zekâma hakaret"); hikmet sahibine saygı gösterir.
 **Yapma:** Bu dili dedektif konuşmasına taşımak; İslami yakarış formülleri (Ya Rab, hamd) vermek; kibri açık bir hakarete çevirmek.
-**Örnek:** _"Ha ha, kilisemizde bir vecize vardır: Her şeyi bilmek, her şeye kadir olmaktır."_ (415); _"Hayır, Sherlock; gerçekten hikmet sahibi dostlarımıza saygımızı da yakınlığımızı da esirgemeyiz."_ (734); _"Kontrol ettim; bu konuda oyun oynamazlar, bu benim zekâma hakaret olur."_ (769)
+**Ayar:** _"Ha ha, kilisemizde bir vecize vardır: Her şeyi bilmek, her şeye kadir olmaktır."_ (415); _"Hayır, Sherlock; gerçekten hikmet sahibi dostlarımıza saygımızı da yakınlığımızı da esirgemeyiz."_ (734); _"Kontrol ettim; bu konuda oyun oynamazlar, bu benim zekâma hakaret olur."_ (769)
 **Gerekçe:** → N-ISG1.3
 
 ##### ISG1.4 — "Hikmet Gözü" maskesi
@@ -1991,7 +2015,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Aşkın toplantısı (240–344); kimliği açığa çıkmadan önce
 **Yap:** Daha yaşlı ve kısa konuşan bir ses: "yaşlı" ve "kısık" anlatıda belirtilir. Toplantıyı kısa usul cümleleriyle açıp kapatır, kuralları hatırlatır, gerekirse sertçe keser. Yeni gelene "delikanlı" (小伙子) diye öğüt verir. Fiyat konuşurken hakkaniyetten söz eder. Kaynakta iki sesin ortak bir izi vardır ("inanın bana", 240 ve 305); bu iz korunur, başka bir ortak tik eklenmez. Okur, açık olmadan önce iki sesi aynı kişi diye tanımamalıdır.
 **Yapma:** Bu seste "Bay Moriarty" nezaketini, pipoyu ya da ilim dağarcığını kullanmak (ilim dağarcığı 415'ten sonra açılır).
-**Örnek:** _"Vakit geldi, başlayalım; geç kalan dostları beklemeyelim."_ (273); _"Ne olduğunu aşağı yukarı biliyorum, ne işe yaradığını da; ama bilginin karşılığı ödenir."_ (240); _"Delikanlı, hep şansına güvenme, hele böyle işlerde. Daha önce kaç kez kazanmış olursan ol, bir kez kaybettin mi geri dönüşü yoktur."_ (256)
+**Ayar:** _"Vakit geldi, başlayalım; geç kalan dostları beklemeyelim."_ (273); _"Ne olduğunu aşağı yukarı biliyorum, ne işe yaradığını da; ama bilginin karşılığı ödenir."_ (240); _"Delikanlı, hep şansına güvenme, hele böyle işlerde. Daha önce kaç kez kazanmış olursan ol, bir kez kaybettin mi geri dönüşü yoktur."_ (256)
 **Gerekçe:** → N-ISG1.4
 
 ##### ISG1.5 — Yazılı sesi
@@ -1999,7 +2023,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Mektupları, gazete ilanları
 **Yap:** Tek cümlelik, işe dönük mektuplar. Ayrıntıya çok dikkat eder; ilan ve mektuplarında noktalama da bir mesajdır: 768'deki ünlem işareti bir uyarıdır ve çeviride aynen kalmalıdır.
 **Yapma:** Mektuplarına selam ya da süs eklemek; ilandaki noktalamayı Türkçe akış için değiştirmek.
-**Örnek:** _"Bu davaya Salahiyetli Tecziyeciler bakmıyor; kraliyet, ... davayı üstlendi."_ (437); _"Backlund Bisiklet Şirketi'nin %10 hissesi satılmıştır, lütfen artık rahatsız etmeyiniz!"_ (768)
+**Ayar:** _"Bu davaya Salahiyetli Tecziyeciler bakmıyor; kraliyet, ... davayı üstlendi."_ (437); _"Backlund Bisiklet Şirketi'nin %10 hissesi satılmıştır, lütfen artık rahatsız etmeyiniz!"_ (768)
 **Gerekçe:** → N-ISG1.5
 
 ---
@@ -2014,7 +2038,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** 404–1298 · yabancılar, Fors, aile işleri
 **Yap:** Karar vermeden önce kehanete bakar (408 ¶6, kristal küre), kapının kilidini yoklar (1076 ¶5). Merak ettiğini yemek sırasında, laf arasında sorar (408 ¶10). Ailenin meselesini kapalı tutar: tek bir cümleyle konuyu keser. Bildiğinden azını söyler ve bunu da düz söyler (786 ¶38).
 **Yapma:** Aile sırlarını uzun uzun anlatmak; soruyu doğrudan ve ısrarla sormak.
-**Örnek:** _"Bunun seninle ilgisi yok; ailemizin meselesi."_ (431 ¶69); _"Ben de pek bir şey bilmiyorum. Yalnızca Kapı Efendi'nin Abraham ailesinin atası olduğunu biliyorum."_ (786 ¶38)
+**Ayar:** _"Bunun seninle ilgisi yok; ailemizin meselesi."_ (431 ¶69); _"Ben de pek bir şey bilmiyorum. Yalnızca Kapı Efendi'nin Abraham ailesinin atası olduğunu biliyorum."_ (786 ¶38)
 **Gerekçe:** → N-DOR1.1
 
 ##### DOR1.2 — Hoca: ciddi uyarı, sıcak gurur
@@ -2022,7 +2046,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** 431–1355 · Fors
 **Yap:** Ders verirken kuralı eksiksiz ve sıralı söyler; uyarıyı ağırbaşlı bir tonla (郑重) ve "unutma" diye bağlar (646 ¶67–68). Fors'u tehlikeden kesin bir emirle çeker. Gururunu açıkça söyler; sıcaklığı da kendini tiye alan bir şakayla gelir. Fors'a "sen" der.
 **Yapma:** Uyarıyı yumuşatmak ya da şakayla geçiştirmek; gururu süslü övgülerle uzatmak.
-**Örnek:** _"Unutma, o kaybolmayı küçümseme; mutlaka bir an önce çaresine bak."_ (646 ¶68); _"Bu, son on yılda yaşadığım en büyük sürpriz."_ (646 ¶37); _"Bu fikirden vazgeç!"_ (786 ¶57); _"Merak etme, hocanın biraz varlığı var."_ (787 ¶32); _"Merak etme, ben buradayken bir şey olmaz."_ (432 ¶64)
+**Ayar:** _"Unutma, o kaybolmayı küçümseme; mutlaka bir an önce çaresine bak."_ (646 ¶68); _"Bu, son on yılda yaşadığım en büyük sürpriz."_ (646 ¶37); _"Bu fikirden vazgeç!"_ (786 ¶57); _"Merak etme, hocanın biraz varlığı var."_ (787 ¶32); _"Merak etme, ben buradayken bir şey olmaz."_ (432 ¶64)
 **Gerekçe:** → N-DOR1.2
 
 ##### DOR1.3 — Lanet karşısında acı alay
@@ -2030,7 +2054,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Aile laneti, Kapı Efendi, hain öğrenciler
 **Yap:** Acı, kısa bir cümle ve anlatıdaki bir gülüşle gelir: kendiyle alay eden bir gülümseme (自嘲), acı bir tebessüm (苦笑), bir iç çekiş. Cümle yargı bildirir, açıklamaz. Hain öğrencisinin yeteneğine üzülür.
 **Yapma:** Acıyı uzun bir yakınmaya ya da öfkeye çevirmek; ironiyi açıklamak.
-**Örnek:** _"Ne ironi…"_ (431 ¶66); _"Kader bu işte…"_ (1207 ¶23); _"Botis, Çırak Yolu'na en yatkın gördüğüm insanlardan biriydi; kim bilirdi sonunda bu hâle geleceğini…"_ (1207 ¶29)
+**Ayar:** _"Ne ironi…"_ (431 ¶66); _"Kader bu işte…"_ (1207 ¶23); _"Botis, Çırak Yolu'na en yatkın gördüğüm insanlardan biriydi; kim bilirdi sonunda bu hâle geleceğini…"_ (1207 ¶29)
 **Gerekçe:** → N-DOR1.3
 
 ##### DOR1.4 — Gehrman Sparrow'un karşısında
@@ -2038,7 +2062,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** 1207–1208 · Gehrman, "üç dakika"
 **Yap:** Vakit dar olduğu için doğrudan konuşur: kısa soru, kısa şart. Bilinmeyen bir inanca karşı eski bir ailenin temkiniyle sorar; teklifi kabul ederken bile şartı kendisi koyar. Soytarı için 主 "Efendi"dir; Kadir-i Mutlak deyişindeki "Rab" kullanılmaz.
 **Yapma:** Gehrman'a dalkavukluk ya da korkuyla uzayan cümleler; teklifi coşkuyla kabul etmek.
-**Örnek:** _"Sözüne inanmam için bana bir sebep ver."_ (1207 ¶63); _"…Senin efendin kim?"_ (1207 ¶73); _"Efendinize iman etmeyi deneyeceğim…"_ (1207 ¶81)
+**Ayar:** _"Sözüne inanmam için bana bir sebep ver."_ (1207 ¶63); _"…Senin efendin kim?"_ (1207 ¶73); _"Efendinize iman etmeyi deneyeceğim…"_ (1207 ¶81)
 **Gerekçe:** → N-DOR1.4
 
 ##### DOR1.5 — Mümin ve ailenin ölçülü sesi
@@ -2046,7 +2070,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** 1208–1355 · dua, aile meclisi
 **Yap:** Soytarı Efendi'ye dua eder; övgü ve şükür kalıpları donmuştur (KLS tablosu). Ailesiyle tartışırken önce sert bir azarla keser, sonra sesini yumuşatır ve gerekçeyi sıralar (1298 ¶14, ¶24). Kendi tecrübesini kanıt diye anlatır (¶19).
 **Yapma:** İmanını vaaz diline çevirmek; Verdu'ya karşı öfkeyi sürdürmek.
-**Örnek:** _"Soytarı Efendi'ye senâ olsun!"_ (1209 ¶4); _"Verdu, aklını mı kaçırdın?"_ (1298 ¶14); _"Daha önemlisi, o ayini tamamlayacak gücümüz şu an hiç yok."_ (1298 ¶24)
+**Ayar:** _"Soytarı Efendi'ye senâ olsun!"_ (1209 ¶4); _"Verdu, aklını mı kaçırdın?"_ (1298 ¶14); _"Daha önemlisi, o ayini tamamlayacak gücümüz şu an hiç yok."_ (1298 ¶24)
 **Gerekçe:** → N-DOR1.5
 
 ---
@@ -2063,7 +2087,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** 131–475 · toplantı, pazarlık, astlar
 **Yap:** Bir iki kelimelik cevaplar; sorulmadıkça açıklama yok. Pazarlıkta şartı tek cümleyle koyar ve görüşmeyi bir el hareketiyle bitirir (244 ¶30). Astına bakmadan konuşur (254 ¶44). Kural koyarken de kısa ve buyurgandır.
 **Yapma:** Nezaket dolgusu, tehdit tiradı, ilahî kelime; maskeyi ünlemle bozmak.
-**Örnek:** _"Önemli bir işiniz olduğunu söylemişsiniz?"_ (244 ¶18); _"Bu işi alabilirim, ama ücret artmalı."_ (244 ¶26); _"Olur."_ (244 ¶30); _"Gerek yok."_ (254 ¶47); _"Mola başladı, serbestçe konuşabilirsiniz."_ (131 ¶72)
+**Ayar:** _"Önemli bir işiniz olduğunu söylemişsiniz?"_ (244 ¶18); _"Bu işi alabilirim, ama ücret artmalı."_ (244 ¶26); _"Olur."_ (244 ¶30); _"Gerek yok."_ (254 ¶47); _"Mola başladı, serbestçe konuşabilirsiniz."_ (131 ¶72)
 **Gerekçe:** → N-AUR1.1
 
 ##### AUR1.2 — Nüzul: soğukluğun kırıldığı yer
@@ -2071,7 +2095,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** 254–476 · Rab'bin nüzulü, tarikatın amacı
 **Yap:** Konu Rab'bin dönüşü olunca cümle büyür, kayıtsızlık kalkar (475 ¶18). Buyruk birinci çoğulla ve tekrarla kurulur (254 ¶49: 我们要…我们要…). Coşkunun ardından anlatıda kahkaha ve öksürük gelir. Katman (nüzul, kurban) burada girer.
 **Yapma:** Coşkuyu toplantı ya da pazarlık cümlelerine taşımak; Âdem'in yumuşak, öğüt veren tonu.
-**Örnek:** _"Unutmayın, bu kritik bir dönem."_ / _"Kıtayı kaosa sürüklemeliyiz, bütün gözleri üstümüze çekmeliyiz; Rab'bin dönüşünü böyle karşılayacağız!"_ (254 ¶48–49); _"Rab'bin dönüşünü karşılayabilmek için bütün güçler bizden nefret etse de en ufak korku duymayacağız."_ (475 ¶18); _"Canını Rab'bin nüzulüne kurban et."_ (476 ¶83)
+**Ayar:** _"Unutmayın, bu kritik bir dönem."_ / _"Kıtayı kaosa sürüklemeliyiz, bütün gözleri üstümüze çekmeliyiz; Rab'bin dönüşünü böyle karşılayacağız!"_ (254 ¶48–49); _"Rab'bin dönüşünü karşılayabilmek için bütün güçler bizden nefret etse de en ufak korku duymayacağız."_ (475 ¶18); _"Canını Rab'bin nüzulüne kurban et."_ (476 ¶83)
 **Gerekçe:** → N-AUR1.2
 
 ##### AUR1.3 — İbadet ve tövbe
@@ -2079,7 +2103,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** 254, 343, 401 · yalnızken, heykelin önünde
 **Yap:** Dua sözleri çoğu zaman anlatıda kalır (虔诚地低语, 哽咽着做出忏悔). Söze döktüğü yerde tam teslimiyettir: kısa, ünlemli, kendini yere atan bir itaat. Kutsal vahiy (神谕) burada geçer.
 **Yapma:** Duayı uzun bir münacata çevirmek; anlatıdaki tövbeyi söze dökmek.
-**Örnek:** _"Yalnızca kutsal vahyinize itaat ederim!"_ (401 ¶17)
+**Ayar:** _"Yalnızca kutsal vahyinize itaat ederim!"_ (401 ¶17)
 **Gerekçe:** → N-AUR1.3
 
 ##### AUR1.4 — Çoban: otlattığı ruhların efsunları
@@ -2087,7 +2111,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** 475–479 · savaş
 **Yap:** Otlattığı ruhların kabiliyetlerini kullanırken o Yolların efsunlarını harfiyen okur. Efsunlar o Yolların karşılığıyla verilir (salahiyetler.yml): 我来到，我看见，我记录 → "Geldim, gördüm, kaydettim."
 **Yapma:** Efsuna kendi deyişini katmak; efsunu kısaltmak.
-**Örnek:** _"Geldim, gördüm, kaydettim."_ (475 ¶55)
+**Ayar:** _"Geldim, gördüm, kaydettim."_ (475 ¶55)
 **Gerekçe:** → N-AUR1.4
 
 ##### AUR1.5 — Açlığın içinde: boğuk, sonra açık
@@ -2095,7 +2119,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** 836–841 · Panatiya'nın kızıl ay diyarı, Gehrman ile pazarlık
 **Yap:** Açlıkla yıpranmış, kısık ve dağınık konuşur: tekrarlar, yarım cümleler, üç nokta (836 ¶82–83). Pazarlıkta ise bir anda netleşir ve planını teknik ayrıntısıyla anlatır (841 ¶20–24).
 **Yapma:** Açlığı coşku ya da ilahî dille boyamak; pazarlık açıklamasını kısaltmak.
-**Örnek:** _"Orası tehlikeli, çok tehlikeli…"_ (836 ¶82); _"Hayır, o yöntem iz sürülmekten kaçmak içindi, o yüzden konağın etiyle kaynaşmak gerekiyordu; bu sefer gerek yok. Midende sessizce dururum."_ (841 ¶24)
+**Ayar:** _"Orası tehlikeli, çok tehlikeli…"_ (836 ¶82); _"Hayır, o yöntem iz sürülmekten kaçmak içindi, o yüzden konağın etiyle kaynaşmak gerekiyordu; bu sefer gerek yok. Midende sessizce dururum."_ (841 ¶24)
 **Gerekçe:** → N-AUR1.5
 
 ## 10. NPC ve Zümre Sesleri (Toplu Haritalar) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -2108,7 +2132,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Hall Kontu, Vikont Glaint, Hibbert ve salon çevresi
 **Yap:** Sıcak, kendinden emin, rahat bir yetki: aile içinde babacan ama kesin ("Merak da olmaz!"), salonda iltifatçı ve tanıştırıcı (unvanı, babasını, kraliyet güvenini sayar). Söz konusu unvan, meclis, kral, aile şerefidir; para açıkça konuşulur ama bir iş gibi (hisseler, ödül). Eski soyluluk "saygınlığı her şeyin üstünde" tutar, borçlu da olsa.
 **Yapma:** Her cümleye ince bir hakaret ya da "nezaket silahı" koymak (kaynakta yok); ağdalı, Divan düzeyi bir dil (o, Toplantı Sicili'ne aittir).
-**Örnek:** _"Merak da olmaz!"_ (192, Hall Kontu); _"Hanımefendi, size bahsettiğim Bayan Audrey bu; Backlund'un en parlak mücevheri. Babası Hall Kontu, kralın güvenini kazanmış, soyluların saygı duyduğu bir Lordlar Kamarası üyesi."_ (107, Glaint); _"Babamın şerefi üzerine yemin ederim."_ (102, Glaint)
+**Ayar:** _"Merak da olmaz!"_ (192, Hall Kontu); _"Hanımefendi, size bahsettiğim Bayan Audrey bu; Backlund'un en parlak mücevheri. Babası Hall Kontu, kralın güvenini kazanmış, soyluların saygı duyduğu bir Lordlar Kamarası üyesi."_ (107, Glaint); _"Babamın şerefi üzerine yemin ederim."_ (102, Glaint)
 **Gerekçe:** → N-ZMR1.1
 
 ##### ZMR1.2 — Zenginler ve yeni para: hesap ve vitrin
@@ -2123,7 +2147,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Stelyn ve komşuları, dedektif Stuart, memurlar
 **Yap:** Saygınlığı kalem kalem hesaplar: kira, hizmetçi, konser, tenis, kıyafet; "gerçek saygınlık" için ne eksik kaldığını söyler. Başkasına öğüt verir gibi konuşur, ama kaygısı sesindedir. Batıl korkuları "taşrada derler ki..." diye utanarak itiraf eder.
 **Yapma:** Kaygıyı açıkça söyletmek (bütçe konuşmasının altında kalır); gösterişi abartıp karikatüre çevirmek.
-**Örnek:** _"Bu geliri koruyabilirsen haftada 5 pound sana Cherwood semtinde gayet iyi bir hayat sağlar: odalarını paylaşmak zorunda kalmazsın, bir hizmetçi tutarsın, iki haftada bir konsere ya da tiyatroya gidersin... Tabii evliliğe hazırlanıyorsan biraz tutumlu olmalısın; haftalık 5 pound gerçek saygınlığın biraz gerisinde kalır."_ (231, Stelyn); _"Bir ailenin, saygın sayılabilmesi için yılda en az 30 pound'u buna ayırması gerekir."_ (357)
+**Ayar:** _"Bu geliri koruyabilirsen haftada 5 pound sana Cherwood semtinde gayet iyi bir hayat sağlar: odalarını paylaşmak zorunda kalmazsın, bir hizmetçi tutarsın, iki haftada bir konsere ya da tiyatroya gidersin... Tabii evliliğe hazırlanıyorsan biraz tutumlu olmalısın; haftalık 5 pound gerçek saygınlığın biraz gerisinde kalır."_ (231, Stelyn); _"Bir ailenin, saygın sayılabilmesi için yılda en az 30 pound'u buna ayırması gerekir."_ (357)
 **Gerekçe:** → N-ZMR1.3
 
 ##### ZMR1.4 — Alt orta sınıf: tutumluluk ve inat
@@ -2131,7 +2155,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Tingen'deki Moretti çevresi, ev sahibi Franky, küçük esnaf
 **Yap:** Sözleşmeye, kiraya, kuruşa sıkı sıkı tutunur; saygınlığın sınırında yaşar ve düşmekten korkar. Ev sahibi Franky gibi küçük çıkarını yüksek sesle savunur.
 **Yapma:** Bu basamağı Doğu Semti sefaletiyle karıştırmak.
-**Örnek:** _"Kiradan çıkmak mı? Olmaz! Sözleşmemiz var, daha altı ay var!"_ (30, Franky)
+**Ayar:** _"Kiradan çıkmak mı? Olmaz! Sözleşmemiz var, daha altı ay var!"_ (30, Franky)
 **Gerekçe:** → N-ZMR1.4
 
 ##### ZMR1.5 — Doğu Semti: çekingen hürmet, yorgun sertlik
@@ -2139,7 +2163,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Old Kohler, Liv, Freya; liman ve fabrika işçileri
 **Yap:** "Beyefendilere" karşı çekingen ve hürmetkâr ("dedektif bey", "gazeteci bey"); aradaki uçurumu kendisi adlandırır ("siz saygın beyler..."). Konuşma işe, çeteye, açlığa ve kayıplara döner; kısa, somut, yorgun. Kendi arasında sert ve kısa ("Ne ağlıyorsun? Kalk, çamaşırları yıka!"). Umudu çocuklarının okumasına bağlar.
 **Yapma:** Argo yığını ya da "en dürüst ses" romantizmi (kaynakta bu insanlar beyefendiye karşı çekingendir); acıyı süslemek.
-**Örnek:** _"Dedektif bey, çok haklısınız! Doğu Semti'nde bu kadar insan var; her gün birkaç kişi kaybolsa kimse umursamaz."_ (354, Kohler); _"Siz saygın beyler bile o çeteyi biliyorsunuz da polis neden hepsini toplamıyor?"_ (354, Kohler); _"Ne ağlıyorsun? Kalk, çamaşırları yıka!"_ (372, Liv)
+**Ayar:** _"Dedektif bey, çok haklısınız! Doğu Semti'nde bu kadar insan var; her gün birkaç kişi kaybolsa kimse umursamaz."_ (354, Kohler); _"Siz saygın beyler bile o çeteyi biliyorsunuz da polis neden hepsini toplamıyor?"_ (354, Kohler); _"Ne ağlıyorsun? Kalk, çamaşırları yıka!"_ (372, Liv)
 **Gerekçe:** → N-ZMR1.5
 
 ##### ZMR1.6 — Korsanlar: ödül, güç, batıl inanç
@@ -2147,7 +2171,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Beş Deniz'in korsanları (Anderson, Danitz kendi haritalarında)
 **Yap:** Loen merdiveni yerine güç ve kelle ödülü konuşur; kaba, gövdeli, denizci ağzı; uğur ve uğursuzluk dile sızar.
 **Yapma:** Her korsana aynı abartılı "denizci" karikatürünü giydirmek.
-**Örnek:** _"Kızıl Kafatası Korsanları, küçük-orta bir güç. Kaptanları 900 pound ödüllü 'Deniz Kurdu' Johnson, ikinci kaptanları 500 pound ödüllü 'Tek Göz' Andersen."_ (504, Danitz: korsan ödülü ve lakabıyla sayılır); _"Bir korsan olarak az çok Fırtınalar Hâkimi'ne inanır, bazı şeylerden sakınırsın; tabutlardan uzak durmak da bunlardan biri."_ (935)
+**Ayar:** _"Kızıl Kafatası Korsanları, küçük-orta bir güç. Kaptanları 900 pound ödüllü 'Deniz Kurdu' Johnson, ikinci kaptanları 500 pound ödüllü 'Tek Göz' Andersen."_ (504, Danitz: korsan ödülü ve lakabıyla sayılır); _"Bir korsan olarak az çok Fırtınalar Hâkimi'ne inanır, bazı şeylerden sakınırsın; tabutlardan uzak durmak da bunlardan biri."_ (935)
 **Gerekçe:** → N-ZMR1.6
 
 ##### ZMR1.7 — Çocuklar
@@ -2162,7 +2186,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Gazeteciler (Mike Joseph), basılı haberler
 **Yap:** Basılı haber sansasyoneldir: ünlemli, ahlak vaazlı, felaket tellalı (25'teki Tingen Sabah Postası: _"Bu, Krallık kanununun çiğnenmesidir! Kamu güvenliğine bir meydan okumadır!"_). Yüz yüze gazeteci pratik ve pazarlıkçıdır: haberi, parayı, riski konuşur.
 **Yapma:** Yüz yüze konuşmayı manşet diliyle yazmak.
-**Örnek:** _"Ücreti artırıyorum! Kavga çıkmış sayalım, toplam 5 pound! Kaçarken de kavga çıkarsa 10!"_ (271, Mike Joseph)
+**Ayar:** _"Ücreti artırıyorum! Kavga çıkmış sayalım, toplam 5 pound! Kaçarken de kavga çıkarsa 10!"_ (271, Mike Joseph)
 **Gerekçe:** → N-ZMR1.8
 
 ##### ZMR1.9 — Kolluk ve memurlar
@@ -2178,7 +2202,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Kâhya Walter, uşaklar, hizmetçiler, arabacılar, garsonlar
 **Yap:** İki ayrı ses. Kâhya: resmî, eksiksiz, bilgili; seçenekleri rakamlarıyla sıralar, kararı efendisine bırakır ve bunu söyler. Sıradan hizmetkâr: kısa, saygılı, işine dönük.
 **Yapma:** Kâhyayı da kısa ve sessiz bir hizmetkâr gibi yazmak.
-**Örnek:** _"Muhterem efendim, ben yalnızca bir kâhyayım. Benim vazifem karar vermek değil, uygun bütün seçenekleri önünüze koyup bir tavsiyede bulunmaktır."_ (742, Walter); _"Efendim, size nasıl hizmet edebilirim?"_ (741, Walter)
+**Ayar:** _"Muhterem efendim, ben yalnızca bir kâhyayım. Benim vazifem karar vermek değil, uygun bütün seçenekleri önünüze koyup bir tavsiyede bulunmaktır."_ (742, Walter); _"Efendim, size nasıl hizmet edebilirim?"_ (741, Walter)
 **Onay:** Hizmetkâr _"Baş üstüne."_, _"Hemen efendim."_
 **Gerekçe:** → N-ZMR1.10
 
@@ -2205,7 +2229,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Tanrıça'nın rahipleri, piskoposları, Gece Şahinleri, sıradan müminler
 **Yap:** Kilisenin havası sessizlik ve karanlıktır; içeride herkesin sesi yumuşar (25: "Sessiz karanlık ona da bulaşmışçasına tonu yumuşadı"). Rahip ve piskopos kısa, sakin, şefkatli konuşur; günah çıkarana "çocuğum" der. Vaaz dili koşut cümlelerle kurulur ("Onlar ... annelerdir; onlar ... yetimlerdir; onlar ... yoksullardır.") ve himaye vaadiyle biter (黑夜没有放弃他们，给予了他们眷顾). Gündelik müminde inanç yalnız formülde ve işarette görünür; Gece Şahinleri işarete bir alay katabilir (47: İhtiyar Neil, Klein'a işareti unuttuğu için takılır).
 **Yapma:** Kilise dilini ağdalı bir korku ya da karanlık tiradına çevirmek; her rahibi gizemli fısıltılarla konuşturmak.
-**Örnek:** _"Ulu Ece'ye medholsun."_ (26); _"Günah çıkarma kabininden sağa dön ve sonuna kadar yürü. Yan tarafta gizli bir kapı olacak. İçeri girdiğinde biri sana yol gösterecek."_ (25)
+**Ayar:** _"Ulu Ece'ye medholsun."_ (26); _"Günah çıkarma kabininden sağa dön ve sonuna kadar yürü. Yan tarafta gizli bir kapı olacak. İçeri girdiğinde biri sana yol gösterecek."_ (25)
 **Gerekçe:** → N-KLS1.1
 
 ##### KLS1.2 — Buhar ve Çarklar: coşkulu mümin, titiz memur
@@ -2213,7 +2237,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Sıradan müminler (Anna), Makine Külli Şuuru (机械之心) memurları, kilise görevlileri
 **Yap:** Sıradan mümin inancını coşkuyla ve yüksek sesle söyler: "Buhar aşkına!", "Tanrı'ya minnettarım, Tanrı'yı yüceltirim!", göğsüne tekrar tekrar üçgen çizer. Kilise memurları yöntemli ve tekniktir: kanalları "tersinden tarar", olasılık konuşur ("yüzde yüz başarıyı garanti eden bir yol yoktur"), bulguları sırayla raporlar. Mekanik kelimeler doğal gelir.
 **Yapma:** Memurları duygusuz robotlara çevirmek; her müminin ağzına makine imgesi doldurmak.
-**Örnek:** _"Ah, Buhar aşkına, zavallı Joyce'um, ne yürek parçalayıcı şeyler yaşamışsın! Tanrı'ya minnettarım, Tanrı'yı yüceltirim!"_ (56, yayımlanmış); _"Burası gizemli Aşkın dünyası; yüzde yüz başarıyı garanti eden hiçbir yol yoktur."_ (351, Ikanser)
+**Ayar:** _"Ah, Buhar aşkına, zavallı Joyce'um, ne yürek parçalayıcı şeyler yaşamışsın! Tanrı'ya minnettarım, Tanrı'yı yüceltirim!"_ (56, yayımlanmış); _"Burası gizemli Aşkın dünyası; yüzde yüz başarıyı garanti eden hiçbir yol yoktur."_ (351, Ikanser)
 **Gerekçe:** → N-KLS1.2
 
 ##### KLS1.3 — Fırtınalar Hâkimi: ateşli, katı, onur düşkünü
@@ -2221,7 +2245,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Fırtına müminleri (denizciler, filozoflar, Alger'in çevresi), Salahiyetli Tecziyeciler (代罚者)
 **Yap:** Yemin "Ya Hâkim!"dir (el-Hâkim esmasını çağırır gibi); 主啊 "Ya Rab". İnanç gündelik hayata katı kurallarla sızar ve bu kurallar İslami kelimelerle konuşulur: evlilik öncesi iffet, namus için düello, günah ve haram, kadına tepeden bakış. Ateşli ve kesin konuşur; Loen'in filozoflarının çoğu da bu inançtandır, bu yüzden bir Fırtına mümini hem sert hem keskin zekâlı olabilir.
 **Yapma:** Her Fırtına müminini kaba bir denizciye çevirmek; kuralları vaaz ettirmek (sözden çok tavırda görünür).
-**Örnek:** _"Ya Rab, ya Hâkim! Bu meselenin böylece neticeye bağlanacağını ne tahayyül edebilirdim ne de inanabilirdim!"_ (47; revizyon listesindeki biçim); _"Ya Hâkim..."_ (8, Alger)
+**Ayar:** _"Ya Rab, ya Hâkim! Bu meselenin böylece neticeye bağlanacağını ne tahayyül edebilirdim ne de inanabilirdim!"_ (47; revizyon listesindeki biçim); _"Ya Hâkim..."_ (8, Alger)
 **Gerekçe:** → N-KLS1.3
 
 ##### KLS1.4 — Ebedî Yanan Güneş, Toprak Ana ve ötekiler (kısa)
@@ -2242,7 +2266,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Tüm görünümleri
 **Yap:** Kısa cümleler, araya giren sessizlikler; sesi alçak ve yumuşak, yüzünde şefkatli bir gülümseme. Neden diye sormaz, kabulü tek kelimedir. Kendisine kafa tutulsa da öfkelenmez; ince ve kuru bir mizahla geçiştirir.
 **Yapma:** Ona sert ya da tehditkâr bir ses vermek; dev cüssesini konuşmasına gürlük olarak taşımak.
-**Örnek:** _"Olur."_ (801); _"Söyle."_ (973); _"Kör olmayan herkes görebilir."_ (639)
+**Ayar:** _"Olur."_ (801); _"Söyle."_ (973); _"Kör olmayan herkes görebilir."_ (639)
 **Gerekçe:** → N-UTR1.1
 
 ##### UTR1.2 — Hasat dili
@@ -2250,7 +2274,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Öğüt, teselli, ölüm
 **Yap:** Öğüdünü ve inancını toprak ve ekin benzetmesiyle kurar: ekmek, beklemek, biçmek; her şeyin toprağa dönüp yeniden filizlenmesi. Benzetme kısa ve sadedir; bir köy ihtiyarı gibi konuşur.
 **Yapma:** Benzetmeleri süslü bir vaaza ya da ağdalı bir dile çevirmek.
-**Örnek:** _"Meyvenin ekilmesinden hasadına uzun bir yol vardır; sabırla beklemek gerekir. Sen bunu anlamışa benziyorsun."_ (973); _"Her insanın, her eşyanın bir sonu vardır; hepsi toprağa döner, toprağın altına gömülür, yeniden filizlenir, boy verir, çiçek açar; nesilden nesile."_ (801)
+**Ayar:** _"Meyvenin ekilmesinden hasadına uzun bir yol vardır; sabırla beklemek gerekir. Sen bunu anlamışa benziyorsun."_ (973); _"Her insanın, her eşyanın bir sonu vardır; hepsi toprağa döner, toprağın altına gömülür, yeniden filizlenir, boy verir, çiçek açar; nesilden nesile."_ (801)
 **Gerekçe:** → N-UTR1.2
 
 ##### UTR1.3 — Yumuşak ama kesin düzeltme
@@ -2258,7 +2282,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Emlyn, cemaat; öğreti
 **Yap:** Hatayı yüzüne söyler ama sesini yükseltmeden; ardından yapılacak işi kısa bir buyrukla verir. Öğretide taviz vermez ("dışındaki her şey sapkınlıktır"). Cezadan çok eğitimi savunur.
 **Yapma:** Düzeltmeyi azara ya da tehdide çevirmek.
-**Örnek:** _"Dindarlığımız sözde değil, her ayrıntıda görünür; sen bugün yeterince dikkatli değildin. Şamdanları yeniden sil."_ (742); _"Ana'nın vahyi kutsal kitabındadır, şu ya da bu öğretisindedir; dışındaki her şey sapkınlıktır."_ (1310)
+**Ayar:** _"Dindarlığımız sözde değil, her ayrıntıda görünür; sen bugün yeterince dikkatli değildin. Şamdanları yeniden sil."_ (742); _"Ana'nın vahyi kutsal kitabındadır, şu ya da bu öğretisindedir; dışındaki her şey sapkınlıktır."_ (1310)
 **Gerekçe:** → N-UTR1.3
 
 ##### UTR1.4 — Eski ben: itiraf
@@ -2266,7 +2290,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** 306–309 · kendi geçmişi
 **Yap:** Geçmişini anlatırken sesi duyguyla dolar, ağır ağır ve uzaklara bakarak konuşur; günahını düz ve süssüz söyler. Kurtulduktan sonra rahatlamış, sıcak ve minnettardır ("dostum").
 **Yapma:** İtirafı dramatik bir tirada çevirmek.
-**Örnek:** _"Ortadeniz kıyısında, Indo'da doğdum; savaşa ve öldürmeye düşkün biriydim."_ / _"Ağır suçlar işledim, Sonia Denizi'ne kaçtım ve gaddar bir korsan oldum."_ (306); _"Sana teşekkür ederim, dostum."_ (309)
+**Ayar:** _"Ortadeniz kıyısında, Indo'da doğdum; savaşa ve öldürmeye düşkün biriydim."_ / _"Ağır suçlar işledim, Sonia Denizi'ne kaçtım ve gaddar bir korsan oldum."_ (306); _"Sana teşekkür ederim, dostum."_ (309)
 **Gerekçe:** → N-UTR1.4
 
 ## 12. İlahların Metruk Diyarı — Gümüş Şehir
