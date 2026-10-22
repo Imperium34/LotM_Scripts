@@ -560,7 +560,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 ### Melissa'nın Arkadaşları: Selena Wood ve Elizabeth (Toplu Harita) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Melissa'nın eski okul arkadaşları, on altı yaşında (84 ¶71; 85 ¶28). Selena ve Melissa teknik okula, Elizabeth yakındaki Ivos okuluna (伊沃斯公学) gider. İkisi de Ebedî Gece müminidir (Selena'nın adı Azize Selena'dan, 24 yayımlanmış; Elizabeth, 133 ¶74); formüller KLS1.1'dedir. Klein'a "Bay Moretti" derler. Selena'nın ayna kehaneti Fecir Tarikatı'ndan Hanass Vincent'in efsunuyla onu bir habis ruha teslim etmek üzeredir; Klein'la Elizabeth onu kurtarır (85–87).
+**Tarz:** Melissa'nın eski okul arkadaşları, on altı yaşında (84 ¶71; 85 ¶28). Selena ve Melissa teknik okula, Elizabeth yakındaki Ivos Koleji'ne (伊沃斯公学; 公学 = kolej) gider. İkisi de Ebedî Gece müminidir (Selena'nın adı Azize Selena'dan, 24 yayımlanmış; Elizabeth, 133 ¶74); formüller KLS1.1'dedir. Klein'a "Bay Moretti" derler. Selena'nın ayna kehaneti Fecir Tarikatı'ndan Hanass Vincent'in efsunuyla (Ouroboros'a seslenir; words.md §VII) onu bir habis ruha teslim etmek üzeredir; Klein'la Elizabeth onu kurtarır (85–87).
 
 ##### SEL1.1 — Selena Wood: neşeli, meraklı, sır paylaşan
 
@@ -575,7 +575,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 84–175 · Selena, Melissa, Klein
 **Yap:** Tombul yanaklı, ciddi bir kız; sorulana dikkatle ve eksiksiz cevap verir (84 ¶71), öğretmeninden azar işitmiş bir öğrenci gibi dik durur (87). Korktuğu hâlde gerekeni yapar: önce tek kelime ("Evet!"), sonra soru ("Tehlikeli mi?"), sonra karar (85 ¶71–73). Rol yapamaz; korkunca kekeler ve sözcükleri tekrarlar (86 ¶51–53, 133). Selena'ya karşı kararlıdır, onu düz bir hükümle uyarır (87 ¶57; 111 ¶10). Bir şüphesini haftalarca belli etmeden saklayabilir (133).
 **Yapma:** Elizabeth'e Selena'nın cilveli neşesini vermek; kekelemeyi her replikte kullanmak.
-**Ayar:** _"Hayır, Selena'yla Melissa'yla eskiden sınıf arkadaşıydık; sonra onlar teknik okula gitti, ben yakındaki Ivos okuluna."_ (84 ¶71); _"Evet!"_ / _"…Tehlikeli mi?"_ (85 ¶71); _"Selena, ben, ben sana bir sürpriz hazırladım, hazırladım; benimle bir dışarı gelir misin?"_ (86 ¶51); _"Hayır Selena, sende bir sorun var; ayna kehanetin kötü bir şeyi başına musallat etti."_ (87 ¶50); _"Ama nasılsa evleneceğiz, nasılsa kendi evimiz olacak."_ (111 ¶10)
+**Ayar:** _"Hayır, Selena'yla Melissa'yla eskiden sınıf arkadaşıydık; sonra onlar teknik okula gitti, ben yakındaki Ivos Koleji'ne."_ (84 ¶71); _"Evet!"_ / _"…Tehlikeli mi?"_ (85 ¶71); _"Selena, ben, ben sana bir sürpriz hazırladım, hazırladım; benimle bir dışarı gelir misin?"_ (86 ¶51); _"Hayır Selena, sende bir sorun var; ayna kehanetin kötü bir şeyi başına musallat etti."_ (87 ¶50); _"Ama nasılsa evleneceğiz, nasılsa kendi evimiz olacak."_ (111 ¶10)
 **Gerekçe:** → N-ELZ1.1
 
 ### Dunn Smith `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -1042,15 +1042,15 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Ayar:** _"Hayır, henüz karar vermedim. Biliyorsunuz, o cerrahlar düpedüz kasap, ameliyat masasındaki adam da kütüğün üstündeki bir parça et! … Tanrım, ameliyat masasında ölüp gideceğimden korkuyorum."_ (81 ¶34); _"Hayır, ben yalnızca Bay Moretti'ye güvenirim."_ (82 ¶20); _"Siz gerçek bir Kâhin'siniz."_ (82 ¶42); babası: _"Tanrı seni korusun."_ (83 ¶23)
 **Gerekçe:** → N-JOY1.3
 
-### Swain (meyhane sahibi, eski Tecziyeci) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+### Swain (Habis Ejderha Barı'nın sahibi) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Tingen'deki Aşkın pazarının yeri olan meyhanenin sahibi; Tingen Salahiyetli Tecziyecileri'nin eski kaptanı, söylentiye göre kraliyet donanmasında da bulunmuş (101 ¶68). Denizci Yolu'nda Mertebe 8, Hiddet Halkı; Gemici'ye (Mertebe 7) yükselebilecekken kontrolünü kaybetmekten korkup vazgeçmiştir (68 ¶46). İhtiyar Neil'den yaşlı, içkiye düşkün ("içkiden ölmeyi dileyen ihtiyar herif", 68 ¶39); pazardaki bütün kazancın yirmide biri ona gider, yüksek faizle borç verir (68 ¶39–43). Mavi gözlü, kalın kollu, bir subay duruşu var. Fırtınalar Hâkimi Kilisesi'ndendir (KLS1.3).
+**Tarz:** Tingen'deki Aşkın pazarının yeri olan Habis Ejderha Barı'nın sahibi; Tingen Salahiyetli Tecziyecileri'nin eski kaptanı, söylentiye göre kraliyet donanmasında da bulunmuş (101 ¶68). Denizci Yolu'nda Mertebe 8, Hiddet Halkı; Gemici'ye (Mertebe 7) yükselebilecekken kontrolünü kaybetmekten korkup vazgeçmiştir (68 ¶46). İhtiyar Neil'den yaşlı, içkiye düşkün ("içkiden ölmeyi dileyen ihtiyar herif", 68 ¶39); pazardaki bütün kazancın yirmide biri ona gider, yüksek faizle borç verir (68 ¶39–43). Mavi gözlü, kalın kollu, bir subay duruşu var. Fırtınalar Hâkimi Kilisesi'ndendir (KLS1.3).
 **Onay:** _"Evet."_ (101 ¶74'teki kesin 肯定回答)
 
 ##### SWN1.1 — Meyhanede: güler yüzlü tefeci
 
-**Kapsam:** 101–102 · Klein, müşteriler
-**Yap:** Gülerek, rahat bir babacanlıkla konuşur ("heh heh", 笑呵呵); borç teklifini bir nezaket gibi sunar. Hafızası iyidir, soruyu dolambaçsız cevaplar. Gece Şahinleri'yle tanıdık bir laf atar (101 ¶71).
+**Kapsam:** 101–102 · Habis Ejderha Barı, Klein, müşteriler
+**Yap:** Barda gülerek, rahat bir babacanlıkla konuşur ("heh heh", 笑呵呵); borç teklifini bir nezaket gibi sunar. Hafızası iyidir, soruyu dolambaçsız cevaplar. Gece Şahinleri'yle tanıdık bir laf atar (101 ¶71).
 **Yapma:** Kaba bir korsan ya da sert bir asker ağzı; Fırtına deyişini her cümleye serpmek.
 **Ayar:** _"İhtiyar Neil sana benden bahsetmiştir; buranın sahibi Swain benim."_ (101 ¶67); _"Paran sıkışırsa bana gelebilirsin."_ (101 ¶69); _"Heh heh, sen de tıpkı sizin, şey, sizin başınız gibisin."_ (101 ¶71); _"Hatırlıyorum, gelip bana Hornacis'in ana zirvesiyle ilgili yazma ve eşya olup olmadığını sordu."_ (101 ¶74)
 **Gerekçe:** → N-SWN1.1

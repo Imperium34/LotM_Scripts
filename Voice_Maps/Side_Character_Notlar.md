@@ -1886,7 +1886,8 @@ Yayımlanmış 55 ¶1 (kartlar oyuncak gibi), ¶17 如果他没有撒谎，那�
 > **Ayar satırları:** Bütün satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
 > **Görünüm (konuşan):** 84–88 (Selena'nın doğum günü, ayna kehaneti), 110–111 (konferans, Kehanet Kulübü), 132–133 (Elizabeth'in kâbusu), 156 (hizmetçi seçimi). Selena'nın adı: 赛琳娜·伍德 Selena Wood (210; Azize Selena'dan, 24 yayımlanmış). Elizabeth: 伊丽莎白.
 > **Kullanıcı bilgisi (2026-10-22):** Melissa'nın arkadaşlarından biri kehanete meraklıydı ve bir habis ruhun eline geçiyordu (Selena). Melissa, Klein'a Elizabeth'in daha reşit olmadığını hatırlatarak takılır (MEL1.3).
-> **Sözlükte olmayanlar (soru):** 伊沃斯公学 (İng. "Ivos Public School"; haritada "Ivos okulu" diye geçici), 尤妮娜 Yonina, 克里斯 (Selena'nın ağabeyi Chris?), 赛薇娅拉 (konferansçı), 拉姆德小镇 (132). Ayna kehaneti efsunu: 徘徊不去的英灵，真实造物主的眷属，凝视命运的眼睛 (87 ¶61; Fecir Tarikatı'nın efsunu, tazim kalıbı; karar bekliyor).
+> **Ad kararları (2026-10-22):** 伊沃斯公学 → Ivos Koleji (公学 = kolej, words.md); ayna efsunu → "Gitmek bilmeyen Kahraman Ruhu, Hakiki Hâlık'ın Maiyeti, Mukadderata nazar eden Gözler" (words.md §VII; Ouroboros'un tazim isminin parçaları).
+> **Sözlükte olmayanlar (soru):** 尤妮娜 Yonina, 克里斯 (Selena'nın ağabeyi Chris?), 赛薇娅拉 (konferansçı), 拉姆德小镇 (132).
 
 ### N-SEL1.1
 
@@ -1905,7 +1906,8 @@ Yayımlanmış 55 ¶1 (kartlar oyuncak gibi), ¶17 如果他没有撒谎，那�
 > **Görünüm (konuşan):** 101–102 (meyhanede Klein'la), 128–129 (kontrolünü yitiren eski tayfası). Anılır: 68 (İhtiyar Neil'in tarifi), 105, 130, 132, 163. Ad: 斯维因 Swain.
 > **Kullanıcı bilgisi (2026-10-22):** Donghua'da daha çok sahnesi var, wiki bir şey söylemiyor; İhtiyar Neil'le dost bir eski Tecziyeci olarak okunabilir.
 > **Mertebe:** 暴怒之民 Hiddet Halkı (8); reddettiği 航海家 Gemici (7).
-> **Sözlükte olmayanlar (soru):** 恶龙酒吧 (İng. "Evil Dragon Bar"; haritada "meyhane" diye geçici; Ejder/ejder/ejderha kuralı uygulanacak), 阿德米索尔 (128 ¶39).
+> **Ad kararları (2026-10-22):** 恶龙酒吧 → Habis Ejderha Barı (酒吧 = Bar, Vahşi Yürek Barı kalıbı; 恶 = habis, 恶灵 = habis ruh ile aynı; Aşkın tarafı değil, 'ejderha').
+> **Sözlükte olmayanlar (soru):** 阿德米索尔 (128 ¶39).
 
 ### N-SWN1.1
 
