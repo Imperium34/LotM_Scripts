@@ -622,6 +622,11 @@ Doğal dil: 5 ilk sözü 阁下，这是哪里？; 6 ¶16, ¶69; 7 ¶4, ¶18, ¶
 
 Tasarım kararı (çevirmen). Kaynakta yakın anlar: 519 Susie'ye sarılıp 谢谢，谢谢…… (sonra 我们以后互相治疗); 1393 sesi 略显低哑, öteki Audrey 带着哭腔.
 
+### N-AUD1.7
+
+Kullanıcı kararı (2026-10-22), çeviri katmanı (ozgun): Klein'ın iç sesinde yalnız genç üyelere (Audrey, Derrick, Emlyn) yakın ad; Audrey için “正义”小姐 → "Adalet Hanım", anlatı ve konuşmada "Adalet Hanımefendi"; çıplak kod çıplak kalır. Yayımlanmış: 36 ¶29 如果“正义”小姐能够影响她的亲属 (iç ses → Adalet Hanım); ¶31 不过，“正义”应该不会主动去做 (çıplak → Adalet); ¶23 “倒吊人”先生，听起来你有个不太好的上司…… (Alger, iç seste Beyefendi kalır); 58 ¶71 (anlatı, Hanımefendi). 60 ¶13 克莱恩暗自为“正义”小姐喝了声彩, ¶51 他确定“正义”小姐有这方面的基因 (anlatı). 487 (Klein'ın iç sesi, beş üye): 代表着心理炼金会…的“正义”小姐，代表着风暴教会…的“倒吊人”先生，…的小“太阳”，…的“魔术师”小姐，以及代表着血族的“月亮”.
+**Denetim:** 36, 58, 60, 487 (ZH; 36 ve 58 ¶ ZH/TR, 60 ve 487 ZH/EN).
+
 ## Alger Wilson
 
 > **Numaralama:** N-AUD'daki not geçerli.
@@ -831,6 +836,11 @@ Kural, Divan_Rule 1.1'deki kolonizasyon ölçütüne dayanan bir öngörüdür. 
 1216 ¶8 kendi tahliliyle Başbuğ'un niyetini çözer; ¶20 即使您想将我留在白银城，我也要申请前往; ¶18 Colin: 你的成长比我预想得更好. 1266 ¶9–12 Meclis'e girer (带着鼻音道: 是，首席阁下！). 1267 ¶9 再等一等; ¶21 低沉说道: 出发。 1277 ¶20 沉稳说道 (Tarot'ta söz alıp şart koşar). 1298 ¶64 保持着外表的严肃: 我们立刻去找首席…. 1323 ¶22 抱歉，我需要把刚才说的先记下来. 1393 ¶54 Soytarı: 你已经足够成熟和稳重.
 **Denetim:** 1216, 1266, 1267, 1277, 1298, 1323, 1393 (ZH).
 **Karar** (kullanıcı, 2026-10-20): 是，首席阁下 → "Baş üstüne, Başbuğum." (Dede Korkut sicili; modern askerî "Emredersiniz" Kolluk haritasındadır).
+
+### N-DER1.9
+
+小“太阳” 193 geçiş / 126 bölüm (274'ten); 123'ü düz anlatıdadır, her bakış açısında: 463 ¶33 经过拯救小“太阳”行动，她对白银城… (Fors); 593 ¶18 对于小“太阳”的话语，“正义”奥黛丽… (Audrey); 767 ¶40 阿尔杰详细地为小“太阳”讲解了具体的情况 (Alger). Klein'ın iç sesi: 295 ¶24 男性？“倒吊人”先生，还是小“太阳”？; 314 ¶7 换一个问题？小“太阳”，你太耿直了……; 593 ¶4–5. Replikte tek geçiş 485 (Klein'ın kendi kendine). “太阳”先生 yalnız 4 geçiş: 237 ¶56 (Audrey), 311 ¶6, 313 ¶26 (Fors, ilk toplantılar), 958. Kullanıcı kararı (2026-10-22): 小“太阳” → "küçük Güneş".
+**Denetim:** 237, 295, 311, 313, 314, 463, 485, 593, 767 (ZH).
 
 ---
 
@@ -1473,6 +1483,11 @@ Tayf aşaması: 338 苍白的脸孔，精致的五官，有种人偶般的美感
 ### N-EML1.5
 594 ¶62 我已经是一名男爵了; 609 ¶59 略显高傲地微笑道; 610 ¶5 有，就报价格，没有，就坦白讲。当然，我很确定你有; ¶12 轻抬下巴，优雅笑道; 716 ¶75 血族！(咬牙).
 **Denetim:** 594, 609, 610, 716 (ZH).
+
+### N-EML1.6
+
+Klein'ın iç sesinde (克莱恩 + …… paragrafları) Emlyn: 埃姆林 40, 埃姆林·怀特 20, çıplak “月亮” 9, “月亮”埃姆林 2, 吸血鬼埃姆林 1. “月亮”先生 65 geçişin hiçbiri Klein'ın bir paragrafında değildir; hepsi başkalarının bakış açısıdır (484, 486, 487: Audrey). Örnekler: 406 ¶62–63 吸血鬼埃姆林·怀特… / 克莱恩立刻决定今天去丰收教堂蹲守埃姆林·怀特; 487 以及代表着血族的“月亮”; 959 “月亮”埃姆林瞥了身旁的诗人一眼. Kullanıcı kararı (2026-10-22): iç seste 先生 → "Bey" (genç üyeler kuralı).
+**Denetim:** 406, 484, 486, 487, 959 (ZH).
 
 ### N-CAT1.1
 594 ¶66–72, 595 ¶7–21 Aktar Yolu ve Yol mantığı; 617 ¶6, ¶42 Amon ve Kapkaççı Yolu; 653 ¶15 石怪…‘守护者’的主材料; ¶44 ‘猎人’途径的序列5叫‘收割者’; 647 ¶55–72 Sonia Denizi'nin tehlikeleri (嗓音有些飘忽 ama düz bilgi); 767 ¶61 月亮使者 tarifi.
