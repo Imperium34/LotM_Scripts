@@ -548,7 +548,35 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Ayar:** _"...Teşekkürler." dedi Melissa kısık bir sesle, limonlu pudingi alırken._ — _kısık, tek kelimelik teşekkür; sevinç davranışta_
 **Gerekçe:** → N-MEL1.2
 
+##### MEL1.3 — Takılma: bir bakış ve bir olgu
+
+**Kapsam:** Klein · kardeşinin işine karıştığı anlar
+**Yap:** Takılması da düz bir olgudur, ama tuhaf bir tonla söylenir; asıl iş bakıştadır: ağabeyini tepeden tırnağa süzer, cevabını duyunca bir kez daha uzun uzun bakar (85 ¶28–30). Şakayı açıklamaz, gülmez.
+**Yapma:** Göz kırpan, laf sokan bir takılma; uzun bir alay cümlesi.
+**Ayar:** _"Elizabeth mi?"_ / _"Daha on altı yaşında."_ (85 ¶28)
+**Gerekçe:** → N-MEL1.3
+
 ---
+
+### Melissa'nın Arkadaşları: Selena Wood ve Elizabeth (Toplu Harita) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Melissa'nın eski okul arkadaşları, on altı yaşında (84 ¶71; 85 ¶28). Selena ve Melissa teknik okula, Elizabeth yakındaki Ivos okuluna (伊沃斯公学) gider. İkisi de Ebedî Gece müminidir (Selena'nın adı Azize Selena'dan, 24 yayımlanmış; Elizabeth, 133 ¶74); formüller KLS1.1'dedir. Klein'a "Bay Moretti" derler. Selena'nın ayna kehaneti Fecir Tarikatı'ndan Hanass Vincent'in efsunuyla onu bir habis ruha teslim etmek üzeredir; Klein'la Elizabeth onu kurtarır (85–87).
+
+##### SEL1.1 — Selena Wood: neşeli, meraklı, sır paylaşan
+
+**Kapsam:** 84–111 · arkadaşları, Klein, Angelica
+**Yap:** Şarap kızılı saçlı, cıvıl cıvıl bir kız; seke seke yürür, alçak sesle laf fısıldar (84 ¶40). Mistisizme heveslidir ve bunu oyun gibi oynar; ayna kehanetinin kalıbı masal kalıbıdır (85 ¶48). Sırrı tutamaz, paylaşmayı sever (87 ¶28). Şaka için babasını taklit eder (111 ¶59), gazete başlığını okur gibi takılır. Korkunca sesi incelir, kısa ve kesik konuşur (87 ¶54). Olaydan sonra Elizabeth'ten biraz çekinir.
+**Yapma:** Selena'yı ağırbaşlı yapmak; korkuyu uzun bir yakınmaya çevirmek.
+**Ayar:** _"Ayna ayna, söyle bana, Yonina'nın gönlündeki beyefendi ne zaman çıkagelecek?"_ (85 ¶48); _"Elizabeth… bana ne oldu? Sarhoş mu oldum?"_ (87 ¶49); _"İkimiz Harold Bonmarşesi'ne gidelim mi? Gerçi harçlığımı çoktan bitirdim ama bakıp gezmek de güzeldir."_ (111 ¶30); _"Merhaba, tünaydın Angelica Hanım, sizi yeniden görmek ne güzel."_ (111 ¶63)
+**Gerekçe:** → N-SEL1.1
+
+##### ELZ1.1 — Elizabeth: ciddi, dürüst, korkuya rağmen cesur
+
+**Kapsam:** 84–175 · Selena, Melissa, Klein
+**Yap:** Tombul yanaklı, ciddi bir kız; sorulana dikkatle ve eksiksiz cevap verir (84 ¶71), öğretmeninden azar işitmiş bir öğrenci gibi dik durur (87). Korktuğu hâlde gerekeni yapar: önce tek kelime ("Evet!"), sonra soru ("Tehlikeli mi?"), sonra karar (85 ¶71–73). Rol yapamaz; korkunca kekeler ve sözcükleri tekrarlar (86 ¶51–53, 133). Selena'ya karşı kararlıdır, onu düz bir hükümle uyarır (87 ¶57; 111 ¶10). Bir şüphesini haftalarca belli etmeden saklayabilir (133).
+**Yapma:** Elizabeth'e Selena'nın cilveli neşesini vermek; kekelemeyi her replikte kullanmak.
+**Ayar:** _"Hayır, Selena'yla Melissa'yla eskiden sınıf arkadaşıydık; sonra onlar teknik okula gitti, ben yakındaki Ivos okuluna."_ (84 ¶71); _"Evet!"_ / _"…Tehlikeli mi?"_ (85 ¶71); _"Selena, ben, ben sana bir sürpriz hazırladım, hazırladım; benimle bir dışarı gelir misin?"_ (86 ¶51); _"Hayır Selena, sende bir sorun var; ayna kehanetin kötü bir şeyi başına musallat etti."_ (87 ¶50); _"Ama nasılsa evleneceğiz, nasılsa kendi evimiz olacak."_ (111 ¶10)
+**Gerekçe:** → N-ELZ1.1
 
 ### Dunn Smith `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
@@ -982,7 +1010,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 #### Edward Steve
 
 - **Tarz:** Genç, güler yüzlü bir üye; mesleğe alaycı bir mesafeyle bakar.
-- **EDW1.1 — Alaycı itiraf:** Kehanet yorumlarının muğlaklığını açıkça söyler ve bir espriyle bağlar: _"…Ölüler gelip bana itiraz etmez."_ (49). → N-EDW1.1
+- **EST1.1 — Alaycı itiraf:** Kehanet yorumlarının muğlaklığını açıkça söyler ve bir espriyle bağlar: _"…Ölüler gelip bana itiraz etmez."_ (49). → N-EST1.1
 
 ### Joyce Meyer ve Çevresi (Toplu Harita) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
@@ -1013,6 +1041,27 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Yapma:** Korkuyu sakin bir cümleye çevirmek; şüpheyi kabalığa.
 **Ayar:** _"Hayır, henüz karar vermedim. Biliyorsunuz, o cerrahlar düpedüz kasap, ameliyat masasındaki adam da kütüğün üstündeki bir parça et! … Tanrım, ameliyat masasında ölüp gideceğimden korkuyorum."_ (81 ¶34); _"Hayır, ben yalnızca Bay Moretti'ye güvenirim."_ (82 ¶20); _"Siz gerçek bir Kâhin'siniz."_ (82 ¶42); babası: _"Tanrı seni korusun."_ (83 ¶23)
 **Gerekçe:** → N-JOY1.3
+
+### Swain (meyhane sahibi, eski Tecziyeci) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Tingen'deki Aşkın pazarının yeri olan meyhanenin sahibi; Tingen Salahiyetli Tecziyecileri'nin eski kaptanı, söylentiye göre kraliyet donanmasında da bulunmuş (101 ¶68). Denizci Yolu'nda Mertebe 7, Hiddet Halkı; Denizci Yolu'nda bir sonraki Mertebeye yükselebilecekken kontrolünü kaybetmekten korkup vazgeçmiştir (68 ¶46). İhtiyar Neil'den yaşlı, içkiye düşkün ("içkiden ölmeyi dileyen ihtiyar herif", 68 ¶39); pazardaki bütün kazancın yirmide biri ona gider, yüksek faizle borç verir (68 ¶39–43). Mavi gözlü, kalın kollu, bir subay duruşu var. Fırtınalar Hâkimi Kilisesi'ndendir (KLS1.3).
+**Onay:** _"Evet."_ (101 ¶74'teki kesin 肯定回答)
+
+##### SWN1.1 — Meyhanede: güler yüzlü tefeci
+
+**Kapsam:** 101–102 · Klein, müşteriler
+**Yap:** Gülerek, rahat bir babacanlıkla konuşur ("heh heh", 笑呵呵); borç teklifini bir nezaket gibi sunar. Hafızası iyidir, soruyu dolambaçsız cevaplar. Gece Şahinleri'yle tanıdık bir laf atar (101 ¶71).
+**Yapma:** Kaba bir korsan ya da sert bir asker ağzı; Fırtına deyişini her cümleye serpmek.
+**Ayar:** _"İhtiyar Neil sana benden bahsetmiştir; buranın sahibi Swain benim."_ (101 ¶67); _"Paran sıkışırsa bana gelebilirsin."_ (101 ¶69); _"Heh heh, sen de tıpkı sizin, şey, sizin başınız gibisin."_ (101 ¶71); _"Hatırlıyorum, gelip bana Hornacis'in ana zirvesiyle ilgili yazma ve eşya olup olmadığını sordu."_ (101 ¶74)
+**Gerekçe:** → N-SWN1.1
+
+##### SWN1.2 — İş başında: eski kaptan
+
+**Kapsam:** 128–129 · kontrolünü yitiren eski bir tayfası
+**Yap:** Sarhoş yaşlı adam bir anda kaptan olur: kısa, emir kipinde, tek cümlelik görev dağıtımı; adımı genç Gece Şahinleri'ni koşturur (129 ¶9). Yirmi otuz yıllık yoldaşını öldürürken söz yoktur; acı anlatıdadır.
+**Yapma:** Buyruğa gerekçe ya da duygu eklemek; acıyı söze dökmek.
+**Ayar:** _"Tecziyeci müfrezesinden biri yakınlarda şirazeden çıktı; sıradan insanlara zarar vermeden onu halletmeliyiz!"_ (128 ¶71); _"Bana yardımcı ol!"_ (129 ¶7); _"Şu gemide. … Onu etkilemem, tutmam için bana yardım edin; gerisini ben hallederim."_ (129 ¶20)
+**Gerekçe:** → N-SWN1.2
 
 ## Tingen Şubesi — Destek Personeli
 

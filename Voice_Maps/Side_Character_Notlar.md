@@ -131,6 +131,11 @@ Konuşması kısa ve düzdür: saati onardıktan sonra yalnızca 好了, 简短�
 Tek çatlak hazırlıksız yakalanmaktır: kekeler (11 ¶52 啊，好，好的！; ¶64 我，我，克莱恩…), utanınca elini ağzına kapatır (¶70).
 **Denetim:** 3, 11, 27, 29 (ZH).
 
+### N-MEL1.3
+
+85 ¶28 梅丽莎上上下下打量了自家哥哥几眼，语气古怪地强调了一句：伊丽莎白？… 她也才十六岁。; ¶30 (Klein: 这是正常的学术讨论…) 梅丽莎又深深看了哥哥一眼，然后才道：她就在里面，我让她出来。 Kullanıcı hatırlatması (2026-10-22).
+**Denetim:** 85 (ZH).
+
 ---
 
 ## Dunn Smith
@@ -584,7 +589,7 @@ Kural: 这是规矩 (401 ¶25). Meclis: 这必须通过'六人议事团'的表�
 48 ¶25 gök haritası dersi; 48 ¶47 揉了揉眉心; 49 ¶16 语气正常地将事前的准备详细说了一遍 (Sihirli Ayna Kehaneti); 88 ¶76 ölümü.
 **Denetim:** 48, 49, 88 (ZH/TR).
 
-### N-EDW1.1
+### N-EST1.1
 
 48 ¶48 笑着起身 kendini tanıtır; 49: yorumların muğlaklığı ve 'ölüler itiraz etmez' esprisi (yayımlanmış metin).
 **Denetim:** 48, 49 (ZH/TR).
@@ -1874,3 +1879,39 @@ Yayımlanmış 55 ¶1 (kartlar oyuncak gibi), ¶17 如果他没有撒谎，那�
 
 81 ¶29 (karaciğer); ¶32 博格达苦笑着解释了一句; ¶34 那些外科医生简直就是屠夫…主啊，我怀疑我会死在手术台上。; ¶37 真的？(怀疑); ¶44. 82 ¶14 我想请克莱恩·莫雷蒂先生帮我占卜。; ¶20 不，我只相信莫雷蒂先生…; ¶32–33 真是神奇啊…/ 安娜没有骗我…; ¶39 8便士？您竟然只收8便士？; ¶42 以手按胸，行了一礼…您是一位真正的占卜家。; ¶67 真的？; ¶71 好的，好的。; ¶89 就这样？ 83 ¶21–23 (babası: 主会庇佑你的。在胸口画了三角圣徽; Bogda: 如果这次的药剂再没有作用，我就考虑手术。); ¶28, ¶31.
 **Denetim:** 81, 82, 83 (ZH).
+
+## Melissa'nın Arkadaşları (Selena Wood, Elizabeth)
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
+> **Ayar satırları:** Bütün satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm (konuşan):** 84–88 (Selena'nın doğum günü, ayna kehaneti), 110–111 (konferans, Kehanet Kulübü), 132–133 (Elizabeth'in kâbusu), 156 (hizmetçi seçimi). Selena'nın adı: 赛琳娜·伍德 Selena Wood (210 ¶; Azize Selena'dan, 24 yayımlanmış). Elizabeth: 伊丽莎白.
+> **Kullanıcı bilgisi (2026-10-22):** Melissa'nın arkadaşlarından biri kehanete meraklıydı ve bir habis ruhun eline geçiyordu (Selena). Melissa, Klein'a Elizabeth'in daha reşit olmadığını hatırlatarak takılır (MEL1.3).
+> **Sözlükte olmayanlar (soru):** 伊沃斯公学 (İng. "Ivos Public School"; haritada "Ivos okulu" diye geçici), 尤妮娜 Yonina, 克里斯 (Selena'nın ağabeyi Chris?), 赛薇娅拉 (konferansçı), 拉姆德小镇 (132). Ayna kehaneti efsunu: 徘徊不去的英灵，真实造物主的眷属，凝视命运的眼睛 (87 ¶61; Fecir Tarikatı'nın efsunu, tazim kalıbı; karar bekliyor).
+
+### N-SEL1.1
+
+84 ¶40 略有点蹦跳地引着兄妹三人往内，时而音量正常地说'伊丽莎白已经到了'，时而压低嗓音对梅丽莎道'你两位哥哥比我想象得英俊'。 85 ¶48 轻咳两声，一本正经地摩挲着镜子背面道：魔镜魔镜告诉我，尤妮娜心目中的绅士什么时候才会出现？(Pamuk Prenses kalıbı → "Ayna ayna, söyle bana"). 86 ¶52 真的吗？你不是送过生日礼物了吗？; ¶62 伊丽莎白，我感觉你很紧张，很害怕，为什么？; ¶64, ¶66 惊喜？这就是惊喜？ 87 ¶28 (Elizabeth) 她喜欢和别人分享秘密。; ¶49 伊丽莎白……我怎么了？喝醉了吗？; ¶54 我，我不记得了……; ¶61 (efsun). 111 ¶5 (fısıltı: 她似乎是风暴之主的信徒…); ¶28; ¶30 我们两个人去哈罗德百货商店吧？虽然我早就花光了私房钱…; ¶53 我想到我的神秘学老师凡森特先生了…; ¶56; ¶59 故意学着父亲叹息的样子道：哎，我现在的状态不适合给自己占卜。; ¶63 哈喽，下午好，安洁莉卡小姐…; 111 sonu (gazete başlığı taklidi). 111 ¶10 sonrası: 赛琳娜一直有些害怕伊丽莎白.
+**Denetim:** 84, 85, 86, 87, 111 (ZH).
+
+### N-ELZ1.1
+
+84 ¶59 脸上有着可爱婴儿肥的伊丽莎白…谢谢你，赛琳娜很喜欢我送的护身符…; ¶67 强调道; ¶71 认真解释道. 85 ¶33 一脸迷茫…莫雷蒂先生，你究竟有什么事情？…; ¶38 是的，我甚至认为你是神秘学专家。; ¶40 险些拔高了音量，忙伸手捂住嘴巴; ¶71 想！…危险吗？; ¶73 紧抿嘴唇几秒道：一定的危险……需要我做什么？; ¶75 郑重颔首道：好的。 86 ¶51 结巴着笑道：赛琳娜，我，我有个惊喜给你，给你…; ¶53 惊喜是，是不会，是不会有任何，任何征兆的。(觉得自己简直毫无表演天分); ¶63 激动，对，激动！ 87 (站得笔直，就像受了老师批评的学生); ¶50 异常严肃地回答道：不，赛琳娜，你出问题了…; ¶52 半真半假道; ¶57 郑重地说道：…答应我，不要再尝试了…; ¶60 故作随意地问道. 111 ¶8, ¶10 毫不犹豫地反驳道：可我们终究会结婚…; ¶31 状似随口般问了一句. 132 ¶55; ¶63; ¶65 (kâbus); 133 ¶4 好的，好的。(小鸡吃食般点头); ¶10; ¶52 真的？太好了！谢谢你，莫雷蒂先生！; 133 (Klein: 她刚才竟然一点异常都没有表现出来); ¶74 (Ebedî Gece mümini). 156 ¶56, ¶61.
+**Denetim:** 84, 85, 86, 87, 111, 132, 133, 156 (ZH).
+
+## Swain
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
+> **Ayar satırları:** Bütün satırlar Claude'un çevirisidir.
+> **Görünüm (konuşan):** 101–102 (meyhanede Klein'la), 128–129 (kontrolünü yitiren eski tayfası). Anılır: 68 (İhtiyar Neil'in tarifi), 105, 130, 132, 163. Ad: 斯维因 Swain.
+> **Kullanıcı bilgisi (2026-10-22):** Donghua'da daha çok sahnesi var, wiki bir şey söylemiyor; İhtiyar Neil'le dost bir eski Tecziyeci olarak okunabilir.
+> **Sözlükte olmayanlar (soru):** 恶龙酒吧 (İng. "Evil Dragon Bar"; haritada "meyhane" diye geçici; Ejder/ejder/ejderha kuralı uygulanacak), 航海家 (Denizci Yolu Mertebe 6 adı sozluk.yml'den alınacak), 阿德米索尔 (128 ¶39).
+
+### N-SWN1.1
+
+68 ¶39 所有的收益要给斯维因二十分之一，啊，他是恶龙酒吧的老板，前'代罚者'小队的队长，比我年纪还大，是一个希望死于酗酒的老家伙。; ¶43 他会收取非常高昂的利息……; ¶46 不，只是'暴怒之民'…其实斯维因有机会成为'航海家'的，但他害怕失控，选择了放弃。 101 ¶67 蓝眼老者胳膊粗壮，肌肉结实，很有军官的气质…我是这里的老板斯维因。; ¶68 (Klein: 据说曾经还当过皇家海军); ¶69 斯维因笑着提了一句; ¶71 笑呵呵说道：你和你们，嗯，你们头儿真像。; ¶74 仔细看了一眼，肯定回答道：我记得他… 102 ¶9 凡森特是廷根市比较有名的占卜师，经常到我这里来…
+**Denetim:** 68, 101, 102 (ZH).
+
+### N-SWN1.2
+
+128 ¶71 褐发乱糟糟，身上有浓烈酒味的斯维因沉声回答道：有个'代罚者'小队的成员在附近失控了，我们必须在他对普通人造成伤害前，解决他！ 129 ¶7 异常简短地回答道：做我的辅助！; ¶9 (Klein ona yetişmek için koşar); ¶20 那艘船上…你们帮助我影响他，控制他，之后的事情就交给我来处理。; ¶81 (İhtiyar Neil: 他跟随了斯维因二三十年…). 130 ¶1 (Swain cesedin başında; söz yok).
+**Denetim:** 128, 129, 130 (ZH).
