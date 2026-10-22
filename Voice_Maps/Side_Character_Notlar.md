@@ -1966,3 +1966,31 @@ Yayımlanmış 55 ¶1 (kartlar oyuncak gibi), ¶17 如果他没有撒谎，那�
 
 494 ¶66 你就是'公正的艾尔兰'？ 496 ¶18; ¶39 如果是我，我不会这样，我要购买一个很大的庄园…可以晒到阳光的大房间…; ¶42. 497 ¶25 堂娜，丹顿，该回去了… 505 ¶26 在海上，悬赏金额在300镑以上的海盗都相当厉害…; ¶32.
 **Denetim:** 494, 496, 497, 505 (ZH).
+
+## Arianna (Sır Hâdimi)
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
+> **Ayar satırları:** Bütün satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm (konuşan):** 992 (ilk karşılaşma; Gece arması), 1024 (Amon'un Backlund avatarı), 1029–1032 (Qonas Kilgor'un ruhu; Kan İmparatoru kalıntısı; başpiskoposlar), 1053–1054 (Hvin Rambis'in ruhu; yıldızdan gelen eser), 1164–1165 (Klein'ın ricasıyla onu öldürür), 1283–1289 (Belltaine, 0-02). Ad: 阿里安娜 Arianna; Azize Arianna Katedrali (words.md) onun adını taşır.
+> **Ad kararları (2026-10-22, kullanıcı onayı):** 殿下 → "Arianna Hazretleri" (bir kez; sonra "Hanım" — ağırlıkça denk bir düşüş, melek hitabı olmasa da); 女士 → Hanım (Klein'ın ağzında), krizde "Hanımefendi"; 苦修士 → çilekeş (苦修会 = Çilekeş Tarikatı), 苦修士首领 → çilekeşlerin başı; 黑夜修道院 → Gece Manastırı; 黑夜纹章 → Gece arması (纹章 = arma). Mevcut: 隐秘之仆 → Sır Hâdimi, 大主教 → Başpiskopos.
+> **Sözlükte olmayanlar (haritada kullanılmadı):** 冕下, 宗座, 圣座, 教廷 (992 ¶10'daki hitap düzeni), 地上天使, 光与影的协奏曲 (1029 ¶56), 特伦索斯特黄铜书 (0-02), 玫歌庄园 → Maygur Malikânesi (İng. "Maygur Manor"; haritada bu biçimle, onay bekliyor).
+
+### N-ARI1.1
+
+992 ¶2 那身穿简陋长袍的女士轻轻颔首道：阿里安娜，隐秘之仆。; ¶9–10 下午好，阿里安娜殿下。(Kilise hitap düzeni: melekler 殿下, papalar 冕下, 宗座/圣座); ¶12 我是一名苦修士，你可以直接称呼我女士。; ¶13 是，阿里安娜女士。; ¶14 平和地看了他两秒，直接问道. 1024 ¶24 (tarif: 简陋长袍，腰系树皮绳带，披着头发，赤着双脚…黑夜教会十三位大主教中排名第一的苦修士首领); ¶30 等他出来，找机会抓住他。; ¶33 平静解释了一句：是你出手，不是我。; ¶35; ¶38 简洁回答道：你的玫歌庄园内。; ¶46 好。; ¶47 (Klein: 竟然都没问我要做什么准备). 1030 ¶23 一点也不傲慢地回礼道; ¶32; ¶69 好。 1031 ¶75 很隐秘。 1283 ¶28 对。…然后身影淡化，消失在了原地。
+**Denetim:** 992, 1024, 1030, 1031, 1283 (ZH).
+
+### N-ARI1.2
+
+1029 ¶15 你刚才去了哪里？; ¶20 那个遗迹位于哪里？曾经属于谁？现在被用来做什么？(…所以没从简单问题开始，直接就进入了正题); ¶25 沉默了下来，过了两三秒才道; ¶28; ¶30 是谁让你参与地下遗迹之事的？/ 哪些人可以进入遗迹的深处？; ¶36, ¶38, ¶41 细致问道. 1053 ¶15 相当直接地问道; ¶19 未露出意外的表情，追问道; ¶24 默然了一秒，转而问道; ¶28 语速不快不慢; ¶38 没任何表情变化地问道; ¶48 一点间隔也没有地追问道; ¶54 你有什么想问的？
+**Denetim:** 1029, 1053 (ZH).
+
+### N-ARI1.3
+
+992 ¶11 在胸口顺时针点了四下，姿态虔诚地回应道：愿女神庇佑你。; ¶23 这是属于我的黑夜纹章…(简单描述道); ¶31 赞美女神。 1054 ¶9 里面的精神烙印都被清除了。; ¶18 语速不快不慢地说道：它来自星空，你最好不要使用…; ¶24–26 对，星空。/ 是的。(daha fazla açıklamaz); ¶36 我的建议是，将它献祭给女神…
+**Denetim:** 992, 1054 (ZH).
+
+### N-ARI1.4
+
+1283 ¶6, ¶9 拉里昂出逃前毁掉了全部的'0'级封印物资料。; ¶23–24 神情宁和地颔首道…所以，最好分开行动…; ¶27 不。…泄密是指… 1287 ¶13 拉里昂是怎么说的？; ¶37 沉默地观察了一阵后，突然说道：我试着'隐秘'那张桌子下的泥土，让'0-02'坠入地心，你提高警惕，防止意外。; ¶50 (Klein: 女士…). 1289 ¶5 缓慢地摇了下头：没有必要，错过这次，还有下次。; ¶38–40 (eylem). 1164 ¶48 黑夜修道院院长，苦修士首领，'隐秘之仆'，地上天使; ¶53 (Klein'ın ricasıyla onu öldürür).
+**Denetim:** 1164, 1283, 1287, 1289 (ZH).

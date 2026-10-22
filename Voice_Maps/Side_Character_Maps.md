@@ -2680,6 +2680,43 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Ayar:** _"Ortadeniz kıyısında, Indo'da doğdum; savaşa ve öldürmeye düşkün biriydim."_ / _"Ağır suçlar işledim, Sonia Denizi'ne kaçtım ve gaddar bir korsan oldum."_ (306); _"Sana teşekkür ederim, dostum."_ (309)
 **Gerekçe:** → N-UTR1.4
 
+### Arianna (Sır Hâdimi) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Ebedî Gece Kilisesi'nin on üç Başpiskopos'unun birincisi, Gece Manastırı'nın başı, çilekeşlerin başı; Uykusuz Yolu'nda Mertebe 2, Sır Hâdimi; yeryüzünde yürüyen bir melek (992 ¶2, 1024 ¶24, 1164 ¶48). Sade bir cüppe, ağaç kabuğundan bir kuşak, dağınık saçlar, çıplak ayaklar; kara, sakin gözler. Sözü olabildiğince azdır ve hep sakindir (平静); kibirsizdir (1030 ¶23). Klein ilk karşılaşmada ona meleklere verilen hitapla seslenir, "Arianna Hazretleri" (殿下); Arianna bir çilekeş olduğunu söyleyip "Hanım" denmesini ister (992 ¶9–13). Sonra Klein'ın ağzında hep "Arianna Hanım"dır; kriz anında yalnız "Hanımefendi" (女士, 1287 ¶50). Hitaptaki bu düşüş kaynaktadır: Hazretleri'nden Hanım'a inmek, bir meleğin kendini sıradan bir çilekeş saymasıdır.
+**Onay:** _"Olur."_ (1024 ¶46, 好。); _"Evet."_ (1283 ¶28, 对。)
+
+##### ARI1.1 — En az söz
+
+**Kapsam:** Bütün görünümleri · Klein, başpiskoposlar, herkes
+**Yap:** Kısa, düz, sakin tespitler; çoğu cevap tek kelime ya da tek cümle. Açıklamayı yalnız gerekiyorsa ekler ve o da tek cümledir. Söylemediğini sormaz, karşısındakinin hazırlığını merak etmez (1024 ¶47). Görüşmeyi bir sözle değil, kaybolarak bitirir (1283 ¶28).
+**Yapma:** Nezaket dolgusu, ünlem, duygu kelimesi; bir meleğe yakışır diye ağdalı bir dil.
+**Ayar:** _"Arianna, Sır Hâdimi."_ (992 ¶2); _"Ben bir çilekeşim; bana doğrudan Hanım diyebilirsin."_ (992 ¶12); _"O çıkınca bir fırsatını bulup onu yakala."_ / _"Elini süren sen olacaksın, ben değil."_ (1024 ¶30, ¶33); _"Senin Maygur Malikânesi'nde."_ (1024 ¶38); _"Çok gizli."_ (1031 ¶75)
+**Gerekçe:** → N-ARI1.1
+
+##### ARI1.2 — Sorgu: ara vermeden, doğrudan
+
+**Kapsam:** 1029, 1053 · ruhların sorgusu (Qonas Kilgor, Hvin Rambis)
+**Yap:** Kolay sorudan başlamaz, doğrudan konuya girer (1029 ¶20). Sorular arka arkaya ve arasız gelir (1053 ¶48); bir cevap şaşırtsa da yüzü değişmez, susup sonraki soruya geçer. Bittiğinde sırayı Klein'a bırakır.
+**Yapma:** Sorguyu tehditle ya da yorumla süslemek.
+**Ayar:** _"O kalıntı nerede? Kime aitti? Şimdi ne için kullanılıyor?"_ (1029 ¶20); _"Kalıntıya girmeni kim istedi? / Kalıntının derinlerine kimler girebiliyor?"_ (1029 ¶30); _"Neden III. George'a yardım ediyorsunuz?"_ (1053 ¶15); _"Senin soracağın bir şey var mı?"_ (1053 ¶54)
+**Gerekçe:** → N-ARI1.2
+
+##### ARI1.3 — Sade iman, somut öğüt
+
+**Kapsam:** Dua, öğüt, Mühürlü Eserler
+**Yap:** Kilisenin kalıpları kısa ve sadedir (KLS1.1): _"Tanrıça seni himaye etsin."_, _"Tanrıça'ya medholsun."_; göğsüne saat yönünde dört kez dokunur (992 ¶11). Öğüdü somut bir talimattır, gerekçesi tek cümle (1054 ¶18, ¶36). Gece arması verirken bile kullanımı madde gibi anlatır (992 ¶23).
+**Yapma:** Vaaz tonu; öğüdü uzun bir tehlike anlatısına çevirmek.
+**Ayar:** _"Bu benim Gece armam. Kendi başına bir hasleti, bir gücü yok; tek işi, harekete geçirildiğinde dünyanın neresinde olursan ol seni bana bağlaması."_ (992 ¶23); _"Yıldızlardan geliyor; kullanmasan iyi olur, mümkünse yanında bile taşıma."_ (1054 ¶18); _"Benim tavsiyem, onu Tanrıça'ya kurban etmen."_ (1054 ¶36)
+**Gerekçe:** → N-ARI1.3
+
+##### ARI1.4 — Krizde: tek cümlelik yöntem
+
+**Kapsam:** 1283–1289 · Belltaine, 0-02
+**Yap:** Gözlemler, sonra yöntemi tek cümlede söyler ve uygular (1287 ¶37). Aceleyi reddeder (1289 ¶5).
+**Yapma:** Planı uzun uzun gerekçelendirmek.
+**Ayar:** _"O masanın altındaki toprağı 'gizlemeyi' deneyeceğim, 0-02 yerin merkezine düşsün; sen tetikte ol, bir aksilik olmasın."_ (1287 ¶37); _"Gerek yok; bu sefer olmazsa bir dahaki sefer olur."_ (1289 ¶5)
+**Gerekçe:** → N-ARI1.4
+
 ## 12. İlahların Metruk Diyarı — Gümüş Şehir
 
 ### Gümüş Şehir Ahalisi (Toplu Harita) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
