@@ -2122,6 +2122,117 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Ayar:** _"Orası tehlikeli, çok tehlikeli…"_ (836 ¶82); _"Hayır, o yöntem iz sürülmekten kaçmak içindi, o yüzden konağın etiyle kaynaşmak gerekiyordu; bu sefer gerek yok. Midende sessizce dururum."_ (841 ¶24)
 **Gerekçe:** → N-AUR1.5
 
+---
+
+**Not (Ruhiyat Simyagerleri):** Seyirci Yolu Aşkınlarının cemiyeti; Hermes'in kalıntılarının kazısından doğmuştur, Hermes de Âdem'in Gurûb Münzevîleri'ndendir (1047 ¶53). Başında Reis vardır (会长); Reis yedi azalı Şûra'ya (评议团) başkanlık eder. Her aza, Kadim Güneş Tanrısı'nın kutsal kitabından gelen yedi şahsiyet maskesinden (人格面具) birini kod adı olarak taşır: Kibir, Hiddet, Haset, Tamah, Şehvet, Oburluk, Tembellik (1317–1318). Maske ilgili duyguyu ve idraki büyütür, farkına varılmadıkça taşıyanın şahsiyetini değiştirir (1318 ¶22–23). Her aza bir şehirden sorumludur (1318 ¶49).
+**Ortak sicil (yorum): ruhiyat ilmi.** Dayanak: Seyirci Yolu Kadir-i Mutlak yol grubundadır ve Mertebe adları tasavvufa yaslanır (Telkinci, Hülya Sâliki, Kurgucu, Hülya Dokuyan, Mümeyyiz, Musavvir); cemiyetin adı "Ruhiyat"tır; maskeler Kadim Güneş Tanrısı'nın kitabından gelir. Zihin konuşulurken psikoloji Osmanlı ve tasavvuf ruhiyatının kelimeleriyle kurulur: nefs, şuur, şuuraltı (Külli Şuur-altı Deryası), telkin, vehim, hâl, tesir. Audrey'nin klinik mesafesi (AUD1.5) bu katmanın ölçüsüdür. Mertebeye göre artar: Escalante ve Hilbert'te hafif, Hvin'de güçlü ama nazik hocanın altında, Derlau'da en güçlü. **Âdem'den ayrım:** bunlar ilim ehlidir, mürşit değil. Âdem'le hâl ve nefsi paylaşabilirler; sabır, takdir, rıza, imtihan gibi ibadet ve teslimiyet kelimeleri onlara verilmez.
+
+### Hvin Rambis (Kibir) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Saray müşaviri ve Ruhiyat Simyagerleri Şûrası'nın azası; Seyirci Yolu'nda Mertebe 4, Kurgucu (1052 ¶68). Halkın gözünde nazik bir ihtiyar, âlim, iyi bir adam ve tam bir beyefendidir; on yıldan fazladır saray müşaviridir, başkalarına yardım etmesiyle tanınır (893 ¶4, ¶9). Audrey'ye konuşan sesi bu yüzdür: güler yüzlü, şakacı, babacan bir hoca. Altında soğuk bir Kurgucu vardır: Audrey'nin bilinç adasında aynı adam ifadesiz ve karanlıktır (974 ¶27, 975 ¶11). Dikkatli ve muhafazakârdır (1048 ¶51). Kibir maskesinin tesirine kendisinin sandığından çok kapılmıştır ve bunu iyi gizler (1318 ¶20): kibir sözüne girmez, yalnız düşüncesinde ve ufak tepeden bakışlarda görünür. Audrey'ye "sen" der, ona "kızımız" diye seslenir; Audrey ona "Rambis Bey" der (下午好，兰比斯先生).
+**Onay:** _"Peki."_ (1015 ¶22, 好的。); başını hafifçe sallar (轻轻点头).
+
+##### HVN1.1 — Halkın yüzü: babacan hoca
+
+**Kapsam:** 973–1046 · Audrey, cemiyet üyeleri
+**Yap:** Sıcak, güler yüzlü, şakalı bir hoca. Cümleyi bir gülümsemeyle ya da hafif bir "heh"le açar (呵呵笑道, 慈和笑道). Şûra azalığını bir ünvan gibi değil, bir üniversite hocalığı gibi sunar. Övgüsü cömerttir.
+**Yapma:** Soğuk, buyurgan ya da tehditkâr bir cümle; övgüyü abartılı bir süse çevirmek.
+**Ayar:** _"Şaşırdın mı?"_ (973 ¶66); _"Bunu dert etme. Unutma, biz Ruhiyat Simyagerleri zihin âleminin ilmini tetkik için kurulmuş bir cemiyetiz; işten çok ilimle uğraşırız. Heh, madem ilim, şu aza dedikleri kişiyi bir üniversite hocası say."_ (974 ¶4); _"Tünaydın, kızımız."_ (1015 ¶7)
+**Gerekçe:** → N-HVN1.1
+
+##### HVN1.2 — Ders: sabırlı ve eksiksiz
+
+**Kapsam:** 974, 1015 · Rol İfası, iksir, ayin
+**Yap:** Uzun, açık ve sıralı anlatır; gerekçeyi "kısacası" diye toparlar, bilmediği alanı açıkça sınırlar (974 ¶43). Ruhiyat katmanı burada görünür: nefs, şuur, tesir. Görevi verirken ciddileşir ama nazik kalır.
+**Yapma:** Bilgiyi bilmeceye çevirmek; dersi kısa kesmek.
+**Ayar:** _"Çok yeteneklisin; Rol İfası'nı kendi başına bulmuşsun."_ (974 ¶36); _"Bu, üyelerin kendilerine benzemez hâle gelmesine yol açar; kimileri iksirin bıraktığı tesirle bütünleşip gider."_ (974 ¶41); _"Bu yüzden, iş görme kabiliyetinden yoksun birini Mertebe 5'e yükseltemeyiz."_ (974 ¶46)
+**Gerekçe:** → N-HVN1.2
+
+##### HVN1.3 — Telkin: maskenin altındaki ses
+
+**Kapsam:** 974–1046 · Audrey'yi telkin altına aldığı anlar
+**Yap:** Aynı yumuşak sesle verilir ama yapı değişir: madde madde buyruklar ("Birincisi…, İkincisi…"), sonra "hatırla… ardından unut…" kalıbı. Mantıksız bir vaadi sakin bir kesinlikle söyler; anlatı onun inandırıcılığını bilinç adasında gösterir (974 ¶51). Hızı ne yavaş ne hızlıdır (语速不快也不慢).
+**Yapma:** Telkini ürkütücü bir fısıltıya ya da ağdalı bir efsuna çevirmek; anlatıdaki karanlık yüzü söze taşımak.
+**Ayar:** _"Merak etme, ona bir zararı dokunmaz; biz yalnızca yarayı kapatmak istiyoruz."_ (974 ¶50); _"Bu sözleri hatırla; bu senin şuuraltının aksidir. Sonra buraya geldiğimi, sana bunları söylediğimi unut…"_ (1046 ¶3); _"Senin konumun ve gündelik çevren göz önüne alınınca beni unutacaksın; yalnız Hilbert'i, Stephen'ı ve Escalante'yi hatırlayacaksın…"_ (975 ¶13)
+**Gerekçe:** → N-HVN1.3
+
+##### HVN1.4 — Kibir: yalnız düşüncede
+
+**Kapsam:** Bütün görünümleri · düşünce ve anlatı
+**Yap:** Kibir onun sözüne girmez; Derlau bile ancak sonradan fark eder (1318 ¶20). Anlatının onun düşüncesini verdiği yerlerde görünür: rakibinin saldırısını gülünç bulur, kendinden zayıfı tehdit saymaz (1052 ¶10, ¶14, ¶68). Audrey'ye karşı ancak ufak bir ayrıntıda sızar: genç bir kızın atılganlığını önemsemeyişinde (1015 ¶22).
+**Yapma:** Kibri replikte açık bir küçümseme, alay ya da kendini övme olarak yazmak.
+**Ayar:** anlatı: _Gehrman Sparrow'un saldırısı ona yalnızca gülünç geldi._ (1052 ¶10); _Kızın küçük bir maceraya atılma hevesini pek umursamadı._ (1015 ¶22)
+**Gerekçe:** → N-HVN1.4
+
+---
+
+### Pauli Derlau (Ruhiyat Simyagerleri'nin Reisi) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Ruhiyat Simyagerleri'nin Reisi; Seyirci Yolu'nda Mertebe 3, Hülya Dokuyan (1365 ¶36). Tekerlekli sandalyede oturan eski usul bir beyefendi. Pek çok kimliği vardır: eski saray tıp müşaviri ve Backlund'daki tıp okulunun eski rektörü, denizde Dört Kral'dan Kara Taht Kralı Barros Hopkins, ünlü münzevi Eric Drake (1053, 1316 ¶65). Sesi sakin ve mülayimdir (平和); karşısındakini kısa sorularla tartar. Kuru, küçük şakaları cümlenin sonuna bir "heh" ile eklenir. Konuşurken sandalyesinin tekerleklerini okşar (摩挲轮椅), ellerini göğsünde kavuşturur. Audrey'ye "sen" der; Audrey ona "Derlau Bey" ya da "Reis Bey" der (1316 ¶67). 1366'da Klein'ın elinde ölür.
+**Onay:** _"Evet."_ (1317 ¶6, 对。); _"Önceki cevapla aynı."_ (1317 ¶63, 和之前的回答一致。)
+
+##### DRL1.1 — Tartan sorular
+
+**Kapsam:** 1316–1318 · Audrey'nin Şûra'ya alınışı
+**Yap:** Kısa, düz sorular; cevabı dinler, gerekirse aynısını yüz yüze bir kez daha sorar. Kendi sınırını da düz söyler (1317 ¶64). Yargısını mülayim bir tonla ve bir şartla bağlar.
+**Yapma:** Sorguyu sert bir tona çevirmek; tehdit etmek.
+**Ayar:** _"Başardın mı?"_ (1317 ¶33); _"Herkesin bir sırrı vardır, bu gayet olağan; benim tartmam gereken, senin sırrının Ruhiyat Simyagerleri'nin selametine dokunup dokunmadığı."_ (1317 ¶47); _"Bunu yüz yüze bir kez daha teyit etmeliyim."_ (1317 ¶56)
+**Gerekçe:** → N-DRL1.1
+
+##### DRL1.2 — Sahne ve kimlik
+
+**Kapsam:** Kendinden söz ettiği anlar
+**Yap:** Kendini bir Seyirci gibi anlatır: kimlikleri roldür, ölüm bir rolün sonudur. Sahne kelimeleri (oyun, rol, perde) yalnız bu konuda gelir.
+**Yapma:** Sahne imgesini her cümleye yaymak.
+**Ayar:** _"Bir Seyirci için ölüm yalnızca bir kimliğin sonudur; başka oyunlarda yaşamaya devam ederim."_ (1316 ¶65); _"Bana Reis Bey diyebilirsin, ya da Derlau Bey demeye devam edebilirsin."_ (1316 ¶67)
+**Gerekçe:** → N-DRL1.2
+
+##### DRL1.3 — Kuru şaka
+
+**Kapsam:** Şûra toplantısı
+**Yap:** Şaka bir düzeltme ya da bir hatırlatma gibi, cümlenin sonuna eklenir; gülüş anlatıdadır (低笑, 笑着). Kendini ciddiye almaz.
+**Yapma:** Şakayı uzatmak ya da ünlemle vurgulamak.
+**Ayar:** _"Bir dostu daha bekleyeceğiz; Şûra'nın yedinci azası o olacak. Heh, sekizinci; kendimi saymayı unuttum."_ (1318 ¶36); _"Ne yazık ki tek seçeneğin kaldı."_ (1318 ¶41); _"Heh heh, unutmuşum: ben de Beş Deniz'in üstündeki Kara Taht Kralı'yım."_ (1318 ¶56)
+**Gerekçe:** → N-DRL1.3
+
+##### DRL1.4 — Maskeler üzerine: ruhiyatın en ağır sesi
+
+**Kapsam:** 1317–1318 · şahsiyet maskeleri, Hvin, zihin âlemi
+**Yap:** Ruhiyat katmanı onda en güçlüdür (Mertebe 3): tesir, nefs, iç kuvvet, idrak. Hükmü genel bir doğru gibi kurar, sonra karşısındakini bununla över.
+**Yapma:** Âdem'in teslimiyet dağarcığı (sabır, takdir, rıza); vaaz tonu.
+**Ayar:** _"Zihin âleminde saf, zararsız bir dış yardım pek bulunmaz; menfi tesirden sakınmak için yeterli bir iç kuvvet gerekir."_ / _"Bunu idrak etmen doğru yolda olduğunu gösteriyor."_ (1318 ¶23–24); _"Kibir onu ayağının altındaki yolu göremez hâle getirir, kendinden zayıf Aşkınları hor gördürür; bu da çoğu zaman büyük bir tehlike doğurur."_ (1318 ¶20)
+**Gerekçe:** → N-DRL1.4
+
+---
+
+### Ruhiyat Simyagerleri — Üyeler (Toplu Harita) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Audrey'yi cemiyete alan Backlund üyeleri. Ortak sicil yukarıdaki nottadır; katman bunlarda hafiftir. Kendi haritası olanlar: Hvin Rambis, Pauli Derlau.
+
+##### RUH1.1 — Escalante Oseleka: konuşkan hoca, kaçamak cevap
+
+**Kapsam:** 339–1317 · Audrey'nin psikoloji hocası, cemiyete davet eden
+**Yap:** Konuşkandır, sohbeti hep sıcak tutar (339 ¶38). Ders verirken düzenlidir; fiyatı düz ve kesin söyler. Kapalı bir konuda konuyu değiştirir ya da bir "heh heh" ile geçiştirir. Susie onu samimi bulmaz (356 ¶67). Audrey ona "Escalante Hanım", sonra "Escalante Hocam" (伊思兰特老师) der.
+**Yapma:** Kaçamağı açık bir yalan ya da sert bir retle vermek.
+**Ayar:** _"Ha, ne münasebet? Meraklıların kurduğu bir sohbet halkası, o kadar."_ (356 ¶64); _"Heh heh, yayılma fırsatı bulması belki bizim için daha faydalı olur."_ (449 ¶29)
+**Gerekçe:** → N-RUH1.1
+
+##### RUH1.2 — Hilbert Alucard: sessiz, saygılı, özenli
+
+**Kapsam:** 339–975 · ruhiyatçı ve mücevher tasarımcısı; Audrey'nin sınavı ve kabulü
+**Yap:** Az konuşur (339 ¶38'de Escalante'nin tersi); konuşunca özenle anlatır, kelimesini tartar ve bunu söyler. Hermes'ten hürmetle söz eder (418 ¶40). Derin konulardan kendi derecesini bilerek uzak durur.
+**Yapma:** Onu Escalante gibi konuşkan yapmak; hürmeti süslü övgüye çevirmek.
+**Ayar:** _"'Derin' kelimesini kullandığım için mazur gör; bence en uygunu bu."_ (418 ¶46); _"Bizim derecemizde bu kadar yüksek meseleleri konuşmamak daha iyi; insan kolayca kendini kaybeder."_ (418 ¶56)
+**Gerekçe:** → N-RUH1.2
+
+##### RUH1.3 — Stephen Hampres: kibar iltifat
+
+**Kapsam:** 405–418 · mobilya tüccarı, toplantının ev sahibi
+**Yap:** Nazik, hoş sohbet, iltifatçı; karşısındakini birkaç cümlede okur ve bunu iltifata çevirir (405 ¶35–38). Audrey'nin okuyuşuna göre görünüşüne düşkün, mali durumunu olduğundan iyi gösteren biridir (405 ¶46–49); bu anlatıdadır.
+**Yapma:** İltifatı alaycı ya da laubali yazmak.
+**Ayar:** _"Hoş geldin, güzel melek hanım."_ (405 ¶38)
+**Gerekçe:** → N-RUH1.3
+
 ## 10. NPC ve Zümre Sesleri (Toplu Haritalar) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
 **İlke: 体面 (saygınlık) merdiveni.** Loen'de sınıfın ölçüsü paradan çok 体面'dir: sergilenen saygınlık ile onu taşıyacak gerçek imkân arasındaki fark. Kaynak bu farkı her basamakta gösterir: eski aristokratlar borçlanıp yine de konumlarına yakışır hayatı sürdürür (177); Backlund orta sınıfı haftada 5 pound'la "gerçek saygınlığın biraz gerisinde" kaldığını hesaplar (231); düşmüş bir beyefendi ekmek kuyruğuna yüzünü saklayarak girer (1143). Defin bile sınıfa göre üçe ayrılır (268). Basamaklar ayrı haritalar değil, aynı eksenin dereceleridir; bitişik iki basamak aynı tınlamamalıdır.
