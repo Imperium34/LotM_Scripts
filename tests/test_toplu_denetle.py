@@ -10,6 +10,7 @@ ceviri_denetle.vurus_kur() kullaniyor ve bu test toplu tarafini
 calistirarak semanin yeniden ayrismasini yakalar.
 """
 
+import re
 import sys
 from pathlib import Path
 
@@ -166,3 +167,12 @@ def test_ikisi_ayni_terimi_tek_satira_indirir(monkeypatch):
     assert ("zh", "Asılmış Adam", "words.md › Tarot") in satirlar     # Cince kazanir
     assert ("en", "Kâhin", "Kâhin Yolu") in satirlar                   # esitlikte sozluk
     assert len(satirlar) == 2
+
+
+def test_mertebe_isaret_deseni_tirnak_ve_序列():
+    d = TD.mertebe_isaret_deseni(re.compile("错误"))
+    assert d.search("序列0“错误”")
+    assert d.search("‘错误’途径")
+    assert d.search("错误途径的非凡者")
+    assert d.search("序列9错误")
+    assert not d.search("这一定是错误的")

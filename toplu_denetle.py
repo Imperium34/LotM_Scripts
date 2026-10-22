@@ -403,8 +403,37 @@ def kaynak_deseni(sorgu, kaynak, duyarsiz):
     return CD.desen_kur_kaynak(sorgu, kaynak, duyarsiz)
 
 
-def terimi_tara(sorgu, adaylar, onbellek, kaynak, hedef, duyarsiz, desen=None):
-    """Tek terim, onceden yuklenmis bolumler uzerinde. tara()'nin ucuzu."""
+def mertebe_isaret_deseni(desen):
+    """
+    Cince bir Mertebe adinin kaynakta Mertebe olarak ISARETLENDIGI yerler:
+    tirnak icinde (‘占卜家’, “愚者”), 序列/序列9'dan hemen sonra ya da
+    途径/魔药/序列'den hemen once.
+
+    Mertebe adlarinin cogu gundelik kelimedir: 错误 Kusur, 痛苦 Maraz,
+    疯子 Meczup, 黑暗 Karanlık. "这一定是错误的" Mertebe degil, "yanlış"tir
+    ve Turkcede de oyle cevrilir (2026-10-23 karari: salahiyet kurali
+    Mertebe adlarina uygulanmaz). Isaretsiz ve karsiligi bulunmayan bir
+    gecis bu yuzden eslesmeyen sayilmaz, 'siradan' kovasina duser.
+    Isaretsiz ama karsiligi bulunan gecis yine eslesti sayilir; tirnaksiz
+    gercek Mertebe gecisleri (哪怕不眠者) boylece kaybolmaz.
+    """
+    p = desen.pattern
+    return re.compile(
+        f"[“‘「『](?:{p})[”’」』]"
+        f"|(?:{p})(?=途径|魔药|序列)"
+        f"|序列[0-9〇零一二三四五六七八九十]*(?:{p})"
+    )
+
+
+def terimi_tara(
+    sorgu, adaylar, onbellek, kaynak, hedef, duyarsiz, desen=None, isaret=None
+):
+    """
+    Tek terim, onceden yuklenmis bolumler uzerinde. tara()'nin ucuzu.
+
+    isaret verilirse (bkz. mertebe_isaret_deseni) her vurusa 'siradan'
+    alani eklenir: kaynak paragrafta terim isaretli olarak gecmiyorsa True.
+    """
     desen = desen or kaynak_deseni(sorgu, kaynak, duyarsiz)
     vuruslar = []
     for no, b in onbellek.items():
@@ -442,6 +471,7 @@ def terimi_tara(sorgu, adaylar, onbellek, kaynak, hedef, duyarsiz, desen=None):
                     ib_dar=ib,
                     genis="komsu" if komsu else None,
                     kayan=i in kayan,
+                    **({"siradan": not isaret.search(p)} if isaret else {}),
                 )
             )
     if vuruslar:
@@ -528,6 +558,11 @@ def ayrinti_yaz(kayit, ust=15, arka_plan=None, elenen=None):
         f"{len(kayit['karantina'])} karantina (hizalama kaymış), "
         f"{len(kayit.get('komsu', []))} komşuda, "
         f"{kayit['tek_tarafli']} hizalanamayan"
+        + (
+            f", {len(kayit['siradan'])} gündelik anlamda (Mertebe olarak işaretsiz)"
+            if kayit.get("siradan")
+            else ""
+        )
     )
     CD.zh_elenen_yaz(elenen)
     if kayit["sayim"]:
@@ -789,12 +824,20 @@ def main() -> int:
         # birakilir (bkz. harf_duyarli_mi).
         duyarsiz = a.duyarsiz or not duyarli
         desen = kaynak_deseni(sorgu, kaynak, duyarsiz)
+        # Mertebe adlari gundelik anlamda da gecer; yalnizca Cincede
+        # isaretli olup olmadigi anlasilabilir (bkz. mertebe_isaret_deseni).
+        isaret = (
+            mertebe_isaret_deseni(desen) if kaynak == "zh" and t.mertebe_mi else None
+        )
         vuruslar = terimi_tara(
-            sorgu, adaylar, onbellekler[kaynak], kaynak, a.hedef, duyarsiz, desen=desen
+            sorgu, adaylar, onbellekler[kaynak], kaynak, a.hedef, duyarsiz,
+            desen=desen, isaret=isaret,
         )
         if len(vuruslar) < a.en_az:
             continue
         sayim, eslesmeyen, karantina, tek, komsu = ozetle(vuruslar)
+        siradan = [v for v in eslesmeyen if v.get("siradan")]
+        eslesmeyen = [v for v in eslesmeyen if not v.get("siradan")]
         eski_g, eski_s = eski_ozeti(
             vuruslar, sayim, eski, gecis_bolumu(t) if a.hedef == "tr" else None
         )
@@ -813,13 +856,16 @@ def main() -> int:
                 "eslesmeyen": eslesmeyen,
                 "karantina": karantina,
                 "komsu": komsu,
+                "siradan": siradan,
                 "tek_tarafli": tek,
                 # Oran YALNIZCA saglam bolgeler uzerinden. Kaymis bolgelerden
                 # gelen eslesmeyenler paydadan da cikarilir, aksi hâlde
-                # hizalama hatasi ceviri hatasi gibi gorunur.
+                # hizalama hatasi ceviri hatasi gibi gorunur. Gundelik
+                # anlamdaki Mertebe gecisleri de ayni sebeple disarida.
                 "oran": (
-                    len(eslesmeyen) / (len(vuruslar) - len(karantina))
-                    if len(vuruslar) - len(karantina) > 0
+                    len(eslesmeyen)
+                    / (len(vuruslar) - len(karantina) - len(siradan))
+                    if len(vuruslar) - len(karantina) - len(siradan) > 0
                     else 0.0
                 ),
             }
