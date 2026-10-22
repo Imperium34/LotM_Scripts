@@ -1760,10 +1760,10 @@ Hampres: 405 ¶32 斯蒂芬·汉普雷斯先生，家具商人; ¶35 微笑道�
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
 > **Ayar satırları:** Bütün satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
-> **Görünüm (konuşan):** 581–583 (Kara Ölüm'de Elaine kılığındaki Klein; saldırı), 588–589 (Katarina ve Azik'in karşısında), 602 (Gehrman'ı tahlil), 1107–1108 (Gehrman'ın elinde; hayat hikâyesi). Anılır: 292, 530, 575 (Edwina'nın tarifi), 578–579 (Elaine'in anlattıkları), 1095–1096. Ad: 特雷茜 (1108'de bir yerde 特蕾茜).
+> **Görünüm (konuşan):** 581–583 (Kara Veba'de Elaine kılığındaki Klein; saldırı), 588–589 (Katarina ve Azik'in karşısında), 602 (Gehrman'ı tahlil), 1107–1108 (Gehrman'ın elinde; hayat hikâyesi). Anılır: 292, 530, 575 (Edwina'nın tarifi), 578–579 (Elaine'in anlattıkları), 1095–1096. Ad: 特雷茜 (1108'de bir yerde 特蕾茜).
 > **Başka haritalarla bağ:** Trissy (TRS1.5; aynı dönüşüm, ters tepki), Edwina (EDW; 575 tarifi), Anderson ve Danitz (1096), Azik (588–589). Klein ona Elaine, sonra Gehrman kılığında konuşur.
 > **Kullanıcı bilgisi (2026-10-22):** Mertebe 7'nin üstündeki her Şeytaniçe gibi önce erkekti, Yolun doğası onu zorla kadına çevirdi; bu yüzden kadınlardan hoşlanır; Roselle'in aşk romanlarını sever. Edwina'nın tarifi (575 ¶44) kullanıcının alıntısıdır.
-> **Ad kararları (2026-10-22, words.md):** 疾病少女 → Hastalık Kızı, 黑死号 → Kara Ölüm, 母亲 → Valide / 妈妈 → anne, 伊莲·索伦 → Elaine Soren (İng. çeviri "Helene" ve "Sauron" der; "Sauron" yankısından kaçmak için Soren, 索伦'in geçerli okunuşu). Mevcut: 疾病中将 → Koramiral Hastalık, 痛苦魔女 → Maraz Şeytaniçe, 不老魔女 → Solmaz Şeytaniçe, 反抗军 → Direniş, 大副 → ikinci kaptan.
+> **Ad kararları (2026-10-22, words.md):** 疾病少女 → Hastalık Kızı, 黑死号 → Kara Veba (黑死病 = Kara Veba; 1096 ¶46'da Anderson gemi adıyla hastalık arasında kelime oyunu yapar), 母亲 → Valide / 妈妈 → anne, 伊莲·索伦 → Elaine Soren (İng. çeviri "Helene" ve "Sauron" der; "Sauron" yankısından kaçmak için Soren, 索伦'in geçerli okunuşu). Mevcut: 疾病中将 → Koramiral Hastalık, 痛苦魔女 → Maraz Şeytaniçe, 不老魔女 → Solmaz Şeytaniçe, 反抗军 → Direniş, 大副 → ikinci kaptan.
 > **Sözlükte olmayanlar (haritada kullanılmadı):** 龙威 (602 ¶59), 巧言者 米索尔·金 (583 ¶54), 三副, 白之魔女 (1107 ¶8; Katarina'nın öteki unvanı), 吉米·内克 (588 ¶45).
 
 ### N-TRC1.1
