@@ -2704,7 +2704,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 ##### ARI1.3 — Sade iman, somut öğüt
 
 **Kapsam:** Dua, öğüt, Mühürlü Eserler
-**Yap:** Kilisenin kalıpları kısa ve sadedir (KLS1.1): _"Tanrıça seni himaye etsin."_, _"Tanrıça'ya medholsun."_; göğsüne saat yönünde dört kez dokunur (992 ¶11). Öğüdü somut bir talimattır, gerekçesi tek cümle (1054 ¶18, ¶36). Gece arması verirken bile kullanımı madde gibi anlatır (992 ¶23).
+**Yap:** Kilisenin kalıpları kısa ve sadedir (KLS1.1): _"Ulu Ece seni himaye etsin."_ (愿女神庇佑你), _"Ulu Ece'ye medholsun."_ (赞美女神); göğsüne saat yönünde dört kez dokunur (992 ¶11). Öğüdü somut bir talimattır, gerekçesi tek cümle (1054 ¶18, ¶36). Gece arması verirken bile kullanımı madde gibi anlatır (992 ¶23).
 **Yapma:** Vaaz tonu; öğüdü uzun bir tehlike anlatısına çevirmek.
 **Ayar:** _"Bu benim Gece armam. Kendi başına bir hasleti, bir gücü yok; tek işi, harekete geçirildiğinde dünyanın neresinde olursan ol seni bana bağlaması."_ (992 ¶23); _"Yıldızlardan geliyor; kullanmasan iyi olur, mümkünse yanında bile taşıma."_ (1054 ¶18); _"Benim tavsiyem, onu Tanrıça'ya kurban etmen."_ (1054 ¶36)
 **Gerekçe:** → N-ARI1.3
