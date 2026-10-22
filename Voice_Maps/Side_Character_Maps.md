@@ -1044,7 +1044,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 ### Swain (meyhane sahibi, eski Tecziyeci) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Tingen'deki Aşkın pazarının yeri olan meyhanenin sahibi; Tingen Salahiyetli Tecziyecileri'nin eski kaptanı, söylentiye göre kraliyet donanmasında da bulunmuş (101 ¶68). Denizci Yolu'nda Mertebe 7, Hiddet Halkı; Denizci Yolu'nda bir sonraki Mertebeye yükselebilecekken kontrolünü kaybetmekten korkup vazgeçmiştir (68 ¶46). İhtiyar Neil'den yaşlı, içkiye düşkün ("içkiden ölmeyi dileyen ihtiyar herif", 68 ¶39); pazardaki bütün kazancın yirmide biri ona gider, yüksek faizle borç verir (68 ¶39–43). Mavi gözlü, kalın kollu, bir subay duruşu var. Fırtınalar Hâkimi Kilisesi'ndendir (KLS1.3).
+**Tarz:** Tingen'deki Aşkın pazarının yeri olan meyhanenin sahibi; Tingen Salahiyetli Tecziyecileri'nin eski kaptanı, söylentiye göre kraliyet donanmasında da bulunmuş (101 ¶68). Denizci Yolu'nda Mertebe 8, Hiddet Halkı; Gemici'ye (Mertebe 7) yükselebilecekken kontrolünü kaybetmekten korkup vazgeçmiştir (68 ¶46). İhtiyar Neil'den yaşlı, içkiye düşkün ("içkiden ölmeyi dileyen ihtiyar herif", 68 ¶39); pazardaki bütün kazancın yirmide biri ona gider, yüksek faizle borç verir (68 ¶39–43). Mavi gözlü, kalın kollu, bir subay duruşu var. Fırtınalar Hâkimi Kilisesi'ndendir (KLS1.3).
 **Onay:** _"Evet."_ (101 ¶74'teki kesin 肯定回答)
 
 ##### SWN1.1 — Meyhanede: güler yüzlü tefeci

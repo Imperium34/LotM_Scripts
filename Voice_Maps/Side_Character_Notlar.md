@@ -1904,7 +1904,8 @@ Yayımlanmış 55 ¶1 (kartlar oyuncak gibi), ¶17 如果他没有撒谎，那�
 > **Ayar satırları:** Bütün satırlar Claude'un çevirisidir.
 > **Görünüm (konuşan):** 101–102 (meyhanede Klein'la), 128–129 (kontrolünü yitiren eski tayfası). Anılır: 68 (İhtiyar Neil'in tarifi), 105, 130, 132, 163. Ad: 斯维因 Swain.
 > **Kullanıcı bilgisi (2026-10-22):** Donghua'da daha çok sahnesi var, wiki bir şey söylemiyor; İhtiyar Neil'le dost bir eski Tecziyeci olarak okunabilir.
-> **Sözlükte olmayanlar (soru):** 恶龙酒吧 (İng. "Evil Dragon Bar"; haritada "meyhane" diye geçici; Ejder/ejder/ejderha kuralı uygulanacak), 航海家 (Denizci Yolu Mertebe 6 adı sozluk.yml'den alınacak), 阿德米索尔 (128 ¶39).
+> **Mertebe:** 暴怒之民 Hiddet Halkı (8); reddettiği 航海家 Gemici (7).
+> **Sözlükte olmayanlar (soru):** 恶龙酒吧 (İng. "Evil Dragon Bar"; haritada "meyhane" diye geçici; Ejder/ejder/ejderha kuralı uygulanacak), 阿德米索尔 (128 ¶39).
 
 ### N-SWN1.1
 
