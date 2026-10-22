@@ -1884,7 +1884,7 @@ Yayımlanmış 55 ¶1 (kartlar oyuncak gibi), ¶17 如果他没有撒谎，那�
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
 > **Ayar satırları:** Bütün satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
-> **Görünüm (konuşan):** 84–88 (Selena'nın doğum günü, ayna kehaneti), 110–111 (konferans, Kehanet Kulübü), 132–133 (Elizabeth'in kâbusu), 156 (hizmetçi seçimi). Selena'nın adı: 赛琳娜·伍德 Selena Wood (210 ¶; Azize Selena'dan, 24 yayımlanmış). Elizabeth: 伊丽莎白.
+> **Görünüm (konuşan):** 84–88 (Selena'nın doğum günü, ayna kehaneti), 110–111 (konferans, Kehanet Kulübü), 132–133 (Elizabeth'in kâbusu), 156 (hizmetçi seçimi). Selena'nın adı: 赛琳娜·伍德 Selena Wood (210; Azize Selena'dan, 24 yayımlanmış). Elizabeth: 伊丽莎白.
 > **Kullanıcı bilgisi (2026-10-22):** Melissa'nın arkadaşlarından biri kehanete meraklıydı ve bir habis ruhun eline geçiyordu (Selena). Melissa, Klein'a Elizabeth'in daha reşit olmadığını hatırlatarak takılır (MEL1.3).
 > **Sözlükte olmayanlar (soru):** 伊沃斯公学 (İng. "Ivos Public School"; haritada "Ivos okulu" diye geçici), 尤妮娜 Yonina, 克里斯 (Selena'nın ağabeyi Chris?), 赛薇娅拉 (konferansçı), 拉姆德小镇 (132). Ayna kehaneti efsunu: 徘徊不去的英灵，真实造物主的眷属，凝视命运的眼睛 (87 ¶61; Fecir Tarikatı'nın efsunu, tazim kalıbı; karar bekliyor).
 
