@@ -2066,6 +2066,83 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ---
 
+### Elland Kag ('Adil' Elland) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Ak Akik'in kaptanı; gençliğinde donanmada, V. William'da hizmet etmiş (496 ¶12), şimdi de bir askerî görevli (709). Denizde 'Adil' Elland diye bilinir (499 ¶75). Göz, alın ve dudak kenarları kırışık, orta yaşlı, güler yüzlü bir adam. Fırtınalar Hâkimi'ne inanır: 主的庇佑 → "Rabbin himayesi" (495 ¶65; KLS1.3). Klein'a "sen" der; Donna ve Denton ona "Kaptan Amca" der (496 ¶8).
+**Onay:** _"Evet."_ (494 ¶67, 是的。); _"Tamam!"_ (510 ¶46, 好！)
+
+##### ELL1.1 — Ev sahibi ve hikâyeci
+
+**Kapsam:** 494–497, 709 · güverte, yemek, deniz efsaneleri
+**Yap:** Neşeli ve konuksever; gülüşü sözün içindedir ("haha", "heh heh"). Efsaneleri uzun, akıcı, görüntülü anlatır; sayıyla, ayrıntıyla süsler, sonra bir şakayla bağlar. Kendi anısına gelince ses alçalır, cümle ağırlaşır (496 ¶7–12). Kendiyle ve Roselle'le şakalaşır (709 ¶34).
+**Yapma:** Hikâyeyi kısa bir özete indirmek; anısını gülerek anlatmak.
+**Ayar:** _"Haha, hanginiz denemek ister?"_ (494 ¶75); _"Böyle bir gecede yemeğin, şarabın tadını birlikte çıkarıp denizin efsanelerini anlatmak çok hoş bir şey."_ (494 ¶93); _"Aslında Beş Deniz'in Kralı Nast'ın sakalı ancak boynunun altına iner; güvertede oturur, siyah zeminli, gümüş kenarlı gösterişli bir cüppe giyer, başından iki kat yüksek sivri bir taç takar ve bir ilah gibi çevresindeki her şeye yukarıdan bakar…"_ (496 ¶7); _"Önemsiz şeyleri unutmak gönül sağlığına iyi gelir; heh heh, bu sözü İmparator Roselle söylemedi."_ (709 ¶34)
+**Gerekçe:** → N-ELL1.1
+
+##### ELL1.2 — Babacan
+
+**Kapsam:** Donna, Denton, onların ailesi
+**Yap:** Çocuklara bir baba gibi bakar; onları içkiden uzak tutar, korkutmadan güvence verir. Kendi kızını anar. Yolculuktan sonra da Donna'nın ailesine sessizce yardım eder (709 ¶37–38).
+**Yapma:** Çocuklarla laubali ya da korkutucu bir şaka.
+**Ayar:** _"Bana kızımı hatırlatıyorsun; ne yazık ki o artık büyüdü, kendi yuvasını kurdu."_ (494 ¶73); _"Bu, reşit olmayan çocukların tadacağı bir şey değil."_ (495 ¶10)
+**Gerekçe:** → N-ELL1.2
+
+##### ELL1.3 — Adil adam: şaka biter, duruş başlar
+
+**Kapsam:** 498–499, 709 · Hamilton, Klein'a uyarı
+**Yap:** Gülüşü sürerken bile sınırı kesindir; bir çizgiye gelince tek cümleyle, eli silahında durur (499 ¶76). Atasözünü memleketinden getirir ve harfiyen söyler. Uyarısı ciddi ve doğrudandır (709 ¶50).
+**Yapma:** Atasözünü yerli bir Türk atasözüyle değiştirmek (memleketinin sözüdür, yabancı kalmalı); uyarıyı şakayla yumuşatmak.
+**Ayar:** _"Burada kimseye güvenme; söyledikleri pek azı doğrudur."_ (498 ¶18); _"…Belki. Haha, en azından az önceki uyarım doğruydu; şey, erkek olduğum da doğru!"_ (498 ¶20); _"Hamilton, memleketimde bir söz vardır: Ambardaki fare yüzünden yoldan geçen köpeğe kin tutulmaz."_ (499 ¶74); _"Evet, tavrım budur!"_ (499 ¶76); _"Fazla göze batıyorsun; yukarıdakiler seni yakından izlemeye başladı."_ (709 ¶50)
+**Gerekçe:** → N-ELL1.3
+
+##### ELL1.4 — Bansy Limanı: tecrübeli ve temkinli
+
+**Kapsam:** 510–512 · ölü rahip, kayıp piskopos
+**Yap:** Tehlikede telaş yok: kısa sorular, pratik öneriler, tanıdığına bile hemen yaklaşmayan bir temkin (510 ¶63). İş bitince rahatlamış, biraz da korkmuş bir nefesle konuşur.
+**Yapma:** Korkuyu ünlemle göstermek; Fırtına deyişini her cümleye serpmek.
+**Ayar:** _"Tanıdığım Rahip Jayce içeride ölmüş, başı gövdesinden ayrılmış; Piskopos Millet ortada yok…"_ (510 ¶30); _"Fırtına Kilisesi'nin merkezine bir telgraf çekip Bansy Limanı'ndaki durumu bildirelim mi?"_ (510 ¶50); _"İş bitti, artık sorun yok."_ (512 ¶84)
+**Gerekçe:** → N-ELL1.4
+
+---
+
+### Ak Akik'in Yolcuları: Donna, Denton, Cleves, Cecile (Toplu Harita) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Bayam'a giden tüccar Urdi Branch'in çocukları Donna ve Denton ile onları koruyan eski maceraperest çift Cleves ve Cecile (492–513; Donna 709, 737'de yeniden). Çocuklar Klein'a "Sparrow Amca", Elland'a "Kaptan Amca" der (叔叔). Cleves'in "海上的规矩" sözü donmuştur: _"Denizin kuralı bu."_
+
+##### AKK1.1 — Donna: meraklı, mantıklı, sadık
+
+**Kapsam:** 494–513, 737
+**Yap:** Çilli, cıvıl cıvıl bir kız. Merakı korkusundan büyüktür: önce irkilir, sonra en çok o sorar. Sorusunu bir öncekine bağlayarak mantıklı sürdürür (505 ¶27–31). Sözünü verdiği insana sadıktır; kardeşine bir abla gibi açıklar (737 ¶49).
+**Yapma:** Donna'yı korkak ya da sadece şirin bir çocuk yapmak.
+**Ayar:** _"Amca, başlıyor muyuz…"_ (494 ¶3); _"Ö-öldü mü gerçekten?"_ (494 ¶69); _"Kaptan Amca, Beş Deniz'in Kralı'nı gördünüz mü?"_ (496 ¶8); _"Doğru cevap!"_ (505 ¶41); _"Gerçi, gerçi çok korkunç, çok çirkin bir hâli var; ama o, hayalin ve korumanın bedeli! Denton, şunu unutma: gazeteler hep dedikoduya ve söylentiye göre hikâye uydurur."_ (737 ¶49)
+**Gerekçe:** → N-AKK1.1
+
+##### AKK1.2 — Denton: küçük kardeş
+
+**Kapsam:** 494–513, 737
+**Yap:** Kısa, coşkulu tepkiler; ablasının arkasından konuşur, onun sözünü onaylar. Maceracı olmak ister.
+**Yapma:** Uzun, düzgün cümleler.
+**Ayar:** _"Gerçekten canavarmış!"_ (494 ¶70); _"Çok havalı!"_ (496 ¶14); _"Ben, ben de maceraperest olabilir miyim?"_ (497 ¶27); _"Evet evet! Ben onlara çoktan söylendim bile!"_ (737 ¶50)
+**Gerekçe:** → N-AKK1.2
+
+##### AKK1.3 — Cleves: denizin kuralı
+
+**Kapsam:** 492–513 · Klein, işvereni, çocuklar
+**Yap:** Rüzgâr yemiş, gülmeyen bir eski maceraperest; cevabı tek kelime ya da tek tespit ("Evet.", "Çok güçlüler."). Denizin canavarlarını ve kurallarını sakin, eksiksiz anlatır; bu bilgi hayatta kalmanın şartıdır (493 ¶66). Hayali basittir: eve, karısına ve çocuklarına dönmek (496 ¶47).
+**Yapma:** Cleves'i konuşkan yapmak; bilgisini övünmeye çevirmek.
+**Ayar:** _"Hepsi eski dostlar; sık sık bakım istiyorlar."_ (492 ¶58); _"Denizde yalnız silah yetmez."_ (492 ¶63); _"Eve dönmek, karıma, çocuklarıma sarılmak, onlara artık denize açılmayacağımı söylemek."_ (496 ¶47); _"Bu iş için önce en az beş yıl dövüş eğitimi ve bilgi lazım."_ (497 ¶29); _"Denizin kuralı bu."_ (497 ¶40)
+**Gerekçe:** → N-AKK1.3
+
+##### AKK1.4 — Cecile: pratik yoldaş, saklı hayal
+
+**Kapsam:** 494–513
+**Yap:** Tüfekli, işini bilen bir kadın; çocuklara ödül ve korsan dünyasını sakin, sayılarla açıklar (505 ¶26). Hayalini anlatırken cümle uzar ve renklenir: güneş alan odalar, buğday tarlası, bağ, kendi değirmeninin ekmeği (496 ¶39).
+**Yapma:** Cecile'i Cleves'in sessiz gölgesi yapmak.
+**Ayar:** _"Ben olsam öyle yapmazdım, kocaman bir çiftlik alırdım."_ (496 ¶39); _"Denizde, başına 300 pound'dan fazla ödül konmuş korsanlar epey güçlüdür."_ (505 ¶26)
+**Gerekçe:** → N-AKK1.4
+
+---
+
 ## 9. Backlund
 
 **Not (Mahkûm / Prangalı Yolu):** Sharron ve Maric aynı Yolun mensubudur (Mahkûm Yolu; Mertebe 0 adıyla Prangalı Yolu). Gül Ekolü'nün İtidal Fırkası'ndandırlar: arzuyu bastırmayı, sade ve perhizkâr bir hayatı savunurlar; karşılarında Sefahat Fırkası vardır. Yolun laneti her Mertebede başka bir arzu ve öldürme dürtüsüdür (Meczup, Kurtadam, Hortlak, Tayf). İkisi aynı öğretinin iki ucudur ve birbirine göre okunur: Sharron bastırmayı başarmıştır, Maric başaramamaktadır.
