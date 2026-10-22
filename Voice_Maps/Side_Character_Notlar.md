@@ -1755,3 +1755,43 @@ Hampres: 405 ¶32 斯蒂芬·汉普雷斯先生，家具商人; ¶35 微笑道�
 
 1057 ¶24–29 (Maury Macht: 海柔尔最近是真的成熟了，她不仅愿意学习以前很排斥的，为社交和婚姻准备的那些课程…于各种沙龙、宴会上安静旁听。); ¶28 (Klein: tedavide korkunun duygusu geri gelmiştir; ailesini kaybetme rüyaları). 1124 ¶28 奥黛丽迎接了海柔尔，带着这位新朋友…; ¶29 (Audrey üçüncü aşamayı erteler).
 **Denetim:** 1057, 1124 (ZH).
+
+## Tracy (Koramiral Hastalık)
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
+> **Ayar satırları:** Bütün satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm (konuşan):** 581–583 (Kara Ölüm'de Elaine kılığındaki Klein; saldırı), 588–589 (Katarina ve Azik'in karşısında), 602 (Gehrman'ı tahlil), 1107–1108 (Gehrman'ın elinde; hayat hikâyesi). Anılır: 292, 530, 575 (Edwina'nın tarifi), 578–579 (Elaine'in anlattıkları), 1095–1096. Ad: 特雷茜 (1108'de bir yerde 特蕾茜).
+> **Başka haritalarla bağ:** Trissy (TRS1.5; aynı dönüşüm, ters tepki), Edwina (EDW; 575 tarifi), Anderson ve Danitz (1096), Azik (588–589). Klein ona Elaine, sonra Gehrman kılığında konuşur.
+> **Kullanıcı bilgisi (2026-10-22):** Mertebe 7'nin üstündeki her Şeytaniçe gibi önce erkekti, Yolun doğası onu zorla kadına çevirdi; bu yüzden kadınlardan hoşlanır; Roselle'in aşk romanlarını sever. Edwina'nın tarifi (575 ¶44) kullanıcının alıntısıdır.
+> **Ad kararları (2026-10-22, words.md):** 疾病少女 → Hastalık Kızı, 黑死号 → Kara Ölüm, 母亲 → Valide / 妈妈 → anne, 伊莲·索伦 → Elaine Soren (İng. çeviri "Helene" ve "Sauron" der; "Sauron" yankısından kaçmak için Soren, 索伦'in geçerli okunuşu). Mevcut: 疾病中将 → Koramiral Hastalık, 痛苦魔女 → Maraz Şeytaniçe, 不老魔女 → Solmaz Şeytaniçe, 反抗军 → Direniş, 大副 → ikinci kaptan.
+> **Sözlükte olmayanlar (haritada kullanılmadı):** 龙威 (602 ¶59), 巧言者 米索尔·金 (583 ¶54), 三副, 白之魔女 (1107 ¶8; Katarina'nın öteki unvanı), 吉米·内克 (588 ¶45).
+
+### N-TRC1.1
+
+583 ¶54 示意大部分海盗出去…; ¶55 三副，你再去拜亚姆一趟，调查清楚反抗军从哪里找到的这个伊莲。(沉声命令道); ¶58 将这件事情宣扬出去，说我受了重伤，很长一段时间内都无法恢复。; ¶59 还有，大副，立刻起航，不要再停留于这里。 602 ¶54 (yayılan yara haberi bir yemdir); ¶59 冷笑两声，自言自语道：格尔曼·斯帕罗……'龙威'……呵呵…; ¶61 (tahlil). 1096 (Anderson: hastalık yayma ustalığı).
+**Denetim:** 583, 602, 1096 (ZH).
+
+### N-TRC1.2
+
+578 ¶65 罗塞尔的那些经典，以及现在流行的爱情故事 (Elaine; 她非常讨厌看书，就连小说都必须我读给她听). 579 ¶46 特雷茜总是说，不会让我沾染血腥，见到黑暗，这一切由她来面对。 / Klein: 她言情小说看多了吧…… 581 ¶54 像笑又没笑地问道：你说，我该怎么惩罚你？; ¶58 还是一样的倔强，又总是摇摆不定……; ¶62 哟，他们把你手铐上了，这样挺好的，我们都没玩过这种游戏。(…一双蔚蓝的眼眸却仿佛积累着风暴的海洋); ¶64 回来是最大的惩罚？; ¶66. 583 ¶47 伊莲，你真的这么冷酷绝情吗？不，也许，也许她是被迫的。 588 ¶53 伊莲在哪里？你对她做了什么事情？…; ¶70 告诉我伊莲的下落。 1108 ¶27 上次你来刺杀我之前，伊莲知道这件事情吗？; ¶30 脸上顿时浮现出了几分光彩：真的？
+**Denetim:** 578, 579, 581, 583, 588, 1108 (ZH).
+
+### N-TRC1.3
+
+1108 ¶18 自暴自弃了…叹了口气，自嘲一笑道：; ¶19 也许我从出生开始就是一个错误。; ¶20 不正常的父母，不正常的家庭关系，不正常的教派人员，既塑造了我，也伤害了我，我8岁的时候…; ¶21 等我离家出走，来到大海…一瓶魔药让我也变成了女人，呵，女人……; ¶23 Klein: 你的教唆能力很不错。; ¶24 我承认，我刚才是想唤起你的同情，每个人都渴望活着，这难道不对吗？不过，我没有说一句假话，那都是我的人生经历。; ¶25 她没再渲染自己的痛苦和悲伤. 575 ¶44 (Edwina) 有自己的理念和追求，在魔女教派里属于另类.
+**Denetim:** 575, 1108 (ZH).
+
+### N-TRC1.4
+
+589 ¶38–42 是啊，我有你这个母亲，还有一个妈妈…… / 你当初为什么不告诉我真相，你明明掌握着好几条途径的中低序列！ 1108 ¶5 你真正的目的是找到卡特琳娜？; ¶8 低笑了一声：不仅仅是后裔，我是她的孩子。; ¶13 Klein: 她是你的妈妈？; ¶14–15 表情一下变得有些古怪：不，母亲。; ¶16 我的妈妈是另一个人，她曾经是我的父亲。; ¶21 女人，呵，女人……; ¶53–57 (iç ses: 母亲 algılar; 虽然我很恨她，埋怨她，但还是不自觉会依赖她，渴望她能更尊重我的意见……). 1108 ¶10 (Klein: Suikastçı Yolu Cadı'da erkekten kadına çevirir).
+**Denetim:** 589, 1108 (ZH).
+
+### N-TRC1.5
+
+582 ¶49–50 嗓音略显嘶哑地喊道：你究竟是谁？/ 为什么不敢露出自己真正的样子！; ¶82–83 拔高声音，尖利喊道：敌袭！/ 敌袭！ 589 ¶1–2 脸庞已经因愤怒而涨红…但最终，特雷茜还是没有冲动和鲁莽…等待这位'不老魔女'做出决定; ¶35 缓和了好一阵，才咬牙道：我不会忘记这件事情！ 602 ¶67 (iç ses: 死亡执政官 korkusu).
+**Denetim:** 582, 589, 602 (ZH).
+
+### N-TRC1.6
+
+583 ¶44 很谨慎的袭击者，我做刺客那段时间，也许还不如她，不，他……(忽地咬牙切齿); ¶45 (Elaine'le ilişkisi olduğunu sanar); ¶46 按照罗塞尔大帝的说法，她怀疑自己头顶有点绿油油的。(anlatı; Roselle deyimi, çeviride ayrı karar).
+**Denetim:** 583 (ZH).

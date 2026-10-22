@@ -1913,6 +1913,60 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ---
 
+### Tracy (Koramiral Hastalık) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Yedi Amiral'den biri, Kara Ölüm'ün kaptanı; Koramiral olmadan önce denizde "Hastalık Kızı" (疾病少女) diye bilinir. Suikastçı Yolu'nda Mertebe 5, Maraz Şeytaniçe; Suikastçı (9) iken bir erkektir, Cadı (7) iksiri onu zorla kadına çevirmiştir. Validesi Solmaz Şeytaniçe Katarina Pellè'dir; annesi ise "eskiden babası" olan başka biridir (1108 ¶16). Şeytaniçeler tarikatında bir tuhaflıktır: kendi idealleri ve peşinden koştuğu şeyler vardır, yine de tarikat için insan kaçakçılığı gibi işler görür (Edwina, 575 ¶44). Kadınlardan hoşlanır; sevgilisi Elaine Soren'dir (伊莲·索伦). Okumaktan nefret eder, romanları Elaine ona okur: Roselle'in klasikleri ve moda aşk hikâyeleri (578 ¶65). Elaine'e verdiği söz de bir aşk romanından çıkmış gibidir: kanı ve karanlığı o görmeyecek, hepsiyle Tracy yüzleşecek (579 ¶46). Sesi tayfasına kısa ve kararlı, Elaine'e cilveli ve sahiplenici, tehlike karşısında temkinlidir; kendi hayatından acı bir alayla söz eder. Trissy'den farkı (TRS1.5): Trissy erkek olmuş olmaktan utanır ve öfkelenir; Tracy kadın yapılmış olmasına acıyla güler ve kadınları sever.
+**Onay:** _"Peki."_ (583 ¶57'de tayfanın 好的'si; kendisinin onayı kısa buyruktur)
+
+##### TRC1.1 — Kaptan: kısa buyruk, kurnaz hesap
+
+**Kapsam:** 583–1108 · tayfa, Kara Ölüm, kendi güvenliği
+**Yap:** Kısa, net buyruklar; birden fazla iş varsa sırayla verir. Kendi yarasını bile yem olarak kullanır (583 ¶58). Durumu soğukkanlı tahlil eder, birkaç cümlede sonuca varır (602 ¶59–61).
+**Yapma:** Korsan argosuyla süslenmiş kaba bir kaptan sesi; buyruğa uzun gerekçe eklemek.
+**Ayar:** _"Bu haberi yayın: ağır yaralandığımı, uzun süre iyileşemeyeceğimi söyleyin."_ (583 ¶58); _"Bayam'a bir daha git, Direniş'in bu Elaine'i nereden bulduğunu öğren."_ (583 ¶55); _"İkinci kaptan, hemen demir alın; burada daha fazla kalmayalım."_ (583 ¶59)
+**Gerekçe:** → N-TRC1.1
+
+##### TRC1.2 — Elaine: cilve, sahiplenme, kıskançlık
+
+**Kapsam:** 579–1108 · Elaine, Elaine kılığındaki Klein
+**Yap:** Gülümser gibi yapıp gülmeden konuşur (像笑又没笑); cezadan ve "oyun"dan söz eden cilveli bir alay, gözlerinde fırtına. Kıskançlığı bile Elaine'i aklayan bir mazeret arar (583 ¶47). Elaine söz konusu olunca öfkesini bastırır ve doğrudan sorar. Ölmeden önceki tek sorusu da Elaine'dir.
+**Yapma:** Cilveyi kaba bir şehvete çevirmek; Elaine'e karşı soğuk ya da tehditkâr bir ses.
+**Ayar:** _"Söyle bakalım, seni nasıl cezalandırayım?"_ (581 ¶54); _"Hoo, sana kelepçe takmışlar; iyi olmuş, bu oyunu hiç oynamamıştık."_ (581 ¶62); _"Elaine, gerçekten bu kadar acımasız mısın? Hayır, belki de zorlandı."_ (583 ¶47); _"Elaine nerede? Ona ne yaptın?"_ (588 ¶53); _"Geçen sefer beni öldürmeye gelmeden önce Elaine bundan haberdar mıydı?"_ / _"Gerçekten mi?"_ (1108 ¶27, ¶30)
+**Gerekçe:** → N-TRC1.2
+
+##### TRC1.3 — Maraz Şeytaniçe: kışkırtan hikâye
+
+**Kapsam:** 1107–1108 · Gehrman'ın elinde, çaresizken
+**Yap:** Azmettirici kabiliyeti sözüne işlemiştir: hayat hikâyesini acımaya çağıran bir sırayla anlatır (anormal anne baba, anormal tarikat, babasının dönüşümü, kendi dönüşümü). Yakalanınca inkâr etmez, gülerek kabul eder ve bir hayatta kalma mantığı kurar. Anlattığı her şey doğrudur.
+**Yapma:** Hikâyeyi gözyaşlı bir yakarışa çevirmek; yakalandıktan sonra ısrar etmek.
+**Ayar:** _"Belki de doğduğum andan beri bir hatayım."_ (1108 ¶19); _"Kabul ediyorum, az önce acımanı uyandırmak istedim; herkes yaşamak ister, bunda yanlış ne var? Ama tek bir yalan söylemedim, hepsi benim hayatım."_ (1108 ¶24)
+**Gerekçe:** → N-TRC1.3
+
+##### TRC1.4 — Valide, annem, kadınlık
+
+**Kapsam:** 589, 1108 · Katarina, ailesi, cinsiyeti
+**Yap:** Acı ve kendiyle alay eden bir ton; cümle kısa, sonunda bir "heh". Katarina'ya "Valide" (母亲), eskiden babası olan kişiye "annem" (妈妈) der; ayrım kaynaktadır ve korunur (1108 ¶13–16). Kadınlık kelimesini acı bir tekrarla bırakır. Validesinden nefret eder ama ona bağlıdır; bunu yalnız iç seste itiraf eder (1108 ¶57).
+**Yapma:** "Valide" ile "anne"yi karıştırmak; dönüşümü utançla ya da öfke patlamasıyla anlatmak (Trissy'nin sesi).
+**Ayar:** _"Hayır, validem."_ (1108 ¶15); _"Annem başka biri; eskiden babamdı."_ (1108 ¶16); _"Bir iksir beni de kadın yaptı, heh, kadın…"_ (1108 ¶21); _"Evet ya, bir validem var, bir de annem…"_ (589 ¶41)
+**Gerekçe:** → N-TRC1.4
+
+##### TRC1.5 — Öfke ve korku: dizginlenen
+
+**Kapsam:** 582–602 · saldırı, Katarina ve Azik'in karşısında
+**Yap:** Öfke yüzde kalır, söz kısalır; kararı daha güçlüye bırakır (589 ¶2). Tehlikede kısa, tekrarlı bir çığlık. Öfkesini dişlerinin arasından tek bir yeminle söyler.
+**Yapma:** Öfkeyi uzun bir tehdit tiradına çevirmek.
+**Ayar:** _"Sen de kimsin? Neden gerçek yüzünü göstermeye cesaret edemiyorsun!"_ (582 ¶49–50); _"Saldırı var!"_ / _"Saldırı var!"_ (582 ¶82–83); _"Bunu unutmayacağım!"_ (589 ¶35)
+**Gerekçe:** → N-TRC1.5
+
+##### TRC1.6 — Çeviri: 她 / 他 kayması
+
+**Kapsam:** 583 ¶44 ve benzer yerler
+**Yap:** Kaynak zamiri düzelterek cinsiyet karışıklığını gösterir (也许还不如她，不，他……). Türkçe zamir bunu taşımaz; ayrım bir isimle verilir: _"Suikastçı olduğum günlerde ben bile belki o kadın kadar, yok, o adam kadar iyi değildim…"_
+**Yapma:** Kaymayı düşürmek ya da açıklayıcı bir dipnota çevirmek.
+**Gerekçe:** → N-TRC1.6
+
+---
+
 ## 9. Backlund
 
 **Not (Mahkûm / Prangalı Yolu):** Sharron ve Maric aynı Yolun mensubudur (Mahkûm Yolu; Mertebe 0 adıyla Prangalı Yolu). Gül Ekolü'nün İtidal Fırkası'ndandırlar: arzuyu bastırmayı, sade ve perhizkâr bir hayatı savunurlar; karşılarında Sefahat Fırkası vardır. Yolun laneti her Mertebede başka bir arzu ve öldürme dürtüsüdür (Meczup, Kurtadam, Hortlak, Tayf). İkisi aynı öğretinin iki ucudur ve birbirine göre okunur: Sharron bastırmayı başarmıştır, Maric başaramamaktadır.
