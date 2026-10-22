@@ -2233,6 +2233,52 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Ayar:** _"Hoş geldin, güzel melek hanım."_ (405 ¶38)
 **Gerekçe:** → N-RUH1.3
 
+---
+
+### Hazel Macht `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Macht ailesinin kızı; Dwayne Dantès'in komşusu. Kapkaççı Yolu'nda Mertebe 9, Kapkaççı; lağımda bulduğu bir "hoca" onu rüyalarıyla yönlendirir. Hoca, mühürlü ve zayıf düşmüş bir Kapkaççı Yolu yarı tanrısıdır, sonra bir farenin içine yerleşir (Tufeyli, Mertebe 4; 870 ¶40). Kuyudaki kurbağa: kibri terbiyesinden, yeteneğinden, güzelliğinden ve ailesinden gelir, ama Aşkın olunca özünde sıradan insanlardan üstün olduğuna inanır (981 ¶8; Klein 759 ¶51: kendini artık sıradan saymayan Aşkınların üstünlük duygusu). Baloda soyluları ve onların konuşmalarını küçümser. Kibrinin altında bir onur vardır: korkak bir kibirli olmaktan kendinden utanır (981 ¶47–48). Amon onun hocasının peşindedir; hocayı yuttuktan sonra Hazel'in hocası kılığına girer ve onu sırf eğlencesine dehşete boğar (1004–1007). Audrey onu tedavi eder ve hafızasından siler; sonrasında daha yumuşak, ailesine bağlı bir genç kızdır (1057). Klein'ın ölçüsü: _"Sevimli bir kız değil ama yine de vicdanı var."_ (981 ¶51). Dantès'e "Dantès Bey", hocasına "Hocam" (老师) ve "siz" der.
+**Onay:** _"Peki."_ (848 ¶45, 好吧。); _"Olur."_ (871 ¶14, 好的。)
+
+##### HZL1.1 — Baloda kibir: en kısa nezaket
+
+**Kapsam:** 759–871 · balo, ziyaret, Dantès ve öteki konuklar
+**Yap:** Nezaketin yalnız en kısa kalıbını kullanır; cevap tek bir cümle, çoğu zaman bir sessizlikten sonra gelir (沉默了几秒). Konuşmayı ya bir düzeltmeyle ya bir kayıtsızlıkla kapatır. Merakını bastırır (760 ¶14). Duygu ve kibir anlatıdadır: yüzü ifadesiz, bakışı yukarıdan (759 ¶23).
+**Yapma:** İltifat, sohbet dolgusu, sıcak bir ünlem; kibri açık bir hakarete çevirmek.
+**Ayar:** _"Bu benim için bir şereftir."_ (759 ¶58); _"Dantès Bey, bu nazik bir konu değil."_ (759 ¶63); _"Az önceki yer."_ (760 ¶14); _"Onların konuşmalarıyla ilgilenmiyorum."_ (818 ¶17)
+**Gerekçe:** → N-HZL1.1
+
+##### HZL1.2 — Ailesinin yanında
+
+**Kapsam:** 761–1057 · annesi, babası
+**Yap:** Annesinin karşısında kibir yumuşar (761 ¶30): düşünür, sonra kısa ama samimi bir yargı verir. Babasının işine içtenlikle inanır. Kendi beklentisini düz söyler.
+**Yapma:** Ailesine de baloda konuştuğu gibi soğuk konuşmak.
+**Ayar:** _"Bu çevreyi pek tanımıyor, insanları kıracak konular açabiliyor; ama çok şey görmüş."_ (761 ¶30); _"Ben yalnızca yeterince güçlü erkeklerden hoşlanırım."_ (761 ¶36); _"Babam yanlış mı yaptı? Desteklediği şey iyi bir şeydi…"_ (861 ¶35)
+**Gerekçe:** → N-HZL1.2
+
+##### HZL1.3 — Hocasına: saygı ve yukarıdan bakış
+
+**Kapsam:** 848–1004 · fare-hoca; 1004'te hoca kılığındaki Amon
+**Yap:** Hocasına "Hocam" ve "siz" der; soruyu açık ve kısa sorar. Saygısı bir mesafeyle karışıktır: konuşan fareye yukarıdan bakar, isteksizce razı olur (848 ¶44–46). Sorusunda bir itiraz sezilir ama bastırılır (871 ¶11). Hocası "geri döndüğünde" (Amon) saygısı coşkuya döner (1004 ¶31).
+**Yapma:** Fareye karşı korku ya da tiksinti sözü; hocaya laubali hitap.
+**Ayar:** _"Ne tuhaflık var?"_ (848 ¶36); _"Nasıl fark edebilirler? Lağımdaki izler havaya uçmamış mıydı?"_ (848 ¶42); _"Hocam, az önce ne oldu?"_ (871 ¶6); _"Hocam, siz… siz iyileştiniz mi?"_ (981 ¶14); _"Bir şey yemek ister misiniz?"_ (1004 ¶31)
+**Gerekçe:** → N-HZL1.3
+
+##### HZL1.4 — Çatlak: korku ve onur
+
+**Kapsam:** 981, 1005–1007, 1124 · hocanın deliliği, Amon, hatıranın geri gelişi
+**Yap:** İlk çatlak iç sestedir: güç onu insanüstü mü yapar, yoksa bir canavara mı yaklaştırır (981 ¶9). Korkuya rağmen davranır, çünkü korkak olmak kendini küçümsemesine yol açar (981 ¶47–48). Dehşette söz düşer: çığlık, tek bir "Hayır!", sonra kekeleyerek toparlanan bir mazeret.
+**Yapma:** Dehşeti uzun bir cümleye ya da anlatı yerine replikle açıklamaya çevirmek; çatlak anında kibri sürdürmek.
+**Ayar:** _"Hayır!"_ (1124 ¶6); _"Ben… az önce biraz rahatsızlandım, şimdi daha iyiyim."_ (1124 ¶9); _"Biraz yorgunum, hemen yatacağım; kimse beni rahatsız etmesin."_ (981 ¶43)
+**Gerekçe:** → N-HZL1.4
+
+##### HZL1.5 — Tedaviden sonra
+
+**Kapsam:** 1057–1134
+**Yap:** Kibir anlatıda geri çekilir: eskiden reddettiği sosyete derslerine katılır, annesine eşlik eder, salonlarda sessizce dinler (1057 ¶27). Ses daha yumuşak ve daha az keskindir; kısa cümle kalır. Audrey'nin "yeni arkadaşı"dır (1124 ¶28).
+**Yapma:** Tedaviden sonra da 759'daki buz gibi tonu sürdürmek.
+**Gerekçe:** → N-HZL1.5
+
 ## 10. NPC ve Zümre Sesleri (Toplu Haritalar) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
 **İlke: 体面 (saygınlık) merdiveni.** Loen'de sınıfın ölçüsü paradan çok 体面'dir: sergilenen saygınlık ile onu taşıyacak gerçek imkân arasındaki fark. Kaynak bu farkı her basamakta gösterir: eski aristokratlar borçlanıp yine de konumlarına yakışır hayatı sürdürür (177); Backlund orta sınıfı haftada 5 pound'la "gerçek saygınlığın biraz gerisinde" kaldığını hesaplar (231); düşmüş bir beyefendi ekmek kuyruğuna yüzünü saklayarak girer (1143). Defin bile sınıfa göre üçe ayrılır (268). Basamaklar ayrı haritalar değil, aynı eksenin dereceleridir; bitişik iki basamak aynı tınlamamalıdır.

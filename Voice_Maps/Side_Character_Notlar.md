@@ -1721,3 +1721,37 @@ Hilbert: 339 ¶30 心理学家，同时也是珠宝设计师; ¶38 沉默的阿�
 
 Hampres: 405 ¶32 斯蒂芬·汉普雷斯先生，家具商人; ¶35 微笑道：伊思兰特只说过你是她的学生…; ¶36–37 你有点激动，你很好奇…/ 就像一个天使！; ¶38 以手按胸，弯腰鞠躬道：欢迎你，美丽的天使小姐。; ¶46–49 (Audrey'nin okuyuşu: 体面, 虚荣, 戒备).
 **Denetim:** 405 (ZH).
+
+## Hazel Macht
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
+> **Ayar satırları:** Bütün satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm (konuşan):** 759–761 (Macht balosu), 774–775, 784–788, 818–819 (balo, rüya konusu), 826–828 (lağım patlaması, fare), 848 (fare; Audrey'nin balosu), 860–861, 870–871 (fare yanar), 981 (deli fare; Amon'un yanılsaması; gece yolculuğu), 1000–1008 (hoca kılığındaki Amon; çöküş; Audrey'nin tedavisi), 1057, 1123–1124, 1133. Ad: 海柔尔·马赫特.
+> **Başka haritalarla bağ:** Amon (AMN; Hazel'in hocasını yutar, kılığına girer, 1004–1007 ev halkının hepsi Amon'dur); Audrey (tedavi 1007, "yeni arkadaş" 1124); Trissy (TRS; lağımdaki hastalık, 775). Klein ona Dwayne Dantès olarak konuşur. Anne ve babası (Maury Macht, Riana) haritalanmadı: konuştukları sahnelerin çoğunda Amon onların içindedir (kullanıcı kararı).
+> **Kullanıcı bilgisi (2026-10-22):** Kuyudaki kurbağa: Mertebe 9 Aşkın olduğu için balolarda öteki soylulardan üstün olduğunu sanır. Hocası fare biçiminde bir Mertebe 4 Tufeyli ya da benzeridir; Amon aslında onun peşindedir ve Hazel'i neredeyse eğlencesine dehşete boğar. "井底之蛙" kaynakta geçmez; kaynaktaki dayanak 981 ¶8 ve 759 ¶51'dir.
+> **Sözlükte olmayanlar (haritada kullanılmadı):** 议员 (Maury Macht'ın unvanı), 麋鹿庄园 (981 ¶57), 鲁恩慈善助学基金 (1124 ¶13), 死神的钥匙 (760 ¶5).
+
+### N-HZL1.1
+
+759 ¶21 徘徊于下水道的高傲少女; ¶23 表情平淡，眼神高傲，只礼节性地微笑回应道：晚上好，唐泰斯先生。; ¶51 (Klein) 他们自认为已不是凡俗，面对普通人时，会有强烈的优越感; ¶58 沉默了几秒道：这是我的荣幸。; ¶63 微抬脑袋，眸光一扫道：唐泰斯先生，这不是一个有礼貌的话题。 760 ¶5 没关系。(平静回应道); ¶14 张了张嘴，似乎还想问点什么…矜持点头道：刚才的地方。 818 ¶17 我对她们的话题不感兴趣。; ¶20 (Wilma) 她有种发自内心的高傲…她对所有人都这样，而且太冷淡了; ¶74 这也是我的荣幸。 819 ¶3 什么样的噩梦？; ¶16 为什么当时不去女神的教堂？ 848 ¶51, ¶53 (Audrey'nin balosu: 习惯性略过对方的面容, sonra 恍惚).
+**Denetim:** 759, 760, 818, 819, 848 (ZH).
+
+### N-HZL1.2
+
+761 ¶30 面对母亲时，海柔尔不是那么高傲，想了想道：他不是太熟悉这个圈子，容易提出得罪人的话题，但很有见识。; ¶36 没什么情绪波动地说道：我只喜欢足够强大的男士。 861 ¶35 我爸爸做错了吗？他推动的明明是一件好事……; ¶42 不知道那些保镖会有什么样的超自然力量…… 1004 ¶40, ¶46, ¶48 (annesi ve babasıyla gündelik replikler). 860 ¶31 看道恩·唐泰斯的目光柔和了不少.
+**Denetim:** 761, 860, 861, 1004 (ZH).
+
+### N-HZL1.3
+
+848 ¶33–35 (fare konuşur); ¶36 疑惑反问道：有什么不对？; ¶39 微微皱眉道：他们在寻找什么？; ¶42 他们怎么发现的了？下水道内的线索不是已经炸掉了吗？…; ¶44 俯视着地上的老鼠，眉头一点点皱起又舒展开来道：; ¶45 好吧。; ¶46 (fare) 不要一副不太情愿的样子… 870 ¶40 那位'偷盗者'半神寄生到老鼠体内了？; ¶64 那位自称活在传说里的半神半人. 871 ¶6 老师，刚才究竟发生了什么事情？; ¶11 为什么你之前没提醒过我这方面的事情……(iç ses, 皱起了眉头); ¶14 好的。 981 ¶14 老师，您，您恢复了？ 1004 ¶25 (hoca deli değildi, sınavdı: Amon); ¶31 充满敬意地问道：您需要什么食物吗？; ¶33 好的，老师。; ¶35 你守在这里，不让人进去打扫。(hizmetçiye).
+**Denetim:** 848, 870, 871, 981, 1004 (ZH).
+
+### N-HZL1.4
+
+981 ¶8 虽然高傲的养成源于从小受到的教育、超过普通人的学习天赋、相当出色的外貌、位于上流社会的家庭和比同龄人成熟不少的想法，但在接触到超自然力量前，这种心态其实还属于正常范畴…; ¶9 忍不住怀疑起超自然力量究竟代表的是超越凡人，还是接近怪物; ¶43 我有些疲惫，准备现在就睡觉，你不要让人来打扰我。; ¶47 她不想变成一个看似高傲实则胆小，遇到点危险就丧失所有原则的人！; ¶48 那会让她看不起自己！; ¶51 (Klein) 虽然不是一个性格讨喜的女孩，但还算有良心. 1005 ¶52 要下雨了吗？; ¶60–64 (çöküş, 凄厉的叫声). 1007 ¶9–14 (ev halkı Amon), ¶11 高声尖叫，剧烈反抗; ¶56–57 (Audrey'nin tedavisi; hocasını unutur). 1124 ¶1–6 不！; ¶9 我，我刚有点不舒服，现在好多了。; ¶11 (iç ses: 我为什么要用'失控'这个词…).
+**Denetim:** 981, 1005, 1007, 1124 (ZH).
+
+### N-HZL1.5
+
+1057 ¶24–29 (Maury Macht: 海柔尔最近是真的成熟了，她不仅愿意学习以前很排斥的，为社交和婚姻准备的那些课程…于各种沙龙、宴会上安静旁听。); ¶28 (Klein: tedavide korkunun duygusu geri gelmiştir; ailesini kaybetme rüyaları). 1124 ¶28 奥黛丽迎接了海柔尔，带着这位新朋友…; ¶29 (Audrey üçüncü aşamayı erteler).
+**Denetim:** 1057, 1124 (ZH).
