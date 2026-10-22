@@ -2454,7 +2454,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 
 ##### ZMR1.3 — Backlund orta sınıfı: bütçe ve görüntü
 
-**Kapsam:** Stelyn ve komşuları, dedektif Stuart, memurlar
+**Kapsam:** Stelyn ve komşuları, dedektif Stuart, memurlar; Tingen'de meslek sahipleri: akıl hastanesi doktoru Daxter Guderian (116–175), eskrim hocası Gawain (97–171; unvansız ama soylu tavırlı)
 **Yap:** Saygınlığı kalem kalem hesaplar: kira, hizmetçi, konser, tenis, kıyafet; "gerçek saygınlık" için ne eksik kaldığını söyler. Başkasına öğüt verir gibi konuşur, ama kaygısı sesindedir. Batıl korkuları "taşrada derler ki..." diye utanarak itiraf eder.
 **Yapma:** Kaygıyı açıkça söyletmek (bütçe konuşmasının altında kalır); gösterişi abartıp karikatüre çevirmek.
 **Ayar:** _"Bu geliri koruyabilirsen haftada 5 pound sana Cherwood semtinde gayet iyi bir hayat sağlar: odalarını paylaşmak zorunda kalmazsın, bir hizmetçi tutarsın, iki haftada bir konsere ya da tiyatroya gidersin... Tabii evliliğe hazırlanıyorsan biraz tutumlu olmalısın; haftalık 5 pound gerçek saygınlığın biraz gerisinde kalır."_ (231, Stelyn); _"Bir ailenin, saygın sayılabilmesi için yılda en az 30 pound'u buna ayırması gerekir."_ (357)
@@ -2501,7 +2501,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 
 ##### ZMR1.9 — Kolluk ve memurlar
 
-**Kapsam:** Aşkın olmayan polis, memur
+**Kapsam:** Aşkın olmayan polis, memur; Tingen: Müfettiş Tolle (89–174), Bitsch Mountbatten (10, yayımlanmış)
 **Yap:** Prosedürel, kısa, kitabına uygun; üste saygılı, alta buyurgan; sorumluluğu üste devreder.
 **Yapma:** Gece Şahinleri ya da Xio'yla karıştırmak (Xio yasaya inanır; bu tip yasayı iş olarak uygular).
 **Onay:** Üste _"Emredersiniz!"_, alta _"Anlaşıldı."_
@@ -2536,7 +2536,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 
 ##### KLS1.1 — Ebedî Gece: sükûnet ve himaye
 
-**Kapsam:** Tanrıça'nın rahipleri, piskoposları, Gece Şahinleri, sıradan müminler
+**Kapsam:** Tanrıça'nın rahipleri, piskoposları, Gece Şahinleri, sıradan müminler; Gece Şahinleri'nin dokuz 高级执事'sinden Crestet Cesimir (166–169, Klein'ın sınavı; unvanın Türkçesi henüz yok)
 **Yap:** Kilisenin havası sessizlik ve karanlıktır; içeride herkesin sesi yumuşar (25: "Sessiz karanlık ona da bulaşmışçasına tonu yumuşadı"). Rahip ve piskopos kısa, sakin, şefkatli konuşur; günah çıkarana "çocuğum" der. Vaaz dili koşut cümlelerle kurulur ("Onlar ... annelerdir; onlar ... yetimlerdir; onlar ... yoksullardır.") ve himaye vaadiyle biter (黑夜没有放弃他们，给予了他们眷顾). Gündelik müminde inanç yalnız formülde ve işarette görünür; Gece Şahinleri işarete bir alay katabilir (47: İhtiyar Neil, Klein'a işareti unuttuğu için takılır).
 **Yapma:** Kilise dilini ağdalı bir korku ya da karanlık tiradına çevirmek; her rahibi gizemli fısıltılarla konuşturmak.
 **Ayar:** _"Ulu Ece'ye medholsun."_ (26); _"Günah çıkarma kabininden sağa dön ve sonuna kadar yürü. Yan tarafta gizli bir kapı olacak. İçeri girdiğinde biri sana yol gösterecek."_ (25)
