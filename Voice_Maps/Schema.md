@@ -129,9 +129,9 @@ Side_Character_Maps.md'nin bütün haritaları bu biçimdedir; şablon üreteci 
 **Biçim.**
 
 - Başlık: `### Ad (açıklama) \`kaynak: metin | mudahale: ozgun | denetim: eklenecek\``. Altında **Tarz:** (kim, nasıl konuşur, hangi dönemde ne değişir), **Onay:** (kaynaktaki kısa evet/tamam kalıbı, Çincesiyle), isteğe bağlı **Sicil (yorum):**.
-- Kurallar `##### KOD1.x — Başlık`; alanlar **Kapsam / Yap / Yapma / Örnek / Gerekçe: → N-KOD1.x**. Kod üç harflidir (ROS, AZK, ISG...). Kanıt Side_Character_Notlar.md'de `### N-KOD1.x` altında Çince alıntıyla ve **Denetim:** satırıyla durur.
+- Kurallar `##### KOD1.x — Başlık`; alanlar **Kapsam / Yap / Yapma / Ayar / Gerekçe: → N-KOD1.x**. Kod üç harflidir (ROS, AZK, ISG...). Kanıt Side_Character_Notlar.md'de `### N-KOD1.x` altında Çince alıntıyla ve **Denetim:** satırıyla durur.
 - `Kapsam` dönemi ve muhatabı belirler; kural o aralığın dışına taşınmaz. Bir özellik Mertebeyle ya da olayla değişiyorsa kademeli yazılır (ör. Sharron'un kukla imgesi: Tayf iken ender bir benzetme, Kukla'dan (1016) sonra baskın).
-- **Örnekler:** yayımlanmış bölümlerden (1–58) alınmış olanlar kesindir; geri kalanlar Claude'un çevirisidir ve bölüm çevrildiğinde çevirmenin cümlesiyle değiştirilir. ¶ numaraları çevrilmemiş bölümlerde ZH satır sırasıdır. Örnek yalnız kelime ve kayıt seçimini gösterir; kaynakta olmayan bir cümle, söz ya da formül içermez (0.5 §2, §4).
+- **Ayar satırları:** yayımlanmış bölümlerden (1–58) alınmış olanlar kesindir; geri kalanlar Claude'un çevirisidir ve bölüm çevrildiğinde çevirmenin cümlesiyle değiştirilir. ¶ numaraları çevrilmemiş bölümlerde ZH satır sırasıdır. Ayar satırı yalnız kelime ve kayıt seçimini gösterir; kaynakta olmayan bir cümle, söz ya da formül içermez (0.5 §2, §4).
 
 **Sicil (yorum) katmanı.** Kaynakta karşılığı olmayan bir kayıt, ancak bir dayanağı varsa eklenir: Yolun ya da Mertebenin adı, sozluk.yml'deki tazim ismi, yol grubu, kültürel konum. Kural:
 
