@@ -2606,3 +2606,72 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
   - _Maske:_ sükûnet ve gülümseme.
   - _Öz:_ şehrini kurtarmak için kötü bir ilahı araç edinmiş yalnız bir sadakat; ardında yitirilmiş biri (401 ¶64).
   - _Çatlak:_ hüzünlü gülümseme (401 ¶63–64) ve ölüm (1263 ¶45–46). Çatlakta kendini savunmaz, açıklamaz; tek cümle kurar: _"Gümüş Şehir'e ihanet etmedim..."_ Son sözü ilahı hakkında değil, şehir hakkındadır.
+
+---
+
+## 13. İlahların Metruk Diyarı — Ay Şehri
+
+### Ay Şehri Ahalisi (Toplu Harita) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+- **Konum:** Ay Şehri (月城) bir mabet ve arşiv şehridir: bir zamanlar Kan Zümresi'nin şehri, sonra Kadim Güneş Tanrısı'nın kullarının (1212 ¶60). 3722 yıldır, Rab'bin kutsal vahyiyle gri sisi gözetir ve içinden geçmenin yolunu arar (1213 ¶40). Şehri Başrahip ve rahipler yönetir; merkezleri Kara Kule'dir (黑塔). Elçi'nin (神使) seçtiği ilk ahali bütün Yolları taşıyordu; felaketler formüllerin çoğunu yok etti (1218 ¶19). Elde Uykusuz, Avcı ve Arabulucu Yolları vardır (Mertebe 0 adlarıyla Karanlık, Ahmer Hünkar, Yargı), Mertebe 4'e kadar.
+- **Dayanak: Harran.** Tarihteki "Ay şehri": Sin'in mabedi, eski ilmi koruyan Sâbiî rahipleri, sonra tek Tanrı'ya kul olmuş bir şehir. Ay Şehri'nin sicili bir rahip-vakanüvisin sicilidir: ölçülü, kesin, kayda dayanan. Gümüş Şehir'in Dede Korkut katmanı buraya taşınmaz: rütbe hitabı (Başbuğ, Aksakal), destan formülü, uç beyliği ağırlığı yoktur. İkisi aynı diyardadır ama aynı kültürü paylaşmaz (kullanıcı kararı).
+- **Ortak çevre (Gümüş Şehir'le aynı kural):** Güneşi, göğü, denizi, mevsimi görmemişlerdir; bunları varsayan deyimler ağızlarına ve onların bakış açısındaki iç sese girmez. Süre kalp atışı ve şimşekle sayılır (1212 ¶19). Bu kural kültür değil, çevredir.
+- **Bozulma:** Canavar eti yemekten gelen zehir ve delilik kuşaktan kuşağa geçer; sakat doğanlar artar (1210 ¶21–23). Kontrolünü yitirdiğini sezen kişi bir meşale ve biraz yiyecekle karanlığa yürür, dönmez (1210 ¶12). Sakatlar ve bozulmuşlar da herkes gibi konuşur; sakatlık anlatıdadır, sözde değil.
+- **İlah ve hitap:** Dönmeden önce Kadim Güneş Tanrısı "Rab"dır (Kadir-i Mutlak deyişi; 主). İmandan sonra 主 Soytarı içindir ve "Efendi"dir (Dorian kuralı, DOR1.4). Klein'a 斯帕罗阁下 → "Sparrow Hazretleri", 神使大人 → "Elçi Hazretleri".
+- **Sözlük:** Ay Şehri, Yeni Ay Şehri (新月城), Başrahip (大祭司), Şimşek Rahibi (闪电祭司), Gece Rahibi (黑夜祭司), Soytarı Rahibi ("愚者"祭司), Kara Kule (黑塔), av kolu / kolbaşı (狩猎小队 / 队长). Sisin tazim ismi words.md §VII'dedir.
+- **Ayrı haritası:** Başrahip Nim, aşağıda.
+
+##### AYS1.1 — Av kolu: düz, az, umutsuz
+
+**Kapsam:** 1210–1219 · A'dal (kolbaşı), Xin, Rus ve av kolu
+**Yap:** Kısa, düz cümleler; çoğu bir tespit ya da bir buyruk. Acı söze dökülmez, bir tespitin içinde kalır ("…giderek artıyor"). Kolbaşı tek kelimelik buyruk verir. Umut ortaya çıkınca sorular üst üste yığılır ama kısa kalır (1211 ¶20).
+**Yapma:** Destan formülü, Gümüş Şehir'in rütbe ve vazife ağırlığı; acıyı yakınmaya çevirmek; sakatlığı konuşmaya taşımak.
+**Ayar:** _"Yürüyün, bu kadar yiyecek yetmez."_ (1210 ¶39); _"Yeni doğan çocukların arasında sakatlar giderek artıyor…"_ (1210 ¶21); _"…Tetikte olun!"_ (1210 ¶56); _"Onların yeni doğanları arasında da sakatlar var mı?"_ (1211 ¶28); _"Lanetli diyarın dışında kaç sağlıklı insan var?"_ (1211 ¶37)
+**Gerekçe:** → N-AYS1.1
+
+##### AYS1.2 — Mabet sicili: kayıt, nöbet, ayin
+
+**Kapsam:** Rahipler ve onlarla konuşan ahali · sis, kayıtlar, ayinler
+**Yap:** Rahip konuşurken ölçülü ve kesindir: tarih gün gününe söylenir, sayılar tamdır, bilmediği şeyi kayda bakmadan söylemez (1218 ¶42–43, ¶53). Kelimeler mabet ve arşiv kelimeleridir: nöbet, kayıt, defter, mabet, eski kitaplar, kutsal vahiy. 仪式 "ayin"dir. Sise karşı bir kulun hürmeti vardır ama sis bir ilah değil, bir eşiktir.
+**Yapma:** Divan süsü; Gümüş Şehir'in "Başbuğum"u; sisi bir ilah gibi yüceltmek (tazim ismi insan yapımıdır, words.md §VII).
+**Ayar:** _"İki yıl, iki ay, on gün önce."_ / _"Kayda değer şey pek az olur; iyi hatırlıyorum."_ (1218 ¶42–43); _"Size kesin bir cevap veremem; ilgili kayıtlara bakmam gerekir."_ / _"Neyse ki son üç yüz yılın belgeleri ve kitapları zarar görmedi."_ (1218 ¶53–54)
+**Gerekçe:** → N-AYS1.2
+
+---
+
+### Nim (Ay Şehri Başrahibi) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Ay Şehri'nin Başrahibi; Uykusuz Yolu'nda Mertebe 4, Gece Bekçisi (1218 ¶21). Yüzü derin kırışıklıklarla dolu, saçları kır, gözleri gri. Şehrin hafızasıdır: tarihi, ayinleri, kayıtları bilir. Ölçülü, dürüst ve temkinlidir; dışarıdan gelen kişiye dokunan herkesi on beş gün kulede gözetim altında tutar (1217 ¶41–43). Rab'bin öldüğünü duyunca bir an sarsılır, sonra gözünü kapatıp açar ve soruya döner (1213 ¶26, ¶37). İmandan sonra Soytarı Rahibi olur (1227 ¶1); Klein'a önce "Sparrow Hazretleri", sonra "Elçi Hazretleri" der. Halkı onu beklemeyi seven, beklenmekten hoşlanmayan biri diye bilir (1217 ¶9).
+**Onay:** _"Evet."_ (1213 ¶50'de 鼻音; 1218 ¶23 有。→ "Var."); _"Peki, Sparrow Hazretleri."_ (1215 ¶38)
+
+##### NIM1.1 — Konuk karşısında: resmî ve doğrudan
+
+**Kapsam:** 1212–1219 · Gehrman, şehir meclisi
+**Yap:** Konuğu bir unvanla karşılar, kendini ve şehrini tek cümlede tanıtır. Meclise konuşurken sözü doğrudan konuya getirir ve kuralı açık koyar. Söz verir, sözünü tutar.
+**Yapma:** Uzun bir tören dili; Divan süsü.
+**Ayar:** _"Muhterem konuk, ben Ay Şehri'nin Başrahibi Nim."_ / _"Ay Şehri bir zamanlar Kan Zümresi'nin şehriydi; ama o medeniyet çok eski zamanlarda yok oldu."_ (1212 ¶59–60); _"A'dal'ın av kolu bir yabancıyla karşılaştı."_ (1217 ¶24); _"Herkes oraya gitmeyi seçebilir, ama önceden haber vermeli, verilen düzene uymalı, şehrin savunmasını aksatacak bir iş yapmamalı."_ (1217 ¶43)
+**Gerekçe:** → N-NIM1.1
+
+##### NIM1.2 — Şehrin hafızası
+
+**Kapsam:** 1213, 1218 · sis, ayinler, kayıtlar, eski kitaplar
+**Yap:** Tarihi sıralı ve kesin anlatır: kaç yıl önce, kim, ne yaptı, ne oldu. Başarısızlığı düz söyler, kendini küçültmeden ("belki Mertebemiz yeterince yüksek değil"). Mabet sicili (AYS1.2) ondadır.
+**Yapma:** Bilgiyi bilmeceye ya da kehanete çevirmek; tarihi tahminle söylemek.
+**Ayar:** _"Bin yedi yüz otuz küsur yıl önce, o zamanki Başrahip, Ay Şehri'nin iki bin yıla yakın denemesinin hiçbir sonuç vermemesi karşısında bir ilham buldu."_ (1213 ¶46); _"Belirli bir düzeni yok; bazen bir denemede olur, bazen bir ay boyunca da karşılık gelmez."_ (1213 ¶54); _"Hayır. Belki Mertebemiz yeterince yüksek değil, gücümüz yetmiyor."_ (1213 ¶56)
+**Gerekçe:** → N-NIM1.2
+
+##### NIM1.3 — Kul: Rab'den Efendi'ye
+
+**Kapsam:** 1213 (Rab'bin ölümü), 1218–1227 (iman)
+**Yap:** Rab hakkındaki soruyu en sona saklar, en çok onu bilmek ister (1213 ¶23). Sarsılınca sözü bastırır, bir susuştan sonra işine döner. İmandan sonra aynı hürmet Soytarı'ya geçer: "Yüce Efendimiz", "Elçi Hazretleri"; şehrin bütün hazinesini ona adamaya hazırdır (1227 ¶4). Rab yalnız Kadim Güneş Tanrısı içindir.
+**Yapma:** İmanı coşkulu bir vaaza çevirmek; Soytarı'ya "Rab" demek.
+**Ayar:** _"Peki… yüce Güneş Tanrısı, her şeyi yaratan Rab?"_ (1213 ¶23); _"Yani… yani Rab bu yüzden mi öldü?"_ (1213 ¶26); _"Başka sormak istediğiniz bir şey var mı?"_ (1213 ¶37); _"Elçi Hazretleri, yüce Efendimizin tam tazim ismi nedir?"_ (1226 ¶68)
+**Gerekçe:** → N-NIM1.3
+
+##### NIM1.4 — Sisin tazim ismi
+
+**Kapsam:** 1213–1215 · sisteki ayin
+**Yap:** Tazim ismini ezberden, alçak sesle okur (1214 ¶13–16); kalıp donmuştur (words.md §VII). İnsan yapımıdır ve ilahi tazim isimlerinin Osmanlıca sicilinden bilerek aşağıda tutulur; dua gibi okunur ama yapılmış olduğu duyulur. İkinci satırdaki "Zamanı ve Mekânı" Esrarın Hükümdarı'nın 时空之王 unvanını yankılar: sesler aslında onunla bağlı bir yerden gelir.
+**Yapma:** Kalıbı her geçişte başka kelimelerle çevirmek; onu Soytarı'nın tazim ismi düzeyine çıkarmak.
+**Ayar:** _"Ebedî ve Değişmez Sis; / Zamanı ve Mekânı Donduran Perde; / Her Şeyi Kuşatan Varlık…"_ (1214 ¶14–16)
+**Gerekçe:** → N-NIM1.4

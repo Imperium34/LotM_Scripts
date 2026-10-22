@@ -1795,3 +1795,42 @@ Hampres: 405 ¶32 斯蒂芬·汉普雷斯先生，家具商人; ¶35 微笑道�
 
 583 ¶44 很谨慎的袭击者，我做刺客那段时间，也许还不如她，不，他……(忽地咬牙切齿); ¶45 (Elaine'le ilişkisi olduğunu sanar); ¶46 按照罗塞尔大帝的说法，她怀疑自己头顶有点绿油油的。(anlatı; Roselle deyimi, çeviride ayrı karar).
 **Denetim:** 583 (ZH).
+
+## Ay Şehri (Nim, av kolu, ahali)
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
+> **Ayar satırları:** Bütün satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm (konuşan):** 1210–1211 (av kolu Gehrman'la karşılaşır), 1212–1215 (Nim; sis ve ayin), 1217 (Nim meclise konuşur), 1218–1219 (iman; Kara Ulu Kurt haberi), 1226–1227 (büyük ibadet; Soytarı Rahibi). Yeni Ay Şehri: 1299; Soytarı Kilisesi'nin üç kutsal yerinden biri (wiki, 1358).
+> **Kullanıcı bilgisi (2026-10-22, wiki):** Uykusuz, Avcı ve Arabulucu Yolları Mertebe 4'e kadar; canavar eti, kalıtsal zehir ve delilik; kontrolünü yitiren karanlığa yürür; sakatlar iki üç yüz yıl öncesine kadar Aşkın olamazdı; şehir önce Kan Zümresi'nin, sonra Kadim Güneş Tanrısı'nın; 1730 yıl önceki Başrahip sise tazim ismi, dua ve semboller kurdu; 1352 baharında Gümüş Şehir'le birlikte Rorsted Takımadaları'na göç. Gümüş Şehir sicili taşınmaz (kullanıcı kararı).
+> **Ad kararları (2026-10-22, words.md):** 月城 → Ay Şehri, 新月城 → Yeni Ay Şehri, 大祭司 → Başrahip, 闪电祭司 → Şimşek Rahibi, 黑夜祭司 → Gece Rahibi, "愚者"祭司 → Soytarı Rahibi (祭司 = Rahip, Bereket Rahibi kalıbı), 黑塔 → Kara Kule, 狩猎小队 / 队长 → av kolu / kolbaşı, 斯帕罗阁下 → Sparrow Hazretleri, 神使大人 → Elçi Hazretleri (神使 = Elçi). Sicil dayanağı Harran (kullanıcı onayı). Sisin tazim ismi: orta biçim, insan yapımı, ilahi sicilin altında (kullanıcı onayı); 凝固时空 ↔ 时空之王 yankısı.
+> **Sözlükte olmayanlar (haritada kullanılmadı):** 阿达尔 A'dal, 辛 Xin, 鲁斯 Rus (İng. biçimler); 乌黯魔狼 (1218 ¶38); 铁血骑士, 律令法师 (1227 ¶5; Mertebe adları sozluk.yml'den alınacak); 城邦.
+
+### N-AYS1.1
+
+1210 ¶7 阿达尔，怎么了？; ¶11–12 辛，鲁斯，这是我小时候送给我父亲的。/ 他在我成年那天，感觉已无法控制自己，选择自行离开城邦，进入黑暗深处……; ¶19 也许，这就是杀害你父亲的那个怪物。; ¶21 低沉开口道：新生的孩子里，畸形者越来越多了……; ¶27 希望大祭司他们能找到新的方向……(回答异常的无力); ¶38 (sakatlar kuralı); ¶39 走吧，这点食物还不够。; ¶56 ……警戒！; ¶75 你来自哪里？ 1211 ¶20 激动地发出了一连串的问题; ¶28 用梦呓般的口吻问道：……他们的新生儿里有畸形者？; ¶31 他们的父母会在身体状态下滑，不，年老后，自己走入黑暗深处吗？; ¶37 诅咒之地外面还有多少正常人？; ¶51 你究竟是什么人？; ¶57 (Rus haber vermeye gider). 1213 ¶17 斯帕罗阁下祈求来了神灵的赐予，拯救了我们。/ 是，我们看见了光！我们感受到了温暖！ 1217 ¶45 大祭司，我想去！ 1218 ¶60 大祭司，您也尝尝。 Çevre: 1212 ¶19 一两百次心跳间的尝试.
+**Denetim:** 1210, 1211, 1212, 1213, 1217, 1218 (ZH).
+
+### N-AYS1.2
+
+1218 ¶42 两年两个月零十天前。; ¶43 值得记录的事情太少，我印象很深刻。; ¶53 我无法告诉您准确的答案，需要回去翻看相应的记录。; ¶54 还好，最近三百年内的资料和文献没遭受破坏。; ¶31 和古代文献里描述的魔狼一样… 1212 ¶24 只有大祭司他们才会经常翻看 (eski kitaplar). 1213 ¶40 最初是主的神谕… 1218 ¶19 我们被挑选来月城时，神使有意识地让非凡途径全面…
+**Denetim:** 1212, 1213, 1218 (ZH).
+
+### N-NIM1.1
+
+1212 ¶55 (Xin) 大祭司……; ¶59 尊贵的客人，我是月城大祭司尼姆。; ¶60 月城曾经是属于吸血鬼的城市，但那个文明在古老的年代里已经被毁灭了。 1217 ¶9 他不是喜欢等待，不愿意被等待吗？(halk); ¶24 直截了当地开口道：阿达尔率领的狩猎小队遇到了一位外来者。; ¶40 我检查过他们，也用封印物检查过…; ¶41 我会让他们继续待在黑塔，接受至少十五天的观察。; ¶43 所有人都可以选择前往，但必须事前报备，听从安排… 1215 ¶38 好的，斯帕罗阁下。; ¶66 我将把您的话语转告所有人。 1218 ¶61 先谨慎地用那个'放大镜'照了照 (temkin).
+**Denetim:** 1212, 1215, 1217, 1218 (ZH).
+
+### N-NIM1.2
+
+1213 ¶40–42 最初是主的神谕…/ 也不是完全没有反应，但并不是我们想要的反应。; ¶46 一千七百三十多年前，当时的大祭司在月城近两千年尝试都没有收获的残酷事实面前，有了一个灵感。; ¶47–48 视作一个伟大的存在来对待… 设计了尊名、祈祷词和相应的符号; ¶50 将尊名的第一句修改为了'永恒不变的迷雾……'; ¶51; ¶54 没有规律，有时候一次就成功了，有时候一个月也未必有反馈。; ¶56 没有，也许是我们的序列还不够高，实力还不够强。 1214 ¶65 今天看来不行，可以等明天再试，最长不会超过两个月。 1218 ¶21 我是'守夜人'。; ¶42–43, ¶53–54.
+**Denetim:** 1213, 1214, 1218 (ZH).
+
+### N-NIM1.3
+
+1213 ¶21 伟大的'愚者'先生是这个世界，不，这片被诅咒大地之外的神灵？; ¶23 那……伟大的太阳神，创造一切的主呢？(犹豫了一下…心中最渴望知道的那个问题); ¶26 艰难地，竭力压制着什么地开口问道：您的意思是，主因此，因此陨落？; ¶37 不知什么时候已闭上了眼睛，两三秒后，他重新睁开…您还有什么想问的？ 1215 ¶30 灰白的眼眸骤然睁大…激动. 1218 ¶64 异常诚恳地说道：阁下，我们想聆听一下'愚者'先生的教诲。 1226 ¶68 恭敬问道：神使大人，伟大的主完整的尊名是什么？ 1227 ¶1 刚就任的'愚者'祭司尼姆; ¶4 神使大人，所有的封印物和非凡特性，我们都愿意献祭给主…; ¶5 (Şimşek Rahibi, Gece Rahibi).
+**Denetim:** 1213, 1215, 1218, 1226, 1227 (ZH).
+
+### N-NIM1.4
+
+1214 ¶12 按照已刻入自己记忆里的流程，异常熟练地举行起仪式。; ¶13 埋下脑袋，低沉诵念道：; ¶14–16 永恒不变的迷雾；/ 凝固时空的屏障；/ 包容一切的存在…… 1213 ¶47–50 (tazim isminin yapılışı ve ilk satırın değiştirilişi). 1218 (Klein: sesler 福生玄黄天尊 okur). 1347 '诡秘之主'、'时空之王' (yankı).
+**Denetim:** 1213, 1214, 1218, 1347 (ZH).
