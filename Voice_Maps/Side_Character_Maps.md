@@ -929,6 +929,26 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 - **KEN1.2 — Gerginlik açıkça söylenir:** _"Katıldığım en tehlikeli görev bu."_ (196 ¶63). → N-KEN1.2
 - **Not:** Ölümünden önce sesine bir önsezi yazılmaz. Sıradanlığı kaybın kendisidir; trajedi anlatıda ve Klein'ın yasında kurulur (199–202).
 
+### Backlund Gece Şahinleri — 2-049 Eskortu (Toplu Harita) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** 2-049 Mühürlü Eseri'ni Backlund piskoposluğundan Tingen'e getiren üç Gece Şahini (71–80): Aiur Harson, Lorotta, Borgia. Ebedî Gece Kilisesi'nin saha kaydı geçerlidir (GSM1.1; KLS1.1). Tingen müfrezesine göre daha tecrübeli ve daha rahattırlar: "eski kurtlar" (老江湖, 78). İnançları sözlerinde değil, teçhizat ve dua işaretlerindedir.
+
+##### ESK1.1 — Aiur Harson: rapor gibi konuşan eski kurt
+
+**Kapsam:** 71–80 · görev, Mühürlü Eser, yaralıyken
+**Yap:** Uykusuz Yolu'nda Mertebe 7, Kâbus; Dunn'ın deyişiyle "benim gibi eski bir kurt" (71 ¶17). Yakışıklı, göz kenarları kırışmış orta yaşlı bir beyefendi; Dunn gibi kollarını bükerek uyanık kalır. Gözlemini mekanik, raporlu bir dille verir (71 ¶63); buyruğu kısa ve sert, telaşta tekrarlı. Yaralıyken bile sözü sıralı kalır ama kesik kesik çıkar (76 ¶24). Kuru bir mizahı vardır (76 ¶79).
+**Yapma:** Soğuk bir memur sesi; mizahı gülüşle uzatmak.
+**Ayar:** _"Gidelim beyler, bir an önce bitirip 2-049'u mühürleyelim."_ (71 ¶27); _"2-049 azgınlaştı, her seferinde iki kişiyi etkiliyor; Ray Bieber'ın Antigonus ailesinin soyundan geldiği teyit edildi."_ (71 ¶63); _"Ondan uzak durun! Başında bekleyin!"_ (72 ¶84); _"Kadim ve şerir kuvvetlerin etkisine giren herifler, buraları pek işe yaramaz olur."_ (76 ¶79)
+**Gerekçe:** → N-ESK1.1
+
+##### ESK1.2 — Lorotta: tembel bir zarafet, keskin göz
+
+**Kapsam:** 71–80 · görev, Klein, dinlenme
+**Yap:** Naaş Toplayıcı Yolu'nda Mertebe 8, Kabir Kazıcı; usta bir nişancı (71 ¶13). Güzel, siyah saçlı; ağır, tembel bir tonla konuşur (慵懒), eliyle ağzını kapatıp güler ya da esner. İroniden hoşlanır ve bunu bir "ne ilginç" ile söyler. Savaşta sözü birden kısalır ve iş bildirir (74 ¶69). Üç tutkusu kahve, tatlı ve hizmetçilerdir, hizmetçinin de iri göğüslüsünü sever (Dunn, 79 ¶48–51); bu anlatıdadır, onun ağzında değil.
+**Yapma:** Tembel tonu savaş anına taşımak; zaafını kendi replikleriyle teşhir etmek.
+**Ayar:** _"Dert etme; 2-049 önce beş metre içindeki insan biçimli canlılara yönelir…"_ (71 ¶47); _"Buldum! Onu en az üç saniye tutmanız lazım."_ (74 ¶69); _"Kehaneti yanlış değildi, ama onu tam da ölümcül tehlikenin içine attı; ne ilginç."_ (77 ¶60); _"Pff… güzel cevap, senin gibi gençleri severim!"_ (78 ¶9)
+**Gerekçe:** → N-ESK1.2
+
 ### Kehanet Kulübü (Toplu Harita) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
 **Tarz:** Tingen'in orta ve üst orta sınıf hobi kulübü. Nazik, rahat ve kehanet meraklısı; üyeler ücretlerden, yöntemlerden, birbirlerinin falından konuşur. Hitap 'Bay' ve 'Hanım'dır (Bay Moretti, Angelica Hanım). Kehanet terimleri sözlüktedir: kehanet, kâhin, falcı, gök haritası, Sihirli Ayna Kehaneti. Klein burada bir üfürükçü rolü oynar; onun sesi Klein haritasındadır. Ayarler 38–56 için yayımlanmış metindendir.
@@ -963,6 +983,36 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 - **Tarz:** Genç, güler yüzlü bir üye; mesleğe alaycı bir mesafeyle bakar.
 - **EDW1.1 — Alaycı itiraf:** Kehanet yorumlarının muğlaklığını açıkça söyler ve bir espriyle bağlar: _"…Ölüler gelip bana itiraz etmez."_ (49). → N-EDW1.1
+
+### Joyce Meyer ve Çevresi (Toplu Harita) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+
+**Tarz:** Tingen'in kiliseye giden orta sınıfı; Kehanet Kulübü'nde Klein'ın ilk müşterileri (55–56, 63, 81–83, 95). Hepsi Buhar ve Çarklar müminidir; inanç sözlerindedir. Yayımlanmış kalıplar (55–56): 蒸汽在上 → "Buhar aşkına!", 噢，蒸汽之主 → "Ah, Buhar Hâkimi", 神 → "Tanrı" ("Tanrı'ya minnettarım, Tanrı'yı yüceltirim!"), 神啊 → "Tanrım…"; göğse nokta nokta dokunup üçgen Buhar ve Çark Mukaddesat Amblemi'ni çizmek. 主啊 bu çevrede "Tanrım"dır; Kadir-i Mutlak deyişindeki "Ya Rab" verilmez. Klein'a "Bay Moretti", birbirlerine "Bay Wayne", "Bay Meyer" (先生 → Bay; yayımlanmış). Sınıfları ZMR1.3–1.4 arasıdır.
+
+##### JOY1.1 — Joyce Meyer: kibar, sağ kalmış, gölgeli
+
+**Kapsam:** 55–124 · Anna, ailesi, Klein, Yonca'nın hatırası
+**Yap:** Sarışın, kartal burunlu, eğitimli ve kibar bir genç adam. Konuşması toplu ve nazik, teşekkürü tam cümleyle. Yonca'yı (Tris'in kışkırttığı katliam, TRS1.1) anlatırken uzun, görüntülü cümlelere geçer; korkusu ve suçluluğu oradadır. Kendi yaptığını savunurken sesi sertleşir (63 ¶35–36). Anna'ya şefkatle bakar.
+**Yapma:** Travmayı her replikte göstermek; inancı vaaza çevirmek.
+**Ayar (yayımlanmış):** _"Buhar aşkına, ne kadar şanslıyım, sağ salim dönebildim, Anna'yı bir kez daha görebildim."_ (56 ¶2); _"Bugün bile hâlâ korkuyorum, rüyalarımdan tekrar tekrar sıçrayarak uyanıyorum."_ (56 ¶4); _"Bu bizim dindarlığımızın mükâfatı."_ (56 ¶17); _"Tanrım..."_ (56 ¶24)
+**Ayar:** _"Tünaydın, Bay Moretti. Anna'ya yol gösterdiğiniz için teşekkür ederim; sizin olağanüstülüğünüzü anlatmaktan dilini durduramıyor."_ (63 ¶3); _"Bay Moretti, rüyamı yorumlamanızı istiyorum."_ (63 ¶16); _"Onun ne kadar zalim, ne kadar nefret edilecek bir haydut olduğunu birkaç gün, belki bir hafta sonra gazetelerde okursunuz…"_ (63 ¶35)
+**Gerekçe:** → N-JOY1.1
+
+##### JOY1.2 — Anna: telaşlı mümin, inandırıcı tanık
+
+**Kapsam:** 55–83 · Joyce, Klein, arkadaşları
+**Yap:** Güzel gözlü, okumuş, iyi giyimli bir genç kadın; başkalarının önünde duygusunu göstermeye alışık değildir (81 ¶27) ama Joyce söz konusu olunca ünlemler ve sorular art arda gelir, cümle dağılır (55 ¶66). Dua ve şükür sözleri kendiliğinden çıkar. Sonra bir tanık gibi anlatır ve başkasını ikna eder (81 ¶36–38).
+**Yapma:** Telaşı bastırmak; şükrü süslü bir duaya çevirmek.
+**Ayar (yayımlanmış):** _"Ah, Buhar Hâkimi, doğru mu bu? Zavallı Joyce'um döndü mü? Sahiden emin misiniz? Hayır, inanamıyorum..."_ (55 ¶66); _"...Buhar aşkına, sahiden dönmüşsün!"_ (55 ¶75); _"Ah, Buhar aşkına, zavallı Joyce'um, ne yürek parçalayıcı şeyler yaşamışsın! Tanrı'ya minnettarım, Tanrı'yı yüceltirim! Ayrılmamıza O izin vermedi."_ (56 ¶16)
+**Ayar:** _"Bogda, neden baştan beri başın önünde? Keyfinin hiç yerinde olmadığını hissedebiliyorum."_ (81 ¶27); _"Akıllıca bir karar verdin."_ (81 ¶45)
+**Gerekçe:** → N-JOY1.2
+
+##### JOY1.3 — Bogda Jones: korkak şüpheci, sadık müşteri
+
+**Kapsam:** 81–95 · arkadaşları, Klein, babası
+**Yap:** Karaciğer hastası bir genç adam. Cerrahlardan dehşetle söz eder, abartır (81 ¶34). Önce şüphecidir, sonra kanaat getirince kayıtsız şartsız inanır: "yalnızca Bay Moretti'ye güvenirim". Sevinci kısa ve tekrarlı. Babası onun için üçgen amblemi çizer.
+**Yapma:** Korkuyu sakin bir cümleye çevirmek; şüpheyi kabalığa.
+**Ayar:** _"Hayır, henüz karar vermedim. Biliyorsunuz, o cerrahlar düpedüz kasap, ameliyat masasındaki adam da kütüğün üstündeki bir parça et! … Tanrım, ameliyat masasında ölüp gideceğimden korkuyorum."_ (81 ¶34); _"Hayır, ben yalnızca Bay Moretti'ye güvenirim."_ (82 ¶20); _"Siz gerçek bir Kâhin'siniz."_ (82 ¶42); babası: _"Tanrı seni korusun."_ (83 ¶23)
+**Gerekçe:** → N-JOY1.3
 
 ## Tingen Şubesi — Destek Personeli
 

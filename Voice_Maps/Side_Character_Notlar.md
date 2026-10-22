@@ -1834,3 +1834,43 @@ Hampres: 405 ¶32 斯蒂芬·汉普雷斯先生，家具商人; ¶35 微笑道�
 
 1214 ¶12 按照已刻入自己记忆里的流程，异常熟练地举行起仪式。; ¶13 埋下脑袋，低沉诵念道：; ¶14–16 永恒不变的迷雾；/ 凝固时空的屏障；/ 包容一切的存在…… 1213 ¶47–50 (tazim isminin yapılışı ve ilk satırın değiştirilişi). 1218 (Klein: sesler 福生玄黄天尊 okur). 1347 '诡秘之主'、'时空之王' (yankı).
 **Denetim:** 1213, 1214, 1218, 1347 (ZH).
+
+## Backlund Gece Şahinleri — 2-049 Eskortu
+
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
+> **Ayar satırları:** Bütün satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
+> **Görünüm (konuşan):** 71–80 (2-049'un getirilişi, Ray Bieber'ın izi, kanalizasyon ve depo, Palyaço'yla çatışma, dönüş). Anılır: 98, 214, 289. Adlar: 艾尔·哈森 Aiur Harson, 洛络塔 Lorotta, 博尔吉亚 Borgia (İng. biçimler).
+> **Kullanıcı bilgisi (2026-10-22, wiki):** Lorotta'nın üç tutkusu kahve, tatlı ve hizmetçiler; iri göğüslü hizmetçileri sever (Dunn). Aiur hakkında ek bilgi yok. Yolları seslerini pek etkilemez; inançları (Ebedî Gece) sözlerinde görünmelidir.
+> **Sözlükte olmayanlar (haritada kullanılmadı):** 女神的凝望 (76 ¶24; tedavi iksiri), 老江湖.
+
+### N-ESK1.1
+
+71 ¶17 艾尔·哈森，和我一样的老家伙。; ¶18 (kol bükme: 屈臂伸展动作); ¶27 长相英俊但眼角已有皱纹的中年绅士艾尔·哈森起身说道：我们出发吧，各位，尽快结束，尽快将'2-049'封印起来。; ¶63 用一种机械化的方式描述道. 72 ¶9 这是正常的。(语气沉稳); ¶17 往那里！; ¶84 远离它！守着它！(大声喊道). 73 ¶3 (Dunn ve Aiur ikisi de 梦魇). 76 ¶21–24 (yaralı, kesik konuşma: 不，它只有一定的治疗效果，主要，主要是刺激我们的精神…); ¶57 一切正常。; ¶79 被古老力量、邪异力量影响的家伙，这里往往都不太有用。 77 ¶23 我知道，你很会安抚动物。 78 ¶1, ¶3 不，洛络塔，这完全不同…
+**Denetim:** 71, 72, 73, 76, 77, 78 (ZH).
+
+### N-ESK1.2
+
+71 ¶13 序列8的'掘墓人'，同时也是一位神枪手; ¶47 容貌姣好的黑发女士洛络塔用一种慵懒的口吻解释道; ¶64 轻笑一声…我想你应该能够理解它的心情。 74 ¶38–40 (Dunn'ın buyruğu; 好。; gözlerini kapatıp ölünün düğümünü arar); ¶69 找到了！我需要你们控制住它，至少三秒。 77 ¶60 掩嘴轻笑道：…他的占卜没错，却反倒让他陷入了致命的危险中，这真是一件有趣的事情。 78 ¶2 捂嘴打了个哈欠; ¶9 噗……不错的回答，我喜欢你这样的年轻人！ 79 ¶46–48 (Dunn: 洛络塔应该是寻找咖啡馆去了 / 洛络塔有三大爱好，咖啡，甜点和女仆…); ¶51 她喜欢女仆，嗯，是这样没错，而且喜欢，喜欢胸大的。
+**Denetim:** 71, 74, 77, 78, 79 (ZH).
+
+## Joyce Meyer ve Çevresi
+
+> **Numaralama:** 55–56 yayımlanmıştır (ZH/TR ¶); 63 ve sonrası `bolum.py N --zh --en` hizalama gruplarıdır.
+> **Ayar satırları:** "(yayımlanmış)" işaretli satırlar kullanıcının metnidir ve kesindir; ötekiler Claude'un çevirisidir.
+> **Görünüm (konuşan):** Anna 55–56, 81–83; Joyce 55–56, 63–64, 81, 83; Bogda 81–83, 95. Anılır: Joyce 68, 123–124 (Tris davası). Adlar: 乔伊斯·迈尔 Joyce Meyer, 安娜 Anna (Wayne ailesinden; aynı adlı başka kişiler de var, ör. KLS1.2'deki Anna), 博格达·琼斯 Bogda Jones. 尤尼斯·金 (63) ve 伊琳 (81) için İng. biçim bulunamadı, haritada kullanılmadı.
+> **Başka haritalarla bağ:** Trissy (TRS1.1; Yonca katliamı), Kehanet Kulübü (Angelica), Kiliseler (KLS1.2 Buhar ve Çarklar), ZMR1.3–1.4.
+
+### N-JOY1.1
+
+Yayımlanmış 55 ¶74 我还以为今天会与你错过的。; 56 ¶2 蒸汽在上，我是多么的幸运…; ¶4 我到今天都还感觉害怕…; ¶7, ¶9–12 (Yonca'nın anlatısı: 那几天，我的视线里都是血色…); ¶14 (Tris'in tarifi); ¶17 这是我们虔诚的回报…; ¶19 (heh: 呵，我原本打算给你一个巨大惊喜的); ¶24 神啊…… 63 ¶3 感谢您对安娜的指点…; ¶6 我对自己能活着回来依旧感觉梦幻…; ¶16 莫雷蒂先生，我想请您解梦。(沉着嗓音); ¶22 我梦见我从苜蓿号上跌落…; ¶35–36 但我并不同情他…他是狡诈的，强壮的，邪恶的，我不敢也不能停手…; ¶44; ¶61 我不认为金钱能体现您的价值… 81 ¶26 如果安娜遭遇类似的事情，我也会这样…(眼神温柔); ¶33 沉稳问道.
+**Denetim:** 55, 56, 63, 81 (ZH/TR; ZH).
+
+### N-JOY1.2
+
+Yayımlanmış 55 ¶1 (kartlar oyuncak gibi), ¶17 如果他没有撒谎，那就是这样。, ¶56 啊，莫雷蒂先生，你占卜出结果了吗？, ¶60 你，你怎么知道的……, ¶63 真，真的？, ¶66 噢，蒸汽之主，这是真的吗？…, ¶75 蒸汽在上啊，你真的回来了！; 56 ¶16 噢，蒸汽在上…感谢神，膜拜神…(不断地在胸口点出三角形的蒸汽与机械圣徽), ¶20–23 (tanık anlatısı), ¶22 蒸汽在上，也许这个世界上真的有奇迹。 81 ¶27 安娜不太习惯在别人面前展露感情…博格达，你为什么一直低着头…; ¶30 主啊，这是什么时候的事情？; ¶36–38 (Bogda'yı ikna eder); ¶45 你做出了明智的选择。
+**Denetim:** 55, 56, 81 (ZH/TR; ZH).
+
+### N-JOY1.3
+
+81 ¶29 (karaciğer); ¶32 博格达苦笑着解释了一句; ¶34 那些外科医生简直就是屠夫…主啊，我怀疑我会死在手术台上。; ¶37 真的？(怀疑); ¶44. 82 ¶14 我想请克莱恩·莫雷蒂先生帮我占卜。; ¶20 不，我只相信莫雷蒂先生…; ¶32–33 真是神奇啊…/ 安娜没有骗我…; ¶39 8便士？您竟然只收8便士？; ¶42 以手按胸，行了一礼…您是一位真正的占卜家。; ¶67 真的？; ¶71 好的，好的。; ¶89 就这样？ 83 ¶21–23 (babası: 主会庇佑你的。在胸口画了三角圣徽; Bogda: 如果这次的药剂再没有作用，我就考虑手术。); ¶28, ¶31.
+**Denetim:** 81, 82, 83 (ZH).
