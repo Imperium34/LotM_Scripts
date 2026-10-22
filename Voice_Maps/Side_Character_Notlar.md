@@ -1972,8 +1972,8 @@ Yayımlanmış 55 ¶1 (kartlar oyuncak gibi), ¶17 如果他没有撒谎，那�
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
 > **Ayar satırları:** Bütün satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
 > **Görünüm (konuşan):** 992 (ilk karşılaşma; Gece arması), 1024 (Amon'un Backlund avatarı), 1029–1032 (Qonas Kilgor'un ruhu; Kan İmparatoru kalıntısı; başpiskoposlar), 1053–1054 (Hvin Rambis'in ruhu; yıldızdan gelen eser), 1164–1165 (Klein'ın ricasıyla onu öldürür), 1283–1289 (Belltaine, 0-02). Ad: 阿里安娜 Arianna; Azize Arianna Katedrali (words.md) onun adını taşır.
-> **Ad kararları (2026-10-22, kullanıcı onayı):** 殿下 → "Arianna Hazretleri" (bir kez; sonra "Hanım" — ağırlıkça denk bir düşüş, melek hitabı olmasa da); 女士 → Hanım (Klein'ın ağzında), krizde "Hanımefendi"; 苦修士 → çilekeş (苦修会 = Çilekeş Tarikatı), 苦修士首领 → çilekeşlerin başı; 黑夜修道院 → Gece Manastırı; 黑夜纹章 → Gece arması (纹章 = arma). Mevcut: 隐秘之仆 → Sır Hâdimi, 大主教 → Başpiskopos.
-> **Sözlükte olmayanlar (haritada kullanılmadı):** 冕下, 宗座, 圣座, 教廷 (992 ¶10'daki hitap düzeni), 地上天使, 光与影的协奏曲 (1029 ¶56), 特伦索斯特黄铜书 (0-02), 玫歌庄园 → Maygur Malikânesi (İng. "Maygur Manor"; haritada bu biçimle, onay bekliyor).
+> **Ad kararları (2026-10-22, kullanıcı onayı):** 玫歌庄园 → Maygur Malikânesi; 殿下 → "Arianna Hazretleri" (bir kez; sonra "Hanım" — ağırlıkça denk bir düşüş, melek hitabı olmasa da); 女士 → Hanım (Klein'ın ağzında), krizde "Hanımefendi"; 苦修士 → çilekeş (苦修会 = Çilekeş Tarikatı), 苦修士首领 → çilekeşlerin başı; 黑夜修道院 → Gece Manastırı; 黑夜纹章 → Gece arması (纹章 = arma). Mevcut: 隐秘之仆 → Sır Hâdimi, 大主教 → Başpiskopos.
+> **Sözlükte olmayanlar (haritada kullanılmadı):** 冕下, 宗座, 圣座, 教廷 (992 ¶10'daki hitap düzeni), 地上天使, 光与影的协奏曲 (1029 ¶56), 特伦索斯特黄铜书 (0-02).
 
 ### N-ARI1.1
 
