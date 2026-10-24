@@ -54,6 +54,14 @@
 #                             onceki bolumun sablonunun yolunu da yazar
 #      ./calistir.sh kanca    sitenin pre-commit kancasini kur (bir kez;
 #                             bkz. kancalar/pre-commit)
+#      ./calistir.sh once 61  ceviriden once: hazirlik (gerekirse yeniden) ve
+#                             Ch_61.md kaydedilince sablon_denetle; durum
+#                             Reports/once/Ch_61/ (bkz. once.py)
+#      ./calistir.sh sonra 61 ceviri bittikten sonra butun hat: 'bolum'
+#                             zinciri + model gecislerinin (okuma, sadakat,
+#                             duzeltme, triyaj) hazir girdileri ve durum,
+#                             Reports/sonra/Ch_61/. --otomatik [adim]: eksik
+#                             gecisleri claude -p ile yurutur (bkz. sonra.py)
 #
 #  FARK: denetim, lint, bicim, toplu, takvim ve belgeler adimlari tam
 #  korpusta calisinca bulgularini Reports/bulgular/'a yazar ve sonunda
@@ -477,6 +485,20 @@ if [[ "${1:-}" == "bolum" ]]; then
   exit 0
 fi
 
+# 'once' ve 'sonra' kontrol()'den once: kendi denetimlerini yaparlar.
+if [[ "${1:-}" == "once" ]]; then
+  shift
+  python3 "$TOOLS/once.py" "$@"
+  exit $?
+fi
+
+# 'sonra' da kontrol()'den once: kendi denetimini yapar, 'bolum'u kendisi cagirir.
+if [[ "${1:-}" == "sonra" ]]; then
+  shift
+  python3 "$TOOLS/sonra.py" "$@"
+  exit $?
+fi
+
 kontrol
 case "${1:-hepsi}" in
 kontrol) adim_kontrol ;;
@@ -520,6 +542,8 @@ hepsi)
 *)
   echo "kullanim: ./calistir.sh [hepsi|test|kontrol|takvim|tarama|etiket|denetim|lint|bicim|bicim-taban|sapka|toplu|belgeler|kanca|hazirla N]"
   echo "          ./calistir.sh bolum [numara]   (numarasiz: en son bolum)"
+  echo "          ./calistir.sh once <numara>    (ceviriden once: hazirlik + sablon denetimi)"
+  echo "          ./calistir.sh sonra <numara> [--otomatik [adim...]]"
   exit 1
   ;;
 esac

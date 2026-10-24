@@ -120,3 +120,70 @@ def test_es_anlamli_sozluk_bicimleri_kayma_sayilmaz():
                   sablonlar={35: _sablon(a1=[("Fourth Epoch", "Dördüncü Çağ", "—")])})
     md = _sablon(a1=[("Fourth Epoch", "İlahlar Çağı", "—")])
     assert not [x for x in _bulgular(md, kay) if "aynı İngilizceye" in x[2]]
+
+
+def test_ingilizce_iki_cince_terimi_birlestirince_hata_yok():
+    # 61: kaynak 深眠花 (uyku çiçeği); İngilizce 月亮花'ya da "Moon flower" der.
+    terim = _t("mehtap çiçeği", "Moon flower", zh="月亮花")
+    md = _sablon(a1=[("Moon flower (¶18)", "uyku çiçeği", "—")])
+    kay = SD.Kaynaklar(terimler=[terim], salahiyetler=[], ayrilmis=[], metinler={},
+                       sablonlar={}, yayim=[], zh_metin="“深眠花啊，属于红月的草药")
+    assert not [x for x in _bulgular(md, kay) if "sözlükte bu İngilizcenin" in x[2]]
+    # Cince metin yoksa ya da terimin Cincesi bolumde geciyorsa eski davranis.
+    for zh_metin in ("", "月亮花"):
+        kay = SD.Kaynaklar(terimler=[terim], salahiyetler=[], ayrilmis=[], metinler={},
+                           sablonlar={}, yayim=[], zh_metin=zh_metin)
+        assert [x[0] for x in _bulgular(md, kay) if "sözlükte bu İngilizcenin" in x[2]] == ["HATA"]
+
+
+def test_satirdaki_cince_anahtardir():
+    # 55: 占卜师 falcı, 占卜家 kâhin; ikisi de bölümde geçer, İngilizcesi fortune-teller.
+    kay = SD.Kaynaklar(terimler=[_t("falcı", "fortune-teller", zh="占卜师")], salahiyetler=[],
+                       ayrilmis=[], metinler={}, sablonlar={}, yayim=[], zh_metin="占卜师 占卜家")
+    md = _sablon(a1=[("fortune-teller (占卜家)", "kâhin", "—")])
+    assert not [x for x in _bulgular(md, kay) if "sözlükte bu İngilizcenin" in x[2]]
+    md = _sablon(a1=[("fortune-teller (占卜师)", "kâhin", "—")])
+    assert [x for x in _bulgular(md, kay) if "sözlükte bu İngilizcenin" in x[2]]
+
+
+def test_onceki_sablon_baska_cince_ise_kayma_degil():
+    eski = _sablon(a1=[("symbol (符号)", "sembol", "—")])
+    kay = _kaynak(metinler={"x": "simge sembol"}, sablonlar={59: eski})
+    yeni = _sablon(a1=[("symbol (象征)", "simge", "—")])
+    assert not [x for x in _bulgular(yeni, kay) if "aynı İngilizceye" in x[2]]
+    yeni = _sablon(a1=[("symbol", "simge", "—")])  # Cincesiz: Ingilizceye duser
+    assert [x for x in _bulgular(yeni, kay) if "aynı İngilizceye" in x[2]]
+
+
+def test_onceki_karar_bolumde_gecmeyen_cince_terimin_ise_kayma_degil():
+    eski = _sablon(a2=[("Moon flower", "mehtap çiçeği", "[YENİ]", "—")])
+    kw = dict(terimler=[_t("mehtap çiçeği", "Moon flower", zh="月亮花")], salahiyetler=[],
+              ayrilmis=[], metinler={}, sablonlar={51: eski}, yayim=[])
+    yeni = _sablon(a1=[("Moon flower", "uyku çiçeği", "—")])
+    kay = SD.Kaynaklar(zh_metin="深眠花啊", **kw)
+    assert not [x for x in _bulgular(yeni, kay) if "aynı İngilizceye" in x[2]]
+    kay = SD.Kaynaklar(zh_metin="月亮花", **kw)
+    assert [x for x in _bulgular(yeni, kay) if "aynı İngilizceye" in x[2]]
+
+
+def test_cince_yan_dosyadan_okunur(tmp_path):
+    yan = tmp_path / "Ch_55_zh.tsv"
+    yan.write_text("# İngilizce\tÇince\nfortune-teller\t占卜家\nhoroscope / constellation\t星座\n",
+                   encoding="utf-8")
+    zh_yan = SD.zh_yan_oku(yan)
+    assert zh_yan == {"fortune-teller": ["占卜家"], "horoscope": ["星座"], "constellation": ["星座"]}
+    assert SD.zh_yan_yolu(tmp_path / "Ch_55.md") == yan
+    kay = SD.Kaynaklar(terimler=[_t("falcı", "fortune-teller", zh="占卜师")], salahiyetler=[],
+                       ayrilmis=[], metinler={}, sablonlar={}, yayim=[], zh_metin="占卜师 占卜家")
+    md = _sablon(a1=[("fortune-teller", "kâhin", "—")])
+    assert [x for x in _bulgular(md, kay) if "sözlükte bu İngilizcenin" in x[2]]
+    b = SD.denetle(md, kay, zh_yan)[0]
+    assert not [x for x in b if "sözlükte bu İngilizcenin" in x.mesaj]
+
+
+def test_onceki_sablonun_yan_dosyasi_da_okunur():
+    eski = _sablon(a1=[("symbol", "sembol", "—")])
+    kay = SD.Kaynaklar(terimler=[], salahiyetler=[], ayrilmis=[], metinler={"x": "simge sembol"},
+                       sablonlar={59: eski}, zh_yanlar={59: {"symbol": ["符号"]}}, yayim=[])
+    b = SD.denetle(_sablon(a1=[("symbol", "simge", "—")]), kay, {"symbol": ["象征"]})[0]
+    assert not [x for x in b if "aynı İngilizceye" in x.mesaj]

@@ -63,6 +63,7 @@ _SALAHIYET_TURLERI = {
     "simge": "Simgeler",
     "kabiliyet": "Kabiliyetler",
     "ilahi_hukumranlik": "İlahî hükümranlıklar",
+    "yeganelik": "Yegânelikler",
     "mertebe_adi": "Yalnız Mertebe adında geçenler",
     "belirsiz": "Belirsiz",
 }
@@ -118,7 +119,7 @@ def yasak_kayitlari(t) -> list:
         for m in _ALINTI.finditer(cumle):
             if _DER.match(cumle, m.end()):
                 continue
-            if not guclu and not _DEGIL_ONU.match(_ALINTI.sub("", cumle[m.end():])):
+            if not guclu and not _DEGIL_ONU.match(_ALINTI.sub("", cumle[m.end() :])):
                 continue
             ham = m.group(1).strip()
             parcalar = [p.strip() for p in ham.split("/")]
@@ -148,7 +149,9 @@ def kayitlar(sozluk_terimleri, kelime_terimleri, salahiyetler) -> list:
         if tr:
             zh = str(k.get("cince") or "") or None
             tur = str(k.get("tur") or "belirsiz")
-            out.append(Ayrilmis(tr, "salahiyet", f"{tur} {zh or ''}".strip(), None, zh, tur))
+            out.append(
+                Ayrilmis(tr, "salahiyet", f"{tur} {zh or ''}".strip(), None, zh, tur)
+            )
     for t in sozluk_terimleri:
         if not t.mertebe_mi:
             for b in t.tr_bicimleri():
@@ -213,9 +216,14 @@ def dizin_md(kayit_listesi: list) -> str:
         "# Ayrılmış Sözcük Dizini",
         "",
         "ayrilmis.py üretir; elle düzenlenmez. Buradaki her Türkçe sözcük zaten bir şeyin "
-        "karşılığıdır ve bölümde BAŞKA bir şeyin karşılığı olarak yazılmaz. Şablonun komşu terim "
-        "çarpışmaları (A.3) buradan seçilir. Bölümde geçen terimlerin kendisi Terim Dökümü'ndedir; "
-        "bu dizin bölümde GEÇMEYENLER içindir.",
+        "karşılığıdır ve bölümde BAŞKA bir şeyin karşılığı olarak yazılmaz. Salahiyet adları "
+        "bunun istisnasıdır: çoğu aynı zamanda dönemin sıradan sözcüğüdür ve sıradan anlamda "
+        "serbesttir. Cümle istiyorsa yazılır ama aranmaz, büyük harfle de yazılmaz. Bağlam onu "
+        "salahiyetin kendisi gibi okutuyorsa çarpışmadır: büyük harfle yazılmışsa ya da "
+        "salahiyetin alanı veya sembolüyle yan yana duruyorsa. Başka bir bölümde de yasaklı ya "
+        "da ayrılmış olan sözcük yasaklı kalır. Şablonun komşu terim çarpışmaları (A.3) buradan "
+        "seçilir. Bölümde geçen terimlerin kendisi Terim Dökümü'ndedir; bu dizin bölümde "
+        "GEÇMEYENLER içindir.",
     ]
 
     out += ["", "## 1. Açık yasaklar ve başka yere ayrılmış sözcükler", ""]
@@ -233,9 +241,7 @@ def dizin_md(kayit_listesi: list) -> str:
         yollar.setdefault(yol, []).append((int(seviye) if seviye.isdigit() else -1, k))
     for yol in sorted(yollar, key=tr_kucult):
         dizi = sorted(yollar[yol], key=lambda x: -x[0])
-        out.append(
-            f"- **{yol}:** " + " · ".join(f"{s} {_gloss(k)}" for s, k in dizi)
-        )
+        out.append(f"- **{yol}:** " + " · ".join(f"{s} {_gloss(k)}" for s, k in dizi))
 
     out += ["", "## 3. Salahiyet adları", ""]
     for tur, ad in _SALAHIYET_TURLERI.items():

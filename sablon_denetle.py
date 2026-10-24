@@ -34,6 +34,18 @@ DENETIMLER
     UYARI  Onceki bir sablonda AYNI Ingilizceye baska Turkce verilmis.
            Cince farkliysa bilinclidir; degilse bolumler arasi kayma.
 
+CINCE ANAHTAR
+  Ingilizce ceviri iki ayri Cince terimi tek sozcukle verebilir (深眠花 ve
+  月亮花 ikisi de "Moon flower"; 符号 ve 象征 ikisi de "symbol"). Satirin
+  Cincesi anahtaridir: sozlukle ve onceki sablonlarla Cince eslesir,
+  Ingilizce yalniz Cincesi olmayan satirlarda kullanilir. Sablon yalniz
+  Latin harfiyle yazildigi icin Cince yan dosyadadir: Ch_N.md'nin yanindaki
+  Ch_N_zh.tsv, satir basina `Ingilizce<TAB>Cince` (Ingilizce, sablonun
+  Ingilizce hucresindeki bicimlerden biri; # ile baslayan satir yorum).
+  Ingilizce hucrede Cince yaziliysa o da okunur. Cincesi yazilmamis satirda da sozluk teriminin
+  Cincesi bu bolumun Cince metninde hic gecmiyorsa Ingilizce eslesme
+  sayilmaz: Ingilizce iki terimi birlestirmistir.
+
 TEREDDUT satirlari denetlenmez: karar insanindir (kapanis_denetle ile ayni).
 
 Kullanim:
@@ -125,6 +137,38 @@ def _aynen_ac(trler, enler) -> set:
     return out - {""}
 
 
+_ZH = re.compile(r"[\u3400-\u9fff][\u3400-\u9fff·・]*")
+
+
+def zh_hucre(hucre: str) -> list:
+    """Ingilizce hucredeki Cince: 'Moon flower (深眠花)' -> ['深眠花']."""
+    return _ZH.findall(hucre)
+
+
+def zh_parcalari(t) -> list:
+    return [z.strip() for z in (t.zh or "").split("/") if z.strip()]
+
+
+def zh_yan_yolu(sablon: Path) -> Path:
+    return Path(sablon).with_name(Path(sablon).stem + "_zh.tsv")
+
+
+def zh_yan_oku(yol: Path) -> dict:
+    """Ch_N_zh.tsv -> {en_norm(Ingilizce): [Cince, ...]}; dosya yoksa {}."""
+    out: dict = {}
+    if not Path(yol).exists():
+        return out
+    for satir in lotm.metin_oku(yol).splitlines():
+        if not satir.strip() or satir.lstrip().startswith("#") or "\t" not in satir:
+            continue
+        en, zh = satir.split("\t", 1)
+        zhler = zh_hucre(zh)
+        for e in en.split("/"):
+            if en_norm(e) and zhler:
+                out.setdefault(en_norm(e), []).extend(z for z in zhler if z not in out.get(en_norm(e), []))
+    return out
+
+
 def gecici_mi(satir) -> bool:
     return any("GEÇİCİ" in t or "GECICI" in t for t in satir.tr)
 
@@ -135,11 +179,17 @@ class SablonSatiri:
     en: list  # Ingilizce bicimler
     tr: list  # Turkce bicimler (govde tiresi atilmis)
     tereddut: bool = False
+    zh: list = field(default_factory=list)  # Ingilizce hucredeki Cince anahtar
 
 
-def sablon_satirlari(metin: str) -> list:
-    """A.1, A.2 ve B tablolarinin satirlari."""
+def sablon_satirlari(metin: str, zh_yan: dict | None = None) -> list:
+    """A.1, A.2 ve B tablolarinin satirlari; zh_yan: zh_yan_oku() ciktisi."""
     p = K.bolumler(metin)
+    zh_yan = zh_yan or {}
+
+    def zh_al(hucre, enler):
+        return zh_hucre(hucre) or list(dict.fromkeys(
+            z for e in enler for z in zh_yan.get(en_norm(e), [])))
 
     def bul(*anahtarlar):
         for a in anahtarlar:
@@ -150,15 +200,18 @@ def sablon_satirlari(metin: str) -> list:
 
     out = []
     for ad in ("A.1", "A.2"):
-        for st in K.satirlar(bul(ad)):
-            out.append(SablonSatiri(ad, st.en, [t for t, _g in st.tr], st.tereddut))
+        govde = bul(ad)
+        hucreler = [h for h in K.tablo(govde) if len(h) >= 2]
+        for st, h in zip(K.satirlar(govde), hucreler):
+            out.append(SablonSatiri(ad, st.en, [t for t, _g in st.tr], st.tereddut,
+                                    zh_al(h[0], st.en)))
     for h in K.tablo(bul("B. DONDURULAN", "B.")):
         if len(h) < 2:
             continue
         en = K._bicimler(h[0])
         tr = [K._govde_ayir(k)[0] for k in K.kaliplar(h[1])]
         if tr:
-            out.append(SablonSatiri("B", en, tr))
+            out.append(SablonSatiri("B", en, tr, zh=zh_al(h[0], en)))
     return out
 
 
@@ -171,12 +224,17 @@ class Kaynaklar:
     ayrilmis: list = field(default_factory=list)  # ayrilmis.Ayrilmis
     metinler: dict = field(default_factory=dict)  # ad -> ham metin (words.md, ses haritalari)
     sablonlar: dict = field(default_factory=dict)  # bolum no -> sablon metni
+    zh_yanlar: dict = field(default_factory=dict)  # bolum no -> zh_yan_oku() ciktisi
     yayim: list = field(default_factory=list)  # lotm.Bolum (Turkce)
+    zh_metin: str = ""  # bu bolumun Cince metni; bossa Cince suzme yapilmaz
 
     def __post_init__(self):
         self.en_dizin: dict = {}
         self.tr_dizin: dict = {}
+        self.zh_dizin: dict = {}
         for t in self.terimler:
+            for z in zh_parcalari(t):
+                self.zh_dizin.setdefault(z, []).append(t)
             for a in set(t.arama_adaylari()) | ({t.en} if t.en else set()):
                 self.en_dizin.setdefault(en_norm(a), []).append(t)
             for b in t.tr_bicimleri():
@@ -188,7 +246,7 @@ class Kaynaklar:
                                kategori="salahiyet")
                 )
         self.sablon_satirlari = {
-            no: sablon_satirlari(m) for no, m in self.sablonlar.items()
+            no: sablon_satirlari(m, self.zh_yanlar.get(no)) for no, m in self.sablonlar.items()
         }
         self._metin_kucuk = {ad: tr_kucult(m) for ad, m in self.metinler.items()}
 
@@ -200,15 +258,20 @@ def yukle(no: int, sablon_klasoru: Path = SABLONLAR) -> Kaynaklar:
     for yol in [lotm.KELIMELER, lotm.SOZLUK_YOLU, *sorted(SES_HARITALARI.glob("*.md"))]:
         if Path(yol).exists():
             metinler[Path(yol).name] = lotm.metin_oku(yol)
-    sablonlar = {}
+    sablonlar, zh_yanlar = {}, {}
     for yol in sorted(Path(sablon_klasoru).glob("Ch_*.md")):
         m = re.fullmatch(r"Ch_(\d+)\.md", yol.name)
         if m and int(m.group(1)) < no:
             sablonlar[int(m.group(1))] = lotm.metin_oku(yol)
+            zh_yanlar[int(m.group(1))] = zh_yan_oku(zh_yan_yolu(yol))
     try:
         yayim = [b for b in lotm.bolumler_tr() if b.no is not None and b.no < no]
     except FileNotFoundError:
         yayim = []
+    try:
+        zh_metin = next((b.metin for b in lotm.bolumler_zh() if b.no == no), "")
+    except FileNotFoundError:
+        zh_metin = ""
     return Kaynaklar(
         terimler=sozluk.terimler,
         salahiyetler=salahiyetler,
@@ -219,7 +282,9 @@ def yukle(no: int, sablon_klasoru: Path = SABLONLAR) -> Kaynaklar:
         ),
         metinler=metinler,
         sablonlar=sablonlar,
+        zh_yanlar=zh_yanlar,
         yayim=yayim,
+        zh_metin=zh_metin,
     )
 
 
@@ -249,6 +314,25 @@ def nerede(bicim: str, kay: Kaynaklar, en_cok: int = 3) -> list:
     return out[:en_cok]
 
 
+def sozluk_terimleri(s: SablonSatiri, kay: Kaynaklar) -> tuple:
+    """
+    (terimler, birlestirilmis) -- satirin sozlukte karsiligi olan terimler.
+    Cincesi yazilmissa Cinceyle eslesir. Yazilmamissa Ingilizceyle; ama
+    Cincesi bu bolumde hic gecmeyen terim atilir (birlestirilmis): Ingilizce
+    burada baska bir Cince terimi ayni sozcukle vermistir.
+    """
+    if s.zh:
+        return [t for z in s.zh for t in kay.zh_dizin.get(z, [])], []
+    terimler = [t for e in s.en for t in kay.en_dizin.get(en_norm(e), [])]
+    if not kay.zh_metin:
+        return terimler, []
+    tutan, atilan = [], []
+    for t in terimler:
+        zs = zh_parcalari(t)
+        (atilan if zs and not any(z in kay.zh_metin for z in zs) else tutan).append(t)
+    return tutan, atilan
+
+
 def ayni_karar(eski: set, yeni: set, kay: Kaynaklar) -> bool:
     """
     Iki sablonun Turkce bicimleri ayni karar mi? Ortak bicim; ya da biri
@@ -267,6 +351,14 @@ def ayni_karar(eski: set, yeni: set, kay: Kaynaklar) -> bool:
     return False
 
 
+def _bolumde_yok(trler: set, kay: Kaynaklar) -> bool:
+    """Bu Turkce bicimler sozlukte Cincesi bu bolumde hic gecmeyen bir terimin mi?"""
+    if not kay.zh_metin:
+        return False
+    zs = [z for b in trler for t in kay.tr_dizin.get(b, []) for z in zh_parcalari(t)]
+    return bool(zs) and not any(z in kay.zh_metin for z in zs)
+
+
 def onceki_kararlar(satir: SablonSatiri, kay: Kaynaklar) -> list:
     """[(bolum no, onceki satir)] -- ayni Ingilizceye BASKA Turkce vermis en yakin sablon."""
     anahtarlar = {en_norm(e) for e in satir.en} - {""}
@@ -275,9 +367,13 @@ def onceki_kararlar(satir: SablonSatiri, kay: Kaynaklar) -> list:
         for s in kay.sablon_satirlari[no]:
             if s.tereddut or not anahtarlar & {en_norm(e) for e in s.en}:
                 continue
+            if satir.zh and s.zh and not set(satir.zh) & set(s.zh):
+                continue  # ayni Ingilizce, baska Cince: baska kavram
             if gecici_mi(s):
                 return []  # gecici karar: sonradan degismesi beklenir
             onceki = _aynen_ac(s.tr, s.en)
+            if onceki and not satir.zh and _bolumde_yok(onceki, kay):
+                continue  # onceki karar baska bir Cince terimin: Ingilizce birlestirmis
             if onceki and not ayni_karar(onceki, simdiki, kay):
                 return [(no, s)]
             return []  # en yakin sablon ayni karari vermis
@@ -296,15 +392,15 @@ def _etiket(s: SablonSatiri) -> str:
     return f"{' / '.join(s.tr)} ← {' / '.join(s.en) or '—'}"
 
 
-def denetle(metin: str, kay: Kaynaklar) -> tuple:
+def denetle(metin: str, kay: Kaynaklar, zh_yan: dict | None = None) -> tuple:
     """(bulgular, satirlar)"""
-    satirlar = sablon_satirlari(metin)
+    satirlar = sablon_satirlari(metin, zh_yan)
     out = []
     for s in satirlar:
         if s.tereddut:
             continue
         et = _etiket(s)
-        en_terimler = [t for e in s.en for t in kay.en_dizin.get(en_norm(e), [])]
+        en_terimler, _birlesik = sozluk_terimleri(s, kay)
         tr_n = {tr_norm(t) for t in s.tr}
 
         # Ad kurali: Turkcesi Ingilizcesiyle ayni (ya da "aynen") olan satir
@@ -374,7 +470,8 @@ def rapor_md(ad: str, bulgular: list, satirlar: list, kay: Kaynaklar, ayrinti: b
         f"# Şablon Denetimi — {ad}",
         "",
         f"_{say['A.1']} A.1, {say['A.2']} A.2, {say['B']} B satırı denetlendi "
-        f"({sum(1 for s in satirlar if s.tereddut)} TEREDDÜT atlandı); "
+        f"({sum(1 for s in satirlar if s.tereddut)} TEREDDÜT atlandı; "
+        f"{sum(1 for s in satirlar if s.zh)} satır Çince anahtarlı); "
         f"{len(hata)} HATA, {len(uyari)} UYARI._",
     ]
     for baslik, liste in (("HATA", hata), ("UYARI", uyari)):
@@ -406,7 +503,8 @@ def main() -> int:
         no = int(m.group(1))
     metin = lotm.metin_oku(a.sablon)
     kay = yukle(no, a.sablonlar)
-    bulgular, satirlar = denetle(metin, kay)
+    zh_yan = zh_yan_oku(zh_yan_yolu(a.sablon))
+    bulgular, satirlar = denetle(metin, kay, zh_yan)
     rapor = rapor_md(a.sablon.name, bulgular, satirlar, kay, a.ayrinti)
     if a.cikti:
         lotm.atomik_yaz(a.cikti, rapor)
