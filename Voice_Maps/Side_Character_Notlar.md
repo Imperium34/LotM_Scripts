@@ -50,7 +50,7 @@ Kısalma ve tekrar: 615 (26 Nisan) 必须离开！必须返回！不能再停留
 
 ### N-ROS1.8
 
-1307: Gu Long kalıbını o açar (你来了 / 你不该来的), Klein tamamlar (Klein.md M3.2). 本来打算问问你是哪里人的，看需不需要做地域歧视…都是不属于这个年代的，没有了故乡的可怜虫; 我前半生最大的问题就是太过自信，总有种随时可以读档重来的感觉; 都是看过直播的; 大屏幕电视、一台游戏机…这才是男人的浪漫啊. 1308: 你自己考虑。呵，这不就是你们‘占卜家’说话的风格吗？; 贝尔纳黛该叫你周叔叔; Dünya hayatı hayali (上班，加班… 吃点串，喝点酒，吹一吹牛，骂一骂上司); 再见吧，朋友。希望真的能有再见的一天。 Ses: 嗓音干涩沙哑地笑道 (1306), 自嘲一笑 (1307), 声音时而低沉时而高亢 (1308), sık sessizlikler (顿时沉默，隔了几秒).
+1307: Gu Long kalıbını o açar (你来了 / 你不该来的), Klein tamamlar (Klein.md M3.3). 本来打算问问你是哪里人的，看需不需要做地域歧视…都是不属于这个年代的，没有了故乡的可怜虫; 我前半生最大的问题就是太过自信，总有种随时可以读档重来的感觉; 都是看过直播的; 大屏幕电视、一台游戏机…这才是男人的浪漫啊. 1308: 你自己考虑。呵，这不就是你们‘占卜家’说话的风格吗？; 贝尔纳黛该叫你周叔叔; Dünya hayatı hayali (上班，加班… 吃点串，喝点酒，吹一吹牛，骂一骂上司); 再见吧，朋友。希望真的能有再见的一天。 Ses: 嗓音干涩沙哑地笑道 (1306), 自嘲一笑 (1307), 声音时而低沉时而高亢 (1308), sık sessizlikler (顿时沉默，隔了几秒).
 **Denetim:** 1306, 1307, 1308 (ZH).
 
 ---
@@ -271,7 +271,7 @@ Hitap: 老头 (757 ¶42, 846 ¶45). 757 ¶42–44: korkuyla uyanıp 老头，我
 
 ### N-LEO2.4
 
-408 ¶46–51: 沉吟着 Soytarı'ya inanan örgütün soruşturdukları tarot ritüelleriyle ilgili olabileceğini söyler, gerekçesini tek cümleyle ekler; Soest kanıtsız bulunca 露出一丝笑容 ve 罗塞尔大帝说过，大胆假设，小心求证 der.
+408 ¶46–51: 沉吟着 Soytarı'ya inanan teşkilatın soruşturdukları tarot ritüelleriyle ilgili olabileceğini söyler, gerekçesini tek cümleyle ekler; Soest kanıtsız bulunca 露出一丝笑容 ve 罗塞尔大帝说过，大胆假设，小心求证 der.
 847 ¶4–29: gelişigüzel oturup gülümseyerek 但反过来讲也成立 der; saatleri sıralar ve Dwayne'in tanığı olmadığını çıkarır (¶5–6). Gerekçesini önceden hazırlamıştır (¶13 早已想好说辞), bacak bacak üstüne atıp sunar; 嗯……你们不觉得太巧合了吗？ (¶16); omuz silkerek 所以他更可能是同伙之一 (¶21); rüyaya yeniden girmenin iki kolunu tartıp net bir izleme planı kurar (¶26–29), sonra iş bölümü yapar (¶36). Cindy iki kez şaşırır: normalde sorunun özüne dokunan kısa hükümleri olur, böyle uzun ve sıkı anlatmaz; 更像是一个散漫的诗人，只偶尔会有灵光 (¶7–8), 很少看见你这么认真地分析情况 (¶30).
 Tek başına: iç notları kısa ve kesiktir (847 ¶49–51, ¶58–59; 850 ¶68 12月底……1月初……不会吧？); buluşta sevinç açıktır (847 ¶56, ¶61 嘴角微翘; 850 ¶53 又欣喜又振奋).
 **Denetim:** 408 ¶39–51, 847 ¶1–61, 850 ¶49–71 (ZH).
@@ -1060,10 +1060,10 @@ Ad: 1110 ¶39, 1111 ¶4, ¶10, ¶24, 1275 ¶67, 1359 ¶19, ¶30 索伦·艾因�
 
 ## Will Auceptin (Kader Yılanı)
 
-> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır (Klein_Notlar'daki N-M3.1 ile aynı numaralama).
+> **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır (Klein_Notlar'daki N-M3.1–M3.2 ile aynı numaralama).
 > **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
 > **Görünüm (konuşan):** 326 (Aaron'un aktarımı), 386–388 (rüya), 606 (yazılı cevap), 770, 818, 827, 886–887, 936–937, 979–980, 991, 1124–1125, 1231–1232, 1357, 1370, 1388. Anılır: 340, 370, 384–389, 402–404 (eski bedenin cesedi), 591–611 (Darkwill ve İhtimal Zarı), 1006 (Amon'a karşı "Kader Yılanı. Yeniden Başlatma!"), 1009, 1146 (tarihî izdüşüm), 1178 (tazim ismi).
-> **Klein.md ile bağ:** Klein'ın Will'e karşı sesi Klein.md M3.1'dedir (bilen akran). İki harita aynı sahneleri paylaşır: 991 ¶36–37 (Klein merasimi savar), 1125 ¶28 (iç ses "üfürükçü"), 1125 ¶31 (kâğıt turna pazarlığı), 1388 (Klein ifadesiz, Will ağlar). Will'in tarafı burada, Klein'ınki orada. 神棍 / "üfürükçü" Klein'ın iç sesinin kelimesidir, Will'in ağzına girmez.
+> **Klein.md ile bağ:** Klein'ın Will'e karşı sesi Klein.md M3.1–M3.2'dedir (bilen akran). İki harita aynı sahneleri paylaşır: 991 ¶36–37 (Klein merasimi savar), 1125 ¶28 (iç ses "üfürükçü"), 1125 ¶31 (kâğıt turna pazarlığı), 1388 (Klein ifadesiz, Will ağlar). Will'in tarafı burada, Klein'ınki orada. 神棍 / "üfürükçü" Klein'ın iç sesinin kelimesidir, Will'in ağzına girmez.
 > **Ad kararları (2026-10-21):** 概率之骰 → "İhtimal Zarı" (Canavar Yolu'nun Yegâneliği, 609 ¶33; salahiyet kelimesi 概率 = İhtimal); 哇 → "Ingaa!"; '命运'途径 → "Kader Çarkı Yolu" (609 ¶33 “怪物”途径又叫“命运之轮”途径; Mertebe 0 adı).
 > **Ad kararları (devam):** 议长 → "Reis" (Hayat Ekolü'nün Reisi), 命运议员 → "Kader Azası"; 容纳 → "barındırmak" (words.md).
 > 昨日重现 → "Dönence" (Klein'ın tılsımı; words.md). 神话生物 sözlükte yok; örneklerden kaçınıldı.
@@ -1391,14 +1391,14 @@ Güneş: 140 歌颂者…他们的口号是：“让我们赞美太阳吧！”;
 
 ---
 
-## Frank Lee (İstikbal'in ikinci kaptanı)
+## Frank Lee (İstikbal'in birinci zabiti)
 
 > **Numaralama:** Hiçbir sahnesi henüz çevrilmedi. ¶ numaraları `bolum.py N --zh --en` hizalama gruplarıdır.
 > **Örnekler:** Bütün örnek satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
 > **Görünüm (konuşan):** 638–657 (İstikbal'de yolculuk), 671–675, 721 (mektup; Reinette'i inceler), 825, 859 (mektup), 995 (Zanaatkâr Cielf), 1013 (mantar odası), 1089 (hayali), 1128 (mektup), 1219, 1240, 1309, 1324, 1391. Klein'ın iç sesindeki Frank şakaları Klein.md'dedir (4. Aşama: "Frank kendini ekerse bir sürü Frank çıkar", 816 ¶22).
 > **Metin dışı:** yazarın soru-cevabı (kullanıcının aktardığı, 2025): 肯定还活着，母亲途径 (kitap sonrası hâlâ hayatta, Ana Yolu'nda).
 > **Başka haritalarla bağ:** Cattleya (CAT; kaptanı), Reinette (REI1.3, Mantar Kralı), Klein.md (Gehrman maskesi; 1128 ¶41–43 Klein'ın cevap mektubu).
-> **Ad kararları (2026-10-21, words.md):** 异变 → "mesh olmak" (salahiyetler.yml 异变 = Mesh; Celp kararıyla aynı mantık), 杂交 → "melezleme", 毒素专家 → "Zehir Uzmanı", 大副 → "ikinci kaptan", 未来号 → "İstikbal"; 蔷薇主教 = Gül Ruhbanı (sozluk.yml). Yakarışta 您 → "sen" onaylandı.
+> **Ad kararları (2026-10-21, words.md):** 异变 → "mesh olmak" (salahiyetler.yml 异变 = Mesh; Celp kararıyla aynı mantık), 杂交 → "melezleme", 毒素专家 → "Zehir Uzmanı", 大副 → "birinci zabit", 未来号 → "İstikbal"; 蔷薇主教 = Gül Ruhbanı (sozluk.yml). Yakarışta 您 → "sen" onaylandı.
 
 ### N-FRK1.1
 
@@ -1768,7 +1768,7 @@ Hampres: 405 ¶32 斯蒂芬·汉普雷斯先生，家具商人; ¶35 微笑道�
 > **Görünüm (konuşan):** 581–583 (Kara Veba'de Elaine kılığındaki Klein; saldırı), 588–589 (Katarina ve Azik'in karşısında), 602 (Gehrman'ı tahlil), 1107–1108 (Gehrman'ın elinde; hayat hikâyesi). Anılır: 292, 530, 575 (Edwina'nın tarifi), 578–579 (Elaine'in anlattıkları), 1095–1096. Ad: 特雷茜 (1108'de bir yerde 特蕾茜).
 > **Başka haritalarla bağ:** Trissy (TRS1.5; aynı dönüşüm, ters tepki), Edwina (EDW; 575 tarifi), Anderson ve Danitz (1096), Azik (588–589). Klein ona Elaine, sonra Gehrman kılığında konuşur.
 > **Kullanıcı bilgisi (2026-10-22):** Mertebe 7'nin üstündeki her Şeytaniçe gibi önce erkekti, Yolun doğası onu zorla kadına çevirdi; bu yüzden kadınlardan hoşlanır; Roselle'in aşk romanlarını sever. Edwina'nın tarifi (575 ¶44) kullanıcının alıntısıdır.
-> **Ad kararları (2026-10-22, words.md):** 疾病少女 → Hastalık Kızı, 黑死号 → Kara Veba (黑死病 = Kara Veba; 1107 ¶46'da Anderson gemi adıyla hastalık arasında kelime oyunu yapar), 母亲 → Valide / 妈妈 → anne, 伊莲·索伦 → Elaine Soren (İng. çeviri "Helene" ve "Sauron" der; "Sauron" yankısından kaçmak için Soren, 索伦'in geçerli okunuşu). Mevcut: 疾病中将 → Koramiral Hastalık, 痛苦魔女 → Maraz Şeytaniçe, 不老魔女 → Solmaz Şeytaniçe, 反抗军 → Direniş, 大副 → ikinci kaptan.
+> **Ad kararları (2026-10-22, words.md):** 疾病少女 → Hastalık Kızı, 黑死号 → Kara Veba (黑死病 = Kara Veba; 1107 ¶46'da Anderson gemi adıyla hastalık arasında kelime oyunu yapar), 母亲 → Valide / 妈妈 → anne, 伊莲·索伦 → Elaine Soren (İng. çeviri "Helene" ve "Sauron" der; "Sauron" yankısından kaçmak için Soren, 索伦'in geçerli okunuşu). Mevcut: 疾病中将 → Koramiral Hastalık, 痛苦魔女 → Maraz Şeytaniçe, 不老魔女 → Solmaz Şeytaniçe, 反抗军 → Direniş, 大副 → birinci zabit.
 > **Sözlükte olmayanlar (haritada kullanılmadı):** 龙威 (602 ¶59), 巧言者 米索尔·金 (583 ¶54), 三副, 白之魔女 (1107 ¶8; Katarina'nın öteki unvanı), 吉米·内克 (588 ¶45).
 
 ### N-TRC1.1

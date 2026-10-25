@@ -26,7 +26,7 @@ _2.000 Sterlin mi? Backlund'daki tüm ödül avcılarını ve özel dedektifleri
 
 _Gerçi, savaş kabiliyeti Mertebe 5'e denk bir korsan 10.000 altın Sterlin ediyordu. Mertebe 6 bir katilin ederi de mantıken 3.000 ila 4.000 Sterlin arası olmalıydı... Gece Şahinleri ve Salahiyetli Tecziyeciler, bu seri katilin Mertebe 5'e adım atmak üzere olan yarı uzman birinden ziyade, yalnızca bir Mertebe 7 olduğunu düşünerek durumu yanlış mı değerlendirmişlerdi?_
 
-_Küçük Güneş'in bahsettiği o ritüelin oldukça kadim olması kuvvetle muhtemeldi. Belki de Büyük Yıkım'dan sonra o kadar nadir görülmüştü ki, o birkaç büyük Kilise ve ordunun elinde buna dair hiçbir malumat bulunmuyordu... Burada yatan temel bir sorun var. Tanrıça Kilisesi, Buhar ve Çark İlahı Kilisesi ile Augustus kraliyet hanedanının Büyük Yıkım'ın içinden yükseldiği söylenir. Geçmişe vakıf olmamaları makul karşılanabilir, fakat Fırtına Kilisesi daima en köklü kurumlardan biri olduklarında ısrar etmiştir... Yoksa bu kadimlikleriyle, Zebanilerin Gayya'ya geri çekilmesinden sonraki bir çağı mı kastediyorlardı?_
+_Küçük Güneş'in bahsettiği o ritüelin oldukça kadim olması kuvvetle muhtemeldi. Belki de Büyük Helak'tan sonra o kadar nadir görülmüştü ki, o birkaç büyük Kilise ve ordunun elinde buna dair hiçbir malumat bulunmuyordu... Burada yatan temel bir sorun var. Ulu Ece Kilisesi, Buhar ve Çark İlahı Kilisesi ile Augustus kraliyet hanedanının Büyük Helak'ın içinden yükseldiği söylenir. Geçmişe vakıf olmamaları normal karşılanabilir, fakat Fırtına Kilisesi daima en köklü kurumlardan biri olduklarında ısrar etmiştir... Yoksa bu kadimlikleriyle, Gulyabanilerin Hâviye'ya geri çekilmesinden sonraki bir çağı mı kastediyorlardı?_
 
 Isengard Stanton'ın sözlerini işittikten sonra Klein'ın zihninde beliren ilk düşünce ödülün miktarını tartmak olmuş, ardından zihnini serbest bırakarak birbiri ardına bağlantılar kurmuştu.
 
@@ -38,7 +38,7 @@ Sıradan bir özel dedektif, hem ödülün cazibesi hem de karşısındaki meşh
 
 Ne var ki sorun şuydu: Klein sıradan bir özel dedektif değildi. Tahkikattan sorumlu olan Gece Şahinleri ile burun buruna gelmekten çekiniyordu.
 
-_Gerçi artık bir sakalım, gözlüklerim ve bambaşka bir saç kesimim var; beni sadece birkaç kez görmüş olan o Gece Şahinleri tanımayacaktır ama ya karşıma Madam Daly çıkarsa? Öte yandan, bu talebi geri çevirmek de akla yatkın değil. Tuhaf ve şüpheli bir izlenim bırakır... Üstelik o Zebani'nin en kısa sürede yakalanmasını ben de canıgönülden arzuluyorum. Aksi takdirde daha kaç masum kızın canından olacağını kestirmek güç..._ Klein birkaç saniye tereddüt edip gülümsedi.
+_Gerçi artık bir sakalım, gözlüklerim ve bambaşka bir saç kesimim var; beni sadece birkaç kez görmüş olan o Gece Şahinleri tanımayacaktır ama ya karşıma Madam Daly çıkarsa? Öte yandan, bu talebi geri çevirmek de akla yatkın değil. Tuhaf ve şüpheli bir izlenim bırakır... Üstelik o Gulyabani'nin en kısa sürede yakalanmasını ben de canıgönülden arzuluyorum. Aksi takdirde daha kaç masum kızın canından olacağını kestirmek güç..._ Klein birkaç saniye tereddüt edip gülümsedi.
 
 "Son günlerde epey meşakkatli bir vaka üstlenmiş bulunmaktayım. Ne yazık ki ayırabilecek pek fazla vaktim yok."
 
@@ -132,7 +132,7 @@ Bu, Küçük Güneş'in sağladığı malumatlara dayanan rasyonel bir çıkarı
 
 Madem katil Mertebe 6'dan Mertebe 5'e yükselmek için bu denli yoğun çaba sarf ediyordu, o hâlde bir seri katil olarak Mertebe 7'deyken ne yapmıştı?
 
-Benzer suçlar işlememiş olsaydı iksiri sindirmesi bir hayli güç olurdu. Zamanın birikimiyle bile, Mertebe 7'den Mertebe 6'ya geçerken kontrolü kaybetme ihtimali oldukça yüksekti. Dahası, Gayya yolundaki Aşkınların kontrolü kaybetme riski zaten muazzamdı.
+Benzer suçlar işlememiş olsaydı iksiri sindirmesi bir hayli güç olurdu. Zamanın birikimiyle bile, Mertebe 7'den Mertebe 6'ya geçerken kontrolü kaybetme ihtimali oldukça yüksekti. Dahası, Hâviye yolundaki Aşkınların kontrolü kaybetme riski zaten muazzamdı.
 
 Hâliyle Klein, katilin rol ifasını bilip bilmediğinden bağımsız olarak, Mertebe 7'deki günlerinde muhtelif sebeplerle seri cinayetler işlediğine kanaat getirmişti.
 

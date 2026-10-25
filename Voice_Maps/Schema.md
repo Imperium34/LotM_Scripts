@@ -115,7 +115,7 @@ Bir cümleyi yazarken ya da denetlerken:
 
 **Yapma:**
 
-- Mertebe adıyla çakışmasın diye sıradan mesleğe eşanlamlı vermek (kâhin yerine falcı).
+- Mertebe adıyla çakışmasın diye sıradan mesleğe eşanlamlı vermek (hekim yerine doktor).
 - Şablonda sıradan kullanımı yasaklamak. Mertebe adına bir yasak gerekiyorsa büyük harfli biçimle yazılır; makine onu harf duyarlı arar ve küçük harfli mesleğe dokunmaz.
 
 **Sınır.** Kural bir izindir, ekleme emri değildir. Kaynak sıradan bir kişiyi Mertebe adıyla ilgisiz gündelik bir kelimeyle anıyorsa, Türkçe de Mertebe adını oraya taşımaz. Bağı kaynak kurar; çeviri onu silmez, uydurmaz da.
@@ -142,16 +142,16 @@ Side_Character_Maps.md'nin bütün haritaları bu biçimdedir; şablon üreteci 
 
 **Kiliseler ve yol grupları.** Kadir-i Mutlak yol grubu (Seyirci, Denizci, Ozan, Okur, Hafi Talibi) dünyada İbrahimî Tanrı tasavvurunu temsil eder ve dindar dili İslami bir deyişle kurulur; diğer kiliseler kendi deyişlerini korur. Formül yalnız kaynakta formül olan yere girer (0.5 §4).
 
-| Kilise / grup | Deyiş | Sabit formüller |
-|---|---|---|
-| Fırtınalar Hâkimi (Kadir-i Mutlak) | namus, iffet, günah, haram | 风暴在上 → "Ya Hâkim"; 主啊 → "Ya Rab" |
-| Ebedî Yanan Güneş (Kadir-i Mutlak) | hamd, nur, tövbe | 赞美太阳 → "Güneş'e hamd olsun!"; "Haydi Güneş'e hamd edelim!", "Karanlığı kov, Güneş'e hamd et." |
-| İlim ve Hikmetin İlahı (Kadir-i Mutlak) | ilim, hikmet, akıl; yakarış değil bilgi gururu | 全知意味着全能 → "Her şeyi bilmek, her şeye kadir olmaktır." |
-| Seyirci / Âdem (Kadir-i Mutlak) | mürşit sohbeti (hâl, nefis, sabır, takdir) yalnız öğüt anlarında | — |
-| Soytarı (Esrarın Hükümdarı grubu) | Divan sicili; İslami değil | 赞美愚者 → "Soytarı Efendi'ye senâ olsun!"; 愿愚者庇佑 → "Soytarı Efendi'nin himayesi üzerimize olsun." |
-| Ebedî Gece | kendi deyişi, İslami değil | "Ulu Ece'ye medholsun.", "Ulu Ece/Tanrıça seni himaye etsin."; göğüste Kızıl Ay |
-| Buhar ve Çarklar | kendi deyişi | "Buhar aşkına!"; üçgen amblem |
-| Toprak Ana (Menşe Tanrıçası grubu) | köy ihtiyarı, ekinci bilgeliği; İslami değil | 母神 → anlatıda "Toprak Ana", hitapta "Ana" |
+| Kilise / grup                           | Deyiş                                                            | Sabit formüller                                                                                         |
+| --------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Fırtınalar Hâkimi (Kadir-i Mutlak)      | namus, iffet, günah, haram                                       | 风暴在上 → "Ya Hâkim"; 主啊 → "Ya Rab"                                                                  |
+| Ebedî Yanan Güneş (Kadir-i Mutlak)      | hamd, nur, tövbe                                                 | 赞美太阳 → "Güneş'e hamd olsun!"; "Haydi Güneş'e hamd edelim!", "Karanlığı kov, Güneş'e hamd et."       |
+| İlim ve Hikmetin İlahı (Kadir-i Mutlak) | ilim, hikmet, akıl; yakarış değil bilgi gururu                   | 全知意味着全能 → "Her şeyi bilmek, her şeye kadir olmaktır."                                            |
+| Seyirci / Âdem (Kadir-i Mutlak)         | mürşit sohbeti (hâl, nefis, sabır, takdir) yalnız öğüt anlarında | —                                                                                                       |
+| Soytarı (Esrarın Hükümdarı grubu)       | Divan sicili; İslami değil                                       | 赞美愚者 → "Soytarı Efendi'ye senâ olsun!"; 愿愚者庇佑 → "Soytarı Efendi'nin himayesi üzerimize olsun." |
+| Ebedî Gece                              | kendi deyişi, İslami değil                                       | "Ulu Ece'ye medholsun.", "Ulu Ece/Tanrıça seni himaye etsin."; göğüste Kızıl Ay                         |
+| Buhar ve Çarklar                        | kendi deyişi                                                     | "Buhar aşkına!"; üçgen amblem                                                                           |
+| Toprak Ana (Menşe Tanrıçası grubu)      | köy ihtiyarı, ekinci bilgeliği; İslami değil                     | 母神 → anlatıda "Toprak Ana", hitapta "Ana"                                                             |
 
 **Adlar.**
 

@@ -2,7 +2,7 @@
 
 Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yansıtan dilbilgisi kurallarını, unvan geçişlerini ve konuşma tarzlarını (Voice Maps) içerir. Karakterlerin karikatürize edilmemesine ve bu kuralların doğal bir akış içinde kullanılmasına dikkat edilmelidir.
 
-**Onay satırları.** Her karakterin "tamam"ı kendi sesidir. "Tamamdır" yalnızca Klein'a aittir (bkz. Klein.md 5.3); başka hiçbir ağızda kullanılmaz. Düz "tamam" dönem-nötrdür ve serbesttir.
+**Onay satırları.** Her karakterin "tamam"ı kendi sesidir. "Tamamdır" yalnızca Klein'a aittir (bkz. Klein.md T1.3); başka hiçbir ağızda kullanılmaz. Düz "tamam" dönem-nötrdür ve serbesttir.
 
 ## 3. Tarihî Kişilikler ve Melekler
 
@@ -32,7 +32,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Günlükler (erken ve orta dönemde yoğun) · 1306
 **Yap:** Kendinden emin, övüngen, şımarık. Kendini "bu çağın ana karakteri" sayar; ifade her geçişte aynı kalır. Yerlileri, bakanlarını, çocuklarını, aristokratları ve kiliseleri açıkça aşağılar (蠢驴, 神棍, 脑子有坑). Büyüklüğünü ve intikamını ilan eder, geleceği kesinlik kipiyle kurar. Övünmenin ardından küçük bir "heh" ya da "lol" gelebilir: kibrini kendisi de biraz tiye alır.
 **Yapma:** Kibri ağırbaşlı bir hükümdar sesine çevirmek; "ana karakter"i "kahraman" ya da "baş aktör" diye değiştirmek; aşağılamayı kibarlaştırmak.
-**Ayar:** _"Şanslı adam, ne de olsa bu çağın ana karakteri olan bana denk geldi."_ (21 ¶4); _"Yüksek Mertebelere gelince, heh heh. Benim kim olduğumu unuttular mı?"_ (21 ¶10); _"Kutlamak için bir ziyafet vereceğim, beni küçümseyen herifleri de davet edeceğim. Bekleyin siz, yüzünüze tokat gibi çarpacak!"_ (484, 15 Şubat)
+**Ayar:** _"Ne şanslı adam, ne de olsa bu çağın ana karakteri olan bana denk geldi."_ (21 ¶4); _"Yüksek Mertebelere gelince, heh heh. Benim kim olduğumu unuttular mı?"_ (21 ¶10); _"Kutlamak için bir ziyafet vereceğim, beni küçümseyen herifleri de davet edeceğim. Bekleyin siz, yüzünüze tokat gibi çarpacak!"_ (484, 15 Şubat)
 **Gerekçe:** → N-ROS1.3
 
 ##### ROS1.4 — Merak ve mühendis aklı
@@ -71,7 +71,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 **Kapsam:** 1306 Bernadette · 1307–1308 Klein · replik
 **Yap:** Günlükteki ses konuşmaya taşınır ama yorgun ve yarı uyanıktır: kendiyle alay eden kısa gülüşler, araya giren sessizlikler. Dünya kodunu o başlatır (1307'deki Gu Long kalıbı, "canlı yayın", oyun konsolu, kayıt yükleme). Klein'la bir hemşehri gibi konuşur. Pişmanlığını süssüz itiraf eder; sıradan bir Dünya hayatı hayalini gündelik ayrıntılarla sıralar.
-**Yapma:** İmparator ağzı, resmî ya da ağdalı kayıt; Klein'ın repliklerini bu kurallarla yazmak (onlar Klein.md M3.2'de).
+**Yapma:** İmparator ağzı, resmî ya da ağdalı kayıt; Klein'ın repliklerini bu kurallarla yazmak (onlar Klein.md M3.3'te).
 **Ayar:** _"Aslında nerelisin diye soracaktım, bölgecilik yapmam gerekir mi diye. Sonra gerek yok dedim; ikimiz de bu çağa ait olmayan, memleketini kaybetmiş zavallılarız."_ (1307); _"İlk yarı ömrümdeki en büyük sorunum fazla kendime güvenmemdi; sanki her an kaydı yükleyip baştan alabilirmişim gibi gelirdi."_ (1307); _"Görüşürüz, dostum. Umarım gerçekten görüşeceğimiz bir gün gelir."_ (1308)
 **Gerekçe:** → N-ROS1.8
 
@@ -81,6 +81,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Onay:** Kısa ve sakin: _"Pekâlâ."_ (25 ¶12); sonraki aşamalarda _"Büyük bir sorun yok."_ (问题不大)
 
 **Aşamalar:**
+
 - **Aşama 1 — Hoca (24–136):** Hafızasız, iyi kalpli öğretim görevlisi. Ne olduğunu bilmez; rüyaları ve kayıp geçmişi onu hüzünlendirir.
 - **Aşama 2 — Uyanan hafıza (150–730):** Lamud şatosunda (150) ilk anılar döner. Güçlü, bilgili, sakin bir akıl hocası; hâlâ sıcak.
 - **Aşama 3 — Ölüm Veliahdı yüzeye çıkar (913–917):** Hafızanın çoğu dönmüştür. Astlarına mutlak ve duygusuz, Klein'a hâlâ yumuşak; geçmişteki zulmünü düz bir sesle anlatır. 917'de üçüncü yolu seçip yeniden uykuya çekilir. (1145'teki tarihî yansıma ve 1368'deki gölgeler konuşmaz.)
@@ -205,17 +206,17 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 İkisi de Kadim Güneş Tanrısı'nın oğludur, ikisi de sakin ve her şeyi bilir görünür; okur onları konuşmacı etiketi olmadan tanıyabilmelidir. Bir replik ikisine de yakışıyorsa yeniden yazılır.
 
-| | Âdem | Amon |
-|---|---|---|
-| Ritim | kısa, eşit, ağır | orta, akıcı, konuşkan |
-| Ses | vaaz, öğüt, itiraf dinleme | oyun, kumar, şaka |
-| Gülüş | yalnız anlatıda ("yumuşak gülümseme") | replikte de ("heh heh") |
-| Soru | yönlendiren, açık ("...düşünmüyor musun?", "Neden?") | sınayan, takılan ("Tahmin et.", "...değil mi?") |
-| Ünlem | yok | seyrek, neşeli |
-| Sabit kelimeler | gerekli, kurban, huzur | ilginç, eğlenceli, oyun, açık |
-| Birbirine | "kardeşim" değil, adla ya da hiç anmaz | "saplantılı kardeşim" |
-| Anlatı işareti | gümüş haç, beyaz cüppe, dua | monokl, sivri şapka |
-| Klein'ın zikri | "Arz ve Arşın Kutlu Semavî Muazzezi" (1347) | "Arz ve Arşın Kutlu Gök Hakimi" (1151) |
+|                 | Âdem                                                 | Amon                                            |
+| --------------- | ---------------------------------------------------- | ----------------------------------------------- |
+| Ritim           | kısa, eşit, ağır                                     | orta, akıcı, konuşkan                           |
+| Ses             | vaaz, öğüt, itiraf dinleme                           | oyun, kumar, şaka                               |
+| Gülüş           | yalnız anlatıda ("yumuşak gülümseme")                | replikte de ("heh heh")                         |
+| Soru            | yönlendiren, açık ("...düşünmüyor musun?", "Neden?") | sınayan, takılan ("Tahmin et.", "...değil mi?") |
+| Ünlem           | yok                                                  | seyrek, neşeli                                  |
+| Sabit kelimeler | gerekli, kurban, huzur                               | ilginç, eğlenceli, oyun, açık                   |
+| Birbirine       | "kardeşim" değil, adla ya da hiç anmaz               | "saplantılı kardeşim"                           |
+| Anlatı işareti  | gümüş haç, beyaz cüppe, dua                          | monokl, sivri şapka                             |
+| Klein'ın zikri  | "Arz ve Arşın Kutlu Semavî Muazzezi" (1347)          | "Arz ve Arşın Kutlu Gök Hakimi" (1151)          |
 
 ### Pallez Zoroast `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
@@ -307,6 +308,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 **Kapsam:** 457–1389 · birleşik ruh hâli
 **Yap:** Ruh üç Fatih'in birleşimidir ve üç ağızla konuşur; anlatı hangi ağzın konuştuğunu söyler (normal ağız Medici; sol yanaktaki yarık Soren; kanlı yarık Einhorn). Üç ses ayrı tutulur:
+
 - _Medici:_ ana ağız; MED1.1–1.4'teki gülen, sataşan, blöf yapan harp beyi.
 - _Soren:_ azarlayan, geçmişi hatırlatan, kibirli bir soylu; Medici'nin blöflerini ve hatalarını yüzüne vurur. Cümleleri ölçülü, sitemli ve keskindir; kahkahası yoktur.
 - _Einhorn:_ az konuşan, soğuk bir tahlilci; tartışma tıkandığında tek bir kısa tespitle durumu özetler.
@@ -342,7 +344,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 **Kapsam:** 770–1388
 **Yap:** İki ağlama ayrı yazılır. _Hamle:_ istemediği soruya (göbek kordonu kanı 770, 0-08 937, dondurma 979) tek bir "Ingaa!" ile karşılık verir; soru geri çekilince ağlama anında kesilir ve gülerek konuşur (770 ¶60). _Yara:_ kendine acıdığında ve kaderin oyununu fark ettiğinde (1124–1125, 1388) cümleler kesik, üç noktalı ve tekrarlıdır. Kaynaktaki kesiklik ve tekrar ("依旧，依旧") aynen kalır, fazlası eklenmez.
-**Yapma:** Hamle ağlamasına söz ya da duygu eklemek; gözyaşını teselli bekleyen bir trajediye çevirmek (Klein ifadesiz kalır, Klein.md M3.1); kaynakta düz olan cümleye üç nokta koymak.
+**Yapma:** Hamle ağlamasına söz ya da duygu eklemek; gözyaşını teselli bekleyen bir trajediye çevirmek (Klein ifadesiz kalır, Klein.md M3.2); kaynakta düz olan cümleye üç nokta koymak.
 **Ayar:** _"Ingaa!"_ (770 ¶55) → _"Tabii ki öyle, ama önceden değiştireceğim; yoksa orada bulunan herkes ölür."_ (770 ¶60); _"Faydası yok… Çok geç… Çoktan yeniden başladım, Yegâneliği barındırabilmem için en az yirmi iki yıl daha büyümem lazım… Neden bunu daha önce söylemedin…"_ (1124 ¶85); _"Ne kadar da talihsizim… Kesin o aptal yılan Ouroboros talihimin çoğunu çaldı…"_ (1124 ¶86)
 **Gerekçe:** → N-WIL1.2
 
@@ -742,7 +744,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 ##### LEO2.3 — Pallez'e: alçak, sivri, geri çekilen
 
 **Kapsam:** Cilt 2–4 · Pallez · yüzleşme, soru
-**Yap:** Alçak sesle, çoğu zaman kendi kendine mırıldanıyormuş gibi konuş. Pallez'e "老头" diye seslenir. Kısa, sivri sorular sor; ilk yüzleşmede ihtimalleri suçlama gibi art arda diz. Cevabın yalan olduğunu ya da kaçamak olduğunu sezince üstelemez: susar, bakışını indirir, sorusunu yutar. Olanı ona düz ve tartılmış cümlelerle aktarır. Ara sıra kuru, hafif bir tespit yapar. Pallez'e akıl danışmak alışkanlığıdır; ama zamanla sorusunu bitirmeden durup cevabı kendisi kurar.
+**Yap:** Alçak sesle, çoğu zaman kendi kendine mırıldanıyormuş gibi konuş. Pallez'e "Moruk" (老头) diye seslenir. Kısa, sivri sorular sor; ilk yüzleşmede ihtimalleri suçlama gibi art arda diz. Cevabın yalan olduğunu ya da kaçamak olduğunu sezince üstelemez: susar, bakışını indirir, sorusunu yutar. Olanı ona düz ve tartılmış cümlelerle aktarır. Ara sıra kuru, hafif bir tespit yapar. Pallez'e akıl danışmak alışkanlığıdır; ama zamanla sorusunu bitirmeden durup cevabı kendisi kurar.
 **Yapma:** Bağırış, ünlem yığını (kaynağın kendi ünlemleri dışında), uzun tartışma; Pallez'le açıkça kavga etme. Pallez'in iğnesine laf yetiştirme; kaynakta itirazını yutar.
 **Gerekçe:** → N-LEO2.3
 
@@ -1265,6 +1267,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Onay:** Yuvarlak onay sözcüğü kullanmaz; beyan kipinde, yemin gibi: _"Yapacağım."_; Başbuğ'a _"Baş üstüne, Başbuğum."_ (是，首席阁下)
 
 **Maske / Öz / Çatlak:**
+
 - _Maske:_ öğretilmiş kesinlik. Kuralları, tarihi, Altılar Meclisi'nin hükümlerini ezberden ve tereddütsüz okur (DER1.1).
 - _Öz:_ güneşi hiç görmemiş bir yetim; lanet yüzünden anne babasının canını kendi eliyle almak zorunda kalmıştır (138'deki kan bağı kuralı). İstediği şey güneş ve ailesinin geri gelmesidir (137).
 - _Çatlak:_ anne babası, lanet ya da şehrin kaderi açıldığında kesinlik dağılır (DER1.6).
@@ -1296,9 +1299,9 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 ##### DER1.4 — Dua istisnası
 
 **Kapsam:** Soytarı'ya dua, Tazim ismi, ayin metni
-**Yap:** Derrick, Soytarı'ya gerçekten dua eden üyedir. Divan_Rule 1.03 gereği **ayin dili yukarı akar**: Tazim ismi, dua kalıbı ve ayin metni tam Divan sicilindedir ve kalıp hiç değişmeden okunur. Dua bittiği an sade, beyan kipindeki sesine döner. İki sicil yan yana durur ve aralarındaki fark onun samimiyetini gösterir: kalıbı ezberden ve eksiksiz okur, isteğini çıplak söyler.
+**Yap:** Derrick, Soytarı'ya gerçekten dua eden üyedir. Divan*Rule 1.03 gereği **ayin dili yukarı akar**: Tazim ismi, dua kalıbı ve ayin metni tam Divan sicilindedir ve kalıp hiç değişmeden okunur. Dua bittiği an sade, beyan kipindeki sesine döner. İki sicil yan yana durur ve aralarındaki fark onun samimiyetini gösterir: kalıbı ezberden ve eksiksiz okur, isteğini çıplak söyler.
 **Yapma:** Duanın sicilini onun gündelik cümlelerine taşımak; kalıbı sadeleştirmek.
-**Ayar:** _"Soytarı Efendi. / Şekil Değiştiren'i katlettim. Kanı toprağa döküldü. Bu Aşkın Hasletini sunak için hazırladım. / Sizi temin ederim, itikadım yalnızca size ve sizin kudretinizedir. / Lütfen bana Ozan Yolu'nun sıradaki formülünü bahşedin."_
+**Ayar:** *"Soytarı Efendi. / Şekil Değiştiren'i katlettim. Kanı toprağa döküldü. Bu Aşkın Hasletini sunak için hazırladım. / Sizi temin ederim, itikadım yalnızca size ve sizin kudretinizedir. / Lütfen bana Ozan Yolu'nun sıradaki formülünü bahşedin."\_
 **Gerekçe:** → N-DER1.4
 
 ##### DER1.5 — Ozan Yolu sızıntısı
@@ -1436,7 +1439,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Gündelik konuşma, alışveriş
 **Yap:** Zevkini açıkça ve çocuksu bir ciddiyetle ilan eder ("Ben yalnız oyuncak bebekleri ve saf, güzel genç kızları severim!"). Parayı "aşağılama" sayar ama fiyatı kuruşu kuruşuna pazarlar ve aracılık payını ister.
 **Yapma:** Zevkini müstehcen ya da karanlık bir imaya çevirmek.
-**Ayar:** _"Hayır; ben olmasam 2800 isteyecekti. Anlaşmamız gereği bana fazladan 150 pound ödeyeceksin; toplam 2450."_ (421); _"Biraz indirebilir misin?"_ (568)
+**Ayar:** _"Hayır; ben olmasam 2800 isteyecekti. Anlaşmamız gereği bana fazladan 150 Sterlin ödeyeceksin; toplam 2450."_ (421); _"Biraz indirebilir misin?"_ (568)
 **Gerekçe:** → N-EML1.4
 
 ##### EML1.5 — Baron Emlyn (594'ten itibaren)
@@ -1465,7 +1468,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Bilgi verirken · Tarot, Klein
 **Yap:** Bildiğini doğrudan, sıralı ve eksiksiz söyler; bilmediğinin sınırını da açıkça çizer ("Daha üstünü bilmiyorum."). Tehlikeyi gösterişsiz, düz bir tonla anlatır.
 **Yapma:** Bilgiyi bilmeceye, masala, mecaza çevirmek (eski haritanın kuralı; kaynakta yok); bilgiyi saklıyormuş gibi kaçamak konuşmak.
-**Ayar:** _"Vampir Ay Yolu'ndadır; Mertebe 9'u Aktar, 8'i Hayvan Terbiyecisi, 6'sı İksir Müderrisi, 5'i Kızıl Alim, 4'ü Şaman Kralı... Daha üstünü bilmiyorum."_ (595); _"Bu bir dev değil, bir taş mahluk. Çekirdeği Savaşçı Yolu'nun Mertebe 5'i Muhafız'ın ana malzemesidir; bu yüzden savunması çok yüksektir."_ (653)
+**Ayar:** _"Vampir Ay Yolu'ndadır; Mertebe 9'u Aktar, 8'i Hayvan Terbiyecisi, 6'sı İksir Müderrisi, 5'i Kızıl Âlim, 4'ü Şaman Kralı... Daha üstünü bilmiyorum."_ (595); _"Bu bir dev değil, bir taş mahluk. Çekirdeği Savaşçı Yolu'nun Mertebe 5'i Muhafız'ın ana malzemesidir; bu yüzden savunması çok yüksektir."_ (653)
 **Gerekçe:** → N-CAT1.1
 
 ##### CAT1.2 — İş bilir: fiyat, süre, soru yok
@@ -1473,7 +1476,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Takas, görev, Gehrman'la iş
 **Yap:** Kısa ve net: ne, ne kadar, ne zaman. Neden diye sormaz; garanti vermez ("Elimden geleni yaparım ama söz veremem."). Gerektiğinde cömerttir ("Kuralı bedava say.").
 **Yapma:** Pazarlığı uzatmak ya da süslemek.
-**Ayar:** _"Tamam; iki hafta içinde, yine 600 pound."_ (680); _"Var. Ne zaman istersin?"_ (825, neden diye sormadan)
+**Ayar:** _"Tamam; iki hafta içinde, yine 600 Sterlin."_ (680); _"Var. Ne zaman istersin?"_ (825, neden diye sormadan)
 **Gerekçe:** → N-CAT1.2
 
 ##### CAT1.3 — Kaptan
@@ -1563,9 +1566,9 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 ##### XIO1.8 — Arabulucu Yolu sızıntısı (Kadı'dan itibaren)
 
 **Kapsam:** 1189 sonrası · iş, mahkeme, ekip; yüksek Mertebeler
-**Yap:** Arabulucu Yolu'nun Türkçe adları (Zaptiye, Kadı, Ferman Sahiri, Nizamın Eli) bir Osmanlı kaza ve nizam dünyasıdır. Divan_Rule 1.1'deki kolonizasyon ölçütüyle, Yol'un dağarcığı Mertebesi yükseldikçe Xio'nun diline sızar: Kadı'da (6) yalnız iş konuşurken "hüküm", "nizam", "mahkeme", "kanun" gibi birkaç kelime; Ferman Sahiri'nde (4, 1391) emirleri bir ferman kesinliği kazanır ve aynı kelimeler gündelik konulara da girer. Dobra, sade, kısa çekirdek (XIO1.1) değişmez; sızıntı onun üstüne eklenir. **Sürüklenme göstergesi:** Fors'la ev işini ya da yemeği konuşurken hüküm ve nizam diliyle konuşuyorsa Yol onu yemeye başlamıştır.
+**Yap:** Arabulucu Yolu'nun Türkçe adları (Zaptiye, Kadı, Ferman Sahiri, Nizamın Eli) bir Osmanlı kaza ve nizam dünyasıdır. Divan*Rule 1.1'deki kolonizasyon ölçütüyle, Yol'un dağarcığı Mertebesi yükseldikçe Xio'nun diline sızar: Kadı'da (6) yalnız iş konuşurken "hüküm", "nizam", "mahkeme", "kanun" gibi birkaç kelime; Ferman Sahiri'nde (4, 1391) emirleri bir ferman kesinliği kazanır ve aynı kelimeler gündelik konulara da girer. Dobra, sade, kısa çekirdek (XIO1.1) değişmez; sızıntı onun üstüne eklenir. **Sürüklenme göstergesi:** Fors'la ev işini ya da yemeği konuşurken hüküm ve nizam diliyle konuşuyorsa Yol onu yemeye başlamıştır.
 **Yapma:** Sızıntıyı 1189'dan önce başlatmak (eski haritanın hatası buydu: Xio başta sade konuşur); hukuk jargonunu cümleleri anlaşılmaz kılacak kadar yığmak; çekirdeği resmî bir dile çevirmek.
-**Ayar:** _"Hükmüm şu: iki hafta burada kalacak, o belgenin süresi dolana kadar."_ (1337; Kadı/ekip başı)
+**Ayar:** *"Hükmüm şu: iki hafta burada kalacak, o belgenin süresi dolana kadar."\_ (1337; Kadı/ekip başı)
 **Gerekçe:** → N-XIO1.8
 
 ## 6. Tingen'in Gölgeleri
@@ -1875,7 +1878,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ### Alevden Danitz `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Altın Rüya'nın lostromosu, 3000 pound ödüllü korsan, Avcı Yolu'nda Ateş Müptelası; Fırtınalar Hâkimi mümini (896, 935). Geveze, övüngen, kaptanına (Edwina) hayran. Ödülüyle ve tanınmışlığıyla övünür, deniz bilgisi ve dedikodu saçar; ağzı beyninden önce davranır (在大脑反应过来前). Gehrman'dan korkar ve onun karşısında kekeler; arkasından "deli" der. Kendine kızınca imza küfrü "İt boku!"dur. Kışkırtmada kötüdür ama bunu kabul etmez: kendini "bu işin uzmanı" sayar (551–552), oysa denemeleri boşa çıkar ve Klein onu "tek bir küfür bilen", "avcıların yüz karası" bulur (1110); Anderson da ona Avcı ve Kışkırtıcı rolünü baştan oynamasını söyler (707). Kitap ilerledikçe büyür: Rorsted Takımadaları'nda Soytarı Kilisesi adına yerlileri yöneten "Danitz Bey" olur (1248–1292), ama övünme ve küfür alışkanlığı sürer.
+**Tarz:** Altın Rüya'nın lostromosu, 3000 Sterlin ödüllü korsan, Avcı Yolu'nda Ateş Müptelası; Fırtınalar Hâkimi mümini (896, 935). Geveze, övüngen, kaptanına (Edwina) hayran. Ödülüyle ve tanınmışlığıyla övünür, deniz bilgisi ve dedikodu saçar; ağzı beyninden önce davranır (在大脑反应过来前). Gehrman'dan korkar ve onun karşısında kekeler; arkasından "deli" der. Kendine kızınca imza küfrü "İt boku!"dur. Kışkırtmada kötüdür ama bunu kabul etmez: kendini "bu işin uzmanı" sayar (551–552), oysa denemeleri boşa çıkar ve Klein onu "tek bir küfür bilen", "avcıların yüz karası" bulur (1110); Anderson da ona Avcı ve Kışkırtıcı rolünü baştan oynamasını söyler (707). Kitap ilerledikçe büyür: Rorsted Takımadaları'nda Soytarı Kilisesi adına yerlileri yöneten "Danitz Bey" olur (1248–1292), ama övünme ve küfür alışkanlığı sürer.
 **Onay:** _"Tamam!"_; korkuyla _"Ş-şey, olur!"_ (558, 是，好的！)
 
 ##### DAN1.1 — Geveze, övüngen korsan
@@ -1883,7 +1886,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** Tüm görünümleri
 **Yap:** Konuşmaya bayılır: korsanları ödülleri ve lakaplarıyla sayar, liman yemeklerini, kadınları, adetleri anlatır. Kendi ödülüyle ve "tanınmış bir korsan" oluşuyla övünür; yakalanınca kuru bir "haha" ile örter. Kaptanını sınırsız över.
 **Yapma:** Övünmeyi ağırbaşlı bir gurura çevirmek; dedikodusunu kısaltmak.
-**Ayar:** _"Dostum, yanlış adamı tuttun. 3000 pound değerindeki o ünlü korsana çok benzerim ama o değilim; hep böyle karıştırırlar, başıma epey dert açılıyor."_ (506); _"Nasıl hatırlayayım? Kaptanımız gibi güzel değiller ki!"_ (519)
+**Ayar:** _"Dostum, yanlış adamı tuttun. 3000 Sterlin değerindeki o ünlü korsana çok benzerim ama o değilim; hep böyle karıştırırlar, başıma epey dert açılıyor."_ (506); _"Nasıl hatırlayayım? Kaptanımız gibi güzel değiller ki!"_ (519)
 **Gerekçe:** → N-DAN1.1
 
 ##### DAN1.2 — Ağız beyinden önce; "İt boku!"
@@ -1945,7 +1948,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 576–705 · koleksiyon odası, satış, Groselle'in Gezileri
 **Yap:** Duygusu yalnız burada görünür ve anlatıda kalır: "araştırma" kelimesinde gözleri parlar, bir sonuç duyunca yüzü canlanır. Koleksiyonunu bir ev sahibi gibi tek tek tanıtır. Sattığı şeye hep aynı şartı koyar: bir şey çözersen bana söyle. Fiyatı düz söyler.
 **Yapma:** Merakı ünlemli bir heyecana çevirmek; şartı pazarlık süsüyle sunmak.
-**Ayar:** _"Bu, Dördüncü Çağ'daki Solomon İmparatorluğu'ndan bir altın."_ (576 ¶43); _"Bir şey çözersen sonucunu mutlaka bana söyle ki artık kafam karışmasın."_ (576 ¶62); _"8000 pound."_ (576 ¶66); _"Bir sonuç mu buldun?"_ (705 ¶45); _"Tek şartım, boş vaktin olduğunda benimle tarih konuşman."_ (705 ¶53)
+**Ayar:** _"Bu, Dördüncü Çağ'daki Solomon İmparatorluğu'ndan bir altın."_ (576 ¶43); _"Bir şey çözersen sonucunu mutlaka bana söyle ki artık kafam karışmasın."_ (576 ¶62); _"8000 Sterlin."_ (576 ¶66); _"Bir sonuç mu buldun?"_ (705 ¶45); _"Tek şartım, boş vaktin olduğunda benimle tarih konuşman."_ (705 ¶53)
 **Gerekçe:** → N-EDW1.3
 
 ##### EDW1.4 — İfadesiz şaka ve incelik
@@ -1964,9 +1967,9 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Ayar:** _"Bu işi tamamen ona bırakacağım: Direniş'le bağlantı, zamanlama, özel liman."_ (576 ¶12); _"Al onu."_ (703 ¶27); _"Batı Balam'ı soracaksın, değil mi?"_ (871 ¶52)
 **Gerekçe:** → N-EDW1.5
 
-### Frank Lee (İstikbal'in ikinci kaptanı) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
+### Frank Lee (İstikbal'in birinci zabiti) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Amiral Yıldız Cattleya'nın gemisi İstikbal'de ikinci kaptan; "Zehir Uzmanı" lakaplı, 7000 pound ödüllü korsan (638). Çiftçi Yolu'nda: Hayatşinas; Orman Dervişi hasletini satın alır (823) ve 1128'den önce Orman Dervişi olur. Toprak Ana Kilisesi yasak deneyleri yüzünden onu yargılamış ve aranan kişiler listesine koymuştur (638, 1324). Gemide hem hekim hem aşçıdır. Sesi sıcak, gürültülü ve heyecanlıdır: her yeni "ürününü" bir pazarcı gibi tanıtır, karşısındakine tattırır, "Bana inan" der. Tutkusu toprak, ekin ve melezlemedir; amacı hep iyiliktir (kıtlık bitsin, herkes iyi süt içsin), vardığı sonuç ise dehşet vericidir: boğa, inek ve buğdayı melezlemek, kanı şarap olan balık, insanın üstünde mantar yetiştirmek. Bunu kötülük saymaz, saf bir ciddiyetle anlatır; Klein'ın gözünde "şeytandan da korkunç, çünkü yaptığını kötü sanmıyor" (645). Klein'ı içtenlikle dostu sayar. Reinette'in lakabıyla Mantar Kralı (REI1.3). Klein'a "sen" der: önce "Sparrow Bey", sonra yalnızca "Gehrman". Cattleya'ya "Kaptan" der.
+**Tarz:** Amiral Yıldız Cattleya'nın gemisi İstikbal'de birinci zabit; "Zehir Uzmanı" lakaplı, 7000 Sterlin ödüllü korsan (638). Çiftçi Yolu'nda: Hayatşinas; Orman Dervişi hasletini satın alır (823) ve 1128'den önce Orman Dervişi olur. Toprak Ana Kilisesi yasak deneyleri yüzünden onu yargılamış ve aranan kişiler listesine koymuştur (638, 1324). Gemide hem hekim hem aşçıdır. Sesi sıcak, gürültülü ve heyecanlıdır: her yeni "ürününü" bir pazarcı gibi tanıtır, karşısındakine tattırır, "Bana inan" der. Tutkusu toprak, ekin ve melezlemedir; amacı hep iyiliktir (kıtlık bitsin, herkes iyi süt içsin), vardığı sonuç ise dehşet vericidir: boğa, inek ve buğdayı melezlemek, kanı şarap olan balık, insanın üstünde mantar yetiştirmek. Bunu kötülük saymaz, saf bir ciddiyetle anlatır; Klein'ın gözünde "şeytandan da korkunç, çünkü yaptığını kötü sanmıyor" (645). Klein'ı içtenlikle dostu sayar. Reinette'in lakabıyla Mantar Kralı (REI1.3). Klein'a "sen" der: önce "Sparrow Bey", sonra yalnızca "Gehrman". Cattleya'ya "Kaptan" der.
 **Onay:** _"Çok iyi!"_ (675, 非常好！); _"Elimden geleni yapacağım!"_ (1219, 我会努力的！)
 **Sicil (yorum): çiftçi ile laboratuvar.** Dayanak: Çiftçi Yolu ve Hayatşinas adı, Toprak Ana Kilisesi (Schema 0.7: ekinci deyişi). Ayırt edici iz, iki dağarcığın aynı cümlede buluşmasıdır: toprağın ve ahırın kelimeleri (toprak, tohum, başak, döl, ahır, mahsul) ile deneyin kelimeleri (deney, melezleme, üreme, verim, aktiflik). Bu karışım bütün repliklerine yayılmaz; ürününü tanıtırken ve deneyini anlatırken görünür. Dindarlığı İslami değildir; Toprak Ana deyişidir ve "Ana" diye hitap eder.
 
@@ -2007,7 +2010,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** İstikbal, tayfa, Cattleya, Klein
 **Yap:** Cattleya'ya saygılı ve yürekten bağlıdır; ondan borç bile ister. Tayfaya kaba ama iyi niyetli bir hekimdir (birasına yatıştırıcı katar). Klein'ı ilk görüşte dost bellemiştir, çünkü Klein onun deneylerini yadırgamamıştır (638 ¶35, 645 ¶45); Gehrman'ın soğukluğunu fark etmez. Son dönemde (1219) yaptıklarını "yeniden gözden geçirir" ama heyecanı sönmez.
 **Yapma:** Cattleya'yla alay ya da itaatsizlik; dostluğa karşılık beklemek.
-**Ayar:** _"Ah, Kaptan, şimdilik ancak 3000 pound biriktirdim; bana 2000 pound borç verebilir misin?"_ (1089 ¶44); _"Gehrman Sparrow'a da yazıp yardım isteyeceğim. O benim iyi dostum!"_ (1219 ¶31–32)
+**Ayar:** _"Ah, Kaptan, şimdilik ancak 3000 Sterlin biriktirdim; bana 2000 Sterlin borç verebilir misin?"_ (1089 ¶44); _"Gehrman Sparrow'a da yazıp yardım isteyeceğim. O benim iyi dostum!"_ (1219 ¶31–32)
 **Gerekçe:** → N-FRK1.5
 
 ---
@@ -2138,7 +2141,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 494–513
 **Yap:** Tüfekli, işini bilen bir kadın; çocuklara ödül ve korsan dünyasını sakin, sayılarla açıklar (505 ¶26). Hayalini anlatırken cümle uzar ve renklenir: güneş alan odalar, buğday tarlası, bağ, kendi değirmeninin ekmeği (496 ¶39).
 **Yapma:** Cecile'i Cleves'in sessiz gölgesi yapmak.
-**Ayar:** _"Ben olsam öyle yapmazdım, kocaman bir çiftlik alırdım."_ (496 ¶39); _"Denizde, başına 300 pound'dan fazla ödül konmuş korsanlar epey güçlüdür."_ (505 ¶26)
+**Ayar:** _"Ben olsam öyle yapmazdım, kocaman bir çiftlik alırdım."_ (496 ¶39); _"Denizde, başına 300 Sterlin'dan fazla ödül konmuş korsanlar epey güçlüdür."_ (505 ¶26)
 **Gerekçe:** → N-AKK1.4
 
 ---
@@ -2150,10 +2153,11 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 ### Sharron (İtidal / Temperance) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
 **Tarz:** Tayf (5), 1016'da Kukla (4). Soluk, ince yüzlü, mavi gözlü; aynalarda ve camlarda belirip kaybolur. Bebek benzetmesi iki aşamada farklı ağırlıktadır:
+
 - _Tayf aşaması (338–1015):_ hayalet baskındır (soluk, saydam, aynadan beliren), bebek bir benzetmedir: "bebek gibi bir güzellik", "konuşan bir bebek gibi" (338, 434). Klein bunu sonradan Kukla rolünün önceden oynanması diye yorumlar (1140).
 - _Kukla aşaması (1016'dan itibaren):_ bebek hayaleti geçer: yüzü daha az solgun, "kadın hayaletten çok bebeğe yakın" (1041); sustuğunda "en kusursuz bebek" (1140); dövüşte gerçekten insan boyunda kuklalara dönüşür (1235–1236).
-Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" ile gelir. Kelimeden tasarruf eder: mümkünse tek kelime, mümkünse hiç. Neden diye sormaz, açıklamaz, kendini anlatmaz. Bu sükût çekingenlik değil, ulaşılmış perhizin kendisidir. Uzun konuştuğu tek konu İtidal öğretisi ve hocasıdır. Tarot Cemiyeti'nde İtidal (节制).
-**Onay:** _"Olur."_ (好。)
+  Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" ile gelir. Kelimeden tasarruf eder: mümkünse tek kelime, mümkünse hiç. Neden diye sormaz, açıklamaz, kendini anlatmaz. Bu sükût çekingenlik değil, ulaşılmış perhizin kendisidir. Uzun konuştuğu tek konu İtidal öğretisi ve hocasıdır. Tarot Cemiyeti'nde İtidal (节制).
+  **Onay:** _"Olur."_ (好。)
 
 ##### SHR1.1 — Tek kelime, bazen hiç
 
@@ -2511,7 +2515,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 
 ## 10. NPC ve Zümre Sesleri (Toplu Haritalar) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**İlke: 体面 (saygınlık) merdiveni.** Loen'de sınıfın ölçüsü paradan çok 体面'dir: sergilenen saygınlık ile onu taşıyacak gerçek imkân arasındaki fark. Kaynak bu farkı her basamakta gösterir: eski aristokratlar borçlanıp yine de konumlarına yakışır hayatı sürdürür (177); Backlund orta sınıfı haftada 5 pound'la "gerçek saygınlığın biraz gerisinde" kaldığını hesaplar (231); düşmüş bir beyefendi ekmek kuyruğuna yüzünü saklayarak girer (1143). Defin bile sınıfa göre üçe ayrılır (268). Basamaklar ayrı haritalar değil, aynı eksenin dereceleridir; bitişik iki basamak aynı tınlamamalıdır.
+**İlke: 体面 (saygınlık) merdiveni.** Loen'de sınıfın ölçüsü paradan çok 体面'dir: sergilenen saygınlık ile onu taşıyacak gerçek imkân arasındaki fark. Kaynak bu farkı her basamakta gösterir: eski aristokratlar borçlanıp yine de konumlarına yakışır hayatı sürdürür (177); Backlund orta sınıfı haftada 5 Sterlin'la "gerçek saygınlığın biraz gerisinde" kaldığını hesaplar (231); düşmüş bir beyefendi ekmek kuyruğuna yüzünü saklayarak girer (1143). Defin bile sınıfa göre üçe ayrılır (268). Basamaklar ayrı haritalar değil, aynı eksenin dereceleridir; bitişik iki basamak aynı tınlamamalıdır.
 **Genel kural:** Basamak sesi kelime dağarcığından çok **konunun** ve **hitabın** içindedir: aristokrat aileyi, unvanı ve meclisi konuşur; orta sınıf parayı, kirayı ve görüntüyü; Doğu Semti işi, çeteyi ve açlığı. Sicil farkı bunun üstüne hafifçe biner; karikatüre kaçmaz.
 
 ##### ZMR1.1 — Aristokratlar: rahat yetki, aile ve konum
@@ -2534,7 +2538,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Stelyn ve komşuları, dedektif Stuart, memurlar; Tingen'de meslek sahipleri: akıl hastanesi doktoru Daxter Guderian (116–175), eskrim hocası Gawain (97–171; unvansız ama soylu tavırlı)
 **Yap:** Saygınlığı kalem kalem hesaplar: kira, hizmetçi, konser, tenis, kıyafet; "gerçek saygınlık" için ne eksik kaldığını söyler. Başkasına öğüt verir gibi konuşur, ama kaygısı sesindedir. Batıl korkuları "taşrada derler ki..." diye utanarak itiraf eder.
 **Yapma:** Kaygıyı açıkça söyletmek (bütçe konuşmasının altında kalır); gösterişi abartıp karikatüre çevirmek.
-**Ayar:** _"Bu geliri koruyabilirsen haftada 5 pound sana Cherwood semtinde gayet iyi bir hayat sağlar: odalarını paylaşmak zorunda kalmazsın, bir hizmetçi tutarsın, iki haftada bir konsere ya da tiyatroya gidersin... Tabii evliliğe hazırlanıyorsan biraz tutumlu olmalısın; haftalık 5 pound gerçek saygınlığın biraz gerisinde kalır."_ (231, Stelyn); _"Bir ailenin, saygın sayılabilmesi için yılda en az 30 pound'u buna ayırması gerekir."_ (357)
+**Ayar:** _"Bu geliri koruyabilirsen haftada 5 Sterlin sana Cherwood semtinde gayet iyi bir hayat sağlar: odalarını paylaşmak zorunda kalmazsın, bir hizmetçi tutarsın, iki haftada bir konsere ya da tiyatroya gidersin... Tabii evliliğe hazırlanıyorsan biraz tutumlu olmalısın; haftalık 5 Sterlin gerçek saygınlığın biraz gerisinde kalır."_ (231, Stelyn); _"Bir ailenin, saygın sayılabilmesi için yılda en az 30 Sterlin'u buna ayırması gerekir."_ (357)
 **Gerekçe:** → N-ZMR1.3
 
 ##### ZMR1.4 — Alt orta sınıf: tutumluluk ve inat
@@ -2558,7 +2562,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Beş Deniz'in korsanları (Anderson, Danitz kendi haritalarında)
 **Yap:** Loen merdiveni yerine güç ve kelle ödülü konuşur; kaba, gövdeli, denizci ağzı; uğur ve uğursuzluk dile sızar.
 **Yapma:** Her korsana aynı abartılı "denizci" karikatürünü giydirmek.
-**Ayar:** _"Kızıl Kafatası Korsanları, küçük-orta bir güç. Kaptanları 900 pound ödüllü 'Deniz Kurdu' Johnson, ikinci kaptanları 500 pound ödüllü 'Tek Göz' Andersen."_ (504, Danitz: korsan ödülü ve lakabıyla sayılır); _"Bir korsan olarak az çok Fırtınalar Hâkimi'ne inanır, bazı şeylerden sakınırsın; tabutlardan uzak durmak da bunlardan biri."_ (935)
+**Ayar:** _"Kızıl Kafatası Korsanları, küçük-orta bir güç. Kaptanları 900 Sterlin ödüllü 'Deniz Kurdu' Johnson, birinci zabitleri 500 Sterlin ödüllü 'Tek Göz' Andersen."_ (504, Danitz: korsan ödülü ve lakabıyla sayılır); _"Bir korsan olarak az çok Fırtınalar Hâkimi'ne inanır, bazı şeylerden sakınırsın; tabutlardan uzak durmak da bunlardan biri."_ (935)
 **Gerekçe:** → N-ZMR1.6
 
 ##### ZMR1.7 — Çocuklar
@@ -2573,7 +2577,7 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 **Kapsam:** Gazeteciler (Mike Joseph), basılı haberler
 **Yap:** Basılı haber sansasyoneldir: ünlemli, ahlak vaazlı, felaket tellalı (25'teki Tingen Sabah Postası: _"Bu, Krallık kanununun çiğnenmesidir! Kamu güvenliğine bir meydan okumadır!"_). Yüz yüze gazeteci pratik ve pazarlıkçıdır: haberi, parayı, riski konuşur.
 **Yapma:** Yüz yüze konuşmayı manşet diliyle yazmak.
-**Ayar:** _"Ücreti artırıyorum! Kavga çıkmış sayalım, toplam 5 pound! Kaçarken de kavga çıkarsa 10!"_ (271, Mike Joseph)
+**Ayar:** _"Ücreti artırıyorum! Kavga çıkmış sayalım, toplam 5 Sterlin! Kaçarken de kavga çıkarsa 10!"_ (271, Mike Joseph)
 **Gerekçe:** → N-ZMR1.8
 
 ##### ZMR1.9 — Kolluk ve memurlar
@@ -2603,13 +2607,13 @@ Anlatıda iki aşama karıştırılmaz: Tayf aşamasında bebek yalnız "gibi" i
 
 **Formül tablosu (donmuş):**
 
-| Kilise | Selam / övgü | Dua | Yemin | İşaret |
-|---|---|---|---|---|
-| Ebedî Gece | "Ulu Ece'ye medholsun." (赞美女神) | "Ulu Ece / Tanrıça seni (sizi, bizi) himaye etsin." (愿女神庇佑…) | — | göğse dört kez dokunup Kızıl Ay'ı çizmek (画绯红之月) |
-| Buhar ve Çarklar | — | — | "Buhar aşkına!" (蒸汽在上) | göğse nokta nokta dokunup üçgen Buhar ve Çark Mukaddesat Amblemi'ni çizmek |
-| Fırtınalar Hâkimi | — | — | "Ya Hâkim!" (风暴在上); 主啊 → "Ya Rab" | Fırtına amblemi (风暴徽章) |
-| Ebedî Yanan Güneş | "Güneş'e hamd olsun!" (赞美太阳) | — | — | kollar yukarı açık "Güneş'e hamd" duruşu |
-| Soytarı (Esrarın Hükümdarı grubu; Divan sicili) | "Soytarı Efendi'ye senâ olsun!" (赞美愚者 / 赞美'愚者'先生) | "Soytarı Efendi'nin himayesi üzerimize olsun." (愿'愚者'庇佑…); şükür: "Soytarı Efendi'nin himayesine şükür." (感谢'愚者'先生庇佑) | — | — |
+| Kilise                                          | Selam / övgü                                                | Dua                                                                                                                                | Yemin                                   | İşaret                                                                     |
+| ----------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- | -------------------------------------------------------------------------- |
+| Ebedî Gece                                      | "Ulu Ece'ye medholsun." (赞美女神)                          | "Ulu Ece / Tanrıça seni (sizi, bizi) himaye etsin." (愿女神庇佑…)                                                                  | —                                       | göğse dört kez dokunup Kızıl Ay'ı çizmek (画绯红之月)                      |
+| Buhar ve Çarklar                                | —                                                           | —                                                                                                                                  | "Buhar aşkına!" (蒸汽在上)              | göğse nokta nokta dokunup üçgen Buhar ve Çark Mukaddesat Amblemi'ni çizmek |
+| Fırtınalar Hâkimi                               | —                                                           | —                                                                                                                                  | "Ya Hâkim!" (风暴在上); 主啊 → "Ya Rab" | Fırtına amblemi (风暴徽章)                                                 |
+| Ebedî Yanan Güneş                               | "Güneş'e hamd olsun!" (赞美太阳)                            | —                                                                                                                                  | —                                       | kollar yukarı açık "Güneş'e hamd" duruşu                                   |
+| Soytarı (Esrarın Hükümdarı grubu; Divan sicili) | "Soytarı Efendi'ye senâ olsun!" (赞美愚者 / 赞美'愚者'先生) | "Soytarı Efendi'nin himayesi üzerimize olsun." (愿'愚者'庇佑…); şükür: "Soytarı Efendi'nin himayesine şükür." (感谢'愚者'先生庇佑) | —                                       | —                                                                          |
 
 ##### KLS1.1 — Ebedî Gece: sükûnet ve himaye
 

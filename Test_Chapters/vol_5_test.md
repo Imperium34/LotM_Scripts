@@ -95,7 +95,7 @@ _Cevap yok... Bayan Haberci gibi bir meleği görüp aklı çıktıktan sonra Tr
 
 Düşünceleri hızla Şeytaniçe Tarikatı'nın Kral III. George'a destek sağlama niyetine kaydı.
 
-_...Sebeplerden biri, Şeytaniçe iksirlerini sindirip ayin düzenlemek adına bir felakete ihtiyaç duyması. Diğeri ise III. George'un onlara verdiği bir vaat mi? İtikatlarını alenen yayabileceklerine dair bir vaat mi verdi? Hayır, yedi ilah buna asla müsaade etmez. Kara İmparator 0. Mertebe'ye ulaşsa bile, yanına Kadim Şeytaniçe ve Hakiki Yaratıcı'yı da alsa, "Onlar" yedi ilah ittifakına karşı duramaz. Gerçi bu savaştan sonra yedi ilah arasında bir ittifak kalacak mı, orası da meçhul..._
+_...Sebeplerden biri, Şeytaniçe iksirlerini sindirip ayin düzenlemek adına bir felakete ihtiyaç duyması. Diğeri ise III. George'un onlara verdiği bir vaat mi? İtikatlarını alenen yayabileceklerine dair bir vaat mi verdi? Hayır, yedi ilah buna asla müsaade etmez. Kara İmparator 0. Mertebe'ye ulaşsa bile, yanına Kadim Şeytaniçe ve Hakiki Hâlık'ı da alsa, "Onlar" yedi ilah ittifakına karşı duramaz. Gerçi bu savaştan sonra yedi ilah arasında bir ittifak kalacak mı, orası da meçhul..._
 
 _O halde, III. George'un Şeytaniçe Tarikatı ile işbirliği yaptığını bilen yedi ilahın "O'nun" Kara İmparator makamına oturmasına göz yummaması gerekir..._
 
