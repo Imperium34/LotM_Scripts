@@ -57,8 +57,9 @@ DENETLENMEDI = "ZH denetlenmedi"
 _ORNEK_SATIR = re.compile(r"^\s*[-*]\s*\*\*Örnek")
 _ALINTI = re.compile(r'_"(.+?)"_')
 # Kimlikler bir bolum harfi tasir: K (Kurallar), M (Muhatap Ekseni),
-# A (Asamalar), T (tikler). Harf, ayni numaranin iki bolumde cakismasini onler.
-_KIMLIK = r"[KMAT]\d+(?:\.\d+)*"
+# A (Asamalar), T (tikler); maskeler kendi kodunu tasir (SOY, DUN, SHE, GEH, DWA, MER).
+# Harf, ayni numaranin iki bolumde cakismasini onler.
+_KIMLIK = r"(?:[KMAT]|SOY|DUN|SHE|GEH|DWA|MER)\d+(?:\.\d+)*"
 _K_BASLIK = re.compile(r"^#{2,6}\s+(" + _KIMLIK + r")\b", re.M)
 _N_ATIF = re.compile(r"→\s*N-(" + _KIMLIK + r")")
 _N_KIMLIK = re.compile(r"\bN-(" + _KIMLIK + r")")

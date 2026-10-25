@@ -20,6 +20,9 @@ ADIMLAR (sira bagimliliktan gelir)
                okuma ciktisi varsa SADAKAT? satirlari ilgili partiye girer;
                okuma sonradan biterse girdiler yeniden yazilir ve eski
                sadakat ciktilari ESKIMIS gorunur.
+               Yanki Defteri'nden (Tools/Voice_Maps/Echo_Notes.md) kurulumu ya
+               da odemesi bu bolumde olan girisler <yanki_defteri> olarak
+               girer; 'ileride' odemeli girisler --yanki N,N ile eklenir.
     duzeltme   3_duzeltme_girdi.md  ->  3_duzeltme_cikti.md
                ciktidaki tam metin bolumle karsilastirilir: 3_duzeltme_fark.diff
                (gecis bolum dosyasina yazmaz; degisiklikler birlestirmeye gider)
@@ -56,6 +59,7 @@ Kullanim:
     sonra.py 61 --bastan               uygulamadan sonra hatti bastan kur
     sonra.py 61 --zincir-yeniden       betik zincirini zorla yeniden calistir
     sonra.py 61 --parti-boyu 9000      sadakat partisi (ZH+TR karakter, varsayilan 6000)
+    sonra.py 61 --yanki 14,22          sadakat'e bolum eslesmesinin disinda Yanki girisleri ekle
 """
 
 from __future__ import annotations
@@ -82,6 +86,9 @@ RAPOR = Path(os.environ.get("LOTM_SONRA_RAPOR") or BETIKLER / "Reports" / "sonra
 # rapor degil bir karar, o yuzden Reports/'ta degil Tools/'da ve surum
 # denetiminde. Her gecise ve birlestirmeye verilir; ayni soru tekrar sorulmaz.
 KARARLAR = Path(os.environ.get("LOTM_KARARLAR") or KOK / "Tools" / "kararlar.md")
+# Yanki Defteri: bolumler arasi geriye isleyen kurulum/odeme bagimliliklari.
+# Sadakat gecisine yalniz o bolumu ilgilendiren girisler verilir.
+YANKI = Path(os.environ.get("LOTM_YANKI") or KOK / "Tools" / "Voice_Maps" / "Echo_Notes.md")
 
 ISTEM = {
     "okuma": "lotm_chapter_read_pass.md",
@@ -159,6 +166,70 @@ def kararlar_blogu() -> str:
         f"{KARARLAR.read_text(encoding='utf-8').strip()}\n"
         "</onceki_kararlar>\n\n"
     )
+
+
+# ------------------------------------------------------------------ yanki defteri
+
+YANKI_BASLIK = re.compile(r"^### #(\d+) · ", re.M)
+
+
+def yanki_girisleri(metin: str) -> dict:
+    """Echo_Notes.md -> {no: {"blok": tam metin, "kurulum": ..., "odeme": ...}}."""
+    parcalar = YANKI_BASLIK.split(metin)
+    out = {}
+    for i in range(1, len(parcalar), 2):
+        no = int(parcalar[i])
+        gov = parcalar[i + 1]
+        # Son girisin kuyrugu '## Kullanim' bolumunu icermesin.
+        gov = re.split(r"\n## ", gov)[0].rstrip()
+        baslik = re.search(r"^### #%d · .*$" % no, metin, re.M).group(0)
+
+        def alan(ad):
+            m = re.search(r"- \*\*%s:\*\* (.*)" % ad, gov)
+            return m.group(1) if m else ""
+        out[no] = {"blok": f"{baslik}\n{gov}", "kurulum": alan("Kurulum"),
+                   "odeme": alan("Ödeme")}
+    return out
+
+
+def bolum_numaralari(alan: str) -> set:
+    """Bir Kurulum/Odeme hucresindeki BOLUM numaralari.
+
+    Paragraf numaralari (¶N), yil/tarih, 'CoI N' ve 'N. Asama' atilir; 'A–B'
+    araligi yalniz dar ise (<=3) acilir: '115–116' iki bolumdur, '220–1165'
+    bir donem tanimidir.
+    """
+    alan = re.sub(r"¶\d+(?:\s*[–-]\s*¶?\d+)?", " ", alan)
+    alan = re.sub(r"\d{4}-\d{2}-\d{2}|\b20\d\d\b|CoI\s*\d+|\d+\.\s*Aşama", " ", alan)
+    nolar = set()
+    for m in re.finditer(r"(\d+)(?:\s*[–-]\s*(\d+))?", alan):
+        a, b = int(m.group(1)), m.group(2)
+        if b is None:
+            nolar.add(a)
+        elif 0 <= int(b) - a <= 3:
+            nolar.update(range(a, int(b) + 1))
+    return nolar
+
+
+def yanki_secimi(no: int, girisler: dict, ek: tuple = ()) -> list:
+    """Bu bolumu ilgilendiren giris numaralari: kurulumu ya da odemesi bu bolumde, + elle ekler."""
+    secilen = {n for n, g in girisler.items()
+               if no in bolum_numaralari(g["kurulum"]) or no in bolum_numaralari(g["odeme"])}
+    secilen |= {n for n in ek if n in girisler}
+    return sorted(secilen)
+
+
+def yanki_blogu(no: int, ek: tuple = ()) -> str:
+    """Sadakat gecisine <yanki_defteri>; defter yoksa ya da giris yoksa bos dize."""
+    if not YANKI.exists():
+        return ""
+    girisler = yanki_girisleri(YANKI.read_text(encoding="utf-8"))
+    secilen = yanki_secimi(no, girisler, ek)
+    if not secilen:
+        return ""
+    return ("<yanki_defteri>\n"
+            + "\n\n".join(girisler[n]["blok"] for n in secilen)
+            + "\n</yanki_defteri>")
 
 
 # ------------------------------------------------------------------ duzeltme farki
@@ -399,8 +470,9 @@ def hizali_metin(gruplar: dict, nolar: list) -> str:
 # ------------------------------------------------------------------ adimlar
 
 class Bolum:
-    def __init__(self, no: int, parti_boyu: int):
+    def __init__(self, no: int, parti_boyu: int, yanki_ek: tuple = ()):
         self.no = no
+        self.yanki_ek = tuple(yanki_ek)
         self.klasor = RAPOR / f"Ch_{no}"
         self.dosya = BOLUMLER / f"{no:04d}.md"
         self.sablon = SABLONLAR / f"Ch_{no}.md"
@@ -468,6 +540,7 @@ class Bolum:
                 yerli.setdefault(k, []).append(s)
 
         partiler = partile(gruplar, self.parti_boyu)
+        yanki_blok = yanki_blogu(self.no, self.yanki_ek)
         ciftler = []
         for i, nolar in enumerate(partiler, 1):
             parcalar = [istem("sadakat"), "---", f"Parti {i}/{len(partiler)}: ¶{nolar[0]}–¶{nolar[-1]}",
@@ -475,6 +548,8 @@ class Bolum:
                         self.sablon_blogu("chapter_template")]
             if kararlar_blogu():
                 parcalar.append(kararlar_blogu().rstrip())
+            if yanki_blok:
+                parcalar.append(yanki_blok)
             if sorular is None:
                 parcalar.append("<okuma_bulgulari>\n(okuma geçişi henüz yapılmadı)\n</okuma_bulgulari>")
             else:
@@ -497,6 +572,9 @@ class Bolum:
         not_ = None
         if sorular is not None:
             not_ = f"{len(sorular)} SADAKAT? ({len(yersiz)} tanesinin yeri bulunamadi)"
+        if yanki_blok:
+            n = len(YANKI_BASLIK.findall(yanki_blok))
+            not_ = (not_ + "; " if not_ else "") + f"{n} yanki girisi"
         return ciftler, not_
 
     # -- duzeltme
@@ -713,11 +791,15 @@ def main(argv=None) -> int:
     ap.add_argument("--zincir-yeniden", action="store_true")
     # 6000 ZH+TR karakter: yaklasik 20-25 grup, bir bolum 2-4 parti.
     ap.add_argument("--parti-boyu", type=int, default=6000)
+    ap.add_argument("--yanki", default="", metavar="N,N",
+                    help="bolum eslesmesine ek olarak sadakat gecisine verilecek Yanki Defteri "
+                         "giris numaralari (odemesi 'ileride' olanlar icin)")
     ap.add_argument("--model")
     ap.add_argument("--sure", type=int, default=1800, help="gecis basina zaman asimi (sn)")
     a = ap.parse_args(argv)
 
-    b = Bolum(a.no, a.parti_boyu)
+    b = Bolum(a.no, a.parti_boyu,
+              tuple(int(x) for x in re.findall(r"\d+", a.yanki)))
     if not b.dosya.exists():
         print(f"YOK: {b.dosya}")
         return 1

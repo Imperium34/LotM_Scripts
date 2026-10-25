@@ -195,3 +195,86 @@ def test_once_ozet_ve_bayatlik(tmp_path):
     os.utime(kaynak, None)
     os.utime(cikti, (eski, eski))
     assert O.bayat_mi(cikti, [kaynak])
+
+
+# ---------------------------------------------------------------- Yanki Defteri
+
+DEFTER = """\
+# Yankı Defteri
+
+## Defter
+
+### #7 · Şans ritüeli
+`Nesne / Edim · kritik · denetlenmedi`
+
+- **Kurulum:** 2 (ilk ad); 51, 55, 58, 60 (tekrarlar)
+- **Donmuş:** 1–20: 'şans artırma ritüeli'; 22'den itibaren 'ayini'
+- **Ödeme:** **1166**: incantation gereksiz
+- **Neden bozulur:** ...
+
+### #75 · Glacis'in pişmanlığı
+`Kalıp · kritik · denetlenmedi`
+
+- **Kurulum:** 62 ¶34
+- **Donmuş:** 'pişman'
+- **Ödeme:** **115** ¶35, ikinci pişmanlık
+- **Neden bozulur:** ...
+
+### #79 · Demir madeni
+`Nesne / Edim · orta · denetlenmedi`
+
+- **Kurulum:** 62 ¶52–¶53
+- **Donmuş:** 'hisse senedi'
+- **Ödeme:** **115–116**; 185; 203–204
+- **Neden bozulur:** ...
+
+### #82 · Yalnız gezgin
+`Birebir · kritik · eklenecek`
+
+- **Kurulum:** 1182
+- **Donmuş:** —
+- **Ödeme:** 3. Aşama başlığı (220–1165); CoI 291; 2026-10-25
+- **Neden bozulur:** ...
+
+## Kullanım
+
+1. Ödeme sahnesine gelmeden önce ...
+"""
+
+
+def test_bolum_numaralari_paragraf_aralik_ve_donem():
+    f = S.bolum_numaralari
+    assert f("62 ¶34") == {62}
+    assert f("2 (ilk ad); 51, 55, 58, 60 (tekrarlar)") == {2, 51, 55, 58, 60}
+    assert f("**115–116**; 185; 203–204") == {115, 116, 185, 203, 204}
+    assert f("48 ¶59, ¶119, ¶133") == {48}
+    assert f("3. Aşama başlığı (220–1165); CoI 291; 2026-10-25") == set()
+    assert f("46 ve 47 ¶10/¶12") == {46, 47}
+
+
+def test_yanki_girisleri_alanlar_ve_kullanim_kesilir():
+    g = S.yanki_girisleri(DEFTER)
+    assert sorted(g) == [7, 75, 79, 82]
+    assert g[75]["kurulum"] == "62 ¶34" and g[75]["odeme"].startswith("**115**")
+    assert "## Kullanım" not in g[82]["blok"] and g[82]["blok"].startswith("### #82")
+
+
+def test_yanki_secimi_kurulum_odeme_ve_ek():
+    g = S.yanki_girisleri(DEFTER)
+    assert S.yanki_secimi(62, g) == [75, 79]
+    assert S.yanki_secimi(115, g) == [75, 79]
+    assert S.yanki_secimi(58, g) == [7]
+    assert S.yanki_secimi(10, g) == []
+    assert S.yanki_secimi(10, g, ek=(7, 999)) == [7]
+
+
+def test_yanki_blogu_dosyadan(tmp_path, monkeypatch):
+    d = tmp_path / "Echo_Notes.md"
+    d.write_text(DEFTER, encoding="utf-8")
+    monkeypatch.setattr(S, "YANKI", d)
+    blok = S.yanki_blogu(62)
+    assert blok.startswith("<yanki_defteri>") and blok.endswith("</yanki_defteri>")
+    assert "#75" in blok and "#79" in blok and "#7 ·" not in blok
+    assert S.yanki_blogu(10) == ""
+    monkeypatch.setattr(S, "YANKI", tmp_path / "yok.md")
+    assert S.yanki_blogu(62) == ""
