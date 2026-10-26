@@ -56,6 +56,7 @@ Kullanim:
     sonra.py 61 --otomatik okuma       yalniz okuma gecisini yurut
     sonra.py 61 --kararlar             5_inceleme.md'deki isaretli kararlari uygula
     sonra.py 61 --kuru                 bolume ve deftere yazmadan dene
+    sonra.py 61 --istatistik           61'in kararlarini istatistige kat, aile ozetini bas
     sonra.py 61 --bastan               uygulamadan sonra hatti bastan kur
     sonra.py 61 --zincir-yeniden       betik zincirini zorla yeniden calistir
     sonra.py 61 --parti-boyu 9000      sadakat partisi (ZH+TR karakter, varsayilan 6000)
@@ -105,6 +106,20 @@ TRIYAJ_ARACLARI = ["Read", "Bash(python3 toplu_denetle.py:*)", "Bash(python3 bic
 UYGULANDI = "5_uygulandi.json"
 KELIMELER = Path(os.environ.get("LOTM_KELIMELER") or KOK / "Tools" / "words.md")
 YERLESTIRILECEK = "# Yerleştirilecek (sonra.py)"
+# Karar istatistigi: her islenen inceleme maddesi bir satir (bolum, K, aile,
+# on-isaret, karar). Kural ailelerinin kabul oranini olcer; on-isarete ya da
+# otomatige terfi bu sayilara dayanir. Karar defteri gibi Tools/'ta durur.
+ISTATISTIK = Path(os.environ.get("LOTM_ISTATISTIK") or KOK / "Tools" / "karar_istatistik.tsv")
+# On-isaretli aileler: kabul oraninin yuksek oldugu olculmus (26 Eki: 1.1
+# 18/20, 1.6 19/20). Madde 'kabul' isaretli gelir, cevirmen yalniz kaldirir.
+# Kararsiz gerekce (OKLUK) ya da bozuk oneri on-isareti engeller.
+ON_ISARET = {"okuma 1.1", "okuma 1.6"}
+# Otomatige terfi esigi (yalniz raporlanir; uygulama elle acilir).
+TERFI_EN_AZ, TERFI_ORAN = 40, 0.90
+# Birlestirmenin gerekcesinde bu sozler varsa gecis kendisi tereddut ediyor:
+# 63'teki iki ret de "noktali virgul is goruyor olabilir" diyen maddelerdi.
+OKLUK = re.compile(r"olabilir|bilinçli|kasıtlı|emin değil|çevirmen seç|keser|bozar|"
+                   r"ritim|ritm|tek nefes|tek soluk", re.I)
 
 ANSI = re.compile(r"\x1b\[[0-9;]*m")
 # Zincirde dikkat isteyen satirlar: kirmizi uyarilar, atlanan adimlar,
@@ -296,6 +311,46 @@ def tek_satir(s: str) -> str:
     return s.replace("\n", " ⏎ ")
 
 
+def aileler(kural: str, sinif: str = "KARAR") -> set:
+    """'okuma 1.1 noktalı virgül + 1.6 tekrar' -> {'okuma 1.1', 'okuma 1.6'}.
+
+    Alt madde harfleri (1.7ii) atilir. SABLON maddeleri ayri aile sayilir:
+    sablon geri bildirimi metin kararindan baska bir sorudur.
+    """
+    out = {f"okuma {m}" for m in re.findall(r"(?:okuma |\+ )(\d+\.\d+|\d+\.M)", kural)}
+    out |= {f"sadakat {m}" for m in re.findall(r"sadakat ([A-DŞ])\b", kural)}
+    out |= {"düzeltme" for _ in re.findall(r"düzeltme", kural)}
+    out = out or {kural.split(" ")[0] if kural else "?"}
+    return {("SABLON " + a) if sinif == "SABLON" else a for a in out}
+
+
+def bozuk_oneri(eski: str, yeni: str) -> str | None:
+    """Uygulanirsa metni bozacak bir oneri mi? Sebep ya da None.
+
+    63 K10: '; sırtım' -> '; Sırtım' (noktali virgul kalmis, harf buyumus).
+    """
+    for m in re.finditer(r"; (\w)", yeni):
+        if m.group(1).isupper() and re.search(r"; " + re.escape(m.group(1).lower()), eski):
+            return f"noktalı virgülden sonra büyük harf ('; {m.group(1)}…')"
+    if yeni.strip() == eski.strip():
+        return "öneri metni değiştirmiyor"
+    return None
+
+
+def on_isaretli(d: dict) -> bool:
+    """Madde 'kabul' isaretli mi gelmeli: butun aileleri ON_ISARET'te, yalniz
+    okumadan, gerekce tereddutsuz, oneri saglam."""
+    if d.get("sinif", "KARAR") != "KARAR":
+        return False
+    if not aileler(d.get("kural", "")) <= ON_ISARET:
+        return False
+    if set(d.get("kaynak", [])) - {"okuma"}:
+        return False
+    if OKLUK.search(d.get("neden", "")):
+        return False
+    return bozuk_oneri(d.get("eski", ""), d.get("yeni", "")) is None
+
+
 def inceleme_yaz(no: int, uygulanan: list, karar: list, bilgi: list, kuru: bool,
                  terimler: list | None = None) -> str:
     out = [f"# {no}. bölüm — inceleme", ""]
@@ -307,7 +362,8 @@ def inceleme_yaz(no: int, uygulanan: list, karar: list, bilgi: list, kuru: bool,
                 f"  ✗ {tek_satir(d['eski'])}", f"  ✓ {tek_satir(d['yeni'])}"]
     out += ["", f"## Kararınızı bekleyenler ({sum(d.get('sinif') != 'SABLON' for d in karar)})", "",
             "Her maddede bir kutuyu [x] yapın; ✓ satırını isterseniz değiştirin. 'hep' kararı",
-            "karar defterine yazar, aynı örüntü bir daha sorulmaz. Sonra:",
+            "karar defterine yazar, aynı örüntü bir daha sorulmaz. 'Ön:' satırı olan",
+            "maddeler kabul işaretli gelir: katılmıyorsanız işareti kaldırın. Sonra:",
             f"`./calistir.sh sonra {no} --kararlar`", ""]
     # SABLON maddeleri ayri bolumde: metin icin degil sablon icin geri bildirim.
     # Numaralar iki bolumde de K1'den devam eder; --kararlar hepsini ayni okur.
@@ -318,12 +374,18 @@ def inceleme_yaz(no: int, uygulanan: list, karar: list, bilgi: list, kuru: bool,
             out += [f"## Şablon geri bildirimi ({len(sablon_k)})", "",
                     "Dondurulmuş ya da öngörülmüş satırlar. Kabul, yalnız bu bölümün metnini değiştirir;",
                     "kalıp başka bölümlerde de geçiyorsa şablona/sözlüğe ayrıca işlenmeli.", ""]
+        on = on_isaretli(d)
+        bozuk = bozuk_oneri(d.get("eski", ""), d.get("yeni", ""))
         out += [f"### K{i} · ¶{d.get('p') or '?'} · {d.get('sinif', 'KARAR')} · {d.get('kural', '')}",
                 f"✗ {tek_satir(d.get('eski', ''))}",
                 f"✓ {tek_satir(d.get('yeni', ''))}",
                 f"Neden: {d.get('neden', '')}",
-                f"Kaynak: {', '.join(d.get('kaynak', []))}",
-                "[ ] kabul   [ ] ret   [ ] hep", ""]
+                f"Kaynak: {', '.join(d.get('kaynak', []))}"]
+        if bozuk:
+            out.append(f"Dikkat: {bozuk}; ✓ satırını düzeltmeden kabul etmeyin.")
+        if on:
+            out.append(f"Ön: kabul ({', '.join(sorted(aileler(d.get('kural', ''))))})")
+        out += [f"[{'x' if on else ' '}] kabul   [ ] ret   [ ] hep", ""]
     out += terimler_yaz(terimler or [])
     if bilgi:
         out += [f"## Bilgi ({len(bilgi)})", ""]
@@ -382,10 +444,57 @@ def inceleme_oku(metin: str) -> list:
         if not (bas and x and v and kutu):
             continue
         isaret = [c.strip().lower() in ("x", "✓", "✔") for c in kutu.groups()]
-        out.append({"k": int(bas.group(1)), "p": bas.group(2), "kural": bas.group(4).strip(),
+        out.append({"k": int(bas.group(1)), "p": bas.group(2), "sinif": bas.group(3),
+                    "kural": bas.group(4).strip(),
+                    "on": bool(re.search(r"^Ön: ", blok, re.M)),
                     "eski": x.group(1).replace(" ⏎ ", "\n"), "yeni": v.group(1).replace(" ⏎ ", "\n"),
                     "kabul": isaret[0], "ret": isaret[1], "hep": isaret[2]})
     return out
+
+
+# ------------------------------------------------------------------ istatistik
+
+IST_BASLIK = "bolum\tk\taile\ton\tkarar"
+
+
+def istatistik_kaydet(yol: Path, no: int, secimler: list) -> int:
+    """Bolumun satirlarini yeniler (ayni bolum iki kez islenirse cift sayilmaz).
+    Bir madde birden cok aileye dustuyse her aileye bir satir."""
+    eski = yol.read_text(encoding="utf-8").splitlines()[1:] if yol.exists() else []
+    kalan = [s for s in eski if s and s.split("\t")[0] != str(no)]
+    yeni = []
+    for s in secimler:
+        karar = "kabul" if s["kabul"] else "ret" if s["ret"] else "bos"
+        for a in sorted(aileler(s["kural"], s.get("sinif", "KARAR"))):
+            yeni.append(f"{no}\t{s['k']}\t{a}\t{int(s.get('on', False))}\t{karar}")
+    yol.parent.mkdir(parents=True, exist_ok=True)
+    yol.write_text("\n".join([IST_BASLIK] + kalan + yeni) + "\n", encoding="utf-8")
+    return len(yeni)
+
+
+def istatistik_ozeti(yol: Path) -> str:
+    """Aile basina kabul/ret/bos, on-isareti kaldirilan ve terfi durumu."""
+    if not yol.exists():
+        return f"YOK: {yol}"
+    say = {}
+    for s in yol.read_text(encoding="utf-8").splitlines()[1:]:
+        p = s.split("\t")
+        if len(p) != 5:
+            continue
+        x = say.setdefault(p[2], {"kabul": 0, "ret": 0, "bos": 0, "kaldirilan": 0, "bolum": set()})
+        x[p[4]] += 1
+        x["bolum"].add(p[0])
+        if p[3] == "1" and p[4] != "kabul":
+            x["kaldirilan"] += 1
+    satirlar = [f"{'aile':22} kabul  ret  boş  oran  ön-kaldırılan  bölüm  durum"]
+    for a, x in sorted(say.items(), key=lambda kv: -(kv[1]["kabul"] + kv[1]["ret"])):
+        karar = x["kabul"] + x["ret"]
+        oran = x["kabul"] / karar if karar else 0
+        durum = ("otomatiğe hazır" if karar >= TERFI_EN_AZ and oran >= TERFI_ORAN
+                 else "ön-işaretli" if a in ON_ISARET else "")
+        satirlar.append(f"{a:22} {x['kabul']:5} {x['ret']:4} {x['bos']:4}  {oran:4.0%}  "
+                        f"{x['kaldirilan']:13} {len(x['bolum']):6}  {durum}")
+    return "\n".join(satirlar)
 
 
 # ------------------------------------------------------------------ SADAKAT?
@@ -514,10 +623,30 @@ class Bolum:
             f"{istem('okuma')}\n\n---\n\n"
             f"{kararlar_blogu()}"
             f"{self.sablon_blogu('bolum_sablonu')}\n\n"
+            f"{self.o_blogu()}"
             f"<bolum>\n{self.dosya.read_text(encoding='utf-8').rstrip()}\n</bolum>\n"
         )
         yaz_degisirse(girdi, metin)
         return [(girdi, self.klasor / "1_okuma_cikti.md")]
+
+    def o_blogu(self) -> str:
+        """o_denetle.py'nin bulgulari okuma gecisine: betik yalniz yer gosterir,
+        duzeltmeyi (ya da atlamayi) model verir. Bulgu yoksa ya da hizalama
+        kurulamazsa bos dize; okuma onsuz da calisir."""
+        try:
+            import o_denetle
+            bulgular = o_denetle.bulgular(self.no)
+        except Exception:  # hizalama yok / ZH yok: yardimci adim, hat durmasin
+            return ""
+        if not bulgular:
+            return ""
+        satirlar = [f"- hizalama ¶{p}: {parca}" for p, parca in bulgular]
+        return ("<o_bulgulari>\n"
+                "Betik (o_denetle.py): Çincede 那 olmayan yerde \"o + sözcük\". ¶ numarası\n"
+                "hizalama grubudur, okuma ¶'si değil; yeri parçadan bulun. \"o\" İngilizce\n"
+                "\"the\" gibi tanımlık olarak kullanılmışsa `1.9 tanımlık o` adıyla düzeltme\n"
+                "önerin (çoğu zaman \"o\" düşer); gerçekten geri gösteriyorsa yazmayın.\n"
+                + "\n".join(satirlar) + "\n</o_bulgulari>\n\n")
 
     # -- sadakat
     def sadakat(self) -> tuple:
@@ -715,6 +844,7 @@ class Bolum:
                               f"«{tek_satir(s['yeni'])}» ({self.no}. bölüm ¶{s['p']})")
         terimler = terimler_oku(inceleme.read_text(encoding="utf-8"))
         if not kuru:
+            istatistik_kaydet(ISTATISTIK, self.no, secimler)
             if terimler:
                 kelimelere_ekle(KELIMELER, terimler, self.no)
             if uygulanan:
@@ -786,6 +916,9 @@ def main(argv=None) -> int:
     ap.add_argument("--kararlar", action="store_true",
                     help="5_inceleme.md'de isaretlenen kararlari uygula, 'hep'leri deftere yaz")
     ap.add_argument("--kuru", action="store_true", help="bolum dosyasina ve deftere yazma")
+    ap.add_argument("--istatistik", action="store_true",
+                    help="kural ailelerinin kabul/ret sayilari (Tools/karar_istatistik.tsv); "
+                         "no verilirse once o bolumun 5_inceleme.md'si kaydedilir")
     ap.add_argument("--bastan", action="store_true",
                     help="uygulama yapilmis olsa da hatti bastan kur (gecisler yeniden)")
     ap.add_argument("--zincir-yeniden", action="store_true")
@@ -808,6 +941,12 @@ def main(argv=None) -> int:
 
     if a.kararlar:
         print(b.kararlari_isle(a.kuru))
+        return 0
+    if a.istatistik:
+        inceleme = b.klasor / "5_inceleme.md"
+        if inceleme.exists() and not a.kuru:
+            istatistik_kaydet(ISTATISTIK, a.no, inceleme_oku(inceleme.read_text(encoding="utf-8")))
+        print(istatistik_ozeti(ISTATISTIK))
         return 0
     # Kesin duzeltmeler uygulandiktan sonra bolum degisir; hat yeniden
     # kurulsa her gecis ESKIMIS gorunur ve bastan calisirdi. Isaret varken

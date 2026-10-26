@@ -31,6 +31,10 @@
 #  gelir ve yayin oncesi tek sert kapidir (HATA varsa kirmizi uyari).
 #
 #      ./calistir.sh          tam zincir
+#      ./calistir.sh hepsi --otomatik [--kuru] [--model M]
+#                             tam zincir + kesin duzeltmeler (sapka GUVENLI,
+#                             ciltler) + claude -p okumasi -> Reports/haftalik/
+#                             (bkz. zincir_oku.py; haftalik zamanlayici bunu cagirir)
 #      ./calistir.sh bolum 44 tek bolum denetimi (ceviri elden gecerken)
 #      ./calistir.sh bolum    numarasiz: _chapters'taki en son bolum
 #      ./calistir.sh test     testleri calistir (bagimlilik yok, hizli)
@@ -52,6 +56,10 @@
 #                             Ch_54_terimler.md (terim dokumu, notlarla) ve
 #                             ayrilmis_dizin.md (ayrilmis sozcuk dizini);
 #                             onceki bolumun sablonunun yolunu da yazar
+#      ./calistir.sh ciltler  _data/ciltler.yml lotm.CILTLER ile uyusuyor mu
+#                             (--yaz: yeniden uret; ciltler_yaz.py)
+#      ./calistir.sh dogrula [A-B]  terim dokumunu yayimlanmis bolumlere karsi
+#                             sinar (hazirla_dogrula.py; varsayilan son 10 bolum)
 #      ./calistir.sh kanca    sitenin pre-commit kancasini kur (bir kez;
 #                             bkz. kancalar/pre-commit)
 #      ./calistir.sh once 61  ceviriden once: hazirlik (gerekirse yeniden) ve
@@ -164,7 +172,7 @@ adim_test() {
 }
 
 adim_kontrol() {
-  mavi "[0/8] Bolum numaralandirmasi dogrulaniyor..."
+  mavi "[0/10] Bolum numaralandirmasi dogrulaniyor..."
   # Zincirin geri kalani bolum numaralarinin uc kaynakta ayni seyi
   # gostermesine guveniyor. Bir kayma varsa "ceviri hatasi" gibi gorunur;
   # burada gorulmesi cok daha ucuz.
@@ -194,7 +202,7 @@ adim_takvim() {
 }
 
 adim_tarama() {
-  mavi "[1/8] Ingilizce ciltler taraniyor (metinde / bolum tespiti)..."
+  mavi "[1/10] Ingilizce ciltler taraniyor (metinde / bolum tespiti)..."
   if [[ ! -d "$KAYNAK" ]]; then
     kirmizi "  ATLANDI: $KAYNAK yok. Ciltler depoda tutulmuyor;"
     kirmizi "           Source/ klasorunu yerel olarak olusturmaniz gerekir."
@@ -208,7 +216,7 @@ adim_tarama() {
 }
 
 adim_etiket() {
-  mavi "[2/8] sozluk.yml etiketleniyor (kaynak / mudahale / metinde)..."
+  mavi "[2/10] sozluk.yml etiketleniyor (kaynak / mudahale / metinde)..."
   if [[ ! -f "$RAPOR/rapor.tsv" ]]; then
     kirmizi "  ATLANDI: rapor.tsv yok. Once './calistir.sh tarama' calistirin."
     return 1
@@ -217,13 +225,19 @@ adim_etiket() {
   python3 "$TOOLS/etiketle.py" \
     --sozluk "$SOZLUK" \
     --rapor "$RAPOR/rapor.tsv" \
-    --yerinde
+    --yerinde || {
+    # Eskiden cokse de "guncellendi" yaziyordu (26 Eki: sozluk.yml'de cift
+    # 'aciklama' anahtari, DuplicateKeyError). Cagiran '|| ...' ile sardigi
+    # icin set -e burada islemez; cikis kodu elle denetlenir.
+    kirmizi "  HATA: etiketle.py coktu, sozluk.yml YAZILMADI (yukaridaki hataya bakin)"
+    return 1
+  }
   yesil "  -> _data/sozluk.yml guncellendi"
   mavi "  DIFF'I OKUYUN: git -C \"$SITE\" diff _data/sozluk.yml"
 }
 
 adim_denetim() {
-  mavi "[3/8] Bolumler sozluge karsi denetleniyor..."
+  mavi "[3/10] Bolumler sozluge karsi denetleniyor..."
   # --kurallar: lint'in bagLAMIYLA bildirdigi eskimis bicimler burada tek
   # satira iner. Ayni karar iki dosyada duruyor (sozluk.yml veriyi tutar,
   # lint-kurallari.yml baglami); rapor bir kez okunsun diye.
@@ -240,7 +254,7 @@ adim_denetim() {
 }
 
 adim_lint() {
-  mavi "[4/8] Tutarlilik denetimi (varyant / yasakli / ek-uyumu)..."
+  mavi "[4/10] Tutarlilik denetimi (varyant / yasakli / ek-uyumu)..."
   # Cikis 1 = BULGU VAR demek, "calismadi" degil. Kanca ya da CI bunu
   # dogrudan kullanabilir; zincirin icinde uyari olarak gecilir.
   # --kaynak: anakronizm denetimi Cince metne de bakar. Kaynakta karsiligi
@@ -271,7 +285,7 @@ bicim_argumanlari() {
 }
 
 adim_bicim() {
-  mavi "[5/8] Bicim denetimi (tirnak / italik / atif / para; normdan sapan bolumler)..."
+  mavi "[5/10] Bicim denetimi (tirnak / italik / atif / para; normdan sapan bolumler)..."
   # Cikis 1 = tabanda olmayan bir HATA var. Zincirde uyari olarak gecilir;
   # tek bolum zincirinde yayin oncesi kirmizi uyaridir.
   bicim_argumanlari
@@ -306,7 +320,7 @@ adim_bicim_taban() {
 }
 
 adim_sapka() {
-  mavi "[6/8] Sapka taramasi (KURU -- hicbir dosya degismez)..."
+  mavi "[6/10] Sapka taramasi (KURU -- hicbir dosya degismez)..."
   # --sozluk / --kelimeler: sozlukte (ya da words.md'de) gecen bir kelimenin
   # yazimini sozluk belirler, liste degil ("Ebedi Gece" -> "ebedi" kalir,
   # "Semavî Muazzez" -> "Semavi Muazzez" olur). Yazimi degistirmek icin
@@ -319,7 +333,7 @@ adim_sapka() {
 }
 
 adim_toplu() {
-  mavi "[7/8] Terim tutarliligi (sozluk + words.md, yayimlanmis bolumler)..."
+  mavi "[7/10] Terim tutarliligi (sozluk + words.md, yayimlanmis bolumler)..."
   # --kaynak ikisi: Cincesi girilmis terim Cince anahtarla (kesin), girilmemis
   # olan Ingilizceyle taranir; tek tablo. Tablonun basi duzeltme sirasidir.
   local kod=0
@@ -332,7 +346,7 @@ adim_toplu() {
 }
 
 adim_belgeler() {
-  mavi "[8/8] Ses haritalari ve istemler..."
+  mavi "[8/10] Ses haritalari ve istemler..."
   # Taslak ureten model bu belgeleri okur ve ORNEKLERI taklit eder; bolumlere
   # uygulanan yazim ve terim kurallari burada da gecerli olmali.
   local belgeler=()
@@ -362,23 +376,23 @@ adim_bolum() {
   local no="$1"
   local sablon="$SABLONLAR/Ch_$no.md"
 
-  mavi "[1/5] Baslik ve yayin tarihi..."
+  mavi "[1/6] Baslik ve yayin tarihi..."
   # Beklenen tarihi de yazar: yeni bolumun on maddesine oradan kopyalayin.
   adim_takvim --bolum "$no" || kirmizi "  BASLIK/TARIH HATASI -- yayinlamadan once duzeltin"
 
-  mavi "[2/5] Hizalama guvenilir mi?"
+  mavi "[2/6] Hizalama guvenilir mi?"
   # Cikis kodu 1 = kayma VAR demek; zincir durmaz, cunku sonraki adim
   # zaten hizalamadan bagimsiz. Ama ceviri_denetle'yi bu bolumde
   # calistiracaksaniz ESLESMEYEN listesini buna gore okuyun.
   python3 "$TOOLS/hizalama_denetle.py" "$no" || true
 
-  mavi "[3/5] Bu bolumdeki terimler sozlukle tutarli mi?"
+  mavi "[3/6] Bu bolumdeki terimler sozlukle tutarli mi?"
   # Yalnizca bu bolum: burada gecen terimler, burada nasil cevrilmis.
   # Rapor adimi; bulgu zinciri durdurmaz. Yayimlanmis metne bakar
   # (_chapters), yani bolum oraya konduktan sonra anlamlidir.
   python3 "$TOOLS/toplu_denetle.py" --kaynak ikisi --bolum "$no" || true
 
-  mavi "[4/5] Bicim: dizgi kurallari ve bolumun oteki bolumlere gore sapmasi..."
+  mavi "[4/6] Bicim: dizgi kurallari ve bolumun oteki bolumlere gore sapmasi..."
   # Tek dosya kipinde bolum, yayimlanmis butun bolumlerle karsilastirilir
   # (NORMDAN SAPAN BOLUMLER). Tabandakiler bastirilir; taslak bolumun kendi
   # hatalari tabanda olmadigi icin hepsi gorunur.
@@ -390,12 +404,46 @@ adim_bolum() {
     kirmizi "  ATLANDI: $BOLUMLER yok."
   fi
 
-  mavi "[5/5] Kapanis denetimi (hizalamadan bagimsiz)..."
+  mavi "[5/6] 'o' tanimlik gibi mi? (TR'de 'o + sozcuk', ZH'de 那 yok)"
+  # Rapor adimi; bulgu zinciri durdurmaz. Kaliplar (o zaman, o kadar...)
+  # sayilmaz. Bkz. o_denetle.py.
+  python3 "$TOOLS/o_denetle.py" "$no" || true
+
+  mavi "[6/6] Kapanis denetimi (hizalamadan bagimsiz)..."
   if [[ ! -f "$sablon" ]]; then
     kirmizi "  ATLANDI: $sablon yok."
     return 1
   fi
   python3 "$TOOLS/kapanis_denetle.py" "$sablon" --bolum "$no"
+}
+
+adim_ciltler() {
+  # Arsiv sayfasi _data/ciltler.yml'i okur; dosya lotm.CILTLER'den uretilir.
+  # Zincirde yalniz denetlenir (yazmak dosya degistirir): --yaz ile yazilir.
+  if [[ "${1:-}" == "--yaz" ]]; then
+    python3 "$TOOLS/ciltler_yaz.py"
+  else
+    python3 "$TOOLS/ciltler_yaz.py" --denetle
+  fi
+}
+
+adim_dogrula() {
+  # hazirla.py'nin terim dokumunu yayimlanmis bolumlere karsi sinar: dokum
+  # cevirmenin kullandigi terimleri hala buluyor mu. Bolum basina ~4 sn;
+  # aralik verilmezse son 10 bolum.
+  local aralik="${1:-}"
+  if [[ -z "$aralik" ]]; then
+    local son
+    son=$(ls "$BOLUMLER" 2>/dev/null | grep -E '^[0-9]+\.md$' | sort -n | tail -1)
+    son=$((10#${son%.md}))
+    aralik="$((son > 10 ? son - 9 : 1))-$son"
+  fi
+  mkdir -p "$RAPOR/hazirlik"
+  python3 "$TOOLS/hazirla_dogrula.py" "$aralik" --cikti "$RAPOR/hazirlik/dogrulama.md"
+  # Ozet tablo ve 'arama hatasi' sayisi; ayrinti dosyada.
+  awk '/^\| [0-9]/ { print "  " $0 } /^## Kaçan — anahtar bu bölümde geçiyor/ { print "  " $0 }' \
+    "$RAPOR/hazirlik/dogrulama.md"
+  yesil "  -> Reports/hazirlik/dogrulama.md"
 }
 
 adim_kanca() {
@@ -513,6 +561,8 @@ toplu) adim_toplu ;;
 takvim) adim_takvim ;;
 belgeler) adim_belgeler ;;
 kanca) adim_kanca ;;
+ciltler) adim_ciltler "${2:-}" ;;
+dogrula) adim_dogrula "${2:-}" ;;
 hazirla)
   [[ "${2:-}" =~ ^[0-9]+$ ]] || {
     kirmizi "kullanim: ./calistir.sh hazirla <bolum_no>"
@@ -522,6 +572,18 @@ hazirla)
   adim_hazirla "$((10#$2))"
   ;;
 hepsi)
+  if [[ "${2:-}" == "--otomatik" ]]; then
+    # Zinciri kendisi calistirir, ciktiyi saklar, sonra zincir_oku.py:
+    # kesin duzeltmeler (sapka GUVENLI, ciltler) + claude -p ile okuma ->
+    # Reports/haftalik/<tarih>.md. Geri kalan argumanlar zincir_oku'ya gider
+    # (--kuru, --model). Haftalik zamanlayici bunu cagirir.
+    mkdir -p "$RAPOR/haftalik"
+    cikti="$RAPOR/haftalik/$(date +%F)_zincir.txt"
+    "$TOOLS/calistir.sh" hepsi 2>&1 | tee "$cikti" || true
+    shift 2
+    python3 "$TOOLS/zincir_oku.py" "$cikti" "$@"
+    exit $?
+  fi
   adim_test || mavi "  (testler atlandi, zincire devam)"
   adim_kontrol || kirmizi "  (numaralandirma sorunlu, zincire yine de devam)"
   mavi "  basliklar ve yayin tarihleri..."
@@ -538,9 +600,13 @@ hepsi)
   adim_sapka || mavi "  (sapka taramasi atlandi)"
   adim_toplu || mavi "  (terim tutarliligi atlandi)"
   adim_belgeler || kirmizi "  (belgelerde hata var, yukariya bakin)"
+  mavi "[9/10] Arsivin cilt tablosu guncel mi..."
+  adim_ciltler || kirmizi "  (ciltler.yml geride: ./calistir.sh ciltler --yaz)"
+  mavi "[10/10] Terim dokumu son bolumlerde dogru mu (hazirla_dogrula)..."
+  adim_dogrula || mavi "  (dogrulama atlandi)"
   ;;
 *)
-  echo "kullanim: ./calistir.sh [hepsi|test|kontrol|takvim|tarama|etiket|denetim|lint|bicim|bicim-taban|sapka|toplu|belgeler|kanca|hazirla N]"
+  echo "kullanim: ./calistir.sh [hepsi [--otomatik]|test|kontrol|takvim|tarama|etiket|denetim|lint|bicim|bicim-taban|sapka|toplu|belgeler|ciltler [--yaz]|dogrula [A-B]|kanca|hazirla N]"
   echo "          ./calistir.sh bolum [numara]   (numarasiz: en son bolum)"
   echo "          ./calistir.sh once <numara>    (ceviriden once: hazirlik + sablon denetimi)"
   echo "          ./calistir.sh sonra <numara> [--otomatik [adim...]]"

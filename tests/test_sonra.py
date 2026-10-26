@@ -136,6 +136,8 @@ def test_kararlar_uygulanir_ve_deftere_yazilir(tmp_path, monkeypatch):
     monkeypatch.setattr(S, "BOLUMLER", bolumler)
     monkeypatch.setattr(S, "RAPOR", tmp_path / "sonra")
     monkeypatch.setattr(S, "KARARLAR", tmp_path / "kararlar.md")
+    monkeypatch.setattr(S, "ISTATISTIK", tmp_path / "ist.tsv")
+    monkeypatch.setattr(S, "ON_ISARET", set())  # kutular elle isaretleniyor
     b = S.Bolum(60, 6000)
     b.klasor.mkdir(parents=True)
     karar = [{"p": 1, "sinif": "KARAR", "kural": "okuma 1.1 noktalı virgül", "eski": "geldi; kapıyı",
@@ -156,6 +158,7 @@ def test_kararlar_uygulanir_ve_deftere_yazilir(tmp_path, monkeypatch):
     defter = (tmp_path / "kararlar.md").read_text(encoding="utf-8")
     assert "- ret · okuma 1.6 tekrar" in defter and "1.1" not in defter
     assert "<onceki_kararlar>" in S.kararlar_blogu()
+    assert (tmp_path / "ist.tsv").read_text(encoding="utf-8").count("\n") == 3
 
 
 # ------------------------------------------------------------------ yeni terimler
@@ -278,3 +281,75 @@ def test_yanki_blogu_dosyadan(tmp_path, monkeypatch):
     assert S.yanki_blogu(10) == ""
     monkeypatch.setattr(S, "YANKI", tmp_path / "yok.md")
     assert S.yanki_blogu(62) == ""
+
+
+def test_aileler_alt_madde_ek_ve_sablon():
+    assert S.aileler("okuma 1.1 noktalı virgül zinciri + 1.6 tekrar") == {"okuma 1.1", "okuma 1.6"}
+    assert S.aileler("okuma 1.7ii boş \"konuştu\"") == {"okuma 1.7"}
+    assert S.aileler("okuma 1.1 zincir + sadakat A düşmüş zarf") == {"okuma 1.1", "sadakat A"}
+    assert S.aileler("sadakat Ş düşmüş zarf", "SABLON") == {"SABLON sadakat Ş"}
+
+
+def test_bozuk_oneri_noktali_virgulden_sonra_buyuk_harf():
+    assert S.bozuk_oneri("uyanıyorum; sırtım ıslak", "uyanıyorum; Sırtım ıslak")
+    assert S.bozuk_oneri("geliyor; birbiri", "geliyor. Birbiri") is None
+    assert S.bozuk_oneri("bekledi; Klein baktı", "bekledi; Klein baktı.") is None
+
+
+def test_on_isaret_yalniz_tereddutsuz_okuma_1_1_1_6():
+    d = {"sinif": "KARAR", "kural": "okuma 1.1 noktalı virgül zinciri", "kaynak": ["okuma"],
+         "eski": "a; b", "yeni": "a. B", "neden": "Üslup bulgusu; replik içi noktalı virgül."}
+    assert S.on_isaretli(d)
+    assert not S.on_isaretli(dict(d, neden="Rüya anlatısında ritim bilinçli olabilir."))
+    assert not S.on_isaretli(dict(d, kural="okuma 1.1 zincir + sadakat A düşmüş zarf"))
+    assert not S.on_isaretli(dict(d, kaynak=["okuma", "sadakat"]))
+    assert not S.on_isaretli(dict(d, sinif="SABLON"))
+    assert not S.on_isaretli(dict(d, yeni="a; B"))
+
+
+def test_on_isaret_inceleme_gidis_donus():
+    d = {"p": 6, "sinif": "KARAR", "kural": "okuma 1.1 noktalı virgül zinciri", "kaynak": ["okuma"],
+         "eski": "a; b", "yeni": "a. B", "neden": "Üslup bulgusu."}
+    metin = S.inceleme_yaz(63, [], [d, dict(d, kural="sadakat A düşmüş zarf", kaynak=["sadakat"])],
+                           [], kuru=False)
+    assert "Ön: kabul (okuma 1.1)" in metin
+    s = S.inceleme_oku(metin)
+    assert [(x["on"], x["kabul"]) for x in s] == [(True, True), (False, False)]
+    assert s[0]["sinif"] == "KARAR"
+
+
+def test_istatistik_bolum_yenilenir_ve_ozet(tmp_path):
+    yol = tmp_path / "ist.tsv"
+    sec = [{"k": 1, "kural": "okuma 1.1 x + 1.6 y", "sinif": "KARAR", "on": True,
+            "kabul": True, "ret": False},
+           {"k": 2, "kural": "okuma 1.1 x", "sinif": "KARAR", "on": True,
+            "kabul": False, "ret": True}]
+    assert S.istatistik_kaydet(yol, 63, sec) == 3
+    S.istatistik_kaydet(yol, 63, sec)  # ikinci kez: cift sayilmaz
+    S.istatistik_kaydet(yol, 64, sec[:1])
+    satir = yol.read_text(encoding="utf-8").splitlines()
+    assert len(satir) == 1 + 3 + 2
+    ozet = S.istatistik_ozeti(yol)
+    s11 = next(x for x in ozet.splitlines() if x.startswith("okuma 1.1"))
+    assert s11.split()[2:5] == ["2", "1", "0"]  # kabul ret bos
+    assert "ön-işaretli" in s11
+
+
+def test_okuma_girdisine_o_bulgulari(tmp_path, monkeypatch):
+    import types
+    bolumler = tmp_path / "_chapters"
+    bolumler.mkdir()
+    (bolumler / "0063.md").write_text(BOLUM, encoding="utf-8")
+    monkeypatch.setattr(S, "BOLUMLER", bolumler)
+    monkeypatch.setattr(S, "RAPOR", tmp_path / "sonra")
+    monkeypatch.setattr(S, "KARARLAR", tmp_path / "yok.md")
+    monkeypatch.setattr(S, "istem", lambda ad: "ISTEM")
+    sahte = types.SimpleNamespace(bulgular=lambda no: [(44, "…o dalgın hâl…")])
+    monkeypatch.setitem(sys.modules, "o_denetle", sahte)
+    b = S.Bolum(63, 6000)
+    b.klasor.mkdir(parents=True)
+    girdi = b.okuma()[0][0].read_text(encoding="utf-8")
+    assert "<o_bulgulari>" in girdi and "hizalama ¶44: …o dalgın hâl…" in girdi
+    assert girdi.index("<o_bulgulari>") < girdi.index("<bolum>")
+    sahte.bulgular = lambda no: []
+    assert "<o_bulgulari>" not in b.okuma()[0][0].read_text(encoding="utf-8")

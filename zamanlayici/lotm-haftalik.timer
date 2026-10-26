@@ -1,0 +1,10 @@
+# Pazar 10:00. Persistent: bilgisayar o saatte kapaliysa ilk acilista calisir.
+[Unit]
+Description=LotM haftalik zincir okumasi
+
+[Timer]
+OnCalendar=Sun *-*-* 10:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

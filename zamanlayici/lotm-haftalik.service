@@ -1,0 +1,11 @@
+# ./calistir.sh hepsi --otomatik, haftada bir (lotm-haftalik.timer).
+# Kurulum: Scripts/zamanlayici/kur.sh
+[Unit]
+Description=LotM haftalik zincir okumasi (calistir.sh hepsi --otomatik)
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/Projects/LotM/Scripts
+# claude ~/.local/bin'de; systemd kullanici oturumunun PATH'i onu bilmez.
+Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/bin/bash -c './calistir.sh hepsi --otomatik >> Reports/haftalik/zamanlayici.log 2>&1'
