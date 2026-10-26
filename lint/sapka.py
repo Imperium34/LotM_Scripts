@@ -128,6 +128,21 @@ DAMAKSIL = {                       # k / g / l inceltmesi
     "eşkal": "eşkâl",              # 46. bölüm: "eşkâlini"
     "eşkali": "eşkâli",
     "eşkalini": "eşkâlini",
+    # 26 Eki kararı: kayıt kelimeleri otomatik (lâkin, kelâm, lâyık,
+    # ahlâk, evlât); gündelik olanlar aşağıda KAYIT'ta.
+    "lakin": "lâkin",
+    "kelam": "kelâm",
+    "kelamı": "kelâmı",
+    "kelamına": "kelâmına",
+    "kelamları": "kelâmları",
+    "layık": "lâyık",
+    "layıkıyla": "lâyıkıyla",
+    "ahlak": "ahlâk",
+    "ahlakı": "ahlâkı",
+    "ahlakına": "ahlâkına",
+    "ahlaklarına": "ahlâklarına",
+    "evlat": "evlât",
+    "evladı": "evlâdı",
 }
 
 UZUNLUK = {                        # Arapça alıntılarda uzun ünlü
@@ -161,6 +176,19 @@ UZUNLUK = {                        # Arapça alıntılarda uzun ünlü
 # çalıştığınız iki sesi birbirine karıştırır.
 KAYIT = {
     "lazım": "lâzım",
+    # 26 Eki kararı: damaksıl şapka doğru, ama kelime gündelik dilden.
+    # Anlatıcıda istenirse elle konur; Klein'ın sesinde ve replikte kalır.
+    "laf": "lâf",
+    "lafı": "lâfı",
+    "lafa": "lâfa",
+    "lamba": "lâmba",
+    "lambası": "lâmbası",
+    "selam": "selâm",
+    "plan": "plân",
+    "telaş": "telâş",
+    "telaşla": "telâşla",
+    "ilan": "ilân",
+    "ilaç": "ilâç",
 }
 
 # NİSBET -î, ama EŞADLISI OLMAYANLAR. Ölçüt: şapkasız "-i" biçimi aynı
@@ -178,6 +206,10 @@ NISBET_GUVENLI = {
     "ebedi": "ebedî",              # keşif; sözlükte "Ebedî Gece Tanrıçası".
                                    # "ebed"in belirtmesi "ebedi" olur ama
                                    # o isim metinde fiilen kullanılmıyor
+    "ilahi": "ilahî",              # keşif; şapkalı×13, şapkasız×1 (19).
+                                   # "ilah"ın belirtmesi "ilahı"
+    "marazi": "marazî",            # keşif; "maraz"ın belirtmesi "marazı"
+    "mali": "malî",                # keşif; "mal"ın belirtmesi "malı"
 }
 
 GUVENLI = {**DAMAKSIL, **UZUNLUK, **NISBET_GUVENLI}
@@ -194,7 +226,8 @@ NISBET = {
     "madeni": "madenî",   # madenî (metallic) ~ madeni (madeni işletti)
     "dini": "dinî",       # dinî (religious) ~ dini (onun dini)
     "milli": "millî",
-    "ilmi": "ilmî",
+    "ilmi": "ilmî",       # "Ayin İlmi" (iyelik) de buraya düşer
+    "mesleki": "meslekî", # meslekî (professional) ~ mesleki (onun mesleki)
 }
 
 ESADLI = {
@@ -213,6 +246,9 @@ ESADLI = {
     # --uygula "bilge" anlamındaki bir "hakim"i de "hâkim" yapardı; lint ise
     # aynı kelimeyi diyakritik_ciftleri'nde belirsiz sayıyordu.
     "hakim": "hâkim",
+    "hakimi": "hâkimi",
+    "hakimdi": "hâkimdi",          # keşif; 15. bölüm "esinti hakimdi"
+    "hakimdir": "hâkimdir",
 }
 
 # --------------------------------------------------------------------

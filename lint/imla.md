@@ -20,6 +20,11 @@ malzemesidir ve otomatik uygulamanın dışında tutulmuştur (`sapka.py`'de
 ayrı `KAYIT KARARI` grubunda). Klein'ın iç sesinde ve gündelik replikte
 şapkasız kalabilir; bkz. aşağıdaki istisna maddesi.
 
+**Kayıt ayrımı (26 Eki 2026).** Aynı gerekçeyle damaksıl grup ikiye
+ayrıldı. Kayıt kelimeleri otomatik şapkalanır: **lâkin, kelâm, lâyık,
+ahlâk, evlât.** Gündelik kelimeler `lâzım` ile aynı `KAYIT` grubundadır,
+otomatik değişmez: **laf, lamba, selam, plan, telaş, ilan, ilaç.**
+
 ## 10.2 — Arapça alıntılarda uzunluk
 
 **âdeta, dâhil, hâdise, zât** ve bütün **hâl** ailesi (_hâlde, hâline,

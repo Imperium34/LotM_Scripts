@@ -41,6 +41,16 @@ varyantlar:
     yanlis: ["koyun eti", "koyun yahnisi"]
     not: "Çince 羔羊 = kuzu. 'Koyun' sahnenin 'ağızda dağılıyor' vurgusuna ters."
 
+  - kavram: "pound sterling"
+    dogru: "Sterlin"
+    yanlis: ["sterlin"]
+    not: "Para birimi daima büyük harfle (1–62'de 118 geçişin hepsi 'Sterlin')."
+
+  - kavram: "Firaset (Spirit Vision) + ek"
+    dogru: "Firaset'i"
+    yanlis: ["Firaseti", "Firasetini", "Firasetinin", "Firasetimi", "Firasetin"]
+    not: "Terim adı büyük harfli; ek kesmeyle ayrılır (24 Eki taraması, 35/37/39/44/45)."
+
 # ---------------------------------------------------------------
 # 2. YASAKLI BİÇİMLER
 # Kelime hatası, uydurma biçim, terk edilmiş tercih.
@@ -48,6 +58,10 @@ varyantlar:
 yasakli:
   - bicim: "cehliyet"
     yerine: "cehalet"
+  - bicim: "tabi ki"
+    yerine: "tabii ki"
+  - bicim: "Tabi,"
+    yerine: "Tabii,"
 
 # ---------------------------------------------------------------
 # 3. ANLAM AYIRICI DİYAKRİTİKLER
