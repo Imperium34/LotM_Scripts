@@ -139,6 +139,7 @@
 - **ulak** — messenger (信使); Ruhanî Âlem'den çağrılan, mektup taşıyan varlık; çağırma duası için bkz. §XII _561_
 - **Ulak Hanım** — Miss Messenger (信使小姐); Klein'ın anlatıda Reinette Tinekerr'e verdiği ad _690_
 - **Görünmez Hizmetkâr** — Invisible Servant (无形仆役); Bernadette'in çağırdığı ruhanî hizmetkâr; 无形 sade 'görünmez' ('Ketm' 隐匿'ye, 'Sırrakadem' 隐秘'ye ayrılı) _1300_
+- **fısıltı** — whisper, murmur (耳语/低语); İhtiyar Neil'in 'bilinmez mevcudiyetlerin fısıltıları'; "hezeyan" 呓语'e ayrılı _64_
 
 ## Divination
 
@@ -167,6 +168,10 @@
 - **ışık küresi** — sphere of light (光球); Tefekküre girerken zihinde canlandırılan nesne
 - **Hulûl Ayini** — Soulfall Ritual (降灵仪式); bir ruhun Ruhanî Âlem'den geçip başkasının bedenine girdiği ayin (534) _534_
 - **Roselle'in Rüyada Tebliğ Usulü** — Roselle's Dream Spell (罗塞尔托梦术); 托梦 = rüyada haber iletmek; 术 'usul' ('büyü' 魔法'e ayrılı) _536_
+- **takdis efsunu** — sanctification incantation (圣化咒文); gümüş bıçağı takdis eden Hermes Dili efsunu _64_
+- **kutsal hançer** — sacred blade (圣刃); takdis edilmiş gümüş bıçağın adı, tek tırnakla _64_
+- **Ruhaniyet duvarı** — spirituality wall (灵性之墙/灵性的墙壁); 'kapalı Ruhaniyet duvarı' (密封的灵性之墙) _64_
+- **efsun okumak** — to recite an incantation (诵念); "terennüm" 吟唱'e ayrılı, kullanılmaz _64_
 
 ## Symbols
 
@@ -271,6 +276,8 @@
 ## Ancient Rulers, Deities & Angels
 
 - **Kan İmparatoru Alista Tudor** — Blood Emperor Alista Tudor (血皇帝 亚利斯塔·图铎); Tudor İmparatorluğu; 'Kara İmparator' ile aynı kalıp
+- **Kan İmparatoru** — Blood Emperor (血皇帝); tek başına 'İmparator' kart adına ayrılı _64_
+- **Tudor Hanedanı** — Tudor Dynasty (图铎王朝) _9_
 - **Kara İmparator** — Solomon İmparatorluğu'nun kadim hükümdarı (黑皇帝; Audrey'nin aynasının kaynağı)
 - **Şaman Kral Klarman** — Shaman King Klarman (卡拉曼巫王)
 - **Jacob** — Jacob (雅各); Dördüncü Çağ'ın kadim adlarından; _60_
@@ -359,6 +366,7 @@
 - **Hornacis sıradağları** — Hornacis mountain range (霍纳奇斯山脉)
 - **Beyaz Akçaağaç Sarayı** — White Maple Palace (白枫宫; Roselle'in suikaste kurban gittiği yer)
 - **Zümrüt Şehir** — Emerald City (翡翠城); Bernadette'in yurdu; Oz göndermesi, Türkçe Oz çevirilerindeki ad _1238_
+- **Rorsted Takımadaları** — Rorsted Archipelago (罗思德群岛); Sonia Denizi'nde bir müstemleke _64_
 
 ## Forsaken Land of the Gods
 
@@ -532,6 +540,7 @@
 - **nezarethane** — temporary holding cell (临时关押室)
 - **dava evrakı** — case file/materials (案件材料/案件资料)
 - **adam kaçıran / kaçıran** — kidnapper (绑匪)
+- **dahilî yakalama emri** — internal warrant of arrest (内部通缉令); "arama emri" kullanılmaz _46_
 
 ## Official Beyonder Teams
 
@@ -696,6 +705,7 @@
 - **Esen kalın**: 祝(您)安好, Klein'ın Azik'e mektup kapanışı (1124, 1275); 1253'te düşmanlarına alaylı selam ('Sizi buldum, esen kalın.') ve bölüm başlığı 'Esen Kalın'. Cattleya'nın 望安好 (895) bağlamına göre _1124_
 - **Tünaydın / Merhaba** — good afternoon / hello (下午好 / 你好) _48–49_
 - **Üstad** — master, a seer addressed with reverence (大师); Joyce'un 'Üstad Moretti'si; Mertebe adlarındaki 大师 bu kayda girmez _63_
+- **Piskopos Hazretleri** — Lord Bishop (主教大人); İng. çeviri "My Lord" der; Alger'in kilise rütbesi _64_
 
 ## Period Vocabulary
 
@@ -710,6 +720,7 @@
 - **korkulu rüya** — nightmare (噩梦); küçük harfli kâbus Uykusuz Yolu'nun Mertebe 7 adına (梦魇) çeker, bu yüzden kullanılmaz; rakip okuma: Mertebe adı kuralı gereği küçük harfle kâbus; teyit bekliyor _63_
 - **badire** — ordeal, calamity (厄难), yalnızca sıradan anlamda; Ebedî Gece'nin tazim ismindeki ve Şeamet Süvarisi'ndeki 厄难 'Şeamet' kalır _63_
 - **şuuraltı** — subconscious (潜意识); Ruhiyat sicilindeki biçim; "bilinçaltı" kullanılmaz _63_
+- **teşkilat** — organization (组织/隐秘组织); "örgüt" yazılmaz _64_
 
 ---
 
@@ -783,6 +794,13 @@
 - **uyku çiçeği** — slumber flower (深眠花) _60_
 - **kızıl sandal (ağacı)** — dark-red sandalwood (深红檀香); Kızıl'ın Hâkimesi'ni simgeleyen mumların malzemesi _51_
 - **parşömen görünümlü kâğıt / parşömen görünümlü bir kâğıt** — imitation parchment (仿羊皮纸); gerçek parşömen (羊皮纸) "parşömen" kalır; İng. çeviri "goatskin" der _50_
+- **altın nane** — gold mint (金薄荷); Ayin uçucu yağının otu _64_
+- **altın el limonu** — fingered citron (金手柑); Ayin uçucu yağının otu, Güneş'e ait; "Buda eli" kullanılmaz _64_
+- **kaya gülü** — rock-rose (岩玫瑰); Ayin uçucu yağının otu; öteki okuma 'laden' _64_
+- **adak** — sacrificial items (祭品); Ayine konan yiyecek ve eşyalar; 'sunu' Ayinin sunu kısmına ayrılı _64_
+- **sunak** — altar (祭台); "mihrap" kullanılmaz _64_
+- **cüppe** — robe (长袍); Ayin için 'beyaz cüppe', Alger'in 'Fırtına cüppesi' _64_
+- **Ayin uçucu yağı** — ritual essential oil (仪式精油); "esans" kullanılmaz _64_
 
 ## Potion Ingredients
 
@@ -864,7 +882,7 @@
 - **ikinci zabit** — second mate (二副) _8_
 - **kaptan kamarası** — captain's cabin (船长室) _58_
 - **hayalet gemi** — ghost ship (幽灵船); Alger'in gemisi adıyla anılmadığı yerler
-- **Mavi İntikamcı** — Blue Avenger; Alger Wilson'ın kaptanlığındaki hayalet gemi (幽蓝复仇者号)
+- **Mavi İntikamcı** — Blue Avenger (幽蓝复仇者); Alger Wilson'ın kaptanlığındaki hayalet gemi (幽蓝复仇者号)
 - **Kara Taht** — Black Throne (黑王座号); İng. çeviri "Black King" der; Roselle'in gemisi, tırnaksız; "Kara Kral" yazılmaz _59_
 - **Altın Rüya** — Golden Dream (黄金梦想号); Edwina'nın gemisi, tırnaksız; 梦想 'özlem' anlamında, 梦境 (Hülya salahiyeti) değil
 - **İstikbal** — the Future (未来号); Cattleya'nın gemisi; gemi adları çevrilir (krş. Altın Rüya) _638_
@@ -874,6 +892,8 @@
 - **'Adil' Elland**: 公正的艾尔兰; Elland Kag'ın denizdeki lakabı, tırnaklı. Terim satırı değildir (公正 gündelik kelime) _499_
 - **V. William** — William V (威廉五世号); Elland'ın gençliğinde hizmet ettiği donanma gemisi _496_
 - **Yonca** — the Alfalfa (苜蓿号); Güney Kıta'dan Enmat Limanı'na dönen gemi; tırnaksız; Yonca kadın adı da olduğundan ilk geçişte "Yonca adlı gemi" _54_
+- **mürettebat** — crew (船员); "gemici" kullanılmaz; 水手 'denizci' (küçük harf) _63_
+- **Yonca faciası** — the Alfalfa tragedy (苜蓿号惨案); İng. çeviri "massacre" ve "tragedy" der _64_
 
 ---
 

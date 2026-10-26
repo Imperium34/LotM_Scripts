@@ -530,12 +530,12 @@ Her girişte beş alan vardır: **Kurulum** (bölüm ve paragraf), **Donmuş** (
 
 ### #57 · Soytarı'ya izin Ayini
 
-`Nesne / Edim · kritik · sabit`
+`Nesne / Edim · kritik · denetlenmedi`
 
-- **Kurulum:** 60 ¶64, ¶67, ¶70
-- **Donmuş:** dört yeni mum dört köşede, 'sol üst / sağ üst / sol alt / sağ alt' yiyecekler, gümüş bıçakla kapalı ruhanî ortam, mehtap çiçekli uçucu yağ, Hermes Dili'yle tazim ismi
-- **Ödeme:** İleride üyelerin bu Ayini anlattığı ya da icra ettiği her yer
-- **Neden bozulur:** Malzeme adları ve köşe düzeni kayarsa sonraki icralar aynı Ayin gibi okunmaz.
+- **Kurulum:** 60 (Klein'ın tarifi); 64 ¶31–¶49 (ilk icra, adımların tamamı sahnede)
+- **Donmuş:** 60: 'Sunağın üzerine, dört köşeye birer tane gelecek biçimde dört yeni mum dizin; sandal kokulu olanları tercih etmeniz daha iyi olur', 'Sol üstteki mumun yanına bir beyaz ekmek, sağ üstteki mumun yanına bir Feynapotter eriştesi koyun; sol altta deniz mahsullü pilav, sağ altta ise bir Desi turtası', 'Gümüş bıçakla kapalı bir ruhanî ortam kurun', 'Mehtap çiçeği, altın nane, uyku çiçeği, altın el limonu ve kaya gülünü karıştırıp damıtın, uçucu yağını çıkarın, her muma birer damla damlatın'; efsun Hermes Dili'yle tazim ismi. 64: 'masanın dört köşesine', 'gümüş bıçağı' kaba tuz yığınına saplamak, Hermes Dili'yle 'takdis efsunu', berrak su dolu kupa, 'kutsal hançer' (tek tırnakla), 'Ruhaniyet duvarı', 'Ayin uçucu yağı', 'her muma birer damla'
+- **Ödeme:** İleride üyelerin bu Ayini anlattığı ya da icra ettiği her yer; adımlar kısaltılarak anıldığında
+- **Neden bozulur:** Malzeme adları, köşe düzeni ve adımların sırası kayarsa sonraki icralar aynı Ayin gibi okunmaz. 60 Ayini tarif eder, 64 ilk kez icra eder; 64'ün ortak aletleri (takdis efsunu, Ruhaniyet duvarı) 51'deki Neil dersiyle eşleşmelidir. 'Ruhanî ortam' (60, Ayinin adı) ile 'Ruhaniyet duvarı' (64, kurulan duvarın kendisi) kaynakta ayrı sözcüklerdir, birbirinin yerine geçmez.
 
 ### #58 · Vurma alışkanlığı bir örtü olarak
 
@@ -815,3 +815,39 @@ Her girişte beş alan vardır: **Kurulum** (bölüm ve paragraf), **Donmuş** (
 - **Donmuş:** "ellerini kenetleyip"
 - **Ödeme:** bilinmiyor; kehanet ya da çözümleme sahnelerinde tekrarlarsa
 - **Neden bozulur:** tekrar edip etmediği belirsiz; silinebilir.
+
+### #89 · İhtiyar Neil'in fısıltıları
+
+`Kalıp · orta · denetlenmedi`
+
+- **Kurulum:** Neil'in kahve sözü (yayımlanmış; bölüm numarası defterde yok); 64 ¶69 ilk geri çağrılış
+- **Donmuş:** 'o bilinmez mevcudiyetlerin fısıltıları'
+- **Ödeme:** ileride Klein'ın ya da başkasının bilinmeyen fısıltılardan korktuğu her yer
+- **Neden bozulur:** Klein'ın ağrısı Neil'in uyarısına yaslanır; sözcükler kayarsa okur bağı kuramaz, Neil'in sonradan çözülüşündeki fısıltılar da ayrı bir şey gibi okunur.
+
+### #90 · Dört siyah nokta
+
+`Nesne / Edim · orta · denetlenmedi`
+
+- **Kurulum:** 64 ¶69–¶70 (daha önce geçtiyse orası)
+- **Donmuş:** 'sağ elinin üstündeki dört siyah nokta', 'şans artırma ayininden kalma'
+- **Ödeme:** ileride Soytarı'ya gelen bir niyazla noktaların her belirişi
+- **Neden bozulur:** noktalar Klein'ın şans artırma ayini ile gri sis arasındaki ilk görünür bağıdır; 'kara benek' gibi bir kayma bağı koparır.
+
+### #91 · Azmettirmek ve kışkırtmak
+
+`Görünür ayrım · orta · denetlenmedi`
+
+- **Kurulum:** 64 ¶83 'Mertebe 8 Azmettirici', ¶88 'birbirini öldürmeye azmettirmek'
+- **Donmuş:** 'azmettir-'
+- **Ödeme:** Tris'in yönteminin açıklandığı bölüm; Avcı Yolu'nun Kışkırtıcı'sının ilk anıldığı yer
+- **Neden bozulur:** iki Yol kaynakta ayrı sözcüklerle ayrılır; 'kışkırt-' bir kez buraya girerse Suikastçı ile Avcı arasındaki ayrım okura hiç gösterilmemiş olur.
+
+### #92 · Tarih uzmanı
+
+`Kalıp · marjinal · denetlenmedi`
+
+- **Kurulum:** — (kaynak ¶90'da tırnaklıdır; Dunn'ın Klein'ı işe aldığı sahnede geçtiyse oradaki sözcük bağlar)
+- **Donmuş:** 'tarih uzmanı'
+- **Ödeme:** 64 ¶90; ileride Klein'ın işe alınış sebebine her atıf
+- **Neden bozulur:** tırnak bir alıntıyı işaret ediyorsa, alıntı ancak aynı sözcükle tanınır.
