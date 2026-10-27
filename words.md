@@ -865,10 +865,10 @@
 
 ## Transport
 
-- **umumî at araba** — public carriage (公共马车); raylı/raysız belirtilmediğinde _56_
-- **raylı umumî at araba** — railed public carriages (轨道公共马车)
-- **raysız umumî at araba** — unrailed public carriages (无轨公共马车)
-- **Yörünge At Arabası Şirketi** — raylı umumî at arabalarını işleten şirket (轨道马车公司)
+- **umumî at araba** — public carriage (公共马车); raylı/raysız belirtilmediğinde; cümle içinde umumî at arabası olarak kullanılır _56_
+- **raylı umumî at araba** — railed public carriages (轨道公共马车); cümle içinde umumî at arabası olarak kullanılır
+- **raysız umumî at araba** — unrailed public carriages (无轨公共马车); cümle içinde umumî at arabası olarak kullanılır
+- **Yörünge At Arabası Şirketi** — raylı umumî at arabalarını işleten şirket (轨道马车公司); cümle içinde arabası olarak kullanılır
 - **biletçi** — umumî at arabasında ücret toplayan görevli (收费员)
 - **iki tekerlekli fayton** — two-wheeled carriage (双轮马车) _44_
 - **kira arabası** — for-hire carriage (出租马车); "taksi" anakronik
