@@ -48,15 +48,15 @@ Karakterin korktuğunu söyleme; fiziksel tepkisini veya çevrenin bükülmesini
 
 Anlatıcının sicili sabit değildir. Varsayılan **orta kayıttır**: berrak, somut, ayakları yere basan.
 
-- **Tehdit kadraja girdiğinde** dil yukarı sıçrar: gotik dehşet, marazi imge, kesif zulmet.
+- **Tehdit kadraja girdiğinde** dil yukarı sıçrar: gotik dehşet, marazî imge, kesif zulmet.
 - **Tehdit çekildiğinde dil derhal orta kayda oturur.** Sıçramanın sıçrama gibi hissedilmesi tamamen bu geri çekilmeye bağlıdır. Kalıcı cila = sıçramanın ölümü.
 - Tetikleyici anlatıcının keyfi değil, **sahnedeki tehdidin kendisidir**.
 
 ### 1.3 Anlatıcı tavanı (Divan yasağı)
 
-Sıçrama en tepede **gotik/tekinsiz** imgede durur. Oradan öteye, ezoterik-kutsal zirveye geçmez. O zirve İlahi mertebe diyaloglarına ve tazim isimlerine ayrılmıştır.
+Sıçrama en tepede **gotik/tekinsiz** imgede durur. Oradan öteye, ezoterik-kutsal zirveye geçmez. O zirve İlahî mertebe diyaloglarına ve tazim isimlerine ayrılmıştır.
 
-Bu ayrım taşıyıcıdır: okur "koridor tekinsiz" ile "bir ilah konuşuyor" arasındaki farkı hissedebilmelidir. Anlatıcı tavanı deldiği an iki kayıt birbirine karışır ve İlahi olanın ürpertisi ucuzlar.
+Bu ayrım taşıyıcıdır: okur "koridor tekinsiz" ile "bir ilah konuşuyor" arasındaki farkı hissedebilmelidir. Anlatıcı tavanı deldiği an iki kayıt birbirine karışır ve İlahî olanın ürpertisi ucuzlar.
 
 ---
 
@@ -141,11 +141,11 @@ _Bu tablo canlıdır._
 ### 4.1 Üç ayrı dağarcık (en sık yapılan hata bunları karıştırmaktır)
 
 **A) Dönem kaydı — zemin, kotasız.**
-_nizam, muayyen, icap etmek, kelam, mütalaa, teferruat, mukabil, akabinde, vaziyet, malumat, tahkikat, ziyadesiyle, hususunda_ ve benzerleri.
+_nizam, muayyen, icap etmek, kelâm, mütalaa, teferruat, mukabil, akabinde, vaziyet, malumat, tahkikat, ziyadesiyle, hususunda_ ve benzerleri.
 Bu dağarcık metnin **tabanıdır**, tepe işareti değildir. Fırın sahnesinde de, ofis sahnesinde de bulunur. Kotaya tabi tutulursa Viktorya dokusu çöker. **Sicil işareti de değildir:** bir polis memuru da "tahkikat" der, bir asilzade de. Yükseltme §6'daki taşıyıcılarla yapılır, bu kelimelerle değil.
 
 **B) Gotik kayıt — rasyonlu.**
-_marazi, heyûlâ, kesif zulmet, hastalıklı kızıl, peçelenmek, berzah, ufunet._
+_marazî, heyûlâ, kesif zulmet, hastalıklı kızıl, peçelenmek, berzah, ufunet._
 Yalnızca tekinsizlik, kadim dehşet ve bozulma sahnelerinde. Şablonun E bölümü bu bölümde nereye harcanacağını söyler; söylemiyorsa sahnedeki tehdit söyler. Aç bırakılan bölge, harcanan bölgenin işe yaramasının şartıdır.
 
 **C) Sade tepe — duygusal doruk.**
@@ -191,7 +191,7 @@ Aşağıdakiler metni anında "çeviri kokan" hâle getirir. Hiçbiri mutlak yas
 
 | Tik                                                     | Sorun                                         | Çözüm                                                                                                                              |
 | ------------------------------------------------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `-dır` koşacı                                           | Ansiklopedi/ders kitabı tonu                  | Kurguda neredeyse hep fazlalık. "Karanlıktır" → "Karanlıktı" / "Karanlık." Yalnızca sistemsel izahlarda ve ilahi beyanlarda kalır. |
+| `-dır` koşacı                                           | Ansiklopedi/ders kitabı tonu                  | Kurguda neredeyse hep fazlalık. "Karanlıktır" → "Karanlıktı" / "Karanlık." Yalnızca sistemsel izahlarda ve ilahî beyanlarda kalır. |
 | Belgisiz `bir`                                          | İngilizce artikelinin kopyası                 | "Bir soğuk rüzgâr esti" → "Soğuk bir rüzgâr esti" veya "Rüzgâr soğuktu". Sıfat öbeğinin başına `bir` atma.                         |
 | Tanımlık `o`                                            | İngilizce *the*'nin kopyası                  | Türkçede belirli tanımlık yoktur. "O tekinsiz manzara" yalnız Çincede 那 (那个/那种/那些) varsa ya da gerçekten geri gösteriyorsa kalır; yoksa `o` düşer: "Tekinsiz manzara". `o zaman`, `o kadar`, `o sırada` gibi kalıplar bu kurala girmez. |
 | Gereksiz özne zamiri                                    | Türkçe özne düşürür                           | "O, kapıya baktı" → "Kapıya baktı". Açık zamir **işaretlenmiş** bir tercihtir: karşıtlık veya vurgu varsa kullanılır.              |

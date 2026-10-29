@@ -32,7 +32,7 @@ Anlatıcı sesi soğuk, analitik ve orta kayıttadır. Dehşet yapısal olarak i
 
 ### Ağır Sözcük Kotası
 
-`marazi`, `idrak etmek`, `heyûlâ`, `maksadıyla` ve benzerleri yalnızca bağlam ciddi atmosferik ağırlık gerektirdiğinde kullanılır. Varsayılan sıfat veya fiil olarak kesinlikle kullanma.
+`marazî`, `idrak etmek`, `heyûlâ`, `maksadıyla` ve benzerleri yalnızca bağlam ciddi atmosferik ağırlık gerektirdiğinde kullanılır. Varsayılan sıfat veya fiil olarak kesinlikle kullanma.
 
 ### "Fark etmek / Anlamak / İdrak etmek" Kılavuzu
 

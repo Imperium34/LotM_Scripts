@@ -103,3 +103,52 @@ bolum	k	aile	on	karar
 63	23	SABLON sadakat Ş	0	kabul
 63	24	SABLON sadakat Ş	0	ret
 63	25	SABLON sadakat Ş	0	ret
+64	1	okuma 1.6	0	kabul
+64	2	okuma 1.1	0	kabul
+64	2	okuma 1.3	0	kabul
+64	3	okuma 1.3	0	ret
+64	4	okuma 1.1	0	kabul
+64	4	okuma 1.3	0	kabul
+64	4	okuma 1.6	0	kabul
+64	5	okuma 1.9	0	kabul
+64	6	okuma 1.7	0	kabul
+64	7	okuma 1.1	0	kabul
+64	7	okuma 1.5	0	kabul
+64	8	okuma 1.1	0	kabul
+64	8	okuma 1.4	0	kabul
+64	8	okuma 1.5	0	kabul
+64	9	sadakat A	0	kabul
+64	10	okuma 1.6	0	kabul
+64	11	okuma 1.10	0	kabul
+64	11	sadakat A	0	kabul
+64	12	okuma 1.1	0	ret
+64	12	okuma 1.6	0	ret
+64	13	okuma 1.6	0	kabul
+64	14	sadakat A	0	kabul
+64	15	okuma 1.2	0	kabul
+64	15	sadakat A	0	kabul
+64	16	okuma 1.1	0	kabul
+64	16	okuma 1.2	0	kabul
+64	17	sadakat C	0	kabul
+64	18	okuma 1.1	0	kabul
+64	18	okuma 1.6	0	kabul
+64	19	okuma 1.2	0	kabul
+64	20	okuma 1.7	0	kabul
+64	21	okuma 1.7	0	kabul
+64	22	SABLON okuma 1.1	0	kabul
+64	23	SABLON okuma 1.1	0	kabul
+64	23	SABLON okuma 1.6	0	kabul
+64	24	SABLON okuma 1.1	0	kabul
+64	25	SABLON okuma 1.8	0	kabul
+64	26	SABLON sadakat Ş	0	kabul
+64	27	SABLON sadakat Ş	0	kabul
+64	28	SABLON okuma 1.1	0	ret
+64	28	SABLON okuma 1.9	0	ret
+65	1	okuma 1.6	1	kabul
+65	2	okuma 1.9	0	kabul
+65	3	okuma 1.M	0	kabul
+65	4	okuma 1.9	0	kabul
+65	5	okuma 1.1	0	kabul
+65	5	okuma 1.4	0	kabul
+65	6	sadakat D	0	ret
+65	7	SABLON sadakat Ş	0	kabul

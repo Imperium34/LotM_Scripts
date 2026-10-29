@@ -95,6 +95,11 @@
 
 - **İlim Mabedi** — Temple of Knowledge (知识圣殿); İlim ve Hikmetin İlahı Kilisesi'nin Lenburg'daki merkezi; 知识 = İlim (İlim Kulesi ile aynı)
 
+### Demoness Sect
+
+- **İlk Olan** — the earliest (最初者); tarikatın Kadim Şeytaniçe'ye verdiği sıfat, tek tırnakla; 'Evvel' yazılmaz _66_
+- **Son Olan** — Ender (最终者); çiftin ikinci yarısı, tek tırnakla; 'Âhir' yazılmaz _66_
+
 ## Worship & Prayer
 
 - **ibadet** — Mass (弥撒); "ayin" 仪式'e ayrılı olduğu için kullanılamaz; özgül bir terim ("Missa", "Kudas") istenirse kilise sahneleri başlamadan seçilmeli _50_
@@ -171,7 +176,7 @@
 - **takdis efsunu** — sanctification incantation (圣化咒文); gümüş bıçağı takdis eden Hermes Dili efsunu _64_
 - **kutsal hançer** — sacred blade (圣刃); takdis edilmiş gümüş bıçağın adı, tek tırnakla _64_
 - **Ruhaniyet duvarı** — spirituality wall (灵性之墙/灵性的墙壁); 'kapalı Ruhaniyet duvarı' (密封的灵性之墙) _64_
-- **efsun okumak** — to recite an incantation (诵念); "terennüm" 吟唱'e ayrılı, kullanılmaz _64_
+- **efsun okumak / efsun** — to recite an incantation (诵念); "terennüm" 吟唱'e ayrılı, kullanılmaz _64_
 
 ## Symbols
 
@@ -229,7 +234,7 @@
 - **koyu kızıl yıldız** — crimson star (深红星辰); gri sisteki yıldızlar; 'koyu' düşmez
 - **koyu kızıllık / koyu kızıl** — crimson (深红); üyeleri çağıran ışık, sıfat olarak 'koyu kızıl ışık / parıltı'; 'koyu' düşmez
 - **bağ** — connection (联系); gri sisle koyu kızıl yıldızlar arasındaki görünmez bağ; bu bağlamda 'irtibat' değil
-- **suret** — figure (身影); gri siste beliren üyeler
+- **suret / siluet** — figure (身影); gri siste beliren üyeler. Gri sis dışında, görülen şey bedenin biçimi olduğunda. Kişinin yerine geçiyorsa (他的身影消失了) ad düşer, kişi yazılır: "köşede gözden kayboldu"
 - **hayalî** — illusory (虚幻); gri sisteki suretler, ışık ve burçlar; 'vehmî' değil
 - **Şeref Makamı / başköşe** — Seat of Honor (上首); gri sis salonunda Soytarı'nın yeri 'Şeref Makamı', başka yerlerde 'başköşe'; ek kesmesiz: 'Şeref Makamına'
 - **alacalı uzun masa** — Tarot toplantılarının masası; her geçişte aynı (斑驳长桌)
@@ -261,7 +266,7 @@
 - **İmparator Roselle** — Emperor Roselle (罗塞尔大帝); Tarot kartı 'İmparator' (皇帝) ile aynı sözcük, ayrı kayıt; Klein'ın iç sesinde kısaca 'İmparator'
 - **Sezar** — Caesar (凯撒); Roselle'in unvanı ("İmparator Sezar") ve Sezar Limanı; İngilizce ad kuralının istisnası, "Caesar" yazılmaz _56_
 - **Buharın Oğlu** — Son of the Steam (蒸汽之子); Roselle'e verilen ad; tırnaksız _59_
-- **İmparator Roselle'in günlükleri** — Emperor Roselle's diaries (罗塞尔日记/罗塞尔的日记); Soytarı'nın toplantıdaki görevinde tekil: 'Roselle Gustav'ın gizli günlüğü'
+- **İmparator Roselle'in günlükleri / Roselle'in günlüğü** — Emperor Roselle's diaries (罗塞尔日记/罗塞尔的日记); Soytarı'nın toplantıdaki görevinde tekil: 'Roselle Gustav'ın gizli günlüğü'
 - **sayfa** — page (页); Roselle'in günlüğünün sayfaları, kâğıt elde tutulurken ya da çevrilirken de 'sayfa' (20, 21, 34, 35, 59); Klein'ın kendi not kâğıtları 'yaprak' (57) _20_
 - **Roselle Hattı** — "Roselle Line/Roselle Script (罗塞尔秘文); " Alger's term for Roselle Gustav's undeciphered private cipher
 - **Bay Zaratul** — Mr. Zaratul (查拉图先生/查拉图); Roselle'e 'rol yapmak'tan söz eden esrarengiz adam; 'Zât' eklenmez _59_
@@ -277,7 +282,7 @@
 
 - **Kan İmparatoru Alista Tudor** — Blood Emperor Alista Tudor (血皇帝 亚利斯塔·图铎); Tudor İmparatorluğu; 'Kara İmparator' ile aynı kalıp
 - **Kan İmparatoru** — Blood Emperor (血皇帝); tek başına 'İmparator' kart adına ayrılı _64_
-- **Tudor Hanedanı** — Tudor Dynasty (图铎王朝) _9_
+- **Tudor Hanedanlığı** — Tudor Dynasty (图铎王朝) _9_
 - **Kara İmparator** — Solomon İmparatorluğu'nun kadim hükümdarı (黑皇帝; Audrey'nin aynasının kaynağı)
 - **Şaman Kral Klarman** — Shaman King Klarman (卡拉曼巫王)
 - **Jacob** — Jacob (雅各); Dördüncü Çağ'ın kadim adlarından; _60_
@@ -298,6 +303,7 @@
 - **Soren ailesi** — Sauron family (索伦家族); eski Intis kraliyet hanedanı; İngilizce ad kuralının istisnası: Tolkien çakışmasından kaçınmak için değiştirildi, "Sauron" yazılmaz
 - **Abraham ailesi** — Abraham family (亚伯拉罕家族); İngilizce ad korunur, "İbrahim" yazılmaz
 - **Einhorn** — (艾因霍恩); Feysac ailesi, Soren Einhorn Medici'nin bir parçası
+- **Tamara ailesi** — Tamara family (塔玛拉家族) _66_
 
 ## Other Characters
 
@@ -330,6 +336,7 @@
 - **Solomon İmparatorluğu** — Solomon Empire (所罗门帝国)
 - **Solomon Hanedanlığı** — Solomon Dynasty (所罗门王朝); Dördüncü Çağ; Solomon İmparatorluğu ile aynı kök; 时期 'dönem', 'devir' değil _60_
 - **Tudor İmparatorluğu** — Tudor Empire (图铎帝国); Kan İmparatoru Alista Tudor'un imparatorluğu _60_
+- **Trunsoest İmparatorluğu** — Trunsoest Empire (特伦索斯特帝国) _66_
 - **Ebedî Gece Ulusu** — Nation of the Evernight (夜之国); Hornacis sıradağlarındaki kadim krallık; Antigonus ile Gökyüzünün Anası'nın kurduğu, sonradan Ebedî Gece Tanrıçası'nın Kilisesi'nin saldırısına uğrayan ülke. Tanrıça'nın kendi İlahî Hükümranlığı ayrı bir yerdir; bu ad ona verilmez _46_
 - **Lenburg** — Lenburg (伦堡); İlim ve Hikmetin İlahı Kilisesi'nin merkezi olan küçük ülke; başkenti kilisenin merkezidir
 
@@ -476,7 +483,7 @@
 
 ## Loen Kingdom — Crown & Government
 
-- **Augustus Hanedanı** — Loen'in hükümdar hanedanı (奥古斯都家族; amblemi Yargı Kılıcı)
+- **Augustus Hanedanlığı** — Loen'in hükümdar hanedanı (奥古斯都家族; amblemi Yargı Kılıcı)
 - **Yargı Kılıcı** — Augustus hanedanı amblemi (审判之剑)
 - **Negan Dükü / Negan ailesi** — Başvekil Aguesid Negan'ın ağabeyi Pallas Negan, mevcut Dük (尼根公爵 / 尼根家族). eşi Della Hanımefendi (黛拉夫人)
 - **Düşes** — Duchess (公爵夫人)
@@ -490,7 +497,7 @@
 - **Backlund Topçu Akademisi** — Backlund Artillery Institute (贝克兰德火炮研究院)
 - **Pritz Denizcilik Akademisi** — Pritz Maritime/Shipbuilding Institute (普利兹船舶研究院)
 - **mebus** — member of parliament (议员); Loen parlamentosunun üyesi; Hayat Ekolü'nün 议员'i 'Aza' kalır; teyit bekliyor, öteki okuma 'milletvekili' _61_
-- **imtihanla seçim** — exam selection (考试筛选); Soytarı'nın ikinci toplantıdaki önerisi; 'Memuriyet imtihanı nizamı' ile aynı kök; 36 ile teyit bekliyor _61_
+- **imtihanla seçim / imtihan** — exam selection (考试筛选); Soytarı'nın ikinci toplantıdaki önerisi; 'Memuriyet imtihanı nizamı' ile aynı kök; 36 ile teyit bekliyor _61_
 - **idari makamla siyasi makamın ayrılması** — separation of civil and political offices (事务政务分离); Soytarı'nın aynı önerisi; 36 ile teyit bekliyor _61_
 
 ### Civil Offices
@@ -560,7 +567,9 @@
 - **istirahat odası** — break room (休息室); nöbetten çıkanların uyuduğu oda _50_
 - **Silahhane** — Armory (武器库)
 - **bölme** — ofisin ön salonunu ayıran bölme (隔断)
-- **ödenek** — müfreze bütçesi, funds (经费); 46'daki "ek ödenek" farklı bir kaynak sözcük olabilir, teyit edilmeli _47_
+- **ödenek** — müfreze bütçesi, funds (经费) _47_
+- **üst kademe** — upper echelons (高层); 'Mertebe' değil _66_
+- **ek ödenek** — additional reimbursement (额外补贴) _66_
 - **danışman** — consultant (顾问) _50_
 - **kanun dışı teşkilat** — illegal organization (非法组织); Gece Şahinleri belgelerinin bir sınıfı, iç seste tek tırnakla; "örgüt" yazılmaz _61_
 
@@ -717,10 +726,12 @@
 - **tavsiye** — suggestion (建议; kehanet bağlamında 意见 de) _62_
 - **ilaç** — medicine (药剂); 'iksir' yalnızca 魔药 için _62_
 - **uçurum** — abyss, chasm, sıradan anlam (深渊); Mertebe adı 'Hâviye' ile karıştırılmaz _62_
-- **korkulu rüya** — nightmare (噩梦); küçük harfli kâbus Uykusuz Yolu'nun Mertebe 7 adına (梦魇) çeker, bu yüzden kullanılmaz; rakip okuma: Mertebe adı kuralı gereği küçük harfle kâbus; teyit bekliyor _63_
+- **korkulu rüya / kâbus** — nightmare (噩梦) _63_
 - **badire** — ordeal, calamity (厄难), yalnızca sıradan anlamda; Ebedî Gece'nin tazim ismindeki ve Şeamet Süvarisi'ndeki 厄难 'Şeamet' kalır _63_
 - **şuuraltı** — subconscious (潜意识); Ruhiyat sicilindeki biçim; "bilinçaltı" kullanılmaz _63_
 - **teşkilat** — organization (组织/隐秘组织); "örgüt" yazılmaz _64_
+- **karaltı** — (人影); Kimliği bilinmeyen, uzak ya da karanlıktaki insan biçimi. 不见人影 / 没有人影 kalıbında ad kullanılmaz: "kimsecikler yok"
+- **hatlar** — (轮廓); Yalnız çoğul. 'Şekil' ve 'kontur' yazılmaz.
 
 ---
 
@@ -846,6 +857,7 @@
 - **Feynapotter eriştesi** — Feynapotter noodles (费内波特面) _60_
 - **Desi turtası** — Desi pie (迪西馅饼) _60_
 - **deniz mahsullü pilav** — seafood rice (海鲜饭); İng. çeviri "paella" der; "paella" yazılmaz _60_
+- **Enmat Birası** — Enmat Beer (恩马特啤酒); Sibe Çayı kalıbı _66_
 
 ## Social Life
 

@@ -191,7 +191,7 @@ Her girişte beş alan vardır: **Kurulum** (bölüm ve paragraf), **Donmuş** (
 `Birebir · kritik · denetlenmedi`
 
 - **Kurulum:** 28; 51 ¶7; 52 ¶35
-- **Donmuş:** "Dilediğini yap, lakin zarar verme."
+- **Donmuş:** "Dilediğini yap, lâkin zarar verme."
 - **Ödeme:** 164 ¶8–9
 - **Neden bozulur:** Neil'in "kimseye zarar vermedim"i düsturun ikinci yarısına yaslanır.
 
@@ -773,12 +773,13 @@ Her girişte beş alan vardır: **Kurulum** (bölüm ve paragraf), **Donmuş** (
 
 ### #84 · Yonca'daki kötü arzular
 
-`Kalıp · orta · denetlenmedi`
+`Kalıp · orta · tamam`
 
 - **Kurulum:** 63 ¶44
 - **Donmuş:** "herkesin içinde gizli duran kötü arzular bir anda, zapt edilemeden patlak vermişti"
 - **Ödeme:** Tris'in Yolunun ve Yonca'daki kışkırtmanın açıklandığı bölüm
 - **Neden bozulur:** Joyce kıyımı tam da bir Azmettirici'nin işi gibi tarif ediyor; 'kötü arzu' başka sözcüğe kayarsa okur açıklamada bu tarifi tanımaz.
+- **Ödeme gerçekleşti:** 66 ¶1, belgede "içinde gizli duran kötü arzu"
 
 ### #85 · korkulu rüya / Kâbus
 
@@ -851,3 +852,57 @@ Her girişte beş alan vardır: **Kurulum** (bölüm ve paragraf), **Donmuş** (
 - **Donmuş:** 'tarih uzmanı'
 - **Ödeme:** 64 ¶90; ileride Klein'ın işe alınış sebebine her atıf
 - **Neden bozulur:** tırnak bir alıntıyı işaret ediyorsa, alıntı ancak aynı sözcükle tanınır.
+
+### #93 · Şeytaniçe Tarikatı'nın kadın üst kademesi
+
+`Kalıp · orta · denetlenmedi`
+
+- **Kurulum:** 66 ¶21, ¶70
+- **Donmuş:** "üst kademe", "hep kadın"
+- **Ödeme:** 122–127, Tris'in Cadı iksiriyle Trissy'ye dönüşmesi
+- **Neden bozulur:** ¶70'teki cevap, ¶21'deki bilginin aynı sözcüklerle dönmesine dayanır. İki yerde farklı söylenirse 'hep kadın' ipucu olmaktan çıkar, 122'deki dönüşüm hazırlıksız gelir.
+
+### #94 · Afet yaymak ↔ Afet
+
+`Birebir · orta · denetlenmedi`
+
+- **Kurulum:** 66 ¶22, ¶23
+- **Donmuş:** "afet yay-" (¶22), "Afet yay-" (¶23); 灾难 her geçişte 'afet'
+- **Ödeme:** Suikastçı Yolu Mertebe 2, Afet adının ilk geçtiği bölüm
+- **Neden bozulur:** Tarikatın görevi ile Yolun Mertebe 2 adı Çincede aynı sözcüktür. 'Felaket', 'musibet' ya da 'bela' yazılırsa bağ kopar; üçü de başka Çince terimlere ayrılmıştır (天灾, 灾祸, 灾害).
+
+### #95 · İlk Olan / Son Olan
+
+`Birebir · orta · denetlenmedi`
+
+- **Kurulum:** 66 ¶20
+- **Donmuş:** 'İlk Olan', 'Son Olan' (tek tırnakla, çift olarak)
+- **Ödeme:** Kadim Şeytaniçe'ye dair tarikat inancının yeniden anıldığı her sahne
+- **Neden bozulur:** Çift birlikte işler; biri değişirse öteki yalnız kalır. 'Evvel ve Âhir' Kadim Güneş Tanrısı'nın tazim isminde olduğundan bu çift ondan ayrı tutulmalıdır.
+
+### #96 · Klein'ın Peygamber şakası
+
+`Kalıp · marjinal · denetlenmedi`
+
+- **Kurulum:** 66 ¶34
+- **Donmuş:** Peygamber (büyük harf, tırnaksız), Kâhin ile karşıtlık içinde
+- **Ödeme:** 445, Okur Yolu Mertebe 4: Peygamber
+- **Neden bozulur:** Şaka 预言家 sözcüğüne dayanır. 'Nebi', 'öngörücü' ya da küçük harfli 'kâhin' yazılırsa sonraki Mertebe adıyla bağ görünmez.
+
+### #97 · Hikmet-i İlahiye'de nefs ve beden
+
+`Görünür ayrım · orta · denetlenmedi`
+
+- **Kurulum:** 66 ¶12
+- **Donmuş:** 精神 → nefs, 肉体 → beden
+- **Ödeme:** Hikmet-i İlahiye'nin öğretisinin her anıldığı yer
+- **Neden bozulur:** 'Ruh' ve 'zihin' başka Çince terimlere ayrılmıştır. Öğreti nefsi bir kez başka sözcükle verirse basamak zinciri (beden kafes, nefs çıkış) okunmaz.
+
+### #98 · Hünerli dövüş
+
+`Kalıp · marjinal · denetlenmedi`
+
+- **Kurulum:** 65 (Mertebe 8 tarifi), 66 ¶6
+- **Donmuş:** "hünerli dövüş"
+- **Ödeme:** 75, Palyaço Mertebesinin açıldığı bölüm
+- **Neden bozulur:** Klein'ın ¶6'daki tahmini 65'teki tarifi geri çağırır; Palyaço'nun dövüş yeteneği geldiğinde aynı öbek tanınmalıdır.

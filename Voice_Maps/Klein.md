@@ -12,7 +12,7 @@
 
 ##### K1.1 — Kesintisiz motor
 
-**Kapsam:** bütün aşamalar · iç ses · basınçsız anlar dahil
+**Kapsam:** bütün aşamalar · iç ses · basınçsız anlar dâhil
 **Yap:** İç ses her sahnede, tehdit yokken de aynı yoğunlukta akar: şikâyet eder, hesap yapar, tiye alır, imrenir, sınıfsal öfke duyar, kendi zekâsıyla övünür.
 **Yapma:** Sakin sahnelerde iç sesi seyreltme, "gereksiz" diye kısaltma.
 **Ayar:** _"Hepsini kuklaya çevirsem? O zaman istediğim kadar kazanırım, pratikte hiçbir işe yaramaz tabii. Burda ölümüne poker turnuvası planlayacak değilim ya..."_ — _basınçsız bir anda bile tam hacim; "又不是…" → "…değilim ya"_
@@ -433,7 +433,6 @@ Tanrıça Dünyalıdır ama Çinli değildir (Kuzey Avrupalı; yazarın soru-cev
 **Ayar:** _"Altını Danitz ödeyecek."_ (691 ¶32) · _"Hanımefendi, bu ilk taksit; toplam 4013 pound."_ (763 ¶29) · _"Anlıyorum, haber verdiğiniz için teşekkürler."_ (924 ¶3; yalnızken) ↔ iç ses: _Şatosu olan biri neden ulaklığa başvurur?_ (561 ¶59)
 **Gerekçe:** → N-M10
 
-
 #### M11 — Avcı ve tutsak eden (Amon)
 
 ##### M11.1 — Amon: tutsaklık
@@ -617,7 +616,6 @@ Aşama ekseni yalnızca **iç sesin söz varlığını** yönetir; dış ses Muh
 **Ayar:** _"Ben yalnızca sizin düzeninize uyup vazgeçtim, o kadar; sadece tahmin ettiğinden biraz daha eksiksiz."_ (1386)
 **Gerekçe:** → N-A6.0
 
-
 ##### A6.1 — Kimlikler birer araçtır
 
 **Kapsam:** 1389–1390 · iç ses ve anlatı
@@ -667,15 +665,15 @@ Aşama ekseni yalnızca **iç sesin söz varlığını** yönetir; dış ses Muh
 **Kapsam:** bütün aşamalar · iç ses
 **Yap:** Aşamayı bölüm aralığından oku. Her geçiş bir "eve dönüş" yolunun kapanmasıyla tetiklenir; geçiş anlık değildir, sesi kapının ardından değişir.
 
-| Aşama | Bölüm | Kapı |
-| --- | --- | --- |
-| 1 | 1–25 | — |
-| 2 | 26–219 | Benson'ın dönüşü, kardeşlerin ilk kez bir araya gelişi (26–27). Tek _açılan_ kapı: eve dönüş isteğinin yerini kardeşler alır. |
-| 3 | 220–1165 | Melissa ve Benson'ı sirkte uzaktan izlemesi (213) ve Tingen'den ayrılış (219). Kapıyı kendisi kapatır. |
-| 4 | 1166–1351 | Çernobil (1166–1167): kapının hiç var olmadığı ortaya çıkar. |
-| 5 | 1352–1380 | 1. Mertebe (1352): ayin kukla kasaba Ütopya'yla tamamlanır; içeriden, kendi eliyle kapanan ilk kapı. |
-| 6 | 1381 ve sonrası | Soytarı mertebesi (1380'in sonu): kapı kapanmaz, erir; maske ile yüz arasındaki ayrım anlamını yitirir. 1381–1388 dengesiz geçiştir (A6.0); sade "ben" 1389'da gelir (M2.2). |
-| 7 | devam kitabı (1033) | Çevrilmez; yalnız başvuru (A7.1). Rüyadaki son konuşma: maske ile yüz arasındaki ayrımın ötesinde, kendisi olarak. |
+| Aşama | Bölüm               | Kapı                                                                                                                                                                         |
+| ----- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1     | 1–25                | —                                                                                                                                                                            |
+| 2     | 26–219              | Benson'ın dönüşü, kardeşlerin ilk kez bir araya gelişi (26–27). Tek _açılan_ kapı: eve dönüş isteğinin yerini kardeşler alır.                                                |
+| 3     | 220–1165            | Melissa ve Benson'ı sirkte uzaktan izlemesi (213) ve Tingen'den ayrılış (219). Kapıyı kendisi kapatır.                                                                       |
+| 4     | 1166–1351           | Çernobil (1166–1167): kapının hiç var olmadığı ortaya çıkar.                                                                                                                 |
+| 5     | 1352–1380           | 1. Mertebe (1352): ayin kukla kasaba Ütopya'yla tamamlanır; içeriden, kendi eliyle kapanan ilk kapı.                                                                         |
+| 6     | 1381 ve sonrası     | Soytarı mertebesi (1380'in sonu): kapı kapanmaz, erir; maske ile yüz arasındaki ayrım anlamını yitirir. 1381–1388 dengesiz geçiştir (A6.0); sade "ben" 1389'da gelir (M2.2). |
+| 7     | devam kitabı (1033) | Çevrilmez; yalnız başvuru (A7.1). Rüyadaki son konuşma: maske ile yüz arasındaki ayrımın ötesinde, kendisi olarak.                                                           |
 
 **Yapma:** Bir aşamanın sesini kapısından önce başlatma; geçişi tek bir cümlede tamamlanmış gibi yazma.
 **Gerekçe:** → N-A0.1
@@ -700,7 +698,7 @@ Bu tikler çeviri katmanına aittir; kaynakta karşılıkları ya yoktur ya da y
 
 **Kapsam:** 1–7 · yalnız monolog: iç ses ve kendi kendine konuşma (mırıldanma, kendiyle alay)
 **Yap:** Sık (A1.2); kaynağın nötr bir şaşkınlığına da gelebilir.
-**Yapma:** Bir muhataba söylenen replikte kullanma (kardeşler dahil); bu sıklığı 7. bölümden sonra sürdürme (oradan sonra T1.2).
+**Yapma:** Bir muhataba söylenen replikte kullanma (kardeşler dâhil); bu sıklığı 7. bölümden sonra sürdürme (oradan sonra T1.2).
 **Ayar:** _"N'oluyor lan?"_ (2 ¶9, yayımlanmış; kendi kendine mırıldanır) · _"Bildiğin sanal arkadaşlık sitesi değil mi lan bu?"_ (7, yayımlanmış; alçak sesle kendiyle alay)
 **Gerekçe:** → N-T1.1
 
@@ -711,7 +709,7 @@ Bu tikler çeviri katmanına aittir; kaynakta karşılıkları ya yoktur ya da y
 **Şok anı:** Klein'ın beklentisi gözünün önünde ters yüz olduğunda (bir mucize ya da akıl almaz bir sonuç), kaynakta küfür olmasa da "lan" gelebilir.
 **Saçmalık anı:** Şoka yakın ama ondan hafif: büyük bir beklenti gülünç biçimde boşa çıktığında (ör. "profesyonel" denip işi sokakta yürümek çıkınca). "Lan" bıkkın bir tiye almanın içinde gelir, dehşet ya da hayranlık taşımaz.
 **İki anın ortak şartı:** tepki kaynakta işaretlenmiş olmalıdır: anlatıda bir tepki (ağzı açık kalmak, afallamak, donakalmak) ya da kaynağın kendi ünlemi. Türkçede icat edilmez. İkisi birlikte bölüm başına en çok bir.
-**Yapma:** Bir muhataba söylenen replikte kullanma (kardeşler dahil); 219'dan sonra kullanma; sıradan bir şaşkınlığa ya da sinire ekleme.
+**Yapma:** Bir muhataba söylenen replikte kullanma (kardeşler dâhil); 219'dan sonra kullanma; sıradan bir şaşkınlığa ya da sinire ekleme.
 **Ayar:** _Hassiktir! Çince lan bu!_ (20, yayımlanmış) · _...Vay anasını, büyünün kudreti lan bu! Böyle de olur muymuş!_ Klein bir kez daha ağzı açık kaldı. (52, yayımlanmış) — _şok: 30 Sterlin için edilen dua, 300 Sterlinlik cüzdan, tam 30 Sterlinlik ödül; anlatı işaretler_ · "Ne?" Klein afallamıştı. / _Bu nasıl bir iş lan? Profesyonel diye buna mı diyorsunuz?_ (19, yayımlanmış) — _saçmalık: "profesyonel"in işi yürümek çıkar; anlatı "afallamıştı" diye işaretler_
 **Gerekçe:** → N-T1.2
 
@@ -780,7 +778,7 @@ Bu tikler çeviri katmanına aittir; kaynakta karşılıkları ya yoktur ya da y
 
 ##### T2.8 — Rol İfası: başlangıç durumu
 
-**Kapsam:** 65–482 · iç ses ve replik
+**Kapsam:** 93–482 · iç ses ve replik
 **Yap:** İçinden Roselle'in modern adını kullanır: "Oyunculuk Metodu". Konuşurken istisnasız "Rol İfası" der, Tarot Cemiyeti'ne öğretirken de; dünyanın kelimesini kullanmak maskenin parçasıdır.
 **Yapma:** Bu dönemde iç sese "Rol İfası" koyma; bir muhataba "Oyunculuk Metodu" dedirtme.
 **Gerekçe:** → N-T2.8
@@ -809,7 +807,7 @@ Bu tikler çeviri katmanına aittir; kaynakta karşılıkları ya yoktur ya da y
 
 ##### T2.12 — Anlatı ve öteki bakış açıları
 
-**Kapsam:** 65 ve sonrası · anlatı ve başka karakterlerin replikleri
+**Kapsam:** 93 ve sonrası · anlatı ve başka karakterlerin replikleri
 **Yap:** Anlatı bakış açısını izler. Klein'ın bakış açısındaki anlatı onun iç sesinin kuralına uyar (T2.8–T2.11). Başka bir karakterin bakış açısında (Audrey, Leonard, Daly…), tarafsız anlatıda ve başka karakterlerin ağzında terim "Rol İfası"dır; Loen'in kelimesi budur.
 **Yapma:** "Oyunculuk Metodu"nu Klein'dan başka birinin iç sesine ya da ağzına koyma (Roselle'in günlükleri hariç).
 **Gerekçe:** → N-T2.12
@@ -842,7 +840,7 @@ Bu tikler çeviri katmanına aittir; kaynakta karşılıkları ya yoktur ya da y
 
 `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-Kurallar T2.8–T2.12'dedir. Kaynak baştan sona tek bir terim kullanır (扮演法, ilk geçiş 65); "Oyunculuk Metodu" ile "Rol İfası" ayrımı çeviri katmanının müdahalesidir. Gerekçe ve kanıt: → N-T2.8.
+Kurallar T2.8–T2.12'dedir. Kaynak baştan sona tek bir terim kullanır (扮演法, ilk geçiş 65 ancak bu iki isim 93'te kullanılmaya başlayacak. bkz. ilgili echo notu); "Oyunculuk Metodu" ile "Rol İfası" ayrımı çeviri katmanının müdahalesidir. Gerekçe ve kanıt: → N-T2.8.
 
 ---
 
@@ -850,21 +848,21 @@ Kurallar T2.8–T2.12'dedir. Kaynak baştan sona tek bir terim kullanır (扮演
 
 #### 7.2 Açık maddeler
 
-| #   | Madde                             | Gereken                                             |
-| --- | --------------------------------- | --------------------------------------------------- |
+| #   | Madde                             | Gereken                                                                                         |
+| --- | --------------------------------- | ----------------------------------------------------------------------------------------------- |
 | 1   | 5. Aşama harici algı sicili       | A5.4'e bağlandı; kalan: Leonard'ın 1388 satırı ZH ile sınanacak, 1365 Pauli Derlau tam okunacak |
-| 3   | Kalvetua ve 1352 sonrası hücreler | `metin_coi` uygun                                   |
+| 3   | Kalvetua ve 1352 sonrası hücreler | `metin_coi` uygun                                                                               |
 
 ### Klein'ın Anlatıcı / İç Gözlem Sesi (Narrative Prose)
 
-- **Tarz:** Klein'ın doğrudan iç monolog yapmadığı, ancak dünyayı kendi filtresinden anlattığı üçüncü şahıs görünümlü paragraflar. Zhou Mingrui'nin modern/gündelik internet ağzı ile Loen'in ağır Viktorya dönemi dili arasında köprü kuran "orta" bir sicile sahiptir. Kelime dağarcığı zengin ve gözlemcidir; rasyonel ve gerçekçidir. Ağdalı olabilir ama asla **tam Divan Osmanlıcasına** (o ezoterik, kutsal zirve) çıkmaz. Tavan anlatıcıya değil, İlahi mertebe diyaloglarına aittir. **Anlatıcı, Klein'ın iç sesinin eşanlamlısı değildir; onun dikkatinin ve algısının anlatı düzlemindeki uzantısıdır.**
+- **Tarz:** Klein'ın doğrudan iç monolog yapmadığı, ancak dünyayı kendi filtresinden anlattığı üçüncü şahıs görünümlü paragraflar. Zhou Mingrui'nin modern/gündelik internet ağzı ile Loen'in ağır Viktorya dönemi dili arasında köprü kuran "orta" bir sicile sahiptir. Kelime dağarcığı zengin ve gözlemcidir; rasyonel ve gerçekçidir. Ağdalı olabilir ama asla **tam Divan Osmanlıcasına** (o ezoterik, kutsal zirve) çıkmaz. Tavan anlatıcıya değil, İlahî mertebe diyaloglarına aittir. **Anlatıcı, Klein'ın iç sesinin eşanlamlısı değildir; onun dikkatinin ve algısının anlatı düzlemindeki uzantısıdır.**
 - **Orta Sicil Varsayılanı:** Sahnede olağandışı bir şey olmadığı sürece anlatıcı köprüde durur: berrak, somut, ayakları yere basan. (Örn: _"Zhou Mingrui, içini kemiren bir ürpertiyle umumi banyoya doğru adımlarını sakınarak ilerledi."_)
-- **Tehdit Sıçraması:** Kadim/kozmik/tekinsiz olan _sahneye girdiği an_ dil yukarı sıçrar; gotik dehşete, marazi imgeye, kesif zulmete. Tetikleyici anlatıcının keyfi değil, sahnedeki tehdidin kendisidir. Tehdit kadraja girer, dil ağırlaşır; tehdit çekilir, dil orta sicile geri oturur. Kalıcı bir cila değil, bir gerilim eğrisidir; sıçramanın "sıçrama" olarak hissedilmesi bu geri çekilmeye bağlıdır.
-- **Tavan (Divan Yasağı):** Sıçrama en tepede Gotik/Lovecraftçı dehşette durur; oradan öteye, tam Divan lügatinin ezoterik zirvesine geçmez. Bu ayrım taşıyıcıdır: okur "koridor tekinsiz" ile "bir ilah konuşuyor" arasındaki farkı hissedebilmeli. Anlatıcı tavanı deldiği an bu iki kayıt birbirine karışır ve İlahi olanın ürpertisi ucuzlar.
-- **Örnek:** _"Dışarıdaki koridor, ışığın dahi içinde boğulduğu kesif bir zulmete gömülmüştü. Koridorun sonundaki pencereden sızan o marazi kızıllık, eşyaların silüetlerini çarpıtarak onları tekinsiz birer heyulaya dönüştürüyor; pencereler ise gecenin derinliklerinde fanileri soğuk ve habis bir merakla süzen kadim bir hortlağın gözlerini andırıyordu._
+- **Tehdit Sıçraması:** Kadim/kozmik/tekinsiz olan _sahneye girdiği an_ dil yukarı sıçrar; gotik dehşete, marazî imgeye, kesif zulmete. Tetikleyici anlatıcının keyfi değil, sahnedeki tehdidin kendisidir. Tehdit kadraja girer, dil ağırlaşır; tehdit çekilir, dil orta sicile geri oturur. Kalıcı bir cila değil, bir gerilim eğrisidir; sıçramanın "sıçrama" olarak hissedilmesi bu geri çekilmeye bağlıdır.
+- **Tavan (Divan Yasağı):** Sıçrama en tepede Gotik/Lovecraftçı dehşette durur; oradan öteye, tam Divan lügatinin ezoterik zirvesine geçmez. Bu ayrım taşıyıcıdır: okur "koridor tekinsiz" ile "bir ilah konuşuyor" arasındaki farkı hissedebilmeli. Anlatıcı tavanı deldiği an bu iki kayıt birbirine karışır ve İlahî olanın ürpertisi ucuzlar.
+- **Örnek:** _"Dışarıdaki koridor, ışığın dahi içinde boğulduğu kesif bir zulmete gömülmüştü. Koridorun sonundaki pencereden sızan o marazî kızıllık, eşyaların silüetlerini çarpıtarak onları tekinsiz birer heyulaya dönüştürüyor; pencereler ise gecenin derinliklerinde fanileri soğuk ve habis bir merakla süzen kadim bir hortlağın gözlerini andırıyordu._
 
 * **Örnek:** _Zhou Mingrui, içini kemiren bir ürpertiyle umumi banyoya doğru adımlarını sakınarak ilerledi._
-* **Örnek:** _İçeri girdiğinde, o marazi kızıllığın banyoyu çok daha fazla istila ettiğini fark etti. Bu sayede her şeyi net bir şekilde seçebiliyordu. Lavabonun önünde durup musluğun metal başlığını çevirdi."_
+* **Örnek:** _İçeri girdiğinde, o marazî kızıllığın banyoyu çok daha fazla istila ettiğini fark etti. Bu sayede her şeyi net bir şekilde seçebiliyordu. Lavabonun önünde durup musluğun metal başlığını çevirdi."_
 
 ### Klein'ın Maskeleri
 
@@ -944,7 +942,7 @@ Kurallar T2.8–T2.12'dedir. Kaynak baştan sona tek bir terim kullanır (扮演
 ##### DUN1.5 — Gehrman'ın bağlaç yasağı Dünya'yı bağlamaz
 
 **Kapsam:** 682 ve sonrası · replik · Tarot toplantısında
-**Yap:** Dünya artık Gehrman bilinse de tam performanstaki Gehrman değildir; "ama", "lakin" gibi bağlaçlar kullanılabilir, ses yine biraz Gehrman tınlar (GEH1.3).
+**Yap:** Dünya artık Gehrman bilinse de tam performanstaki Gehrman değildir; "ama", "lâkin" gibi bağlaçlar kullanılabilir, ses yine biraz Gehrman tınlar (GEH1.3).
 **Yapma:** Gehrman'ın bütün yasaklarını Dünya'ya uygulama; Dünya'yı Gehrman'dan ayırt edilemez kılma.
 **Gerekçe:** → N-DUN1.5
 
@@ -1012,7 +1010,7 @@ Kurallar T2.8–T2.12'dedir. Kaynak baştan sona tek bir terim kullanır (扮演
 ##### GEH1.3 — Karşıtlık ve seçenek bağlacı yok
 
 **Kapsam:** 483–1388 · replik · tam performansta
-**Yap:** "Ama, fakat, ancak, lakin, ise, oysa, ya da, veya, yoksa" kullanılmaz. Kaynakta bir karşıtlık varsa (但) anlam düşürülmez; iki kısa cümleye bölünür. Basit "ve" ile "ne… ne de" serbesttir.
+**Yap:** "Ama, fakat, ancak, lâkin, ise, oysa, ya da, veya, yoksa" kullanılmaz. Kaynakta bir karşıtlık varsa (但) anlam düşürülmez; iki kısa cümleye bölünür. Basit "ve" ile "ne… ne de" serbesttir.
 **Yapma:** Karşıtlığı silip anlamı değiştirme; yasağı Dünya'ya uygulama (DUN1.5) ya da Reinette'le yalnızken uygulama (M10).
 **Gerekçe:** → N-GEH1.3
 

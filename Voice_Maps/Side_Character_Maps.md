@@ -16,7 +16,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Günlükler ve 1306–1308 · tüm dönemler
 **Yap:** Bugünün konuşma Türkçesiyle yaz; v5'teki dönem kelimesi tabanı bu sese uygulanmaz, çünkü anakronizm kaynaktadır. Argo ve küfür kaynaktaki yerinde ve gücünde serbest (他妈, 妈的, 妈蛋, 傻逼, 日). Oyun, roman ve internet ağzı Türkçedeki yerleşik karşılığıyla girer (主角 → "ana karakter", NPC, 读档 → "kaydı yükleyip baştan almak", 逼格 → "havalı", 啪啪打脸 → "yüzüne tokat gibi çarpmak"). Dünya göndermeleri olduğu gibi kalır (Darwin, Kolomb, Macellan, Gundam, Ay'a ilk adım). Hitaplar 21. bölümdeki biçimi izler: 小姐 → Bayan, 夫人 → Leydi.
 **Yapma:** Osmanlıca çıpa, süslü dönem kelimesi ya da Loen'in kibar kalıpları; küfrü yumuşatmak ya da kaynakta olmayan yere eklemek; Dünya göndermesini açıklamak veya Loen'e uyarlamak.
-**Ayar:** _"2 Ocak. Diplomatlarımın hepsi süzme salak!"_ (21 ¶7); _"Belki de sadece gençliğime karşı nostaljik takılıyorumdur."_ (21 ¶12); _"Ama bir baktım ki hafızam berbat, anasını satayım! Neredeyse hepsini unutmuşum!"_ (359); _"11 Nisan. ... Yok, ben onlara 'fevkalade tür' demeyi tercih ediyorum, kulağa daha havalı geliyor. ... Darwin buraya düşseydi evrim teorisini yazamazdı herhalde."_ (59)
+**Ayar:** _"2 Ocak. Diplomatlarımın hepsi süzme salak!"_ (21 ¶7); _"Belki de sadece gençliğime karşı nostaljik takılıyorumdur."_ (21 ¶12); _"Ama bir baktım ki hafızam berbat, anasını satayım! Neredeyse hepsini unutmuşum!"_ (359); _"11 Nisan. ... Yok, ben onlara 'fevkalade tür' demeyi tercih ediyorum, kulağa daha havalı geliyor. ... Darwin buraya düşseydi evrim teorisini yazamazdı herhâlde."_ (59)
 **Gerekçe:** → N-ROS1.1
 
 ##### ROS1.2 — Girdi biçimi ve ritim
@@ -1091,7 +1091,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 - **Audrey, toplantıda iki katmanla konuşur:**
   - _Huzur katmanı_ her toplantıda birkaç kez açıktır: 'Soytarı Efendi', 'zât-ı âliniz', 'müsaade eder misiniz / buyurur musunuz', 'mazur görünüz', 'istirham', '-InIz' emir kipi ('söyleyiniz'), tedirginlikte 'bendeniz'.
   - _Dağarcık_: 'hususunda', 'icap eder', 'nail olmak', 'mukabil', 'münasip', 'neşet etmek', 'kanaatindeyim'.
-  - Ölçü cümleleri: 7 ¶4 _"Muhterem Soytarı Efendi, cüretimi mazur görünüz lakin takasımıza şahitlik etmeniz hususunda zât-ı âlinize istirhamda bulunmama müsaade eder miydiniz?"_; 6 ¶60 _"B-bendeniz bu hissi, bir 'Seyirci' olma fikrini sanırım sevdim. Bu iksirin formülüne nasıl nail olabilirim?"_
+  - Ölçü cümleleri: 7 ¶4 _"Muhterem Soytarı Efendi, cüretimi mazur görünüz lâkin takasımıza şahitlik etmeniz hususunda zât-ı âlinize istirhamda bulunmama müsaade eder miydiniz?"_; 6 ¶60 _"B-bendeniz bu hissi, bir 'Seyirci' olma fikrini sanırım sevdim. Bu iksirin formülüne nasıl nail olabilirim?"_
   - _Sakin replik_ her zaman bu düzeydedir. Çizginin altına düşen, sakin bir cümlenin sade kurulmasıdır: Bölüm 35'teki 'Neden merak ediyorsunuz ki?'.
   - _Taşma_ (heyecan, öfke, şaşkınlık) kaynaktan gelir ve **sicilin kayması karakterizasyonun kendisidir**: kendini tutamayan bir asilzade sicilini de tutamaz. Taşmada ünlem, tekrar ve gündelik sözcük serbesttir (Bölüm 35: 'Kulağa çok, çok, çok ilgi çekici geliyor!'). İki şey sabit kalır: hitap ('Soytarı Efendi', 'Asılmış Adam Beyefendi') düşmez ve taşma biter bitmez formül geri gelir. Taşmayı yumuşatıp sicile geri yazmak bu karakterizasyonu siler.
   - Konakta (Bölüm 8) nezaket biçimi kalır ('-InIz', 'arzu ediyorum', 'icap edecek'); huzur katmanı ('zât-ı âliniz', 'istirham') yoktur.
@@ -1112,7 +1112,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Tüm görünümleri · herkes · ömür boyu
 **Yap:** Asilzade dilini hiçbir zaman bırakma. Başta kendi doğal dilidir; zamanla bilerek kullanılır, çünkü insanların ondan beklediği ve en kolay manipüle oldukları biçim odur. Saf ve şaşkın tepkiyi gerektiğinde oynar.
 **Yapma:** Yakın olduğu kişilerle bu dili maske gibi düşürme.
-**Ayar:** _"Muhterem Soytarı Efendi, cüretimi mazur görünüz lakin takasımıza şahitlik etmeniz hususunda zât-ı âlinize istirhamda bulunmama müsaade eder miydiniz?"_ (7 ¶4)
+**Ayar:** _"Muhterem Soytarı Efendi, cüretimi mazur görünüz lâkin takasımıza şahitlik etmeniz hususunda zât-ı âlinize istirhamda bulunmama müsaade eder miydiniz?"_ (7 ¶4)
 **Gerekçe:** → N-AUD1.1
 
 ##### AUD1.2 — "Şayet" kalıbı
@@ -1307,8 +1307,8 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 ##### DER1.5 — Ozan Yolu sızıntısı
 
 **Kapsam:** Mertebe yükseldikçe · ilgisiz konular
-**Yap:** Güneş Yolu'nun dağarcığı (övgü, ilahi, ışık, arınma, şafak; Ozan Yolu Kadir-i Mutlak grubunda olduğu için İslami deyişiyle: hamd, nur, tövbe; bkz. KLS1.4) Mertebesi yükseldikçe ilgisiz konulara taşar (Divan_Rule 1.1, kolonizasyon ölçütü). Kademe: Ozan'da (9) yalnız övmeye ve şarkıya yatkınlık, sesine henüz sızmaz; Işık Duacısı (8) ve Güneş Naibi (7) ile ışık ve övgü imgeleri gündelik konulara girer; yüksek Mertebelerde ve Papa'lıkta bir vaizin sesine yerleşir. **Sürüklenme göstergesi:** Gümüş Şehir'in karanlığını, yemeği ya da bir dövüşü anlatırken ışık ve övgü dili kullanıyorsa Yol onu yemeye başlamıştır. Dede Korkut iskeleti kalır, üstüne ilahi dili eklenir.
-**Yapma:** Sızıntıyı erken Mertebelerde başlatmak; Dede Korkut iskeletini ilahi diliyle değiştirmek.
+**Yap:** Güneş Yolu'nun dağarcığı (övgü, ilahî, ışık, arınma, şafak; Ozan Yolu Kadir-i Mutlak grubunda olduğu için İslami deyişiyle: hamd, nur, tövbe; bkz. KLS1.4) Mertebesi yükseldikçe ilgisiz konulara taşar (Divan_Rule 1.1, kolonizasyon ölçütü). Kademe: Ozan'da (9) yalnız övmeye ve şarkıya yatkınlık, sesine henüz sızmaz; Işık Duacısı (8) ve Güneş Naibi (7) ile ışık ve övgü imgeleri gündelik konulara girer; yüksek Mertebelerde ve Papa'lıkta bir vaizin sesine yerleşir. **Sürüklenme göstergesi:** Gümüş Şehir'in karanlığını, yemeği ya da bir dövüşü anlatırken ışık ve övgü dili kullanıyorsa Yol onu yemeye başlamıştır. Dede Korkut iskeleti kalır, üstüne ilahî dili eklenir.
+**Yapma:** Sızıntıyı erken Mertebelerde başlatmak; Dede Korkut iskeletini ilahî diliyle değiştirmek.
 **Gerekçe:** → N-DER1.5
 
 ##### DER1.6 — Çatlak
@@ -1656,14 +1656,14 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 56–70, 199 · Tris (erkek), Azmettirici
 **Yap:** Az konuşur; sesi yumuşak ve memnundur. Kışkırttığı katliamdan sonra sakin bir hoşnutlukla konuşur. Cadı adını görünce tek bir şaşkın ünlem.
 **Yapma:** Tris'e sonraki Trissy'nin cilveli, alaycı sesini vermek; kötülüğünü tiratla anlatmak.
-**Ayar:** _"Çok rahatladım. Tam da hayalini kurduğum, peşinden koştuğum manzaraydı."_ (66); _"Cadı mı?!"_ (66)
+**Ayar:** _"Çok hoş bir his. Tam da hayalini kurduğum, peşinden koştuğum manzaraydı."_ (66); _"Cadı!"_ (66)
 **Gerekçe:** → N-TRS1.1
 
 ##### TRS1.2 — Fısıldayarak kışkırtma
 
 **Kapsam:** Sherman/Shermane ve yönlendirdiği herkes · ikna, rahatlatma
 **Yap:** Yumuşak, şefkatli bir sesle karşısındakinin vicdanını yeniden kurar: suçu ona değil koşula yükler ("o kötülük zaten onlarda vardı"), korkusunu küçümser, sonra parlak bir gelecek tablosunu uzun, akıcı bir cümle zinciriyle çizer. Emir vermez; karar ona aitmiş gibi bırakır.
-**Yapma:** Açık emir ya da tehdit; sert bir ses; ahlak üzerine soyut tartışma.
+**Yapma:** Açık emir ya da tehdit; sert bir ses; ahlâk üzerine soyut tartışma.
 **Ayar:** _"Bu çok normal. Suikastçının mutlaka geçtiği bir dönüşüm bu. Bir düşün: o insanlar sana eziyet ederken onları öldürmek istemez miydin?"_ (999); _"Onları, sana zorbalık ettiklerinde kendini savunduğun için öldürdüğünü düşün."_ (999)
 **Gerekçe:** → N-TRS1.2
 
@@ -2462,7 +2462,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 ##### RUH1.3 — Stephen Hampres: kibar iltifat
 
 **Kapsam:** 405–418 · mobilya tüccarı, toplantının ev sahibi
-**Yap:** Nazik, hoş sohbet, iltifatçı; karşısındakini birkaç cümlede okur ve bunu iltifata çevirir (405 ¶35–38). Audrey'nin okuyuşuna göre görünüşüne düşkün, mali durumunu olduğundan iyi gösteren biridir (405 ¶46–49); bu anlatıdadır.
+**Yap:** Nazik, hoş sohbet, iltifatçı; karşısındakini birkaç cümlede okur ve bunu iltifata çevirir (405 ¶35–38). Audrey'nin okuyuşuna göre görünüşüne düşkün, malî durumunu olduğundan iyi gösteren biridir (405 ¶46–49); bu anlatıdadır.
 **Yapma:** İltifatı alaycı ya da laubali yazmak.
 **Ayar:** _"Hoş geldin, güzel melek hanım."_ (405 ¶38)
 **Gerekçe:** → N-RUH1.3
@@ -2575,7 +2575,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 ##### ZMR1.8 — Basın: yazıda tellal, yüz yüze pazarlık
 
 **Kapsam:** Gazeteciler (Mike Joseph), basılı haberler
-**Yap:** Basılı haber sansasyoneldir: ünlemli, ahlak vaazlı, felaket tellalı (25'teki Tingen Sabah Postası: _"Bu, Krallık kanununun çiğnenmesidir! Kamu güvenliğine bir meydan okumadır!"_). Yüz yüze gazeteci pratik ve pazarlıkçıdır: haberi, parayı, riski konuşur.
+**Yap:** Basılı haber sansasyoneldir: ünlemli, ahlâk vaazlı, felaket tellalı (25'teki Tingen Sabah Postası: _"Bu, Krallık kanununun çiğnenmesidir! Kamu güvenliğine bir meydan okumadır!"_). Yüz yüze gazeteci pratik ve pazarlıkçıdır: haberi, parayı, riski konuşur.
 **Yapma:** Yüz yüze konuşmayı manşet diliyle yazmak.
 **Ayar:** _"Ücreti artırıyorum! Kavga çıkmış sayalım, toplam 5 Sterlin! Kaçarken de kavga çıkarsa 10!"_ (271, Mike Joseph)
 **Gerekçe:** → N-ZMR1.8
@@ -2888,7 +2888,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 ##### NIM1.4 — Sisin tazim ismi
 
 **Kapsam:** 1213–1215 · sisteki ayin
-**Yap:** Tazim ismini ezberden, alçak sesle okur (1214 ¶13–16); kalıp donmuştur (words.md §VII). İnsan yapımıdır ve ilahi tazim isimlerinin Osmanlıca sicilinden bilerek aşağıda tutulur; dua gibi okunur ama yapılmış olduğu duyulur. İkinci satırdaki "Zamanı ve Mekânı" Esrarın Hükümdarı'nın 时空之王 unvanını yankılar: sesler aslında onunla bağlı bir yerden gelir.
+**Yap:** Tazim ismini ezberden, alçak sesle okur (1214 ¶13–16); kalıp donmuştur (words.md §VII). İnsan yapımıdır ve ilahî tazim isimlerinin Osmanlıca sicilinden bilerek aşağıda tutulur; dua gibi okunur ama yapılmış olduğu duyulur. İkinci satırdaki "Zamanı ve Mekânı" Esrarın Hükümdarı'nın 时空之王 unvanını yankılar: sesler aslında onunla bağlı bir yerden gelir.
 **Yapma:** Kalıbı her geçişte başka kelimelerle çevirmek; onu Soytarı'nın tazim ismi düzeyine çıkarmak.
 **Ayar:** _"Ebedî ve Değişmez Sis; / Zamanı ve Mekânı Donduran Perde; / Her Şeyi Kuşatan Varlık…"_ (1214 ¶14–16)
 **Gerekçe:** → N-NIM1.4
