@@ -59,7 +59,7 @@ BOLUM_ELLE = {}
 MUDAHALE = {
     "Ebedî Yanan Güneş": "birlestirme",
     "Kotar": "tamamlama",
-    "Hakiki Hâlık": "degistirme",
+    "Hakiki Hâlık / Mütereddi Hâlık": "degistirme",
     "Kadim Şeytaniçe": "ozgun",
     "Kadim Şeytaniçe (Tam Tazim İsmi)": "degistirme",
     "İlim ve Hikmetin İlahı": "degistirme",
