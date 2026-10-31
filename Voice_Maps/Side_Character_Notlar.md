@@ -890,7 +890,7 @@ Kural, Divan_Rule 1.1'deki kolonizasyon ölçütüne dayanan bir öngörüdür. 
 
 Ad ve zamir: 64–126'da 特里斯 / 他; 122'den itibaren 特莉丝 / 她. 125 ¶48–56 Klein ve Leonard'ın geçişi: 特里斯，不，特莉丝; 470 ¶50 从“教唆者”特里斯变成“女巫”特莉丝. 56 ¶11 (ZH/TR) 特里斯先生 → "Bay Tris". 999 ¶33 Sherman: 特，特莉丝女士 → "T-Trissy Hanım". Çevrenin tepkisi: 999 ¶36 Sherman bakışını kaçırır; 782 ¶19 ve 785 ¶45–46 Klein'ın kuklası aracılığıyla bile çekiciliğine karşı temkin.
 **Denetim:** 56 ¶11 (ZH/TR); 64, 125, 470, 782, 785, 999 (ZH).
-**Ad:** 特莉丝奇克 → Trissychik (words.md); İng. çeviri "Trissy Cheek" der, 'Cheek' İngilizce kelime gibi okunduğu için alınmadı. 原初魔女 = Kadim Şeytaniçe (sozluk.yml; 'Aslî' original/本源 içindir, primordial değil).
+**Ad:** 特莉丝奇克 → Trissychik (words.md); İng. çeviri "Trissy Cheek" der, 'Cheek' İngilizce kelime gibi okunduğu için alınmadı. 原初魔女 = Kadim Şerbânû (sozluk.yml; 'Aslî' original/本源 içindir, primordial değil).
 
 ---
 
@@ -1027,7 +1027,7 @@ Ince'in 19–940 arasında kendi repliği yok (konuşmacı etiketli tarama: 932,
 
 ### N-MED1.1
 
-Kahkaha: 457 ¶16, ¶30, ¶33, ¶44, ¶49 笑; 965 ¶77 哈哈笑道; 1086 ¶6 嘿嘿笑了一声, ¶9 非常惹人讨厌的笑容, ¶84 嘿嘿一笑, ¶92 啧啧笑道; 1111 ¶10 啧啧笑道; 1275 ¶62 呵呵笑道. Sataşma: 1086 ¶6 你在害怕什么，查拉图吗？; ¶27 不是那么无知，也不是那么愚蠢嘛; 1087 ¶28 你几岁了？为什么还这么天真和幼稚？; 1110 ¶5 你很有‘挑衅者’的天赋; ¶32 你是一个需要仪式感的小男孩？; 1111 ¶4 Catherine'e uzun, kaba bir aşağılama (就算是一条狗，活上一千多年…; Şeytaniçelerin cinsiyetiyle alay); ¶16 怎么？想睡我？; 965 ¶77 你们两个果然上当了！…我确定你们两个以前是女人！; 1275 ¶62 cinsel şaka; 1276 ¶11 你还记得你还是个婴儿的时候，负责抱你的是谁吗？ Taktik: 1111 ¶31 啧，魔女果然都很狡猾，不过，我从来不会小瞧每一个猎物.
+Kahkaha: 457 ¶16, ¶30, ¶33, ¶44, ¶49 笑; 965 ¶77 哈哈笑道; 1086 ¶6 嘿嘿笑了一声, ¶9 非常惹人讨厌的笑容, ¶84 嘿嘿一笑, ¶92 啧啧笑道; 1111 ¶10 啧啧笑道; 1275 ¶62 呵呵笑道. Sataşma: 1086 ¶6 你在害怕什么，查拉图吗？; ¶27 不是那么无知，也不是那么愚蠢嘛; 1087 ¶28 你几岁了？为什么还这么天真和幼稚？; 1110 ¶5 你很有‘挑衅者’的天赋; ¶32 你是一个需要仪式感的小男孩？; 1111 ¶4 Catherine'e uzun, kaba bir aşağılama (就算是一条狗，活上一千多年…; Şerbânûların cinsiyetiyle alay); ¶16 怎么？想睡我？; 965 ¶77 你们两个果然上当了！…我确定你们两个以前是女人！; 1275 ¶62 cinsel şaka; 1276 ¶11 你还记得你还是个婴儿的时候，负责抱你的是谁吗？ Taktik: 1111 ¶31 啧，魔女果然都很狡猾，不过，我从来不会小瞧每一个猎物.
 **Denetim:** 457, 965, 1086, 1087, 1110, 1111, 1275, 1276 (ZH).
 
 ### N-MED1.2
@@ -1767,8 +1767,8 @@ Hampres: 405 ¶32 斯蒂芬·汉普雷斯先生，家具商人; ¶35 微笑道�
 > **Ayar satırları:** Bütün satırlar Claude'un çevirisidir; bölümler çevrildikçe kullanıcının metniyle değiştirilmeli.
 > **Görünüm (konuşan):** 581–583 (Kara Veba'de Elaine kılığındaki Klein; saldırı), 588–589 (Katarina ve Azik'in karşısında), 602 (Gehrman'ı tahlil), 1107–1108 (Gehrman'ın elinde; hayat hikâyesi). Anılır: 292, 530, 575 (Edwina'nın tarifi), 578–579 (Elaine'in anlattıkları), 1095–1096. Ad: 特雷茜 (1108'de bir yerde 特蕾茜).
 > **Başka haritalarla bağ:** Trissy (TRS1.5; aynı dönüşüm, ters tepki), Edwina (EDW; 575 tarifi), Anderson ve Danitz (1096), Azik (588–589). Klein ona Elaine, sonra Gehrman kılığında konuşur.
-> **Kullanıcı bilgisi (2026-10-22):** Mertebe 7'nin üstündeki her Şeytaniçe gibi önce erkekti, Yolun doğası onu zorla kadına çevirdi; bu yüzden kadınlardan hoşlanır; Roselle'in aşk romanlarını sever. Edwina'nın tarifi (575 ¶44) kullanıcının alıntısıdır.
-> **Ad kararları (2026-10-22, words.md):** 疾病少女 → Hastalık Kızı, 黑死号 → Kara Veba (黑死病 = Kara Veba; 1107 ¶46'da Anderson gemi adıyla hastalık arasında kelime oyunu yapar), 母亲 → Valide / 妈妈 → anne, 伊莲·索伦 → Elaine Soren (İng. çeviri "Helene" ve "Sauron" der; "Sauron" yankısından kaçmak için Soren, 索伦'in geçerli okunuşu). Mevcut: 疾病中将 → Koramiral Hastalık, 痛苦魔女 → Maraz Şeytaniçe, 不老魔女 → Solmaz Şeytaniçe, 反抗军 → Direniş, 大副 → birinci zabit.
+> **Kullanıcı bilgisi (2026-10-22):** Mertebe 7'nin üstündeki her Şerbânû gibi önce erkekti, Yolun doğası onu zorla kadına çevirdi; bu yüzden kadınlardan hoşlanır; Roselle'in aşk romanlarını sever. Edwina'nın tarifi (575 ¶44) kullanıcının alıntısıdır.
+> **Ad kararları (2026-10-22, words.md):** 疾病少女 → Hastalık Kızı, 黑死号 → Kara Veba (黑死病 = Kara Veba; 1107 ¶46'da Anderson gemi adıyla hastalık arasında kelime oyunu yapar), 母亲 → Valide / 妈妈 → anne, 伊莲·索伦 → Elaine Soren (İng. çeviri "Helene" ve "Sauron" der; "Sauron" yankısından kaçmak için Soren, 索伦'in geçerli okunuşu). Mevcut: 疾病中将 → Koramiral Hastalık, 痛苦魔女 → Maraz Şerbânû, 不老魔女 → Solmaz Şerbânû, 反抗军 → Direniş, 大副 → birinci zabit.
 > **Sözlükte olmayanlar (haritada kullanılmadı):** 龙威 (602 ¶59), 巧言者 米索尔·金 (583 ¶54), 三副, 白之魔女 (1107 ¶8; Katarina'nın öteki unvanı), 吉米·内克 (588 ¶45).
 
 ### N-TRC1.1

@@ -17,7 +17,7 @@ Write the report in **Turkish**. Keep every label, term and file name exactly as
 ## Inputs
 
 1. `<zincir_ciktisi>`: the full chain output (required).
-2. `<uygulanan_duzeltmeler>`: what the wrapper already applied **before** you ran, with deterministic fixers only: `sapka.py --uygula` (the GÜVENLİ part) on the chapters **and** on the voice maps and prompts, and `ciltler_yaz.py`, plus `git diff --stat` of the site and of `Tools/`. These changes are **uncommitted**. Do not list them again as findings; report them under "Uygulananlar".
+2. `<uygulanan_duzeltmeler>`: what the wrapper already applied **before** you ran, with deterministic fixers only, through `duzelt.py` (steps sapka, lint, bicim, belgeler, ciltler; never takvim): the sapka GÜVENLİ list on the chapters **and** on the voice maps and prompts, lint rules marked `duzelt` plus yasakli forms and defined name suffixes, bicim GÜVENLİ typesetting, and `ciltler.yml`. Its output gives per-step counts, a word-level diff (`[-old-]{+new+}`), the backup folder and an "ELLE BAKILACAKLAR" list; then `git diff --stat` of the site and of `Tools/`. The chain ran **before** these fixes, so a lint/bicim/sapka finding that appears in that diff is already fixed: do not list it again; report it under "Uygulananlar". These changes are **uncommitted**.
 3. `<bilinen>`: the known-items ledger (`Tools/bilinen.md`), written by the translator. Anything matching an entry there is known: collapse it to one line or skip it. If an entry no longer appears in the output, report it as progress.
 
 ## What you may do
@@ -94,7 +94,7 @@ Typesetting: quotes, italics, attribution, money. Findings already in the baseli
 - `bicim-taban` is a decision, not a report: never suggest regenerating it to hide findings.
 
 ### `[6/10] Sapka taramasi (KURU ...)`
-The GÜVENLİ part has **already been applied** to the chapters by the wrapper (see `<uygulanan_duzeltmeler>`); report only its count. `SÖZLÜKTE İKİ YAZIM` is real `VERİ`. `ELLE` sections are manual: only entries not in `<bilinen>` need reading. Known false-positive class: "ilmi" in the ELLE list catches the glossary name "Ayin İlmi".
+The GÜVENLİ part has **already been applied** to the chapters by the wrapper (`duzelt.py`) (see `<uygulanan_duzeltmeler>`); report only its count. `SÖZLÜKTE İKİ YAZIM` is real `VERİ`. `ELLE` sections are manual: only entries not in `<bilinen>` need reading. Known false-positive class: "ilmi" in the ELLE list catches the glossary name "Ayin İlmi".
 
 ### `[7/10] Terim tutarliligi` (toplu_denetle)
 
@@ -135,7 +135,7 @@ Checks that the per-chapter term dump still finds the terms the translator actua
 Start with **one line**: the chain's overall state this week (for example: "Temiz: 2 yeni bulgu, 41 şapka düzeltmesi uygulandı."). Then these headings, in this order, omitting any that are empty:
 
 1. **Önce bunlar**: test failures, section 0 markers, date or name errors, lost etiketle decisions, bicim HATA, anything in an unpublished chapter.
-2. **Uygulananlar**: from `<uygulanan_duzeltmeler>`: counts and touched files. End with: "Commit'lenmedi; `git diff` ile okuyun."
+2. **Uygulananlar**: from `<uygulanan_duzeltmeler>`: counts and touched files. End with: "Commit'lenmedi; `git diff` ile okuyun. Geri almak: `./calistir.sh duzelt --geri-al <yedek>`." (the backup folder is in `<uygulanan_duzeltmeler>`)
 3. **Metin düzeltmeleri**: `file:line — from → to — reason`. Propose wording only if you saw enough text.
 4. **Veri düzeltmeleri**: file, entry, change.
 5. **Bakılması gerekenler**: one line each, with the exact command.
@@ -158,4 +158,4 @@ Be terse. The translator knows the project.
 | Typesetting for one chapter | `python3 bicim_denetle.py <N>` |
 | Glossary lookup | `python3 sozluk_ara.py "<terim>"` |
 
-Commands for the translator only (cite, don't run): `./calistir.sh bolum [N]`, the sapka `--uygula` line, `python3 ceza_tara.py`.
+Commands for the translator only (cite, don't run): `./calistir.sh bolum [N]`, `./calistir.sh duzelt [adım] --uygula`, `./calistir.sh duzelt takvim`, `python3 ceza_tara.py`.

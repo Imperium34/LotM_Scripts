@@ -27,6 +27,7 @@
 ## Sky & Zodiac
 
 - **burç** — constellation (星座)
+- **yıldız** — star(s) (星辰); İngilizce çeviri "constellation" der, kaynakta yok; "burç" yazılmaz, "takımyıldız" yazılmaz _69_
 - **Ak Kırağı Burcu** — Frost constellation (冰霜星座)
 - **Bereket Burcu** — Bumper Harvest constellation (丰收星座)
 - **Gürleyen Burcu** — Thunderous constellation (雷霆星座)
@@ -56,7 +57,7 @@
 ### Evernight Church
 
 - **Ebedî Gece Tanrıçası** — Evernight Goddess (黑夜女神 / 黑夜之神)
-- **Gece** — Tanrıça'nın veçhesi olarak gece (黑夜); dua ve simgede büyük harf, ekler kesmeyle (Gece'nin, Gece'yi) _46_
+- **Gece** — Tanrıça'nın veçhesi olarak gece (黑夜); dua ve simgede büyük harf, ekler kesmeyle (Gece'nin, Gece'yi) _46_ {geniş}
 - **Ebedî Gece Kilisesi / Ebedî Gece Tanrıçası Kilisesi** — Evernight Church (黑夜女神教会)
   - Kilise = 教会 (kurum) / Katedral = 大教堂 (yapı)
 - **Azize Selena Katedrali** — Tingen HQ of the Evernight Church (圣赛琳娜教堂)
@@ -90,6 +91,7 @@
 
 - **Nehir ve Deniz Katedrali** — Fırtınalar Hakimi's cathedral (河海教堂)
 - **Fırtınalar Kitabı** — kadim bir kaynak metin (风暴之书)
+- **Ya Hâkim** — Storm above (风暴在上); Fırtına inananının yemini, Kadir-i Mutlak kiliselerinin İslamî kalıbı; 主啊 ile gelirse 'Ya Rab, ya Hâkim!' _8_ _47_
 
 ### God of Knowledge and Wisdom
 
@@ -97,7 +99,7 @@
 
 ### Demoness Sect
 
-- **İlk Olan** — the earliest (最初者); tarikatın Kadim Şeytaniçe'ye verdiği sıfat, tek tırnakla; 'Evvel' yazılmaz _66_
+- **İlk Olan** — the earliest (最初者); tarikatın Kadim Şerbânû'ya verdiği sıfat, tek tırnakla; 'Evvel' yazılmaz _66_
 - **Son Olan** — Ender (最终者); çiftin ikinci yarısı, tek tırnakla; 'Âhir' yazılmaz _66_
 
 ## Worship & Prayer
@@ -105,8 +107,9 @@
 - **ibadet** — Mass (弥撒); "ayin" 仪式'e ayrılı olduğu için kullanılamaz; özgül bir terim ("Missa", "Kudas") istenirse kilise sahneleri başlamadan seçilmeli _50_
 - **himaye** — bless, protection (庇佑); dua formülünde fiil (himaye etmek), gündelik dilde isim (ilahların himayesini yitirmek); 愿女神庇佑你 kalıbında fiil sabittir, yalnız hitap değişir: 'Ulu Ece / Tanrıça seni (sizi, bizi) himaye etsin' _47_
 - **inayet** — loving grace, favor (眷顾); dua kalıbında "Tanrıça'nın inayeti"; "himaye" 庇佑'e ayrılı olduğu için ayrı kelime _51_
-- **niyaz etmek / yalvarmak** — to pray for, beseech (祈求); Ayin ve dua kalıbında "X'in kudretini niyaz ediyorum", şimdiki zaman; Neil'ın dersinde de aynı fiil ("Fırtınalar Hâkimi'ne niyaz etmek"); bir insana yalvarırken 'yalvar-' (63 ¶34) _46_
+- **niyaz etmek / niyaz / yalvarmak** — to pray for, beseech (祈求); Ayin ve dua kalıbında "X'in kudretini niyaz ediyorum", şimdiki zaman; Neil'ın dersinde de aynı fiil ("Fırtınalar Hâkimi'ne niyaz etmek"); bir insana yalvarırken 'yalvar-' (63 ¶34) _46_
 - **Tanrı'ya minnettarım** — Thank God (感谢神); sıradan müminin adsız tanrıya şükranı; "şükür/hamd" Kadir-i Mutlak grubu kiliselerine ayrılı. _56_
+- **karşılık** — response (回应 / 响应); bir ilahın ya da Soytarı'nın niyaza verdiği karşılık, fiil 'karşılık ver-'; 回答 'cevap', 解答 'izah' _67_ {geniş}
 
 ---
 
@@ -124,12 +127,48 @@
 - **fani** — mortal (凡人); rakip okuma “ölümlü”; teyit bekliyor 53
 - **enerji seviyesi** — energy level (能量级别 / 能级); 'güç seviyesi' 力量 ile karışır, Mertebe ile karıştırılmaz _57_
 - **barındırmak** — to accommodate (容纳); Yegânelik ve Aşkın hasletleri için sabit fiil: 'Yegâneliği barındırmak'; sozluk.yml Melekler Beyi açıklamasındaki biçim _1125_
-- **beden, kalp ve ruh** — body, heart and soul (身、心、灵); rol yapmanın değdiği üçlü; 'zihin' 心灵'e, 'nefs' 精神'e ayrılı _57_ ← marjinal
-- **Seyirci hâli** — Spectator state (观众状态/“观众”的状态); 'durum' yazılmaz _59_
+- **beden, kalp ve ruh** — body, heart and soul (身、心、灵); rol yapmanın değdiği üçlü; 'zihin' 心灵'e, 'nefs' 精神'e ayrılı _57_ ← marjinal {geniş}
+- **Seyirci hâli** — Spectator state (观众状态/“观众”的状态/“观众”状态); 'durum' yazılmaz _59_
+- **fevkalade malzeme / fevkalade eşya** — extraordinary ingredients / items (超凡材料 / 超凡物品); İngilizce çeviri "Beyonder" der; 'Aşkın' yalnız 非凡 _69_
 - **Gizem Canlandırması** — Mystical Re-enactment (神秘重现); masalların gerçeğe dönüştüğü Gizem Avcısı kabiliyeti; 'canlandırma' hem temsil hem hayat vermek _1199_
 - **Ejder / ejderha** — Giant Dragon, Yol sembolü (巨龙); Seyirci Yolu'nun sembolü; LotM'de her ejder bir Seyirci ve Seyirci'nin mitik formu ejder olduğu için kozmik varlık ile yaratık aynıdır, ayrım anlamda değil üsluptadır: 'Ejder' sembol ve kozmik varlık, 'ejder' mistik anlatı ve kadim bilgide yaratık (Karanlık Çağ'ın ejderleri, iksir malzemesi), 'ejderha' gündelik konuşma ve şaka (Ejderhaları ve Devleri Koruma Derneği); rakip okuma 'Dev Ejder' _58_
 - **Fırtına** — Storm, Yol sembolü (风暴); Denizci Yolu'nun sembolü; Fırtınalar Hâkimi kalıbı, tekil _58_
-- **kaşlarının arası** — glabella (眉心); Basiret jestinin yeri _33_
+- **kaşlarının arası / kaşlarımın arası / kaşlarınızın arası / kaşların arası / kaş arası** — glabella (眉心); Basiret jestinin yeri _33_
+- **büyü icrası** — spellcasting (施法); fiil 'büyü icra et-' (施展); "ifa" Rol İfası'na ayrılı
+- **hokkabazlık** — stage magic (魔术); Mertebe adı Hokkabaz ile aynı kök, küçük harf
+- **baş numara** — signature skill (看家本领)
+- **hile** — trick (戏法); Hilebaz'ın kendi kabiliyetleri (Kaçış Hilesi); gösteri anlamında 'numara', deyimde (变戏法) 'el çabukluğu'; aldatma salahiyetleri 'hile' değil: 欺诈 Tedlis, 欺瞒 Tadlil; Hile Mürşidi bilinçli istisna; 565 ¶57 Hilebaz'ı Dolandırıcı ve Hokkabaz'a bağlar
+- **hokkabaz / hokkabazlık** — stage magician / stage magic (魔术师 / 魔术), sıradan anlamda; küçük harf; 'sihirbaz' ve 'sihirbazlık' yazılmaz, 'sihir' 魔法'ya ayrılı
+- **numara** — trick (戏法); Gözbağcı'nın kabiliyetleri (Kaçış Numarası) ve gösteri anlamında; 'hile' yazılmaz
+- **el çabukluğu** — sleight of hand (变戏法 / 变戏法般); deyim olarak; 'sihir gibi' yazılmaz
+- **kabiliyet** — ability (能力); 超凡能力 'fevkalade kabiliyet', 非凡能力 'Aşkın gücü' {geniş}
+- **büyü benzeri kabiliyet** — spell-like ability (类法术能力 / 类法术)
+- **kara büyücü** — dark warlock (黑巫师); küçük harf; 'karanlık' 黑暗'e ayrılı
+- **harikulade** — marvelous (神奇); seçim serbest (harikulade, inanılmaz, şaşırtıcı); büyü (法术) yanında 'büyülü', hiçbir yerde 'mucizevi' yazılmaz, 'mucize' 奇迹 salahiyetine ayrılı; Glacis'in "çok, çok, çok 神奇" şakası her yerde 'harikulade' (49, 53, 62) {geniş}
+
+## Beyonder Abilities
+
+- **Ateş Sıçrayışı** — Flaming Jump (火焰跳跃); 火焰 = Ateş salahiyeti
+- **Hava Mermisi** — Air Bullet (空气弹); bilinen istisna: 'Hava' 天气 salahiyetidir, 空气 için başka doğal sözcük yok
+- **Kâğıt Suret Bedeli** — Paper Figurine Substitute (纸人替身); 替身 'bedel', 'yedek' 备份'e ayrılı
+- **Ateşe Hükmetme** — Flame Controlling (操纵火焰)
+- **Yanılsama Yaratma** — Illusion Creation (制造幻觉); 'İmal' 制造 salahiyetine ayrılı
+- **Su Altında Nefes Alma** — Underwater Breathing (水下呼吸); bilinen istisna, 'Hava Mermisi' ile aynı
+- **Kemik Yumuşatma** — Bone Softening (骨骼软化)
+- **Kâğıttan Silah** — Drawing Paper As Weapons (抽纸为兵)
+- **Parlama** — Flash (闪光); 'ışıltı' 魔法的灵光'e ayrılı
+- **Kara Perde** — Black Curtain (黑幕)
+- **Gaz Nakli** — Gas Transfer (转移气体); 'Hasar Nakli' ile aynı fiil
+- **Gümbürtü** — Loud Bang (巨响)
+- **Buz Bağlatma** — Freeze (冰冻); el temasıyla ya da ışınla
+- **Elektrik Çarpması** — Electric Shock (电击)
+- **Sis Çöktürme** — Fog Making (造雾)
+- **Yel Estirme** — Gale (刮风); 'Rüzgâr' 风 salahiyetine ayrılı
+- **Tutuşturma** — Ignite (点火) {geniş; hariç: 点火红}
+- **Kaydırma Büyüsü** — Tripping Spell (摔倒术)
+- **Eşya Oynatma** — Object Driving (驱物)
+- **Kaçış Hilesi** — Escape Trick (逃脱戏法)
+- **kara büyücü** — dark warlock (黑巫师); 'karanlık' 黑暗'e ayrılı
 
 ## Spirits, Souls & Entities
 
@@ -137,14 +176,16 @@
 - **ruhanî varlık** — spirit body, varlık anlamında (灵体); insan bedeninin katmanı olan "Ruhanî Beden" ile karıştırılmaz
 - **habis ruh** — evil spirit (恶灵); "kötü ruh" gündelik kaldığı için elendi
 - **mevcudiyet** — existence, entity (神秘的存在/神秘存在/莫名存在/崩溃的存在/未知的存在/隐秘的存在/对应存在/对应的存在/那位存在/未知存在/危险存在/其他存在/另外的存在/不同存在/神灵的存在/类似存在/恐怖的存在/守序的存在/古老的存在); Sadece bilinmez/esrarengiz varlıklar için kullanılır; "varlık" ise daha genel anlam içindir _49_
-- **ışıltı** — büyünün bıraktığı ruhanî ışık (魔法的灵光 → "büyü ışıltısı"); "Hâle" canlının kendi ışımasına ayrılmıştır
-- **ruh göçü** — Transmigration (穿越)
+- **ışıltı** — sihrin bıraktığı ruhanî ışık (魔法的灵光 → "sihir ışıltısı"); muskanın kazandığı 灵光 de 'ışıltı'; "Hâle" canlının kendi ışımasına ve muskanın Hâle rengine ayrılmıştır _69_
+- **ruh göçü** — Transmigration (穿越) {hariç: 穿越回/穿越人员/穿越前}
 - **ruh göçmeni** — transmigrator (穿越者)
+- **ruh göçü kıdemlisi / kıdemli / ruh göçü** — transmigrator senior (穿越者前辈); Klein'ın Roselle için kullandığı 'kıdemlim' _4_
 - **ebedî uyku** — eternal slumber (永眠); Ebedi Zulmet Nehri'nin simgelediği ölümsüz uyku, Antigonus'un 永眠状态'i (1358, 1373–1375), 永眠的国度 = ebedî uykunun ülkesi; Ölüm Yolu'nun bölgesel adı Ebedî Uykucu (永眠者) ile aynı kök. Gündelik uyku 沉眠 = uyku / derin uyku (沉眠符咒 dahil), 'ebedî' almaz; ölüm örtmecesi 长眠 = son uyku / ölüm uykusu (173, 702, 1233) _754_
 - **ulak** — messenger (信使); Ruhanî Âlem'den çağrılan, mektup taşıyan varlık; çağırma duası için bkz. §XII _561_
 - **Ulak Hanım** — Miss Messenger (信使小姐); Klein'ın anlatıda Reinette Tinekerr'e verdiği ad _690_
 - **Görünmez Hizmetkâr** — Invisible Servant (无形仆役); Bernadette'in çağırdığı ruhanî hizmetkâr; 无形 sade 'görünmez' ('Ketm' 隐匿'ye, 'Sırrakadem' 隐秘'ye ayrılı) _1300_
-- **fısıltı** — whisper, murmur (耳语/低语); İhtiyar Neil'in 'bilinmez mevcudiyetlerin fısıltıları'; "hezeyan" 呓语'e ayrılı _64_
+- **fısıltı / fısıldamak** — whisper, murmur (耳语/低语/呢喃); İhtiyar Neil'in 'bilinmez mevcudiyetlerin fısıltıları'; gri sise çıkışta duyulan 'haykırışlar ve fısıltılar'; "hezeyan" 呓语'e ayrılı _64_ {hariç: 低语道/低语了/低语着/皱眉低语/无声低语/愕然低语/喃喃低语}
+- **haykırış / haykırmak** — roar (嘶喊); gri sise çıkışta duyulan ses, 'fısıltı' ile çift _67_
 
 ## Divination
 
@@ -155,28 +196,47 @@
 - **soru soran** — divination requester, querent, inquirer (求卜者 / 询问者); kâhine kehanet için başvuran kişi; kulüpte ücret ödeyen aynı kişinin iş adı "müşteri" _49_ (mevcut satırın yerine)
 - **işaret / vahiy** — revelation (启示); işaret: kehanette soru soranın ya da kâhinin, Ruhaniyet aracılığıyla aldığı ve yorumlanması gereken gündelik, düşük Mertebe mesajı; vahiy: teolojik dil, ilahlardan ve ruhlardan gelen, kutsal metin ağırlığındaki mesaj
 - **el okuma** — palm-reading (手相 / 看手相); "el falı" kullanılmaz, "fal" 算命'e ayrılı _54_
-- **yüz okuma** — face-reading (面相); el okumayla eş biçimli; "fizyonomi" kullanılmaz _54_
-- **saat yönünde** — clockwise (顺时针)
-- **saat yönünün tersine** — counter-clockwise (逆时针); sarkaç yön formülü: saat yönünde iyi, tersine kötü, hiç kımıldamıyorsa ne iyi ne kötü _40_
+- **yüz okuma** — face-reading (面相); el okumayla eş biçimli; "fizyonomi" kullanılmaz _54_ {hariç: 后面相关}
+- **saat yönünde / saat yönü** — clockwise (顺时针)
+- **saat yönünün tersine / saat yönünün tersi** — counter-clockwise (逆时针); sarkaç yön formülü: saat yönünde iyi, tersine kötü, hiç kımıldamıyorsa ne iyi ne kötü _40_
 - **yaşanmışlık hissi** — déjà vu (似曾相识 / "似乎在哪里见过"); "déjà vu" ve "tanıdıklık hissi" kullanılmaz _44_
 - **üfürükçü** — psychic charlatan (神棍); Klein.md'de kurulu _56_
 
 ## Ritual & Incantation
 
 - **efsun** — incantation (咒文; "tılsım" Charm'a rezerve, kullanılmaz)
-- **tarif** — description (描述); efsunun muhatabı tanımlayan kısmı; 'işaret edici tarif' (指向性描述); Roselle'in günlüğündeki anlatım ve davetiyedeki tarif de 'tarif' _57_
-- **işaret etmek** — to direct at (指向); efsunun tarifinin muhatabı göstermesi; isim 'işaret' 启示'e ayrılı _57_
+- **büyü** — spell (法术); tek tek yapılan büyü, sayılabilir: su büyüsü, büyü bahşetmek; fiil 'büyü icra et-' (施展法术), "ifa" Rol İfası'na ayrılı; "sihirbaz" yazılmaz _65_
+- **sihir** — magic (魔法); genel büyü sanatı ve hâdisesi: sihrin kudreti, sihir Ayini; sıfatı 'sihirli' (魔镜 → Sihirli Ayna) _22_
+- **sihir Ayini** — magic ritual (魔法仪式); Ayin İlmi (仪式魔法) ile karıştırılmaz _22_
+- **büyücülük** — witchcraft (巫术); Büyücü (巫师) ile aynı kök; "cadılık" kullanılmaz, Cadı 女巫'ya ayrılı _28_
+- **el çabukluğu** — conjuring trick (变戏法), gündelik deyim; Mertebe adlarına ('Hokkabaz' 魔术师, 'Hilebaz' 戏法大师) bağlanmaz _27_
+- **tarif** — description (描述); efsunun muhatabı tanımlayan kısmı; 'işaret edici tarif' (指向性描述); Roselle'in günlüğündeki anlatım ve davetiyedeki tarif de 'tarif' _57_ {geniş}
+- **işaret etmek** — to direct at (指向); efsunun tarifinin muhatabı göstermesi; isim 'işaret' 启示'e ayrılı _57_ {geniş}
 - **satır** — line of an incantation's description (段描述); 'kısım' Ayinin üç kısmına ayrılı _58_
-- **istek** — request (请求); Ayinle muhataba ulaşan dilek; 'niyaz' 祈求'e ayrılı _58_
+- **istek** — request (请求); Ayinle muhataba ulaşan dilek; 'niyaz' 祈求'e ayrılı _58_ {geniş}
 - **sunu** — offering part of a ritual (祭祀部分); Ayin İlmi'nin üç kısmının ilki; 'kurban' 祭祀 salahiyetine ayrılı; 51 ile teyit bekliyor _57_
 - **ruhanî ortam** — spiritual environment (灵性环境); Ayin için kurulan kapalı ortam; 51 ile teyit _60_
 - **ışık küresi** — sphere of light (光球); Tefekküre girerken zihinde canlandırılan nesne
 - **Hulûl Ayini** — Soulfall Ritual (降灵仪式); bir ruhun Ruhanî Âlem'den geçip başkasının bedenine girdiği ayin (534) _534_
-- **Roselle'in Rüyada Tebliğ Usulü** — Roselle's Dream Spell (罗塞尔托梦术); 托梦 = rüyada haber iletmek; 术 'usul' ('büyü' 魔法'e ayrılı) _536_
+- **Roselle'in Rüyada Tebliğ Usulü** — Roselle's Dream Spell (罗塞尔托梦术); 托梦 = rüyada haber iletmek; 术 'usul' ('sihir' 魔法'e ayrılı) _536_
 - **takdis efsunu** — sanctification incantation (圣化咒文); gümüş bıçağı takdis eden Hermes Dili efsunu _64_
 - **kutsal hançer** — sacred blade (圣刃); takdis edilmiş gümüş bıçağın adı, tek tırnakla _64_
 - **Ruhaniyet duvarı** — spirituality wall (灵性之墙/灵性的墙壁); 'kapalı Ruhaniyet duvarı' (密封的灵性之墙) _64_
 - **efsun okumak / efsun** — to recite an incantation (诵念); "terennüm" 吟唱'e ayrılı, kullanılmaz _64_
+- **gümüş bıçak** — silver knife (银制小刀); Ayin duvarını kuran takdisli bıçak, 'gümüş Ayin hançeri' ile aynı nesne; 'çakı' değil _51_
+- **Aydınlatma Büyüsü** — Illumination (照明术); "Işık" salahiyete ayrılı, büyük harfle büyü adına girmez
+- **Ot Ayıklama Büyüsü** — Weeding (除草术)
+- **Şer Kovma Büyüsü** — Exorcism (驱邪术)
+- **Ses Yükseltme Büyüsü** — Amplification (扩音术)
+- **Şimşek Büyüsü** — Lightning (闪电术); 'Sâika' 雷霆'e ayrılı
+- **Yel Büyüsü** — Wind-making (造风术); "Rüzgâr" büyük harfle salahiyet gibi okunur, ad içinde kullanılmaz
+- **Kuvvet Alanı Eli** — Hand of Force Field (力场之手); "Kudret" 力量'e ayrılı
+- **büyü icra etmek / büyü icrası / icra etmek** — to cast a spell / spellcasting (施展 / 施法); 'ifa' Rol İfası'na ayrılı
+- **Ruhaniyet akıtmak** — to pour spirituality into (灌注灵性); 'aşılamak' Aşılama (嫁接) salahiyetine ayrılı
+- **kudret kaynağı** — energy source (力量来源); muskanın gücünü aldığı ilah / yıldız / malzeme halkası _69_
+- **ruhanî sayı** — Path Number (灵数) _69_
+- **büyü alameti** — spell's characteristic (法术标识); efsun ve sembolün yanında muskaya oyulan işaret; "işaret" yazılmaz _69_
+- **oymak / oyulmak / oyma** — carve (雕刻); muskaya efsun ve sembol oymak; 镂空 'oymalı'; "kazı-" yazılmaz: 'kazımak' 34'teki 挖掘 satırına ayrılı (Yankı #41) _69_ _84_
 
 ## Symbols
 
@@ -231,16 +291,19 @@
 
 - **gri sis** — grey fog (灰雾); öbek bölünmez, "gri bir sis" yazılmaz; "grimsi beyaz sis" ayrı öbek _55_
 - **grimsi beyaz sis** — grayish-white fog (灰白雾气); "gri sis" ayrı öbek; teyit bekliyor 53
-- **koyu kızıl yıldız** — crimson star (深红星辰); gri sisteki yıldızlar; 'koyu' düşmez
-- **koyu kızıllık / koyu kızıl** — crimson (深红); üyeleri çağıran ışık, sıfat olarak 'koyu kızıl ışık / parıltı'; 'koyu' düşmez
+- **koyu kızıllık / koyu kızıl** — crimson (深红); üyeleri çağıran ışık, sıfat olarak 'koyu kızıl ışık / parıltı'; 'koyu' düşmez {hariç: 深红血}
 - **bağ** — connection (联系); gri sisle koyu kızıl yıldızlar arasındaki görünmez bağ; bu bağlamda 'irtibat' değil
 - **suret / siluet** — figure (身影); gri siste beliren üyeler. Gri sis dışında, görülen şey bedenin biçimi olduğunda. Kişinin yerine geçiyorsa (他的身影消失了) ad düşer, kişi yazılır: "köşede gözden kayboldu"
-- **hayalî** — illusory (虚幻); gri sisteki suretler, ışık ve burçlar; 'vehmî' değil
+- **hayalî** — illusory (虚幻); gri sisteki suretler, ışık ve burçlar; 'vehmî' değil {geniş}
 - **Şeref Makamı / başköşe** — Seat of Honor (上首); gri sis salonunda Soytarı'nın yeri 'Şeref Makamı', başka yerlerde 'başköşe'; ek kesmesiz: 'Şeref Makamına'
 - **alacalı uzun masa** — Tarot toplantılarının masası; her geçişte aynı (斑驳长桌)
 - **uzun tunç masa** — long bronze table (青铜长桌); "tunç uzun masa" ve "bronz" yazılmaz; 'alacalı uzun masa' (斑驳长桌) ile aynı masa
 - **yüksek arkalıklı sandalye / sandalye** — high-back chair (高背椅/高背座椅); gri sis salonunun sandalyeleri; arkalıklarında üyenin Yol sembolü belirir; 'koltuk' salona ev rahatlığı katar, bu bağlamda kullanılmaz
 - **şatafatlı giysiler, görkemli bir başlık** — Fool kartı tasviri (愚者 kartı: 穿华丽衣物、戴绚烂头饰)
+- **görüntü** — scene (画面); niyaz edenin gri siste görülen hâli; 'sahne' ve 'manzara' değil _67_ {geniş}
+- **gri sis dünyası** — world of the gray fog (灰雾世界 / 灰雾的世界); "gri sis âlemi" yazılmaz _67_
+- **grimsi beyaz sis** — grayish-white fog (灰白雾气 / 灰白的雾气); "gri sis" ayrı öbek _53_
+- **koyu kızıl yıldız** — crimson star (深红星辰 / 深红“星辰” / “深红”星辰); gri sisteki yıldızlar; 'koyu' düşmez; tırnaksız _67_
 
 ## Gatherings
 
@@ -267,9 +330,9 @@
 - **Sezar** — Caesar (凯撒); Roselle'in unvanı ("İmparator Sezar") ve Sezar Limanı; İngilizce ad kuralının istisnası, "Caesar" yazılmaz _56_
 - **Buharın Oğlu** — Son of the Steam (蒸汽之子); Roselle'e verilen ad; tırnaksız _59_
 - **İmparator Roselle'in günlükleri / Roselle'in günlüğü** — Emperor Roselle's diaries (罗塞尔日记/罗塞尔的日记); Soytarı'nın toplantıdaki görevinde tekil: 'Roselle Gustav'ın gizli günlüğü'
-- **sayfa** — page (页); Roselle'in günlüğünün sayfaları, kâğıt elde tutulurken ya da çevrilirken de 'sayfa' (20, 21, 34, 35, 59); Klein'ın kendi not kâğıtları 'yaprak' (57) _20_
+- **sayfa** — page (页); Roselle'in günlüğünün sayfaları, kâğıt elde tutulurken ya da çevrilirken de 'sayfa' (20, 21, 34, 35, 59); Klein'ın kendi not kâğıtları 'yaprak' (57) _20_ {geniş}
 - **Roselle Hattı** — "Roselle Line/Roselle Script (罗塞尔秘文); " Alger's term for Roselle Gustav's undeciphered private cipher
-- **Bay Zaratul** — Mr. Zaratul (查拉图先生/查拉图); Roselle'e 'rol yapmak'tan söz eden esrarengiz adam; 'Zât' eklenmez _59_
+- **Bay Zaratul** — Mr. Zaratul (查拉图先生); Roselle'e 'rol yapmak'tan söz eden esrarengiz adam; 'Zât' eklenmez _59_
 - **Grimm** — Grimm (格林); Roselle'in gemi arkadaşı _59_
 - **Edwards** — Edwards (爱德华兹); Roselle'in gemi arkadaşı _59_
 - **Matilda** — Matilda (玛蒂尔达); Abel ailesinden, Roselle'in nişanlısı; 'Matilda Hanım' _59_
@@ -287,9 +350,10 @@
 - **Şaman Kral Klarman** — Shaman King Klarman (卡拉曼巫王)
 - **Jacob** — Jacob (雅各); Dördüncü Çağ'ın kadim adlarından; _60_
 - **Zaman Meleği** — Angel of Time (时天使); Amon'un melek unvanı _466_
-- **Hilekârlık İlahı** — God of Deceit (欺诈之神); Amon'un unvanı; sozluk.yml'deki "Hilekârlık ve Aldatmaca İlahı"nın parçası _1156_
-- **Aldatmaca İlahı** — God of Mischief (恶作剧之神); Amon'un unvanı; aynı birleşik unvanın parçası _1063_
-- **Trissychik** — (特莉丝奇克); Şeytaniçeler tarikatının Trissy'ye verdiği ad (Trissy + 奇克, Kadim Şeytaniçe'nin gerçek adından); İng. çeviri 'Trissy Cheek' der, 'Cheek' İngilizce kelime gibi okunduğu için alınmadı
+- **Tedlis İlahı** — God of Deceit (欺诈之神); Amon'un unvanı; 欺诈 Tedlis salahiyetidir ve unvanda geçtiği için unvan da onu taşır (krş. Harp); sozluk.yml'deki "Tedlis ve Muziplik İlahı"nın parçası _1156_
+- **Kurnazlık İlahı** — God of Trickery (狡诈之神); Amon'un unvanı; Türkçede Loki'nin unvanıyla aynı kelime; 'hilekârlık' kullanılmaz _1063_
+- **Muziplik İlahı** — God of Mischief (恶作剧之神); Amon'un unvanı; 'yalnızca eğlence için' yapılan şaka, kayıt farkı kaynaktandır, eşitlenmez; 'aldatmaca' Tedlis ile aynı anlam alanına düşer _1063_
+- **Trissychik** — (特莉丝奇克); Şerbânûlar tarikatının Trissy'ye verdiği ad (Trissy + 奇克, Kadim Şerbânû'nun gerçek adından); İng. çeviri 'Trissy Cheek' der, 'Cheek' İngilizce kelime gibi okunduğu için alınmadı
 
 ## Royalty & Historical Figures
 
@@ -314,7 +378,7 @@
 - **Ikanser Bernard** — (伊康瑟); Makine Külli Şuuru
 - **Lanevus** — Lanevus (兰尔乌斯); demir madeni dolandırıcısı, Kapkaççı Yolu Mertebe 8 Dolandırıcı _62_
 - **Megose** — Megose (梅高欧丝); Lanevus'un nişanlısı, Christina'nın yeğeni _116_
-- **Hood Eugen** — Hood Eugen (胡德·欧根); Ruhiyat Simyagerleri'nden Mertebe 7 Ruh Hekimi, tımarhanede _175_
+- **Hood Eugen** — Hood Eugen (胡德·欧根); Ruhiyat Simyagerleri'nden Mertebe 7 Gönül Hekimi, tımarhanede _175_
 - **Flegrea** — Flegrea (弗雷格拉); Klein 57'de önce yanlış duyar ('Frygrea' 费来格拉, 'Feygrea' 费雷格拉), sonra doğru biçimi yazar _32_
 - **Antigonus ailesinin el yazması / el yazması** — Antigonus family's diary / notebook (安提哥努斯家族笔记)
 - **Ray Bieber** — Ray Bieber (瑞尔·比伯); Antigonus ailesinin el yazmasını elinde bulunduran adam; ek: Bieber'ın _46_
@@ -362,7 +426,7 @@
 
 ## Cities, Ports & Landmarks
 
-- **Tingen Şehri** — City of Tingen (廷根市)
+- **Tingen Şehri / Tingen** — City of Tingen (廷根市)
 - **Tussock Nehri** — Tussock River (塔索克河)
 - **Constant Şehri** — Ortadeniz Kontluğu'nda bir şehir, Welch McGovern'in memleketi (康斯顿城)
 - **Rüzgâr Şehri** — "Wind City," Constant Şehri'nin lakabı; kömür-çelik sanayisiyle Loen'in en büyük üç şehrinden biri (风城)
@@ -374,6 +438,9 @@
 - **Beyaz Akçaağaç Sarayı** — White Maple Palace (白枫宫; Roselle'in suikaste kurban gittiği yer)
 - **Zümrüt Şehir** — Emerald City (翡翠城); Bernadette'in yurdu; Oz göndermesi, Türkçe Oz çevirilerindeki ad _1238_
 - **Rorsted Takımadaları** — Rorsted Archipelago (罗思德群岛); Sonia Denizi'nde bir müstemleke _64_
+- **Üniversiteler Şehri** — city of universities (大学之城); Tingen'in lakabı, tırnaksız _67_
+- **Cömertlik Şehri** — City of Generosity (慷慨之城); Rorsted Takımadaları'nın merkezinin lakabı (sonradan adıyla Bayam), tırnaksız _67_
+- **Kırmızı Tiyatro** — Red Cabaret (红剧场); İng. çeviri "Red Cabaret" der, 剧场 tiyatrodur; renk Kızıl Ay'a ayrılı sözcükten ayrı tutuldu _67_
 
 ## Forsaken Land of the Gods
 
@@ -496,9 +563,9 @@
 - **Kraliyet Ordusu** — Royal Army (皇家陆军; "İmparatorluk Ordusu" DEĞİL — Loen bir krallıktır)
 - **Backlund Topçu Akademisi** — Backlund Artillery Institute (贝克兰德火炮研究院)
 - **Pritz Denizcilik Akademisi** — Pritz Maritime/Shipbuilding Institute (普利兹船舶研究院)
-- **mebus** — member of parliament (议员); Loen parlamentosunun üyesi; Hayat Ekolü'nün 议员'i 'Aza' kalır; teyit bekliyor, öteki okuma 'milletvekili' _61_
+- **mebus** — member of parliament (议员); Loen parlamentosunun üyesi; Hayat Ekolü'nün 议员'i 'Aza' kalır; 下院议员 de 'mebus' (Meclis-i Mebusan karşılığı), 'parlamento azası' ve 'milletvekili' yazılmaz _8_ _61_
 - **imtihanla seçim / imtihan** — exam selection (考试筛选); Soytarı'nın ikinci toplantıdaki önerisi; 'Memuriyet imtihanı nizamı' ile aynı kök; 36 ile teyit bekliyor _61_
-- **idari makamla siyasi makamın ayrılması** — separation of civil and political offices (事务政务分离); Soytarı'nın aynı önerisi; 36 ile teyit bekliyor _61_
+- **idari makamla siyasi makamın birbirinden ayrılması** — separation of civil and political offices (事务政务分离); Soytarı'nın aynı önerisi; 36 ile teyit bekliyor _61_
 
 ### Civil Offices
 
@@ -546,7 +613,7 @@
 - **özel dedektif** — private detective (私家侦探)
 - **nezarethane** — temporary holding cell (临时关押室)
 - **dava evrakı** — case file/materials (案件材料/案件资料)
-- **adam kaçıran / kaçıran** — kidnapper (绑匪)
+- **adam kaçıran / kaçıran** — kidnapper (绑匪) {hariç: 绑匪所在}
 - **dahilî yakalama emri** — internal warrant of arrest (内部通缉令); "arama emri" kullanılmaz _46_
 
 ## Official Beyonder Teams
@@ -556,6 +623,7 @@
 - **Beşinci Birim** — Makine Külli Şuuru'nun Tingen ekibi; üniversite bölgesi ve banliyölerden sorumlu (第五组/组)
 - **Altıncı Birim** — Salahiyetli Tecziyeciler'in Tingen ekibi; rıhtım, doğu ve güney bölgelerinden sorumlu (第六组)
 - **müfreze / bölük** — Nighthawk squad (小队; bir kaptanın idaresindeki en küçük birim); şehre göre ayrılır: Gece Şahinleri ve kiliseler 'müfreze', Gümüş Şehir 'bölük'. Denetim şehri ayırt edemez; ayrım ses haritasındadır
+- **Gece Şahinleri müfrezesi / Gece Şahinleri / Gece Şahini** — Nighthawk squad (值夜者小队); bağlam açıksa 'müfreze' düşebilir (22, 44)
 - **Kaptan / bölükbaşı** — squad captain (队长); şehre göre ayrılır: Gece Şahinleri 'Kaptan' (Dunn), Gümüş Şehir 'bölükbaşı'. Gümüş Şehir'de sıralama: bölükbaşı → Aksakal → Başbuğ
   - **aslî üye** — formal member (正式成员/正式队员)
   - **aday üye** — quasi-member (准成员); Klein'ın Gece Şahinleri müfrezesindeki statüsü; 'aslî üye' karşıtı _62_
@@ -567,10 +635,11 @@
 - **istirahat odası** — break room (休息室); nöbetten çıkanların uyuduğu oda _50_
 - **Silahhane** — Armory (武器库)
 - **bölme** — ofisin ön salonunu ayıran bölme (隔断)
-- **ödenek** — müfreze bütçesi, funds (经费) _47_
+- **ödenek** — müfreze bütçesi, funds (经费) _47_ {geniş}
 - **üst kademe** — upper echelons (高层); 'Mertebe' değil _66_
 - **ek ödenek** — additional reimbursement (额外补贴) _66_
 - **danışman** — consultant (顾问) _50_
+- **gizli teşkilat** — secret organization (神秘组织); iç seste tek tırnakla; "örgüt" yazılmaz _45_
 - **kanun dışı teşkilat** — illegal organization (非法组织); Gece Şahinleri belgelerinin bir sınıfı, iç seste tek tırnakla; "örgüt" yazılmaz _61_
 
 ## Work, Merit & Commissions
@@ -690,7 +759,7 @@
 
 - **Kadim Feysac** — Ancient Feysac (古弗萨克语)
   - **Kadim Feysac Dili** — 古弗萨克文 (yazı/lisan bağlamı; krş. Hermes Dili)
-- **Hermes Dili** — Hermes Language (赫密斯语)
+- **Hermes Dili / Hermes yazısı** — Hermes Language (赫密斯语 / 赫密斯文)
 - **Kadim Hermes Dili** — Ancient Hermes (古赫密斯语); tabiattan doğmuş, dolaysız ama korumasız dil; Hermes Dili onun ıslah edilmiş hâli; Tılsım girdisinin düzyazısı "antik Hermesçe" der, teyit edilmeli _51_
 - **Kadim Ejder Dili** — Ancient Dragonese (古龙语); "ejder" Ejderkanı ile aynı kök _51_
 - **Kadim Elf Dili** — Ancient Elvish (古精灵语); "elf" ırk adıyla tutarlı _51_
@@ -712,8 +781,8 @@
 - **Klein'cığım**: 小克莱恩, büyüklerin Klein'a sevgi hitabı (Wendy 4 ¶54; 37 ¶15) _4_
 - **gecenin şairi**: 黑夜诗人, anlatıcının Leonard için tek seferlik sıfatı (945 ¶32); küçük harf, Geceyarısı Şairi Mertebe adından ve Tanrıça'nın 'Gece'sinden ayrı _945_
 - **Esen kalın**: 祝(您)安好, Klein'ın Azik'e mektup kapanışı (1124, 1275); 1253'te düşmanlarına alaylı selam ('Sizi buldum, esen kalın.') ve bölüm başlığı 'Esen Kalın'. Cattleya'nın 望安好 (895) bağlamına göre _1124_
-- **Tünaydın / Merhaba** — good afternoon / hello (下午好 / 你好) _48–49_
-- **Üstad** — master, a seer addressed with reverence (大师); Joyce'un 'Üstad Moretti'si; Mertebe adlarındaki 大师 bu kayda girmez _63_
+- **Tünaydın / Merhaba** — good afternoon / hello (下午好 / 你好) _48–49_ {hariç: 你好像/你好好}
+- **Üstad** — master, a seer addressed with reverence (大师); Joyce'un 'Üstad Moretti'si; Mertebe adlarındaki 大师 bu kayda girmez _63_ {geniş}
 - **Piskopos Hazretleri** — Lord Bishop (主教大人); İng. çeviri "My Lord" der; Alger'in kilise rütbesi _64_
 
 ## Period Vocabulary
@@ -723,15 +792,20 @@
 - **sanal arkadaşlık sitesi** — online dating/friend site (交友平台)
 - **hisse senedi** — shares (股票) _62_
 - **devlet tahvili** — national bonds (国家债券); Roselle'in icadı _62_
-- **tavsiye** — suggestion (建议; kehanet bağlamında 意见 de) _62_
+- **tavsiye** — suggestion (建议; kehanet bağlamında 意见 de) _62_ {geniş}
 - **ilaç** — medicine (药剂); 'iksir' yalnızca 魔药 için _62_
 - **uçurum** — abyss, chasm, sıradan anlam (深渊); Mertebe adı 'Hâviye' ile karıştırılmaz _62_
 - **korkulu rüya / kâbus** — nightmare (噩梦) _63_
-- **badire** — ordeal, calamity (厄难), yalnızca sıradan anlamda; Ebedî Gece'nin tazim ismindeki ve Şeamet Süvarisi'ndeki 厄难 'Şeamet' kalır _63_
 - **şuuraltı** — subconscious (潜意识); Ruhiyat sicilindeki biçim; "bilinçaltı" kullanılmaz _63_
-- **teşkilat** — organization (组织/隐秘组织); "örgüt" yazılmaz _64_
+- **teşkilat** — organization (组织/隐秘组织); "örgüt" yazılmaz _64_ {hariç: 组织了下语言/组织着语言}
 - **karaltı** — (人影); Kimliği bilinmeyen, uzak ya da karanlıktaki insan biçimi. 不见人影 / 没有人影 kalıbında ad kullanılmaz: "kimsecikler yok"
-- **hatlar** — (轮廓); Yalnız çoğul. 'Şekil' ve 'kontur' yazılmaz.
+- **hatlar / hatlı** — (轮廓); Yalnız çoğul. 'Şekil' ve 'kontur' yazılmaz.
+- **esrarengiz** — mysterious (神秘); anlatıda; tazim isminde 'esrarlı'; "gizemli" kullanılmaz _66_ {geniş}
+- **esrar âlemi / esrarî âlem / İlm-i Esrar** — the mystical realm (神秘领域 / 神秘世界 / 神秘知识); temas edilen, bulaşılan âlem 'esrar âlemi'; çalışılan saha ve bilgi anlamında (神秘知识, 在神秘领域多练习) 'İlm-i Esrar'; "mistisizm", "gizem dünyası" yazılmaz _9_ _21_
+- **madde dünyası / maddi dünya** — material world (物质的世界 / 物质世界) _66_
+- **hokkabazlık** — stage magic, magic trick (魔术 / 变魔术); Mertebe adı Hokkabaz ile aynı kök, küçük harf _27_
+- **Sanal Arkadaşlık Sihri** — friend-making magic (交友魔法); Klein'ın şans artırma ayinine taktığı ad, tek tırnakla; 7'deki 'sanal arkadaşlık sitesi' (交友平台) yankısı _31_
+- **badire** — ordeal, calamity (厄难), yalnızca sıradan anlamda; Ebedî Gece'nin tazim ismindeki ve Şeamet Süvarisi'ndeki 厄难 'Şeamet' kalır; Klein'ın aklı sıradan anlamdan tazim ismine geçtiği yerde sıradan anlam da 'şeamet' yazılır _63_ _69_
 
 ---
 
@@ -740,7 +814,8 @@
 ## Clothing & Accessories
 
 - **takım elbise / resmî kıyafet / resmî takım / ceket** — formal suit (正装) _44_
-- **ceket** — jacket (外套)
+- **frak** — tuxedo (燕尾服); Klein'ın kuyruklu ceketi; İng. çeviri "tuxedo" der, "smokin" yazılmaz; "takım elbise" 正装'a ayrılıdır _24_ _68_
+- **ceket** — jacket, coat (外套); 风衣 'palto'ya ayrılı, ikisi karışmasın (26, 49)
 - **palto** — trench coat (风衣)
 - **papyon** — bow tie (领结) _44_
 - **yarım boy ipek silindir şapka** — half-height silk top hat (半高丝绸礼帽); Klein'ın alametifarikası _44_
@@ -748,7 +823,7 @@
 - **keçe şapka** — felt hat (毡帽)
 - **tüllü şapka** — veiled hat (纱帽); "peçe" ve "duvak" kullanılmaz _54_
 - **sabah elbisesi / gece elbisesi** — morning gown / evening dress (晨礼服 / 晚礼服); "sabahlık" ev giysisidir, kullanılmaz _50_
-- **kol ağzı** — sleeve cuff (袖口); Klein sarı kristal sarkacını sol kol ağzının içinde taşır _48_
+- **kol ağzı** — sleeve cuff (袖口); Klein sarı kristal sarkacını sol kol ağzının içinde taşır _48_ {geniş}
 - **üyelik kol düğmesi / kol düğme** — membership cufflink (会员袖钉 / 袖钉); tekil; "kol düğme" biçimi "kol düğmeniz"i de yakalar _48_
 - **monokl** — monocle (单片眼镜)
 - **cep saati / saat** — pocket watch (怀表; babadan yadigâr, gümüş asma yaprağı motifli)
@@ -756,6 +831,7 @@
 - **gümüş kakmalı siyah baston** — silver-inlaid black cane (镶银的黑色手杖); Klein'ın bastonu; 44'te 镶银 başka kelimeyle verildiyse o geçerli _50_
 - **Demirkalp ağacı** — Iron-heart wood; heaviest/hardest cane wood, most expensive (铁心木)
 - **beyaz boli ağacı** — White Boli wood; silver-inlaid cane material (白博利树)
+- **gümüş takı** — silver accessories (银饰) _69_
 
 ## Weapons
 
@@ -765,19 +841,21 @@
 
 ## Home & Office
 
-- **gaz lambası** — gas lamp (煤气灯)
+- **gaz lambası / lamba** — gas lamp (煤气灯)
 - **gaz saati** — gas meter (瓦斯计费器; madeni parayla çalışır)
 - **şömine** — fireplace (壁炉); İng. çeviri "chimney" der, "baca" değil
+- **tekli koltuk** — armchair (单人沙发)
 - **kanepe** — sofa (沙发); "sofa" Türkçede evin orta salonudur, kullanılmaz _54_
-- **koltuk** — seat (座椅); İng. çeviri "throne" der; 座椅 için "taht" kullanılmaz; gri sis salonundaki 座椅 'sandalye'dir _55_
+- **koltuk** — seat (座椅); İng. çeviri "throne" der; 座椅 için "taht" kullanılmaz; gri sis salonundaki 座椅 'sandalye'dir _55_ {geniş}
 - **daktilo** — typewriter; saf mekanik yazı aleti, Akerson Şirketi'nin 1346 modeli Loen bürolarında yaygın (打字机)
-- **dolma kalem** — fountain pen (钢笔); kısa biçim 'kalem'. 1. bölümde kapaklı (笔帽) tarif edilir; mürekkebe batırma imgesi eklenmez.
+- **dolma kalem / kalem** — fountain pen (钢笔); kısa biçim 'kalem'. 1. bölümde kapaklı (笔帽) tarif edilir; mürekkebe batırma imgesi eklenmez.
 - **mühür / mühürlemek** — stamp (印章/盖章)
 - **arma** — crest, coat of arms (纹章); "amblem" stays reserved for 徽 (Karanlık Mukaddesat Amblemi); "logo" is not used _52_
 - **dişli / çark** — gear (齿轮); "çark" dinî/kurumsal bağlama (Buhar ve Çarkların İlahı) ayrılı onun dışında dişli _56_
 - **yedi telli lir** — seven-stringed lyre; İng. çeviri "guitar" der, yanlış (七弦琴)
 - **sahaf tezgâhı** — secondhand book stall (旧书摊)
 - **hesap pusulası / borç** — bill (账单); İng. çeviri "IOU" der, yanlış _50_
+- **cumba** — oriel window (凸肚窗); Klein'ın odasının çıkma penceresi _67_
 
 ## Divination Tools
 
@@ -799,6 +877,7 @@
 - **Kutsal Gece Tozu** — Holy Night Powder (圣夜粉); Ayin için temiz ruhanî ortam kuran toz; 46'da adı geçmeden "bir tutam toz" olarak kullanıldı, ad 51'de konuyor _51_
 - **dolunay yağı** — Full Moon Essence Oil (满月精油); Ayin'de mumlara damlatılan hazırlanmış uçucu yağ; özel ad, tırnaksız; "esans" Amantha gibi damıtılmış karışımlara ayrılı _51_
 - **uçucu yağ** — essential oil (精油); dolunay yağı kalıbı; damıtılmış olsa da 精油 'esans' değil _60_
+- **gece vanilyası** — night vanilla (夜香草); Amantha karışımındaki ot _68_
 - **Amantha** — Hermesçe "sükûnet"; gece vanilyası, uyku çiçeği, papatyadan damıtılmış sakinleştirici esans, Daly'nin tarifi (安曼达/'Amantha')
 - **mehtap çiçeği** — moon flower (月亮花); Tanrıça'nın sevdiği, Kızıl Ay'a ait sayılan bitki; "ay çiçeği" günebakan diye okunduğu için kullanılmaz _51_
 - **mehtap çiçeği mumu** — Moon Flower Candle (月亮花蜡烛); Ayin malzemesi, tırnaksız _58_
@@ -810,8 +889,13 @@
 - **kaya gülü** — rock-rose (岩玫瑰); Ayin uçucu yağının otu; öteki okuma 'laden' _64_
 - **adak** — sacrificial items (祭品); Ayine konan yiyecek ve eşyalar; 'sunu' Ayinin sunu kısmına ayrılı _64_
 - **sunak** — altar (祭台); "mihrap" kullanılmaz _64_
-- **cüppe** — robe (长袍); Ayin için 'beyaz cüppe', Alger'in 'Fırtına cüppesi' _64_
+- **cübbe** — robe (长袍); Ayin için 'beyaz cübbe', Alger'in 'Fırtına cübbesi' _64_
 - **Ayin uçucu yağı** — ritual essential oil (仪式精油); "esans" kullanılmaz _64_
+- **muska** — amulet / Protection Amulet (护身符 / 护符); "tılsım" yazılmaz, "nazar" yazılmaz _69_
+- **sağlık muskası** — health amulet (健康护符) _69_
+- **yarı mamul** — half-completed (半成品 / 半成); karşıtı 'hazır muska' _69_
+- **beyaz kenarlı günebakan** — white-edged sunflower (白边太阳花); bitki teyit edilmeli; "ayçiçeği" yazılmaz _69_
+- **maden / madenî** — metal (金属); ayın madeni saf gümüş, Kahverengi Yıldız'ınki kurşun; "metal", "metalik" yazılmaz; sıfat 'madenî' (madenî parıltı, madenî kafes); isim tek başına 'maden ocağı'yla karışacaksa sıfat tercih edilir _69_
 
 ## Potion Ingredients
 
@@ -823,7 +907,7 @@
 - **Ejderkanı otu (tozu)** — Ejderkanı'nın bitki/toz formu; Kâhin iksiri malzemesi — mevcut "Ejderkanı" girdisiyle ilişkisi teyit edilmeli (龙血草粉末)
 - **Lanti Şarabı** — Lanti wine (兰蒂斯酒; alchemy ingredient)
 - **güz çiğdemi özü** — autumn crocus extract; Seyirci iksiri malzemesi (秋水仙精华)
-- **öküzdişi şakayığı tozu** — Seyirci iksiri malzemesi (牛齿芍药粉末)
+- **öküzdişi şakayığı tozu / öküzdişi şakayığı** — Seyirci iksiri malzemesi (牛齿芍药粉末/牛齿芍药)
 - **elf çiçeği** — Seyirci iksiri malzemesi; "elf" ırk adıyla tutarlı (精灵花)
 - **Manhal balığı** — Seyirci iksiri malzemesi; ergin bir çift gözü kullanılıyor (曼哈尔鱼)
 - **teke boynuzlu kara balık** — Seyirci iksiri malzemesi; kanı 35 ml olarak kullanılıyor (羊角黑鱼)
@@ -834,7 +918,7 @@
 - **fevkalade mahluk** — extraordinary creatures (超凡物种)
 - **mesh olmak** — to mutate (异变); salahiyet kelimesi Mesh'in fiili; gündelik başkalaşma için de aynı kelime (Frank'in mantarları, 656), Celp kararıyla aynı mantık _656_
 - **melezleme** — cross-breeding (杂交); Frank Lee'nin işi; 'melez' sıfatı _638_
-- **kıvırcık tüylü babun** — curly haired baboon (卷毛狒狒)
+- **kıvırcık tüylü babun / babun** — curly haired baboon (卷毛狒狒)
 - **Tussock Balığı** — Tussock Nehri'nden gelen, az kılçıklı yenilebilir bir balık türü (塔索克鱼)
 - **kurtçuk** — maggot, worm (蛆虫 / 蠕虫); "solucan" ve tek başına "kurt" kullanılmaz; Zaman Kurtçuğu ile aynı baş kelime, teyit bekliyor (değilse "sürfe") _55_
 
@@ -858,6 +942,7 @@
 - **Desi turtası** — Desi pie (迪西馅饼) _60_
 - **deniz mahsullü pilav** — seafood rice (海鲜饭); İng. çeviri "paella" der; "paella" yazılmaz _60_
 - **Enmat Birası** — Enmat Beer (恩马特啤酒); Sibe Çayı kalıbı _66_
+- **Sert Lanti** — Lanti Proof (烈朗齐); İng. çeviri "Lanti Proof" der; Lanti Şarabı (兰蒂斯酒) ile ayrı Çince; Hiddet Halkı'nın gücünü açan sert içki; _67_
 
 ## Social Life
 
@@ -871,7 +956,7 @@
 - **hizmetli** — hired servants (佣人)
 - **hizmetçi** — 女仆/女佣
 - **hizmetkâr** — 仆役/仆人
-- **efendi/sahip** — a servant's master (主人); the butler speaks of him with the respectful plural
+- **efendi/sahip** — a servant's master (主人); the butler speaks of him with the respectful plural {geniş}
 - **hekim** — doctor (医生); küçük harf, sıradan meslek; Mertebe adı Hekim büyük harf 53
 - **aktar** — herbalist, apothecary (药师); küçük harf, sıradan meslek (38, 49: 'köy aktarı', 'usta bir aktar'); Mertebe adı Aktar büyük harf
 
@@ -883,6 +968,7 @@
 - **Yörünge At Arabası Şirketi** — raylı umumî at arabalarını işleten şirket (轨道马车公司); cümle içinde arabası olarak kullanılır
 - **biletçi** — umumî at arabasında ücret toplayan görevli (收费员)
 - **iki tekerlekli fayton** — two-wheeled carriage (双轮马车) _44_
+- **kiralık arabacı** — hackney driver (出租马车夫)
 - **kira arabası** — for-hire carriage (出租马车); "taksi" anakronik
 - **arabacı / arabacılık** — carriage driver (马车夫)
 - **Süzülen Ekspres** — Constant Şehri'ne yeni açılan buharlı tren seferi (飞翔号)
@@ -904,7 +990,7 @@
 - **'Adil' Elland**: 公正的艾尔兰; Elland Kag'ın denizdeki lakabı, tırnaklı. Terim satırı değildir (公正 gündelik kelime) _499_
 - **V. William** — William V (威廉五世号); Elland'ın gençliğinde hizmet ettiği donanma gemisi _496_
 - **Yonca** — the Alfalfa (苜蓿号); Güney Kıta'dan Enmat Limanı'na dönen gemi; tırnaksız; Yonca kadın adı da olduğundan ilk geçişte "Yonca adlı gemi" _54_
-- **mürettebat** — crew (船员); "gemici" kullanılmaz; 水手 'denizci' (küçük harf) _63_
+- **mürettebat / tayfa** — crew (船员); "gemici" kullanılmaz; 水手 'denizci' (küçük harf) _63_
 - **Yonca faciası** — the Alfalfa tragedy (苜蓿号惨案); İng. çeviri "massacre" ve "tragedy" der _64_
 
 ---
@@ -915,9 +1001,11 @@
 - **有所 / 有些 / 一丝** — korunur
 - **了解一下**: ayrıca karşılanmaz; 'XX了解一下？' internet kalıbı, cümle Türkçenin kendi kalıbıyla kurulur (7 ¶74: "Bildiğin sanal arkadaşlık sitesi değil mi lan bu?")
 - **微微 + jest** — düşer
-- **ifa** — 'Rol İfası'na (扮演法) ayrılıdır; gündelik fiil olarak kullanılmaz ('vazifesini ifa etmek' değil, 'yerine getirmek'), terimin ağırlığı korunur.
+- **ifa**: 'Rol İfası'na (扮演法) ayrılıdır; gündelik fiil olarak kullanılmaz ('vazifesini ifa etmek' değil, 'yerine getirmek'), terimin ağırlığı korunur.
 - **Erken Mertebe = meslek** — düşük Mertebe adlarının çoğu sıradan bir meslekle aynı kelimedir, çünkü bu Aşkınlar biraz güçlenmiş sıradan insanlardır ve öyle sanılabilir. Ayrım yalnız harftedir: Mertebe büyük harf, meslek küçük harf (Kâhin/kâhin, Hekim/hekim, Aktar/aktar, Ruh Aracısı/ruh aracısı). Hangisi olduğu, konuşanın kişiyi Aşkın olarak mı yoksa mesleğiyle mi andığına bakılarak seçilir.
 - **层次**: kavram değil, sıradan kelime; bağlama göre çevrilir (seviye, katman, kat kat, derin; ch7, 35, 38, 52, 57). Güç basamağı anlamında varsayılan 'derece' (层次越高 = derece yükseldikçe; 停在当前层次 = bulunduğu derecede kalmak). 'Mertebe' 序列'e ayrılıdır, burada kullanılmaz.
+- **daha üst katman** — higher level (更高层次/高层次); 层次 notunun örneği; 'üst kademe' (高层, kurum basamağı) ile karıştırılmaz
+- **birbirine karışan sesler / birbirine karışmak** — overlapping murmurs (嘈杂交叠); 杂交 (melezleme) ile karıştırılmasın diye ayrı kayıt _5_
 
 ---
 
@@ -929,6 +1017,7 @@
 - **Soytarı Efendi'ye senâ olsun!** — 赞美愚者 ; dondurulmuş. Kaynakta çoğunlukla tırnaklı yazılır (赞美‘愚者’先生). Soytarı'ya övgü (28 geçiş, 179'dan; Dorian 1209). 'hamd' Güneş'e, 'medh' Ebedî Gece'ye ayrılıdır. Dua: 愿'愚者'庇佑 → "Soytarı Efendi'nin himayesi üzerimize (seni / sizi) olsun."; şükür: 感谢'愚者'先生庇佑 → "Soytarı Efendi'nin himayesine şükür." (1294)
 - **İradeniz emrimizdir.** — (遵从您的意志 / 遵从您的意愿); dondurulmuş. Toplantıyı kapatan koro cevabı; yazar 意志 (7, 36, 571, 682) ile 意愿 (159, 395, 489, 564) arasında rastgele gidip gelir, ikisi de bu satırla karşılanır; 991'deki 您的意愿就是我们的意志 da aynı koro cevabıdır. 364'teki 遵从您的意志，首席阁下 toplantı dışıdır, bağlamına göre çevrilir.
 - **Arzunuz, benim irademdir.** — (您的意愿就是我的意志); dondurulmuş. Bir üyenin Soytarı'dan aldığı görevi tek başına kabul etmesi, birinci tekil (Alger 783, 1278; Xio 957). Koro satırından ayrıdır; çevresindeki cümle konuşanın siciline uyar.
+- **Malumumuz olmuştur.** — I'm aware (我知道了); dondurulmuş. Soytarı'nın niyaza verdiği karşılık; "Biliyoruz" ve "Haberdarız" yazılmaz. Padişahın arza düştüğü 'Malûmum olmuştur' kaydı; Soytarı sade 'ben'e geçtiğinde (1389) 'Malumum olmuştur.' _67_ {geniş}
 - **Ebedî ve Değişmez Sis; / Zamanı ve Mekânı Donduran Perde; / Her Şeyi Kuşatan Varlık…** — 永恒不变的迷雾；凝固时空的屏障；包容一切的存在…… ; dondurulmuş. Ay Şehri'nin sise okuduğu tazim ismi (1214 ¶14–16). İnsan yapımıdır: 1730 yıl önceki bir Ulu Rahip kurmuş, ilk satırını bir kez değiştirmiştir (1213 ¶46–50); bu yüzden ilahi tazim isimlerinin Osmanlıca sicilinin bilerek altındadır. 凝固时空 ↔ Esrarın Hükümdarı'nın 时空之王 unvanı (Zaman ve Mekân Sultanı) yankısı korunur. 包容 'kuşatmak'; 'barındırmak' 容纳'e ayrılı _1213_
 - **Gitmek bilmeyen Kahraman Ruhu, Hakiki Hâlık'ın Maiyeti, Mukadderata nazar eden Gözler.** — (徘徊不去的英灵/真实造物主的眷属/凝视命运的眼睛); dondurulmuş. Hanass Vincent'in (Fecir Tarikatı) ayna kehaneti efsunu, Selena'nın okuduğu (87 ¶61). Ouroboros'a seslenir: ikinci ve üçüncü parça sozluk.yml › Ouroboros tazim isminde aynen geçer, 英灵 = Kahraman Ruhu; yalnız ilk niteleyici farklıdır (徘徊不去 → 'gitmek bilmeyen') _87_
 - **Her şeyi bilmek, her şeye kadir olmaktır.** — 全知意味着全能 ("omniscience means omnipotence"); dondurulmuş. İlim ve Hikmetin İlahı Kilisesi'nin vecizesi (Isengard, 415 ¶24). "Kadir" Kadir-i Mutlak yol grubunu yankılar; bilerek seçildi. Klein'ın 257 ¶55'teki 知识等于力量…全知等于全能 düşüncesi bu satırı önceden yankılar ve aynı kalıpla verilir.

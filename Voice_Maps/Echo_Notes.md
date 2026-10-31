@@ -853,7 +853,7 @@ Her girişte beş alan vardır: **Kurulum** (bölüm ve paragraf), **Donmuş** (
 - **Ödeme:** 64 ¶90; ileride Klein'ın işe alınış sebebine her atıf
 - **Neden bozulur:** tırnak bir alıntıyı işaret ediyorsa, alıntı ancak aynı sözcükle tanınır.
 
-### #93 · Şeytaniçe Tarikatı'nın kadın üst kademesi
+### #93 · Şerbânû Tarikatı'nın kadın üst kademesi
 
 `Kalıp · orta · denetlenmedi`
 
@@ -877,7 +877,7 @@ Her girişte beş alan vardır: **Kurulum** (bölüm ve paragraf), **Donmuş** (
 
 - **Kurulum:** 66 ¶20
 - **Donmuş:** 'İlk Olan', 'Son Olan' (tek tırnakla, çift olarak)
-- **Ödeme:** Kadim Şeytaniçe'ye dair tarikat inancının yeniden anıldığı her sahne
+- **Ödeme:** Kadim Şerbânû'ya dair tarikat inancının yeniden anıldığı her sahne
 - **Neden bozulur:** Çift birlikte işler; biri değişirse öteki yalnız kalır. 'Evvel ve Âhir' Kadim Güneş Tanrısı'nın tazim isminde olduğundan bu çift ondan ayrı tutulmalıdır.
 
 ### #96 · Klein'ın Peygamber şakası
@@ -906,3 +906,111 @@ Her girişte beş alan vardır: **Kurulum** (bölüm ve paragraf), **Donmuş** (
 - **Donmuş:** "hünerli dövüş"
 - **Ödeme:** 75, Palyaço Mertebesinin açıldığı bölüm
 - **Neden bozulur:** Klein'ın ¶6'daki tahmini 65'teki tarifi geri çağırır; Palyaço'nun dövüş yeteneği geldiğinde aynı öbek tanınmalıdır.
+
+### #99 · Soytarı'nın karşılık kaydı
+
+`Birebir · kritik · denetlenmedi`
+
+- **Kurulum:** 67 ¶36, ¶40–¶42 (Audrey'nin rüyası), ¶84, ¶86 (Alger)
+- **Donmuş:** "Malumumuz olmuştur."
+- **Ödeme:** Soytarı'nın niyazlara verdiği her karşılık; 1389'dan sonra geçerse "Malumum olmuştur." (#8'in tek kelimelik ödemesi)
+- **Neden bozulur:** Formül yüzlerce kez tekrarlanır; bir kez "Biliyoruz" ya da "Haberdarız" yazılırsa müminlerin tanıdığı ses kaybolur. 'Biz'in 'ben'e dönüşü bu satırda görünür olacağı için iyelik eki dışında hiçbir sözcük değişmez.
+
+### #100 · Yıldızın büzülüp genişlemesi
+
+`Kalıp · orta · denetlenmedi`
+
+- **Kurulum:** 67 ¶14, ¶64, ¶67 (58'deki gelen istekte geçtiyse orası)
+- **Donmuş:** "büzülüp genişle-"
+- **Ödeme:** ileride bir üyenin ya da müminin niyazının yıldızda belirdiği her yer
+- **Neden bozulur:** İngilizce 'pulse' der; Türkçe her seferinde başka bir fiil seçerse okur niyazın sabit görsel işaretini öğrenemez.
+
+### #101 · 'karşılık' / 'cevap' / 'izah'
+
+`Görünür ayrım · orta · denetlenmedi`
+
+- **Kurulum:** 67 başlık, ¶35, ¶46–¶48, ¶76; #36'daki 'uyarana karşılık veren'
+- **Donmuş:** "karşılık" (回应), "cevap" (回答)
+- **Ödeme:** Soytarı'nın neden ve nasıl karşılık verdiğinin tartışıldığı her yer; uyuyan Soytarı'nın sözlü akitleri
+- **Neden bozulur:** Klein'ın 57'de tarif ettiği mekanizma (uyarana sabit karşılık) bu bölümde işler hâle gelir; sözcük kayarsa bağ görünmez.
+
+### #102 · Fırtına mümininin selamı
+
+`Nesne / Edim · orta · denetlenmedi`
+
+- **Kurulum:** 67 ¶87 (Alger'in önceki bir sahnesinde geçtiyse asıl kurulum orası)
+- **Donmuş:** "yumruğunu sıkıp göğsüne hafifçe vur-"
+- **Ödeme:** ileride Fırtına müminlerinin her selamı; Alger'in inancının çözüldüğü sahneler
+- **Neden bozulur:** Bu bölümde jest yapılır ama söz söylenemez; aynı jest sonraki sahnelerde tanınmazsa Alger'in burada yarıda kalan alışkanlığı geriye dönük okunmaz.
+
+### #103 · Gri siste düşünme pozu
+
+`Kalıp · marjinal · denetlenmedi`
+
+- **Kurulum:** 67 ¶57, ¶59
+- **Donmuş:** "yumruğunu ağzına dayayıp", "ağzına hafif hafif vur-"
+- **Ödeme:** bilinmiyor; Klein'ın Şeref Makamında düşündüğü sahneler
+- **Neden bozulur:** marjinal; tekrar edip etmediği belirsiz, silinebilir.
+
+### #104 · Sihrin kudreti
+
+`Birebir · orta · denetlenmedi`
+
+- **Kurulum:** 52 ¶45 (Neil), ¶46 (Klein'ın tekrarı)
+- **Donmuş:** "İşte sihrin kudreti budur." / "sihrin kudreti"
+- **Ödeme:** ileride Klein'ın Neil'i ya da bu sözü andığı her yer; 164 sonrası Neil'in hatırası
+- **Neden bozulur:** Klein Neil'in cümlesini aynı sözcüklerle küfürlü bir hayranlığa çevirir; sözcük kayarsa tekrar tanınmaz, sonradan bir anı olarak da çağrılamaz.
+
+### #105 · Genç kızın hediyesi
+
+`Nesne / Edim · orta · eklenecek`
+
+- **Kurulum:** 69 ¶38 (arkadaş getirdi, on altısına basacak, sürpriz), ¶51–¶57 (sağlık muskası)
+- **Donmuş:** "sağlık muskası" / "genç kız"
+- **Ödeme:** 84 ¶50–¶55 (Elizabeth Klein'ı tanır), ¶65–¶67 (muskanın sahibi takar takmaz sağlık hissettiğini söyler; Klein hediyenin sebebini hatırlar), ¶74 ("hisler farklı")
+- **Neden bozulur:** 84'teki hatıra 69 ¶38'in bilgilerine dayanır; biri düşerse ya da muska adı kayarsa tanışma geriye bağlanmaz.
+
+### #106 · Kardeşlerin muskaları
+
+`Birebir · orta · eklenecek`
+
+- **Kurulum:** 69 ¶17, ¶22–¶24 (yarı mamul, oy-), ¶25 (melek tüyleri), ¶29–¶33 (iki gümüş takı)
+- **Donmuş:** "yarı mamul" / "oy-" / "melek tüyleri"
+- **Ödeme:** 84 ¶6–¶15 (Melissa: yarı mamuldü, efsunu ve süsü ben oydum; melek tüyleri), ¶28–¶30 (Benson)
+- **Neden bozulur:** Klein 84'te 69'un sözcükleriyle anlatır; biri kayarsa pazardaki nesneyle hediye aynı şey gibi okunmaz. Fiil 'kazı-'ya kayarsa #41'i yanlışlıkla çağırır.
+
+### #107 · Şeamet → Ece unvanı
+
+`Birebir · orta · eklenecek`
+
+- **Kurulum:** 69 ¶24, ¶40–¶42 (sıradan 'şeamet'), ¶41, ¶43 ("Şeamet ve Dehşet Ecesi")
+- **Donmuş:** "şeamet" / "Şeamet ve Dehşet Ecesi"
+- **Ödeme:** 85 ¶90 (Kızıl'ın Efendisi ile Şeamet ve Dehşet Ecesi'nin mumları); #83'e bağlı
+- **Neden bozulur:** Sıradan anlam 'badire'ye kayarsa Klein'ın akıl yürütmesi kopar; unvan 85'te ayin içinde aynen döner.
+
+### #108 · Kaşların arasını sıkmak
+
+`Kalıp · marjinal · eklenecek`
+
+- **Kurulum:** 69 ¶81
+- **Donmuş:** "kaşlarının arasını sık-" (vur- değil)
+- **Ödeme:** 84 ¶47 (Basiret alıştırması); #78'deki jestsiz Basiret'e geçiş
+- **Neden bozulur:** 'vur-'a çekilirse jestin ikinci biçimi kaybolur, #78'in evreleri görünmez.
+
+### #109 · Altın çerçeveli gözlüklü adam
+
+`Nesne / Edim · marjinal · eklenecek`
+
+- **Kurulum:** 69 ¶2, ¶6, ¶68
+- **Donmuş:** "altın çerçeveli gözlük", "kibar"
+- **Ödeme:** adamın yeniden göründüğü sahne
+- **Neden bozulur:** Tarif değişirse okur aynı adamı tanımaz.
+
+### #110 · Arabadaki kadın: Trissy
+
+`Kalıp · orta · eklenecek`
+
+- **Kurulum:** 56 (Tris'in yuvarlak yüzü), 66 (Cadı formülü ve ana malzeme), 69 ¶74–¶79 (titreyen genç kadın, "nazik ve tatlı" ×2, ¶75 yuvarlak yüz)
+- **Donmuş:** "genç hanım", "nazik ve tatlı", ¶75'te 56'yla aynı 'yuvarlak'; ad yok
+- **Ödeme:** 122–127, Tris'in Trissy olarak açılması; #93'le birlikte
+- **Neden bozulur:** Açılışta okur geriye dönüp bu kadını tanıyabilmeli; yüz sıfatı 56'dan kopar ya da bir dönüşüm ipucu eklenirse ya bağ kaybolur ya sır erken açılır.

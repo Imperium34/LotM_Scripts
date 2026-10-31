@@ -157,7 +157,7 @@ Side_Character_Maps.md'nin bütün haritaları bu biçimdedir; şablon üreteci 
 
 - Ad uydurulmaz. Önce sozluk.yml, words.md ve salahiyetler.yml'de Çincesiyle **ve** İngilizcesiyle aranır (girdilerin çoğunda `cince` alanı yoktur). Bulunamazsa Çince bırakılır ve not dosyasında soru olarak işaretlenir.
 - Bir adın parçası bir salahiyetse salahiyetin kelimesi kullanılır: 丰收 = Bereket ("Hasat" 收割'e ayrılı), 疾病 = Hastalık, 光 = Işık, 生命 = Hayat, 母亲 = Ana, 神秘(知识) = Gizem, 智慧 = Hikmet, 冥界 = Âlem-i Berzah; Kural 8: 秘 = Sır; özel adlarda 暗 = Zulmet (Ebedî Zulmet Nehri). Bilinen istisnalar words.md'de kayıtlıdır (Yedi Nur, Müphem Sis'in "Nur ile Zulmet"i).
-- Yollar Mertebe 9 ya da Mertebe 0 adıyla anılabilir. Şeytaniçe Mertebeleri girdilerde düz adla, anlatıda "X Şeytaniçe" biçiminde yazılır.
+- Yollar Mertebe 9 ya da Mertebe 0 adıyla anılabilir. Şerbânû Mertebeleri girdilerde düz adla, anlatıda "X Şerbânû" biçiminde yazılır.
 - Korsan unvanları rütbe + lakaptır ve adın yerine geçer: Koramiral Buzdağı, Amiral Yıldız (上将 → Amiral, 中将 → Koramiral, 之 çevrilmez).
 - Kişi ve yer adları İngilizce yazımla alınır (İngilizce çeviri hatalı değilse). Takma adlar ve kurum adları çevrilir.
 - Frozen Lines (words.md §VII) kelimesi kelimesine uygulanır.

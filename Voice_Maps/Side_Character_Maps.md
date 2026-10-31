@@ -107,7 +107,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** 150–730 · Klein, mektuplar, görevler
 **Yap:** Anı tetiklendiği anda ses düşer ve duygusuzlaşır; cümleler kısa, kesin (150). Sonrasında güçlü ve kendinden emin bir akıl hocası: tehlikeyi tartıp tek cümleyle karar verir ("Şimdi.", "Başlayalım."), uyarılarını nedeniyle birlikte verir. Ölüm ve ölümsüzlük karşısında rahat, hatta şakacıdır. 问题不大 onun kalıbıdır: "Büyük bir sorun yok." (Klein bunun ironisini sonradan fark eder, 913). Kendi değişimini de kuru bir şakayla anlatır.
 **Yapma:** Gücü gösterişle anlatmak; Klein'a tepeden bakmak; ölümü ağırbaşlı, dehşetli bir sesle anmak.
-**Ayar:** _"Bazı şeyler hatırladım, ama yalnızca küçük bir kısmını."_ (150); _"Ölmez biri için bu büyük bir mesele değil."_ (480); _"Deniz kızı mı? Ölü ruha dönüşmüş deniz kızları olur mu? En az dört tane bulabilirim."_ (480); _"Ölmezim, solmaz değilim. İnsan yaşlandıkça yumuşar."_ (589; Solmaz Şeytaniçe Catherine'e cevap)
+**Ayar:** _"Bazı şeyler hatırladım, ama yalnızca küçük bir kısmını."_ (150); _"Ölmez biri için bu büyük bir mesele değil."_ (480); _"Deniz kızı mı? Ölü ruha dönüşmüş deniz kızları olur mu? En az dört tane bulabilirim."_ (480); _"Ölmezim, solmaz değilim. İnsan yaşlandıkça yumuşar."_ (589; Solmaz Şerbânû Catherine'e cevap)
 **Gerekçe:** → N-AZK1.3
 
 ##### AZK1.4 — Aşama 3: Ölüm Veliahdı'nın sesi
@@ -129,14 +129,14 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 ### Âdem `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Tahayyül Meleği, Seyirci Yolu'nun Melekler Beyi, Kadim Güneş Tanrısı'nın büyük oğlu, Gurûb Münzevîleri Meclisi'nin başı; 1346'da aslında yeniden doğmuş Kadim Güneş Tanrısı'nın kendisi olduğu açılır. Görünüşü hep aynıdır: sade beyaz cüppeli, yumuşak gülümsemeli, çocuk kadar berrak açık renk gözlü bir rahip; eli göğsündeki gümüş haç kolyesindedir (891'de Roselle'in tanıştığı adsız rahip de odur). Sesi bir vaizin, bir ruh rehberinin sesidir: sakin, acelesiz, düz; karşısındakini öğüt verir gibi yönlendirir. Korkunç şeyleri de aynı tonla söyler: kurbanı "gerekli" diye, deliren kardeşini bir yabancıdan söz eder gibi anar. Kendini "saplantılı" gösterdiğini kendisi açıklar (1346).
+**Tarz:** Tahayyül Meleği, Seyirci Yolu'nun Melekler Beyi, Kadim Güneş Tanrısı'nın büyük oğlu, Gurûb Münzevîleri Meclisi'nin başı; 1346'da aslında yeniden doğmuş Kadim Güneş Tanrısı'nın kendisi olduğu açılır. Görünüşü hep aynıdır: sade beyaz cübbeli, yumuşak gülümsemeli, çocuk kadar berrak açık renk gözlü bir rahip; eli göğsündeki gümüş haç kolyesindedir (891'de Roselle'in tanıştığı adsız rahip de odur). Sesi bir vaizin, bir ruh rehberinin sesidir: sakin, acelesiz, düz; karşısındakini öğüt verir gibi yönlendirir. Korkunç şeyleri de aynı tonla söyler: kurbanı "gerekli" diye, deliren kardeşini bir yabancıdan söz eder gibi anar. Kendini "saplantılı" gösterdiğini kendisi açıklar (1346).
 **Onay:** Kısa ve yumuşak: _"Evet."_ (1348, 是的); _"Gidebilirsin."_ (1150)
 
 ##### ADM1.1 — Vaizin cümlesi
 
 **Kapsam:** Tüm görünümleri · Klein, inananlar, herkes
 **Yap:** Kısa, düz, eşit ritimli cümleler; ünlem yok, kahkaha yok (yalnız anlatıdaki "yumuşak bir gülümsemeyle"). Genelleyen "-dır/-dir" cümleleri ve sade, zamansız kelimeler: kurban, gerekli, kaçınılmaz, huzur. Bilgiyi bir ilmihal gibi, sakin ve eksiksiz verir; bilmediğini de aynı sakinlikle söyler ("Bunu şimdilik kimse doğrulayamaz.").
-**Sicil (yorum): mürşit sohbeti.** Âdem'in tarafı Türkçede zaten tasavvufla renklenmiştir: Gurûb Münzevîleri Meclisi, Tahayyül Meleği, Seyirci Yolu'nun Hülya Sâliki, Mümeyyiz ve Musavvir'i; Seyirci Yolu da İbrahimî Tanrı tasavvurunu temsil eden Kadir-i Mutlak yol grubundadır. Bu yüzden onun vaiz ve itirafçı tavrının Türkçe karşılığı bir mürşidin sohbetidir. Öğüt verdiği, yönlendirdiği, teselli eder gibi konuştuğu anlarda az ve yerinde tasavvuf kelimesi girer: hâl, nefis, sabır, takdir, imtihan, rıza. Anlatıdaki "inanana öğüt verir gibi" (就像在开解信徒) bir şeyhin müridine konuşması gibi verilir. Kozmoloji ve bilgi anlatırken (1345–1348'deki uzun açıklamalar) bu katman girmez; o kısımlar sade ve kesin kalır. Gümüş haç ve beyaz cüppe dünyanın içindeki işaretlerdir, olduğu gibi kalır. Amon bu dağarcığı hiç kullanmaz.
+**Sicil (yorum): mürşit sohbeti.** Âdem'in tarafı Türkçede zaten tasavvufla renklenmiştir: Gurûb Münzevîleri Meclisi, Tahayyül Meleği, Seyirci Yolu'nun Hülya Sâliki, Mümeyyiz ve Musavvir'i; Seyirci Yolu da İbrahimî Tanrı tasavvurunu temsil eden Kadir-i Mutlak yol grubundadır. Bu yüzden onun vaiz ve itirafçı tavrının Türkçe karşılığı bir mürşidin sohbetidir. Öğüt verdiği, yönlendirdiği, teselli eder gibi konuştuğu anlarda az ve yerinde tasavvuf kelimesi girer: hâl, nefis, sabır, takdir, imtihan, rıza. Anlatıdaki "inanana öğüt verir gibi" (就像在开解信徒) bir şeyhin müridine konuşması gibi verilir. Kozmoloji ve bilgi anlatırken (1345–1348'deki uzun açıklamalar) bu katman girmez; o kısımlar sade ve kesin kalır. Gümüş haç ve beyaz cübbe dünyanın içindeki işaretlerdir, olduğu gibi kalır. Amon bu dağarcığı hiç kullanmaz.
 **Yapma:** Amon'un oyun dağarcığı ("ilginç", "eğlenceli", "tahmin et"), "heh heh", "değil mi?" eki; A Bey'in coşkulu nüzul ve kurban dili (AUR, Âdem'den ayrım); ağdalı Divan dili; öfke, alay, ünlem; tasavvuf kelimelerini bilgi kısımlarına yığmak.
 **Ayar:** _"Gidebilirsin."_ (1150); _"Bu, gerekli bir kurbandı."_ (1346); _"Anlamıyorsun, çünkü yeterince bilmiyorsun."_ (1348); _"Nefsi yorulmuştu. Dinlenmek istiyordu, hür olmak istiyordu; birkaç saniyeliğine de olsa."_ (1347 ¶76, 他太累了…; öğüt anı: 'yoruldu' yerine 'nefsi yorulmuştu', içerik aynı); _"Şimdilik bunu kimse doğrulayamaz. Kimilerinin denediğini sanıyorum; ne de olsa birleşme güçlü bir içgüdüdür. Ama sonucu bilinmiyor."_ (1347)
 **Gerekçe:** → N-ADM1.1
@@ -215,7 +215,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 | Ünlem           | yok                                                  | seyrek, neşeli                                  |
 | Sabit kelimeler | gerekli, kurban, huzur                               | ilginç, eğlenceli, oyun, açık                   |
 | Birbirine       | "kardeşim" değil, adla ya da hiç anmaz               | "saplantılı kardeşim"                           |
-| Anlatı işareti  | gümüş haç, beyaz cüppe, dua                          | monokl, sivri şapka                             |
+| Anlatı işareti  | gümüş haç, beyaz cübbe, dua                          | monokl, sivri şapka                             |
 | Klein'ın zikri  | "Arz ve Arşın Kutlu Semavî Muazzezi" (1347)          | "Arz ve Arşın Kutlu Gök Hakimi" (1151)          |
 
 ### Pallez Zoroast `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
@@ -277,7 +277,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 **Kapsam:** Tüm görünümleri · rakipler, müttefikler, Klein
 **Yap:** Her cümleye bir kahkaha ya da "cık cık" eşlik edebilir. Karşısındakini çocukluğuyla, saflığıyla, cinselliğiyle küçümser; sataşma kaba ve doğrudandır. Kışkırtma bir av taktiğidir: karşısındakini hırslandırıp açık verdirir. Avcı Yolu'nun Kışkırtıcı yetisini dile getirir: "Sende Kışkırtıcı yeteneği var."
 **Yapma:** Sataşmayı ağırbaşlı, uzak bir melek diline çevirmek; kabalığı yumuşatmak; tehdidi ciddi ve tantanalı bir kıyamet tiradına dönüştürmek.
-**Ayar:** _"Kaç yaşındasın sen? Neden hâlâ bu kadar saf, bu kadar çocuksun?"_ (1087); _"Neden korkuyorsun, Zaratul'dan mı?"_ (1086); _"Cık cık, Şeytaniçeler gerçekten kurnaz. Ama ben hiçbir avı küçümsemem."_ (1111)
+**Ayar:** _"Kaç yaşındasın sen? Neden hâlâ bu kadar saf, bu kadar çocuksun?"_ (1087); _"Neden korkuyorsun, Zaratul'dan mı?"_ (1086); _"Cık cık, Şerbânûlar gerçekten kurnaz. Ama ben hiçbir avı küçümsemem."_ (1111)
 **Gerekçe:** → N-MED1.1
 
 ##### MED1.2 — Soru zinciriyle ders
@@ -1104,7 +1104,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 
 ### Audrey Hall (Adalet) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Tanzimat dönemi Osmanlı aristokrasisi. Korunaklı, meraklı, maceraya hevesli genç bir asilzade; Seyirci, sonra Telepat ve Ruh Hekimi. Toplantıda Toplantı Sicili geçerlidir (yukarıda; ölçü 6–7). Gözlemci bakışı önce iç seste başlar, Mertebe yükseldikçe dışa, klinik bir mesafeye taşar. Bedensel tikleri (yanağını şişirmek, kimse görmedi mi diye bakınmak) anlatıdadır, replikte değil.
+**Tarz:** Tanzimat dönemi Osmanlı aristokrasisi. Korunaklı, meraklı, maceraya hevesli genç bir asilzade; Seyirci, sonra Gönülşinas ve Gönül Hekimi. Toplantıda Toplantı Sicili geçerlidir (yukarıda; ölçü 6–7). Gözlemci bakışı önce iç seste başlar, Mertebe yükseldikçe dışa, klinik bir mesafeye taşar. Bedensel tikleri (yanağını şişirmek, kimse görmedi mi diye bakınmak) anlatıdadır, replikte değil.
 **Onay:** _"Elbette."_; _"Hazırım, başlayabilirsiniz."_ (34); ilerleyen dönemde kısa ve klinik: _"Anlaşıldı."_
 
 ##### AUD1.1 — Asilzade dili kalıcıdır, işlevi değişir
@@ -1139,7 +1139,7 @@ Bu sözlük, ana terimlerin ötesinde karakterlerin psikolojik durumlarını yan
 ##### AUD1.5 — Klinik mesafe
 
 **Kapsam:** Mertebe yükseldikçe · önce iç ses, sonra replik
-**Yap:** Olayları kişiselleştirmeyi bırakır; kendi duygusunu bile dışarıdan bir hastayı inceler gibi formüle eder, 'ben' öznesi silinir: _"Bu durum bariz bir keder tablosu çiziyor."_ (illüstratif). Duyguyu yerinde ve zamanında oynamak Telepat'ın temel işidir (418).
+**Yap:** Olayları kişiselleştirmeyi bırakır; kendi duygusunu bile dışarıdan bir hastayı inceler gibi formüle eder, 'ben' öznesi silinir: _"Bu durum bariz bir keder tablosu çiziyor."_ (illüstratif). Duyguyu yerinde ve zamanında oynamak Gönülşinas'ın temel işidir (418).
 **Yapma:** Bu mesafeyi erken dönem repliklerine taşıma.
 **Gerekçe:** → N-AUD1.5
 
@@ -1648,7 +1648,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ### Tris / Trissy `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Suikastçı Yolu: Azmettirici (8) olarak Yonca gemisi katliamını kışkırtan Tris (56–70); Cadı (7) iksiri bedenini kadına çevirir ve Trissy olur (122–127); sonra Haz Şeytaniçe (470), ardından Maraz. Şeytaniçeler tarikatı onun adını Trissychik yapar: Trissy + 奇克, Kadim Şeytaniçe'nin gerçek adı; anlamını bilmez (470–471). Türkçe adı henüz sözlükte yok. Tris yuvarlak, sıcak yüzlü, bir kız gibi utangaç, köşede durmayı seven, yalnız yakınlarıyla konuşkan biridir (56). Trissy tatlı, yumuşak sesli ve çekicidir; karşısındakini emirle değil, gerekçe fısıldayarak yönlendirir. En soğuk şeyleri hafif, sohbet eder gibi bir tonla söyler. Altta korku ve utanç vardır: hayatının başkası tarafından yönetildiğini, kendine benzemez olduğunu hisseder; eski erkekliği hem utancı hem öfkesidir. Hayatta kalmak için pazarlık eder ve bunu açıkça söyler.
+**Tarz:** Suikastçı Yolu: Azmettirici (8) olarak Yonca gemisi katliamını kışkırtan Tris (56–70); Cadı (7) iksiri bedenini kadına çevirir ve Trissy olur (122–127); sonra Haz Şerbânû (470), ardından Maraz. Şerbânûlar tarikatı onun adını Trissychik yapar: Trissy + 奇克, Kadim Şerbânû'nun gerçek adı; anlamını bilmez (470–471). Türkçe adı henüz sözlükte yok. Tris yuvarlak, sıcak yüzlü, bir kız gibi utangaç, köşede durmayı seven, yalnız yakınlarıyla konuşkan biridir (56). Trissy tatlı, yumuşak sesli ve çekicidir; karşısındakini emirle değil, gerekçe fısıldayarak yönlendirir. En soğuk şeyleri hafif, sohbet eder gibi bir tonla söyler. Altta korku ve utanç vardır: hayatının başkası tarafından yönetildiğini, kendine benzemez olduğunu hisseder; eski erkekliği hem utancı hem öfkesidir. Hayatta kalmak için pazarlık eder ve bunu açıkça söyler.
 **Onay:** Kısa: _"Tamam."_ (775); alaycıysa _"Hıh."_ (978, 呵)
 
 ##### TRS1.1 — Tris: utangaç yüz, rahat vicdan
@@ -2017,7 +2017,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ### Tracy (Koramiral Hastalık) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Yedi Amiral'den biri, Kara Veba'ün kaptanı; Koramiral olmadan önce denizde "Hastalık Kızı" (疾病少女) diye bilinir. Suikastçı Yolu'nda Mertebe 5, Maraz Şeytaniçe; Suikastçı (9) iken bir erkektir, Cadı (7) iksiri onu zorla kadına çevirmiştir. Validesi Solmaz Şeytaniçe Katarina Pellè'dir; annesi ise "eskiden babası" olan başka biridir (1108 ¶16). Şeytaniçeler tarikatında bir tuhaflıktır: kendi idealleri ve peşinden koştuğu şeyler vardır, yine de tarikat için insan kaçakçılığı gibi işler görür (Edwina, 575 ¶44). Kadınlardan hoşlanır; sevgilisi Elaine Soren'dir (伊莲·索伦). Okumaktan nefret eder, romanları Elaine ona okur: Roselle'in klasikleri ve moda aşk hikâyeleri (578 ¶65). Elaine'e verdiği söz de bir aşk romanından çıkmış gibidir: kanı ve karanlığı o görmeyecek, hepsiyle Tracy yüzleşecek (579 ¶46). Sesi tayfasına kısa ve kararlı, Elaine'e cilveli ve sahiplenici, tehlike karşısında temkinlidir; kendi hayatından acı bir alayla söz eder. Trissy'den farkı (TRS1.5): Trissy erkek olmuş olmaktan utanır ve öfkelenir; Tracy kadın yapılmış olmasına acıyla güler ve kadınları sever.
+**Tarz:** Yedi Amiral'den biri, Kara Veba'ün kaptanı; Koramiral olmadan önce denizde "Hastalık Kızı" (疾病少女) diye bilinir. Suikastçı Yolu'nda Mertebe 5, Maraz Şerbânû; Suikastçı (9) iken bir erkektir, Cadı (7) iksiri onu zorla kadına çevirmiştir. Validesi Solmaz Şerbânû Katarina Pellè'dir; annesi ise "eskiden babası" olan başka biridir (1108 ¶16). Şerbânûlar tarikatında bir tuhaflıktır: kendi idealleri ve peşinden koştuğu şeyler vardır, yine de tarikat için insan kaçakçılığı gibi işler görür (Edwina, 575 ¶44). Kadınlardan hoşlanır; sevgilisi Elaine Soren'dir (伊莲·索伦). Okumaktan nefret eder, romanları Elaine ona okur: Roselle'in klasikleri ve moda aşk hikâyeleri (578 ¶65). Elaine'e verdiği söz de bir aşk romanından çıkmış gibidir: kanı ve karanlığı o görmeyecek, hepsiyle Tracy yüzleşecek (579 ¶46). Sesi tayfasına kısa ve kararlı, Elaine'e cilveli ve sahiplenici, tehlike karşısında temkinlidir; kendi hayatından acı bir alayla söz eder. Trissy'den farkı (TRS1.5): Trissy erkek olmuş olmaktan utanır ve öfkelenir; Tracy kadın yapılmış olmasına acıyla güler ve kadınları sever.
 **Onay:** _"Peki."_ (583 ¶57'de tayfanın 好的'si; kendisinin onayı kısa buyruktur)
 
 ##### TRC1.1 — Kaptan: kısa buyruk, kurnaz hesap
@@ -2036,7 +2036,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Ayar:** _"Söyle bakalım, seni nasıl cezalandırayım?"_ (581 ¶54); _"Hoo, sana kelepçe takmışlar; iyi olmuş, bu oyunu hiç oynamamıştık."_ (581 ¶62); _"Elaine, gerçekten bu kadar acımasız mısın? Hayır, belki de zorlandı."_ (583 ¶47); _"Elaine nerede? Ona ne yaptın?"_ (588 ¶53); _"Geçen sefer beni öldürmeye gelmeden önce Elaine bundan haberdar mıydı?"_ / _"Gerçekten mi?"_ (1108 ¶27, ¶30)
 **Gerekçe:** → N-TRC1.2
 
-##### TRC1.3 — Maraz Şeytaniçe: kışkırtan hikâye
+##### TRC1.3 — Maraz Şerbânû: kışkırtan hikâye
 
 **Kapsam:** 1107–1108 · Gehrman'ın elinde, çaresizken
 **Yap:** Azmettirici kabiliyeti sözüne işlemiştir: hayat hikâyesini acımaya çağıran bir sırayla anlatır (anormal anne baba, anormal tarikat, babasının dönüşümü, kendi dönüşümü). Yakalanınca inkâr etmez, gülerek kabul eder ve bir hayatta kalma mantığı kurar. Anlattığı her şey doğrudur.
@@ -2079,7 +2079,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 **Kapsam:** 494–497, 709 · güverte, yemek, deniz efsaneleri
 **Yap:** Neşeli ve konuksever; gülüşü sözün içindedir ("haha", "heh heh"). Efsaneleri uzun, akıcı, görüntülü anlatır; sayıyla, ayrıntıyla süsler, sonra bir şakayla bağlar. Kendi anısına gelince ses alçalır, cümle ağırlaşır (496 ¶7–12). Kendiyle ve Roselle'le şakalaşır (709 ¶34).
 **Yapma:** Hikâyeyi kısa bir özete indirmek; anısını gülerek anlatmak.
-**Ayar:** _"Haha, hanginiz denemek ister?"_ (494 ¶75); _"Böyle bir gecede yemeğin, şarabın tadını birlikte çıkarıp denizin efsanelerini anlatmak çok hoş bir şey."_ (494 ¶93); _"Aslında Beş Deniz'in Kralı Nast'ın sakalı ancak boynunun altına iner; güvertede oturur, siyah zeminli, gümüş kenarlı gösterişli bir cüppe giyer, başından iki kat yüksek sivri bir taç takar ve bir ilah gibi çevresindeki her şeye yukarıdan bakar…"_ (496 ¶7); _"Önemsiz şeyleri unutmak gönül sağlığına iyi gelir; heh heh, bu sözü İmparator Roselle söylemedi."_ (709 ¶34)
+**Ayar:** _"Haha, hanginiz denemek ister?"_ (494 ¶75); _"Böyle bir gecede yemeğin, şarabın tadını birlikte çıkarıp denizin efsanelerini anlatmak çok hoş bir şey."_ (494 ¶93); _"Aslında Beş Deniz'in Kralı Nast'ın sakalı ancak boynunun altına iner; güvertede oturur, siyah zeminli, gümüş kenarlı gösterişli bir cübbe giyer, başından iki kat yüksek sivri bir taç takar ve bir ilah gibi çevresindeki her şeye yukarıdan bakar…"_ (496 ¶7); _"Önemsiz şeyleri unutmak gönül sağlığına iyi gelir; heh heh, bu sözü İmparator Roselle söylemedi."_ (709 ¶34)
 **Gerekçe:** → N-ELL1.1
 
 ##### ELL1.2 — Babacan
@@ -2686,7 +2686,7 @@ Güneş (Derrick): _"İpini mi çektiler? Boynuna ilmek geçirip astıklarını 
 
 ### Arianna (Sır Hâdimi) `kaynak: metin | mudahale: ozgun | denetim: eklenecek`
 
-**Tarz:** Ebedî Gece Kilisesi'nin on üç Başpiskopos'unun birincisi, Gece Manastırı'nın başı, çilekeşlerin başı; Uykusuz Yolu'nda Mertebe 2, Sır Hâdimi; yeryüzünde yürüyen bir melek (992 ¶2, 1024 ¶24, 1164 ¶48). Sade bir cüppe, ağaç kabuğundan bir kuşak, dağınık saçlar, çıplak ayaklar; kara, sakin gözler. Sözü olabildiğince azdır ve hep sakindir (平静); kibirsizdir (1030 ¶23). Klein ilk karşılaşmada ona meleklere verilen hitapla seslenir, "Arianna Hazretleri" (殿下); Arianna bir çilekeş olduğunu söyleyip "Hanım" denmesini ister (992 ¶9–13). Sonra Klein'ın ağzında hep "Arianna Hanım"dır; kriz anında yalnız "Hanımefendi" (女士, 1287 ¶50). Hitaptaki bu düşüş kaynaktadır: Hazretleri'nden Hanım'a inmek, bir meleğin kendini sıradan bir çilekeş saymasıdır.
+**Tarz:** Ebedî Gece Kilisesi'nin on üç Başpiskopos'unun birincisi, Gece Manastırı'nın başı, çilekeşlerin başı; Uykusuz Yolu'nda Mertebe 2, Sır Hâdimi; yeryüzünde yürüyen bir melek (992 ¶2, 1024 ¶24, 1164 ¶48). Sade bir cübbe, ağaç kabuğundan bir kuşak, dağınık saçlar, çıplak ayaklar; kara, sakin gözler. Sözü olabildiğince azdır ve hep sakindir (平静); kibirsizdir (1030 ¶23). Klein ilk karşılaşmada ona meleklere verilen hitapla seslenir, "Arianna Hazretleri" (殿下); Arianna bir çilekeş olduğunu söyleyip "Hanım" denmesini ister (992 ¶9–13). Sonra Klein'ın ağzında hep "Arianna Hanım"dır; kriz anında yalnız "Hanımefendi" (女士, 1287 ¶50). Hitaptaki bu düşüş kaynaktadır: Hazretleri'nden Hanım'a inmek, bir meleğin kendini sıradan bir çilekeş saymasıdır.
 **Onay:** _"Olur."_ (1024 ¶46, 好。); _"Evet."_ (1283 ¶28, 对。)
 
 ##### ARI1.1 — En az söz

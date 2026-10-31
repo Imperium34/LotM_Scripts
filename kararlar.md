@@ -12,3 +12,5 @@ sonra.py'nin inceleme adımında 'hep' denen kararlar. Her geçişe verilir; ell
 - kabul · okuma 1.1 noktalı virgül zinciri — örnek: «Joyce hızla geriye yaslandı; sırtı boğuk bir sesle sandalyenin arkalığına çarptı.» → «Joyce hızla geriye yaslanınca sırtı boğuk bir sesle sandalyenin arkalığına çarptı.» (63. bölüm ¶46)
 - kabul · okuma 1.9 kayan sözcük (kipi tutmayan 'de') — örnek: «Mertebe 7'de karşılık gelen» → «Mertebe 7'ye karşılık gelen» (65. bölüm ¶16)
 - kabul · okuma 1.M.1 boş "o" — örnek: «meselesinin o akıl sır» → «meselesinin akıl sır» (65. bölüm ¶31)
+- kabul · okuma 1.9 tökezleme — örnek: «yavaş yavaş sükûnete bürünen Üniversiteler Şehri Tingen Şehri'ni aydınlatıyordu.» → «yavaş yavaş sükûnete bürünen, Üniversiteler Şehri olarak bilinen Tingen Şehri'ni aydınlatıyordu.» (67. bölüm ¶1)
+- kabul · okuma 1.6 dış / dışarı — örnek: «dış etkileri dışarıda tutuyordu» → «dış etkileri uzak tutuyordu» (67. bölüm ¶69)
