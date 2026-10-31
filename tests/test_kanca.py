@@ -107,3 +107,15 @@ def test_bekleyen_sapka_duzeltmesi_durdurur_sozluk_varsa(depo):
     r = _commit(depo, "sapka")
     assert r.returncode != 0
     assert "kesin duzeltme bekliyor (sapka)" in r.stdout + r.stderr
+
+
+def test_sapka_kancasi_words_md_yonunu_duzelt_gibi_kullanir(depo, monkeypatch, tmp_path):
+    # words.md 'evlat' duz yaziyor: duzelt.py dokunmaz, kanca da durmamali.
+    (depo / "_data" / "sozluk.yml").write_text("- terim: Ay\n", encoding="utf-8")
+    kel = tmp_path / "words.md"
+    kel.write_text("- **evlat** — 小子\n", encoding="utf-8")
+    monkeypatch.setenv("LOTM_KELIMELER", str(kel))
+    (depo / "_chapters" / "0002.md").write_text(
+        _bolum(2, "İki", "2026-09-30 20:00:00 +0300", "Gel evlat, dedi Klein."), encoding="utf-8")
+    r = _commit(depo, "evlat")
+    assert r.returncode == 0, r.stdout + r.stderr

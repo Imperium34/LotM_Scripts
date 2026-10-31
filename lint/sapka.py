@@ -749,7 +749,9 @@ def main() -> int:
                   tara(dosyalar, {k: v for k, v in NISBET_GUVENLI.items() if k in uygulanacak}))
 
     bastirilan = 0
-    for baslik, grup in (
+    # --denetle (kanca): yalniz bekleyen GÜVENLİ degisiklikler; ELLE listesi
+    # commit'i durdurmaz, orada gostermek yalniz gurultu olurdu.
+    for baslik, grup in () if a.denetle else (
             ("ELLE — KAYIT KARARI  (şapka doğru, ama kelime günlük dilden)", KAYIT),
             ("ELLE — NİSBET -î  (anlam ayırır, otomatik değiştirilmez)", NISBET),
             ("ELLE — EŞADLI  (her geçiş ayrı okunmalı)", ESADLI)):

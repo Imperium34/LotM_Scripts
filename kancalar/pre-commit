@@ -67,11 +67,23 @@ if ((${#yollar[@]})); then
   # once yapilsin (./calistir.sh duzelt --bolum N --uygula).
   calistir "kesin duzeltme bekliyor (lint)" python3 "$TOOLS/lint/sozluk_lint.py" \
     --duzelt --kurallar "$TOOLS/lint/lint-kurallari.yml" "${yollar[@]}"
-  # sapka'nin yonunu sozluk belirler; sozluk yoksa (ilk kurulum) atlanir.
+  # sapka'nin yonunu sozluk VE words.md belirler (words.md'de 'evlat' duz
+  # yazildigi icin evlat kalir); duzelt.py ile ayni girdiler, yoksa kanca
+  # duzelt'in "yok" dedigi seyi bekliyor sayardi. Sozluk yoksa (ilk
+  # kurulum) atlanir. words.md sirasi lotm.py ile ayni.
   sozluk="$(git rev-parse --show-toplevel)/_data/sozluk.yml"
   if [[ -f "$sozluk" ]]; then
+    sapka_arg=(--denetle --sozluk "$sozluk")
+    for k in "${LOTM_KELIMELER:-}" "$TOOLS/words.md" "$TOOLS/../Tools/words.md"; do
+      if [[ -n "$k" && -f "$k" ]]; then
+        sapka_arg+=(--kelimeler "$k")
+        break
+      fi
+    done
+    taban="${LOTM_SAPKA_TABAN:-$TOOLS/lint/sapka-taban.tsv}"
+    [[ -f "$taban" ]] && sapka_arg+=(--taban "$taban")
     calistir "kesin duzeltme bekliyor (sapka)" python3 "$TOOLS/lint/sapka.py" \
-      --denetle --sozluk "$sozluk" "${yollar[@]}"
+      "${sapka_arg[@]}" "${yollar[@]}"
   fi
 fi
 
