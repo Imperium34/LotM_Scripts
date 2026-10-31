@@ -145,3 +145,15 @@ def test_gocu_yazar_ve_words_md_yi_de_tasir(tmp_path):
     y = sapka.sozluk_yazimlari(sapka.sozluk_adlari(yml, md))
     _i, geri, celisen = sapka.sozluge_gore(sapka.NISBET_GUVENLI, y)
     assert geri == {} and celisen == {}
+
+
+def test_elle_tabani_yalniz_yeni_gecisi_gosterir(tmp_path, capsys):
+    f = tmp_path / "1.md"
+    f.write_text("Bir adet elma.\n\nSelam verdi.\n", encoding="utf-8")
+    taban = tmp_path / "sapka-taban.tsv"
+    assert sapka.taban_yaz(taban, {"1.md": f.read_text("utf-8")}) == 2
+    f.write_text("Bir adet elma.\n\nSelam verdi.\n\nYeni bir adet daha.\n", encoding="utf-8")
+    bulgu = sapka.tara({"1.md": f.read_text("utf-8")}, sapka.elle_listesi())
+    kalan, bastirilan = sapka.tabandan_suz(bulgu, sapka.taban_oku(taban))
+    assert bastirilan == 2
+    assert [k[4].strip() for v in kalan.values() for k in v] == ["Yeni bir adet daha."]

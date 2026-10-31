@@ -32,7 +32,7 @@
 #
 #      ./calistir.sh          tam zincir
 #      ./calistir.sh hepsi --otomatik [--kuru] [--model M]
-#                             tam zincir + kesin duzeltmeler (sapka GUVENLI,
+#                             tam zincir + kesin duzeltmeler (duzelt.py: sapka, lint, bicim, belgeler,
 #                             ciltler) + claude -p okumasi -> Reports/haftalik/
 #                             (bkz. zincir_oku.py; haftalik zamanlayici bunu cagirir)
 #      ./calistir.sh bolum 44 tek bolum denetimi (ceviri elden gecerken)
@@ -44,7 +44,17 @@
 #      ./calistir.sh bicim    dizgi denetimi, tabandakiler bastirilir (HATA varsa cikis 1)
 #      ./calistir.sh bicim-taban  simdiki bicim bulgularini kabul edilmis
 #                             gecmis olarak tabana yazar (bilerek, elle calistirilir)
-#      ./calistir.sh sapka    sapka taramasi, KURU (yazmak: sapka.py --uygula)
+#      ./calistir.sh sapka    sapka taramasi, KURU (yazmak: ./calistir.sh duzelt sapka --uygula)
+#      ./calistir.sh sapka-taban  sapka'nin simdiki ELLE gecislerini (kayit /
+#                             nisbet / esadli) okunmus sayar: sonra yalniz
+#                             YENILER gorunur (lint/sapka-taban.tsv)
+#      ./calistir.sh duzelt [adim...] [--bolum N|A-B] [--uygula [--evet]]
+#                             denetleyicilerin KESIN duzeltmeleri (sapka, lint,
+#                             bicim, belgeler, takvim, ciltler): once fark, sonra
+#                             --uygula ile soru + yedek (LotM/yedek/<tarih>/) +
+#                             yazma. Yargi isteyen bulgular rapor kalir.
+#                             Geri almak: ./calistir.sh duzelt --geri-al <yedek>
+#                             (bkz. duzelt.py)
 #      ./calistir.sh toplu    terim tutarliligi (sozluk + words.md), tablo
 #      ./calistir.sh belgeler ses haritalari + istemler: yazim, orneklerde eski
 #                             kelime, yalniz-Klein isaretleri, K/N kimlikleri
@@ -114,6 +124,10 @@ BOLUMLER="$SITE/_chapters"
 # soyler). Reports/ degil lint/ altinda: bu bir rapor degil bir karar, ve
 # lint-kurallari.yml gibi surum denetiminde tutulmali.
 BICIM_TABAN="${LOTM_BICIM_TABAN:-$TOOLS/lint/bicim-taban.tsv}"
+# sapka ELLE tabani: KAYIT / NISBET / ESADLI gecislerinden okunup "kalsin"
+# denmisler. bicim tabani gibi bir karar; lint/ altinda, surum denetiminde.
+SAPKA_TABAN="${LOTM_SAPKA_TABAN:-$TOOLS/lint/sapka-taban.tsv}"
+export LOTM_SAPKA_TABAN="$SAPKA_TABAN"
 
 mkdir -p "$RAPOR"
 # fark.py: her tam-korpus adimi bulgularini buraya yazar; Reports/son/ bir
@@ -268,6 +282,7 @@ adim_lint() {
     --bulgular "$BULGULAR/lint.tsv" \
     "$BOLUMLER"/*.md || kod=$?
   fark_goster lint
+  mavi "  kesin olanlari duzeltmek: ./calistir.sh duzelt lint   (KURU; --uygula ile yazar)"
   return "$kod"
 }
 
@@ -295,8 +310,8 @@ adim_bicim() {
   yesil "  -> Reports/bicim.txt"
   fark_goster bicim
   # sapka gibi: duzeltme zincirde yalniz KURU onerilir; yazmak elle.
-  mavi "  otomatik duzeltme (KURU): python3 bicim_denetle.py --duzelt"
-  mavi "  yazmak icin:              python3 bicim_denetle.py <numara> --duzelt --uygula"
+  mavi "  otomatik duzeltme (KURU): ./calistir.sh duzelt bicim"
+  mavi "  yazmak icin:              ./calistir.sh duzelt bicim --uygula   (fark + yedek)"
   return "$kod"
 }
 
@@ -319,6 +334,24 @@ adim_bicim_taban() {
   mavi "  surum denetimine eklemeyi unutmayin: git add \"$BICIM_TABAN\""
 }
 
+adim_sapka_taban() {
+  mavi "sapka ELLE tabani yaziliyor: $SAPKA_TABAN"
+  # bicim-taban gibi: simdiki her KAYIT / NISBET / ESADLI gecisi "okundu,
+  # kalsin" sayilir. Once listeyi okuyun (./calistir.sh sapka ve belgeler);
+  # duzeltilecek bir gecis varsa once onu duzeltin.
+  read -r -p "  Simdiki butun ELLE gecisleri kabul edilsin mi? [e/H] " cevap
+  [[ "$cevap" == "e" || "$cevap" == "E" ]] || {
+    mavi "  iptal edildi"
+    return 1
+  }
+  local belgeler=() d
+  for d in "$KOK/Tools/Voice_Maps" "$KOK/Tools/Prompts"; do
+    [[ -d "$d" ]] && belgeler+=("$d"/*.md)
+  done
+  python3 "$TOOLS/lint/sapka.py" --taban-yaz "$SAPKA_TABAN" "$BOLUMLER"/*.md ${belgeler[@]+"${belgeler[@]}"}
+  mavi "  surum denetimine eklemeyi unutmayin: git add \"$SAPKA_TABAN\""
+}
+
 adim_sapka() {
   mavi "[6/10] Sapka taramasi (KURU -- hicbir dosya degismez)..."
   # --sozluk / --kelimeler: sozlukte (ya da words.md'de) gecen bir kelimenin
@@ -327,8 +360,10 @@ adim_sapka() {
   # sozlugu degistirin.
   local kel=()
   [[ -f "$KELIMELER" ]] && kel=(--kelimeler "$KELIMELER")
+  [[ -f "$SAPKA_TABAN" ]] && kel+=(--taban "$SAPKA_TABAN")
   python3 "$TOOLS/lint/sapka.py" --sozluk "$SOZLUK" ${kel[@]+"${kel[@]}"} "$BOLUMLER"/*.md
-  mavi "  yazmak icin:  python3 lint/sapka.py --sozluk \"$SOZLUK\" ${kel[*]:-} --uygula \"$BOLUMLER\"/*.md"
+  [[ -f "$SAPKA_TABAN" ]] || mavi "  ELLE tabani yok: okuyup kabul ettiklerinizi gizlemek icin ./calistir.sh sapka-taban"
+  mavi "  yazmak icin:  ./calistir.sh duzelt sapka --uygula   (fark + yedek)"
   mavi "  listeye aday: python3 lint/sapka.py --kesif \"$BOLUMLER\"/*.md"
 }
 
@@ -364,6 +399,7 @@ adim_belgeler() {
   }
   local kel=()
   [[ -f "$KELIMELER" ]] && kel=(--kelimeler "$KELIMELER")
+  [[ -f "$SAPKA_TABAN" ]] && kel+=(--taban "$SAPKA_TABAN")
   python3 "$TOOLS/lint/sapka.py" --sozluk "$SOZLUK" ${kel[@]+"${kel[@]}"} "${belgeler[@]}"
   local kod=0
   python3 "$TOOLS/belge_denetle.py" --sozluk "$SOZLUK" --bulgular "$BULGULAR/belgeler.tsv" \
@@ -376,23 +412,23 @@ adim_bolum() {
   local no="$1"
   local sablon="$SABLONLAR/Ch_$no.md"
 
-  mavi "[1/6] Baslik ve yayin tarihi..."
+  mavi "[1/7] Baslik ve yayin tarihi..."
   # Beklenen tarihi de yazar: yeni bolumun on maddesine oradan kopyalayin.
   adim_takvim --bolum "$no" || kirmizi "  BASLIK/TARIH HATASI -- yayinlamadan once duzeltin"
 
-  mavi "[2/6] Hizalama guvenilir mi?"
+  mavi "[2/7] Hizalama guvenilir mi?"
   # Cikis kodu 1 = kayma VAR demek; zincir durmaz, cunku sonraki adim
   # zaten hizalamadan bagimsiz. Ama ceviri_denetle'yi bu bolumde
   # calistiracaksaniz ESLESMEYEN listesini buna gore okuyun.
   python3 "$TOOLS/hizalama_denetle.py" "$no" || true
 
-  mavi "[3/6] Bu bolumdeki terimler sozlukle tutarli mi?"
+  mavi "[3/7] Bu bolumdeki terimler sozlukle tutarli mi?"
   # Yalnizca bu bolum: burada gecen terimler, burada nasil cevrilmis.
   # Rapor adimi; bulgu zinciri durdurmaz. Yayimlanmis metne bakar
   # (_chapters), yani bolum oraya konduktan sonra anlamlidir.
   python3 "$TOOLS/toplu_denetle.py" --kaynak ikisi --bolum "$no" || true
 
-  mavi "[4/6] Bicim: dizgi kurallari ve bolumun oteki bolumlere gore sapmasi..."
+  mavi "[4/7] Bicim: dizgi kurallari ve bolumun oteki bolumlere gore sapmasi..."
   # Tek dosya kipinde bolum, yayimlanmis butun bolumlerle karsilastirilir
   # (NORMDAN SAPAN BOLUMLER). Tabandakiler bastirilir; taslak bolumun kendi
   # hatalari tabanda olmadigi icin hepsi gorunur.
@@ -404,12 +440,23 @@ adim_bolum() {
     kirmizi "  ATLANDI: $BOLUMLER yok."
   fi
 
-  mavi "[5/6] 'o' tanimlik gibi mi? (TR'de 'o + sozcuk', ZH'de 那 yok)"
+  mavi "[5/7] Bekleyen kesin duzeltme var mi? (sapka, lint, bicim; KURU)"
+  # Haftalik zincirin yazacagi seyleri yayindan ONCE gosterir: Alger'in,
+  # Firaseti, layık boyle 67-68'e kadar geldi. Hicbir dosya degismez.
+  local dkod=0
+  python3 "$TOOLS/duzelt.py" sapka lint bicim --bolum "$no" || dkod=$?
+  if ((dkod == 3)); then
+    kirmizi "  KESIN DUZELTME BEKLIYOR -- yazmak: ./calistir.sh duzelt --bolum $no --uygula"
+  elif ((dkod != 0)); then
+    kirmizi "  duzelt calismadi (cikis $dkod)"
+  fi
+
+  mavi "[6/7] 'o' tanimlik gibi mi? (TR'de 'o + sozcuk', ZH'de 那 yok)"
   # Rapor adimi; bulgu zinciri durdurmaz. Kaliplar (o zaman, o kadar...)
   # sayilmaz. Bkz. o_denetle.py.
   python3 "$TOOLS/o_denetle.py" "$no" || true
 
-  mavi "[6/6] Kapanis denetimi (hizalamadan bagimsiz)..."
+  mavi "[7/7] Kapanis denetimi (hizalamadan bagimsiz)..."
   if [[ ! -f "$sablon" ]]; then
     kirmizi "  ATLANDI: $sablon yok."
     return 1
@@ -540,6 +587,14 @@ if [[ "${1:-}" == "once" ]]; then
   exit $?
 fi
 
+# 'duzelt' de kontrol()'den once: kendi yollarini lotm.py'den alir, KURU
+# varsayilandir; --uygula once fark gosterir ve sorar, sonra yedekleyip yazar.
+if [[ "${1:-}" == "duzelt" ]]; then
+  shift
+  python3 "$TOOLS/duzelt.py" "$@"
+  exit $?
+fi
+
 # 'sonra' da kontrol()'den once: kendi denetimini yapar, 'bolum'u kendisi cagirir.
 if [[ "${1:-}" == "sonra" ]]; then
   shift
@@ -557,6 +612,7 @@ lint) adim_lint ;;
 bicim) adim_bicim ;;
 bicim-taban) adim_bicim_taban ;;
 sapka) adim_sapka ;;
+sapka-taban) adim_sapka_taban ;;
 toplu) adim_toplu ;;
 takvim) adim_takvim ;;
 belgeler) adim_belgeler ;;
@@ -574,7 +630,7 @@ hazirla)
 hepsi)
   if [[ "${2:-}" == "--otomatik" ]]; then
     # Zinciri kendisi calistirir, ciktiyi saklar, sonra zincir_oku.py:
-    # kesin duzeltmeler (sapka GUVENLI, ciltler) + claude -p ile okuma ->
+    # kesin duzeltmeler (duzelt.py; takvim haric) + claude -p ile okuma ->
     # Reports/haftalik/<tarih>.md. Geri kalan argumanlar zincir_oku'ya gider
     # (--kuru, --model). Haftalik zamanlayici bunu cagirir.
     mkdir -p "$RAPOR/haftalik"
@@ -606,10 +662,11 @@ hepsi)
   adim_dogrula || mavi "  (dogrulama atlandi)"
   ;;
 *)
-  echo "kullanim: ./calistir.sh [hepsi [--otomatik]|test|kontrol|takvim|tarama|etiket|denetim|lint|bicim|bicim-taban|sapka|toplu|belgeler|ciltler [--yaz]|dogrula [A-B]|kanca|hazirla N]"
+  echo "kullanim: ./calistir.sh [hepsi [--otomatik]|test|kontrol|takvim|tarama|etiket|denetim|lint|bicim|bicim-taban|sapka|sapka-taban|toplu|belgeler|ciltler [--yaz]|dogrula [A-B]|kanca|hazirla N]"
   echo "          ./calistir.sh bolum [numara]   (numarasiz: en son bolum)"
   echo "          ./calistir.sh once <numara>    (ceviriden once: hazirlik + sablon denetimi)"
   echo "          ./calistir.sh sonra <numara> [--otomatik [adim...]]"
+  echo "          ./calistir.sh duzelt [sapka|lint|bicim|belgeler|takvim|ciltler...] [--bolum N|A-B] [--uygula [--evet]]"
   exit 1
   ;;
 esac

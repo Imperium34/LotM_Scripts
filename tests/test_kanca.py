@@ -89,3 +89,21 @@ def test_bolum_disi_commit_denetlenmez(depo):
     (depo / "README.md").write_text("x", encoding="utf-8")
     r = _commit(depo, "readme")
     assert r.returncode == 0 and r.stdout.strip() == ""
+
+
+def test_bekleyen_kesin_lint_duzeltmesi_durdurur(depo):
+    # Neil'in -> Neil'ın: lint-kurallari.yml'de dogru_ekler tanimli.
+    (depo / "_chapters" / "0002.md").write_text(
+        _bolum(2, "İki", "2026-09-30 20:00:00 +0300", "Neil'in şapkası."), encoding="utf-8")
+    r = _commit(depo, "ek")
+    assert r.returncode != 0
+    assert "kesin duzeltme bekliyor (lint)" in r.stdout + r.stderr
+
+
+def test_bekleyen_sapka_duzeltmesi_durdurur_sozluk_varsa(depo):
+    (depo / "_data" / "sozluk.yml").write_text("- terim: Ay\n", encoding="utf-8")
+    (depo / "_chapters" / "0002.md").write_text(
+        _bolum(2, "İki", "2026-09-30 20:00:00 +0300", "Pekala, dedi Klein."), encoding="utf-8")
+    r = _commit(depo, "sapka")
+    assert r.returncode != 0
+    assert "kesin duzeltme bekliyor (sapka)" in r.stdout + r.stderr

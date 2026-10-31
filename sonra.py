@@ -285,6 +285,15 @@ def json_ayikla(cikti: str):
     return json.loads(ham)
 
 
+def alanlari_tamamla(d: dict) -> dict:
+    """Modelin bos biraktigi alanlari doldurur. 66: SABLON maddesinde
+    "yeni": null = metin degismez, oneri 'neden'de. eski null -> "",
+    yeni null -> eski (kabul edilse de metne dokunmaz)."""
+    eski = d.get("eski") or ""
+    yeni = d.get("yeni")
+    return dict(d, eski=eski, yeni=eski if yeni is None else yeni)
+
+
 def uygula(metin: str, duzeltmeler: list) -> tuple:
     """
     KESIN duzeltmeleri birebir eslesmeyle uygular: 'eski' metinde tam bir kez
@@ -292,7 +301,7 @@ def uygula(metin: str, duzeltmeler: list) -> tuple:
     birden fazla gecen KARAR'a duser; sebebi 'not'a yazilir.
     """
     uygulanan, karar = [], []
-    for d in duzeltmeler:
+    for d in map(alanlari_tamamla, duzeltmeler):
         if d.get("sinif") != "KESIN":
             karar.append(d)
             continue
@@ -329,6 +338,7 @@ def bozuk_oneri(eski: str, yeni: str) -> str | None:
 
     63 K10: '; sırtım' -> '; Sırtım' (noktali virgul kalmis, harf buyumus).
     """
+    eski, yeni = eski or "", yeni or ""
     for m in re.finditer(r"; (\w)", yeni):
         if m.group(1).isupper() and re.search(r"; " + re.escape(m.group(1).lower()), eski):
             return f"noktalı virgülden sonra büyük harf ('; {m.group(1)}…')"

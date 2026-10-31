@@ -564,6 +564,7 @@ DUSEN = frozenset(
         "resim",
         "rükün",
         "sabır",
+        "sihir",
         "şehir",
         "şekil",
         "vahiy",
@@ -779,7 +780,11 @@ def _govde(terim: str, olcu: bool = False) -> str:
         if turev:
             g = f"(?:{g}|{turev})"
         parcalar.append(g)
-    return r"\s+".join(parcalar)
+    # Sifat ile ad arasina belirsizlik tanimligi girer: "grimsi beyaz bir
+    # sis", "habis bir ruh", "yarım boy bir silindir şapka". Eskiden bunlar
+    # eslesmeyen sayiliyordu; terim kelimeleri arasinda tek bir "bir" kabul
+    # edilir.
+    return r"\s+(?:bir\s+)?".join(parcalar)
 
 
 @functools.lru_cache(maxsize=None)
@@ -801,7 +806,22 @@ def desen_kur(terim: str, harf_duyarli: bool = True):
     bicimler = (
         [terim]
         if harf_duyarli
-        else list(dict.fromkeys([terim, tr_kucult(terim), tr_buyut(tr_kucult(terim))]))
+        else list(
+            dict.fromkeys(
+                [
+                    terim,
+                    tr_kucult(terim),
+                    tr_buyut(tr_kucult(terim)),
+                    # Yalniz ILK harfi degisen bicimler: icinde ozel ad ya da
+                    # buyuk harfli terim tasiyan ifadeler. tr_kucult hepsini
+                    # kuculttugu icin "Asıl Klein'ın" (cumle basi) ve "gri
+                    # sislerin ... Hükümdarsın" (Dondurulmus Satir ortada)
+                    # hic uretilmiyordu.
+                    tr_buyut(terim),
+                    tr_kucult(terim[:1]) + terim[1:],
+                ]
+            )
+        )
     )
     secenekler = [_govde(b) for b in bicimler]
 
@@ -887,6 +907,13 @@ class Terim:
     # Ingilizce metinde Turkce kelime arayarak bulmaya calisiyordu.
     arama_adi: list = field(default_factory=list)  # TURKCE karsilik bicimleri
     en_arama_adi: list = field(default_factory=list)  # INGILIZCE tarama adlari
+    # Toplu taramanin terime ozel ayarlari (words.md'de {geniş; hariç: ...},
+    # sozluk.yml'de genis: / haric:). genis: Cince anahtar gundelik bir
+    # kelimedir, eslesmeyen gecisler ceviri bulgusu sayilmaz, ayri kovaya
+    # duser. zh_haric: anahtari iceren ama terim OLMAYAN Cince diziler
+    # (你好像, 后面相关); bu dizilerin icindeki gecisler hic sayilmaz.
+    genis: bool = False
+    zh_haric: list = field(default_factory=list)
     cevirmen_notu: str | None = None
     kardesler_tr: list = field(default_factory=list)
     kardesler_en: list = field(default_factory=list)
@@ -1099,6 +1126,8 @@ def _terim_kur(ham_girdi, ham_mertebe=None, kardesler=None, kardesler_en=None):
         eski_karsiliklar=list(ham_girdi.get("eski_karsiliklar") or []),
         arama_adi=list(ham_girdi.get("arama_adi") or []),
         en_arama_adi=list(ham_girdi.get("en_arama_adi") or []),
+        genis=bool(ham_girdi.get("genis")),
+        zh_haric=_parcala_zh(ham_girdi.get("haric")),
         cevirmen_notu=ham_girdi.get("cevirmen_notu"),
         ham=ham_girdi,
     )
@@ -1237,6 +1266,41 @@ def _madde_zh(kalan: str) -> list:
     return [(p.strip(), False) for p in m.group().split("/") if p.strip()] if m else []
 
 
+_DENETIM_ETIKETI = re.compile(r"\s*\{([^{}]*)\}")
+
+
+def _parcala_zh(deger) -> list:
+    """haric degeri: liste ya da "a/b, c" -> ["a", "b", "c"]."""
+    if not deger:
+        return []
+    if isinstance(deger, (list, tuple)):
+        return [str(d).strip() for d in deger if str(d).strip()]
+    return [p.strip() for p in re.split(r"[/,，、]", str(deger)) if p.strip()]
+
+
+def denetim_etiketi(kalan: str) -> tuple:
+    """
+    words.md satirindaki tarama etiketleri: {geniş}, {hariç: 你好像/后面相关}
+    ya da ikisi birden {geniş; hariç: ...}. Etiketler satirdan ATILIR ki
+    icindeki Cince Cince anahtar sanilmasin (parantezsiz satirda ilk CJK
+    dizisi anahtardir).
+
+    Doner: (etiketsiz_kalan, genis, haric)
+    """
+    genis, haric = False, []
+    for etiket in _DENETIM_ETIKETI.findall(kalan):
+        for parca in re.split(r"[;；]", etiket):
+            ad, _, deger = parca.partition(":")
+            ad = tr_kucult(ad.strip())
+            if ad in ("geniş", "genis"):
+                genis = True
+            elif ad in ("hariç", "haric"):
+                haric += _parcala_zh(deger)
+            elif ad:
+                raise ValueError(f"words.md: bilinmeyen tarama etiketi {{{parca.strip()}}}")
+    return _DENETIM_ETIKETI.sub("", kalan).strip(), genis, haric
+
+
 def _madde_en(kalan: str) -> list:
     """Ingilizce karsilik(lar): ilk '(' ya da ';' oncesi. Turkce harf ya da
     CJK iceriyorsa Ingilizce degildir (orn. 'kadim bir kaynak metin')."""
@@ -1262,6 +1326,9 @@ def kelimeler_yukle(yol=None) -> list:
                                                         terimler, sirayla
       "damga / damgalamak — stamp"                      esit degil: tek terim,
                                                         ikincisi arama_adi
+    Tarama etiketleri (bkz. denetim_etiketi), satirin herhangi bir yerinde:
+      "{geniş}"                  gundelik Cince anahtar, eslesmeyen bulgu degil
+      "{hariç: 你好像/后面相关}"  bu dizilerin icindeki gecisler sayilmaz
     kategori "words.md › <bolum basligi>"dir; harf_duyarli_mi icin
     'Temel Kavramlar' degildir, yani Ingilizce arama harf duyarlidir.
     """
@@ -1278,6 +1345,7 @@ def kelimeler_yukle(yol=None) -> list:
         if not m:
             continue
         kalin, kalan = m.group(1).strip(), m.group(2)
+        kalan, genis, haric = denetim_etiketi(kalan)
         # Iki nokta ile BITEN madde kendisinden sonraki listenin basligidir
         # ("Şans artırma ayini çağrısı — 福生玄黄…, four steps:"), terim
         # degil; metinde o ad degil, altindaki satirlar gecer.
@@ -1314,6 +1382,8 @@ def kelimeler_yukle(yol=None) -> list:
                         zh=zh_list[i][0] if zh_list else None,
                         zh_kesin=zh_list[i][1] if zh_list else False,
                         kategori=kategori,
+                        genis=genis,
+                        zh_haric=haric,
                         cevirmen_notu=kalan,
                     )
                 )
@@ -1335,6 +1405,8 @@ def kelimeler_yukle(yol=None) -> list:
                     zh_kesin=zh_kesin,
                     kategori=kategori,
                     arama_adi=tr_list[1:],
+                    genis=genis,
+                    zh_haric=haric,
                     cevirmen_notu=kalan,
                 )
             )

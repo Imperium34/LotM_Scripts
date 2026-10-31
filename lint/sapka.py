@@ -422,7 +422,8 @@ def sozluk_gocu(yol, kelimeler, sozluk: dict, uygula_: bool, duzyazi: bool) -> i
             atomik_yaz(yol, yeni)
     if kelimeler:
         eski = Path(kelimeler).read_text(encoding="utf-8")
-        yeni_satirlar = [_cevir(s, sozluk)[0] for s in eski.split("\n")]
+        yeni_satirlar = [s if korunan else _cevir(s, sozluk)[0]
+                         for s, korunan in zip(eski.split("\n"), _dondurulmus(eski))]
         degisen = [(i, a, b) for i, (a, b) in enumerate(zip(eski.split("\n"), yeni_satirlar), 1)
                    if a != b]
         _goster(Path(kelimeler).name, degisen)
@@ -432,6 +433,24 @@ def sozluk_gocu(yol, kelimeler, sozluk: dict, uygula_: bool, duzyazi: bool) -> i
     print(f"\n{'═' * 72}\n{toplam} satır "
           + ("yazıldı. Diff'i okuyun:  git diff" if uygula_ else "değişecek. Yazmak için:  --uygula"))
     return 0
+
+
+_BOLUM_BASLIGI = re.compile(r"^#\s")
+
+
+def _dondurulmus(metin: str) -> list:
+    """
+    words.md'nin her satiri icin: dokunulmaz mi? "Frozen Lines" bolumu
+    (rubai dahil) ve "dondurulmuş" diye isaretli her madde, harfi harfine
+    korunur: yayimlanmis satirlarin aynisidir, sapka listesi bile
+    degistiremez.
+    """
+    out, bolumde = [], False
+    for satir in metin.split("\n"):
+        if _BOLUM_BASLIGI.match(satir):
+            bolumde = "frozen" in satir.lower() or "dondurulmu" in satir.lower()
+        out.append(bolumde or "dondurulmuş" in satir)
+    return out
 
 
 def _goster(ad, degisen):
@@ -507,6 +526,53 @@ def _cevir(metin: str, sozluk: dict) -> tuple:
     return metin, toplam
 
 
+def cevir_belge(metin: str, sozluk: dict) -> tuple:
+    """
+    _cevir gibi, ama ORNEK satirlarina dokunmaz: iki yazimi birden tasiyan
+    satir (istemde '"resmi üye" -> "resmî üye"', tabloda 'pekala | pekâlâ')
+    bir ornektir ve "duzeltmek" onu yok eder. Bolumlerde bu koruma yok:
+    orada iki yazimin ayni paragrafta gecmesi tutarsizliktir.
+    """
+    ciftler = [(desen(aranan), desen(yazilacak), yazilacak)
+               for kelime in sozluk
+               for aranan, yazilacak in bicimler(kelime, sozluk[kelime])]
+    out, toplam = [], 0
+    for satir in metin.split("\n"):
+        for d_aranan, d_yazilacak, yazilacak in ciftler:
+            if not d_aranan.search(satir) or d_yazilacak.search(satir):
+                continue  # gecmiyor ya da ornek satiri (iki yazim birden)
+            satir, n = d_aranan.subn(yazilacak, satir)
+            toplam += n
+        out.append(satir)
+    return "\n".join(out), toplam
+
+
+def uygulanacak_liste(sozluk_yolu=None, kelimeler=None) -> dict:
+    """
+    --uygula'nin yazacagi liste: GÜVENLİ gruplar, yonu sozluge gore
+    (ileri + tersine); sozlukte iki yazimla gecenler disarida.
+    """
+    if not (sozluk_yolu or kelimeler):
+        return dict(GUVENLI)
+    yazimlar = sozluk_yazimlari(sozluk_adlari(sozluk_yolu, kelimeler))
+    ileri, geri, _celisen = sozluge_gore(GUVENLI, yazimlar)
+    return {**ileri, **geri}
+
+
+def plan(metinler: dict, liste: dict, belge: bool = False) -> dict:
+    """
+    {yol: metin} -> {yol: (yeni metin, degisiklik sayisi)}, yalniz degisenler.
+    Hicbir sey YAZMAZ; yazmak duzelt.py'nin isi (fark + yedek).
+    belge=True: ornek satirlari korunur (istemler, ses haritalari).
+    """
+    out = {}
+    for yol, metin in metinler.items():
+        yeni, n = (cevir_belge if belge else _cevir)(metin, liste)
+        if n and yeni != metin:
+            out[yol] = (yeni, n)
+    return out
+
+
 def bicimler(kelime: str, hedef: str | None = None) -> list[tuple[str, str]]:
     """(aranan, yazılacak) çiftleri -- küçük ve baş harfi büyük hâlleriyle."""
     hedef = hedef or TUM[kelime]
@@ -522,8 +588,12 @@ def tara(dosyalar: dict, sozluk: dict) -> dict:
             for ad, metin in sorted(dosyalar.items()):
                 for m in d.finditer(metin):
                     satir = metin.count("\n", 0, m.start()) + 1
-                    ctx = re.sub(r"\s+", " ",
-                                 metin[max(0, m.start() - 45):m.end() + 45])
+                    # Baglam kendi satirinda (paragrafinda) kalir: komsu
+                    # paragraftaki bir duzenleme ELLE tabanini bozmasin.
+                    bas = max(metin.rfind("\n", 0, m.start()) + 1, m.start() - 45)
+                    son = metin.find("\n", m.end())
+                    son = min(len(metin) if son < 0 else son, m.end() + 45)
+                    ctx = re.sub(r"\s+", " ", metin[bas:son])
                     bulgu[kelime].append((ad, satir, aranan, yazilacak, ctx))
     return bulgu
 
@@ -533,6 +603,71 @@ def uygula(yol: Path, sozluk: dict) -> int:
     if toplam:
         atomik_yaz(yol, metin)
     return toplam
+
+
+# --------------------------------------------------------------------
+# ELLE tabani: okunup "kalsin" denmis gecisler
+# --------------------------------------------------------------------
+#
+# KAYIT / NISBET / ESADLI gruplari her calistirmada ayni yuzlerce gecisi
+# getiriyordu (selam, laf, adet...); cogu bilerek sapkasiz. bicim-taban.tsv
+# gibi: taban dosyasindaki gecisler bastirilir, yalniz YENI olanlar gorunur.
+# Anahtar satir numarasi icermez (dosya, kelime, baglam), yani ust
+# paragraflardaki bir duzenleme tabani bozmaz; gecisin kendi cumlesi
+# degisirse yeniden gorunur -- dogru olan da bu.
+
+ELLE_GRUPLARI = ("KAYIT", "NISBET", "ESADLI")
+
+
+def elle_listesi() -> dict:
+    return {**KAYIT, **NISBET, **ESADLI}
+
+
+def _taban_baglami(ctx: str) -> str:
+    return re.sub(r"\s+", " ", ctx).strip()
+
+
+def taban_anahtari(ad: str, aranan: str, ctx: str) -> tuple:
+    return (ad, aranan, _taban_baglami(ctx))
+
+
+def taban_oku(yol) -> set:
+    if not yol or not Path(yol).exists():
+        return set()
+    out = set()
+    for satir in Path(yol).read_text(encoding="utf-8").splitlines():
+        if not satir.strip() or satir.startswith("#"):
+            continue
+        parca = satir.split("\t")
+        if len(parca) == 3:
+            out.add(tuple(parca))
+    return out
+
+
+def taban_yaz(yol, dosyalar: dict) -> int:
+    bulgu = tara(dosyalar, elle_listesi())
+    satirlar = sorted({taban_anahtari(ad, a, ctx)
+                       for v in bulgu.values() for ad, _s, a, _y, ctx in v})
+    govde = ("# sapka.py ELLE tabani: okunmus, oldugu gibi kalacak gecisler.\n"
+             "# dosya<TAB>aranan<TAB>baglam. Elle silinebilir; yeniden uretmek:\n"
+             "#   ./calistir.sh sapka-taban\n"
+             + "".join("\t".join(t) + "\n" for t in satirlar))
+    atomik_yaz(yol, govde)
+    return len(satirlar)
+
+
+def tabandan_suz(bulgu: dict, taban: set) -> tuple:
+    """(suzulmus bulgu, bastirilan sayi)"""
+    if not taban:
+        return bulgu, 0
+    out, bastirilan = defaultdict(list), 0
+    for kelime, kayitlar in bulgu.items():
+        for k in kayitlar:
+            if taban_anahtari(k[0], k[2], k[4]) in taban:
+                bastirilan += 1
+            else:
+                out[kelime].append(k)
+    return out, bastirilan
 
 
 def yaz_bolum(baslik: str, bulgu: dict, ornek: int = 2):
@@ -567,6 +702,12 @@ def main() -> int:
                     help="words.md; kalın maddeleri de sözlük gibi sayılır")
     ap.add_argument("--sozluk-gocu", action="store_true", dest="gocu",
                     help="listeyi sözlük dosyalarının kendisine uygula (ileri yönde)")
+    ap.add_argument("--taban", default=None,
+                    help="ELLE tabanı (lint/sapka-taban.tsv): içindeki geçişler bastırılır")
+    ap.add_argument("--taban-yaz", dest="taban_yaz", default=None,
+                    help="şimdiki bütün ELLE geçişlerini tabana yaz ve çık")
+    ap.add_argument("--denetle", action="store_true",
+                    help="kuru; GÜVENLİ değişiklik bekliyorsa çıkış 1 (kanca için)")
     ap.add_argument("--duzyazi", action="store_true",
                     help="göçte aciklama / cevirmen_notu da taşınsın")
     a = ap.parse_args()
@@ -584,6 +725,11 @@ def main() -> int:
     if a.kesif:
         kesif_yaz(kesfet(dosyalar))
         return 0
+    if a.taban_yaz:
+        n = taban_yaz(a.taban_yaz, dosyalar)
+        print(f"{n} ELLE geçişi tabana yazıldı: {a.taban_yaz}")
+        return 0
+    taban = taban_oku(a.taban)
 
     uygulanacak, geri = dict(GUVENLI), {}
     if a.sozluk or a.kelimeler:
@@ -602,12 +748,16 @@ def main() -> int:
         yaz_bolum("GÜVENLİ — EŞADLISI OLMAYAN NİSBET -î",
                   tara(dosyalar, {k: v for k, v in NISBET_GUVENLI.items() if k in uygulanacak}))
 
-    yaz_bolum("ELLE — KAYIT KARARI  (şapka doğru, ama kelime günlük dilden)",
-              tara(dosyalar, KAYIT), ornek=3)
-    yaz_bolum("ELLE — NİSBET -î  (anlam ayırır, otomatik değiştirilmez)",
-              tara(dosyalar, NISBET), ornek=3)
-    yaz_bolum("ELLE — EŞADLI  (her geçiş ayrı okunmalı)",
-              tara(dosyalar, ESADLI), ornek=3)
+    bastirilan = 0
+    for baslik, grup in (
+            ("ELLE — KAYIT KARARI  (şapka doğru, ama kelime günlük dilden)", KAYIT),
+            ("ELLE — NİSBET -î  (anlam ayırır, otomatik değiştirilmez)", NISBET),
+            ("ELLE — EŞADLI  (her geçiş ayrı okunmalı)", ESADLI)):
+        bulgu, n = tabandan_suz(tara(dosyalar, grup), taban)
+        bastirilan += n
+        yaz_bolum(baslik, bulgu, ornek=3)
+    if bastirilan:
+        print(f"\n  (ELLE: {bastirilan} geçiş tabanda, gösterilmedi)")
 
     if a.elle:
         return 0
@@ -617,8 +767,8 @@ def main() -> int:
     print(f"\n{'═' * 72}")
     if not a.uygula:
         print(f"{guvenli_sayi} güvenli değişiklik bulundu. "
-              f"Yazmak için:  --uygula")
-        return 0
+              f"Yazmak için:  ./calistir.sh duzelt sapka --uygula")
+        return 1 if (a.denetle and guvenli_sayi) else 0
 
     toplam = 0
     for p in yollar:

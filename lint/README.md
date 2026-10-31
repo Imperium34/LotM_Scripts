@@ -91,3 +91,47 @@ EK-UYUMU  (6)
 ────────────────────────────────────────────────────────────────────────
 !! 0018.md:3  “Klein'in” azınlıkta ({'ın': 86, 'in': 1}) — ünlü uyumu tutarsız
 ```
+
+## Kesin düzeltmeler: `./calistir.sh duzelt`
+
+Bulgunun kendisi tek doğru sonucu söylüyorsa düzeltme otomatiktir; gerisi
+rapor kalır. Tek yazma yolu `duzelt.py`'dir: önce fark, `--uygula` ile soru,
+yedek (`LotM/yedek/<tarih>/duzelt-<saat>/`) ve yazma.
+
+```
+./calistir.sh duzelt                    # hepsi, KURU (fark gösterir)
+./calistir.sh duzelt lint --bolum 68    # yalnız lint, yalnız 68
+./calistir.sh duzelt --uygula           # fark + soru + yedek + yaz
+./calistir.sh duzelt --geri-al yedek/2026-10-31/duzelt-143005
+```
+
+`sozluk_lint.py` için kesin sayılanlar:
+
+- **varyant** — yalnız `duzelt` anahtarı olan kurallar (`true` ya da
+  `{yanlış: doğru}`). Doğru biçim yanlışın yerine kelimesi kelimesine
+  oturmuyorsa (`Kaos Çağı'nda` → `Heyûlâ'da`, `yarım kilo` → `libre`) açmayın.
+- **yasakli** — `bicim` → `yerine`, büyük harf korunur; `duzelt: false` kapatır.
+- **ek-uyumu** — yalnız `dogru_ekler`'i tanımlı adlar. Ünlüyle biten adlarda
+  (Melissa, Audrey) yalnız -dan/-da: `Melissa'ın` kaynaştırma ister, aile içi
+  değişim onu yine yanlış bırakırdı. Çoğunluk tahmini hiç düzeltilmez.
+
+Önizleme tek başına: `python3 lint/sozluk_lint.py --duzelt _chapters/`.
+
+### Özel ad adayları
+
+Lint çıktısının sonunda **ÖZEL AD ADAYLARI**: kesmeyle ek alan ama
+`ozel_adlar`'da kuralı olmayan adlar, sayımları ve `dogru_ekler` önerisiyle,
+yapıştırmaya hazır. Öneri önce metinde kullanılan biçimden, yoksa yazımdan
+çıkar (`# metinden` / `# tahmin`); telaffuzu siz kontrol edin. Elenenler:
+Türkçe harfli kelimeler, metinde küçük harfle de geçenler, sözlükte Türkçe
+adı geçenler (Basiret, Efendi). Ad olmayan kalırsa `ozel_ad_disi`'na ekleyin.
+
+Ünlüyle biten adlarda kaynaştırmalı biçim yazılır (`Melissa: nın, ya, yı,
+dan, da`); `Melissa'ın` gibi kaynaştırma hatası da kesin düzeltilir.
+
+### sapka ELLE tabanı
+
+`./calistir.sh sapka-taban` şimdiki kayıt / nisbet / eşadlı geçişlerini
+okunmuş sayar (`lint/sapka-taban.tsv`); sonra `sapka`, `belgeler` ve
+`duzelt` yalnız YENİ geçişleri gösterir. Taban bir karardır: önce listeyi
+okuyun, sürüm denetimine ekleyin.

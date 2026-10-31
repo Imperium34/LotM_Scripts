@@ -5,6 +5,17 @@
 # 1. VARYANT GRUPLARI
 # Aynı kavramın birden fazla yazımı. "dogru" alanı kanonik biçimdir;
 # "yanlis" listesindeki her eşleşme rapor edilir.
+#
+# "duzelt" (isteğe bağlı): ./calistir.sh duzelt bu kuralı OTOMATİK uygular.
+#   duzelt: true            her yanlış biçim -> dogru, harfi harfine
+#   duzelt: {yanlış: doğru} yalnız listelenen biçimler
+# Yalnız doğru biçim yanlışın yerine KELİMESİ KELİMESİNE oturuyorsa açın;
+# "Kaos Çağı'nda" -> "Heyûlâ'da" gibi eki değişen ya da "yarım kilo" ->
+# "libre" gibi cümlesi değişen kurallar rapor kalır.
+# "tam_kelime: true": yanlış biçimden sonra harf gelirse eşleşmez
+# (Yaratıcı'nın yakalanır, Yaratıcılık değil).
+# "istisna" yalnız kendi geçişini susturur: kalıp o geçişi kapsamalı ya da
+# hemen önünde/ardında durmalı ("şans artırma" + "ritüeli").
 # ---------------------------------------------------------------
 varyantlar:
   - kavram: "Lord of Storms"
@@ -12,10 +23,12 @@ varyantlar:
     # Şapkalı ve şapkasız biçimlerin ikisi de: kural eskiden şapkasızdı ve
     # sözlük/bölümler "Hâkimi" yazdığı için "Fırtına Hâkimi" hiç yakalanmıyordu.
     yanlis: ["Fırtınaların Hâkimi", "Fırtına Hâkimi", "Fırtınaların Hakimi", "Fırtına Hakimi", "Fırtınalar Hakimi"]
+    duzelt: true
 
   - kavram: "God of Knowledge and Wisdom"
     dogru: "İlim ve Hikmetin İlahı"
     yanlis: ["İlim ve Hikmet İlahı"]
+    duzelt: true
 
   - kavram: "Chaos (çağ adı)"
     dogru: "Heyûlâ"
@@ -24,11 +37,13 @@ varyantlar:
   - kavram: "The Creator"
     dogru: "Yaradan"
     yanlis: ["Yaratıcı"]
+    tam_kelime: true   # "Yaratıcılık" (creativity) ayrı kelime
     not: "Aslî Yaradan girdisiyle hizalı. Ch18'de aynı bölümde ikisi birden geçiyor."
 
   - kavram: "Intersea"
     dogru: "Ortadeniz"
     yanlis: ["Orta Deniz"]
+    duzelt: true
 
   - kavram: "pound / libre"
     dogru: "libre"
@@ -44,16 +59,26 @@ varyantlar:
   - kavram: "pound sterling"
     dogru: "Sterlin"
     yanlis: ["sterlin"]
+    duzelt: true
     not: "Para birimi daima büyük harfle (1–62'de 118 geçişin hepsi 'Sterlin')."
 
   - kavram: "Firaset (Spirit Vision) + ek"
     dogru: "Firaset'i"
     yanlis: ["Firaseti", "Firasetini", "Firasetinin", "Firasetimi", "Firasetin"]
+    # Her biçim kendi ekini korur; "dogru" yalnız örnek.
+    duzelt:
+      Firaseti: "Firaset'i"
+      Firasetini: "Firaset'ini"
+      Firasetinin: "Firaset'inin"
+      Firasetimi: "Firaset'imi"
+      Firasetin: "Firaset'in"
     not: "Terim adı büyük harfli; ek kesmeyle ayrılır (24 Eki taraması, 35/37/39/44/45)."
 
 # ---------------------------------------------------------------
 # 2. YASAKLI BİÇİMLER
 # Kelime hatası, uydurma biçim, terk edilmiş tercih.
+# ./calistir.sh duzelt bunları "yerine" ile değiştirir (büyük harf korunur).
+# Değiştirilmemesi gereken bir girdi için:  duzelt: false
 # ---------------------------------------------------------------
 yasakli:
   - bicim: "cehliyet"
@@ -140,37 +165,64 @@ register:
 # 6. ÖZEL ADLARA GELEN EKLER
 # Ünlü uyumu telaffuza göre işler; çoğunluk her zaman doğru değildir.
 # "dogru_ekler" verilirse hata, verilmezse çoğunluğa bakılıp uyarı üretilir.
+# Her hal için bir ek: tamlayan, yönelme, belirtme, ayrılma, bulunma.
+# Ünlüyle biten adda kaynaştırmalı biçim yazılır: Melissa -> nın, ya, yı.
+# Kuralı olmayan adlar lint çıktısındaki "ÖZEL AD ADAYLARI"nda listelenir.
 # ---------------------------------------------------------------
+# Lint "ÖZEL AD ADAYLARI"nda listelenip ad OLMAYAN kelimeler (ya da kural
+# istemeyen adlar). Sözlükte Türkçe adı geçen kelimeler zaten elenir.
+ozel_ad_disi: ["Ece"]
+# En az kaç geçişte aday sayılsın.
+ozel_ad_esik: 3
+
 ozel_adlar:
-  # --- The Tarot Club (Vol 1) ---
+  # --- Protagonist & Identities ---
   Klein:
     dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Klayn
+  Mingrui:
+    dogru_ekler: ["nin", "ye", "yi", "den", "de"] # Min-gruy
+
+  # --- The Tarot Club (Vol 1) ---
   Alger:
     dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Al-cır
+  Wilson:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Vil-sın
   Audrey:
-    dogru_ekler: ["in", "e", "i", "den", "de"] # Aud-ri
+    dogru_ekler: ["nin", "ye", "yi", "den", "de"] # Aud-ri (ünlüyle biter)
+  Hall:
+    dogru_ekler: ["un", "a", "u", "dan", "da"] # Hol (Takes 'u' harmony)
   Derrick:
     dogru_ekler: ["in", "e", "i", "ten", "te"] # De-rik (Takes 't' mutation)
+  Susie:
+    dogru_ekler: ["nin", "ye", "yi", "den", "de"] # Su-zi (ünlüyle biter - Audrey's dog)
 
   # --- Klein's Family & Friends ---
   Benson:
     dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Ben-sın
   Melissa:
-    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Me-lis-a
+    dogru_ekler: ["nın", "ya", "yı", "dan", "da"] # Me-lis-sa (ünlüyle biter: kaynaştırma)
+  Moretti:
+    dogru_ekler: ["nin", "ye", "yi", "den", "de"] # Mo-ret-ti (ünlüyle biter)
+  Elizabeth:
+    dogru_ekler: ["in", "e", "i", "ten", "te"] # E-li-za-bet (Takes 't' mutation)
+  Mountbatten:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Maunt-ba-tın
   Welch:
     dogru_ekler: ["in", "e", "i", "ten", "te"] # Velç (Takes 't' mutation)
   Naya:
-    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Na-ya
+    dogru_ekler: ["nın", "ya", "yı", "dan", "da"] # Na-ya (ünlüyle biter)
   Selena:
-    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Se-le-na
-  Elizabeth:
-    dogru_ekler: ["in", "e", "i", "ten", "te"] # E-li-za-bet (Takes 't' mutation)
+    dogru_ekler: ["nın", "ya", "yı", "dan", "da"] # Se-le-na (ünlüyle biter)
 
   # --- Tingen Nighthawks & Church of Evernight ---
   Dunn:
     dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Dan
+  Smith:
+    dogru_ekler: ["in", "e", "i", "ten", "te"] # S-mit
   Leonard:
     dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Le-nırd
+  Mitchell:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Mi-çıl
   Neil:
     dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Nil
   Rozanne:
@@ -180,25 +232,39 @@ ozel_adlar:
   Royale:
     dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Ro-yal
   Seeka:
-    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Si-ka
+    dogru_ekler: ["nın", "ya", "yı", "dan", "da"] # Si-ka (ünlüyle biter)
   Bredt:
     dogru_ekler: ["in", "e", "i", "ten", "te"] # Bret (Takes 't' mutation)
   Orianna:
-    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # O-ri-yan-na
+    dogru_ekler: ["nın", "ya", "yı", "dan", "da"] # O-ri-yan-na (ünlüyle biter)
   Daly:
-    dogru_ekler: ["in", "e", "i", "den", "de"] # Dey-li
+    dogru_ekler: ["nin", "ye", "yi", "den", "de"] # Dey-li (ünlüyle biter)
+  Smyrin:
+    dogru_ekler: ["in", "e", "i", "den", "de"] # Smi-rin (Father Smyrin)
 
-  # --- Key Figures, Mentors & Others ---
+  # --- Khoy University, Divination Club & Tingen Allies ---
   Azik:
     dogru_ekler: ["in", "e", "i", "ten", "te"] # A-zik (Takes 't' mutation)
-  Roselle:
-    dogru_ekler: ["in", "e", "i", "den", "de"] # Ro-zel
+  Cohen:
+    dogru_ekler: ["in", "e", "i", "den", "de"] # Ko-hen (Professor Cohen)
+  Angelica:
+    dogru_ekler: ["nın", "ya", "yı", "dan", "da"] # An-ce-li-ka (Divination Club)
+
+  # --- Other Factions & Officials ---
+  Swain:
+    dogru_ekler: ["in", "e", "i", "den", "de"] # S-veyn (Mandated Punishers)
+
+  # --- Deities & Historical Figures ---
   Amanises:
     dogru_ekler: ["in", "e", "i", "den", "de"] # A-ma-nay-sis
+  Roselle:
+    dogru_ekler: ["in", "e", "i", "den", "de"] # Ro-zel
 
   # --- Antagonists & Suspects (Volume 1) ---
+  Tris:
+    dogru_ekler: ["in", "e", "i", "ten", "te"] # Tris (Takes 't' mutation)
   Trissy:
-    dogru_ekler: ["in", "e", "i", "den", "de"] # Tri-si
+    dogru_ekler: ["nin", "ye", "yi", "den", "de"] # Tri-si (ünlüyle biter)
   Lanevus:
     dogru_ekler: ["un", "a", "u", "tan", "ta"] # La-ne-vus (Takes 'u' harmony and 't' mutation)
   Hood:
@@ -223,3 +289,35 @@ ozel_adlar:
     dogru_ekler: ["in", "e", "i", "ten", "te"] # İns (Takes 't' mutation)
   Zangwill:
     dogru_ekler: ["in", "e", "i", "den", "de"] # Zang-vil
+
+  # --- Locations ---
+  Backlund:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Bek-lınd
+  Tingen:
+    dogru_ekler: ["in", "e", "i", "den", "de"] # Tin-gen
+
+  # --- Tingen Residents & Minor Characters ---
+  Anna:
+    dogru_ekler: ["nın", "ya", "yı", "dan", "da"] # An-na (ünlüyle biter)
+  Annie:
+    dogru_ekler: ["nin", "ye", "yi", "den", "de"] # An-ni (ünlüyle biter)
+  Edward:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Ed-vırd
+  Elliott:
+    dogru_ekler: ["ın", "a", "ı", "tan", "ta"] # El-yıt (Takes 't' mutation)
+  George:
+    dogru_ekler: ["un", "a", "u", "dan", "da"] # Corc (Takes 'u' harmony)
+  Glacis:
+    dogru_ekler: ["in", "e", "i", "ten", "te"] # Gla-sis (Takes 't' mutation)
+  Klee:
+    dogru_ekler: ["nin", "ye", "yi", "den", "de"] # Kli (ünlüyle biter)
+  Meyer:
+    dogru_ekler: ["in", "e", "i", "den", "de"] # Me-yer
+  Quentin:
+    dogru_ekler: ["in", "e", "i", "den", "de"] # Kuen-tin
+  Scarter:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Skar-tır
+  Vickroy:
+    dogru_ekler: ["un", "a", "u", "dan", "da"] # Vik-roy (Takes 'u' harmony)
+  Vincent:
+    dogru_ekler: ["ın", "a", "ı", "tan", "ta"] # Vin-sınt (Takes 't' mutation)

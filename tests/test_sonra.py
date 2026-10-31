@@ -353,3 +353,22 @@ def test_okuma_girdisine_o_bulgulari(tmp_path, monkeypatch):
     assert girdi.index("<o_bulgulari>") < girdi.index("<bolum>")
     sahte.bulgular = lambda no: []
     assert "<o_bulgulari>" not in b.okuma()[0][0].read_text(encoding="utf-8")
+
+
+def test_null_eski_yeni_cokertmez():
+    # 66: SABLON maddesi "yeni": null ile geldi, inceleme_yaz cokuyordu.
+    metin = "Klein hayranlık ve şaşkınlıkla defalarca iç çekti. Sonra güldü."
+    duz = [{"p": 15, "sinif": "SABLON", "kaynak": ["sadakat"], "kural": "sadakat Ş şablon öbeği kaynakta yok",
+            "eski": "hayranlık ve şaşkınlıkla defalarca iç çekti", "yeni": None, "neden": "şablon"},
+           {"p": 16, "sinif": "KESIN", "kaynak": ["okuma"], "kural": "okuma 1.6 tekrar",
+            "eski": None, "yeni": "x", "neden": ""}]
+    yeni, uygulanan, karar = S.uygula(metin, duz)
+    assert yeni == metin and not uygulanan and len(karar) == 2
+    assert karar[0]["yeni"] == karar[0]["eski"] and karar[1]["eski"] == ""
+    inc = S.inceleme_yaz(66, uygulanan, karar, [], kuru=False)
+    assert "✓ hayranlık ve şaşkınlıkla defalarca iç çekti" in inc
+    assert S.bozuk_oneri(None, None) == "öneri metni değiştirmiyor"
+    # Kabul edilse bile metne dokunmaz.
+    sec = [s for s in S.inceleme_oku(inc) if s["sinif"] == "SABLON"][0]
+    assert sec["eski"] == sec["yeni"]
+

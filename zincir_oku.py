@@ -7,11 +7,12 @@ ciktisini bir modele okutur, kesin duzeltmeleri betiklerle uygular.
 UST DUZEY SORU: "Bu haftaki tam zincirde yeni ne var, ne duzeltildi?"
 
 Iki is, bu sirayla:
-    duzeltme   YALNIZ deterministik duzelticiler: sapka.py --uygula (GUVENLI
-               bolumu; ELLE'ye dokunmaz) bolumlere ve belgelere (ses haritalari
-               + istemler: model ornekleri taklit eder, eski yazim oradan
-               yeni bolume sizar), ciltler_yaz.py (ciltler.yml gerideyse). Model metin yazmaz. Her sey commit'siz kalir:
-               'git diff' ile okuyup siz commit'lersiniz.
+    duzeltme   YALNIZ deterministik duzelticiler, duzelt.py ile (sapka,
+               lint, bicim, belgeler, ciltler; takvim haric): her biri yalniz
+               KESIN duzeltmeyi yazar, ELLE'ye dokunmaz. Yazmadan once
+               LotM/yedek/<tarih>/duzelt-<saat>/'e yedek alinir. Model metin
+               yazmaz. Her sey commit'siz kalir: 'git diff' ile okuyup siz
+               commit'lersiniz.
     okuma      Tools/Prompts/zincir-okuma-istemi.md + Tools/bilinen.md +
                uygulanan duzeltmeler + zincir ciktisi -> claude -p ->
                Reports/haftalik/<tarih>.md. Model yalniz okuyan denetcileri
@@ -60,25 +61,19 @@ def calistir(komut: list, cwd: Path = BETIKLER) -> str:
     return ANSI.sub("", p.stdout + (("\n" + p.stderr) if p.stderr.strip() else "")).strip()
 
 
+# Haftalik zincirin yazdigi adimlar. 'takvim' bilerek disarida: yayin
+# tarihini degistirir, o karar elle verilir (./calistir.sh duzelt takvim).
+HAFTALIK_ADIMLAR = ["sapka", "lint", "bicim", "belgeler", "ciltler"]
+
+
 def duzelt() -> str:
-    """Deterministik duzelticiler; ne yaptiklarinin ozeti."""
-    out = []
-    bolumler = sorted(str(p) for p in BOLUMLER.glob("*.md"))
-    kel = ["--kelimeler", str(KELIMELER)] if KELIMELER.exists() else []
-    s = calistir(["python3", "lint/sapka.py", "--sozluk", str(SOZLUK), *kel, "--uygula", *bolumler])
-    # sapka'nin ozeti son satirlarda; listenin tamami zincir ciktisinda zaten var.
-    out.append("sapka --uygula (GÜVENLİ), bölümler:\n" + "\n".join(s.splitlines()[-4:]))
-    # calistir.sh adim_belgeler ile ayni klasorler.
-    belgeler = sorted(str(p) for d in BELGE_KLASORLERI for p in d.glob("*.md"))
-    if belgeler:
-        s = calistir(["python3", "lint/sapka.py", "--sozluk", str(SOZLUK), *kel, "--uygula", *belgeler])
-        out.append("sapka --uygula (GÜVENLİ), belgeler:\n" + "\n".join(s.splitlines()[-4:]))
-    c = subprocess.run(["python3", "ciltler_yaz.py", "--denetle"], capture_output=True,
-                       text=True, cwd=BETIKLER)
-    if c.returncode != 0:
-        out.append("ciltler_yaz: " + calistir(["python3", "ciltler_yaz.py"]))
-    else:
-        out.append("ciltler_yaz: güncel, yazılmadı")
+    """
+    Deterministik duzelticiler, tek komutla: duzelt.py (fark + yedek +
+    yazma). Ciktisi -- adim sayilari, kelime duzeyinde fark, yedek klasoru,
+    elle kalanlar -- oldugu gibi modele gider; ayri ayri betik ciktisi
+    toplamaya gerek kalmaz.
+    """
+    out = [calistir(["python3", "duzelt.py", *HAFTALIK_ADIMLAR, "--uygula", "--evet"])]
     fark = calistir(["git", "diff", "--stat"], cwd=SITE)
     out.append("site git diff --stat:\n" + (fark or "(değişiklik yok)"))
     fark = calistir(["git", "diff", "--stat", "--", "Voice_Maps", "Prompts"], cwd=KOK / "Tools")

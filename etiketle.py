@@ -60,8 +60,8 @@ MUDAHALE = {
     "Ebedî Yanan Güneş": "birlestirme",
     "Kotar": "tamamlama",
     "Hakiki Hâlık / Mütereddi Hâlık": "degistirme",
-    "Kadim Şeytaniçe": "ozgun",
-    "Kadim Şeytaniçe (Tam Tazim İsmi)": "degistirme",
+    "Kadim Şerbânû": "ozgun",
+    "Kadim Şerbânû (Tam Tazim İsmi)": "degistirme",
     "İlim ve Hikmetin İlahı": "degistirme",
     "Batınî Bilge": "ozgun",
     "Prangalı İlah": "ozgun",
@@ -72,7 +72,7 @@ MUDAHALE = {
 
 # Kaynagi LotM metni olmayan girdiler.
 KAYNAK_ELLE = {
-    "Kadim Şeytaniçe (Tam Tazim İsmi)": "metin_coi",
+    "Kadim Şerbânû (Tam Tazim İsmi)": "metin_coi",
     "Halas Meleği Amon": "metin_coi",
     "Halas Meleği Gehrman Sparrow": "metin_coi",
     "Yarı Kadir-i Mutlak Âdem (Âdem ve Hakiki Hâlık'ın birleşimi sonrası)": "metin_coi",

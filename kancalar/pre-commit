@@ -7,10 +7,12 @@
 #  kanca betiklerle birlikte surum denetiminde durur ve guncellenir.
 #
 #  Yalnizca commit bir BOLUMU ya da _data/takvim.yml'i iceriyorsa calisir.
-#  Uc ucuz denetim, okura gorunecek hatalar icin:
+#  Ucuz denetimler, okura gorunecek hatalar icin:
 #    1. takvim_denetle    baslik tekrari, yayin gunu/saati
 #    2. bicim_denetle     degisen bolumler, tabanla; yalniz HATA durdurur
 #    3. artik isaretler   [BELİRSİZ], [DURUM NOTU], sablon basliklari
+#    4. kesin duzeltme    lint (Alger'in, Firaseti...) ve sapka GÜVENLİ
+#                         bekleyen bolum durur: ./calistir.sh duzelt --bolum N --uygula
 #
 #  Denetlenen, CALISMA AGACI degil INDEX'tir (commit edilecek olan): sahne
 #  disi bir duzeltme commit'e eklenmediyse hatali hali yine yakalanir.
@@ -61,6 +63,16 @@ if ((${#yollar[@]})); then
     --bolumler "$klasor" --taban "$TOOLS/lint/bicim-taban.tsv"
   calistir "artik isaretler" python3 "$TOOLS/yayim_denetle.py" --yalniz-artik \
     --bolumler "$klasor" "${yollar[@]}"
+  # Haftalik zincirin kendiliginden yazacagi kesin duzeltmeler: yayindan
+  # once yapilsin (./calistir.sh duzelt --bolum N --uygula).
+  calistir "kesin duzeltme bekliyor (lint)" python3 "$TOOLS/lint/sozluk_lint.py" \
+    --duzelt --kurallar "$TOOLS/lint/lint-kurallari.yml" "${yollar[@]}"
+  # sapka'nin yonunu sozluk belirler; sozluk yoksa (ilk kurulum) atlanir.
+  sozluk="$(git rev-parse --show-toplevel)/_data/sozluk.yml"
+  if [[ -f "$sozluk" ]]; then
+    calistir "kesin duzeltme bekliyor (sapka)" python3 "$TOOLS/lint/sapka.py" \
+      --denetle --sozluk "$sozluk" "${yollar[@]}"
+  fi
 fi
 
 if ((basarisiz)); then

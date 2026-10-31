@@ -41,6 +41,7 @@ Kullanim:
     toplu_denetle.py --format tsv > kuyruk.tsv
     toplu_denetle.py --ayrinti "Aşkın"      tek terimin eslesmeyenlerini yaz
     toplu_denetle.py --yenile               hizalama onbellegini sil
+    toplu_denetle.py --hepsi                tam eslesen terimleri de tabloda goster
 """
 
 from __future__ import annotations
@@ -375,12 +376,15 @@ def sweep_terimleri(
 # --------------------------------------------------------------- tarama
 
 
-def kaynak_deseni(sorgu, kaynak, duyarsiz):
+def kaynak_deseni(sorgu, kaynak, duyarsiz, haric=None):
     """
     Terimin kaynak dildeki arama deseni. terimi_tara ile Cince bilesik
     ipucu (bkz. ceviri_denetle.zh_bilesik_ipuclari) AYNI deseni kullanmali;
     ipucu desenin bulmadigi bir gecise bakarsa sozlukte zaten kayitli
     bilesikleri de "eksik" diye raporlar.
+
+    haric: terimin kendi {hariç: ...} dizileri (bkz. lotm.denetim_etiketi);
+    yalnizca Cincede anlamlidir, cunku Cince desen kelime siniri tanimaz.
     """
     if kaynak in ("en", "zh"):
         # "A / B" -> A veya B. words.md'nin Cince alani da boyle gelebilir
@@ -395,7 +399,7 @@ def kaynak_deseni(sorgu, kaynak, duyarsiz):
         parcalar = [p.strip() for p in sorgu.split("/") if p.strip()]
         return re.compile(
             "|".join(
-                f"(?:{CD.desen_kur_kaynak(p, kaynak, duyarsiz).pattern})"
+                f"(?:{CD.desen_kur_kaynak(p, kaynak, duyarsiz, haric if kaynak == 'zh' else None).pattern})"
                 for p in parcalar
             ),
             re.IGNORECASE if duyarsiz else 0,
@@ -563,6 +567,11 @@ def ayrinti_yaz(kayit, ust=15, arka_plan=None, elenen=None):
             if kayit.get("siradan")
             else ""
         )
+        + (
+            f", {len(kayit['genis'])} serbest çeviri (madde {{geniş}} işaretli)"
+            if kayit.get("genis")
+            else ""
+        )
     )
     CD.zh_elenen_yaz(elenen)
     if kayit["sayim"]:
@@ -580,6 +589,14 @@ def ayrinti_yaz(kayit, ust=15, arka_plan=None, elenen=None):
         print(f"  [bölüm {v['bolum']}] {pen}{ozet or '(hedef paragraf boş)'}")
     if len(kayit["eslesmeyen"]) > ust:
         print(f"  ... {len(kayit['eslesmeyen']) - ust} tane daha")
+    if kayit.get("genis"):
+        print("  serbest çeviri ({geniş}; bulgu sayılmaz):")
+        for v in kayit["genis"][:ust]:
+            ozet = re.sub(r"\s+", " ", v["hedef_metin_dar"])[:110]
+            pen = f"〔{CD.zh_pencere(v['kaynak_metin'], desen)}〕 " if zh_mi else ""
+            print(f"  [bölüm {v['bolum']}] {pen}{ozet or '(hedef paragraf boş)'}")
+        if len(kayit["genis"]) > ust:
+            print(f"  ... {len(kayit['genis']) - ust} tane daha")
     if zh_mi and kayit["eslesmeyen"]:
         CD.zh_bilesik_yaz(
             CD.zh_bilesik_raporu(
@@ -772,6 +789,11 @@ def main() -> int:
     )
     ap.add_argument("--format", choices=("tablo", "tsv"), default="tablo")
     ap.add_argument(
+        "--hepsi",
+        action="store_true",
+        help="tam eslesen terimleri de tabloda goster (varsayilan: gizli)",
+    )
+    ap.add_argument(
         "--yenile",
         action="store_true",
         help="hizalama onbellegini sil ve sifirdan hesapla",
@@ -823,7 +845,7 @@ def main() -> int:
         # --harf-duyarsiz kuresel olarak zorlar; verilmezse karar kategoriye
         # birakilir (bkz. harf_duyarli_mi).
         duyarsiz = a.duyarsiz or not duyarli
-        desen = kaynak_deseni(sorgu, kaynak, duyarsiz)
+        desen = kaynak_deseni(sorgu, kaynak, duyarsiz, t.zh_haric)
         # Mertebe adlari gundelik anlamda da gecer; yalnizca Cincede
         # isaretli olup olmadigi anlasilabilir (bkz. mertebe_isaret_deseni).
         isaret = (
@@ -838,6 +860,11 @@ def main() -> int:
         sayim, eslesmeyen, karantina, tek, komsu = ozetle(vuruslar)
         siradan = [v for v in eslesmeyen if v.get("siradan")]
         eslesmeyen = [v for v in eslesmeyen if not v.get("siradan")]
+        # {geniş} isaretli terim: anahtar gundelik bir kelime, eslesmeyenler
+        # serbest ceviridir. Orana ve bulgulara girmez, --ayrinti'da gorunur.
+        genis = eslesmeyen if t.genis else []
+        if t.genis:
+            eslesmeyen = []
         eski_g, eski_s = eski_ozeti(
             vuruslar, sayim, eski, gecis_bolumu(t) if a.hedef == "tr" else None
         )
@@ -857,6 +884,7 @@ def main() -> int:
                 "karantina": karantina,
                 "komsu": komsu,
                 "siradan": siradan,
+                "genis": genis,
                 "tek_tarafli": tek,
                 # Oran YALNIZCA saglam bolgeler uzerinden. Kaymis bolgelerden
                 # gelen eslesmeyenler paydadan da cikarilir, aksi hâlde
@@ -864,8 +892,8 @@ def main() -> int:
                 # anlamdaki Mertebe gecisleri de ayni sebeple disarida.
                 "oran": (
                     len(eslesmeyen)
-                    / (len(vuruslar) - len(karantina) - len(siradan))
-                    if len(vuruslar) - len(karantina) - len(siradan) > 0
+                    / (len(vuruslar) - len(karantina) - len(siradan) - len(genis))
+                    if len(vuruslar) - len(karantina) - len(siradan) - len(genis) > 0
                     else 0.0
                 ),
             }
@@ -900,7 +928,21 @@ def main() -> int:
     if a.format == "tsv":
         tsv_yaz(kayitlar)
     else:
-        satir_yaz(kayitlar, genislik)
+        # Tabloda yalnizca is cikaran satirlar: eslesmeyeni ya da metinde
+        # kalmis terk edilmis karsiligi olanlar. 640 terimin 570'i temiz;
+        # onlar listeyi uzatip bulgulari ekranin disina itiyordu. TSV ve
+        # --bulgular etkilenmez, ozet satiri hepsini sayar.
+        gorunen = (
+            kayitlar
+            if a.hepsi
+            else [k for k in kayitlar if k["eslesmeyen"] or k.get("eski_gorulen")]
+        )
+        satir_yaz(gorunen, genislik)
+        if len(gorunen) < len(kayitlar):
+            print(
+                f"({len(kayitlar) - len(gorunen)} tam eşleşen terim gizlendi; "
+                f"hepsi için --hepsi)"
+            )
         bilesik_ipucu_yaz(kayitlar)
         temiz = sum(1 for k in kayitlar if not k["eslesmeyen"])
         eskiler = [k for k in kayitlar if k.get("eski_gorulen")]
@@ -915,6 +957,13 @@ def main() -> int:
             )
             guncel = sum(n for a, n in k["sayim"].items() if a not in k["eski_gorulen"])
             print(f"  ⚠ {k['terim']}: {dokum}  (güncel karşılık: {guncel})")
+        genisler = [k for k in kayitlar if k.get("genis")]
+        if genisler:
+            print(
+                f"{len(genisler)} {{geniş}} terimde "
+                f"{sum(len(k['genis']) for k in genisler)} serbest çeviri ayrı tutuldu "
+                f"(bulgu sayılmaz; görmek için --ayrinti)."
+            )
         print("Listenin başı: eski_karşılık geri doldurma sırası.")
         if any(_ad(k).startswith("·") for k in kayitlar):
             print("· = words.md maddesi (yalnız onlar için: --kelimeler yalniz)")

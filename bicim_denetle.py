@@ -1236,6 +1236,77 @@ def _onizleme(d: Duzeltme, g: int = 40) -> tuple:
     return on, son
 
 
+def _dosya_duzeltmeleri(yol, kod_adlari, taban, kodlar):
+    """(ham, guvenli, elle, elle_bulgu) -- tek dosya; hicbir sey yazmaz."""
+    ham = yol.read_text(encoding="utf-8")
+    pler, bulgular, _ = dosyayi_denetle(yol, kod_adlari)
+    dosya = yol.name
+    duzeltmeler = []
+    for p in pler:
+        for d in duzeltmeleri_bul(p):
+            if kodlar and d.kod not in kodlar:
+                continue
+            if taban and (dosya, d.kod, _kisalt(p.metin, d.bas)) in taban:
+                continue
+            duzeltmeler.append(d)
+    # Duzeltme motorunun kapsamadigi HATA'lar da ELLE listesine.
+    kapsanan = {"B02", "B03", "B11", "B13"}
+    elle_bulgu = [
+        b
+        for b in bulgular
+        if b.duzey == HATA
+        and b.anahtar() not in (taban or set())
+        and (not kodlar or b.kod in kodlar)
+        and (
+            b.kod not in kapsanan
+            and not (b.kod == "B10" and "büyük harf" in b.mesaj)
+            and not (b.kod == "B10" and "küçük harf" in b.mesaj)
+            and not (b.kod == "B06" and "kaçışlı" in b.mesaj)
+            and not (
+                b.kod == "B14"
+                and ("önce boşluk" in b.mesaj or "çift boşluk" in b.mesaj)
+            )
+        )
+    ]
+    guvenli = [d for d in duzeltmeler if d.guvenli]
+    elle = [d for d in duzeltmeler if not d.guvenli]
+    return ham, guvenli, elle, elle_bulgu
+
+
+def _metne_uygula(ham: str, guvenli) -> tuple:
+    """GÜVENLİ duzeltmeleri ham metne uygular: (yeni metin, yazilan, atlanan)."""
+    satirlar = ham.split("\n")
+    yer = []
+    atlanan = 0
+    for d in guvenli:
+        a, b = d.p.dosya_konumu(d.bas), d.p.dosya_konumu(max(d.son - 1, d.bas))
+        if d.son == d.bas:  # bos aralik (olmaz ama)
+            continue
+        if a is None or b is None or a[0] != b[0]:
+            atlanan += 1  # satir kirilimina denk geliyor; elle
+            continue
+        yer.append((a[0], a[1], b[1] + 1, d.yeni))
+    for satir, s1, s2, yeni in sorted(yer, key=lambda x: (x[0], x[1]), reverse=True):
+        s = satirlar[satir - 1]
+        satirlar[satir - 1] = s[:s1] + yeni + s[s2:]
+    return "\n".join(satirlar), len(yer), atlanan
+
+
+def plan(yollar, kod_adlari=None, taban=None, kodlar=None) -> dict:
+    """
+    {yol: (yeni metin, yazilacak sayi, elle sayisi)} -- yalniz GÜVENLİ
+    duzeltmesi olan dosyalar. Hicbir sey YAZMAZ (duzelt.py: fark + yedek).
+    """
+    out = {}
+    for yol in yollar:
+        ham, guvenli, elle, elle_bulgu = _dosya_duzeltmeleri(yol, kod_adlari, taban, kodlar)
+        if guvenli:
+            yeni, n, _atlanan = _metne_uygula(ham, guvenli)
+            if yeni != ham:
+                out[yol] = (yeni, n, len(elle) + len(elle_bulgu))
+    return out
+
+
 def duzelt(yollar, kod_adlari, taban, kodlar, uygula: bool) -> int:
     """
     Kuru ya da yazan duzeltme gecisi. Taban verilmisse tabandaki
@@ -1249,38 +1320,8 @@ def duzelt(yollar, kod_adlari, taban, kodlar, uygula: bool) -> int:
         + ") ==="
     )
     for yol in yollar:
-        ham = yol.read_text(encoding="utf-8")
-        pler, bulgular, _ = dosyayi_denetle(yol, kod_adlari)
+        ham, guvenli, elle, elle_bulgu = _dosya_duzeltmeleri(yol, kod_adlari, taban, kodlar)
         dosya = yol.name
-        duzeltmeler = []
-        for p in pler:
-            for d in duzeltmeleri_bul(p):
-                if kodlar and d.kod not in kodlar:
-                    continue
-                if taban and (dosya, d.kod, _kisalt(p.metin, d.bas)) in taban:
-                    continue
-                duzeltmeler.append(d)
-        # Duzeltme motorunun kapsamadigi HATA'lar da ELLE listesine.
-        kapsanan = {"B02", "B03", "B11", "B13"}
-        elle_bulgu = [
-            b
-            for b in bulgular
-            if b.duzey == HATA
-            and b.anahtar() not in (taban or set())
-            and (not kodlar or b.kod in kodlar)
-            and (
-                b.kod not in kapsanan
-                and not (b.kod == "B10" and "büyük harf" in b.mesaj)
-                and not (b.kod == "B10" and "küçük harf" in b.mesaj)
-                and not (b.kod == "B06" and "kaçışlı" in b.mesaj)
-                and not (
-                    b.kod == "B14"
-                    and ("önce boşluk" in b.mesaj or "çift boşluk" in b.mesaj)
-                )
-            )
-        ]
-        guvenli = [d for d in duzeltmeler if d.guvenli]
-        elle = [d for d in duzeltmeler if not d.guvenli]
         if not (guvenli or elle or elle_bulgu):
             continue
         dosya_sayisi += 1
@@ -1302,24 +1343,9 @@ def duzelt(yollar, kod_adlari, taban, kodlar, uygula: bool) -> int:
         toplam_g += len(guvenli)
         toplam_e += len(elle) + len(elle_bulgu)
         if uygula and guvenli:
-            satirlar = ham.split("\n")
-            yer = []
-            atlanan = 0
-            for d in guvenli:
-                a, b = d.p.dosya_konumu(d.bas), d.p.dosya_konumu(max(d.son - 1, d.bas))
-                if d.son == d.bas:  # bos aralik (olmaz ama)
-                    continue
-                if a is None or b is None or a[0] != b[0]:
-                    atlanan += 1  # satir kirilimina denk geliyor; elle
-                    continue
-                yer.append((a[0], a[1], b[1] + 1, d.yeni))
-            for satir, s1, s2, yeni in sorted(
-                yer, key=lambda x: (x[0], x[1]), reverse=True
-            ):
-                s = satirlar[satir - 1]
-                satirlar[satir - 1] = s[:s1] + yeni + s[s2:]
-            lotm.atomik_yaz(yol, "\n".join(satirlar))
-            yazilan += len(yer)
+            yeni, n, atlanan = _metne_uygula(ham, guvenli)
+            lotm.atomik_yaz(yol, yeni)
+            yazilan += n
             if atlanan:
                 print(
                     f"  ({atlanan} düzeltme satır kırılımına denk geldi, yazılmadı; elle bakın)"
@@ -1330,7 +1356,7 @@ def duzelt(yollar, kod_adlari, taban, kodlar, uygula: bool) -> int:
     if uygula:
         print(f"  {yazilan} düzeltme yazıldı. Diff'i okuyun: git diff")
     elif toplam_g:
-        print("  yazmak için aynı komuta --uygula ekleyin")
+        print("  yazmak için:  ./calistir.sh duzelt bicim --uygula  (fark + yedekle)")
     return yazilan
 
 

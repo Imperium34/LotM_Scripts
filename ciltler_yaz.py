@@ -36,7 +36,8 @@ def main():
             return 0
         print(f"GERİDE: {HEDEF} lotm.CILTLER ile uyuşmuyor (yazmak: ./calistir.sh ciltler --yaz)")
         return 1
-    HEDEF.write_text(yeni, encoding="utf-8")
+    # Duz write_text yarida kesilirse arsiv sayfasini bos birakabilirdi.
+    lotm.atomik_yaz(HEDEF, yeni)
     print(f"{HEDEF} yazıldı ({len(lotm.CILTLER)} cilt + yan hikâyeler)")
     return 0
 

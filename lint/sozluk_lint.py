@@ -233,7 +233,82 @@ VARYANT_ANAHTARLARI = {
     "harf_duyarsiz",
     "istisna",
     "not",
+    "duzelt",
+    "tam_kelime",
 }
+
+
+def varyant_hedefi(kural, yanlis: str) -> str | None:
+    """
+    Bu yanlis bicim icin OTOMATIK duzeltme hedefi; yoksa None.
+
+    'duzelt' anahtari kural basina acikca verilir (varsayilan: yok):
+        duzelt: true                  her 'yanlis' -> 'dogru', harfi harfine
+        duzelt: {Firaseti: Firaset'i} yalnizca listelenen bicimler
+    Bir kural ancak yanlis bicimin yerine dogru bicim KELIMESI KELIMESINE
+    oturuyorsa acilir: "Fırtına Hâkimi" -> "Fırtınalar Hâkimi" oturur;
+    "Kaos Çağı'nda" -> "Heyûlâ'da" oturmaz (ek degisir), o kural rapor kalir.
+    """
+    d = kural.get("duzelt")
+    if d is True:
+        return kural["dogru"]
+    if isinstance(d, dict):
+        return d.get(yanlis)
+    return None
+
+
+def _istisnada(metin: str, m, istisnalar, yaricap: int = 80) -> bool:
+    """
+    Istisna YALNIZ kendi gecisini susturur: istisna kalibinin eslesmesi bu
+    gecisi kapsamali, ortmeli ya da hemen bitisik olmali ("şans artırma" +
+    "ritüeli"). Eskiden 55 karakterlik baglamda herhangi bir yerde
+    gecmesi yetiyordu; "Orta Deniz Ticaret Şirketi"nin hemen ardindaki
+    yanlis "Orta Deniz'de" de susuyordu.
+    """
+    a = max(0, m.start() - yaricap)
+    parca = metin[a:m.end() + yaricap]
+    for d in istisnalar:
+        for e in d.finditer(parca):
+            es, ee = e.start() + a, e.end() + a
+            # Kapsiyor, ortusuyor ya da hemen bitisik (arada en cok 2 karakter).
+            if es <= m.end() + 2 and ee >= m.start() - 2:
+                return True
+    return False
+
+
+def varyant_eslesmeleri(metin: str, kural):
+    """
+    (eslesme, yanlis bicim, baglam) -- denetimin raporladigi her gecis.
+    Rapor ve duzeltme ayni eslesmeleri kullanir; ikisi ayrisamaz.
+    """
+    # Istisnalar harf duyarsiz: cumle basindaki "Şans artırma ritüeli"
+    # de kapsanmali. IGNORECASE'in ı/i gevsekligi burada zararsizdir --
+    # istisna yalnizca bulguyu SUSTURUR, yeni bulgu uretmez.
+    istisnalar = [re.compile(d, re.IGNORECASE) for d in kural.get("istisna", [])]
+    # Harf duyarliligi VARSAYILAN OLARAK ACIK. Turkce karsiliklarin cogu
+    # gunluk kelimelerden secildigi icin (Yol/yolu, Haz/hazine, San/sansli)
+    # duz harf duyarsiz eslesme yanlis pozitif uretir -- yayim_denetle.py
+    # v1'in 146 bulgudan 5'inin gercek cikmasinin sebebi tam olarak buydu.
+    # Yalnizca terim tek anlamli oldugunda (ritüel, mistisizm) kapatilir.
+    # Harf duyarsiz dalda re.IGNORECASE degil tr_desen: IGNORECASE ı ile
+    # i'yi ayni harf sayar ve "sira" kurali "sıra"yi yakalardi.
+    duyarsiz = bool(kural.get("harf_duyarsiz"))
+    # Solda kelime siniri her zaman. Sagda yalniz 'tam_kelime: true' ile:
+    # cogu kural ek alan bicimi de yakalamali ("Firasetiydi"), ama
+    # "Yaratıcı" kurali "Yaratıcılık"i (yaraticilik) yakalamamali.
+    sag = rf"(?![{TR_HARF}])" if kural.get("tam_kelime") else ""
+    kapali: list[tuple[int, int]] = []
+    for yanlis in sorted(kural["yanlis"], key=len, reverse=True):
+        desen = (rf"(?<![{TR_HARF}])"
+                 + (tr_desen(yanlis) if duyarsiz else re.escape(yanlis)) + sag)
+        for m in re.finditer(desen, metin):
+            if any(a <= m.start() < b for a, b in kapali):
+                continue
+            kapali.append(m.span())
+            ctx = baglam(metin, m.start(), m.end())
+            if _istisnada(metin, m, istisnalar):
+                continue
+            yield m, yanlis, ctx
 
 
 def denetle_varyant(rapor, dosyalar, kurallar):
@@ -268,50 +343,37 @@ def denetle_varyant(rapor, dosyalar, kurallar):
 
         dogru = kural["dogru"]
         ek_not = kural.get("not", "")
-        # Istisnalar harf duyarsiz: cumle basindaki "Şans artırma ritüeli"
-        # de kapsanmali. IGNORECASE'in ı/i gevsekligi burada zararsizdir --
-        # istisna yalnizca bulguyu SUSTURUR, yeni bulgu uretmez.
-        istisnalar = [re.compile(d, re.IGNORECASE) for d in kural.get("istisna", [])]
-        # Harf duyarliligi VARSAYILAN OLARAK ACIK. Turkce karsiliklarin cogu
-        # gunluk kelimelerden secildigi icin (Yol/yolu, Haz/hazine, San/sansli)
-        # duz harf duyarsiz eslesme yanlis pozitif uretir -- yayim_denetle.py
-        # v1'in 146 bulgudan 5'inin gercek cikmasinin sebebi tam olarak buydu.
-        # Yalnizca terim tek anlamli oldugunda (ritüel, mistisizm) kapatilir.
-        # Harf duyarsiz dalda re.IGNORECASE degil tr_desen: IGNORECASE ı ile
-        # i'yi ayni harf sayar ve "sira" kurali "sıra"yi yakalardi.
-        duyarsiz = bool(kural.get("harf_duyarsiz"))
-        yanlislar = sorted(kural["yanlis"], key=len, reverse=True)
-
         for ad, metin in sorted(dosyalar.items()):
-            kapali: list[tuple[int, int]] = []
+            for m, yanlis, ctx in varyant_eslesmeleri(metin, kural):
+                hedef = varyant_hedefi(kural, yanlis) or dogru
+                mesaj = f"“{yanlis}” → “{hedef}”  [{kural['kavram']}]"
+                if ek_not:
+                    mesaj += f"\n       {ek_not}"
+                rapor.ekle(
+                    "varyant",
+                    ad,
+                    satir_no(metin, m.start()),
+                    yanlis,
+                    mesaj,
+                    ctx,
+                    agirlik="hata",
+                )
 
-            for yanlis in yanlislar:
-                desen = tr_desen(yanlis) if duyarsiz else re.escape(yanlis)
-                for m in re.finditer(desen, metin):
-                    if any(a <= m.start() < b for a, b in kapali):
-                        continue
-                    kapali.append(m.span())
-                    ctx = baglam(metin, m.start(), m.end())
-                    if any(d.search(ctx) for d in istisnalar):
-                        continue
-                    mesaj = f"“{yanlis}” → “{dogru}”  [{kural['kavram']}]"
-                    if ek_not:
-                        mesaj += f"\n       {ek_not}"
-                    rapor.ekle(
-                        "varyant",
-                        ad,
-                        satir_no(metin, m.start()),
-                        yanlis,
-                        mesaj,
-                        ctx,
-                        agirlik="hata",
-                    )
+
+def yasakli_deseni(bicim: str) -> re.Pattern:
+    """
+    Solda sinir her zaman; sagda YALNIZCA cok kelimeli bicimde. Tek kelime
+    ek alabilir ("cehliyetini" de yakalanmali) ama "tabi ki" kurali
+    "tabi kimseye" icindeki "tabi ki"yi yakalamamali (tâbi = bagli).
+    """
+    sag = rf"(?![{TR_HARF}])" if " " in bicim.strip() and bicim[-1:].isalpha() else ""
+    return re.compile(rf"(?<![{TR_HARF}]){tr_desen(bicim)}{sag}")
 
 
 def denetle_yasakli(rapor, dosyalar, kurallar):
     for kural in kurallar.get("yasakli", []):
         bicim, yerine = kural["bicim"], kural["yerine"]
-        desen = re.compile(rf"(?<![{TR_HARF}]){tr_desen(bicim)}")
+        desen = yasakli_deseni(bicim)
         for ad, metin in dosyalar.items():
             for m in desen.finditer(metin):
                 rapor.ekle(
@@ -459,6 +521,41 @@ def denetle_kesme(rapor, dosyalar, basliklar=None):
                 )
 
 
+EK_AILELERI = [
+    ("ın", "in", "un", "ün"),
+    ("a", "e"),
+    ("ı", "i", "u", "ü"),
+    ("dan", "den", "tan", "ten"),
+    ("da", "de", "ta", "te"),
+    # Unluyle biten adlarin kaynastirmali bicimleri (Melissa'nın, Audrey'ye).
+    ("nın", "nin", "nun", "nün"),
+    ("ya", "ye"),
+    ("yı", "yi", "yu", "yü"),
+]
+
+# Kaynastirmasiz <-> kaynastirmali es aileler: ayni hal eki. "Melissa'ın"
+# hedefini "nın" ailesinde, "Klein'nın" hedefini "ın" ailesinde bulur.
+_ES_AILE = {0: 5, 5: 0, 1: 6, 6: 1, 2: 7, 7: 2}
+
+
+def ek_hedefi(ek: str, dogrular: set) -> tuple[int, str] | None:
+    """
+    (aile indeksi, dogru ek) -- 'ek' bir aileye dusuyorsa ve o halin
+    dogru eki kural dosyasinda tanimliysa. Once kendi ailesi, sonra es
+    ailesi (kaynastirma farki) aranir. Tanimli degilse None.
+    """
+    for i, aile in enumerate(EK_AILELERI):
+        if ek in aile:
+            for j in (i, _ES_AILE.get(i)):
+                if j is None:
+                    continue
+                h = dogrular & set(EK_AILELERI[j])
+                if h:
+                    return i, sorted(h)[0]
+            return None
+    return None
+
+
 def denetle_ek_uyumu(rapor, dosyalar, kurallar=None):
     """
     Özel adlara gelen eklerin ünlü uyumu.
@@ -476,14 +573,7 @@ def denetle_ek_uyumu(rapor, dosyalar, kurallar=None):
         "Rozanne",
     ]
 
-    aileler = [
-        ("ın", "in", "un", "ün"),
-        ("a", "e"),
-        ("ı", "i", "u", "ü"),
-        ("dan", "den", "tan", "ten"),
-        ("da", "de", "ta", "te"),
-        ("nın", "nin"),
-    ]
+    aileler = EK_AILELERI
 
     for ad_ozel in adlar:
         dogrular = set((ayar.get(ad_ozel) or {}).get("dogru_ekler") or [])
@@ -497,37 +587,184 @@ def denetle_ek_uyumu(rapor, dosyalar, kurallar=None):
                     (ad, satir_no(metin, m.start()), baglam(metin, m.start(), m.end()))
                 )
 
+        # Tanimli ad: her ek kendi halinin dogru ekine bakar (es aile dahil).
+        if dogrular:
+            sayim = {e: len(v) for e, v in bicimler.items() if ek_hedefi(e, dogrular)}
+            for ek in sorted(bicimler):
+                h = ek_hedefi(ek, dogrular)
+                if not h or h[1] == ek:
+                    continue
+                for dosya, satir, ctx in bicimler[ek]:
+                    rapor.ekle(
+                        "ek-uyumu", dosya, satir, f"{ad_ozel}'{ek}",
+                        f"“{ad_ozel}'{ek}” → “{ad_ozel}'{h[1]}”  (kural dosyasında tanımlı; sayım {sayim})",
+                        ctx, agirlik="hata",
+                    )
+            continue
+
+        # Tanimsiz ad: aile icinde cogunluk -- TAHMIN.
         for aile in aileler:
             mevcut = [e for e in aile if e in bicimler]
-            if not mevcut:
+            if len(mevcut) < 2:
                 continue
-
             sayim = {e: len(bicimler[e]) for e in mevcut}
-
-            hedef_kumesi = dogrular & set(aile)
-
-            if hedef_kumesi:
-                hedef = sorted(hedef_kumesi)[0]
-                aciklama, agirlik = "kural dosyasında tanımlı", "hata"
-            else:
-                if len(mevcut) < 2:
-                    continue
-                hedef = max(sayim, key=sayim.get)
-                aciklama, agirlik = "çoğunluk — TAHMİN, doğrulayın", "uyari"
-
+            hedef = max(sayim, key=sayim.get)
             for ek in mevcut:
                 if ek == hedef:
                     continue
                 for dosya, satir, ctx in bicimler[ek]:
                     rapor.ekle(
-                        "ek-uyumu",
-                        dosya,
-                        satir,
-                        f"{ad_ozel}'{ek}",
-                        f"“{ad_ozel}'{ek}” → “{ad_ozel}'{hedef}”  ({aciklama}; sayım {sayim})",
-                        ctx,
-                        agirlik=agirlik,
+                        "ek-uyumu", dosya, satir, f"{ad_ozel}'{ek}",
+                        f"“{ad_ozel}'{ek}” → “{ad_ozel}'{hedef}”  (çoğunluk — TAHMİN, doğrulayın; sayım {sayim})",
+                        ctx, agirlik="uyari",
                     )
+
+
+# ----------------------------------------------------------------------
+# Özel ad adayları: ek alan ama kuralı olmayan adlar
+# ----------------------------------------------------------------------
+
+_AD_EKLI = re.compile(
+    rf"(?<![{TR_HARF}])([A-Z][a-zâîûê]+(?:-[A-Z][a-z]+)?)['{KIVRIK}]([{TR_HARF}]+)"
+)
+_TURKCE_HARF = set("çğıöşüÇĞİÖŞÜ")
+_SERT = set("çfhkpsşt")
+_UNLU = "aeıioöuü"
+# Son unluye gore (tamlayan, yonelme, belirtme) -- buyuk unlu uyumu.
+_UYUM = {"a": ("ın", "a", "ı"), "ı": ("ın", "a", "ı"), "o": ("un", "a", "u"),
+         "u": ("un", "a", "u"), "e": ("in", "e", "i"), "i": ("in", "e", "i"),
+         "ö": ("ün", "e", "ü"), "ü": ("ün", "e", "ü")}
+
+
+_ONERI_UNLU = {"ı": ("ı", "a"), "u": ("u", "a"), "i": ("i", "e"), "ü": ("ü", "e")}
+
+
+def ek_onerisi(ad: str, gorulen: Counter) -> tuple[list, str]:
+    """
+    (dogru_ekler onerisi, kaynak). Uc ozellik ayri ayri belirlenir ve beş
+    ek onlardan TUTARLI uretilir: unlu (ı/u/i/ü), kaynastirma (unluyle
+    biten ad: nın/ya/yı), sertlik (-tan/-ta). Her ozellik once metinde
+    goruldugu gibi (cogunluk), gorulmediyse yazimdan TAHMIN edilir. Yazim
+    telaffuzu tam gostermez (Royale, Joyce): oneridir, karar sizin.
+    """
+    k = tr_kucult(ad)
+    unluler = [c for c in k if c in _UNLU]
+    tahmin_unlu = _UYUM[unluler[-1] if unluler else "a"][2]
+    unlu_oy, kalin_oy, kay_oy, sert_oy = Counter(), Counter(), Counter(), Counter()
+    for ek, n in gorulen.items():
+        for i, aile in enumerate(EK_AILELERI):
+            if ek not in aile:
+                continue
+            if i in (0, 2, 5, 7):  # tamlayan / belirtme: unluyu tam soyler
+                unlu_oy[ek.lstrip("ny")[0]] += n
+            else:  # yonelme / ayrilma / bulunma: yalniz kalin-ince
+                kalin_oy["a" in ek] += n
+            if i in (0, 1, 2):
+                kay_oy[False] += n
+            elif i in (5, 6, 7):
+                kay_oy[True] += n
+            if i in (3, 4):
+                sert_oy[ek[0] == "t"] += n
+    kaynak = 0
+    if unlu_oy:
+        unlu = unlu_oy.most_common(1)[0][0]
+        kaynak += 1
+    elif kalin_oy:
+        kalin = kalin_oy.most_common(1)[0][0]
+        unlu = tahmin_unlu if (tahmin_unlu in "ıu") == kalin else ("ı" if kalin else "i")
+        kaynak += 1
+    else:
+        unlu = tahmin_unlu
+    if kay_oy:
+        kay = kay_oy.most_common(1)[0][0]
+        kaynak += 1
+    else:
+        kay = k[-1] in _UNLU or (k[-1] == "y" and len(k) > 1 and k[-2] in _UNLU)
+    if sert_oy:
+        sert = sert_oy.most_common(1)[0][0]
+        kaynak += 1
+    else:
+        sert = k[-1] in _SERT
+    v, a = _ONERI_UNLU[unlu]
+    n_, y_ = ("n", "y") if kay else ("", "")
+    d = "t" if sert else "d"
+    oneri = [f"{n_}{v}n", f"{y_}{a}", f"{y_}{v}", f"{d}{a}n", f"{d}{a}"]
+    return oneri, ("metinden" if kaynak == 3 else "metin + tahmin" if kaynak else "tahmin")
+
+
+def turkce_adlar(sozluk_yolu=None, kelimeler_yolu=None) -> set:
+    """
+    Sozlukte ve words.md'de TURKCE olan ad parcalari: Turkce adinda gecip
+    Ingilizcesinde gecmeyen kelimeler (Basiret/Spirit Vision, Semti, Efendi).
+    Tingen / Tingen gibi Ingilizcesiyle ayni yazilan adlar disarida kalir:
+    onlar yabanci addir, kural isteyebilir.
+    """
+    ciftler = []
+    try:
+        if sozluk_yolu and Path(sozluk_yolu).exists():
+            ciftler += list(sozluk_terimleri(Path(sozluk_yolu)).items())
+    except Exception:
+        pass
+    if kelimeler_yolu and Path(kelimeler_yolu).exists():
+        for satir in Path(kelimeler_yolu).read_text(encoding="utf-8").splitlines():
+            m = re.match(r"^\s*-\s*\*\*(.+?)\*\*\s*(?:—|-|:)?\s*([^(;]*)", satir)
+            if m:
+                ciftler.append((m.group(1), m.group(2)))
+    out = set()
+    for tr, en in ciftler:
+        en_k = set(re.findall(r"[A-Za-z]+", en or ""))
+        for w in re.findall(rf"[{TR_HARF}]+", tr or ""):
+            if w[:1].isupper() and w not in en_k:
+                out.add(w)
+    return out
+
+
+def ozel_ad_adaylari(dosyalar, kurallar, turkce: set | None = None) -> list:
+    """
+    [(ad, toplam, bolum_sayisi, ek sayimi)] -- kesmeyle ek alan, ama
+    ozel_adlar'da kurali olmayan adlar. Elenir: Turkce harf iceren
+    kelimeler (Soytarı, Kilise), metinde kucuk harfle de gecen kelimeler
+    (Adam/adam, Kaptan/kaptan), sozlukteki Turkce ad parcalari (bkz.
+    turkce_adlar), 'ozel_ad_disi' listesi, esigin altindakiler.
+    """
+    ayar = kurallar.get("ozel_adlar") or {}
+    disi = set(kurallar.get("ozel_ad_disi") or []) | (turkce or set())
+    esik = int(kurallar.get("ozel_ad_esik") or 3)
+    sayim, bolum, ekler = Counter(), defaultdict(set), defaultdict(Counter)
+    for ad, metin in dosyalar.items():
+        for m in _AD_EKLI.finditer(metin):
+            w = m.group(1)
+            if w in ayar or w in disi or _TURKCE_HARF & set(w):
+                continue
+            sayim[w] += 1
+            bolum[w].add(bolum_anahtari(ad))
+            ekler[w][m.group(2)] += 1
+    if not sayim:
+        return []
+    birlesik = "\n".join(dosyalar.values())
+    kucuk = {tr_kucult(w) for w in sayim}
+    var = {k for k in kucuk
+           if re.search(rf"(?<![{TR_HARF}]){re.escape(k)}(?![{TR_HARF}])", birlesik)}
+    return sorted(
+        ((w, n, len(bolum[w]), ekler[w]) for w, n in sayim.items()
+         if n >= esik and tr_kucult(w) not in var),
+        key=lambda t: (-t[1], t[0]))
+
+
+def denetle_ozel_ad(rapor, dosyalar, kurallar, turkce=None):
+    adaylar = ozel_ad_adaylari(dosyalar, kurallar, turkce)
+    oneriler = []
+    for w, n, nb, ekler in adaylar:
+        oneri, kaynak = ek_onerisi(w, ekler)
+        oneriler.append((w, oneri, kaynak))
+        dokum = ", ".join(f"{e}×{k}" for e, k in ekler.most_common(6))
+        rapor.ekle(
+            "ozel-ad", f"({nb} bölüm)", 0, w,
+            f"{w} ×{n}, kuralı yok — ekler: {dokum}  → öneri ({kaynak}): "
+            f"{', '.join(oneri)}",
+            agirlik="bilgi",
+        )
+    rapor.olcumler["ozel_ad"] = oneriler
 
 
 def anakronizm_kurallari(kurallar) -> list:
@@ -678,6 +915,156 @@ def denetle_sozluk_kapsami(rapor, dosyalar, terimler):
     }
 
 
+
+# ----------------------------------------------------------------------
+# Otomatik düzeltme
+# ----------------------------------------------------------------------
+#
+# Bu betik dosya YAZMAZ. duzeltme_plani() bellekte yeni metni kurar;
+# yazmak, fark gostermek ve yedeklemek duzelt.py'nin isidir
+# (./calistir.sh duzelt). Tek yazma yolu var ki yedek hic atlanmasin.
+#
+# KESIN sayilanlar (bulgunun kendisi tek dogru sonucu soyluyor):
+#   varyant   yalniz 'duzelt' anahtari olan kurallar (bkz. varyant_hedefi)
+#   yasakli   'bicim' -> 'yerine', buyuk harf korunur; kural 'duzelt: false'
+#             ile kapatilabilir
+#   ek-uyumu  yalniz 'dogru_ekler'i tanimli adlar (hata duzeyi). Hal
+#             basina tek dogru ek; kaynastirma farki da kapsanir
+#             ("Melissa'ın" -> "Melissa'nın", tanimda "nın" varsa).
+# Geri kalan her sey (diyakritik, kesme, anakronizm, register, cogunluk
+# TAHMINI ek-uyumu) rapor kalir. Kesme isareti bicim_denetle B02'nin isi.
+
+@dataclass
+class Onerge:
+    kural: str
+    bas: int  # HAM dosya metninde
+    son: int
+    yeni: str
+    eski: str
+    satir: int
+
+
+_BASLIK_SATIRI = re.compile(r"^title[ \t]*:[ \t]*(.*?)[ \t]*$", re.M)
+
+
+def _harf_tasi(ornek: str, hedef: str) -> str:
+    """Eslesmenin bas harfi buyukse hedefin de (Turkce: i -> İ)."""
+    if ornek[:1].isupper() and hedef[:1].islower():
+        from turkce import tr_buyut
+        return tr_buyut(hedef)
+    return hedef
+
+
+def _bolgeler(ham: str) -> list[tuple[int, str]]:
+    """
+    (ham metindeki baslangic, metin) -- duzeltilebilir bolgeler: govde ve
+    front matter'daki baslik degeri ("Bölüm N: " oneki ve tirnaklar
+    disinda). Front matter'in geri kalani (date, layout) bolge degildir.
+    """
+    fm = lotm.FRONT_MATTER.match(ham)
+    bolgeler = [(fm.end() if fm else 0, ham[fm.end():] if fm else ham)]
+    if fm:
+        m = _BASLIK_SATIRI.search(ham, 0, fm.end())
+        if m:
+            bas, deger = m.start(1), m.group(1)
+            if len(deger) >= 2 and deger[0] == deger[-1] and deger[0] in "\"'":
+                bas, deger = bas + 1, deger[1:-1]
+            onek = _BASLIK_ONEKI.match(deger)
+            if onek:
+                bas, deger = bas + onek.end(), deger[onek.end():]
+            bolgeler.append((bas, deger))
+    return bolgeler
+
+
+def metin_onergeleri(metin: str, kurallar) -> list[tuple[int, int, str, str]]:
+    """Tek bir metin parcasi icin (bas, son, yeni, kural) onergeleri."""
+    out = []
+    for kural in kurallar.get("varyantlar", []) or []:
+        if set(kural) - VARYANT_ANAHTARLARI or not kural.get("duzelt"):
+            continue
+        for m, yanlis, _ctx in varyant_eslesmeleri(metin, kural):
+            hedef = varyant_hedefi(kural, yanlis)
+            if hedef:
+                out.append((m.start(), m.end(), _harf_tasi(m.group(), hedef), "varyant"))
+    for kural in kurallar.get("yasakli", []) or []:
+        if kural.get("duzelt") is False or not kural.get("yerine"):
+            continue
+        for m in yasakli_deseni(kural["bicim"]).finditer(metin):
+            out.append((m.start(), m.end(), _harf_tasi(m.group(), kural["yerine"]), "yasakli"))
+    for ad_ozel, ayar in ((kurallar.get("ozel_adlar") or {}) or {}).items():
+        dogrular = set((ayar or {}).get("dogru_ekler") or [])
+        if not dogrular:
+            continue
+        desen = re.compile(
+            rf"(?<![{TR_HARF}]){re.escape(ad_ozel)}['{KIVRIK}]([{TR_HARF}]+)(?![{TR_HARF}])"
+        )
+        for m in desen.finditer(metin):
+            h = ek_hedefi(m.group(1), dogrular)
+            if h and h[1] != m.group(1):
+                out.append((m.start(1), m.end(1), h[1], "ek-uyumu"))
+    return out
+
+
+def duzeltme_plani(ham: str, kurallar) -> tuple[str, list[Onerge]]:
+    """
+    Bir bolum dosyasinin HAM metni -> (duzeltilmis metin, onergeler).
+    Cakisan onergelerden once baslayan kalir (ayni yere iki kural).
+    """
+    onergeler = []
+    for bas, metin in _bolgeler(ham):
+        for a, b, yeni, kural in metin_onergeleri(metin, kurallar):
+            if metin[a:b] != yeni:
+                onergeler.append(Onerge(kural, bas + a, bas + b, yeni,
+                                        metin[a:b], satir_no(ham, bas + a)))
+    onergeler.sort(key=lambda o: (o.bas, -o.son))
+    temiz, son = [], -1
+    for o in onergeler:
+        if o.bas >= son:
+            temiz.append(o)
+            son = o.son
+    yeni = ham
+    for o in reversed(temiz):
+        yeni = yeni[: o.bas] + o.yeni + yeni[o.son :]
+    return yeni, temiz
+
+
+def kelime_icinde(ham: str, o: Onerge) -> tuple[str, str]:
+    """Onergeyi butun kelimesiyle: "in" -> "ın" yerine "Alger'in" -> "Alger'ın"."""
+    kel = rf"[{TR_HARF}'{KIVRIK}]"
+    a = o.bas
+    while a > 0 and re.match(kel, ham[a - 1]):
+        a -= 1
+    b = o.son
+    while b < len(ham) and re.match(kel, ham[b]):
+        b += 1
+    return ham[a:b], ham[a:o.bas] + o.yeni + ham[o.son:b]
+
+
+def onizleme_yaz(yollar, kurallar) -> int:
+    """--duzelt: ne degisecegini satir satir gosterir; YAZMAZ."""
+    toplam = 0
+    for yol in yollar:
+        ham = yol.read_text(encoding="utf-8")
+        _yeni, onergeler = duzeltme_plani(ham, kurallar)
+        for o in onergeler:
+            ctx = baglam(ham, o.bas, o.son, 40)
+            eski, yeni = kelime_icinde(ham, o)
+            print(f"  {yol.name}:{o.satir}  {o.kural}  “{eski}” → “{yeni}”\n       … {ctx} …")
+        toplam += len(onergeler)
+    print(f"\n{toplam} kesin düzeltme. Yazmak için:  ./calistir.sh duzelt lint --uygula")
+    # Bekleyen duzeltme = cikis 1 (lint'in "bulgu var" sozlesmesi; kanca bunu kullanir).
+    return 1 if toplam else 0
+
+
+def _dosya_yollari(yollar) -> list[Path]:
+    out = []
+    for y in map(Path, yollar):
+        if y.is_dir():
+            out += sorted(p for p in y.iterdir() if p.suffix.lower() == ".md")
+        else:
+            out.append(y)
+    return out
+
 # ----------------------------------------------------------------------
 # Ana akış
 # ----------------------------------------------------------------------
@@ -708,6 +1095,7 @@ DENETIMLER = [
     "ek-uyumu",
     "anakronizm",
     "register",
+    "ozel-ad",
 ]
 
 
@@ -732,11 +1120,19 @@ def main() -> int:
         help="anakronizm denetiminde Çince kaynağa da bak "
         "(lotm.py gerektirir; yoksa sessizce atlanır)",
     )
+    ap.add_argument(
+        "--duzelt",
+        action="store_true",
+        help="kesin düzeltmeleri göster (hiçbir dosya değişmez; yazmak: "
+        "./calistir.sh duzelt lint --uygula). Bekleyen varsa çıkış 1",
+    )
     args = ap.parse_args()
 
     if not args.kurallar.exists():
         sys.exit(f"HATA: kural dosyasi yok: {args.kurallar}")
     kurallar = yaml.safe_load(args.kurallar.read_text(encoding="utf-8")) or {}
+    if args.duzelt:
+        return onizleme_yaz(_dosya_yollari(args.bolumler), kurallar)
     if args.sozluk.exists():
         terimler = sozluk_terimleri(args.sozluk)
     else:
@@ -774,6 +1170,9 @@ def main() -> int:
         )
     if "register" in secili:
         denetle_register(rapor, dosyalar, kurallar)
+    if "ozel-ad" in secili:
+        denetle_ozel_ad(rapor, metinler, kurallar,
+                        turkce_adlar(args.sozluk, lotm.KELIMELER))
     if terimler:
         denetle_sozluk_kapsami(rapor, dosyalar, terimler)
 
@@ -815,6 +1214,12 @@ def main() -> int:
             cubuk = "█" * int(deger)
             print(f"   {ad:>12}  {deger:5.1f}  {cubuk}")
 
+    if rapor.olcumler.get("ozel_ad"):
+        print(f"\n{'─' * 72}\nÖZEL AD ADAYLARI — lint-kurallari.yml › ozel_adlar'a yapıştırmaya hazır\n"
+              f"(önerileri telaffuza göre okuyun; ad değilse ozel_ad_disi listesine ekleyin)\n{'─' * 72}")
+        for w, oneri, kaynak in rapor.olcumler["ozel_ad"]:
+            print(f"  {w}:\n    dogru_ekler: {json.dumps(oneri, ensure_ascii=False)}  # {kaynak}")
+
     if "sozluk" in rapor.olcumler:
         s = rapor.olcumler["sozluk"]
         print(f"\n{'─' * 72}\nSÖZLÜK KAPSAMI\n{'─' * 72}")
@@ -824,8 +1229,9 @@ def main() -> int:
 
     hata = sum(1 for b in rapor.bulgular if b.agirlik == "hata")
     uyari = sum(1 for b in rapor.bulgular if b.agirlik == "uyari")
+    aday = len(rapor.olcumler.get("ozel_ad") or [])
     print(
-        f"\n{'═' * 72}\n{hata} hata, {uyari} uyarı — {len(dosyalar)} bölüm"
+        f"\n{'═' * 72}\n{hata} hata, {uyari} uyarı, {aday} özel ad adayı — {len(dosyalar)} bölüm"
         f" ({len(basliklar)} başlık)\n"
     )
     return 1 if hata else 0

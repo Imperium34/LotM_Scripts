@@ -173,3 +173,61 @@ def test_parantezsiz_cince_liste_bolunur(tmp_path):
     yol.write_text("- **hizmetkâr** — 仆役/仆人\n- **hizmetçi** — 女仆/女佣\n", encoding="utf-8")
     t = {x.tr: x for x in lotm.kelimeler_yukle(yol)}
     assert (t["hizmetkâr"].zh, t["hizmetçi"].zh) == ("仆役/仆人", "女仆/女佣")
+
+
+# ------------------------------------------------ tarama etiketleri
+
+
+def _yukle(tmp_path, metin):
+    yol = tmp_path / "words.md"
+    yol.write_text("## Bölüm\n" + metin, encoding="utf-8")
+    return {t.tr: t for t in lotm.kelimeler_yukle(yol)}
+
+
+def test_genis_etiketi(tmp_path):
+    t = _yukle(tmp_path, "- **harikulade** — marvelous (神奇); seçim serbest {geniş}\n")["harikulade"]
+    assert t.genis and t.zh_haric == []
+    assert "{" not in t.cevirmen_notu
+
+
+def test_haric_etiketi_cinceyi_anahtara_katmaz(tmp_path):
+    # Parantezsiz satirda ilk CJK dizisi anahtardir; etiketteki Cince oraya
+    # sizmamali.
+    t = _yukle(tmp_path, "- **hizmetkâr** — 仆役 {hariç: 仆役们/仆役长}\n")["hizmetkâr"]
+    assert t.zh == "仆役"
+    assert t.zh_haric == ["仆役们", "仆役长"] and not t.genis
+
+
+def test_iki_etiket_bir_arada(tmp_path):
+    t = _yukle(tmp_path, "- **Tutuşturma** — Ignite (点火) {geniş; hariç: 点火红}\n")["Tutuşturma"]
+    assert t.genis and t.zh_haric == ["点火红"]
+
+
+def test_ayri_terimlere_bolunen_satir_etiketi_paylasir(tmp_path):
+    ts = _yukle(tmp_path, "- **Tünaydın / Merhaba** — good afternoon / hello (下午好 / 你好) {hariç: 你好像}\n")
+    assert ts["Merhaba"].zh == "你好" and ts["Merhaba"].zh_haric == ["你好像"]
+    assert ts["Tünaydın"].zh == "下午好"
+
+
+def test_bilinmeyen_etiket_hata(tmp_path):
+    with pytest.raises(ValueError, match="genış"):
+        _yukle(tmp_path, "- **x** — y (神奇) {genış}\n")
+
+
+def test_sozluk_genis_ve_haric(tmp_path):
+    yol = tmp_path / "sozluk.yml"
+    yol.write_text(
+        '- terim: "Adalet"\n  cince: "正义"\n  genis: true\n  haric: ["正义的事情"]\n',
+        encoding="utf-8",
+    )
+    t, = lotm.sozluk_yukle(yol).terimler
+    assert t.genis and t.zh_haric == ["正义的事情"]
+
+
+def test_haric_kaynak_desenden_dusurur():
+    import toplu_denetle as TD
+    desen = TD.kaynak_deseni("你好", "zh", False, ["你好像"])
+    assert desen.search("“你好，克莱恩。”")
+    assert not desen.search("先生，你好像也不")
+    # Ingilizcede haric yok sayilir
+    assert TD.kaynak_deseni("hello", "en", True, ["hello there"]).search("hello there")

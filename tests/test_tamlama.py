@@ -178,3 +178,36 @@ def test_duyarli_dal_degismez():
     # yayim_denetle / hazirla duyarli dalda kucuk harfli bicimi bilerek sorar
     assert not lotm.desen_kur("arama çubuğu", harf_duyarli=True).search("Arama Çubuğu Kehaneti")
     assert not lotm.desen_kur("baston", harf_duyarli=True).search("Baston elindeydi.")
+
+
+@pytest.mark.parametrize("terim, metin", [
+    ("asıl Klein", "Asıl Klein'ın bariz bir not tutma alışkanlığı vardı."),
+    ("Gri sislerin fevkindeki esrarlı Hükümdar", "sen gri sislerin fevkindeki esrarlı Hükümdarsın,"),
+    ("Talihe hükmeden Sarı ve Siyahın Kralı", "sen talihe hükmeden Sarı ve Siyahın Kralısın."),
+])
+def test_yalniz_ilk_harf_degisen_bicim(terim, metin):
+    assert lotm.desen_kur(terim, harf_duyarli=False).search(metin)
+
+
+def test_duyarli_dal_degismez():
+    # Yeni bicimler yalniz duyarsiz dalda; duyarli arama terimi oldugu gibi ister
+    assert not lotm.desen_kur("asıl Klein", harf_duyarli=True).search("Asıl Klein")
+
+
+@pytest.mark.parametrize("terim, metin", [
+    ("grimsi beyaz sis", "grimsi beyaz bir sise sarılı"),
+    ("habis ruh", "hatta habis bir ruha dönüşebilir"),
+    ("yarım boy silindir şapka", "yarım boy bir silindir şapka"),
+    ("iki tekerlekli fayton", "iki tekerlekli bir fayton geçiyordu"),
+])
+def test_araya_bir_girer(terim, metin):
+    assert lotm.desen_kur(terim, harf_duyarli=False).search(metin)
+
+
+@pytest.mark.parametrize("terim, metin", [
+    ("habis ruh", "habis bir iki ruh"),      # yalniz tek "bir"
+    ("habis ruh", "habisbir ruh"),           # kelime siniri korunur
+    ("gaz lambası", "gaz birlambası"),
+])
+def test_bir_disinda_ara_kelime_yok(terim, metin):
+    assert not lotm.desen_kur(terim, harf_duyarli=False).search(metin)
