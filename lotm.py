@@ -474,7 +474,7 @@ HAL = (
 # Şahinleri'nin bir aslî üyesiydi" terimi iceriyor ama eslesmiyordu.
 EKFIIL = (
     r"(?:y?[dt][ıiuü](?:m|n|k|n[ıiuü]z|l[ae]r)?"  # -(y)DI + kişi
-    r"|y?m[ıiuü]ş(?:[ıiuü]m|s[ıiuü]n|[ıiuü]z|l[ae]r)?"  # -(y)mIş + kişi
+    r"|y?m[ıiuü]ş(?:[ıiuü]m|s[ıiuü]n(?:[ıiuü]z)?|[ıiuü]z|l[ae]r)?"  # -(y)mIş + kişi
     r"|y?s[ae](?:m|n|k|n[ıiuü]z|l[ae]r)?"  # -(y)sA + kişi
     r"|y?[ıiuü][mz]"  # -(y)Im / -(y)Iz
     r"|s[ıiuü]n(?:[ıiuü]z)?"  # -sIn / -sInIz
@@ -483,7 +483,8 @@ EKFIIL = (
 )
 
 SIFAT = r"(?:l[iıuü])?"  # -li / -lı / -lu / -lü
-HAL_ILGI = r"(?:" + HAL + r"(?:ki)?)?"
+# -ki'den sonra yeniden hal eki gelebilir: babun-un-ki-nden, Klein'ın-ki-ni.
+HAL_ILGI = r"(?:" + HAL + r"(?:ki(?:ler)?(?:" + HAL + r")?)?)?"
 
 # Kesme hem govdeden hemen sonra (Kâhin'in) hem iyelikten sonra
 # (Diyarı'nı) gelebilir. Sondaki (?![\w]) sart: eksiz de olsa eslesme
@@ -638,29 +639,86 @@ _HAFIF_FIILLER = {
 }
 
 
+def fiil_govdesi(kelime: str) -> str | None:
+    """
+    Fiil olarak yazilmis bicimin govdesi: 'etmek' -> 'et', 'et-' -> 'et'.
+
+    Iki yazilis var: sozluk mastar yazar (işaret etmek), sablonlar ve
+    words.md notlari govde+tire (işaret et-, niyaz et-). Ikisi ayni karardir.
+    Govde+tire ACIK isarettir, uzunluk sarti aramaz; mastarin isim mi fiil
+    mi oldugunu ise cagiran karar verir (bkz. _fiil_koku).
+    """
+    if len(kelime) > 2 and kelime.endswith("-"):
+        return kelime[:-1]
+    if re.search(r"m[ae]k$", kelime) and len(kelime) > 4:
+        return kelime[:-3]
+    return None
+
+
+# FİİL ÇEKİMİ. Govdeden sonra gelebilecek ILK ek; ondan sonrasi serbest
+# ([^\W\d_]*): ilk ek dogru kurulduysa kelime fiildir ve arkasindaki kisi,
+# zaman, hal ekleri ayrica sayilmaz. Eskiden ilk ek de serbestti (kok +
+# herhangi bir harf); bu "dürt" -> "dürtü", "oy" -> "oyun" demekti, kisa
+# kokler bu yuzden hic fiil sayilmiyordu ve "dürtüp", "oyarken" eslesmiyordu.
+# Unluyle baslayan ekler y? alir (oku-yan, işle-yip); unsuzle biten govdede
+# y zaten gelmez, fazladan bir yanlis eslesme uretmez.
+_FIIL_ILK_EK = (
+    r"(?:[ıiuü]?yor"  # -(I)yor
+    r"|m[ıiuü]yor"  # olumsuz -mIyor
+    r"|[ae]?r|[ıiuü]r|m[ae]z"  # genis zaman
+    r"|[dt][ıiuü](?:[kğ])?"  # -DI, -DIK
+    r"|m[ıiuü]ş|m[ae]l[ıi]|s[ae]|s[ıiuü]n"
+    r"|y?[ae]c[ae][kğ]|y?[ıiuü]p|y?[ae]r[ae]k|y?[ae]n|y?[ıiuü]nc[ae]"
+    r"|y?[ae]l[ıi]|y?[ae]bil|y?[ae]m[ae]|y?[ıiuü]ş"
+    r"|m[ae](?:k|d[ae]n|z|y[ae]n|s[ıiuü])?"  # -mAk, -mA, -mAdAn ...
+    r")"
+)
+# Yalniz uzun govdede: kisa govdede isimle cakisir (oy-un, oy-a "dantel").
+_FIIL_ILK_EK_UZUN = r"(?:y?[ıiuü]n(?:[ıiuü]z)?|y?[ae]y?)"
+
+
+def _fiil_deseni(kok: str, uzun: bool) -> str:
+    """Govde + catı (edilgen, ettirgen, isteş) + ilk cekim eki."""
+    son = kok[-1]
+    g = re.escape(kok[:-1]) + YUMUSAMA.get(son, re.escape(son))
+    if son in _UNLU:
+        cati = r"(?:[ln]|t|[dt][ıiuü]r|y?[ıiuü]ş)?"
+    else:
+        cati = r"(?:[ıiuü][ln]|[dt][ıiuü]r|[ıiuü]ş)?"
+    ilk = _FIIL_ILK_EK + (f"|{_FIIL_ILK_EK_UZUN}" if uzun else "")
+    alternatifler = [f"{g}{cati}(?:{ilk})[^\\W\\d_]*"]
+    if son in "ae":
+        # Unlu daralmasi: işle- -> işliyor, bekle- -> bekliyor
+        alternatifler.append(re.escape(kok[:-1]) + r"[ıiuü]yor[^\W\d_]*")
+    if uzun:
+        alternatifler.append(re.escape(kok))  # emir: "dürt!"
+    return "(?:" + "|".join(alternatifler) + r")(?![^\W_])"
+
+
 def _fiil_koku(kelime: str, cok_kelimeli: bool) -> str | None:
     """
-    Mastar halindeki fiil terimi icin govde deseni: 'tevdi etmek' -> 'e[td]…'.
+    Fiil terimi icin cekim deseni: 'tevdi etmek' / 'tevdi et-' -> 'e[td]…'.
 
-    Terim mastarla yazilir ama metinde cekimli gecer: tevdi etti, tevdi
-    ettiği, tevdi edildi. EK deseni "etmek"in ARKASINA ek bekledigi icin
-    bunlarin hicbirini bulmuyordu (sozlukte "Şirazesini Yitirmek" icin
-    arama_adi: [şiraze] tam da bu yuzden yazilmisti).
+    Terim mastarla ya da govde+tireyle yazilir ama metinde cekimli gecer:
+    tevdi etti, tevdi ettiği, tevdi edildi. EK deseni "etmek"in ARKASINA
+    ek bekledigi icin bunlarin hicbirini bulmuyordu (sozlukte "Şirazesini
+    Yitirmek" icin arama_adi: [şiraze] tam da bu yuzden yazilmisti).
 
-    Yalnizca guvenli oldugu yerde: kok en az dort harf olmali (damgala-,
-    görül-, yitir-). "ekmek", "yemek", "parmak", "çakmak" isimdir ve
-    kokleri (ek-, ye-, par-, çak-) her yere eslesirdi. Kisa koklu hafif
-    fiiller (et-, ol-, kıl-) yalnizca cok kelimeli terimin sonunda kabul
-    edilir; orada onlerindeki kelime baglami zaten daraltir.
+    Mastarda yalnizca guvenli oldugu yerde: kok en az dort harf olmali
+    (damgala-, görül-, yitir-). "ekmek", "yemek", "parmak", "çakmak"
+    isimdir ve kokleri (ek-, ye-, par-, çak-) her yere eslesirdi. Kisa
+    koklu hafif fiiller (et-, ol-, kıl-) yalnizca cok kelimeli terimin
+    sonunda kabul edilir; orada onlerindeki kelime baglami zaten daraltir.
+    Govde+tire (oy-, dürt-) acik isarettir; kisa olsa da fiil sayilir.
     """
-    if not re.search(r"m[ae]k$", kelime):
+    kok = fiil_govdesi(kelime)
+    if not kok:
         return None
-    kok = kelime[:-3]
-    if len(kok) < 4 and not (cok_kelimeli and kelime in _HAFIF_FIILLER):
+    acik = kelime.endswith("-")
+    hafif = cok_kelimeli and any(kok + m in _HAFIF_FIILLER for m in ("mek", "mak"))
+    if not acik and len(kok) < 4 and not hafif:
         return None
-    if kok[-1] in YUMUSAMA:
-        return re.escape(kok[:-1]) + YUMUSAMA[kok[-1]] + r"[^\W\d_]*"
-    return re.escape(kok) + r"[^\W\d_]*"
+    return _fiil_deseni(kok, uzun=len(kok) >= 3 or hafif)
 
 
 # TÜRETME. Bazi terimler metinde en cok tureviyle gecer: simge -> simgeleyen,
@@ -769,8 +827,14 @@ def _govde(terim: str, olcu: bool = False) -> str:
         # zaman kokun kendisidir (idadi, Kabine degil ama benzerleri).
         kok = _tamlama_koku(kelime) if son > 0 else None
         if kok:
-            g = f"(?:{g}|{kok}l[ae]r{EK})"
+            # Cogul (cep saatleri) ve 3. tekil disindaki iyelik (gök
+            # haritanızı, cep saatim): ek koke gelir, terimdeki -sI'ya degil.
+            g = f"(?:{g}|{kok}l[ae]r{EK}|{kok}{IYELIK}{KESME}{HAL_ILGI}{EKFIIL}?(?![^\\W_]))"
         fiil = _fiil_koku(kelime, son > 0)
+        if fiil and kelime.endswith("-"):
+            # govde+tire yalniz fiildir: "et\-" + isim ekleri anlamsiz
+            parcalar.append(fiil)
+            continue
         if fiil:
             g = f"(?:{g}|{fiil})"
         dusmus = _dusmus_desen(kelime)

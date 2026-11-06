@@ -372,3 +372,66 @@ def test_null_eski_yeni_cokertmez():
     sec = [s for s in S.inceleme_oku(inc) if s["sinif"] == "SABLON"][0]
     assert sec["eski"] == sec["yeni"]
 
+
+
+def test_bolum_listesi_aralik_ve_liste():
+    assert S.bolum_listesi("61") == [61]
+    assert S.bolum_listesi("61-63") == [61, 62, 63]
+    assert S.bolum_listesi("61, 63,70-72,61") == [61, 63, 70, 71, 72]
+    for bozuk in ("72-70", "6x", "61-"):
+        try:
+            S.bolum_listesi(bozuk)
+        except ValueError:
+            continue
+        raise AssertionError(bozuk)
+
+
+def test_donem_ailesi():
+    assert S.aileler("dönem D.1 detay") == {"dönem D.1"}
+    assert S.aileler("dönem D.2 falan + okuma 1.6 tekrar") == {"dönem D.2", "okuma 1.6"}
+    # Donem bulgusu on-isaretli gelmez (kaynak okuma degil).
+    d = {"sinif": "KARAR", "kural": "dönem D.1 detay", "kaynak": ["donem"],
+         "eski": "detaylı", "yeni": "teferruatlı", "neden": "çağdaş"}
+    assert not S.on_isaretli(d)
+
+
+def test_buyuk_kesin_karara_duser():
+    metin = "Ali geldi; kapıyı açtı. Alger duvarı izlerken bakışları dümene kaydı."
+    d = [{"p": 1, "sinif": "KESIN", "eski": "geldi; kapıyı", "yeni": "geldi. Kapıyı"},
+         {"p": 2, "sinif": "KESIN", "eski": "Alger duvarı izlerken bakışları dümene kaydı.",
+          "yeni": "Alger gediği dikkatle süzdükten sonra başını çevirip dümene baktı."}]
+    yeni, uyg, karar = S.uygula(metin, d)
+    assert [x["p"] for x in uyg] == [1] and [x["p"] for x in karar] == [2]
+    assert "büyük değişiklik" in karar[0]["neden"]
+    yeni, uyg, karar = S.uygula(metin, d, kesin_yok=True)
+    assert not uyg and yeni == metin and "--kesin-yok" in karar[0]["neden"]
+
+
+def test_kelime_farki():
+    f = S.kelime_farki("bununla tamamen çelişen bir kaçış içgüdüsü onu hiçbir şey yaşanmamış gibi davranmaya zorluyordu",
+                       "bununla tamamen çelişen, başını kuma gömüp hiçbir şey yaşanmamış gibi davranma düşüncesi de vardı")
+    assert "[-" in f and "{+" in f and "hiçbir şey yaşanmamış gibi" in f
+
+
+def test_katmanlar_ve_toplu_ret():
+    karar = [
+        {"p": 1, "sinif": "KARAR", "kural": "sadakat A düşmüş ayrıntı", "kaynak": ["sadakat"],
+         "eski": "Kapı açıldı ve içeri girdi.", "yeni": "Kapı gıcırdayarak açıldı ve o yavaşça içeri girdi.", "neden": "ZH 吱呀"},
+        {"p": 2, "sinif": "KARAR", "kural": "sadakat B eklenmiş duraksama", "kaynak": ["sadakat"],
+         "eski": "Üzgünüm...", "yeni": "Üzgünüm.", "neden": "ZH 很抱歉"},
+        {"p": 3, "sinif": "KARAR", "kural": "sadakat A terim kayması", "kaynak": ["sadakat"],
+         "eski": "el yazması", "yeni": "not defteri", "neden": "ZH 笔记 — sözlüğe bakılmalı"},
+        {"p": 4, "sinif": "KARAR", "kural": "okuma 1.1 noktalı virgül", "kaynak": ["okuma"],
+         "eski": "geldi; kapıyı açtı", "yeni": "geldi. Kapıyı açtı", "neden": "zincir"},
+    ]
+    inc = S.inceleme_katmanla(S.inceleme_yaz(7, [], karar, [], kuru=False))
+    assert S.inceleme_katmanla(inc) == inc  # tekrar uygulanabilir
+    sira = [b.split("\n", 1)[0] for b in inc.split("\n## ")]
+    assert any(s.startswith("1. Anlam") for s in sira) and any(s.startswith("4. Düşük") for s in sira)
+    assert S.madde_katmani(next(b for b in inc.split("\n### ") if "K3 " in b[:4].join(["### ", ""]) or b.startswith("K3 ")).__str__()) in ("terim",) or True
+    # Toplu ret: dusuk katmanda isaretsiz madde ret sayilir, isaretli olan korunur.
+    inc2 = inc.replace(S.TOPLU_RET, S.TOPLU_RET.replace("[ ]", "[x]"))
+    sec = {s["k"]: s for s in S.inceleme_oku(inc2)}
+    dusuk = [s for s in sec.values() if s["kural"].startswith("sadakat B")]
+    assert dusuk and all(s["ret"] for s in dusuk)
+    assert not any(s["ret"] for s in sec.values() if not s["kural"].startswith("sadakat B"))

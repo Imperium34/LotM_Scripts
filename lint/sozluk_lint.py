@@ -857,51 +857,73 @@ def denetle_anakronizm(rapor, dosyalar, kurallar, kaynaklar=None):
         )
 
 
+# Kisa koklerden sonra sayilan devamlar: sesli harfle baslayan ek ya da
+# yaygin unsuzlu ekler. "baki" -> bakisi/bakidir sayilir, bakim/bakir sayilmaz.
+_KISA_EK = r"(?:[aeiou]\w*|(?:y|s|n|l|d|t|m|c)[aeiou]\w*)?"
+
+
+def register_deseni(kokler: list, istisna: list = ()) -> re.Pattern:
+    """Tam kok + ek. Kokler ve metin AYNI yoldan gecer: Turkce kucultme,
+    sonra diyakritik atma (sukûnet ~ sukunet). 5 harften kisa kokler
+    yalniz _KISA_EK ile devam edebilir."""
+    uzun, kisa = [], []
+    for k in kokler:
+        n = diyakritiksiz(tr_kucult(k))
+        (kisa if len(n) < 5 else uzun).append(re.escape(n))
+    parcalar = []
+    if uzun:
+        parcalar.append("(?:" + "|".join(sorted(uzun, key=len, reverse=True)) + r")\w*")
+    if kisa:
+        parcalar.append("(?:" + "|".join(sorted(kisa, key=len, reverse=True)) + ")" + _KISA_EK)
+    ist = [re.escape(diyakritiksiz(tr_kucult(x))) for x in istisna]
+    on = (r"(?!(?:" + "|".join(ist) + r")\w*)") if ist else ""
+    return re.compile(r"(?<![^\W_])" + on + "(?:" + "|".join(parcalar) + r")(?![^\W_])")
+
+
 def denetle_register(rapor, dosyalar, kurallar):
     """
-    Bölüm başına arkaik sözcük yoğunluğu.
+    Bolum basina arkaik sozcuk yogunlugu, iki sayac: donem (cekirdek
+    §4.1-A, taban) ve gotik (§4.1-B, rasyonlu). Eski tek liste
+    (`sozcukler`) verilmisse donem sayilir.
 
-    Eşleşme ŞAPKASIZ biçim üzerinden yapılır. Aksi hâlde ölçüm imlaya
-    duyarlı olur: "sükunet" kök listesindeki "sükûnet" ile eşleşmediği için,
-    yalnızca şapkaları düzeltmek — metne tek kelime eklemeden — yoğunluğu
-    yükseltir. Bir izleme metriğinin, ölçtüğü şeyle ilgisi olmayan bir
-    düzeltmeden etkilenmemesi gerekir.
+    Eslesme SAPKASIZ bicim uzerinden yapilir: yalnizca sapkalari
+    duzeltmek olcumu degistirmemeli.
     """
     ayar = kurallar.get("register", {})
-    kokler = ayar.get("sozcukler", "").split()
-    if not kokler:
+    istisna = ayar.get("istisna", "").split()
+    listeler = {
+        "donem": (ayar.get("donem") or ayar.get("sozcukler", "")).split(),
+        "gotik": ayar.get("gotik", "").split(),
+    }
+    desenler = {ad: register_deseni(k, istisna) for ad, k in listeler.items() if k}
+    if not desenler:
         return
-    # Kokler ve metin AYNI yoldan gecer: once Turkce kucultme, sonra
-    # diyakritik atma; arama harf duyarli. Eskiden ikisi diyakritiksiz
-    # hale getirilip re.IGNORECASE ile araniyordu, o da ı ile i'yi
-    # ayni harf sayiyordu.
-    desen = re.compile(
-        r"(?<![^\W_])("
-        + "|".join(re.escape(diyakritiksiz(tr_kucult(k))[:6]) for k in kokler)
-        + r")\w*"
-    )
-    alt, ust = ayar.get("hedef_alt", 3.0), ayar.get("hedef_ust", 10.0)
-    olcum = {}
+    alt, ust = ayar.get("hedef_alt", 3.0), ayar.get("hedef_ust", 15.0)
+    olcum, ayrinti = {}, {}
     for ad, metin in sorted(dosyalar.items()):
         kelime_sayisi = len(metin.split())
         if not kelime_sayisi:
             continue
-        yogunluk = (
-            len(desen.findall(diyakritiksiz(tr_kucult(metin)))) * 1000 / kelime_sayisi
-        )
-        olcum[ad] = round(yogunluk, 1)
-        if yogunluk > ust:
+        duz = diyakritiksiz(tr_kucult(metin))
+        ayrinti[ad] = {}
+        for tur, desen in desenler.items():
+            bulunan = desen.findall(duz)
+            ayrinti[ad][tur] = (round(len(bulunan) * 1000 / kelime_sayisi, 1), bulunan)
+        toplam = sum(v[0] for v in ayrinti[ad].values())
+        olcum[ad] = round(toplam, 1)
+        if toplam > ust:
             rapor.ekle(
                 "register",
                 ad,
                 0,
-                f"{yogunluk:.1f}",
-                f"arkaik yoğunluk {yogunluk:.1f}/1000 — hedef bant "
+                f"{toplam:.1f}",
+                f"arkaik yoğunluk {toplam:.1f}/1000 — hedef bant "
                 f"{alt}–{ust}. Ayin, ilahi unvan veya kozmoloji sahnesi "
                 f"değilse gözden geçirin.",
                 agirlik="uyari",
             )
     rapor.olcumler["register"] = olcum
+    rapor.olcumler["register_ayrinti"] = ayrinti
 
 
 def denetle_sozluk_kapsami(rapor, dosyalar, terimler):
@@ -1206,13 +1228,16 @@ def main() -> int:
         for b in blok:
             print(b.satir_olarak())
 
-    if "register" in rapor.olcumler:
-        print(f"\n{'─' * 72}\nARKAİK YOĞUNLUK (sözcük/1000)\n{'─' * 72}")
-        for ad, deger in sorted(
-            rapor.olcumler["register"].items(), key=lambda kv: -kv[1]
-        ):
-            cubuk = "█" * int(deger)
-            print(f"   {ad:>12}  {deger:5.1f}  {cubuk}")
+    if "register_ayrinti" in rapor.olcumler:
+        ayr = rapor.olcumler["register_ayrinti"]
+        print(f"\n{'─' * 72}\nARKAİK YOĞUNLUK (sözcük/1000) — bölüm sırasıyla\n"
+              f"dönem (§4.1-A, taban) · gotik (§4.1-B, rasyonlu) · en sık dönem sözcükleri\n{'─' * 72}")
+        for ad in sorted(ayr):
+            d = ayr[ad].get("donem", (0.0, []))
+            g = ayr[ad].get("gotik", (0.0, []))
+            sik = Counter(d[1]).most_common(3)
+            ornek = ", ".join(f"{w}×{n}" if n > 1 else w for w, n in sik)
+            print(f"   {ad:>12}  {d[0]:5.1f} {'█' * int(d[0]):<12} {g[0]:4.1f} {'▒' * int(g[0]):<6} {ornek}")
 
     if rapor.olcumler.get("ozel_ad"):
         print(f"\n{'─' * 72}\nÖZEL AD ADAYLARI — lint-kurallari.yml › ozel_adlar'a yapıştırmaya hazır\n"

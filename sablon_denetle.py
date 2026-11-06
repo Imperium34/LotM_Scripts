@@ -103,6 +103,10 @@ def _kelime_esit(a: str, b: str) -> bool:
     if a == b:
         return True
     kisa, uzun = sorted((a, b), key=len)
+    # Fiil: sablon govde+tire yazar (tr_norm tireyi atar), sozluk mastar.
+    # "et" uc harften kisa oldugu icin asagidaki ek karsilastirmasina girmez.
+    if lotm.fiil_govdesi(uzun) == kisa:
+        return True
     if len(kisa) < 3:
         return False
     return any(

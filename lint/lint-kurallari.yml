@@ -87,6 +87,14 @@ yasakli:
     yerine: "tabii ki"
   - bicim: "Tabi,"
     yerine: "Tabii,"
+  - bicim: "gizemli"
+    yerine: "esrarengiz"
+  - bicim: "mucizevi"
+    yerine: "harikulade"
+  - bicim: "metal"
+    yerine: "maden"
+  - bicim: "metalik"
+    yerine: "madenî"
 
 # ---------------------------------------------------------------
 # 3. ANLAM AYIRICI DİYAKRİTİKLER
@@ -140,26 +148,95 @@ anakronizm:
 
 # ---------------------------------------------------------------
 # 5. ARKAİK REGİSTER ÖLÇÜMÜ
-# Bölüm başına bin kelimedeki Osmanlıca sözcük yoğunluğu.
+# Bölüm başına bin kelimedeki Osmanlıca sözcük yoğunluğu, İKİ AYRI sayaç
+# (çekirdek §4.1): dönem kaydı tabandır ve kotasızdır, gotik kayıt
+# rasyonludur. Eskiden tek listede toplanıyordu; ikisi zıt yönde istenen
+# şeyler olduğu için toplamları bir şey söylemiyordu.
+#
+# Eşleşme (3 Kas): kök TAM yazılır, ilk 6 harfe kırpılmaz. Kırpınca
+# "gaye" gayet'i, "bendeniz" benden'i, "lisan" lisans'ı sayıyordu. 5 harften
+# kısa kökler yalnız Türkçe bir ekle (sesli harfle ya da -lar/-da/-sı/-yla
+# gibi) devam ederse sayılır: "baki" bakım'ı saymaz. Sesliyle devam eden yanlışlar
+# (nailon) istisnaya yazılır.
+# `istisna`: kökle başlayan ama o sözcük olmayan biçimler.
+#
+# 3 Kas'ta listeden çıkarılanlar (yedek: yedek/2026-11-03/arkaik-sayac/):
+#   cümle, vaka, sapkın, heybet, idrak, tahsil: gündelik Türkçe
+#     (idrak ayrıca çekirdek §4.2'de ayrı kural)
+#   salahiyet, şeamet: sözlük terimi; Sistem ya da muska sahnesi
+#     yoğunluğu şişiriyordu (69'da altı "şeamet")
 # ---------------------------------------------------------------
 register:
-  # Ev içi/tasviri anlatım için hedef bant. Ayin, ilahi unvan ve
-  # kozmoloji sahneleri bu bandın üstüne çıkabilir.
+  # Toplam (dönem + gotik) bu bandın üstüne çıkarsa uyarı. Ayin, ilahi
+  # unvan ve kozmoloji sahneleri üstüne çıkabilir.
   hedef_alt: 3.0
   hedef_ust: 15.0
-  sozcukler: >-
-    kesif zulmet marazi hasebiyle hasılıkelam mütemadiyen muvaffak tahsil
-    ehemmiyet maksadıyla müteşekkil zarfında addedilmek neşet tecessüm cümle
-    fevkinde namütenahi mefkûre salahiyet teferruat hususi münasip elzem
-    zikretmek izah ihtiva nail müşkil vaziyet meskun beka baki mukaddes
+  donem: >-
+    hasebiyle hasılıkelam mütemadiyen muvaffak ehemmiyet maksadıyla
+    müteşekkil zarfında addedilmek neşet fevkinde mefkûre teferruat hususi
+    münasip elzem zikretmek izah ihtiva nail müşkil vaziyet meskun beka baki
     mukadder itikat ruhban mürit teyakkuz akabinde binaen nizam muhafaza
     temaşa takriben kanaat suret mahiyet malumat lisan menşe meblağ cüzi
     gaye istidat fıtri nezafet sükûnet sükût tezahür inkişaf müstakil kelam
     bendeniz kâfi istirham lütuf celbetmek iştirak mutabakat farzımuhal
-    vuku ziyadesiyle ekseriyet münasebetsiz meşrep idrak tahayyül vesvese
-    zapt liyakat mukavele mahremiyet nüsha hakketmek heybet tahakküm
-    zındık sapkın musibet şeamet meşum hadise vaka tetkik noksan zaruri
-    hakikat kifayet
+    vuku ziyadesiyle ekseriyet münasebetsiz meşrep tahayyül zapt liyakat
+    mukavele mahremiyet nüsha hakketmek tahakküm hadise tetkik noksan zaruri
+    hakikat kifayet muayyen icap mütalaa mukabil tahkikat hususunda mukaddes
+  # 3 Kas: Osmanlıca gotikle sınırlı listeye, şablonların fiilen tahsis
+  # ettiği çağdaş dehşet sözcükleri eklendi ('tekinsiz', 'dipsiz'…).
+  # "korkunç", "tuhaf", "garip" bilerek yok: şablonlar onları kaynağın düz
+  # sıfatı sayıyor, gotik değil.
+  gotik: >-
+    zulmet marazi heyula berzah ufunet namütenahi tecessüm
+    vesvese zındık musibet meşum menhus peçelen tekinsiz dipsiz uğursuz
+    ürkütücü ürpertici irkiltici dehşet kasvet kokuşmuş çürümüş leş
+    zifiri lanetli hortlak çarpık
+  istisna: gayet lisans sureta mukaddime muhafazakar tezahurat nailon lese leşker
+
+# ---------------------------------------------------------------
+# 5b. DÖNEM UYUMU (sonra.py --donem; lint bu anahtarı okumaz)
+# Viktorya/gotik dokuya oturmayan çağdaş sözcükler. Betik yalnız aday
+# gösterir; karar dönem geçişinin (lotm_donem_denetimi.md) ve çevirmenin.
+# Klein'ın iç sesi (_italik_) ve Dünya anıları serbesttir; betik italiği
+# atlar, anıları model ayırır. Eşleşme kök + ek, şapka duyarlı; diyakritik
+# atılmaz ("şok" "sokak"ı saymasın diye). 4 Kas: bölüm 1–73 üzerinde ölçüldü;
+# "kontrol", "olay", "normal", "sistem", "tamam", "efsane" listeye girmedi
+# (gündelik ya da terim; 1–73'te çoğu meşru).
+#   alinti  D.1  çağdaş alıntı / yenilik
+#   agiz    D.2  gündelik-argo ağız, çağdaş kalıp
+#   ozdes   D.3  dönem karşılığı varken çağdaş varsayılan (§4.1-A);
+#                tek tek değil, bölüm sayımı olarak verilir
+# ---------------------------------------------------------------
+donem_uyumu:
+  alinti: >-
+    stres motivasyon konsept trend kariyer organize performans potansiyel
+    fokus odaklan aktif pasif pozitif negatif enerji travma detay analiz
+    minimum maksimum ekstra bonus süper okey random spontane empati sosyal
+    global medya teknoloji profesyonel strateji taktik problem partner
+    prosedür faktör orijinal kaliteli adrenalin sinyal proses imaj panik
+  agiz:
+    - kanka
+    - falan
+    - filan
+    - valla
+    - aynen
+    - harbiden
+    - baya
+    - kafaya tak
+    - kafaya dik
+    - olay yeri
+    - son kullanma tarihi
+  istisna: filanca falanca bayağı
+  # çağdaş varsayılan: dönem karşılığı
+  ozdes:
+    durum: vaziyet
+    bilgi: malumat
+    ayrıntı: teferruat
+    soruşturma: tahkikat
+    önem: ehemmiyet
+    eksik: noksan
+    yaklaşık: takriben
+  ozdes_istisna: bilgin bilgiç
 
 # ---------------------------------------------------------------
 # 6. ÖZEL ADLARA GELEN EKLER

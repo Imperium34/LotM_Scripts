@@ -187,3 +187,8 @@ def test_onceki_sablonun_yan_dosyasi_da_okunur():
                        sablonlar={59: eski}, zh_yanlar={59: {"symbol": ["符号"]}}, yayim=[])
     b = SD.denetle(_sablon(a1=[("symbol", "simge", "—")]), kay, {"symbol": ["象征"]})[0]
     assert not [x for x in b if "aynı İngilizceye" in x.mesaj]
+
+
+def test_bicim_esit_govde_tire_mastar():
+    for a, b in [("işaret et-", "işaret etmek"), ("niyaz et", "niyaz etmek"), ("ol-", "olmak")]:
+        assert SD.bicim_esit(a, b), (a, b)

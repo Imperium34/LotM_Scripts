@@ -39,7 +39,7 @@ Seçenekler:
 | `kesme` | Düz `'` ile kıvrık `’` karışımı |
 | `ek-uyumu` | Özel adlara gelen eklerin ünlü uyumu (`Klein'ın` / `Klein'in`). Doğru ek `ozel_adlar` altında elle bildirilebilir; bildirilmezse çoğunluğa bakılır ve sonuç TAHMİN olarak işaretlenir |
 | `anakronizm` | Dünya dışı sözcüklerin anlatıcı sesine sızması |
-| `register` | Bölüm başına arkaik sözcük yoğunluğu, hedef banda göre |
+| `register` | Bölüm başına arkaik sözcük yoğunluğu, iki sayaç: dönem (§4.1-A, taban) ve gotik (§4.1-B, rasyonlu); toplam hedef bandın üstündeyse uyarı |
 
 ## Kural dosyası
 

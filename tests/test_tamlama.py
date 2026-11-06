@@ -211,3 +211,40 @@ def test_araya_bir_girer(terim, metin):
 ])
 def test_bir_disinda_ara_kelime_yok(terim, metin):
     assert not lotm.desen_kur(terim, harf_duyarli=False).search(metin)
+
+
+@pytest.mark.parametrize("terim, metin", [
+    ("işaret et-", "işaret etti"),               # govde+tire = mastar
+    ("işaret et-", "işaret ediyordu"),
+    ("işaret et-", "işaret etmemişti"),
+    ("niyaz et-", "niyaz ediyorum"),
+    ("dürtmek", "dürtüp uyandırdı"),
+    ("oy-", "oyarken"),                          # kisa govde, acik isaret
+    ("oy-", "oyuldu"),
+    ("işlemek", "işliyor"),                      # unlu daralmasi
+    ("beklemek", "bekleyen"),
+])
+def test_fiil_cekimi(terim, metin):
+    assert lotm.desen_kur(terim, harf_duyarli=False).search(metin)
+
+
+@pytest.mark.parametrize("terim, metin", [
+    ("dürtmek", "dürtü"),     # isim: ilk ek fiil eki degil
+    ("oy-", "oyun"),          # kisa govdede emir/istek ekleri kapali
+    ("oy-", "oya"),
+    ("oy-", "oylar"),         # unsuzden sonra ciplak edilgen -l yok
+    ("ekmek", "ekti"),        # mastar kisa koklu: fiil sayilmaz
+])
+def test_fiil_cekimi_isimle_cakismaz(terim, metin):
+    assert not lotm.desen_kur(terim, harf_duyarli=False).search(metin)
+
+
+@pytest.mark.parametrize("terim, metin", [
+    ("hekim", "hekimmişsiniz"),          # -mIş + -sInIz
+    ("falcı", "falcıymışsınız"),
+    ("babun", "babununkinden"),          # -ki + hal
+    ("gök haritası", "gök haritanızı"),  # tamlamada 3. tekil disi iyelik
+    ("cep saati", "cep saatim"),
+])
+def test_ek_bosluklari(terim, metin):
+    assert lotm.desen_kur(terim, harf_duyarli=False).search(metin)

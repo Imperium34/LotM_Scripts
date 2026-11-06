@@ -75,6 +75,11 @@
 #      ./calistir.sh once 61  ceviriden once: hazirlik (gerekirse yeniden) ve
 #                             Ch_61.md kaydedilince sablon_denetle; durum
 #                             Reports/once/Ch_61/ (bkz. once.py)
+#      ./calistir.sh cevir 61 sablon denetlenir (once), bolum claude -p ile
+#                             cevrilir, _chapters/0061.md yazilir (DURUM NOTU
+#                             Reports/ceviri/Ch_61/'a, yeni tikler Tools/tikler.md'ye).
+#                             --sonra: ardindan sonra --otomatik. --hazirla: yalniz
+#                             girdi. --kuru, --yeniden, --uzerine-yaz (bkz. cevir.py)
 #      ./calistir.sh sonra 61 ceviri bittikten sonra butun hat: 'bolum'
 #                             zinciri + model gecislerinin (okuma, sadakat,
 #                             duzeltme, triyaj) hazir girdileri ve durum,
@@ -595,6 +600,21 @@ if [[ "${1:-}" == "duzelt" ]]; then
   exit $?
 fi
 
+# 'cevir' de kontrol()'den once: sablonu once.py ile denetler, cevirir,
+# bolumu yazar; --sonra ile sonra.py'yi kendisi cagirir (bkz. cevir.py).
+if [[ "${1:-}" == "cevir" ]]; then
+  shift
+  python3 "$TOOLS/cevir.py" "$@"
+  exit $?
+fi
+
+# 'incele': 5_inceleme.md icin yerel inceleme sayfasi (bkz. inceleme_sunucu.py).
+if [[ "${1:-}" == "incele" ]]; then
+  shift
+  python3 "$TOOLS/inceleme_sunucu.py" "$@"
+  exit $?
+fi
+
 # 'sonra' da kontrol()'den once: kendi denetimini yapar, 'bolum'u kendisi cagirir.
 if [[ "${1:-}" == "sonra" ]]; then
   shift
@@ -665,7 +685,9 @@ hepsi)
   echo "kullanim: ./calistir.sh [hepsi [--otomatik]|test|kontrol|takvim|tarama|etiket|denetim|lint|bicim|bicim-taban|sapka|sapka-taban|toplu|belgeler|ciltler [--yaz]|dogrula [A-B]|kanca|hazirla N]"
   echo "          ./calistir.sh bolum [numara]   (numarasiz: en son bolum)"
   echo "          ./calistir.sh once <numara>    (ceviriden once: hazirlik + sablon denetimi)"
-  echo "          ./calistir.sh sonra <numara> [--otomatik [adim...]]"
+  echo "          ./calistir.sh cevir <numara> [--sonra] [--hazirla|--kuru] [--model M]"
+  echo "          ./calistir.sh sonra <N|A-B|N,M> [--otomatik [adim...]] [--donem]"
+  echo "          ./calistir.sh incele <numara>   (inceleme sayfasi, tarayicida)"
   echo "          ./calistir.sh duzelt [sapka|lint|bicim|belgeler|takvim|ciltler...] [--bolum N|A-B] [--uygula [--evet]]"
   exit 1
   ;;

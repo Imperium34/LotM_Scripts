@@ -52,6 +52,8 @@ KELIMELER = Path(os.environ.get("LOTM_KELIMELER") or KOK / "Tools" / "words.md")
 ISTEM = KOK / "Tools" / "Prompts" / "zincir-okuma-istemi.md"
 BELGE_KLASORLERI = [KOK / "Tools" / "Voice_Maps", KOK / "Tools" / "Prompts"]
 BILINEN = Path(os.environ.get("LOTM_BILINEN") or KOK / "Tools" / "bilinen.md")
+# cevir.py'nin tik defteri: DURUM NOTU'larindaki "Yeni tik" satirlari.
+TIKLER = Path(os.environ.get("LOTM_TIKLER") or KOK / "Tools" / "tikler.md")
 RAPOR = Path(os.environ.get("LOTM_HAFTALIK") or BETIKLER / "Reports" / "haftalik")
 ANSI = re.compile(r"\x1b\[[0-9;]*m")
 
@@ -83,8 +85,10 @@ def duzelt() -> str:
 
 def girdi_metni(zincir: str, duzeltmeler: str) -> str:
     bilinen = BILINEN.read_text(encoding="utf-8").strip() if BILINEN.exists() else "(defter yok)"
+    tikler = TIKLER.read_text(encoding="utf-8").strip() if TIKLER.exists() else "(defter yok)"
     return (f"{ISTEM.read_text(encoding='utf-8').rstrip()}\n\n---\n\n"
             f"<bilinen>\n{bilinen}\n</bilinen>\n\n"
+            f"<tikler>\n{tikler}\n</tikler>\n\n"
             f"<uygulanan_duzeltmeler>\n{duzeltmeler}\n</uygulanan_duzeltmeler>\n\n"
             f"<zincir_ciktisi>\n{ANSI.sub('', zincir).rstrip()}\n</zincir_ciktisi>\n")
 

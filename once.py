@@ -80,8 +80,20 @@ def main(argv=None) -> int:
             print(p.stdout[-2000:], p.stderr[-2000:], sep="\n")
             print("HATA: hazirlik uretilemedi")
             return 1
+    # Ses haritasi ozeti: bolumde gecen karakterlerin bu bolumdeki asamasi ve
+    # girisleri (Ingilizce kaynaktan; ses_haritasi.py). Haritalar degisince yenilenir.
+    ses = klasor / "ses_haritasi.md"
+    try:
+        import ses_haritasi as SH
+        if a.yeniden or bayat_mi(ses, [SH.YAN, SH.KLEIN]):
+            metin = SH.kaynak_metni(no, tr=False)
+            if metin:
+                klasor.mkdir(parents=True, exist_ok=True)
+                ses.write_text(SH.tam(no, metin), encoding="utf-8")
+    except Exception as e:  # yardimci cikti; hazirlik onsuz da yurur
+        print(f"  UYARI: ses haritasi ozeti kurulamadi ({e})")
     satirlar += ["## Hazırlık", "Şablon üreticisine verilecekler:",
-                 f"- {dokum}", f"- {dizin}",
+                 f"- {dokum}", f"- {dizin}"] + ([f"- {ses}"] if ses.exists() else []) + [
                  f"- {onceki}" if onceki.exists() else f"- (önceki şablon yok: {onceki.name})", ""]
 
     # 2. sablon
