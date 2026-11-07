@@ -142,11 +142,14 @@ def dogrula(no: int, kay, tr_metin: str, ayirt: list, desen: dict) -> dict:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    ap.add_argument("aralik", help="bolum araligi, orn. 1-56")
+    ap.add_argument("aralik", help="bolum araligi, orn. 1-56 (1,5,10-20 de olur)")
     ap.add_argument("--cikti", type=Path)
     a = ap.parse_args()
-    bas, _, son = a.aralik.partition("-")
-    bas, son = int(bas), int(son or bas)
+    try:
+        nolar = lotm.bolum_listesi(a.aralik)
+    except ValueError as e:
+        ap.error(str(e))
+    bas, son = min(nolar), max(nolar)
 
     t0 = time.time()
     kay = H.kaynak_yukle()
@@ -157,7 +160,7 @@ def main() -> int:
     print(f"yükleme {time.time() - t0:.0f}s, {len(ayirt)} ayırt edici terim", file=sys.stderr)
 
     satirlar, kacanlar, yoklar, harfler = [], defaultdict(list), defaultdict(list), defaultdict(list)
-    for no in range(bas, son + 1):
+    for no in nolar:
         if no not in tr:
             continue
         s = dogrula(no, kay, tr[no], ayirt, desen)

@@ -197,6 +197,66 @@ KELIMELER = _kelimeler_yolu()
 
 
 # =====================================================================
+# ORTAK YARDIMCILAR (7 Kas): yedek klasoru, bolum araligi, cekirdek istem
+# =====================================================================
+# Eskiden her betigin kendi kopyasi vardi (6 ayri aralik okuyucu, 4 ayri
+# yedek yolu, 2 ayri "en yeni istem" secici) ve davranislari ayrismisti:
+# o_denetle "61,63" almiyordu, ses_ayari LOTM_CEKIRDEK'e bakmiyordu, yalniz
+# ses_ayari LOTM_YEDEK'e uyuyordu. Davranisi degistirmek icin yalniz burasi.
+
+ISTEMLER = Path(os.environ.get("LOTM_ISTEMLER") or KOK / "Tools" / "Prompts")
+
+
+def yedek_klasoru(etiket: str, zaman: float | None = None) -> Path:
+    """LotM/yedek/<YYYY-AA-GG>/<etiket>-<SSDDss>/ (olusturmaz).
+
+    Butun yedekler buraya: proje kurali, bir thread'in calisma klasorune ya
+    da Reports/'a degil. LOTM_YEDEK kok klasoru degistirir (testler icin).
+    Kok cagri aninda okunur ki test ortami sonradan ayarlayabilsin."""
+    import time
+    t = time.localtime(zaman)
+    kok = Path(os.environ.get("LOTM_YEDEK") or KOK / "yedek")
+    return kok / time.strftime("%Y-%m-%d", t) / f"{etiket}-{time.strftime('%H%M%S', t)}"
+
+
+def bolum_listesi(alan) -> list:
+    """'61', '61-64', '61,63,70-72' -> [61, ...] (sira korunur, tekrar atilir).
+
+    int de alir. Bozuk parca ya da ters aralik (64-61) ValueError."""
+    if isinstance(alan, int):
+        return [alan]
+    nolar = []
+    for parca in re.split(r"[,\s]+", str(alan).strip()):
+        if not parca:
+            continue
+        m = re.fullmatch(r"(\d+)(?:-(\d+))?", parca)
+        if not m or int(m.group(2) or m.group(1)) < int(m.group(1)):
+            raise ValueError(f"bolum araligi okunamadi: {parca!r} (ornek: 61, 61-64, 61,63,70-72)")
+        nolar += range(int(m.group(1)), int(m.group(2) or m.group(1)) + 1)
+    if not nolar:
+        raise ValueError("bolum araligi bos (ornek: 61, 61-64, 61,63,70-72)")
+    return list(dict.fromkeys(nolar))
+
+
+def cekirdek_istem() -> Path:
+    """En yeni cekirdek istem: Tools/Prompts/lotm_system_prompt_vX.Y.md.
+
+    LOTM_CEKIRDEK verilmisse o. Yalniz klasorun kendisine bakilir; eski
+    surumler Prompts/old/'da durur ve hicbir zaman secilmez. Oneri/skill
+    dosyalari (v5_skill, *_oneri) adi tutmadigi icin atlanir."""
+    if os.environ.get("LOTM_CEKIRDEK"):
+        return Path(os.environ["LOTM_CEKIRDEK"])
+    adaylar = []
+    for p in ISTEMLER.glob("lotm_system_prompt_v*.md"):
+        m = re.fullmatch(r"lotm_system_prompt_v(\d+(?:\.\d+)*)\.md", p.name)
+        if m:
+            adaylar.append((tuple(int(x) for x in m.group(1).split(".")), p))
+    if not adaylar:
+        raise FileNotFoundError(f"{ISTEMLER} altinda lotm_system_prompt_vX.Y.md yok")
+    return max(adaylar)[1]
+
+
+# =====================================================================
 # CILT TABLOSU
 # =====================================================================
 

@@ -9,12 +9,32 @@ duzenlenebilir (sayfa her istekte dosyayi yeniden okur).
 
 Sayfa: bir seferde bir madde; ✗/✓ satirlari degisen sozcukler isaretli,
 Neden, butun TR paragrafi ve hizali ZH paragrafi; katman suzgeci, ilerleme.
-Tuslar: k kabul · r ret · h hep · e ✓'yi duzenle · → / ← gezin · u geri al.
+Tuslar: k kabul · r ret · h hep · e ✓'yi duzenle · → / ← gezin · u geri al ·
+A (Shift+a) uygula ve sonraki bolum.
+
+Uygulananlar (7 Kas): hattin kendisi yazdigi KESIN ve otomatik (okuma 1.6)
+duzeltmeler de listenin sonunda, "0. Uygulananlar" suzgecinde gorunur;
+sayaca girmez. g o duzeltmeyi geri alinacak diye isaretler (dosyada
+'[x] geri al'), Uygula ✓'yi ✗'ye dondurur. Otomatik olanlarin kabul/geri
+alma orani istatistige yazilir.
+
+Uygula (7 Kas): sayfadaki dugme ya da A, o bolumun kararlarini komut
+satirindaki gibi uygular ('sonra.py N --kararlar'; ses_ayari dosyasinda
+'ses_ayari.py N --kararlar'), sonra kuyruktaki bir sonraki bolumu ayni
+sekmede acar. Kuyruk bittiyse sunucu kapanir (sekme kapatilmaya calisilir;
+tarayici izin vermezse "bitti" yazar). Isaretsiz madde varsa once sorulur.
+
+Kuyruk: tek numara verilince o bolum + ondan sonraki, incelemesi hazir
+(5_inceleme.md var) ve kararlari henuz islenmemis (5_kararlar.json yok ya da
+inceleme ondan yeni) bolumler. Aralik/liste verilince yalniz onlar; islenmis
+olanlar atlanir. --tek: kuyruk yok, yalniz o bolum.
 
 Yalniz 127.0.0.1'e baglanir; harici bagimlilik yok (http.server).
 
 Kullanim:
-    ./calistir.sh incele 9                       Reports/sonra/Ch_9/5_inceleme.md
+    ./calistir.sh incele 9                       9 ve sonraki hazir bolumler
+    ./calistir.sh incele 20-25                   yalniz 20-25 (islenmisler atlanir)
+    ./calistir.sh incele 9 --tek                 yalniz 9
     ./calistir.sh incele --dosya Reports/ses_ayari/Ch_72/inceleme.md --bolum 72
 """
 
@@ -25,6 +45,7 @@ import difflib
 import json
 import os
 import re
+import subprocess
 import sys
 import threading
 import webbrowser
@@ -152,7 +173,120 @@ class Baglam:
 
 # ------------------------------------------------------------------ sunucu
 
-def uygulama(yol: Path, baglam: Baglam):
+# ------------------------------------------------------------------ kuyruk
+
+class Kip:
+    """Hangi inceleme dosyasi, nasil uygulanir, ne zaman 'islenmis' sayilir."""
+
+    def __init__(self, ad: str):
+        self.ad = ad
+        if ad == "ses_ayari":
+            import ses_ayari as A
+            self.kok, self.dosya, self.betik, self.isaret = A.RAPOR, "inceleme.md", "ses_ayari.py", "uygulandi.json"
+        else:
+            self.kok, self.dosya, self.betik, self.isaret = S.RAPOR, "5_inceleme.md", "sonra.py", S.KARARLAR_ISLENDI
+
+    def yol(self, no: int) -> Path:
+        return self.kok / f"Ch_{no}" / self.dosya
+
+    def islenmis(self, no: int) -> bool:
+        isaret, inc = self.kok / f"Ch_{no}" / self.isaret, self.yol(no)
+        if not isaret.exists():
+            # 7 Kas'tan once islenenlerin isareti yok: karar istatistiginde
+            # satiri varsa ve inceleme ondan sonra yeniden yazilmadiysa islenmis.
+            return self.ad == "sonra" and no in self.istatistikte() and \
+                S.ISTATISTIK.stat().st_mtime >= inc.stat().st_mtime
+        # sonra: inceleme sonradan yeniden isaretlendiyse yine bekliyor say.
+        return self.ad == "ses_ayari" or isaret.stat().st_mtime >= inc.stat().st_mtime
+
+    def istatistikte(self) -> set:
+        if not hasattr(self, "_ist"):
+            self._ist = set()
+            if S.ISTATISTIK.exists():
+                for s in S.ISTATISTIK.read_text(encoding="utf-8").splitlines()[1:]:
+                    if s.split("\t", 1)[0].isdigit():
+                        self._ist.add(int(s.split("\t", 1)[0]))
+        return self._ist
+
+    def hazirlar(self, sonra_: int) -> list:
+        """sonra_'dan buyuk, incelemesi hazir ve islenmemis bolumler (sirali)."""
+        out = []
+        for k in self.kok.glob("Ch_*"):
+            m = re.fullmatch(r"Ch_(\d+)", k.name)
+            if m and int(m.group(1)) > sonra_ and self.yol(int(m.group(1))).exists() \
+                    and not self.islenmis(int(m.group(1))):
+                out.append(int(m.group(1)))
+        return sorted(out)
+
+    def uygula(self, no: int) -> tuple:
+        """(basarili mi, cikti) -- komut satirindaki --kararlar."""
+        p = subprocess.run([sys.executable, str(BETIKLER / self.betik), str(no), "--kararlar"],
+                           capture_output=True, text=True, cwd=BETIKLER, timeout=600)
+        cikti = (p.stdout.strip().splitlines() or [""])[-1] if p.returncode == 0 else \
+            (p.stderr or p.stdout).strip()[-600:]
+        return p.returncode == 0, cikti
+
+
+class Oturum:
+    """Sunucunun o an gosterdigi bolum ve kuyrugun geri kalani. Baglam
+    (hizalama) bir sonraki bolum icin arka planda onceden kurulur."""
+
+    def __init__(self, kip: Kip | None, kuyruk: list, yol: Path | None = None):
+        self.kip, self.kuyruk = kip, list(kuyruk)
+        self.no = self.kuyruk.pop(0) if self.kuyruk else None
+        self.yol = yol or (kip.yol(self.no) if kip and self.no is not None else None)
+        self._baglam, self.bitti, self.uygulananlar = {}, False, []
+        self.baglam = self.baglam_al(self.no)
+        self.onden_kur()
+
+    def baglam_al(self, no):
+        if no not in self._baglam:
+            self._baglam[no] = Baglam(no)
+        return self._baglam[no]
+
+    def onden_kur(self):
+        if self.kuyruk:
+            sonraki = self.kuyruk[0]
+            threading.Thread(target=self.baglam_al, args=(sonraki,), daemon=True).start()
+
+    def ilerle(self) -> bool:
+        while self.kuyruk:
+            no = self.kuyruk.pop(0)
+            if self.kip.yol(no).exists() and not self.kip.islenmis(no):
+                self.no, self.yol = no, self.kip.yol(no)
+                self.baglam = self.baglam_al(no)
+                self.onden_kur()
+                return True
+        self.bitti = True
+        return False
+
+
+def yazilanlar(metin: str) -> list:
+    """Hattin bolume zaten yazdigi duzeltmeler, sayfa icin madde bicimiyle."""
+    out = []
+    for u in S.uygulanan_oku(metin):
+        out.append({"k": f"U{u['i']}", "i": u["i"], "tur": "uyg", "p": u["p"], "sinif": "UYGULANDI",
+                    "kural": u["kural"], "katman": "0. Uygulananlar", "kaynak": u["kaynak"],
+                    "otomatik": u["otomatik"], "geri": bool(u["geri"]), "geri_var": u["geri"] is not None,
+                    "eski": u["eski"], "yeni": u["yeni"], "neden": "", "ekler": [],
+                    "kabul": False, "ret": False, "hep": False})
+    return out
+
+
+def isaretsiz(metin: str) -> int:
+    """--kararlar'da hicbir sey olmayacak maddeler (4. katman toplu ret isaretliyse o katman haric)."""
+    ms, _, toplu = maddeler(metin)
+    return sum(1 for m in ms if not (m["kabul"] or m["ret"]) and not (toplu and m["katman"].startswith("4.")))
+
+
+def uygulama(oturum, baglam: Baglam | None = None, kapat=None):
+    """oturum: Oturum ya da (eski cagri) inceleme dosyasinin yolu."""
+    if not isinstance(oturum, Oturum):
+        yol = oturum
+        oturum = Oturum.__new__(Oturum)
+        oturum.kip, oturum.kuyruk, oturum.no, oturum.yol = None, [], None, Path(yol)
+        oturum.baglam, oturum.bitti, oturum.uygulananlar, oturum._baglam = baglam or Baglam(None), False, [], {}
+
     class Isleyici(BaseHTTPRequestHandler):
         def log_message(self, *a):
             pass
@@ -169,11 +303,20 @@ def uygulama(yol: Path, baglam: Baglam):
             self.gonder(kod, json.dumps(veri, ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8")
 
         def durum(self):
-            ms, toplu_var, toplu = maddeler(yol.read_text(encoding="utf-8"))
+            yol, baglam = oturum.yol, oturum.baglam
+            metin = yol.read_text(encoding="utf-8")
+            ms, toplu_var, toplu = maddeler(metin)
             for m in ms:
                 m["fark_eski"], m["fark_yeni"] = farklar(m["eski"], m["yeni"])
                 m.update(baglam.bul(m))
-            return {"dosya": str(yol), "maddeler": ms, "toplu_var": toplu_var, "toplu": toplu}
+            for u in yazilanlar(metin):
+                u["fark_eski"], u["fark_yeni"] = farklar(u["eski"], u["yeni"])
+                u.update(baglam.bul(dict(u, eski=u["yeni"])))  # bolumde artik ✓ duruyor
+                ms.append(u)
+            return {"dosya": str(yol), "maddeler": ms, "toplu_var": toplu_var, "toplu": toplu,
+                    "bolum": oturum.no, "kuyruk": list(oturum.kuyruk), "isaretsiz": isaretsiz(metin),
+                    "uygulanabilir": oturum.kip is not None and oturum.no is not None,
+                    "uygulananlar": oturum.uygulananlar}
 
         def do_GET(self):
             if self.path == "/":
@@ -191,11 +334,16 @@ def uygulama(yol: Path, baglam: Baglam):
             uzunluk = int(self.headers.get("Content-Length") or 0)
             try:
                 veri = json.loads(self.rfile.read(uzunluk) or b"{}")
+                if self.path == "/api/uygula":
+                    return self.uygula()
                 with KILIT:
+                    yol = oturum.yol
                     metin = yol.read_text(encoding="utf-8")
                     if self.path == "/api/madde":
                         metin = madde_yaz(metin, int(veri["k"]), bool(veri["kabul"]), bool(veri["ret"]),
                                           bool(veri["hep"]), veri.get("yeni"))
+                    elif self.path == "/api/geri":
+                        metin = S.geri_yaz(metin, int(veri["i"]), bool(veri["geri"]))
                     elif self.path == "/api/toplu":
                         metin = toplu_yaz(metin, bool(veri["isaret"]))
                     else:
@@ -204,6 +352,25 @@ def uygulama(yol: Path, baglam: Baglam):
             except Exception as e:  # noqa: BLE001
                 return self.json_gonder({"hata": f"{type(e).__name__}: {e}"}, 400)
             self.json_gonder(self.durum())
+
+        def uygula(self):
+            if oturum.kip is None or oturum.no is None:
+                return self.json_gonder({"hata": "bu dosya buradan uygulanamaz (komut satirindan --kararlar)"}, 400)
+            with KILIT:
+                no = oturum.no
+                tamam, cikti = oturum.kip.uygula(no)
+                if not tamam:
+                    return self.json_gonder({"hata": f"{no}. bölüm uygulanamadı: {cikti}"}, 500)
+                oturum.uygulananlar.append(f"{no}: {cikti}")
+                print(f"  uygulandı {no}: {cikti}", flush=True)
+                if oturum.ilerle():
+                    veri = self.durum()
+                    veri["sonuc"] = f"{no}. bölüm: {cikti}"
+                    return self.json_gonder(veri)
+            self.json_gonder({"bitti": True, "sonuc": f"{no}. bölüm: {cikti}",
+                              "uygulananlar": oturum.uygulananlar})
+            if kapat:
+                threading.Timer(1.0, kapat).start()
     return Isleyici
 
 
@@ -244,36 +411,57 @@ textarea{width:100%;min-height:90px;font:inherit;background:var(--bg);color:var(
 .liste span{font-size:12px;padding:2px 6px;border-radius:4px;border:1px solid var(--cizgi);cursor:pointer}
 .liste .k{background:var(--kabul);color:#fff}.liste .r{background:var(--ret);color:#fff}.liste .su{outline:2px solid var(--vurgu)}
 .uyari{color:var(--ret)}
+.liste .u{border-style:dashed}.liste .u.o{border-color:var(--vurgu)}.liste .u.g{background:var(--ret);color:#fff}
+.rozet{font-size:13px;color:var(--vurgu);cursor:pointer;text-decoration:underline dotted}
+.kutular button.acik.geri{background:var(--ret);color:#fff;border-color:var(--ret)}
 </style></head><body>
 <header><strong id="baslik">İnceleme</strong><select id="suzgec"></select>
-<span id="sayac"></span><div class="ilerleme"><div id="cubuk" style="width:0"></div></div>
-<label id="topluK" hidden><input type="checkbox" id="toplu"> 4. katmanda işaretsizlerin hepsi: ret</label></header>
+<span id="sayac"></span><span id="uygRozet" class="rozet" hidden></span><div class="ilerleme"><div id="cubuk" style="width:0"></div></div>
+<label id="topluK" hidden><input type="checkbox" id="toplu"> 4. katmanda işaretsizlerin hepsi: ret</label>
+<button id="uygula" hidden title="Shift+A">Uygula ve sonraki bölüm (A)</button><span id="kuyruk"></span></header>
 <main><div id="kart" class="kart">Yükleniyor…</div><div class="liste" id="liste"></div>
 <p class="tuslar">k kabul · r ret · h hep · e ✓ satırını düzenle (Ctrl+Enter kaydet, Esc vazgeç) · → / ← sonraki / önceki ·
-n sıradaki işaretsiz · u geri al. Her tuş dosyaya hemen yazılır.</p><p id="hata" class="uyari"></p></main>
+n sıradaki işaretsiz · u geri al · g uygulanmış düzeltmeyi geri alınacak diye işaretle · A (Shift+a) kararları uygula ve sıradaki bölümü aç. Her tuş dosyaya hemen yazılır.</p>
+<p id="sonuc" class="ek"></p><p id="hata" class="uyari"></p></main>
 <script>
 let veri=null, sira=0, gecmis=[], duzenle=false;
 const $=id=>document.getElementById(id);
 const esc=s=>(s||"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
 function gorunen(){const f=$("suzgec").value;return veri.maddeler.filter(m=>!f||m.katman===f)}
+const karar=m=>m.tur!=="uyg";
 async function al(){const r=await fetch("/api/maddeler");veri=await r.json();kur()}
 async function gonder(yol,govde){const r=await fetch(yol,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(govde)});
  const j=await r.json(); if(j.hata){$("hata").textContent=j.hata;return false} $("hata").textContent="";veri=j;kur();return true}
 function kur(){
  const katmanlar=[...new Set(veri.maddeler.map(m=>m.katman))], s=$("suzgec"), eski=s.value;
+ const uyg=veri.maddeler.filter(m=>!karar(m)), oto=uyg.filter(m=>m.otomatik).length, geri=uyg.filter(m=>m.geri).length;
+ $("uygRozet").hidden=!uyg.length;
+ $("uygRozet").textContent=`uygulanan ${uyg.length}${oto?` (${oto} otomatik)`:""}${geri?` · ${geri} geri alınacak`:""}`;
  s.innerHTML='<option value="">Hepsi</option>'+katmanlar.map(k=>`<option ${k===eski?"selected":""}>${esc(k)}</option>`).join("");
  $("baslik").textContent=veri.dosya.split("/").slice(-2).join("/");
+ $("uygula").hidden=!veri.uygulanabilir;
+ $("uygula").textContent=veri.kuyruk&&veri.kuyruk.length?`Uygula ve ${veri.kuyruk[0]}. bölüme geç (A)`:"Uygula ve bitir (A)";
+ $("kuyruk").textContent=veri.kuyruk&&veri.kuyruk.length?`sırada: ${veri.kuyruk.join(", ")}`:"";
  $("topluK").hidden=!veri.toplu_var; $("toplu").checked=veri.toplu;
- const g=gorunen(), bitti=g.filter(m=>m.kabul||m.ret).length;
+ const g=gorunen().filter(karar), bitti=g.filter(m=>m.kabul||m.ret).length;
  $("sayac").textContent=`${bitti}/${g.length}`; $("cubuk").style.width=(g.length?100*bitti/g.length:0)+"%";
- if(sira>=g.length) sira=Math.max(0,g.length-1); goster();
+ const tum=gorunen().length; if(sira>=tum) sira=Math.max(0,tum-1); goster();
 }
 function parcalar(p){return p.map(([t,s])=>t==="="?esc(s):`<b class="d">${esc(s)}</b>`).join("")}
 function goster(){
  const g=gorunen(), m=g[sira];
- $("liste").innerHTML=g.map((x,i)=>`<span class="${x.kabul?"k":x.ret?"r":""} ${i===sira?"su":""}" data-i="${i}">K${x.k}</span>`).join("");
+ $("liste").innerHTML=g.map((x,i)=>karar(x)?`<span class="${x.kabul?"k":x.ret?"r":""} ${i===sira?"su":""}" data-i="${i}">K${x.k}</span>`
+  :`<span class="u ${x.otomatik?"o":""} ${x.geri?"g":""} ${i===sira?"su":""}" data-i="${i}" title="${x.otomatik?"otomatik":"kesin"}">${x.k}</span>`).join("");
  if(!m){$("kart").textContent="Bu süzgeçte madde yok.";return}
  let tr=esc(m.tr); const ip=esc((m.eski||"").slice(0,60)); if(ip&&tr.includes(ip)) tr=tr.replace(ip,`<mark>${ip}</mark>`);
+ if(!karar(m)){$("kart").innerHTML=`<div class="ust"><span>${m.k}</span><span>¶${esc(m.p)}</span>
+ <span>${m.otomatik?"otomatik uygulandı":"kesin, uygulandı"}</span><span>${esc(m.kaynak)}</span><span>${sira+1}/${g.length}</span></div>
+ <div class="kural">${esc(m.kural)}</div>
+ <div class="satir sx"><span class="etiket">✗</span>${parcalar(m.fark_eski)}</div>
+ <div class="satir sy"><span class="etiket">✓</span>${parcalar(m.fark_yeni)}</div>
+ <div class="kutular">${m.geri_var?`<button class="geri ${m.geri?"acik":""}" data-a="g">${m.geri?"geri alınacak (g)":"geri al (g)"}</button>`
+  :`<span class="ek">Bu dosya eski biçimde; geri almak için yedekten dönün.</span>`}</div>
+ <div class="baglam"><div><strong>TR</strong>\n${esc(m.tr)||"(paragraf bulunamadı)"}</div><div><strong>ZH</strong>\n${esc(m.zh)||"(hizalama yok)"}</div></div>`;return}
  $("kart").innerHTML=`<div class="ust"><span>K${m.k}</span><span>¶${esc(m.p)}${m.grup?` · hizalama ¶${m.grup}`:""}</span>
  <span>${esc(m.katman)}</span><span>${esc(m.kaynak)}</span><span>${sira+1}/${g.length}</span></div>
  <div class="kural">${esc(m.kural)}</div>
@@ -293,13 +481,32 @@ async function isle(m,degisim){
 }
 async function eylem(a){
  const g=gorunen(), m=g[sira]; if(!m) return;
+ if(!karar(m)){if(a==="g"&&m.geri_var) await gonder("/api/geri",{i:m.i,geri:!m.geri}); return}
  if(a==="k"){if(await isle(m,{kabul:!m.kabul,ret:false})&&!m.kabul) ileri()}
  else if(a==="r"){if(await isle(m,{ret:!m.ret,kabul:false})&&!m.ret) ileri()}
  else if(a==="h") await isle(m,{hep:!m.hep});
  else if(a==="e"){duzenle=true;goster()}
 }
+let uyguluyor=false;
+async function uygula(){
+ if(!veri||!veri.uygulanabilir||uyguluyor) return;
+ if(veri.isaretsiz&&!confirm(`${veri.bolum}. bölümde ${veri.isaretsiz} işaretsiz madde var; uygulanmayacaklar (kutusu boş kalır). Yine de uygulansın mı?`)) return;
+ uyguluyor=true; $("uygula").disabled=true; $("sonuc").textContent=`${veri.bolum}. bölüm uygulanıyor…`;
+ try{
+  const r=await fetch("/api/uygula",{method:"POST",headers:{"Content-Type":"application/json"},body:"{}"});
+  const j=await r.json();
+  if(j.hata){$("hata").textContent=j.hata;$("sonuc").textContent="";return}
+  $("hata").textContent=""; $("sonuc").textContent=j.sonuc||"";
+  if(j.bitti){
+   document.querySelector("main").innerHTML=`<div class="kart"><strong>Bitti.</strong><p>${(j.uygulananlar||[]).map(esc).join("<br>")}</p><p class="tuslar">Sunucu kapandı; bu sekmeyi kapatabilirsiniz.</p></div>`;
+   document.querySelector("header").hidden=true; setTimeout(()=>window.close(),1500); return}
+  veri=j; sira=0; gecmis=[]; duzenle=false; $("suzgec").value=""; kur(); window.scrollTo(0,0);
+ } finally {uyguluyor=false; $("uygula").disabled=false}
+}
+$("uygula").addEventListener("click",uygula);
 function ileri(){const g=gorunen(); if(sira<g.length-1) sira++; goster()}
-function sonrakiBos(){const g=gorunen(); for(let i=1;i<=g.length;i++){const j=(sira+i)%g.length; if(!g[j].kabul&&!g[j].ret){sira=j;break}} goster()}
+function sonrakiBos(){const g=gorunen(); for(let i=1;i<=g.length;i++){const j=(sira+i)%g.length; if(karar(g[j])&&!g[j].kabul&&!g[j].ret){sira=j;break}} goster()}
+$("uygRozet").addEventListener("click",()=>{$("suzgec").value="0. Uygulananlar";sira=0;kur()});
 document.addEventListener("click",e=>{const a=e.target.dataset.a; if(a) eylem(a);
  const i=e.target.dataset.i; if(i!==undefined){sira=+i;duzenle=false;goster()}});
 $("suzgec").addEventListener("change",()=>{sira=0;kur()});
@@ -310,11 +517,12 @@ document.addEventListener("keydown",async e=>{
   return}
  if(e.target.tagName==="SELECT") return;
  const t=e.key;
- if(t==="k"||t==="r"||t==="h"||t==="e"){e.preventDefault();eylem(t)}
+ if(t==="k"||t==="r"||t==="h"||t==="e"||t==="g"){e.preventDefault();eylem(t)}
  else if(t==="ArrowRight"){sira=Math.min(sira+1,gorunen().length-1);goster()}
  else if(t==="ArrowLeft"){sira=Math.max(sira-1,0);goster()}
  else if(t==="n") sonrakiBos();
  else if(t==="u"){const o=gecmis.pop(); if(o) await gonder("/api/madde",o)}
+ else if(t==="A"){e.preventDefault();uygula()}
 });
 al();
 </script></body></html>"""
@@ -322,9 +530,10 @@ al();
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="5_inceleme.md için yerel inceleme sayfası.")
-    ap.add_argument("no", nargs="?", type=int, help="bölüm (Reports/sonra/Ch_N/5_inceleme.md)")
+    ap.add_argument("no", nargs="?", help="bölüm, aralık ya da liste: 9, 20-25, 20,22,24")
     ap.add_argument("--dosya", type=Path, help="başka bir inceleme dosyası (ör. ses_ayari)")
     ap.add_argument("--bolum", type=int, help="--dosya ile: bağlam için bölüm numarası")
+    ap.add_argument("--tek", action="store_true", help="kuyruk yok: yalnız bu bölüm")
     ap.add_argument("--port", type=int, default=0, help="varsayılan: boş bir port")
     ap.add_argument("--acma", action="store_true", help="tarayıcıyı açma")
     a = ap.parse_args(argv)
@@ -333,24 +542,60 @@ def main(argv=None) -> int:
         if no is None:
             m = re.search(r"Ch_(\d+)", str(yol))
             no = int(m.group(1)) if m else None
+        kip = None
+        for ad in ("ses_ayari", "sonra"):
+            k = Kip(ad)
+            if no is not None and k.yol(no).resolve() == yol:
+                kip = k
+        kuyruk = [no] + ([] if a.tek or kip is None else kip.hazirlar(no)) if no is not None else []
+        oturum = Oturum(kip, kuyruk, yol=yol) if kuyruk else None
+        if oturum is None:
+            oturum = yol
     elif a.no is not None:
-        yol, no = S.RAPOR / f"Ch_{a.no}" / "5_inceleme.md", a.no
+        try:
+            nolar = S.lotm.bolum_listesi(a.no)
+        except ValueError as e:
+            ap.error(str(e))
+        kip = Kip("sonra")
+        if len(nolar) == 1:
+            kuyruk = nolar + ([] if a.tek else kip.hazirlar(nolar[0]))
+        else:
+            kuyruk = [n for n in nolar if kip.yol(n).exists() and not kip.islenmis(n)]
+            atlanan = [n for n in nolar if n not in kuyruk]
+            if atlanan:
+                print(f"atlandı (inceleme yok ya da kararları işlenmiş): {', '.join(map(str, atlanan))}")
+            if not kuyruk:
+                print("incelenecek bölüm yok.")
+                return 1
+        if not kip.yol(kuyruk[0]).exists():
+            print(f"YOK: {kip.yol(kuyruk[0])}")
+            return 1
+        print("bağlam kuruluyor (hizalama)...", flush=True)
+        oturum = Oturum(kip, kuyruk)
+        yol = oturum.yol
     else:
         ap.error("bölüm numarası ya da --dosya verin")
-    if not yol.exists():
+    if not Path(yol).exists():
         print(f"YOK: {yol}")
         return 1
-    print("bağlam kuruluyor (hizalama)...", flush=True)
-    baglam = Baglam(no)
-    sunucu = ThreadingHTTPServer(("127.0.0.1", a.port), uygulama(yol, baglam))
+    if not isinstance(oturum, Oturum):
+        print("bağlam kuruluyor (hizalama)...", flush=True)
+    sunucu = ThreadingHTTPServer(("127.0.0.1", a.port), None)
+    sunucu.RequestHandlerClass = uygulama(oturum, Baglam(no) if not isinstance(oturum, Oturum) else None,
+                                          kapat=sunucu.shutdown)
     adres = f"http://127.0.0.1:{sunucu.server_address[1]}/"
-    print(f"İnceleme sayfası: {adres}\n  dosya: {yol}\n  kapatmak için Ctrl+C", flush=True)
+    sira = f"\n  sırada: {', '.join(map(str, oturum.kuyruk))}" if isinstance(oturum, Oturum) and oturum.kuyruk else ""
+    print(f"İnceleme sayfası: {adres}\n  dosya: {yol}{sira}\n  kapatmak için Ctrl+C", flush=True)
     if not a.acma:
         threading.Timer(0.5, lambda: webbrowser.open(adres)).start()
     try:
         sunucu.serve_forever()
     except KeyboardInterrupt:
         print("\nkapandı")
+        return 0
+    if isinstance(oturum, Oturum) and oturum.uygulananlar:
+        print("uygulananlar:\n  " + "\n  ".join(oturum.uygulananlar))
+    print("bitti, sunucu kapandı.")
     return 0
 
 

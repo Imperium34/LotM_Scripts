@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """ses_ayari.py -- ek uyumu, anlati secimi, sablon doruk ayristirma, uygulama."""
 
+import os
 import sys
 from pathlib import Path
 
@@ -88,8 +89,8 @@ def test_kararlar_yedekle_ve_uygula(tmp_path):
     inc = inc.replace("[ ] kabul   [ ] ret   [ ] hep", "[x] kabul   [ ] ret   [ ] hep", 1)
     inc = inc.replace("[ ] kabul   [ ] ret   [ ] hep", "[ ] kabul   [x] ret   [x] hep", 1)
     (klasor / "inceleme.md").write_text(inc, encoding="utf-8")
-    eski_yedek, eski_defter = A.YEDEK, S.KARARLAR
-    A.YEDEK, S.KARARLAR = tmp_path / "yedek", tmp_path / "kararlar.md"
+    eski_yedek, eski_defter = os.environ.get("LOTM_YEDEK"), S.KARARLAR
+    os.environ["LOTM_YEDEK"], S.KARARLAR = str(tmp_path / "yedek"), tmp_path / "kararlar.md"
     try:
         assert A.kararlari_isle(99, dosya, klasor, kuru=True).startswith("kuru: 1 uygulandı")
         assert "Durum buydu." in dosya.read_text(encoding="utf-8")
@@ -102,4 +103,8 @@ def test_kararlar_yedekle_ve_uygula(tmp_path):
         assert "ret · ses_ayari dönem tabanı bilgi→malumat" in S.KARARLAR.read_text(encoding="utf-8")
         assert A.kararlari_isle(99, dosya, klasor, kuru=False).startswith("zaten")
     finally:
-        A.YEDEK, S.KARARLAR = eski_yedek, eski_defter
+        S.KARARLAR = eski_defter
+        if eski_yedek is None:
+            os.environ.pop("LOTM_YEDEK", None)
+        else:
+            os.environ["LOTM_YEDEK"] = eski_yedek

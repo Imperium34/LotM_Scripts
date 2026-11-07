@@ -42,6 +42,7 @@ BOLUMLER = KOK / "Imperium34.github.io" / "_chapters"
 KURALLAR = BETIKLER / "lint" / "lint-kurallari.yml"
 KELIMELER = Path(os.environ.get("LOTM_KELIMELER") or KOK / "Tools" / "words.md")
 
+import lotm  # noqa: E402
 from turkce import tr_desen  # noqa: E402
 
 AILE = {"alinti": "D.1", "agiz": "D.2", "ozdes": "D.3"}
@@ -188,15 +189,7 @@ def blok(no: int, metin: str | None = None) -> str:
     return "<betik_adaylari>\n" + "\n".join(satirlar) + "\n</betik_adaylari>"
 
 
-def bolum_listesi(alan: str) -> list:
-    nolar = []
-    for parca in re.split(r"[,\s]+", alan.strip()):
-        m = re.fullmatch(r"(\d+)(?:-(\d+))?", parca)
-        if not m:
-            raise ValueError(parca)
-        a, b = int(m.group(1)), int(m.group(2) or m.group(1))
-        nolar += list(range(a, b + 1))
-    return list(dict.fromkeys(nolar))
+bolum_listesi = lotm.bolum_listesi
 
 
 def main(argv=None) -> int:

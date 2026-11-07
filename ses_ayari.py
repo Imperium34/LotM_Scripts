@@ -56,7 +56,6 @@ from turkce import tr_desen  # noqa: E402
 
 KOK = S.KOK
 RAPOR = Path(os.environ.get("LOTM_SES_RAPOR") or BETIKLER / "Reports" / "ses_ayari")
-YEDEK = Path(os.environ.get("LOTM_YEDEK") or KOK / "yedek")
 ISTEM = S.ISTEMLER / "lotm_ses_ayari_doruk.md"
 TABAN_VARSAYILAN = "23-33,62-72"
 HEDEF = 4.7   # 34-61 donem ortalamasi (/1000), 3 Kas olcumu
@@ -302,19 +301,18 @@ def gotik_say(metin: str) -> list:
 
 def cekirdek_parcasi() -> str:
     """Cekirdek istemin §1.1-1.3 ve §4.1'i (en yeni surum)."""
-    yollar = sorted(S.ISTEMLER.glob("lotm_system_prompt_v[0-9]*.md"),
-                    key=lambda p: [int(x) for x in re.findall(r"\d+", p.stem)])
-    yollar = [p for p in yollar if re.fullmatch(r"lotm_system_prompt_v[\d.]+", p.stem)]
-    if not yollar:
+    try:
+        yol = S.lotm.cekirdek_istem()
+        t = yol.read_text(encoding="utf-8")
+    except FileNotFoundError:
         return ""
-    t = yollar[-1].read_text(encoding="utf-8")
     out = []
     for bas, son in ((r"^### 1\.1 ", r"^---|^## 2\."), (r"^### 4\.1 ", r"^### 4\.2 ")):
         m = re.search(bas, t, re.M)
         if m:
             n = re.search(son, t[m.end():], re.M)
             out.append(t[m.start():m.end() + (n.start() if n else 3000)].strip())
-    return f"<cekirdek kaynak=\"{yollar[-1].name}\">\n" + "\n\n".join(out) + "\n</cekirdek>"
+    return f"<cekirdek kaynak=\"{yol.name}\">\n" + "\n\n".join(out) + "\n</cekirdek>"
 
 
 def doruk_girdisi(no: int, sablon: str) -> tuple:
@@ -465,7 +463,7 @@ def kararlari_isle(no: int, dosya: Path, klasor: Path, kuru: bool) -> str:
     if kuru:
         return "kuru: " + sonuc
     if uygulanan:
-        yedek = YEDEK / time.strftime("%Y-%m-%d") / f"ses_ayari-{time.strftime('%H%M%S')}"
+        yedek = S.lotm.yedek_klasoru("ses_ayari")
         yedek.mkdir(parents=True, exist_ok=True)
         (yedek / dosya.name).write_text(asil, encoding="utf-8")
         dosya.write_text(metin, encoding="utf-8")

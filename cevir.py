@@ -12,11 +12,13 @@ cevirmen Claude (claude -p). Adimlar:
 
     denetim   once.py N: sablon (Tools/Schemas/Ch_N.md) var mi, HATA yok mu.
               HATA varsa durulur (--zorla ile gecilir, onerilmez).
-    girdi     Reports/ceviri/Ch_N/girdi.md: Sabit Cekirdek (en yeni
-              Tools/Prompts/lotm_system_prompt_v*.md) + sablon + ¶ numarali
+    girdi     Reports/ceviri/Ch_N/girdi.md: sablon + ¶ numarali
               ZH/EN hizali metin (harita/gruplar: sablondaki ¶ numaralari
               bunlardir) + gorev blogu. --haritalar ile Klein.md de eklenir
-              (sablonun C bolumu zaten bolumdeki sesleri tasir).
+              (sablonun C bolumu zaten bolumdeki sesleri tasir). Sabit
+              Cekirdek (lotm.cekirdek_istem(): en yeni Tools/Prompts/
+              lotm_system_prompt_vX.Y.md) mesaja girmez, --system-prompt-file
+              ile sistem istemi olarak gider (1 Kas'tan beri tek yol).
     ceviri    claude -p -> cikti_ham.md. Girdi degismediyse ve cikti
               varsa model yeniden calismaz (--yeniden ile zorlanir).
     kontrol   Cince harf, baslik, DURUM NOTU, paragraf orani. Sert bir
@@ -39,8 +41,6 @@ Kullanim:
     cevir.py 70 --kuru             cevir ama bolum dosyasina/tikler.md'ye yazma
     cevir.py 70 --yeniden          cikti varsa da yeniden cevir
     cevir.py 70 --uzerine-yaz      var olan 0070.md'nin ustune (yedekli)
-    cevir.py 70 --duz              cekirdek sistem istemi yerine mesajin basinda (eski yol;
-                                   karsilastirma icin ciktilar ayri: girdi.duz.md, cikti_ham.duz.md)
     --model M, --sure SN, --haritalar, --zorla
 
 Ortam: LOTM_CLAUDE (komut, sonra.py ile ayni), LOTM_CEVIRI_RAPOR (rapor
@@ -64,14 +64,14 @@ sys.path.insert(0, str(BETIKLER))
 sys.path.insert(0, str(BETIKLER / "harita"))
 
 KOK = Path(os.environ.get("LOTM_KOK") or BETIKLER.parent)
+import lotm  # noqa: E402  (ortak: yedek_klasoru, cekirdek_istem)
+import sonra  # noqa: E402  (claude_komutu, claude_calistir, yaz_degisirse)
 SITE = KOK / "Imperium34.github.io"
 BOLUMLER = SITE / "_chapters"
 SABLONLAR = Path(os.environ.get("LOTM_SABLONLAR") or KOK / "Tools" / "Schemas")
-ISTEMLER = KOK / "Tools" / "Prompts"
 HARITALAR = KOK / "Tools" / "Voice_Maps"
 RAPOR = Path(os.environ.get("LOTM_CEVIRI_RAPOR") or BETIKLER / "Reports" / "ceviri")
 TIKLER = Path(os.environ.get("LOTM_TIKLER") or KOK / "Tools" / "tikler.md")
-YEDEK = KOK / "yedek"
 
 CJK = re.compile(r"[㐀-鿿豈-﫿]")
 BASLIK = re.compile(r"^#{1,3}\s*Bölüm\s+(\d+)\s*[:：—-]\s*(.+?)\s*$", re.M)
@@ -79,17 +79,11 @@ DURUM = re.compile(r"^\s*>?\s*\**\[DURUM NOTU\]\**", re.M)
 
 
 def cekirdek_yolu() -> Path:
-    """En yeni lotm_system_prompt_vX.Y.md (oneri/skill dosyalari haric)."""
-    if os.environ.get("LOTM_CEKIRDEK"):
-        return Path(os.environ["LOTM_CEKIRDEK"])
-    adaylar = []
-    for p in ISTEMLER.glob("lotm_system_prompt_v*.md"):
-        m = re.fullmatch(r"lotm_system_prompt_v(\d+(?:\.\d+)*)\.md", p.name)
-        if m:
-            adaylar.append((tuple(int(x) for x in m.group(1).split(".")), p))
-    if not adaylar:
-        sys.exit(f"HATA: {ISTEMLER} altinda lotm_system_prompt_v*.md yok")
-    return max(adaylar)[1]
+    """En yeni cekirdek istem (lotm.cekirdek_istem; LOTM_CEKIRDEK ayni)."""
+    try:
+        return lotm.cekirdek_istem()
+    except FileNotFoundError as e:
+        sys.exit(f"HATA: {e}")
 
 
 def hizali_kaynak(no: int) -> tuple:
@@ -117,12 +111,11 @@ def gorev_blogu(no: int) -> str:
     )
 
 
-def girdi_kur(no: int, sablon: Path, haritalar: bool, sistem: bool = False) -> tuple:
-    """sistem: cekirdek mesaja girmez, --system-prompt-file ile gider."""
+def girdi_kur(no: int, sablon: Path, haritalar: bool) -> tuple:
+    """Cekirdek mesaja girmez, --system-prompt-file ile gider."""
     cekirdek = cekirdek_yolu()
     kaynak, grup, zh_boy = hizali_kaynak(no)
-    bas = [] if sistem else [cekirdek.read_text(encoding="utf-8").rstrip(), "", "---", ""]
-    parcalar = bas + ["# BÖLÜM AÇILIŞ ŞABLONU", "", sablon.read_text(encoding="utf-8").rstrip(), ""]
+    parcalar = ["# BÖLÜM AÇILIŞ ŞABLONU", "", sablon.read_text(encoding="utf-8").rstrip(), ""]
     if haritalar:
         k = HARITALAR / "Klein.md"
         if k.exists():
@@ -132,23 +125,15 @@ def girdi_kur(no: int, sablon: Path, haritalar: bool, sistem: bool = False) -> t
     return "\n".join(parcalar), cekirdek, grup, zh_boy
 
 
-def yaz_degisirse(yol: Path, metin: str) -> bool:
-    if yol.exists() and yol.read_text(encoding="utf-8") == metin:
-        return False
-    yol.parent.mkdir(parents=True, exist_ok=True)
-    yol.write_text(metin, encoding="utf-8")
-    return True
+yaz_degisirse = sonra.yaz_degisirse
 
 
-def claude_komutu(model: str | None, sistem: Path | None = None) -> list:
-    """sonra.claude_komutu (model + efor sabit) + istenirse cekirdek sistem istemi."""
-    import sonra
-    komut = sonra.claude_komutu(model)
-    if sistem:
-        # Claude Code'un kendi (kodlama) sistem isteminin YERINE cekirdek;
-        # araclar da kapali: ceviri dosya okumaz.
-        komut += ["--system-prompt-file", str(sistem), "--tools", ""]
-    return komut
+def claude_komutu(model: str | None, sistem: Path) -> list:
+    """sonra.claude_komutu (model + efor sabit) + cekirdek sistem istemi.
+
+    Claude Code'un kendi (kodlama) sistem isteminin YERINE cekirdek; araclar
+    da kapali: ceviri dosya okumaz."""
+    return sonra.claude_komutu(model) + ["--system-prompt-file", str(sistem), "--tools", ""]
 
 
 def ayristir(ham: str, no: int) -> dict:
@@ -215,7 +200,7 @@ def tik_ekle(no: int, tikler: list, model: str | None) -> None:
             "Bir kalıp iki üç bölümde tekrar ederse çekirdeğin §2/§3/§5 tablosuna işlenir "
             "(ya da bir denetleyiciye dönüşür) ve buradaki satırın başına ✓ konur.\n\n",
             encoding="utf-8")
-    satirlar = [f"- {no} · {datetime.now():%Y-%m-%d} · {model or __import__('sonra').VARSAYILAN_MODEL} · {t}" for t in tikler]
+    satirlar = [f"- {no} · {datetime.now():%Y-%m-%d} · {model or sonra.VARSAYILAN_MODEL} · {t}" for t in tikler]
     with TIKLER.open("a", encoding="utf-8") as f:
         f.write("\n".join(satirlar) + "\n")
 
@@ -235,7 +220,7 @@ def bolum_dosyasi(baslik: str | None, no: int, govde: str, eski: str | None) -> 
 
 
 def yedekle(yol: Path) -> Path:
-    hedef = YEDEK / f"{datetime.now():%Y-%m-%d}" / f"cevir-{datetime.now():%H%M%S}"
+    hedef = lotm.yedek_klasoru("cevir")
     hedef.mkdir(parents=True, exist_ok=True)
     shutil.copy2(yol, hedef / yol.name)
     return hedef / yol.name
@@ -265,11 +250,9 @@ def main(argv=None) -> int:
     ap.add_argument("--yeniden", action="store_true", help="cikti varsa da yeniden cevir")
     ap.add_argument("--uzerine-yaz", action="store_true", help="var olan bolumun ustune (yedekli)")
     ap.add_argument("--sonra", action="store_true", help="ardindan sonra.py N --otomatik")
-    # 1 Kasim: --sistem varsayilan oldu (ch69'da B'deki dondurulmus satiri yalniz
-    # sistem istemiyle verilen ceviri tuttu; bkz. Reports/ceviri/Ch_69/karsilastirma.md).
-    ap.add_argument("--duz", action="store_true",
-                    help="eski yol: cekirdek mesajin basinda, Claude Code'un kendi istemi altinda "
-                         "(ciktilar *.duz.md)")
+    # 1 Kasim: cekirdek sistem istemi olarak gider (ch69'da B'deki dondurulmus satiri
+    # yalniz boyle verilen ceviri tuttu; bkz. Reports/ceviri/Ch_69/karsilastirma.md).
+    # Eski --duz (cekirdek mesajin basinda) 7 Kas'ta kaldirildi.
     ap.add_argument("--haritalar", action="store_true", help="Klein.md'yi de ekle")
     ap.add_argument("--zorla", action="store_true", help="sablon HATA verse de cevir")
     # Varsayilan model ve efor sonra.py'de (LOTM_MODEL, LOTM_EFOR): opus, high.
@@ -281,9 +264,7 @@ def main(argv=None) -> int:
     sablon = SABLONLAR / f"Ch_{no}.md"
     hedef = BOLUMLER / f"{no:04d}.md"
     klasor = RAPOR / f"Ch_{no}"
-    a.sistem = not a.duz
-    ek = ".duz" if a.duz else ""
-    girdi, ham = klasor / f"girdi{ek}.md", klasor / f"cikti_ham{ek}.md"
+    girdi, ham = klasor / "girdi.md", klasor / "cikti_ham.md"
     durum = [f"# {no}. bölüm — çeviri", ""]
 
     # 1. denetim
@@ -302,7 +283,7 @@ def main(argv=None) -> int:
     durum.append(f"- Şablon: {ozet}")
 
     # 2. girdi
-    metin, cekirdek, grup, zh_boy = girdi_kur(no, sablon, a.haritalar, a.sistem)
+    metin, cekirdek, grup, zh_boy = girdi_kur(no, sablon, a.haritalar)
     degisti = yaz_degisirse(girdi, metin)
     durum.append(f"- Çekirdek: {cekirdek.name}; kaynak {grup} grup, {zh_boy} ZH harfi; "
                  f"girdi {len(metin) // 1000} KB")
@@ -311,7 +292,7 @@ def main(argv=None) -> int:
     if zh_boy > 20000:
         print("  UYARI: bölüm uzun; tek çağrıda kesilebilir, DURUM NOTU'nu kontrol edin")
     if a.hazirla:
-        print("--hazirla: model çalıştırılmadı.")
+        print(f"--hazirla: model çalıştırılmadı. Elle yapıştırırken çekirdeği ayrıca verin: {cekirdek}")
         return 0
 
     # 3. ceviri
@@ -319,14 +300,13 @@ def main(argv=None) -> int:
     if taze and not a.yeniden:
         print(f"çeviri: {ham.name} güncel, model çalıştırılmadı (--yeniden ile zorlanır)")
     else:
-        komut = claude_komutu(a.model, cekirdek if a.sistem else None)
+        komut = claude_komutu(a.model, cekirdek)
         if not shutil.which(komut[0]):
             print(f"YOK: '{komut[0]}' komutu (LOTM_CLAUDE ile verin). girdi.md hazır.")
             return 1
         print(f"çeviri: {' '.join(komut[:1] + komut[1:8])} ...", flush=True)
         t0 = time.time()
         try:
-            import sonra
             q = sonra.claude_calistir(komut, metin, a.sure, klasor)
         except subprocess.TimeoutExpired:
             print(f"HATA: {a.sure} sn içinde bitmedi")
@@ -340,7 +320,7 @@ def main(argv=None) -> int:
     # 4. kontrol
     parca = ayristir(ham.read_text(encoding="utf-8"), no)
     sert, uyari, paragraf = kontrol_et(parca, no, grup)
-    (klasor / f"durum_notu{ek}.md").write_text(parca["durum_notu"] + "\n", encoding="utf-8")
+    (klasor / "durum_notu.md").write_text(parca["durum_notu"] + "\n", encoding="utf-8")
     durum.append(f"- Çıktı: {paragraf} paragraf, başlık: {parca['baslik'] or '(yok)'}")
     durum += [f"- SERT: {s}" for s in sert] + [f"- Uyarı: {u}" for u in uyari]
     for s in sert:

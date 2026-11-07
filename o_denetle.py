@@ -17,15 +17,17 @@ hizalanabilen 432 "o + sözcük"ün 205'inde ZH'de 那 yok.
 
 Kullanim:
     o_denetle.py 63            tek bolum
-    o_denetle.py 55-64         aralik (sonda bolum basina sayi ozeti)
+    o_denetle.py 55-64         aralik (sonda bolum basina sayi ozeti); 55,58,60-64 de olur
 """
 
 import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent / "harita"))
 
+import lotm  # noqa: E402
 from gruplar import gruplar  # noqa: E402
 
 # "o"dan sonra gelince kalıp ya da zamir olan sözcükler.
@@ -61,11 +63,7 @@ def bulgular(no: int) -> list:
     return out
 
 
-def bolum_listesi(arg: str) -> list:
-    if "-" in arg:
-        a, b = arg.split("-", 1)
-        return list(range(int(a), int(b) + 1))
-    return [int(arg)]
+bolum_listesi = lotm.bolum_listesi  # 63, 55-64, 55,58,60-64
 
 
 def main() -> int:

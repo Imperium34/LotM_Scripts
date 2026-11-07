@@ -22,19 +22,13 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+import lotm  # noqa: E402
 from gruplar import gruplar  # noqa: E402
 
 
-def bolum_listesi(arg: str) -> list:
-    out = []
-    for parca in arg.split(","):
-        if "-" in parca:
-            a, b = parca.split("-", 1)
-            out.extend(range(int(a), int(b) + 1))
-        elif parca.strip():
-            out.append(int(parca))
-    return out
+bolum_listesi = lotm.bolum_listesi
 
 
 def replikler(ad: str, bolumler, k: int = 1, ikinci: str = "en") -> dict:

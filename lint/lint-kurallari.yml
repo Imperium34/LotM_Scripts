@@ -398,3 +398,19 @@ ozel_adlar:
     dogru_ekler: ["un", "a", "u", "dan", "da"] # Vik-roy (Takes 'u' harmony)
   Vincent:
     dogru_ekler: ["ın", "a", "ı", "tan", "ta"] # Vin-sınt (Takes 't' mutation)
+
+# ---------------------------------------------------------------
+# 5c. EKLENMİŞ SÜS (sonra.py inceleme katmanı; lint bu anahtarı okumaz)
+# Sadakat A "eklenmiş/abartılmış" maddesi yalnız bir pekiştireci ya da
+# bir dönem/gotik sözcüğü atıyorsa (en çok 3 sözcük düşüyorsa) 4. katmana
+# iner: 7 Kas'ta 1–73 kararlarında bunlar çoğunlukla ret (marazî, köhne,
+# kapkara, fevkalade, yegâne, hiç, gayet, tamamen: 8 ret, 2 kabul).
+# Çevirmenin atmosfer tercihi; madde yine sorulur, yalnız toplu retle
+# geçilebilir. Register'ın dönem + gotik listeleri de sayılır.
+# Eşleşme şapkasız; 5+ harfli kök ek alır, kısalar tam sözcük.
+# ---------------------------------------------------------------
+eklenmis_sus:
+  pekistirec: >-
+    hiç gayet tamamen büsbütün bütünüyle yegâne fevkalade ziyadesiyle
+    oldukça epey epeyce iyice adamakıllı son_derece katiyen
+  atmosfer: köhne kapkara simsiyah zifiri kasvetli

@@ -31,7 +31,7 @@ ADIMLAR (sira bagimliliktan gelir)
     birlestir  5_birlestir_girdi.md ->  5_birlestir_cikti.md (JSON)
                dort gecisin bulgulari tek listede: KESIN / KARAR / SABLON.
     son adim   KESIN duzeltmeler bolume birebir eslesmeyle uygulanir (once
-               yedek: Ch_N/00NN.once-*.md, fark: 5_uygulanan.diff); geri
+               yedek: LotM/yedek/<tarih>/sonra-Ch_N-<saat>/, fark: 5_uygulanan.diff); geri
                kalanlar 5_inceleme.md'de kutucuklu liste olur. Isaretleyip
                '--kararlar' ile calistirinca kabul edilenler uygulanir, 'hep'
                denenler karar defterine (Tools/kararlar.md) yazilir. Defter her
@@ -61,11 +61,15 @@ Kullanim:
     sonra.py 61 --zincir-yeniden       betik zincirini zorla yeniden calistir
     sonra.py 61 --parti-boyu 9000      sadakat partisi (ZH+TR karakter, varsayilan 6000)
     sonra.py 61 --yanki 14,22          sadakat'e bolum eslesmesinin disinda Yanki girisleri ekle
-    sonra.py 62-65 --otomatik          coklu kip: bolumler sirayla (61,63,70-72 de olur);
-                                       biri duserse digerleri yurur, ozet Reports/sonra/COKLU.md
-    sonra.py 61 --otomatik --donem     donem uyumu gecisini de ekle (istege bagli; LOTM_DONEM=1):
-                                       1b_donem_girdi.md -> 1b_donem_cikti.md, aday listesi
-                                       donem_denetle.py'den; bulgular birlestirmede KARAR
+    sonra.py 62-65 --otomatik          coklu kip (61,63,70-72 de olur); birden cok bolumde
+                                       ayni anda kac bolum kosacagi kendiliginden secilir
+                                       (--paralel oto, en cok LOTM_PARALEL_UST=3; hiz sinirina
+                                       takilinca duser). --paralel 1: sirayla. Biri duserse
+                                       digerleri yurur, ozet Reports/sonra/COKLU.md
+    sonra.py 61 --otomatik --donem-yok donem uyumu gecisini atla (7 Kas'tan beri varsayilan
+                                       acik; LOTM_DONEM=0 ayni): 1b_donem_girdi.md ->
+                                       1b_donem_cikti.md, aday listesi donem_denetle.py'den;
+                                       bulgular birlestirmede KARAR
 """
 
 from __future__ import annotations
@@ -83,9 +87,11 @@ from pathlib import Path
 BETIKLER = Path(__file__).resolve().parent
 sys.path.insert(0, str(BETIKLER))
 KOK = Path(os.environ.get("LOTM_KOK") or BETIKLER.parent)
+import lotm  # noqa: E402  (ortak: yedek_klasoru, bolum_listesi, cekirdek_istem)
+
 SITE = KOK / "Imperium34.github.io"
 BOLUMLER = SITE / "_chapters"
-ISTEMLER = KOK / "Tools" / "Prompts"
+ISTEMLER = lotm.ISTEMLER
 SABLONLAR = Path(os.environ.get("LOTM_SABLONLAR") or KOK / "Tools" / "Schemas")
 RAPOR = Path(os.environ.get("LOTM_SONRA_RAPOR") or BETIKLER / "Reports" / "sonra")
 # cevir.py'nin ciktilari (DURUM NOTU); yoksa okuma onsuz calisir.
@@ -107,27 +113,36 @@ ISTEM = {
     "donem": "lotm_donem_denetimi.md",
 }
 MODEL_ADIMLARI = ("okuma", "sadakat", "duzeltme", "triyaj", "birlestir")
-# Donem uyumu (4 Kas, istege bagli): cagdas sozcukler Viktorya/gotik dokuda.
-# --donem ya da LOTM_DONEM=1 ile okumadan sonra ayri bir gecis olarak girer;
-# ciktisi bir kez olustu mu birlestirmeye hep verilir (bayrak unutulunca
-# birlestirme ESKIMIS gorunup yeniden kosmasin diye).
-DONEM = os.environ.get("LOTM_DONEM", "") not in ("", "0")
+# Donem uyumu (4 Kas; 7 Kas'tan beri varsayilan acik): cagdas sozcukler
+# Viktorya/gotik dokuda. Okumadan sonra ayri bir gecis olarak girer;
+# --donem-yok ya da LOTM_DONEM=0 kapatir. Ciktisi bir kez olustu mu
+# birlestirmeye hep verilir (kapatilinca birlestirme ESKIMIS gorunup
+# yeniden kosmasin diye). Donuk (uygulanmis) bolumler zaten atlanir.
+DONEM = os.environ.get("LOTM_DONEM", "1") not in ("", "0")
 # Triyaj ayrinti komutlarini kendisi calistirabilsin: yalniz okuyan denetciler.
 TRIYAJ_ARACLARI = ["Read", "Bash(python3 toplu_denetle.py:*)", "Bash(python3 bicim_denetle.py:*)",
                    "Bash(python3 ceviri_denetle.py:*)", "Bash(python3 bolum.py:*)",
                    "Bash(python3 sozluk_ara.py:*)"]
 UYGULANDI = "5_uygulandi.json"
+# --kararlar bir kez islenince (kuru degilse): ne zaman, kac karar. Engel
+# degildir; inceleme sayfasi (incele) islenmis bolumu kuyrukta atlamak icin bakar.
+KARARLAR_ISLENDI = "5_kararlar.json"
 KELIMELER = Path(os.environ.get("LOTM_KELIMELER") or KOK / "Tools" / "words.md")
 YERLESTIRILECEK = "# Yerleştirilecek (sonra.py)"
 # Karar istatistigi: her islenen inceleme maddesi bir satir (bolum, K, aile,
 # on-isaret, karar). Kural ailelerinin kabul oranini olcer; on-isarete ya da
 # otomatige terfi bu sayilara dayanir. Karar defteri gibi Tools/'ta durur.
 ISTATISTIK = Path(os.environ.get("LOTM_ISTATISTIK") or KOK / "Tools" / "karar_istatistik.tsv")
-# On-isaretli aileler: kabul oraninin yuksek oldugu olculmus (26 Eki: 1.1
-# 18/20, 1.6 19/20). Madde 'kabul' isaretli gelir, cevirmen yalniz kaldirir.
-# Kararsiz gerekce (OKLUK) ya da bozuk oneri on-isareti engeller.
-ON_ISARET = {"okuma 1.1", "okuma 1.6"}
-# Otomatige terfi esigi (yalniz raporlanir; uygulama elle acilir).
+# Otomatik aileler (7 Kas): kabul orani olculmus, artik incelemeye gelmez,
+# KESIN gibi birebir eslesmeyle uygulanir (5_uygulanan.diff, Uygulananlar
+# listesinde "otomatik" etiketiyle; yedekten geri alinir). Yalniz okumadan
+# gelen, gerekcesi tereddutsuz (OKLUK) ve onerisi saglam maddeler; boyut
+# siniri (KESIN_ORAN) da gecerli. okuma 1.6: 69 karar, %93 kabul.
+# Eskiden bunlar 'kabul' on-isaretli geliyordu; tusla incelemede on-isaret
+# bir tus kazandiriyordu, maddeyi listeden cikarmiyordu, kaldirildi.
+OTOMATIK = {"okuma 1.6"}
+# Otomatige terfi esigi: --istatistik "otomatiğe hazır" der; OTOMATIK'e
+# eklemek elle.
 TERFI_EN_AZ, TERFI_ORAN = 40, 0.90
 # Birlestirmenin gerekcesinde bu sozler varsa gecis kendisi tereddut ediyor:
 # 63'teki iki ret de "noktali virgul is goruyor olabilir" diyen maddelerdi.
@@ -142,6 +157,76 @@ SESSIZ = re.compile(r"=== HATA ===|HATA toplam: 0\b")
 
 
 # ------------------------------------------------------------------ yardimci
+
+# Sablonla sozluk/words.md celisirse (sablon eski, karar sonradan degismis)
+# gecisler eski terimi geri getirmesin (7 Kas; Ch_45 "kira arabasi" vs sozluk
+# "kira faytonu", Ch_30 "Noterligi" vs "Katibiadilligi").
+SABLON_USTUNLUK = ("> Not (betik): Bu şablonun bir satırı sözlük (`sozluk.yml`) ya da words.md ile "
+                   "çelişirse sözlük ve words.md esastır; şablondaki eski biçimi önerme.")
+YAYIMLANMIS_NOTU = ("> Not (betik): Bu bölüm yayımlanmış; şablonu eski. A.1 ve A.2 terim tabloları "
+                    "çıkarıldı: terimlerde yalnız sözlük ve words.md esastır, şablondaki bir terimi "
+                    "geri getirme ya da bulgu yapma. Şablon geri bildirimi (SABLON / Ş) yazma: bu "
+                    "şablon bir daha kullanılmayacak. Ses, hitap, dondurulmuş satır ve tuzak "
+                    "bölümleri geçerlidir.")
+
+
+def yayim_tarihi_gecti(metin: str, simdi=None) -> bool:
+    """Front matter'daki 'date:' (2026-07-07 20:00:00 +0300) simdiden onceyse True."""
+    from datetime import datetime, timezone
+    m = re.search(r"\A---\n.*?^date:\s*(\S+)(?:\s+(\d{1,2}:\d{2}(?::\d{2})?))?(?:\s*([+-]\d{2}:?\d{2}))?",
+                  metin, re.S | re.M)
+    if not m:
+        return False
+    gun, saat, dilim = m.group(1), m.group(2) or "00:00:00", (m.group(3) or "+0300").replace(":", "")
+    if saat.count(":") == 1:
+        saat += ":00"
+    try:
+        tarih = datetime.strptime(f"{gun} {saat} {dilim}", "%Y-%m-%d %H:%M:%S %z")
+    except ValueError:
+        return False
+    return tarih <= (simdi or datetime.now(timezone.utc))
+
+
+def terim_tablolarini_at(sablon: str) -> str:
+    """'### A.1' ve '### A.2' bolumlerini (bir sonraki ### ya da ## basligina kadar) cikarir."""
+    return re.sub(r"^### A\.[12]\b.*?(?=^#{2,3} |\Z)", "", sablon, flags=re.M | re.S)
+
+
+def yedek_al(etiket: str, *dosyalar: Path) -> Path | None:
+    """Dosyalarin kopyasi LotM/yedek/<tarih>/<etiket>-<saat>/'a (lotm.yedek_klasoru)."""
+    var = [d for d in dosyalar if d.exists()]
+    if not var:
+        return None
+    hedef = lotm.yedek_klasoru(etiket)
+    hedef.mkdir(parents=True, exist_ok=True)
+    for d in var:
+        shutil.copy2(d, hedef / d.name)
+    return hedef
+
+
+def paralel_sayisi(deger, bolum_sayisi: int) -> tuple:
+    """--paralel degeri -> (ayni anda kac bolum, otomatik mi). ValueError: bozuk deger."""
+    if str(deger).strip().lower() in ("oto", "auto", ""):
+        ust = max(1, int(os.environ.get("LOTM_PARALEL_UST") or 3))
+        return max(1, min(bolum_sayisi, ust)), True
+    return max(1, int(deger)), False
+
+
+# Iki ayri durum (7 Kas, 20-25 kosusundan: "You've hit your session limit ·
+# resets 6:30am"):
+#   KOTA       oturum/kullanim kotasi doldu. Saatlerce gecmez; ayni anda kosan
+#              bolum sayisini dusurmek ise yaramaz. O motorun kalan cagrilari
+#              hemen atlanir (BEKLIYOR kalir), oteki motor yurumeye devam eder;
+#              sifirlaninca ayni komut kalanlari tamamlar.
+#   HIZ_SINIRI gecici hiz siniri / asiri yuk. Otomatik paralel kipte ayni anda
+#              kosan bolum sayisi bir dusurulur, bolum bir kez yeniden denenir.
+KOTA = re.compile(r"session limit|usage limit|weekly limit|hit your [\w ]{0,20}limit|limit reached|quota", re.I)
+HIZ_SINIRI = re.compile(r"rate.?limit|too many requests|\b429\b|\b529\b|overloaded", re.I)
+# Bu surecte kotasi dolan motorlar: {motor: hata metni}. Paralel kipte ebeveyn
+# LOTM_KOTA_DOLU=claude,codex ile alt sureclere de bildirir.
+KOTA_DOLU = {m: "ebeveyn surecte kota doldu" for m in
+             (os.environ.get("LOTM_KOTA_DOLU") or "").split(",") if m}
+
 
 def yaz_degisirse(yol: Path, metin: str) -> bool:
     """Icerik ayniysa dokunmaz: mtime korunur, cikti ESKIMIS gorunmez."""
@@ -399,12 +484,13 @@ def bozuk_oneri(eski: str, yeni: str) -> str | None:
     return None
 
 
-def on_isaretli(d: dict) -> bool:
-    """Madde 'kabul' isaretli mi gelmeli: butun aileleri ON_ISARET'te, yalniz
-    okumadan, gerekce tereddutsuz, oneri saglam."""
+def otomatige_uygun(d: dict) -> bool:
+    """KARAR madde kendiliginden uygulansin mi: butun aileleri OTOMATIK'te,
+    yalniz okumadan, gerekce tereddutsuz, oneri saglam."""
     if d.get("sinif", "KARAR") != "KARAR":
         return False
-    if not aileler(d.get("kural", "")) <= ON_ISARET:
+    al = aileler(d.get("kural", ""))
+    if not al or not al <= OTOMATIK:
         return False
     if set(d.get("kaynak", [])) - {"okuma"}:
         return False
@@ -419,13 +505,16 @@ def inceleme_yaz(no: int, uygulanan: list, karar: list, bilgi: list, kuru: bool,
     if kuru:
         out += ["_Kuru çalıştırma: bölüm dosyasına hiçbir şey yazılmadı._", ""]
     out += [f"## Uygulananlar ({len(uygulanan)})", ""]
+    if uygulanan:
+        out += ["Bunlar bölüme yazıldı. Birini geri almak için kutusunu [x] yapın; --kararlar",
+                "✓'yi ✗'ye döndürür (inceleme sayfasında: g).", ""]
     for d in uygulanan:
-        out += [f"- ¶{d.get('p') or '?'} · {d.get('kural', '')} ({', '.join(d.get('kaynak', []))})",
-                f"  ✗ {tek_satir(d['eski'])}", f"  ✓ {tek_satir(d['yeni'])}"]
+        out += [f"- ¶{d.get('p') or '?'} · {d.get('kural', '')} ({', '.join(d.get('kaynak', []))})"
+                + (" · otomatik" if d.get("otomatik") else ""),
+                f"  ✗ {tek_satir(d['eski'])}", f"  ✓ {tek_satir(d['yeni'])}", f"  {GERI_KUTU}"]
     out += ["", f"## Kararınızı bekleyenler ({sum(d.get('sinif') != 'SABLON' for d in karar)})", "",
             "Her maddede bir kutuyu [x] yapın; ✓ satırını isterseniz değiştirin. 'hep' kararı",
-            "karar defterine yazar, aynı örüntü bir daha sorulmaz. 'Ön:' satırı olan",
-            "maddeler kabul işaretli gelir: katılmıyorsanız işareti kaldırın. Sonra:",
+            "karar defterine yazar, aynı örüntü bir daha sorulmaz. Sonra:",
             f"`./calistir.sh sonra {no} --kararlar`", ""]
     # SABLON maddeleri ayri bolumde: metin icin degil sablon icin geri bildirim.
     # Numaralar iki bolumde de K1'den devam eder; --kararlar hepsini ayni okur.
@@ -436,7 +525,6 @@ def inceleme_yaz(no: int, uygulanan: list, karar: list, bilgi: list, kuru: bool,
             out += [f"## Şablon geri bildirimi ({len(sablon_k)})", "",
                     "Dondurulmuş ya da öngörülmüş satırlar. Kabul, yalnız bu bölümün metnini değiştirir;",
                     "kalıp başka bölümlerde de geçiyorsa şablona/sözlüğe ayrıca işlenmeli.", ""]
-        on = on_isaretli(d)
         bozuk = bozuk_oneri(d.get("eski", ""), d.get("yeni", ""))
         out += [f"### K{i} · ¶{d.get('p') or '?'} · {d.get('sinif', 'KARAR')} · {d.get('kural', '')}",
                 f"✗ {tek_satir(d.get('eski', ''))}",
@@ -449,9 +537,7 @@ def inceleme_yaz(no: int, uygulanan: list, karar: list, bilgi: list, kuru: bool,
             out.append(f"Sadakat: {'ikisi' if len(sm) > 1 else sm[0]}")
         if bozuk:
             out.append(f"Dikkat: {bozuk}; ✓ satırını düzeltmeden kabul etmeyin.")
-        if on:
-            out.append(f"Ön: kabul ({', '.join(sorted(aileler(d.get('kural', ''))))})")
-        out += [f"[{'x' if on else ' '}] kabul   [ ] ret   [ ] hep", ""]
+        out += ["[ ] kabul   [ ] ret   [ ] hep", ""]
     out += terimler_yaz(terimler or [])
     if bilgi:
         out += [f"## Bilgi ({len(bilgi)})", ""]
@@ -512,7 +598,8 @@ KATMANLAR = [("anlam", "1. Anlam: kaynağa göre düzeltmeler",
               "Bölümler arası bir karar. Bütün bölümlerdekiler bir arada: "
               "Reports/sonra/TERIM_SORULARI.md (sonra.py A-B --terim-listesi). Bir kez 'hep' ile verin."),
              ("dusuk", "4. Düşük öncelik",
-              "Karakter tavrı (B), tutarlılık (C), emin olunmayan ve yalnız triyajın önerdiği maddeler.")]
+              "Karakter tavrı (B), tutarlılık (C), emin olunmayan, yalnız triyajın önerdiği ve "
+              "yalnız bir pekiştireci ya da dönem/gotik sözcüğü atan 'eklenmiş' maddeler.")]
 TOPLU_RET = "[ ] Bu bölümdeki işaretsiz maddelerin hepsi: ret"
 TERIM_DESEN = re.compile(r"terim kararı|sözlük|words\.md|bölüm boyunca|bölümler arası|"
                          r"birlikte değişmeli|yerleşik karşılık|yerleşik yerelleştirme", re.I)
@@ -542,6 +629,47 @@ def kelime_farki(eski: str, yeni: str, baglam: int = 3) -> str:
     return " ".join(out)
 
 
+LINT_KURALLARI = Path(os.environ.get("LOTM_LINT_KURALLARI") or BETIKLER / "lint" / "lint-kurallari.yml")
+SAPKASIZ = str.maketrans("âîûÂÎÛ", "aiuAIU")
+_SUS = None
+
+
+def sus_sozcukleri() -> list:
+    """lint-kurallari.yml > eklenmis_sus + register (donem, gotik): sapkasiz, kucuk harf."""
+    global _SUS
+    if _SUS is None:
+        try:
+            import yaml
+            k = yaml.safe_load(LINT_KURALLARI.read_text(encoding="utf-8")) or {}
+        except Exception:  # kural dosyasi yoksa ozellik sessizce kapali
+            k = {}
+        es, reg = k.get("eklenmis_sus") or {}, k.get("register") or {}
+        ham = " ".join(str(x or "") for x in (es.get("pekistirec"), es.get("atmosfer"),
+                                               reg.get("donem"), reg.get("gotik")))
+        _SUS = sorted({w.replace("_", " ").translate(SAPKASIZ).lower() for w in ham.split()})
+    return _SUS
+
+
+def eklenen_sus(eski: str, yeni: str, en_cok: int = 3) -> str | None:
+    """✗'den ✓'ye dusen sozcukler (en cok `en_cok`) bir pekistirec ya da
+    donem/gotik sozcuk iceriyorsa o sozcuk; yoksa None."""
+    import difflib
+    a = re.findall(r"[^\W\d_]+", eski.translate(SAPKASIZ).lower())
+    b = re.findall(r"[^\W\d_]+", yeni.translate(SAPKASIZ).lower())
+    dusen = []
+    for op, i1, i2, _, _ in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
+        if op in ("delete", "replace"):
+            dusen += a[i1:i2]
+    if not dusen or len(dusen) > en_cok:
+        return None
+    metin = " ".join(dusen)
+    for w in sus_sozcukleri():
+        desen = rf"(?<![^\W\d_]){re.escape(w)}" + (r"" if len(w) >= 5 else r"(?![^\W\d_])")
+        if re.search(desen, metin):
+            return w
+    return None
+
+
 def madde_katmani(blok: str) -> str:
     bas = re.match(r"### K\d+ · ¶\S+ · \S+ · (.*)", blok)
     kural = bas.group(1) if bas else ""
@@ -553,6 +681,10 @@ def madde_katmani(blok: str) -> str:
         return "terim"
     if (re.search(r"sadakat [BC]\b", kural) and not re.search(r"sadakat [AD]\b", kural)) \
             or re.search(r"emin değil|yerelleştirme\?", neden) or kaynak.strip() == "triyaj":
+        return "dusuk"
+    # 7 Kas: yalniz bir pekistirec/donem-gotik sozcugu atan "eklenmis" maddesi
+    # cevirmenin atmosfer tercihi; cogunlukla ret (lint-kurallari.yml > eklenmis_sus).
+    if re.search(r"sadakat A\b[^+]*(?:eklen|abart|pekiştir)", kural) and eklenen_sus(x, v):
         return "dusuk"
     if benzerlik(x, v) >= KESIN_ORAN:
         return "hizli"
@@ -638,6 +770,53 @@ def terim_listesi(nolar: list) -> str:
     yol = RAPOR / "TERIM_SORULARI.md"
     yol.write_text("\n".join(satirlar), encoding="utf-8")
     return f"{sum(len(v) for v in gruplar.values())} madde, {len(gruplar)} kural -> {yol}"
+
+
+GERI_KUTU = "[ ] geri al"
+UYG_BASI = re.compile(r"^- ¶(\S+) · (.*?) \(([^()]*)\)( · otomatik)?$")
+
+
+def uygulanan_oku(metin: str) -> list:
+    """'## Uygulananlar' maddeleri: [{"i", "p", "kural", "kaynak", "otomatik", "eski", "yeni",
+    "geri"}]. 'geri' kutusu olmayan (7 Kas oncesi) dosyalarda geri None."""
+    m = re.search(r"^## Uygulananlar.*?$(.*?)(?=^## |\Z)", metin, re.M | re.S)
+    if not m:
+        return []
+    out, d = [], None
+    for satir in m.group(1).splitlines():
+        b = UYG_BASI.match(satir)
+        if b:
+            d = {"i": len(out) + 1, "p": b.group(1), "kural": b.group(2), "kaynak": b.group(3),
+                 "otomatik": bool(b.group(4)), "eski": "", "yeni": "", "geri": None}
+            out.append(d)
+        elif d is not None:
+            t = satir.strip()
+            if t.startswith("✗ "):
+                d["eski"] = t[2:].replace(" ⏎ ", "\n")
+            elif t.startswith("✓ "):
+                d["yeni"] = t[2:].replace(" ⏎ ", "\n")
+            elif re.match(r"\[.\] geri al$", t):
+                d["geri"] = t[1] in ("x", "X", "✓", "✔")
+    return out
+
+
+def geri_yaz(metin: str, i: int, geri: bool) -> str:
+    """Uygulananlar'daki i. maddenin geri al kutusunu degistirir."""
+    m = re.search(r"^## Uygulananlar.*?$(.*?)(?=^## |\Z)", metin, re.M | re.S)
+    if not m:
+        raise KeyError("Uygulananlar yok")
+    parca, say, satirlar = m.group(1), 0, []
+    bulundu = False
+    for satir in parca.split("\n"):
+        if UYG_BASI.match(satir):
+            say += 1
+        if say == i and re.match(r"\s*\[.\] geri al$", satir):
+            satir = satir.replace(satir.strip(), f"[{'x' if geri else ' '}] geri al")
+            bulundu = True
+        satirlar.append(satir)
+    if not bulundu:
+        raise KeyError(f"geri al kutusu yok: {i}")
+    return metin[:m.start(1)] + "\n".join(satirlar) + metin[m.end(1):]
 
 
 def inceleme_oku(metin: str) -> list:
@@ -749,7 +928,7 @@ def istatistik_ozeti(yol: Path) -> str:
         karar = x["kabul"] + x["ret"]
         oran = x["kabul"] / karar if karar else 0
         durum = ("otomatiğe hazır" if karar >= TERFI_EN_AZ and oran >= TERFI_ORAN
-                 else "ön-işaretli" if a in ON_ISARET else "")
+                 else "") if a not in OTOMATIK else "otomatik"
         satirlar.append(f"{a:22} {x['kabul']:5} {x['ret']:4} {x['bos']:4}  {oran:4.0%}  "
                         f"{x['kaldirilan']:13} {len(x['bolum']):6}  {durum}")
     return "\n".join(satirlar)
@@ -846,10 +1025,22 @@ class Bolum:
         self.parti_boyu = parti_boyu
         self.zincir = self.klasor / "zincir.txt"
 
+    def yayimlandi(self) -> bool:
+        """Bolum yayimlanmis mi (front matter 'date:' simdiden once). Eski bolumun
+        sablonu eski terimleri tasir; bkz. sablon_blogu. LOTM_SABLON_TAM=1 kapatir."""
+        if os.environ.get("LOTM_SABLON_TAM", "") not in ("", "0") or not self.dosya.exists():
+            return False
+        return yayim_tarihi_gecti(self.dosya.read_text(encoding="utf-8"))
+
     def sablon_blogu(self, etiket: str) -> str:
         if not self.sablon.exists():
             return f"<{etiket}>\n(şablon yok: {self.sablon.name})\n</{etiket}>"
-        return f"<{etiket}>\n{self.sablon.read_text(encoding='utf-8').rstrip()}\n</{etiket}>"
+        metin = self.sablon.read_text(encoding="utf-8").rstrip()
+        if self.yayimlandi():
+            metin = YAYIMLANMIS_NOTU + "\n\n" + terim_tablolarini_at(metin)
+        else:
+            metin = SABLON_USTUNLUK + "\n\n" + metin
+        return f"<{etiket}>\n{metin}\n</{etiket}>"
 
     # -- zincir
     def zincir_calistir(self, zorla: bool) -> None:
@@ -932,6 +1123,7 @@ class Bolum:
             f"{istem('donem')}\n\n---\n\n"
             f"{kararlar_blogu()}"
             f"{self.sablon_blogu('bolum_sablonu')}\n\n"
+            f"{ses_blogu(self.no, metin)}\n\n"
             f"{donem_denetle.blok(self.no, metin)}\n\n"
             f"<bolum>\n{metin.rstrip()}\n</bolum>\n"))
         return [(girdi, self.klasor / "1b_donem_cikti.md")]
@@ -1124,10 +1316,24 @@ class Bolum:
         for d in veri.get("duzeltmeler", []):
             if d.get("sadakat_motor") and d.get("sinif") == "KESIN":
                 d["sinif"] = "KARAR"  # cift sadakat: her bulgu kararla sayilsin
+        yayimli = self.yayimlandi()
+        if yayimli:
+            # Eski sablona geri bildirim: o sablon bir daha kullanilmaz.
+            atilan = [d for d in veri.get("duzeltmeler", []) if d.get("sinif") == "SABLON"]
+            veri["duzeltmeler"] = [d for d in veri.get("duzeltmeler", []) if d.get("sinif") != "SABLON"]
+            if atilan:
+                veri.setdefault("bilgi", []).append(
+                    {"p": None, "not": f"yayımlanmış bölüm: {len(atilan)} şablon geri bildirimi gösterilmedi"})
+        for d in veri.get("duzeltmeler", []):
+            if otomatige_uygun(d):
+                d["sinif"], d["otomatik"] = "KESIN", True
         yeni, uygulanan, karar = uygula(asil, veri.get("duzeltmeler", []), kesin_yok=kesin_yok)
+        for d in karar:  # boyut/sayi yuzunden uygulanamadiysa yine elle sorulur
+            d.pop("otomatik", None)
         inceleme = self.klasor / "5_inceleme.md"
         try:
-            terimler = self.yeni_terimler()
+            # Yayimlanmis bolumde sablonun A.2'si eski olabilir: veriye eklenecek terim onerilmez.
+            terimler = [] if yayimli else self.yeni_terimler()
         except Exception as e:  # terim listesi yardimci; hat onun yuzunden durmasin
             terimler = []
             veri.setdefault("bilgi", []).append({"p": None, "not": f"yeni terim listesi kurulamadı: {e}"})
@@ -1136,8 +1342,7 @@ class Bolum:
         if kuru:
             return f"kuru: {len(uygulanan)} uygulanirdi, {len(karar)} karar -> 5_inceleme.md"
         if uygulanan:
-            damga = time.strftime("%Y%m%d-%H%M%S")
-            (self.klasor / f"{self.dosya.stem}.once-{damga}.md").write_text(asil, encoding="utf-8")
+            yedek_al(f"sonra-Ch_{self.no}", self.dosya)
             self.dosya.write_text(yeni, encoding="utf-8")
             fark_yaz(asil, yeni, self.klasor / "5_uygulanan.diff", self.dosya.name)
         (self.klasor / UYGULANDI).write_text(json.dumps(
@@ -1153,6 +1358,22 @@ class Bolum:
         secimler = inceleme_oku(inceleme.read_text(encoding="utf-8"))
         metin = self.dosya.read_text(encoding="utf-8")
         uygulanan, bulunamayan, defter = [], [], []
+        # Otomatik/kesin uygulananlardan geri alinanlar: ✓ metinde tek ise ✗'ye doner.
+        geri_alinan, geri_yok = [], []
+        onceki = uygulanan_oku(inceleme.read_text(encoding="utf-8"))
+        for u in onceki:
+            if not u["geri"]:
+                continue
+            if u["yeni"] and metin.count(u["yeni"]) == 1:
+                metin = metin.replace(u["yeni"], u["eski"], 1)
+                geri_alinan.append(u["i"])
+            elif not (u["eski"] and metin.count(u["eski"]) == 1 and u["yeni"] not in metin):
+                geri_yok.append(u["i"])  # ikinci --kararlar'da zaten geri alinmis olan sessiz
+        # Otomatik aileler istatistikte izlensin: geri alinmayan kabul, alinan ret.
+        # (Kesinler sayilmaz: oranlari incelemeden gecmis maddelerin olsun.)
+        oto_secim = [{"k": f"O{u['i']}", "kural": u["kural"], "sinif": "KARAR",
+                      "kabul": not u["geri"], "ret": bool(u["geri"])}
+                     for u in onceki if u["otomatik"] and u["geri"] is not None]
         for s in secimler:
             if s["kabul"]:
                 if metin.count(s["eski"]) == 1:
@@ -1166,11 +1387,14 @@ class Bolum:
                               f"«{tek_satir(s['yeni'])}» ({self.no}. bölüm ¶{s['p']})")
         terimler = terimler_oku(inceleme.read_text(encoding="utf-8"))
         if not kuru:
-            istatistik_kaydet(ISTATISTIK, self.no, secimler)
+            # Bolum ve words.md yazilmadan once (eskiden --kararlar yedeksizdi).
+            yedek_al(f"sonra-kararlar-Ch_{self.no}",
+                     *([self.dosya] if uygulanan or geri_alinan else []), *([KELIMELER] if terimler else []))
+            istatistik_kaydet(ISTATISTIK, self.no, secimler + oto_secim)
             motor_kaydet(MOTOR_IST, self.no, secimler)
             if terimler:
                 kelimelere_ekle(KELIMELER, terimler, self.no)
-            if uygulanan:
+            if uygulanan or geri_alinan:
                 self.dosya.write_text(metin, encoding="utf-8")
             if defter:
                 bas = "" if KARARLAR.exists() else (
@@ -1178,10 +1402,19 @@ class Bolum:
                     "Her geçişe verilir; elle düzenlenebilir.\n\n")
                 with KARARLAR.open("a", encoding="utf-8") as f:
                     f.write(bas + "\n".join(defter) + "\n")
+        if not kuru:
+            import json
+            (self.klasor / KARARLAR_ISLENDI).write_text(json.dumps(
+                {"zaman": time.strftime("%Y-%m-%d %H:%M"), "uygulanan": len(uygulanan),
+                 "defter": len(defter), "bulunamayan": bulunamayan,
+                 "geri_alinan": geri_alinan, "geri_alinamayan": geri_yok}, ensure_ascii=False), encoding="utf-8")
         sonuc = (f"{len(uygulanan)} karar uygulandi, {len(defter)} kalici karar deftere yazildi, "
                  f"{len(terimler)} terim words.md'ye eklendi"
+                 + (f", {len(geri_alinan)} uygulanan geri alindi" if geri_alinan else "")
                  + (f"; metinde bulunamayan: {', '.join('K%d' % k for k in bulunamayan)}"
-                    if bulunamayan else ""))
+                    if bulunamayan else "")
+                 + (f"; geri alinamayan (✓ metinde tek degil): {', '.join('U%d' % i for i in geri_yok)}"
+                    if geri_yok else ""))
         return ("kuru: " if kuru else "") + sonuc
 
     # -- triyaj
@@ -1291,6 +1524,9 @@ def codex_komutu(son_mesaj: Path) -> list:
 def yurut(girdi: Path, cikti: Path, model: str | None, sure: int,
           araclar: list | None = None, motor: str = "claude") -> bool:
     """Taze bir oturum: girdi stdin'den, cevap ciktiya. Hata olursa cikti yazilmaz."""
+    if motor in KOTA_DOLU:
+        print(f"  ATLANDI {motor}: {girdi.name} (kota dolu: {KOTA_DOLU[motor]})", flush=True)
+        return False
     print(f"  {motor}: {girdi.name} -> {cikti.name} ...", flush=True)
     son = cikti.with_name(cikti.name + ".codex-son")
     try:
@@ -1312,7 +1548,12 @@ def yurut(girdi: Path, cikti: Path, model: str | None, sure: int,
         metin = son.read_text(encoding="utf-8") if son.exists() else ""
         son.unlink(missing_ok=True)
     if p.returncode != 0 or not metin.strip():
-        print(f"  HATA (cikis {p.returncode}): {(p.stderr or p.stdout).strip()[-400:]}")
+        hata = (p.stderr or p.stdout).strip()[-400:]
+        print(f"  HATA (cikis {p.returncode}): {hata}")
+        if KOTA.search(hata):
+            KOTA_DOLU[motor] = tek_satir(hata)[-160:]
+            # Ebeveyn (paralel kip) bu satiri arar.
+            print(f"  KOTA {motor}: {KOTA_DOLU[motor]}", flush=True)
         return False
     cikti.write_text(metin, encoding="utf-8")
     if motor != "claude":
@@ -1324,15 +1565,7 @@ def yurut(girdi: Path, cikti: Path, model: str | None, sure: int,
 
 # ------------------------------------------------------------------ ana
 
-def bolum_listesi(alan: str) -> list:
-    """'61', '61-64', '61,63,70-72' -> [61, ...] (sira korunur, tekrar atilir)."""
-    nolar = []
-    for parca in re.split(r"[,\s]+", alan.strip()):
-        m = re.fullmatch(r"(\d+)(?:-(\d+))?", parca)
-        if not m or int(m.group(2) or m.group(1)) < int(m.group(1)):
-            raise ValueError(f"bolum araligi okunamadi: {parca!r} (ornek: 61, 61-64, 61,63,70-72)")
-        nolar += range(int(m.group(1)), int(m.group(2) or m.group(1)) + 1)
-    return list(dict.fromkeys(nolar))
+bolum_listesi = lotm.bolum_listesi  # eski adiyla da cagrilabilsin (ses_ayari, testler)
 
 
 def main(argv=None) -> int:
@@ -1360,8 +1593,9 @@ def main(argv=None) -> int:
                     help="sadakati iki motorla ayri ayri calistir, bulgulari kaynagiyla etiketle "
                          "(LOTM_CIFT_SADAKAT=1 ayni)")
     ap.add_argument("--donem", action="store_true",
-                    help="donem uyumu gecisini ekle: Viktorya/gotik dokuya oturmayan cagdas "
-                         "sozcukler (LOTM_DONEM=1 ayni)")
+                    help="donem uyumu gecisini ekle (varsayilan zaten acik; LOTM_DONEM=0 iken acar)")
+    ap.add_argument("--donem-yok", action="store_true",
+                    help="donem uyumu gecisini atla (LOTM_DONEM=0 ayni)")
     ap.add_argument("--motor", action="append", default=[], metavar="ADIM=MOTOR",
                     help="gecis basina motor, ornek: --motor sadakat=codex (claude|codex)")
     ap.add_argument("--sure", type=int, default=1800, help="gecis basina zaman asimi (sn)")
@@ -1373,14 +1607,20 @@ def main(argv=None) -> int:
                          "(isaretler korunur, once yedek)")
     ap.add_argument("--terim-listesi", action="store_true",
                     help="verilen bolumlerin terim kararlarini Reports/sonra/TERIM_SORULARI.md'de topla")
-    ap.add_argument("--paralel", type=int, default=int(os.environ.get("LOTM_PARALEL") or 1), metavar="N",
-                    help="coklu kipte ayni anda N bolum (ayri surecler; LOTM_PARALEL). "
-                         "Betik zinciri once sirayla kosar; --kararlar her zaman sirayla.")
+    ap.add_argument("--paralel", default=os.environ.get("LOTM_PARALEL") or "oto", metavar="N|oto",
+                    help="coklu kipte ayni anda N bolum (ayri surecler; LOTM_PARALEL). 'oto' "
+                         "(varsayilan): min(bolum sayisi, LOTM_PARALEL_UST=3), hiz sinirina "
+                         "takilinca birer dusurur. 1 = sirayla. Betik zinciri once sirayla "
+                         "kosar; --kararlar her zaman sirayla.")
     a = ap.parse_args(argv)
     try:
         nolar = bolum_listesi(a.no)
     except ValueError as e:
         ap.error(str(e))
+    try:
+        a.paralel, a.paralel_oto = paralel_sayisi(a.paralel, len(nolar))
+    except ValueError:
+        ap.error(f"--paralel {a.paralel}: bir sayi ya da 'oto' olmali")
     if a.yanki and len(nolar) > 1:
         ap.error("--yanki giris numaralari bolume ozgudur; tek bolumle verin")
     motor_secimleri = {}
@@ -1391,7 +1631,7 @@ def main(argv=None) -> int:
         motor_secimleri[adim] = mt
 
     if a.inceleme_yenile:
-        yedek = KOK / "yedek" / time.strftime("%Y-%m-%d") / f"inceleme-{time.strftime('%H%M%S')}"
+        yedek = lotm.yedek_klasoru("inceleme")
         for no in nolar:
             inc = RAPOR / f"Ch_{no}" / "5_inceleme.md"
             if not inc.exists():
@@ -1440,7 +1680,7 @@ def main(argv=None) -> int:
         motor_secimleri["sadakat"] = motor_sec("sadakat")
     ayar = dict(otomatik=otomatik, motor_secimleri=motor_secimleri,
                 cift=cift,
-                donem=a.donem or DONEM or bool(otomatik and "donem" in (a.otomatik or [])))
+                donem=donem_acik(a.donem, a.donem_yok, a.otomatik))
 
     if len(nolar) == 1:
         k, kisa = bolum_isle(nolar[0], a, **ayar)
@@ -1470,11 +1710,38 @@ def main(argv=None) -> int:
         ozetler.append(f"{no:4}  {ozet}")
     rapor = (f"# Coklu sonra ({time.strftime('%Y-%m-%d %H:%M')})\n\n"
              f"Komut: sonra.py {' '.join(argv if argv is not None else sys.argv[1:])}\n\n"
-             + "\n".join(ozetler) + "\n")
+             + "\n".join(ozetler) + "\n" + kota_notu(KOTA_DOLU))
     RAPOR.mkdir(parents=True, exist_ok=True)
     (RAPOR / "COKLU.md").write_text(rapor, encoding="utf-8")
     print(f"\n{'=' * 60}\n{rapor}-> {RAPOR / 'COKLU.md'}")
     return kod
+
+
+def donem_acik(donem: bool, donem_yok: bool, otomatik_adimlar, ortam: bool | None = None) -> bool:
+    """Donem gecisi bu kosuda kurulsun mu. --donem-yok her seyi ezer; sonra
+    --donem, acikca istenen '--otomatik donem', en son LOTM_DONEM (varsayilan acik)."""
+    if donem_yok:
+        return False
+    if donem or "donem" in (otomatik_adimlar or []):
+        return True
+    return DONEM if ortam is None else ortam
+
+
+def gunluk_sorunu(gunluk: Path) -> tuple:
+    """Alt surecin gunlugu: ({motor: kota metni}, gecici hiz sinirina takildi mi)."""
+    try:
+        metin = gunluk.read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return {}, False
+    kota = dict(re.findall(r"^\s*KOTA (\w+): (.*)$", metin, re.M))
+    hiz = any(HIZ_SINIRI.search(s) and not KOTA.search(s)
+              for s in metin.splitlines() if "HATA" in s)
+    return kota, hiz
+
+
+def kota_notu(kota: dict) -> str:
+    return "".join(f"\nKOTA DOLU — {m}: {s}\n  {m} geçişleri BEKLIYOR kaldı; kota sıfırlanınca aynı komutu "
+                   f"yeniden çalıştırın, biten geçişler TAMAM kalır.\n" for m, s in kota.items())
 
 
 def paralel_kos(nolar: list, a, argv: list) -> int:
@@ -1501,7 +1768,9 @@ def paralel_kos(nolar: list, a, argv: list) -> int:
     i = temel.index(a.no)
     temel = temel[:i] + temel[i + 1:]
 
-    print(f"Paralel kip: {len(nolar)} bolum, ayni anda {a.paralel}. Once betik zincirleri (sirayla):", flush=True)
+    print(f"Paralel kip: {len(nolar)} bolum, ayni anda {a.paralel}"
+          + (" (oto: hiz sinirinda duser)" if getattr(a, "paralel_oto", False) else "")
+          + ". Once betik zincirleri (sirayla):", flush=True)
     calisacak = []
     for no in nolar:
         b = Bolum(no, a.parti_boyu)
@@ -1517,10 +1786,11 @@ def paralel_kos(nolar: list, a, argv: list) -> int:
 
     ortam = dict(os.environ, LOTM_SONRA_COCUK="1")
     bekleyen, kosan, sonuc = list(calisacak), {}, {}
+    sinir, yeniden, kota = a.paralel, set(), dict(KOTA_DOLU)
     print(f"\nModel gecisleri: {len(calisacak)} bolum, gunlukler Ch_N/kosu.log", flush=True)
     try:
         while bekleyen or kosan:
-            while bekleyen and len(kosan) < a.paralel:
+            while bekleyen and len(kosan) < sinir:
                 no = bekleyen.pop(0)
                 klasor = RAPOR / f"Ch_{no}"
                 (klasor / "OZET.txt").unlink(missing_ok=True)
@@ -1538,6 +1808,23 @@ def paralel_kos(nolar: list, a, argv: list) -> int:
                 oz = RAPOR / f"Ch_{no}" / "OZET.txt"
                 kisa = (oz.read_text(encoding="utf-8").strip().split("\t", 1)[-1] if oz.exists()
                         else f"HATA: cikis {p.returncode}, bkz. Ch_{no}/kosu.log")
+                yeni_kota, hiz = gunluk_sorunu(RAPOR / f"Ch_{no}" / "kosu.log")
+                if yeni_kota.keys() - kota.keys():
+                    kota.update(yeni_kota)
+                    # Sonra baslayan bolumler o motoru hic denemesin (kalan
+                    # gecisleri hemen BEKLIYOR); oteki motor yurur.
+                    ortam["LOTM_KOTA_DOLU"] = ",".join(kota)
+                    print(f"  {time.strftime('%H:%M:%S')} KOTA DOLU: "
+                          + "; ".join(f"{m}: {s}" for m, s in yeni_kota.items()), flush=True)
+                if getattr(a, "paralel_oto", False) and no not in yeniden and hiz:
+                    sinir = max(1, sinir - 1)
+                    yeniden.add(no)
+                    bekleyen.append(no)
+                    print(f"  {time.strftime('%H:%M:%S')} hiz siniri {no}: ayni anda artik {sinir}, "
+                          f"bolum kuyrugun sonunda yeniden denenecek", flush=True)
+                    if sinir == 1 and len(kosan) == 0:
+                        time.sleep(60)
+                    continue
                 sonuc[no] = (p.returncode, kisa)
                 print(f"  {time.strftime('%H:%M:%S')} bitti   {no} ({(time.time() - bas) / 60:.0f} dk): {kisa}",
                       flush=True)
@@ -1548,8 +1835,10 @@ def paralel_kos(nolar: list, a, argv: list) -> int:
         print("\nDurduruldu; yarim kalan gecisler bir sonraki calistirmada BEKLIYOR gorunur.")
         return 130
     ozetler = [f"{no:4}  {sonuc[no][1]}" for no in calisacak if no in sonuc]
-    rapor = (f"# Coklu sonra, paralel {a.paralel} ({time.strftime('%Y-%m-%d %H:%M')})\n\n"
-             f"Komut: sonra.py {' '.join(argv)}\n\n" + "\n".join(ozetler) + "\n")
+    rapor = (f"# Coklu sonra, paralel {a.paralel}"
+             + (f" (oto, sonda {sinir})" if getattr(a, "paralel_oto", False) else "")
+             + f" ({time.strftime('%Y-%m-%d %H:%M')})\n\n"
+             f"Komut: sonra.py {' '.join(argv)}\n\n" + "\n".join(ozetler) + "\n" + kota_notu(kota))
     (RAPOR / "COKLU.md").write_text(rapor, encoding="utf-8")
     print(f"\n{'=' * 60}\n{rapor}-> {RAPOR / 'COKLU.md'}")
     return max([0] + [k for k, _ in sonuc.values()])

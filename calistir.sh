@@ -686,7 +686,7 @@ hepsi)
   echo "          ./calistir.sh bolum [numara]   (numarasiz: en son bolum)"
   echo "          ./calistir.sh once <numara>    (ceviriden once: hazirlik + sablon denetimi)"
   echo "          ./calistir.sh cevir <numara> [--sonra] [--hazirla|--kuru] [--model M]"
-  echo "          ./calistir.sh sonra <N|A-B|N,M> [--otomatik [adim...]] [--donem]"
+  echo "          ./calistir.sh sonra <N|A-B|N,M> [--otomatik [adim...]] [--donem-yok] [--paralel N|oto]"
   echo "          ./calistir.sh incele <numara>   (inceleme sayfasi, tarayicida)"
   echo "          ./calistir.sh duzelt [sapka|lint|bicim|belgeler|takvim|ciltler...] [--bolum N|A-B] [--uygula [--evet]]"
   exit 1

@@ -137,7 +137,7 @@ def test_kararlar_uygulanir_ve_deftere_yazilir(tmp_path, monkeypatch):
     monkeypatch.setattr(S, "RAPOR", tmp_path / "sonra")
     monkeypatch.setattr(S, "KARARLAR", tmp_path / "kararlar.md")
     monkeypatch.setattr(S, "ISTATISTIK", tmp_path / "ist.tsv")
-    monkeypatch.setattr(S, "ON_ISARET", set())  # kutular elle isaretleniyor
+    monkeypatch.setattr(S, "OTOMATIK", set())  # kutular elle isaretleniyor
     b = S.Bolum(60, 6000)
     b.klasor.mkdir(parents=True)
     karar = [{"p": 1, "sinif": "KARAR", "kural": "okuma 1.1 noktalı virgül", "eski": "geldi; kapıyı",
@@ -296,26 +296,26 @@ def test_bozuk_oneri_noktali_virgulden_sonra_buyuk_harf():
     assert S.bozuk_oneri("bekledi; Klein baktı", "bekledi; Klein baktı.") is None
 
 
-def test_on_isaret_yalniz_tereddutsuz_okuma_1_1_1_6():
-    d = {"sinif": "KARAR", "kural": "okuma 1.1 noktalı virgül zinciri", "kaynak": ["okuma"],
-         "eski": "a; b", "yeni": "a. B", "neden": "Üslup bulgusu; replik içi noktalı virgül."}
-    assert S.on_isaretli(d)
-    assert not S.on_isaretli(dict(d, neden="Rüya anlatısında ritim bilinçli olabilir."))
-    assert not S.on_isaretli(dict(d, kural="okuma 1.1 zincir + sadakat A düşmüş zarf"))
-    assert not S.on_isaretli(dict(d, kaynak=["okuma", "sadakat"]))
-    assert not S.on_isaretli(dict(d, sinif="SABLON"))
-    assert not S.on_isaretli(dict(d, yeni="a; B"))
+def test_otomatik_yalniz_tereddutsuz_okuma_1_6(monkeypatch):
+    monkeypatch.setattr(S, "OTOMATIK", {"okuma 1.6"})
+    d = {"sinif": "KARAR", "kural": "okuma 1.6 tekrar", "kaynak": ["okuma"],
+         "eski": "baktı baktı", "yeni": "baktı", "neden": "Yakın tekrar."}
+    assert S.otomatige_uygun(d)
+    assert not S.otomatige_uygun(dict(d, kural="okuma 1.1 noktalı virgül"))
+    assert not S.otomatige_uygun(dict(d, neden="Ritim bilinçli olabilir."))
+    assert not S.otomatige_uygun(dict(d, kural="okuma 1.6 tekrar + sadakat A düşmüş zarf"))
+    assert not S.otomatige_uygun(dict(d, kaynak=["okuma", "sadakat"]))
+    assert not S.otomatige_uygun(dict(d, sinif="SABLON"))
+    assert not S.otomatige_uygun(dict(d, kural="üslup"))  # ailesiz madde otomatik degil
 
 
-def test_on_isaret_inceleme_gidis_donus():
+def test_inceleme_on_isaret_yok():
     d = {"p": 6, "sinif": "KARAR", "kural": "okuma 1.1 noktalı virgül zinciri", "kaynak": ["okuma"],
          "eski": "a; b", "yeni": "a. B", "neden": "Üslup bulgusu."}
-    metin = S.inceleme_yaz(63, [], [d, dict(d, kural="sadakat A düşmüş zarf", kaynak=["sadakat"])],
-                           [], kuru=False)
-    assert "Ön: kabul (okuma 1.1)" in metin
-    s = S.inceleme_oku(metin)
-    assert [(x["on"], x["kabul"]) for x in s] == [(True, True), (False, False)]
-    assert s[0]["sinif"] == "KARAR"
+    metin = S.inceleme_yaz(63, [dict(d, kural="okuma 1.6 tekrar", otomatik=True)], [d], [], kuru=False)
+    assert "Ön:" not in metin and "[x] kabul" not in metin
+    assert "okuma 1.6 tekrar (okuma) · otomatik" in metin
+    assert [x["kabul"] for x in S.inceleme_oku(metin)] == [False]
 
 
 def test_istatistik_bolum_yenilenir_ve_ozet(tmp_path):
@@ -332,7 +332,7 @@ def test_istatistik_bolum_yenilenir_ve_ozet(tmp_path):
     ozet = S.istatistik_ozeti(yol)
     s11 = next(x for x in ozet.splitlines() if x.startswith("okuma 1.1"))
     assert s11.split()[2:5] == ["2", "1", "0"]  # kabul ret bos
-    assert "ön-işaretli" in s11
+    assert "ön-işaretli" not in s11  # on-isaret 7 Kas'ta kalkti
 
 
 def test_okuma_girdisine_o_bulgulari(tmp_path, monkeypatch):
@@ -389,10 +389,10 @@ def test_bolum_listesi_aralik_ve_liste():
 def test_donem_ailesi():
     assert S.aileler("dönem D.1 detay") == {"dönem D.1"}
     assert S.aileler("dönem D.2 falan + okuma 1.6 tekrar") == {"dönem D.2", "okuma 1.6"}
-    # Donem bulgusu on-isaretli gelmez (kaynak okuma degil).
+    # Donem bulgusu otomatik uygulanmaz (kaynak okuma degil).
     d = {"sinif": "KARAR", "kural": "dönem D.1 detay", "kaynak": ["donem"],
          "eski": "detaylı", "yeni": "teferruatlı", "neden": "çağdaş"}
-    assert not S.on_isaretli(d)
+    assert not S.otomatige_uygun(dict(d))
 
 
 def test_buyuk_kesin_karara_duser():
@@ -435,3 +435,51 @@ def test_katmanlar_ve_toplu_ret():
     dusuk = [s for s in sec.values() if s["kural"].startswith("sadakat B")]
     assert dusuk and all(s["ret"] for s in dusuk)
     assert not any(s["ret"] for s in sec.values() if not s["kural"].startswith("sadakat B"))
+
+
+# ------------------------------------------------------------------ 7 Kas: eklenmis sus, geri al
+
+def test_eklenen_sus_dort_katmana_iner():
+    assert S.eklenen_sus("Odanın köhne bir havası vardı.", "Odanın bir havası vardı.") == "köhne"
+    assert S.eklenen_sus("marazî bir merak", "bir merak") == "marazi"  # sapkasiz
+    assert S.eklenen_sus("son derece önemli", "önemli") == "son derece"
+    assert S.eklenen_sus("hiçbir şey", "şey") is None  # kisa kok tam sozcuk
+    assert S.eklenen_sus("kalıcı psikolojik sorunlar yaşamadan gayet iyi", "iyi") is None  # cok sozcuk
+    blok = ("### K1 · ¶4 · KARAR · sadakat A eklenmiş sıfat\n✗ Odanın köhne bir havası vardı.\n"
+            "✓ Odanın bir havası vardı.\nNeden: ZH 房间\nKaynak: sadakat\n[ ] kabul   [ ] ret   [ ] hep")
+    assert S.madde_katmani(blok) == "dusuk"
+    assert S.madde_katmani(blok.replace("köhne ", "gıcırdayan ")) != "dusuk"
+    assert S.madde_katmani(blok.replace("eklenmiş sıfat", "düşmüş sıfat")) != "dusuk"
+
+
+def test_uygulananlar_geri_alinir_ve_istatistige_yazilir(tmp_path, monkeypatch):
+    bolumler = tmp_path / "_chapters"
+    bolumler.mkdir()
+    (bolumler / "0060.md").write_text(BOLUM, encoding="utf-8")
+    monkeypatch.setattr(S, "BOLUMLER", bolumler)
+    monkeypatch.setattr(S, "RAPOR", tmp_path / "sonra")
+    monkeypatch.setattr(S, "KARARLAR", tmp_path / "kararlar.md")
+    monkeypatch.setattr(S, "ISTATISTIK", tmp_path / "ist.tsv")
+    monkeypatch.setenv("LOTM_YEDEK", str(tmp_path / "yedek"))
+    b = S.Bolum(60, 6000)
+    b.klasor.mkdir(parents=True)
+    uyg = [{"p": 1, "kural": "okuma 1.6 bir şekilde", "kaynak": ["okuma"], "otomatik": True,
+            "eski": "geldi; kapıyı", "yeni": "geldi. Kapıyı"},
+           {"p": 2, "kural": "okuma 1.1 noktalı virgül", "kaynak": ["okuma"],
+            "eski": "Ali", "yeni": "Ahmet"}]
+    metin = S.inceleme_yaz(60, uyg, [], [], kuru=False)
+    u = S.uygulanan_oku(metin)
+    assert [(x["i"], x["otomatik"], x["geri"]) for x in u] == [(1, True, False), (2, False, False)]
+    metin = S.geri_yaz(metin, 1, True)
+    assert [x["geri"] for x in S.uygulanan_oku(metin)] == [True, False]
+    assert S.geri_yaz(S.geri_yaz(metin, 1, False), 1, True) == metin
+    (b.klasor / "5_inceleme.md").write_text(metin, encoding="utf-8")
+    bolum = BOLUM.replace("geldi; kapıyı", "geldi. Kapıyı")  # hat yazmis
+    (bolumler / "0060.md").write_text(bolum, encoding="utf-8")
+
+    sonuc = b.kararlari_isle(kuru=False)
+    assert "1 uygulanan geri alindi" in sonuc
+    assert (bolumler / "0060.md").read_text(encoding="utf-8") == BOLUM
+    ist = (tmp_path / "ist.tsv").read_text(encoding="utf-8")
+    assert "60\tO1\tokuma 1.6\t0\tret" in ist and "1.1" not in ist  # kesinler sayilmaz
+    assert "geri alinamayan" not in b.kararlari_isle(kuru=False)  # ikinci kez: sessiz

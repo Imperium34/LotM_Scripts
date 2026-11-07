@@ -155,14 +155,17 @@ class Calisma:
 # ------------------------------------------------------------ adimlar
 
 
-def _bolum_yollari(aralik: tuple | None) -> list[Path]:
+def _bolum_yollari(aralik) -> list[Path]:
+    """aralik: None (hepsi) ya da bolum numaralari (lotm.bolum_listesi)."""
+    if aralik is not None:
+        aralik = set(aralik)
     out = []
     for p in sorted(Path(BOLUMLER).glob("*.md")):
         try:
             no = int("".join(c for c in p.stem if c.isdigit()) or "x")
         except ValueError:
             continue
-        if aralik is None or aralik[0] <= no <= aralik[1]:
+        if aralik is None or no in aralik:
             out.append(p)
     return out
 
@@ -358,8 +361,7 @@ def tam_fark(c: Calisma, degisen) -> str:
 
 
 def yedek_klasoru() -> Path:
-    simdi = datetime.now()
-    return KOK / "yedek" / simdi.strftime("%Y-%m-%d") / f"duzelt-{simdi:%H%M%S}"
+    return lotm.yedek_klasoru("duzelt")
 
 
 def yaz(c: Calisma, degisen) -> Path | None:
@@ -400,12 +402,8 @@ def geri_al(klasor: Path) -> int:
 
 
 def aralik_oku(s: str | None):
-    if not s:
-        return None
-    if "-" in s:
-        a, b = s.split("-", 1)
-        return int(a), int(b)
-    return int(s), int(s)
+    """'68', '60-68', '60,62,65-68' -> numaralar (lotm.bolum_listesi); bos -> None."""
+    return lotm.bolum_listesi(s) if s else None
 
 
 def main() -> int:
@@ -415,7 +413,7 @@ def main() -> int:
         epilog="adımlar: " + ", ".join(ADIMLAR),
     )
     ap.add_argument("adimlar", nargs="*", help="varsayılan: hepsi")
-    ap.add_argument("--bolum", default=None, help="'68' ya da '60-68' (sapka/lint/bicim)")
+    ap.add_argument("--bolum", default=None, help="'68', '60-68' ya da '60,62,65-68' (sapka/lint/bicim)")
     ap.add_argument("--uygula", action="store_true", help="farkı göster, sor, yedekle, yaz")
     ap.add_argument("--evet", action="store_true", help="--uygula ile: sormadan yaz")
     ap.add_argument("--geri-al", dest="geri_al", default=None, metavar="YEDEK",
@@ -432,7 +430,7 @@ def main() -> int:
     try:
         aralik = aralik_oku(a.bolum)
     except ValueError:
-        ap.error(f"--bolum: '68' ya da '60-68' bekleniyordu ({a.bolum!r})")
+        ap.error(f"--bolum: '68', '60-68' ya da '60,62,65-68' bekleniyordu ({a.bolum!r})")
     yollar = _bolum_yollari(aralik)
     if any(x in BOLUM_ADIMLARI for x in adimlar) and not yollar:
         print(f"HATA: bölüm bulunamadı ({BOLUMLER}, aralık {a.bolum or 'hepsi'})")
