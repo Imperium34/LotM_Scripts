@@ -483,3 +483,22 @@ def test_uygulananlar_geri_alinir_ve_istatistige_yazilir(tmp_path, monkeypatch):
     ist = (tmp_path / "ist.tsv").read_text(encoding="utf-8")
     assert "60\tO1\tokuma 1.6\t0\tret" in ist and "1.1" not in ist  # kesinler sayilmaz
     assert "geri alinamayan" not in b.kararlari_isle(kuru=False)  # ikinci kez: sessiz
+
+
+def test_defter_ozeti_kisaltir():
+    ham = "\n".join([
+        "# Karar defteri", "",
+        "- ret · dönem D.1 monoton — örnek: «monoton bir sesle» → «yeknesak bir sesle» (12. bölüm ¶74)",
+        "- ret · dönem D.1 monoton — örnek: «monoton bir sesle» → «yeknesak bir sesle» (12. bölüm ¶74)",
+        "- kabul · okuma 1.6 tekrar — örnek: «uzun bir cümle burada» → «kısa» (5. bölüm ¶1)",
+        "- kabul · okuma 1.6 başka — örnek: «a b» → «a» (6. bölüm ¶2)",
+        "- kabul · sadakat A anlam kayması — örnek: «x» → «y» (7. bölüm ¶3)",
+        "- kabul · dönem D.1 detay — örnek: «detaylı» → «teferruatlı» (8. bölüm ¶4)",
+        "- elle yazılmış bir satır",
+    ])
+    oz = S.defter_ozeti(ham)
+    assert oz.count("yeknesak") == 1
+    assert "okuma 1.6 · 2 · okuma 1.6 başka: «a b» → «a»" in oz
+    assert "sadakat A · 1 · tek tek" in oz and "«x»" not in oz
+    assert "detaylı → teferruatlı" in oz
+    assert "- elle yazılmış bir satır" in oz

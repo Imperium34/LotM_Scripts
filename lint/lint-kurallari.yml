@@ -398,6 +398,15 @@ ozel_adlar:
     dogru_ekler: ["un", "a", "u", "dan", "da"] # Vik-roy (Takes 'u' harmony)
   Vincent:
     dogru_ekler: ["ın", "a", "ı", "tan", "ta"] # Vin-sınt (Takes 't' mutation)
+  Harson:
+    dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Har-son
+  Aiur:
+    dogru_ekler: ["un", "a", "u", "dan", "da"] # Ay-ur
+  Lorotta:
+    dogru_ekler: ["nın", "ya", "yı", "dan", "da"] # Lo-ret-ta
+  Rochelle:
+    dogru_ekler: ["in", "e", "i", "den", "de"] # Roç-el
+
 
 # ---------------------------------------------------------------
 # 5c. EKLENMİŞ SÜS (sonra.py inceleme katmanı; lint bu anahtarı okumaz)

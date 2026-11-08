@@ -60,8 +60,8 @@ MUDAHALE = {
     "Ebedî Yanan Güneş": "birlestirme",
     "Kotar": "tamamlama",
     "Hakiki Hâlık / Mütereddi Hâlık": "degistirme",
-    "Kadim Şerbânû": "ozgun",
-    "Kadim Şerbânû (Tam Tazim İsmi)": "degistirme",
+    "İlksel Şerbânû": "ozgun",
+    "İlksel Şerbânû (Tam Tazim İsmi)": "degistirme",
     "İlim ve Hikmetin İlahı": "degistirme",
     "Batınî Bilge": "ozgun",
     "Prangalı İlah": "ozgun",
@@ -72,7 +72,7 @@ MUDAHALE = {
 
 # Kaynagi LotM metni olmayan girdiler.
 KAYNAK_ELLE = {
-    "Kadim Şerbânû (Tam Tazim İsmi)": "metin_coi",
+    "İlksel Şerbânû (Tam Tazim İsmi)": "metin_coi",
     "Halas Meleği Amon": "metin_coi",
     "Halas Meleği Gehrman Sparrow": "metin_coi",
     "Yarı Kadir-i Mutlak Âdem (Âdem ve Hakiki Hâlık'ın birleşimi sonrası)": "metin_coi",
@@ -107,7 +107,7 @@ TAROT_YAZAR_BEYANI = {
 }
 TAROT_KARMA = {"Hokkabaz (The Magician)"}
 
-TAZIM_KATEGORILERI = {"İlahlar ve Yüce Kadimler", "Tarot Kulübü"}
+TAZIM_KATEGORILERI = {"İlahlar ve Ulu Eskiler", "Tarot Kulübü"}
 
 
 # =====================================================================

@@ -237,6 +237,22 @@ def yaz_degisirse(yol: Path, metin: str) -> bool:
     return True
 
 
+DEFTER_BLOGU = re.compile(r"<onceki_kararlar>\n.*?</onceki_kararlar>\n\n", re.S)
+
+
+def yaz_defter_haric(yol: Path, metin: str, cikti: Path) -> bool:
+    """yaz_degisirse gibi; ama girdi yalnizca karar defteri blogunda degistiyse ve
+    cikti hazirsa dokunmaz (8 Kas). Bir bolumun kararlarini islemek (hep) defteri
+    degistirir; yoksa beklemedeki her bolumun okuma/donem/sadakat gecisleri ESKIMIS
+    olup bastan kosardi. Yeni defter yine birlestirmeye gider, o da defterdeki
+    ret/kabul orunturlerini uygular. LOTM_DEFTER_ESKITIR=1 eski davranis."""
+    if (os.environ.get("LOTM_DEFTER_ESKITIR") != "1" and yol.exists()
+            and durum(yol, cikti) == "TAMAM"
+            and DEFTER_BLOGU.sub("", yol.read_text(encoding="utf-8")) == DEFTER_BLOGU.sub("", metin)):
+        return False
+    return yaz_degisirse(yol, metin)
+
+
 def durum(girdi: Path, cikti: Path) -> str:
     if not cikti.exists() or not cikti.read_text(encoding="utf-8").strip():
         return "BEKLIYOR"
@@ -268,15 +284,71 @@ def istem(ad: str) -> str:
     return (ISTEMLER / ISTEM[ad]).read_text(encoding="utf-8").rstrip()
 
 
+DEFTER_SATIRI = re.compile(r"^- (kabul|ret) · (.+?) — örnek: «(.*?)» → «(.*?)»\s*(\(.*\))?\s*$")
+
+
+def defter_ailesi(kural: str) -> str:
+    """'okuma 1.6 aynı cümlede…' -> 'okuma 1.6'; 'sadakat A anlam kayması' -> 'sadakat A'."""
+    p = kural.split()
+    return " ".join(p[:2]) if len(p) >= 2 else kural
+
+
+def defter_ozeti(metin: str) -> str:
+    """Karar defterinin gecislere giden kisa hali (8 Kas). Defter dosyasi tam kayit
+    olarak kalir; gecisler her ret'i (tekrarsiz) ve her ailenin kabul sayisini +
+    en kisa ornegini gorur. Sadakat kabulleri tek seferlik anlam duzeltmeleridir,
+    oruntu degildir: yalnizca sayilir. Donem kabullerinde sozcuk ciftleri kalir,
+    cunku her cift ayri bir karardir. Okunamayan satirlar oldugu gibi gecer."""
+    retler, kabul, diger, gorulen = {}, {}, [], set()
+    for satir in metin.splitlines():
+        if not satir.startswith("- "):
+            continue
+        m = DEFTER_SATIRI.match(satir)
+        if not m:
+            diger.append(satir)
+            continue
+        karar, kural, eski, yeni, _ = m.groups()
+        anahtar = (karar, eski, yeni)
+        if anahtar in gorulen:
+            continue
+        gorulen.add(anahtar)
+        aile = defter_ailesi(kural)
+        if karar == "ret":
+            retler.setdefault(aile, []).append(f"  - {kural}: «{eski}» → «{yeni}»")
+        else:
+            kabul.setdefault(aile, []).append((kural, eski, yeni))
+    out = ["Ret (çevirmen bu değişiklikleri istemedi; aynısını ya da aynı sözcük değişikliğini başka yerde de önerme):"]
+    for aile in sorted(retler):
+        out += retler[aile]
+    out += ["", "Kabul (aile · kaç kez · örnek):"]
+    for aile in sorted(kabul):
+        ornekler = kabul[aile]
+        if aile.startswith("sadakat"):
+            out.append(f"  - {aile} · {len(ornekler)} · tek tek anlam düzeltmeleri; örüntü değil, "
+                       "ölçüt yine kaynakla karşılaştırma")
+        elif aile.startswith(("dönem", "ses_ayari")):
+            ciftler = sorted({f"{e} → {y}" for _, e, y in ornekler if len(e) <= 40})
+            out.append(f"  - {aile} · {len(ornekler)} · " + "; ".join(ciftler))
+        else:
+            kural, e, y = min(ornekler, key=lambda o: len(o[1]) + len(o[2]))
+            out.append(f"  - {aile} · {len(ornekler)} · {kural}: «{e}» → «{y}»")
+    if diger:
+        out += ["", "Diğer:"] + diger
+    return "\n".join(out)
+
+
 def kararlar_blogu() -> str:
-    """Karar defteri, gecislere verilecek bicimde; defter yoksa bos dize."""
+    """Karar defteri, gecislere verilecek bicimde; defter yoksa bos dize.
+    Varsayilan kisa ozet (defter_ozeti); LOTM_DEFTER_TAM=1 tam defteri verir."""
     if not KARARLAR.exists() or not KARARLAR.read_text(encoding="utf-8").strip():
         return ""
+    ham = KARARLAR.read_text(encoding="utf-8").strip()
+    govde = ham if os.environ.get("LOTM_DEFTER_TAM") == "1" else defter_ozeti(ham)
     return (
         "<onceki_kararlar>\n"
         "Çevirmenin daha önce verdiği kalıcı kararlar. 'ret' satırındaki örüntüyü bulgu olarak "
         "yazma; 'kabul' satırındaki örüntü zaten onaylı bir düzeltmedir.\n\n"
-        f"{KARARLAR.read_text(encoding='utf-8').strip()}\n"
+        f"{govde}\n"
         "</onceki_kararlar>\n\n"
     )
 
@@ -1076,8 +1148,9 @@ class Bolum:
             f"{self.durum_blogu()}"
             f"<bolum>\n{self.dosya.read_text(encoding='utf-8').rstrip()}\n</bolum>\n"
         )
-        yaz_degisirse(girdi, metin)
-        return [(girdi, self.klasor / "1_okuma_cikti.md")]
+        cikti = self.klasor / "1_okuma_cikti.md"
+        yaz_defter_haric(girdi, metin, cikti)
+        return [(girdi, cikti)]
 
     def o_blogu(self) -> str:
         """o_denetle.py'nin bulgulari okuma gecisine: betik yalniz yer gosterir,
@@ -1119,13 +1192,13 @@ class Bolum:
         import donem_denetle
         girdi = self.klasor / "1b_donem_girdi.md"
         metin = self.dosya.read_text(encoding="utf-8")
-        yaz_degisirse(girdi, (
+        yaz_defter_haric(girdi, (
             f"{istem('donem')}\n\n---\n\n"
             f"{kararlar_blogu()}"
             f"{self.sablon_blogu('bolum_sablonu')}\n\n"
             f"{ses_blogu(self.no, metin)}\n\n"
             f"{donem_denetle.blok(self.no, metin)}\n\n"
-            f"<bolum>\n{metin.rstrip()}\n</bolum>\n"))
+            f"<bolum>\n{metin.rstrip()}\n</bolum>\n"), self.klasor / "1b_donem_cikti.md")
         return [(girdi, self.klasor / "1b_donem_cikti.md")]
 
     # -- sadakat
@@ -1175,8 +1248,9 @@ class Bolum:
                                 + ("\n\n".join(satirlar) or "Bu partide SADAKAT? yok.")
                                 + "\n</okuma_bulgulari>")
             girdi = self.klasor / f"2_sadakat_girdi_{i:02d}.md"
-            yaz_degisirse(girdi, "\n\n".join(parcalar) + "\n")
-            ciftler.append((girdi, self.klasor / f"2_sadakat_cikti_{i:02d}.md"))
+            cikti = self.klasor / f"2_sadakat_cikti_{i:02d}.md"
+            yaz_defter_haric(girdi, "\n\n".join(parcalar) + "\n", cikti)
+            ciftler.append((girdi, cikti))
         # Parti sayisi azaldiysa artakalan eski girdiler kafa karistirmasin.
         for eski in self.klasor.glob("2_sadakat_girdi_*.md"):
             if eski not in [g for g, _ in ciftler]:
@@ -1521,6 +1595,15 @@ def codex_komutu(son_mesaj: Path) -> list:
     return komut
 
 
+# Arac gerektirmeyen gecislere stdin'de eklenen not (8 Kas). Codex okuma/duzeltme
+# oturumlarinin cogu AGENTS.md ve bolum dosyasini diskte ariyor, her arama turu
+# tum baglami yeniden yukluyordu. Metin uzerinde hesap (python ile sayma) serbest.
+# Girdi dosyasina yazilmaz, bu yuzden gecisler ESKIMIS olmaz.
+DOSYA_ARAMA_NOTU = ("\n\n---\nNot: Bu iş için gereken her şey bu mesajda (bölüm metni, şablon, "
+                    "defter). AGENTS.md'yi, bölüm dosyasını ya da başka bir dosyayı diskte arama "
+                    "veya açma; doğrudan bu girdiye göre cevap ver.\n")
+
+
 def yurut(girdi: Path, cikti: Path, model: str | None, sure: int,
           araclar: list | None = None, motor: str = "claude") -> bool:
     """Taze bir oturum: girdi stdin'den, cevap ciktiya. Hata olursa cikti yazilmaz."""
@@ -1529,13 +1612,16 @@ def yurut(girdi: Path, cikti: Path, model: str | None, sure: int,
         return False
     print(f"  {motor}: {girdi.name} -> {cikti.name} ...", flush=True)
     son = cikti.with_name(cikti.name + ".codex-son")
+    metin_girdi = girdi.read_text(encoding="utf-8")
+    if not araclar and os.environ.get("LOTM_DOSYA_NOTU", "1") != "0":
+        metin_girdi += DOSYA_ARAMA_NOTU
     try:
         if motor == "codex":
             son.unlink(missing_ok=True)
-            p = subprocess.run(codex_komutu(son), input=girdi.read_text(encoding="utf-8"),
+            p = subprocess.run(codex_komutu(son), input=metin_girdi,
                                capture_output=True, text=True, timeout=sure, cwd=BETIKLER)
         else:
-            p = claude_calistir(claude_komutu(model, araclar), girdi.read_text(encoding="utf-8"),
+            p = claude_calistir(claude_komutu(model, araclar), metin_girdi,
                                 sure, BETIKLER)
     except FileNotFoundError:
         print(f"  HATA: {motor} komutu bulunamadi (LOTM_CLAUDE / LOTM_CODEX ile verin)")
