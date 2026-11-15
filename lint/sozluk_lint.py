@@ -34,6 +34,9 @@ try:
     import yaml
 except ImportError:
     sys.exit("PyYAML gerekli:  pip install pyyaml")
+# libyaml'li C yukleyici saf Python olandan ~10x hizli ve ayni nesneleri uretir.
+# lint/ lotm'u yuklemez (turkce.py'deki nota bak), o yuzden yerelde tanimli.
+_YAML_YUKLEYICI = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 
 # turkce.py Tools/ kokunde; bu betik lint/ alt klasorunde. Once kendi
 # klasorune, sonra bir ustune bakilir (duz bir kopyada da calissin diye).
@@ -106,6 +109,48 @@ DUZ = "'"
 # disi sozcukler anlatici sesinde hata, ic seste serbesttir. (Varyant
 # kurallarindaki ses ayrimi kaldirildi; bkz. denetle_varyant.)
 IC_SES = re.compile(r"_[^_\n]{3,}_")
+
+
+def ad_eki_olabilir(ad_ozel: str, metin: str) -> bool:
+    """
+    ozel_adlar desenlerinin (`ad_ozel` + kesme + harfler) ON KONTROLU. Desen
+    harf duyarli ve ad re.escape ile duz dizge; eslesme varsa metinde
+    "Ad'" ya da "Ad’" AYNEN gecer. Yanlissa finditer bos donerdi: regex
+    kosturulmaz (gerek kosul; eslesmeyi yine desen bulur).
+    """
+    return (ad_ozel + DUZ) in metin or (ad_ozel + KIVRIK) in metin
+
+
+# tr_kucult'un hem 'k' hem 'buyuk(k)' icin 'k' verdigi harfler (tr_desen'in
+# kurdugu [kK] sinifi tam bu iki harfi kapsar) + harf olmayan ASCII.
+_KUCULT_GUVENLI = frozenset("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+                            "ÇĞİÖŞÜçğıöşüÂÎÛâîûÊê")
+
+
+def kucuk_metin(metin: str):
+    """
+    yasakli_olabilir icin tr_kucult(metin); birlesen ustnokta (U+0307)
+    varsa None (tr_kucult o durumda "I"+U+0307'yi tek 'i'ye indirir, oysa
+    tr_desen'in [ıI] sinifi o "I"yi yakalar: kucultme eslesmeyi gizleyebilir).
+    """
+    return None if "\u0307" in metin else tr_kucult(metin)
+
+
+def yasakli_olabilir(bicim: str, kucuk) -> bool:
+    """
+    yasakli_deseni(bicim)'in ON KONTROLU, tam kontrol DEGIL: False ise desen
+    metinde eslesemez. Desen bicim'in her harfini tr_desen ile [kK] sinifina
+    cevirir (harf olmayanlar duz dizge, kucultme yok). _KUCULT_GUVENLI
+    harflerinde sinifin iki uyesi de tr_kucult'ta ayni harfe iner ve
+    str.lower() bu harflerde baglamsiz, yani eslesen parca kucultulmus
+    metinde tr_kucult(bicim) olarak AYNEN gecer. Bicimde baska harf ya da
+    ASCII disi karakter varsa (ya da kucuk None ise) soru sorulmaz: True.
+    """
+    if kucuk is None:
+        return True
+    if not all(c in _KUCULT_GUVENLI or (c.isascii() and not c.isalpha()) for c in bicim):
+        return True
+    return tr_kucult(bicim) in kucuk
 
 
 def bolum_numarasi(dosya_adi: str) -> int | None:
@@ -299,6 +344,10 @@ def varyant_eslesmeleri(metin: str, kural):
     sag = rf"(?![{TR_HARF}])" if kural.get("tam_kelime") else ""
     kapali: list[tuple[int, int]] = []
     for yanlis in sorted(kural["yanlis"], key=len, reverse=True):
+        # Harf duyarli dalda desen re.escape(yanlis) icerir: metinde duz alt
+        # dizge olarak yoksa eslesemez. Duyarsiz dalda (tr_desen) on kontrol yok.
+        if not duyarsiz and yanlis not in metin:
+            continue
         desen = (rf"(?<![{TR_HARF}])"
                  + (tr_desen(yanlis) if duyarsiz else re.escape(yanlis)) + sag)
         for m in re.finditer(desen, metin):
@@ -371,10 +420,13 @@ def yasakli_deseni(bicim: str) -> re.Pattern:
 
 
 def denetle_yasakli(rapor, dosyalar, kurallar):
+    kucukler = {ad: kucuk_metin(metin) for ad, metin in dosyalar.items()}  # kural basina degil, bir kez
     for kural in kurallar.get("yasakli", []):
         bicim, yerine = kural["bicim"], kural["yerine"]
         desen = yasakli_deseni(bicim)
         for ad, metin in dosyalar.items():
+            if not yasakli_olabilir(bicim, kucukler[ad]):
+                continue
             for m in desen.finditer(metin):
                 rapor.ekle(
                     # "yasaklı" (noktasiz ı) idi: DENETIMLER'deki "yasakli" ile
@@ -400,6 +452,8 @@ def denetle_diyakritik(rapor, dosyalar, kurallar):
         for supheli in cift["supheli"]:
             desen = re.compile(rf"(?<![{TR_HARF}]){re.escape(supheli)}(?![{TR_HARF}])")
             for ad, metin in dosyalar.items():
+                if supheli not in metin:
+                    continue  # desen re.escape(supheli) icerir, harf duyarli: finditer bos donerdi
                 for m in desen.finditer(metin):
                     rapor.ekle(
                         "diyakritik",
@@ -422,18 +476,25 @@ def denetle_diyakritik(rapor, dosyalar, kurallar):
     # "büyük harf mi" değil.
     gruplar: dict[str, Counter] = defaultdict(Counter)
     nerede: dict[str, set] = defaultdict(set)
+    anahtarlar: dict[str, str] = {}  # kucuk harfli biçim -> diyakritiksiz (NFD pahali, sozcukler cok tekrar eder)
     for ad, metin in dosyalar.items():
-        for m in re.finditer(rf"[{TR_HARF}]+", metin):
-            k = m.group()
+        bolum = bolum_anahtari(ad)
+        # Sozcukler dosya basina SAYILIR ve ilk gorulme sirasiyla gezilir:
+        # Counter.most_common esit sayida yazimlarda ekleme sirasini korur,
+        # sozcuk sozcuk gezmekle ayni sira ve ayni toplamlar cikar.
+        for k, n in Counter(re.findall(rf"[{TR_HARF}]+", metin)).items():
             # Once kucult, SONRA diyakritigi at. Ters sirada "İ" once "I"ya
             # iner (ustnokta bir birlesen isarettir) ve Turkce kucultme onu
             # "ı" yapar: "İlâveten" ile "ilaveten" ayri gruplara duserdi.
             # Eski casefold tabanli kucultme bunu tesadufen ortuyordu, cunku
             # "I"yi yanlislikla "i" yapiyordu; ayni hata "Işık"i "ışık"tan
             # ayiriyordu.
-            anahtar = diyakritiksiz(tr_kucult(k))
-            gruplar[anahtar][tr_kucult(k)] += 1
-            nerede[anahtar].add(bolum_anahtari(ad))
+            kucuk = tr_kucult(k)
+            anahtar = anahtarlar.get(kucuk)
+            if anahtar is None:
+                anahtar = anahtarlar[kucuk] = diyakritiksiz(kucuk)
+            gruplar[anahtar][kucuk] += n
+            nerede[anahtar].add(bolum)
 
     # Eşadlılar (adet/âdet, resmi/resmî, tarihi/tarihî, kar/kâr ...) İKİ
     # AYRI KELİMEDİR, bir kelimenin iki yazımı değil: "sekiz adet banknot" ile
@@ -521,6 +582,104 @@ def denetle_kesme(rapor, dosyalar, basliklar=None):
                 )
 
 
+# ----------------------------------------------------------------------
+# Terim kesmesi (12 Kas): büyük harfli dünya terimine gelen hâl, iyelik ve
+# ek-fiil kesmeyle ayrılır (Ruhaniyet'ini, Mertebe'nin, bir Aşkın'sın);
+# çoğul eki ve ardından gelenler ayrılmaz (Aşkınlar, Ayinlerde). Çekirdek
+# v5.5 "Dünya terimlerine gelen ek". Kökler: lint-kurallari.yml › terim_kesme.
+# ----------------------------------------------------------------------
+
+_H = "ıiuü"
+_IYELIK = rf"(?:s?[{_H}]|[{_H}]?m|[{_H}]?n|[{_H}]?m[{_H}]z|[{_H}]?n[{_H}]z)"
+_HAL = rf"(?:y?[{_H}]|y?[ae]|n?[dt][ae]n?|n?[{_H}]n|y?l[ae]|n[{_H}]|n[ae])"
+_EKFIIL = rf"(?:[dt][{_H}]r|y?s[{_H}]n|y?[{_H}]m|y?d[{_H}]|y?s[ae]|[dt][{_H}]rl[ae]r)"
+CEKIM_EKI = re.compile(rf"^{_IYELIK}?{_HAL}?(?:ki|kü)?{_EKFIIL}?$")
+_CUMLE_BASI = re.compile(r"(?:^|[.!?…:]\s*[\"“«'*_]*|[\"“«]\s*|\n\s*[-*>]?\s*)$")
+_ONCEKI_BUYUK = re.compile(rf"[A-ZÇĞİÖŞÜÂÎÛ][{TR_HARF}'{KIVRIK}]*\s+$")
+_KOK_ONBELLEK: dict = {}
+
+
+def kesme_kokleri(kurallar, sozluk_yolu=None) -> list[str]:
+    """terim_kesme.kokler verilmişse o liste; yoksa sözlüğün tek sözcüklü,
+    büyük harfli terimleri (atla listesi hariç). Uzun kök önce."""
+    ayar = (kurallar or {}).get("terim_kesme") or {}
+    if ayar.get("kokler"):
+        kokler = set(ayar["kokler"])
+    else:
+        yol = Path(sozluk_yolu or lotm.SOZLUK_YOLU)
+        if yol not in _KOK_ONBELLEK:
+            _KOK_ONBELLEK[yol] = {
+                t.tr.strip() for t in lotm.sozluk_yukle(yol).terimler
+                if t.tr and t.tr.strip()[:1].isupper() and not re.search(r"[\s/]", t.tr.strip())
+            } if yol.exists() else set()
+        kokler = set(_KOK_ONBELLEK[yol])
+    kokler |= set(ayar.get("ekle") or [])
+    kokler -= set(ayar.get("atla") or [])
+    return sorted(kokler, key=len, reverse=True)
+
+
+def kesme_istisnalari(kurallar) -> list[str]:
+    """terim_kesme.istisna: içinde geçen terim çekimine dokunulmayan hazır
+    ifadeler ('sihir Ayini': bileşik adın -i'si, hâl eki değil)."""
+    return [s for s in ((kurallar or {}).get("terim_kesme") or {}).get("istisna") or [] if s]
+
+
+def _istisna_araliklari(metin: str, istisnalar) -> list[tuple[int, int]]:
+    out = []
+    for ifade in istisnalar or ():
+        bas = metin.find(ifade)
+        while bas >= 0:
+            out.append((bas, bas + len(ifade)))
+            bas = metin.find(ifade, bas + 1)
+    return out
+
+
+def terim_kesme_eslesmeleri(metin: str, kokler, istisnalar=()) -> list[tuple[int, int, str, str]]:
+    """(bas, son, yeni, tur): tur 'eksik' (Ruhaniyetini -> Ruhaniyet'ini) ya da
+    'cogul' (Ayin'lerde -> Ayinlerde). Cümle başı ve büyük harfli bir sözcüğün
+    ardı (bileşik ad: 'Ayin Kehaneti') atlanır: oradaki büyük harf terimi
+    kanıtlamaz, eki de bileşiğe ait olabilir."""
+    if not kokler:
+        return []
+    desen = re.compile(
+        rf"(?<![{TR_HARF}'{KIVRIK}])({'|'.join(map(re.escape, kokler))})(['{KIVRIK}]?)([{TR_HARF}]+)"
+    )
+    out = []
+    korunan = _istisna_araliklari(metin, istisnalar)
+    for m in desen.finditer(metin):
+        kok, kesme, ek = m.groups()
+        if any(a <= m.start() and m.end() <= b for a, b in korunan):
+            continue
+        on = metin[max(0, m.start() - 40):m.start()]
+        if _CUMLE_BASI.search(on) or _ONCEKI_BUYUK.search(on):
+            continue
+        if re.match(r"l[ae]r", ek):
+            if kesme:
+                out.append((m.start(2), m.end(2), "", "cogul"))
+        elif not kesme and CEKIM_EKI.match(ek):
+            out.append((m.end(1), m.end(1), DUZ, "eksik"))
+    return out
+
+
+def denetle_terim_kesme(rapor, dosyalar, kurallar, sozluk_yolu=None):
+    kokler = kesme_kokleri(kurallar, sozluk_yolu)
+    for ad, metin in sorted(dosyalar.items()):
+        for bas, son, yeni, tur in terim_kesme_eslesmeleri(metin, kokler, kesme_istisnalari(kurallar)):
+            a = bas
+            while a > 0 and re.match(rf"[{TR_HARF}'{KIVRIK}]", metin[a - 1]):
+                a -= 1
+            b = son
+            while b < len(metin) and re.match(rf"[{TR_HARF}'{KIVRIK}]", metin[b]):
+                b += 1
+            eski = metin[a:b]
+            dogru = metin[a:bas] + yeni + metin[son:b]
+            mesaj = (f"{eski} → {dogru}: terime gelen hâl/iyelik eki kesmeyle ayrılır"
+                     if tur == "eksik" else
+                     f"{eski} → {dogru}: çoğul ekinden önce kesme konmaz")
+            rapor.ekle("terim-kesme", ad, satir_no(metin, a), eski, mesaj,
+                       baglam(metin, a, b, 40), agirlik="uyari")
+
+
 EK_AILELERI = [
     ("ın", "in", "un", "ün"),
     ("a", "e"),
@@ -580,6 +739,8 @@ def denetle_ek_uyumu(rapor, dosyalar, kurallar=None):
         bicimler: dict[str, list] = defaultdict(list)
 
         for ad, metin in sorted(dosyalar.items()):
+            if not ad_eki_olabilir(ad_ozel, metin):
+                continue  # finditer bos donerdi
             for m in re.finditer(
                 rf"(?<![{TR_HARF}]){re.escape(ad_ozel)}['{KIVRIK}]([{TR_HARF}]+)", metin
             ):
@@ -1008,14 +1169,23 @@ def metin_onergeleri(metin: str, kurallar) -> list[tuple[int, int, str, str]]:
             hedef = varyant_hedefi(kural, yanlis)
             if hedef:
                 out.append((m.start(), m.end(), _harf_tasi(m.group(), hedef), "varyant"))
+    kucuk = None
     for kural in kurallar.get("yasakli", []) or []:
         if kural.get("duzelt") is False or not kural.get("yerine"):
             continue
+        if kucuk is None:  # metin basina bir kez (yasakli_olabilir'e bak)
+            kucuk = (kucuk_metin(metin),)
+        if not yasakli_olabilir(kural["bicim"], kucuk[0]):
+            continue
         for m in yasakli_deseni(kural["bicim"]).finditer(metin):
             out.append((m.start(), m.end(), _harf_tasi(m.group(), kural["yerine"]), "yasakli"))
+    if ((kurallar.get("terim_kesme") or {}).get("duzelt")):
+        for a, b, yeni, _tur in terim_kesme_eslesmeleri(metin, kesme_kokleri(kurallar),
+                                                           kesme_istisnalari(kurallar)):
+            out.append((a, b, yeni, "terim-kesme"))
     for ad_ozel, ayar in ((kurallar.get("ozel_adlar") or {}) or {}).items():
         dogrular = set((ayar or {}).get("dogru_ekler") or [])
-        if not dogrular:
+        if not dogrular or not ad_eki_olabilir(ad_ozel, metin):
             continue
         desen = re.compile(
             rf"(?<![{TR_HARF}]){re.escape(ad_ozel)}['{KIVRIK}]([{TR_HARF}]+)(?![{TR_HARF}])"
@@ -1115,6 +1285,7 @@ DENETIMLER = [
     "diyakritik",
     "kesme",
     "ek-uyumu",
+    "terim-kesme",
     "anakronizm",
     "register",
     "ozel-ad",
@@ -1152,7 +1323,7 @@ def main() -> int:
 
     if not args.kurallar.exists():
         sys.exit(f"HATA: kural dosyasi yok: {args.kurallar}")
-    kurallar = yaml.safe_load(args.kurallar.read_text(encoding="utf-8")) or {}
+    kurallar = yaml.load(args.kurallar.read_text(encoding="utf-8"), Loader=_YAML_YUKLEYICI) or {}
     if args.duzelt:
         return onizleme_yaz(_dosya_yollari(args.bolumler), kurallar)
     if args.sozluk.exists():
@@ -1183,6 +1354,8 @@ def main() -> int:
         denetle_kesme(rapor, dosyalar, basliklar)
     if "ek-uyumu" in secili:
         denetle_ek_uyumu(rapor, metinler, kurallar)
+    if "terim-kesme" in secili:
+        denetle_terim_kesme(rapor, metinler, kurallar, args.sozluk)
     if "anakronizm" in secili:
         denetle_anakronizm(
             rapor,

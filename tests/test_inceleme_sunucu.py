@@ -105,3 +105,22 @@ def test_uygulananlar_sayfada_ve_geri_isareti():
     assert I.isaretsiz(md) == 2  # uygulananlar sayilmaz
     md = S.geri_yaz(md, 1, True)
     assert I.yazilanlar(md)[0]["geri"] and [m["k"] for m in I.maddeler(md)[0]] == [1, 2]
+
+
+def test_grup_onderi_izleyenleri_tasir():
+    karar = [{"p": 1, "sinif": "KARAR", "kural": "sadakat C terim kayması", "kaynak": ["sadakat"],
+              "eski": "Elinde el yazması vardı.", "yeni": "Elinde günlük vardı.", "neden": "ZH 笔记"},
+             {"p": 3, "sinif": "KARAR", "kural": "sadakat C terim kayması", "kaynak": ["sadakat"],
+              "eski": "El yazmasını açtı.", "yeni": "Günlüğü açtı.", "neden": "ZH 笔记"}]
+    md = S.inceleme_katmanla(S.inceleme_yaz(7, [], karar, [], kuru=False))
+    assert I.isaretsiz(md) == 2
+    md = I.grup_yaz(md, 1, kabul=True, ret=False, hep=False, yeni=None)
+    ms = {m["k"]: m for m in I.maddeler(md)[0]}
+    assert ms[2]["kabul"] and ms[2]["grup"] == 1 and I.isaretsiz(md) == 0
+    md = I.grup_yaz(md, 1, kabul=False, ret=True, hep=False, yeni=None)  # onder fikir degistirir
+    ms = {m["k"]: m for m in I.maddeler(md)[0]}
+    assert ms[2]["ret"] and not ms[2]["kabul"]
+    md = I.madde_yaz(md, 2, kabul=True, ret=False, hep=False, yeni=None)  # izleyen elle ayrilir
+    md = I.grup_yaz(md, 1, kabul=False, ret=False, hep=False, yeni=None)
+    ms = {m["k"]: m for m in I.maddeler(md)[0]}
+    assert ms[2]["kabul"]

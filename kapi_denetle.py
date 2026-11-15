@@ -201,6 +201,49 @@ def golgede_mi(metin, bas, son, uzunlar) -> bool:
     return False
 
 
+def _ascii_kat_tablosu():
+    """re.IGNORECASE'in ASCII harfle ESIT saydigi ASCII-disi karakterler.
+
+    Ornek: 'i' ~ 'I' ~ U+0131 ~ U+0130, 's' ~ U+017F, 'k' ~ U+212A.
+    BMP'deki her karakter (U+0080..U+FFFF) tek tek denenir. Ucuz eleme:
+    lower()/upper() sonucunun ilk karakteri ASCII olmayan karakter atlanir.
+    Kalan her aday GERCEK re.IGNORECASE desenine karsi dogrulanir (yanlis
+    ekleme olmaz, ve tablo sre'nin kendi davranisini izler; CPython'un
+    ic tablolarina bakilmaz). Dogrulanmamis bir karakter en kotu ihtimalle
+    fold'a girmez; tum Unicode ile deneyde yalnizca bu 4 karakter cikti.
+    """
+    harfler = [chr(i) for i in range(128)]
+    desen = {a: re.compile(re.escape(a), re.IGNORECASE) for a in harfler}
+    tablo = {}
+    for cp in range(0x80, 0x10000):
+        c = chr(cp)
+        # Ucuz eleme: lower() 'İ'yi iki karakter ('i' + U+0307) yapar, bu
+        # yuzden yalniz ILK karakterine bakilir. Asil karar asagidaki
+        # gercek re.IGNORECASE denemesindedir; eleme sadece hiz icindir.
+        if not (c.lower()[0].isascii() or c.upper()[0].isascii()):
+            continue
+        for a in harfler:
+            if a.isalpha() and desen[a].fullmatch(c):
+                tablo[cp] = a.lower()
+                break
+    return tablo
+
+
+def _katla_metinler(metinler):
+    """Her metni ASCII-adayli on kontrol icin katla (bir kez).
+
+    ASCII aday icin 'aday.lower() in katlanmis' KESIN gerekli kosuldur:
+    desen aday'in her karakterini sirayla yakalar; ASCII harf x'i
+    IGNORECASE'de ancak {x, X} ve yukaridaki tablodaki karakterler
+    karsilar, bunlarin hepsi katlamada x.lower()'a gider. ASCII harf
+    olmayan karakterler yalniz kendilerini karsilar. Yani esleme varsa
+    katlanmis metinde birebir ayni alt dize vardir; tersi dogru olmak
+    zorunda degil (yalnizca eleme yapilir, kesin karar desende kalir).
+    """
+    tablo = _ascii_kat_tablosu()
+    return [m.translate(tablo).lower() for m in metinler]
+
+
 def tara(terimler, bolumler):
     duyarli, duyarsiz = {}, {}
     for t, bilgi in terimler.items():
@@ -262,11 +305,17 @@ def tara(terimler, bolumler):
     kalan = [t for t in terimler if not sonuc[t]["katman"]]
     if kalan:
         print(f"\n{len(kalan)} terim icin esnek tur...", file=sys.stderr)
-        for no, metin in bolum_deposu:
+        # Katlanmis kopyalar bir kez; ASCII adaylarda desen yerine ucuz
+        # alt dize eleme (gerekce _katla_metinler'de). ASCII-disi adaylar
+        # eskisi gibi dogrudan desenle aranir.
+        katli = _katla_metinler([m for _n, m in bolum_deposu])
+        for (no, metin), kt in zip(bolum_deposu, katli):
             for t in kalan:
                 if sonuc[t]["katman"]:
                     continue
                 for aday, desen in duyarsiz[t]:
+                    if aday.isascii() and aday.lower() not in kt:
+                        continue
                     m = desen.search(metin)
                     if m:
                         sonuc[t]["katman"][ESNEK] = (
@@ -280,7 +329,12 @@ def tara(terimler, bolumler):
             continue
         kucuk = re.compile(r"(?<!\w)" + re.escape(ana.lower()) + r"(?!\w)")
         n = 0
+        alt = ana.lower()
         for no, metin in bolum_deposu:
+            # alt dize yoksa findall kesin [] doner (desen bu dizgeyi
+            # literal arar); cagriyi atla. n > 5 cikisi aynen korunur.
+            if alt not in metin:
+                continue
             n += len(kucuk.findall(metin))
             if n > 5:
                 break

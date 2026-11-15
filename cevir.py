@@ -101,7 +101,7 @@ def gorev_blogu(no: int) -> str:
         "## GÖREV (bu çalıştırma)\n\n"
         f"Aşağıda {no}. bölümün Çince metni ve İngilizce referansı, ¶ numaralı hizalama "
         "gruplarıyla verilmiştir. Şablondaki ¶ numaraları bu gruplardır. Bölüm tek parça "
-        "hâlinde gelir; §12'deki parça disiplini burada tek bir parçaya uygulanır.\n\n"
+        "hâlinde gelir.\n\n"
         "Çıktı biçimi, bir betik tarafından okunacağı için kesindir:\n"
         f"1. İlk satır: `## Bölüm {no}: <Türkçe başlık>` (başlık şablonda verildiyse aynen).\n"
         "2. Boş satır, ardından bitmiş Türkçe metin. Her paragraf boş satırla ayrılır. "

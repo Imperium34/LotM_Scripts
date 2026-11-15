@@ -192,3 +192,11 @@ def test_onceki_sablonun_yan_dosyasi_da_okunur():
 def test_bicim_esit_govde_tire_mastar():
     for a, b in [("işaret et-", "işaret etmek"), ("niyaz et", "niyaz etmek"), ("ol-", "olmak")]:
         assert SD.bicim_esit(a, b), (a, b)
+
+
+def test_latin_disi_yazi_ve_kod_sizintisi():
+    md = _sablon(a1=[("Seer 占卜家", "Kâhin", "—")]) + (
+        "\n## E\n\n- ¶12: yön ters방향으로 döner.\n- Sabit Çekirdek §9 gereği düz.\n"
+        "- Dayanak: K1.1–K1.2, DUN1.1 ve Yankı #80.\n- Mertebe 9 ve 2-049 serbest.\n")
+    bul = [b.mesaj.split(":")[0] for b in SD.sizinti(md)]
+    assert bul == ["Latin dışı yazı '방향으로'", "'§9'", "'K1.1–K1.2'", "'DUN1.1'", "'Yankı #80'"]

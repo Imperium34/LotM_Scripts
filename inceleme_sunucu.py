@@ -88,7 +88,8 @@ def maddeler(metin: str) -> tuple:
                         "eski": satir("✗").replace(" ⏎ ", "\n"), "yeni": satir("✓").replace(" ⏎ ", "\n"),
                         "neden": satir("Neden:"), "kaynak": satir("Kaynak:"),
                         "ekler": [s for s in blok.splitlines()[1:]
-                                  if s.startswith(("Dikkat:", "Ön:", "Sadakat:"))],
+                                  if s.startswith(("Dikkat:", "Ön:", "Sadakat:", "Grup:", "Aynı değişiklik:"))],
+                        "grup": int(g.group(1)) if (g := re.search(r"^Grup: K(\d+)", blok, re.M)) else None,
                         "kabul": kutu.group(1) in ISARET, "ret": kutu.group(3) in ISARET,
                         "hep": kutu.group(5) in ISARET})
     return out, toplu_var, toplu
@@ -276,7 +277,26 @@ def yazilanlar(metin: str) -> list:
 def isaretsiz(metin: str) -> int:
     """--kararlar'da hicbir sey olmayacak maddeler (4. katman toplu ret isaretliyse o katman haric)."""
     ms, _, toplu = maddeler(metin)
-    return sum(1 for m in ms if not (m["kabul"] or m["ret"]) and not (toplu and m["katman"].startswith("4.")))
+    karar = {m["k"]: m for m in ms}
+
+    def bos(m):
+        o = karar.get(m.get("grup"))
+        return not (m["kabul"] or m["ret"]) and not (o and (o["kabul"] or o["ret"]))
+    return sum(1 for m in ms if bos(m) and not (toplu and m["katman"].startswith("4.")))
+
+
+def grup_yaz(metin: str, k: int, kabul: bool, ret: bool, hep: bool, yeni: str | None) -> str:
+    """K'yi yazar; K bir grubun onderiyse, onderin onceki kararini tasiyan (ya da bos)
+    izleyenler de ayni kabul/ret'i alir. Elle farkli isaretlenen izleyene dokunulmaz."""
+    ms, _, _ = maddeler(metin)
+    onceki = next((m for m in ms if m["k"] == k), None)
+    metin = madde_yaz(metin, k, kabul, ret, hep, yeni)
+    if onceki is None:
+        return metin
+    for m in ms:
+        if m.get("grup") == k and (m["kabul"], m["ret"]) in ((False, False), (onceki["kabul"], onceki["ret"])):
+            metin = madde_yaz(metin, m["k"], kabul, ret, m["hep"], None)
+    return metin
 
 
 def uygulama(oturum, baglam: Baglam | None = None, kapat=None):
@@ -340,8 +360,8 @@ def uygulama(oturum, baglam: Baglam | None = None, kapat=None):
                     yol = oturum.yol
                     metin = yol.read_text(encoding="utf-8")
                     if self.path == "/api/madde":
-                        metin = madde_yaz(metin, int(veri["k"]), bool(veri["kabul"]), bool(veri["ret"]),
-                                          bool(veri["hep"]), veri.get("yeni"))
+                        metin = grup_yaz(metin, int(veri["k"]), bool(veri["kabul"]), bool(veri["ret"]),
+                                         bool(veri["hep"]), veri.get("yeni"))
                     elif self.path == "/api/geri":
                         metin = S.geri_yaz(metin, int(veri["i"]), bool(veri["geri"]))
                     elif self.path == "/api/toplu":

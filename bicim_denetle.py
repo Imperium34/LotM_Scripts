@@ -38,6 +38,21 @@ duzeltilmeyecegini soyler. Bu yuzden bir TABAN dosyasi vardir:
 Anahtar (dosya, kod, alinti) ucludur; satir numarasi degildir, boylece
 bir paragraf eklendiginde butun taban kaymaz.
 
+OLU TABAN SATIRLARI
+-------------------
+Bolum duzenlenince bir taban satirinin anlattigi metin degisebilir; satir
+artik hicbir bulguyla eslesmez ve hicbir seyi bastirmaz (olu). Olu satirlar
+sessizce birikir ve ayni anahtari ureten YENI bir bulguyu gizleyebilir.
+--taban ile her calismada sayilir; olu varsa sonda tek satir yazilir:
+    --taban-olu       olu satirlari dosyaya gore listeler
+    --taban-olu-sil   olu satirlari tabandan siler (yalniz elle, hicbir
+                      zincirde calismaz; yalniz butun klasor taranirken)
+Bir satir ancak dosyasi bu calismada TARANMISSA ve kodu bu calismada
+CALISMISSA olu sayilir: tek bolum ya da --kod ile calisinca baska dosya ya
+da baska kod satirlarina dokunulmaz. Dosyasi klasorde artik hic yoksa
+(yeniden adlandirilmis/silinmis) satir yalniz butun klasor taranirken olu
+sayilir. Cikis kodu degismez.
+
 KODLAR
 ------
   B01  tirnak dengesi ve cok paragrafli konusma           (§2.1)
@@ -76,6 +91,8 @@ Kullanim:
     python3 bicim_denetle.py --kod B03,B04          # yalniz bu kurallar
     python3 bicim_denetle.py --taban-yaz taban.tsv  # bir kez, yayimlanmislar icin
     python3 bicim_denetle.py --taban taban.tsv      # sonra her zaman
+    python3 bicim_denetle.py --taban taban.tsv --taban-olu       # olu satirlar
+    python3 bicim_denetle.py --taban taban.tsv --taban-olu-sil   # ... ve sil
     python3 bicim_denetle.py --duzelt               # otomatik duzeltmeler, KURU
     python3 bicim_denetle.py 22 --duzelt --uygula   # GUVENLI olanlari yaz
 """
@@ -564,10 +581,25 @@ _KUCUK_RAKAM = re.compile(
 )
 _RAKAM_ISTISNA = re.compile(
     r"^\s*(?:mililitre|litre|gram|kilogram|metre|santimetre|kilometre|derece|"
-    r"yaş|mil|fit|inç|°)",
+    r"yaş|mil|fit|inç|damla|°)",
     re.I,
 )
 _RAKAM_ONCE_ISTISNA = re.compile(r"(?:Mertebe|Sınıf|Bölüm|bölüm|¶)\s*$")
+_AY_ADI = (r"(?:Ocak|Şubat|Mart|Nisan|Mayıs|Haziran|Temmuz|Ağustos|Eylül|Ekim|"
+           r"Kasım|Aralık|ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|"
+           r"eylül|ekim|kasım|aralık)")
+# Tarih (12 Mayıs, ayın 28'i, Ayın 27'sinde) ve kapı numarası (2 Nergis
+# Sokağı, Wendel Sokağı No. 3) rakamla yazılır; K03 bunları saymaz.
+_RAKAM_TARIH_SONRA = re.compile(r"^\s+" + _AY_ADI + r"\b|^'")
+_RAKAM_TARIH_ONCE = re.compile(
+    r"(?:[Aa]yın|No\.|numara|Sokağı|Caddesi|Meydanı|Bulvarı)\s*$")
+_RAKAM_NUMARA_SONRA = re.compile(r"^\s+[Nn]umara")
+_RAKAM_ADRES_SONRA = re.compile(
+    r"^\s+(?:[A-ZÇĞİÖŞÜ][\wçğıöşüâîû]*\s+){1,3}(?:Sokağı|Caddesi|Meydanı|Bulvarı)")
+# B03 istisnasi: paragrafin tamami tirnak icinde kisa bir mektup hitabi
+# ("Muhterem Hocam,"): her sozcuk buyuk harfle baslar, en cok bes sozcuk.
+_MEKTUP_HITABI = re.compile(
+    r'"(?:[A-ZÇĞİÖŞÜÂÎÛ][\wçğıöşüâîû\'.-]*)(?:\s+[A-ZÇĞİÖŞÜÂÎÛ][\wçğıöşüâîû\'.-]*){0,4},"')
 
 # B04: anlatida iki nokta + CIFT tirnak her durumda ihlaldir:
 #   - onceki kelime bir atif fiiliyse ("konustu:", "Klein'a dondu:") ardindan
@@ -603,6 +635,8 @@ def paragraf_kurallari(p: Paragraf, dosya: str, kod_adlari) -> list:
     # B03: tirnagin kapanisindan hemen once virgul. Turkcede tirnak icindeki
     # cumle kendi noktalamasiyla kapanir: "Gel." dedi.
     for m in re.finditer(r',"', t):
+        if _MEKTUP_HITABI.fullmatch(t.strip()):
+            continue
         if p.ic and m.start() < len(p.ic) and p.ic[m.start()]:
             ekle(
                 "B03",
@@ -768,6 +802,11 @@ def paragraf_kurallari(p: Paragraf, dosya: str, kod_adlari) -> list:
     for m in [] if hesap_paragrafi else _KUCUK_RAKAM.finditer(t):
         sonra, once = t[m.end() : m.end() + 14], t[max(0, m.start() - 12) : m.start()]
         if _RAKAM_ISTISNA.match(sonra) or _RAKAM_ONCE_ISTISNA.search(once):
+            continue
+        genis = t[m.end() : m.end() + 60]
+        if (_RAKAM_TARIH_SONRA.match(sonra) or _RAKAM_TARIH_ONCE.search(once)
+                or _RAKAM_NUMARA_SONRA.match(sonra)
+                or _RAKAM_ADRES_SONRA.match(genis)):
             continue
         ekle(
             "K03",
@@ -1069,7 +1108,9 @@ def kod_adi_deseni(sozluk_yolu=None):
     if not adlar:
         return None
     alt = "|".join(sorted((re.escape(a) for a in adlar), key=len, reverse=True))
-    return re.compile(r"[\"'](?:" + alt + r")[\"']")
+    # Acan ve kapanan tirnak ayni olmali: "Seyirci'nin dedigi..." bir replik
+    # acilisi + ek kesmesidir, tirnakli ad degil.
+    return re.compile(r"([\"'])(?:" + alt + r")\1")
 
 
 # ---------------------------------------------------- otomatik duzeltme
@@ -1129,6 +1170,8 @@ def duzeltmeleri_bul(p: "Paragraf") -> list:
     # B03
     for m in re.finditer(r',"', t):
         i = m.start()
+        if _MEKTUP_HITABI.fullmatch(t.strip()):
+            continue
         if not (p.ic and i < len(p.ic) and p.ic[i]):
             continue
         kalan = t[i + 2 :]
@@ -1480,6 +1523,62 @@ def taban_oku(yol) -> set:
         sys.exit(f"HATA: taban okunamadı: {e}")
 
 
+def taban_satirlari(yol) -> list:
+    """
+    [(ham satir, anahtar)] -- yalniz veri satirlari (en az 3 alan), dosya
+    sirasiyla. taban_oku kumedir (kopyalari birlestirir); olu satir sayimi
+    ve silme dosyadaki SATIRLARA bakar, yoksa kopya satir silinmeden kalirdi.
+    """
+    out = []
+    with open(yol, encoding="utf-8", newline="") as f:
+        for ham in f:
+            alan = ham.rstrip("\n").split("\t")
+            if len(alan) >= 3:
+                out.append((ham, tuple(alan[:3])))
+    return out
+
+
+def olu_satirlar(satirlar, kullanilan, taranan, kodlar=None, calismayan=(),
+                 tam=False, var=lambda dosya: True) -> tuple:
+    """
+    (olu anahtarlar, kapsamdaki satir sayisi). Olu: kapsamda ve bu calismada
+    hicbir bulguyu bastirmamis (kullanilan'da yok).
+
+    Kapsam satir basina: dosyasi taranmis, kodu --kod ile secili, kuralin
+    kendisi calismis (calismayan: derlem yokken K13, sozluk yokken K06).
+    Taranmamis dosya yalniz tam taramada (tam) ve klasorde hic yoksa
+    (var) olu sayilir; kismi calismada "taranmadi" ile "yok" ayirt edilemez.
+    """
+    olu, kapsam = [], 0
+    for _ham, k in satirlar:
+        dosya, kod = k[0], k[1]
+        if dosya in taranan:
+            if (kodlar and kod not in kodlar) or kod in calismayan:
+                continue
+        elif not (tam and not var(dosya)):
+            continue
+        kapsam += 1
+        if k not in kullanilan:
+            olu.append(k)
+    return olu, kapsam
+
+
+def taban_olu_sil(yol, olu) -> int:
+    """Olu anahtarlarin satirlarini siler; kalan satirlar (yorum, sira) aynen kalir. Silinen satir sayisi."""
+    olu = set(olu)
+    kalan, silinen = [], 0
+    with open(yol, encoding="utf-8", newline="") as f:
+        for ham in f:
+            alan = ham.rstrip("\n").split("\t")
+            if len(alan) >= 3 and tuple(alan[:3]) in olu:
+                silinen += 1
+            else:
+                kalan.append(ham)
+    if silinen:
+        lotm.atomik_yaz(yol, "".join(kalan))
+    return silinen
+
+
 def taban_yaz(yol, bulgular, taranan, kodlar=None) -> int:
     """
     Tabani gunceller ve korunan (bu calismanin kapsamadigi) satir sayisini
@@ -1560,7 +1659,29 @@ def main():
         default=None,
         help="şimdiki bütün bulguları tabana yaz ve çık",
     )
+    ap.add_argument(
+        "--taban-olu",
+        dest="taban_olu",
+        action="store_true",
+        help="--taban ile: artık hiçbir bulguyu bastırmayan (ölü) satırları listele",
+    )
+    ap.add_argument(
+        "--taban-olu-sil",
+        dest="taban_olu_sil",
+        action="store_true",
+        help="--taban ile: ölü satırları tabandan sil (yalnız bütün klasör taranırken)",
+    )
     a = ap.parse_args()
+
+    if (a.taban_olu or a.taban_olu_sil) and not a.taban:
+        ap.error("--taban-olu / --taban-olu-sil için --taban gerekli")
+    if (a.taban_olu or a.taban_olu_sil) and (a.duzelt or a.taban_yaz):
+        ap.error("--taban-olu / --taban-olu-sil --duzelt ya da --taban-yaz ile birlikte kullanılmaz")
+    # Silme yalniz butun klasor taranirken: tek dosya/numara taslak olabilir
+    # (ayni adli, yarim duzenlenmis); silinen satir geri gelmez.
+    kismi = bool(a.dosyalar) or a.bolum is not None
+    if a.taban_olu_sil and kismi:
+        ap.error("--taban-olu-sil yalnız bütün klasör taranırken çalışır (dosya/numara/--bolum verilmedi)")
 
     numaralar = [int(d) for d in a.dosyalar if d.isdigit()]
     if a.bolum is not None:
@@ -1602,7 +1723,9 @@ def main():
         tikler[y.name] = tik
         bol_par.append((y.name, pler))
         kelime[y.name] = kelime_sayisi(pler)
+    k13_calisti = False
     if (kodlar is None or "K13" in kodlar) and len(bol_par) >= 10:
+        k13_calisti = True
         df, n = belge_frekansi(bol_par)
         for dosya, pler in bol_par:
             tum += yerel_tekrar(pler, dosya, df, n)
@@ -1639,6 +1762,7 @@ def main():
 
     taban = taban_oku(a.taban)
     bastirilan = sum(1 for b in tum if b.anahtar() in taban)
+    kullanilan = {b.anahtar() for b in tum} & taban  # ayrica olu satir sayimi icin
     tum = [b for b in tum if b.anahtar() not in taban]
 
     hatalar = [b for b in tum if b.duzey == HATA]
@@ -1729,6 +1853,31 @@ def main():
     for k in sorted(say):
         print(f"  {k} {ACIKLAMA[k]}: {say[k]}")
     print(f"  HATA toplam: {len(hatalar)}   BAK toplam: {len(baklar)}")
+    if a.taban:
+        # Calismayan kural (derlem/sozluk yok) satirlari olu sayilmaz.
+        calismayan = {k for k, c in (("K13", k13_calisti), ("K06", kod_adlari is not None)) if not c}
+        klasor = Path(a.bolumler or lotm.BOLUMLER_TR)
+        satirlar = taban_satirlari(a.taban)
+        olu, kapsam = olu_satirlar(
+            satirlar, kullanilan, set(taranan), kodlar, calismayan,
+            tam=not kismi, var=lambda dosya: (klasor / dosya).exists(),
+        )
+        if a.taban_olu:
+            print("\n=== ÖLÜ TABAN SATIRLARI (artık hiçbir bulguyu bastırmıyor) ===")
+            if not olu:
+                print("  yok")
+            for dosya in sorted({k[0] for k in olu}):
+                oz = [k for k in olu if k[0] == dosya]
+                print(f"  {dosya}  ({len(oz)}{'' if dosya in taranan else ', dosya yok'})")
+                for k in oz:
+                    print(f"      {k[1]}\t{k[2]}")
+        if a.taban_olu_sil:
+            print(f"taban: {taban_olu_sil(a.taban, olu)} ölü satır silindi: {a.taban}")
+        elif olu:
+            print(
+                f"taban: kapsamdaki {kapsam} satırdan {len(olu)} tanesi ölü (artık hiçbir "
+                "bulguyu bastırmıyor)" + ("" if a.taban_olu else "; listesi için --taban-olu")
+            )
     if not lotm.SAGLIK.temiz():
         lotm.SAGLIK.rapor()
     return 1 if hatalar else 0

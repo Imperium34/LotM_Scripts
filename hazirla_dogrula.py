@@ -124,6 +124,7 @@ def dogrula(no: int, kay, tr_metin: str, ayirt: list, desen: dict) -> dict:
             else:
                 neden = "anahtar-yok"
             kacan.append((neden, t, baglam(tr_metin, g[0])))
+    kucuk = None
     for e in h.eslesmeler:
         if e.nasil == "en-yedek":
             continue
@@ -131,7 +132,8 @@ def dogrula(no: int, kay, tr_metin: str, ayirt: list, desen: dict) -> dict:
             continue
         # Yalniz buyuk/kucuk harf farki: veri sorunu (words.md "Altıpatlar",
         # metin "altıpatlar"), ceviri kaymasi degil.
-        kucuk = tr_kucult(tr_metin)
+        if kucuk is None:  # bolum basina bir kez (eskiden her terim icin)
+            kucuk = tr_kucult(tr_metin)
         if any(lotm.desen_kur(tr_kucult(b), harf_duyarli=True).search(kucuk)
                for b in e.terim.tr_bicimleri()):
             harf.append(e)

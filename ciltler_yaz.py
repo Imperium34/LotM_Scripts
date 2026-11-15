@@ -9,11 +9,12 @@ Anahtar "numara"dır, "no" değil: YAML'da çıplak `no` false olarak okunur.
     python3 ciltler_yaz.py --denetle   yazmaz; dosya lotm.CILTLER'den geride ise cikis 1
 """
 import sys
-from pathlib import Path
 
 import lotm
 
-HEDEF = Path(__file__).resolve().parent.parent / "Imperium34.github.io/_data/ciltler.yml"
+# lotm.SITE: LOTM_KOK varsa ona uyar. Eskiden betigin konumundan turetiliyordu;
+# baska dizinden LOTM_KOK ile calisinca --denetle yanlis yere bakip GERIDE diyordu.
+HEDEF = lotm.SITE / "_data/ciltler.yml"
 
 
 def metin() -> str:

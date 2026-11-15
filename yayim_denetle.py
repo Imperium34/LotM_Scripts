@@ -625,7 +625,7 @@ def lint_kapsami(yol) -> set:
         import yaml
 
         with open(yol, encoding="utf-8") as f:
-            k = yaml.safe_load(f) or {}
+            k = lotm.yaml_yukle(f) or {}  # C yukleyici (libyaml); ayni nesneler
     except (OSError, ImportError) as e:
         print(
             f"  uyari: lint kurallari okunamadi ({e}); eskimis listesi tam yazilacak.",

@@ -101,6 +101,7 @@ class Calisma:
         self.mtime: dict[Path, float] = {}
         self.adim_sayilari: dict[str, dict[Path, int]] = {}
         self.notlar: list[str] = []
+        self.sapka_liste: dict | None = None  # adim_sapka'nin uygulanacak listesi (bir kez)
 
     def kopya(self, gercek: Path) -> Path:
         gercek = Path(gercek).resolve()
@@ -173,8 +174,13 @@ def _bolum_yollari(aralik) -> list[Path]:
 def adim_sapka(c: Calisma, yollar, belge=False):
     import sapka
 
-    kel = KELIMELER if Path(KELIMELER).exists() else None
-    liste = sapka.uygulanacak_liste(SOZLUK if SOZLUK.exists() else None, kel)
+    # adim_sapka iki kez calisir (bolumler, sonra belgeler); liste yalniz
+    # sozluk.yml + words.md'ye bagli (adimlar bunlari degistirmez, kopyalar
+    # bolum/belge dosyalaridir) ve plan() onu salt okur: bir kez hesaplanir.
+    if c.sapka_liste is None:
+        kel = KELIMELER if Path(KELIMELER).exists() else None
+        c.sapka_liste = sapka.uygulanacak_liste(SOZLUK if SOZLUK.exists() else None, kel)
+    liste = c.sapka_liste
     kopyalar = [c.kopya(y) for y in yollar]
     metinler = {k: k.read_text(encoding="utf-8") for k in kopyalar}
     adim = "belgeler" if belge else "sapka"

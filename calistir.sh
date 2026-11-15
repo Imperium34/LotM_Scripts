@@ -29,6 +29,8 @@
 #  toplu_denetle yalnizca o bolumde gecen terimleri o bolum icinde tarar.
 #  bicim_denetle de hizalamadan bagimsizdir; kapanis_denetle'den hemen once
 #  gelir ve yayin oncesi tek sert kapidir (HATA varsa kirmizi uyari).
+#  sayi_denetle (Cincedeki sayilarin Turkcede karsiligi) o_denetle'den
+#  sonra, kapanis_denetle'den once gelir; o da yalnizca rapor verir.
 #
 #      ./calistir.sh          tam zincir
 #      ./calistir.sh hepsi --otomatik [--kuru] [--model M]
@@ -85,6 +87,17 @@
 #                             duzeltme, triyaj) hazir girdileri ve durum,
 #                             Reports/sonra/Ch_61/. --otomatik [adim]: eksik
 #                             gecisleri claude -p ile yurutur (bkz. sonra.py)
+#      ./calistir.sh incele 61 5_inceleme.md icin yerel inceleme sayfasi: kararlar
+#                             tarayicida kutulara isaretlenir, dosyaya geri yazilir
+#                             (bkz. inceleme_sunucu.py)
+#      ./calistir.sh kiyas    gercek korpusta ~30 salt-okunur komutun ciktisini
+#                             tabanla bayt bayt karsilastirir: betikleri degistirmeden
+#                             ONCE --taban-yaz, sonra kiyas (bkz. kiyas.py)
+#      ./calistir.sh sayi 61  Cince kaynaktaki sayilardan Turkcede olmayanlar
+#                             (N | A-B | N,M; rapor adimi, bkz. sayi_denetle.py)
+#      ./calistir.sh kaynak [A-B] [--esik X] [--hepsi]  Cince ve Ingilizce kaynagin
+#                             birbirine uymadigi bolumler (bkz. kaynak_denetle.py;
+#                             zincirde YOK: kaynaklar sabit, istenince calisir)
 #
 #  FARK: denetim, lint, bicim, toplu, takvim ve belgeler adimlari tam
 #  korpusta calisinca bulgularini Reports/bulgular/'a yazar ve sonunda
@@ -92,6 +105,12 @@
 #      fark [bicim]: +2 yeni, -1 giden (280 -> 281 bulgu)
 #  Bir onceki calistirma Reports/son/'da durur. 'bolum' zinciri kismi
 #  tarama yaptigi icin fark yazmaz.
+#
+#  ADIM OZETI: 'hepsi' sonunda her adim icin bir satir yazar (durum: tamam /
+#  bulgu / ATLANDI / HATA, cikis kodu, sure, bulgu sayisi). Zincirin cikisi
+#  yine 0'dir; LOTM_HEPSI_KATI=1 ise HATA olan adim varsa 1 (bulgu ve ATLANDI
+#  sayilmaz). LOTM_TEST_ATLA=1 test adimini pytest calistirmadan ATLANDI yapar
+#  (testlerin kendisi zinciri calistirirken ozyineleme olmasin diye).
 #
 #  LOTM_KOK ayarliysa ona uyar; yoksa betigin konumundan turetir.
 #  Eskiden yalnizca ikincisi vardi, yani lotm.py LOTM_KOK'a bakarken bu
@@ -150,6 +169,74 @@ kirmizi() { printf '\033[31m%s\033[0m\n' "$*"; }
 yesil() { printf '\033[32m%s\033[0m\n' "$*"; }
 mavi() { printf '\033[34m%s\033[0m\n' "$*"; }
 
+# ADIM OZETI: hepsi zincirindeki her adim kos() ile calisir; ad, cikis kodu,
+# sure ve bulgu sayisi dizilerde birikir, zincir sonunda ozet_yaz yazar.
+# ADIM_ATLANDI: adim ATLANDI deyip 1 donerken 1 yapar. Cikis 1'in "bulgu mu,
+# atlandi mi, coktu mu" anlami koddan cikarilamaz; adimin kendisi bilir.
+OZ_AD=()
+OZ_DURUM=()
+OZ_KOD=()
+OZ_SURE=()
+OZ_BULGU=()
+ADIM_ATLANDI=0
+# Cikis 1'in "bulgu raporladi" demek oldugu adimlar (betiklerin belgesine gore).
+# Digerlerinde (test, tarama, etiket, sapka, toplu, dogrula) 1 gercek bir hata
+# ya da ATLANDI'dir; ikincisini adim kendisi bildirir.
+OZ_BULGU_ADIMLARI=" kontrol takvim denetim lint bicim belgeler ciltler "
+# Bulgu dosyasi yazan adimlar (Reports/bulgular/<ad>.tsv).
+OZ_DOSYALI_ADIMLAR=" takvim denetim lint bicim toplu belgeler "
+
+# NOT: "||"nin solundaki fonksiyonda set -e kapali oldugu icin, sonunda baska
+# komut calisan adimlarda (tarama, sapka, belgeler, dogrula) coken bir Python
+# betigi gizlenir, adim 0 doner ve ozet "tamam" derdi. Bu yuzden o cagrilar
+# "|| return $?" tasir: tek basina calisirken set -e'nin yapacagi seyin aynisi.
+#
+# kos <ad> <fonksiyon> [arg...]: adimi calistirir, cikis kodunu AYNEN dondurur.
+# Cagiranlar "kos ... || mesaj" biciminde kalir; "||"nin solunda oldugu icin
+# set -e adimin icinde zaten bastirilir (eskiden de boyleydi), kod elle alinir.
+kos() {
+  local ad="$1" fn="$2" kod=0 bas="$SECONDS" ref durum bulgu="-" dosya n
+  shift 2
+  ADIM_ATLANDI=0
+  dosya="$BULGULAR/$ad.tsv"
+  # Eski bir calistirmadan kalan bulgu dosyasi sayilmasin: dosya adimdan once
+  # olusturulan isaret dosyasindan eski degilse bu calistirmanin sayilir.
+  ref="$RAPOR/.kos-$$"
+  : >"$ref"
+  "$fn" "$@" || kod=$?
+  if ((kod == 0)); then
+    durum=tamam
+  elif ((ADIM_ATLANDI)); then
+    durum=ATLANDI
+  elif ((kod == 1)) && [[ "$OZ_BULGU_ADIMLARI" == *" $ad "* ]]; then
+    durum=bulgu
+  else
+    durum=HATA # 1 ama bulgu adimi degil, ya da >1 (sinyal, komut yok, ...)
+  fi
+  if [[ "$OZ_DOSYALI_ADIMLAR" == *" $ad "* && -f "$dosya" && ! "$ref" -nt "$dosya" ]]; then
+    n=$(wc -l <"$dosya")
+    bulgu=$((n))
+  fi
+  rm -f "$ref"
+  OZ_AD+=("$ad")
+  OZ_DURUM+=("$durum")
+  OZ_KOD+=("$kod")
+  OZ_SURE+=("$((SECONDS - bas))s")
+  OZ_BULGU+=("$bulgu")
+  return "$kod"
+}
+
+# Satirlarda renk kodu yok: tablo grep'lenebilsin, --otomatik cikti dosyasinda
+# da ayni gorunsun. Yalniz baslik renkli.
+ozet_yaz() {
+  local i
+  mavi "--- ADIM OZETI ---"
+  printf '  %-9s %-8s %5s %6s %7s\n' adim durum cikis sure bulgu
+  for i in "${!OZ_AD[@]}"; do
+    printf '  %-9s %-8s %5s %6s %7s\n' "${OZ_AD[$i]}" "${OZ_DURUM[$i]}" "${OZ_KOD[$i]}" "${OZ_SURE[$i]}" "${OZ_BULGU[$i]}"
+  done
+}
+
 kontrol() {
   local eksik=0
   [[ -f "$SOZLUK" ]] || {
@@ -161,6 +248,14 @@ kontrol() {
     eksik=1
   }
   ((eksik == 0)) || exit 1
+}
+
+# _chapters'taki en yuksek numarali bolum dosyasi (ornek: 0073.md). Hic
+# numarali dosya yoksa grep 1 doner ve pipefail bunu yayar: cagiranlar
+# bunu eskiden satir ici boru hattiyla aliyordu, davranis ayni kalsin diye
+# cikis kodu oldugu gibi birakildi (set -e altinda atama betigi keser).
+son_bolum_dosyasi() {
+  ls "$BOLUMLER" 2>/dev/null | grep -E '^[0-9]+\.md$' | sort -n | tail -1
 }
 
 yedekle() {
@@ -176,10 +271,18 @@ yedekle() {
 
 adim_test() {
   mavi "[T] Testler calistiriliyor..."
+  # Testler zinciri kendileri calistirabilir (tests/test_calistir.py); pytest'i
+  # tekrar baslatmak ozyineleme olur. Anahtar acikca ATLANDI der.
+  if [[ -n "${LOTM_TEST_ATLA:-}" ]]; then
+    kirmizi "  ATLANDI: LOTM_TEST_ATLA ayarli."
+    ADIM_ATLANDI=1
+    return 1
+  fi
   # Testler tmp_path uzerinde sentetik veriyle calisir; gercek depoya
   # dokunmaz, Source/ ya da _chapters/ olmadan da gecer.
   if ! python3 -m pytest --version >/dev/null 2>&1; then
     kirmizi "  ATLANDI: pytest yok.  pip install pytest"
+    ADIM_ATLANDI=1
     return 1
   fi
   # Yol ACIKCA verilir. Argumansiz cagrida pytest kok dizini cwd'den
@@ -225,12 +328,13 @@ adim_tarama() {
   if [[ ! -d "$KAYNAK" ]]; then
     kirmizi "  ATLANDI: $KAYNAK yok. Ciltler depoda tutulmuyor;"
     kirmizi "           Source/ klasorunu yerel olarak olusturmaniz gerekir."
+    ADIM_ATLANDI=1
     return 1
   fi
   python3 "$TOOLS/kapi_denetle.py" \
     --sozluk "$SOZLUK" \
     --kaynak "$KAYNAK" \
-    --rapor "$RAPOR/rapor.tsv"
+    --rapor "$RAPOR/rapor.tsv" || return $?
   yesil "  -> Reports/rapor.tsv"
 }
 
@@ -238,6 +342,7 @@ adim_etiket() {
   mavi "[2/10] sozluk.yml etiketleniyor (kaynak / mudahale / metinde)..."
   if [[ ! -f "$RAPOR/rapor.tsv" ]]; then
     kirmizi "  ATLANDI: rapor.tsv yok. Once './calistir.sh tarama' calistirin."
+    ADIM_ATLANDI=1
     return 1
   fi
   yedekle
@@ -326,7 +431,7 @@ adim_bicim_taban() {
   # gecmis" yapar. Uzerinde calisilan bir taslak varken yazilirsa o
   # taslagin hatalari da sessizce kabul edilir. Bu yuzden once soruluyor.
   local son
-  son=$(ls "$BOLUMLER" 2>/dev/null | grep -E '^[0-9]+\.md$' | sort -n | tail -1)
+  son=$(son_bolum_dosyasi)
   mavi "  en son bolum: ${son:-?} -- bu bolum hala taslaksa once onu bitirin."
   read -r -p "  Devam edilsin mi? [e/H] " cevap
   [[ "$cevap" == "e" || "$cevap" == "E" ]] || {
@@ -366,7 +471,7 @@ adim_sapka() {
   local kel=()
   [[ -f "$KELIMELER" ]] && kel=(--kelimeler "$KELIMELER")
   [[ -f "$SAPKA_TABAN" ]] && kel+=(--taban "$SAPKA_TABAN")
-  python3 "$TOOLS/lint/sapka.py" --sozluk "$SOZLUK" ${kel[@]+"${kel[@]}"} "$BOLUMLER"/*.md
+  python3 "$TOOLS/lint/sapka.py" --sozluk "$SOZLUK" ${kel[@]+"${kel[@]}"} "$BOLUMLER"/*.md || return $?
   [[ -f "$SAPKA_TABAN" ]] || mavi "  ELLE tabani yok: okuyup kabul ettiklerinizi gizlemek icin ./calistir.sh sapka-taban"
   mavi "  yazmak icin:  ./calistir.sh duzelt sapka --uygula   (fark + yedek)"
   mavi "  listeye aday: python3 lint/sapka.py --kesif \"$BOLUMLER\"/*.md"
@@ -405,7 +510,7 @@ adim_belgeler() {
   local kel=()
   [[ -f "$KELIMELER" ]] && kel=(--kelimeler "$KELIMELER")
   [[ -f "$SAPKA_TABAN" ]] && kel+=(--taban "$SAPKA_TABAN")
-  python3 "$TOOLS/lint/sapka.py" --sozluk "$SOZLUK" ${kel[@]+"${kel[@]}"} "${belgeler[@]}"
+  python3 "$TOOLS/lint/sapka.py" --sozluk "$SOZLUK" ${kel[@]+"${kel[@]}"} "${belgeler[@]}" || return $?
   local kod=0
   python3 "$TOOLS/belge_denetle.py" --sozluk "$SOZLUK" --bulgular "$BULGULAR/belgeler.tsv" \
     "${belgeler[@]}" || kod=$?
@@ -417,23 +522,23 @@ adim_bolum() {
   local no="$1"
   local sablon="$SABLONLAR/Ch_$no.md"
 
-  mavi "[1/7] Baslik ve yayin tarihi..."
+  mavi "[1/8] Baslik ve yayin tarihi..."
   # Beklenen tarihi de yazar: yeni bolumun on maddesine oradan kopyalayin.
   adim_takvim --bolum "$no" || kirmizi "  BASLIK/TARIH HATASI -- yayinlamadan once duzeltin"
 
-  mavi "[2/7] Hizalama guvenilir mi?"
+  mavi "[2/8] Hizalama guvenilir mi?"
   # Cikis kodu 1 = kayma VAR demek; zincir durmaz, cunku sonraki adim
   # zaten hizalamadan bagimsiz. Ama ceviri_denetle'yi bu bolumde
   # calistiracaksaniz ESLESMEYEN listesini buna gore okuyun.
   python3 "$TOOLS/hizalama_denetle.py" "$no" || true
 
-  mavi "[3/7] Bu bolumdeki terimler sozlukle tutarli mi?"
+  mavi "[3/8] Bu bolumdeki terimler sozlukle tutarli mi?"
   # Yalnizca bu bolum: burada gecen terimler, burada nasil cevrilmis.
   # Rapor adimi; bulgu zinciri durdurmaz. Yayimlanmis metne bakar
   # (_chapters), yani bolum oraya konduktan sonra anlamlidir.
   python3 "$TOOLS/toplu_denetle.py" --kaynak ikisi --bolum "$no" || true
 
-  mavi "[4/7] Bicim: dizgi kurallari ve bolumun oteki bolumlere gore sapmasi..."
+  mavi "[4/8] Bicim: dizgi kurallari ve bolumun oteki bolumlere gore sapmasi..."
   # Tek dosya kipinde bolum, yayimlanmis butun bolumlerle karsilastirilir
   # (NORMDAN SAPAN BOLUMLER). Tabandakiler bastirilir; taslak bolumun kendi
   # hatalari tabanda olmadigi icin hepsi gorunur.
@@ -445,7 +550,7 @@ adim_bolum() {
     kirmizi "  ATLANDI: $BOLUMLER yok."
   fi
 
-  mavi "[5/7] Bekleyen kesin duzeltme var mi? (sapka, lint, bicim; KURU)"
+  mavi "[5/8] Bekleyen kesin duzeltme var mi? (sapka, lint, bicim; KURU)"
   # Haftalik zincirin yazacagi seyleri yayindan ONCE gosterir: Alger'in,
   # Firaseti, layık boyle 67-68'e kadar geldi. Hicbir dosya degismez.
   local dkod=0
@@ -456,12 +561,17 @@ adim_bolum() {
     kirmizi "  duzelt calismadi (cikis $dkod)"
   fi
 
-  mavi "[6/7] 'o' tanimlik gibi mi? (TR'de 'o + sozcuk', ZH'de 那 yok)"
+  mavi "[6/8] 'o' tanimlik gibi mi? (TR'de 'o + sozcuk', ZH'de 那 yok)"
   # Rapor adimi; bulgu zinciri durdurmaz. Kaliplar (o zaman, o kadar...)
   # sayilmaz. Bkz. o_denetle.py.
   python3 "$TOOLS/o_denetle.py" "$no" || true
 
-  mavi "[7/7] Kapanis denetimi (hizalamadan bagimsiz)..."
+  mavi "[7/8] Sayilar: Cincedeki sayi/para/tarih Turkcede var mi? (rapor)"
+  # Rapor adimi; bulgu zinciri durdurmaz. Hizalama kayabildigi icin
+  # komsu paragraflara da bakar. Bkz. sayi_denetle.py.
+  python3 "$TOOLS/sayi_denetle.py" "$no" || true
+
+  mavi "[8/8] Kapanis denetimi (hizalamadan bagimsiz)..."
   if [[ ! -f "$sablon" ]]; then
     kirmizi "  ATLANDI: $sablon yok."
     return 1
@@ -486,12 +596,12 @@ adim_dogrula() {
   local aralik="${1:-}"
   if [[ -z "$aralik" ]]; then
     local son
-    son=$(ls "$BOLUMLER" 2>/dev/null | grep -E '^[0-9]+\.md$' | sort -n | tail -1)
+    son=$(son_bolum_dosyasi)
     son=$((10#${son%.md}))
     aralik="$((son > 10 ? son - 9 : 1))-$son"
   fi
   mkdir -p "$RAPOR/hazirlik"
-  python3 "$TOOLS/hazirla_dogrula.py" "$aralik" --cikti "$RAPOR/hazirlik/dogrulama.md"
+  python3 "$TOOLS/hazirla_dogrula.py" "$aralik" --cikti "$RAPOR/hazirlik/dogrulama.md" || return $?
   # Ozet tablo ve 'arama hatasi' sayisi; ayrinti dosyada.
   awk '/^\| [0-9]/ { print "  " $0 } /^## Kaçan — anahtar bu bölümde geçiyor/ { print "  " $0 }' \
     "$RAPOR/hazirlik/dogrulama.md"
@@ -572,7 +682,7 @@ if [[ "${1:-}" == "bolum" ]]; then
     # Numara verilmezse _chapters'taki en son bolum: taslaklar orada
     # yaziliyor, yani bu cogu zaman uzerinde calisilan bolumdur, degilse
     # az once bitirilen.
-    son=$(ls "$BOLUMLER" 2>/dev/null | grep -E '^[0-9]+\.md$' | sort -n | tail -1)
+    son=$(son_bolum_dosyasi)
     [[ -n "$son" ]] || {
       kirmizi "kullanim: ./calistir.sh bolum [numara]"
       exit 1
@@ -585,42 +695,35 @@ if [[ "${1:-}" == "bolum" ]]; then
   exit 0
 fi
 
-# 'once' ve 'sonra' kontrol()'den once: kendi denetimlerini yaparlar.
-if [[ "${1:-}" == "once" ]]; then
+# 'once', 'duzelt', 'cevir', 'incele', 'sonra', 'kiyas', 'sayi' ve 'kaynak' kontrol()'den once: hepsi
+# kendi denetimini yapar ve yollarini kendisi bulur.
+#   once:   hazirlik + sablon denetimi (bkz. once.py)
+#   duzelt: yollarini lotm.py'den alir, KURU varsayilandir; --uygula once
+#           fark gosterir ve sorar, sonra yedekleyip yazar
+#   cevir:  sablonu once.py ile denetler, cevirir, bolumu yazar; --sonra ile
+#           sonra.py'yi kendisi cagirir (bkz. cevir.py)
+#   incele: 5_inceleme.md icin yerel inceleme sayfasi (bkz. inceleme_sunucu.py)
+#   sonra:  'bolum'u kendisi cagirir
+#   kiyas:  salt-okunur adimlarin ciktisini tabanla karsilastirir (bkz. kiyas.py)
+#   sayi:   Cincedeki sayilar Turkcede var mi (bkz. sayi_denetle.py)
+#   kaynak: Cince ve Ingilizce kaynak birbirine uyuyor mu (bkz. kaynak_denetle.py)
+case "${1:-}" in
+once | duzelt | cevir | incele | sonra | kiyas | sayi | kaynak)
+  case "$1" in
+  once) betik=once.py ;;
+  duzelt) betik=duzelt.py ;;
+  cevir) betik=cevir.py ;;
+  incele) betik=inceleme_sunucu.py ;;
+  sonra) betik=sonra.py ;;
+  kiyas) betik=kiyas.py ;;
+  sayi) betik=sayi_denetle.py ;;
+  kaynak) betik=kaynak_denetle.py ;;
+  esac
   shift
-  python3 "$TOOLS/once.py" "$@"
+  python3 "$TOOLS/$betik" "$@"
   exit $?
-fi
-
-# 'duzelt' de kontrol()'den once: kendi yollarini lotm.py'den alir, KURU
-# varsayilandir; --uygula once fark gosterir ve sorar, sonra yedekleyip yazar.
-if [[ "${1:-}" == "duzelt" ]]; then
-  shift
-  python3 "$TOOLS/duzelt.py" "$@"
-  exit $?
-fi
-
-# 'cevir' de kontrol()'den once: sablonu once.py ile denetler, cevirir,
-# bolumu yazar; --sonra ile sonra.py'yi kendisi cagirir (bkz. cevir.py).
-if [[ "${1:-}" == "cevir" ]]; then
-  shift
-  python3 "$TOOLS/cevir.py" "$@"
-  exit $?
-fi
-
-# 'incele': 5_inceleme.md icin yerel inceleme sayfasi (bkz. inceleme_sunucu.py).
-if [[ "${1:-}" == "incele" ]]; then
-  shift
-  python3 "$TOOLS/inceleme_sunucu.py" "$@"
-  exit $?
-fi
-
-# 'sonra' da kontrol()'den once: kendi denetimini yapar, 'bolum'u kendisi cagirir.
-if [[ "${1:-}" == "sonra" ]]; then
-  shift
-  python3 "$TOOLS/sonra.py" "$@"
-  exit $?
-fi
+  ;;
+esac
 
 kontrol
 case "${1:-hepsi}" in
@@ -660,26 +763,37 @@ hepsi)
     python3 "$TOOLS/zincir_oku.py" "$cikti" "$@"
     exit $?
   fi
-  adim_test || mavi "  (testler atlandi, zincire devam)"
-  adim_kontrol || kirmizi "  (numaralandirma sorunlu, zincire yine de devam)"
+  kos test adim_test || mavi "  (testler atlandi, zincire devam)"
+  kos kontrol adim_kontrol || kirmizi "  (numaralandirma sorunlu, zincire yine de devam)"
   mavi "  basliklar ve yayin tarihleri..."
-  adim_takvim || kirmizi "  (baslik/tarih hatasi var, yukariya bakin)"
-  adim_tarama || mavi "  (tarama atlandi, zincire devam)"
-  adim_etiket || mavi "  (etiketleme atlandi, zincire devam)"
+  kos takvim adim_takvim || kirmizi "  (baslik/tarih hatasi var, yukariya bakin)"
+  kos tarama adim_tarama || mavi "  (tarama atlandi, zincire devam)"
+  kos etiket adim_etiket || mavi "  (etiketleme atlandi, zincire devam)"
   # Her adim "|| ..." ile: set -e altinda bulgu bildiren (cikis 1) tek bir
   # adim zincirin GERI KALANINI sessizce keserdi. adim_denetim eskiden
   # boyle cagriliyordu; yayim_denetle bir sey buldugu anda lint, bicim,
   # sapka, toplu ve belgeler hic calismiyordu.
-  adim_denetim || kirmizi "  (yayim denetimi bulgu bildirdi, yukariya bakin)"
-  adim_lint || mavi "  (lint bulgu bildirdi, yukariya bakin)"
-  adim_bicim || kirmizi "  (bicim denetimi tabanda olmayan HATA buldu, yukariya bakin)"
-  adim_sapka || mavi "  (sapka taramasi atlandi)"
-  adim_toplu || mavi "  (terim tutarliligi atlandi)"
-  adim_belgeler || kirmizi "  (belgelerde hata var, yukariya bakin)"
+  kos denetim adim_denetim || kirmizi "  (yayim denetimi bulgu bildirdi, yukariya bakin)"
+  kos lint adim_lint || mavi "  (lint bulgu bildirdi, yukariya bakin)"
+  kos bicim adim_bicim || kirmizi "  (bicim denetimi tabanda olmayan HATA buldu, yukariya bakin)"
+  kos sapka adim_sapka || mavi "  (sapka taramasi atlandi)"
+  kos toplu adim_toplu || mavi "  (terim tutarliligi atlandi)"
+  kos belgeler adim_belgeler || kirmizi "  (belgelerde hata var, yukariya bakin)"
   mavi "[9/10] Arsivin cilt tablosu guncel mi..."
-  adim_ciltler || kirmizi "  (ciltler.yml geride: ./calistir.sh ciltler --yaz)"
+  kos ciltler adim_ciltler || kirmizi "  (ciltler.yml geride: ./calistir.sh ciltler --yaz)"
   mavi "[10/10] Terim dokumu son bolumlerde dogru mu (hazirla_dogrula)..."
-  adim_dogrula || mavi "  (dogrulama atlandi)"
+  kos dogrula adim_dogrula || mavi "  (dogrulama atlandi)"
+  ozet_yaz
+  # Opt-in: zincir varsayilan olarak hep 0 doner (--otomatik buna guvenir).
+  # Bulgu ve ATLANDI hata sayilmaz; yalniz HATA.
+  if [[ "${LOTM_HEPSI_KATI:-}" == 1 ]]; then
+    for durum in "${OZ_DURUM[@]}"; do
+      if [[ "$durum" == HATA ]]; then
+        kirmizi "LOTM_HEPSI_KATI=1: HATA veren adim var, cikis 1."
+        exit 1
+      fi
+    done
+  fi
   ;;
 *)
   echo "kullanim: ./calistir.sh [hepsi [--otomatik]|test|kontrol|takvim|tarama|etiket|denetim|lint|bicim|bicim-taban|sapka|sapka-taban|toplu|belgeler|ciltler [--yaz]|dogrula [A-B]|kanca|hazirla N]"
@@ -688,6 +802,9 @@ hepsi)
   echo "          ./calistir.sh cevir <numara> [--sonra] [--hazirla|--kuru] [--model M]"
   echo "          ./calistir.sh sonra <N|A-B|N,M> [--otomatik [adim...]] [--donem-yok] [--paralel N|oto]"
   echo "          ./calistir.sh incele <numara>   (inceleme sayfasi, tarayicida)"
+  echo "          ./calistir.sh kiyas [adim...] [--taban-yaz [--uzerine-yaz]] [--liste] [--seri]   (gercek korpusta cikti degisti mi?)"
+  echo "          ./calistir.sh sayi <N|A-B|N,M>   (Cincedeki sayilar Turkcede var mi)"
+  echo "          ./calistir.sh kaynak [A-B] [--esik X] [--hepsi]   (Cince ve Ingilizce kaynak uyusuyor mu)"
   echo "          ./calistir.sh duzelt [sapka|lint|bicim|belgeler|takvim|ciltler...] [--bolum N|A-B] [--uygula [--evet]]"
   exit 1
   ;;

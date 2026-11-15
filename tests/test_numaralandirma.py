@@ -190,3 +190,77 @@ def test_metin_oku_kodlamalari(lotm_modulu, tmp_path):
     hileli = tmp_path / "hileli.txt"
     hileli.write_bytes(karma.encode("gb18030"))
     assert lotm.metin_oku(hileli) == karma
+
+
+# ------------------------------------------------ bilinen (kabul edilmis) eksik
+
+
+def _en_yaz(depo, nolar):
+    """Yalnizca verilen numaralari iceren EN kaynagi yazar."""
+    from conftest import en_korpus
+
+    metin = en_korpus([(n, "B", ["govde"]) for n in nolar])
+    (depo / "Source/LotM_Volumes/Volume_1.txt").write_text(metin, encoding="utf-8")
+    # TR bos olursa "BOLUM BULUNAMADI" sorun sayilir ve testi kirletir
+    (depo / "Imperium34.github.io/_chapters/1.md").write_text(
+        "# Bolum 1\n\nmetin\n", encoding="utf-8"
+    )
+
+
+def _kontrol(lotm):
+    import io
+
+    tampon = io.StringIO()
+    return lotm.numaralari_dogrula(tampon), tampon.getvalue()
+
+
+def _en_kontrol(lotm_modulu, monkeypatch, tablo):
+    # EN beklentisi gercek 1409'dur; sentetik korpus icin kapatilir
+    monkeypatch.setattr(lotm_modulu, "BEKLENEN", {})
+    monkeypatch.setattr(lotm_modulu, "BILINEN_EKSIK", tablo)
+    return _kontrol(lotm_modulu)
+
+
+def test_bilinen_eksik_kontrolu_gecirir(lotm_modulu, depo, monkeypatch):
+    _en_yaz(depo, [1, 2, 3, 5, 6])
+    tamam, cikti = _en_kontrol(lotm_modulu, monkeypatch, {"EN": {4: "deneme nedeni"}})
+    assert "bilinen eksik: 4 (deneme nedeni)" in cikti
+    assert "EKSIK:" not in cikti
+    assert tamam is True
+    assert "temiz" in cikti
+
+
+def test_bilinmeyen_eksik_hala_basarisiz(lotm_modulu, depo, monkeypatch):
+    _en_yaz(depo, [1, 2, 3, 5, 6])
+    tamam, cikti = _en_kontrol(lotm_modulu, monkeypatch, {})
+    assert tamam is False
+    assert "1 EKSIK: [4]" in cikti
+    assert "bilinen eksik" not in cikti
+    assert "SORUN VAR" in cikti
+
+
+def test_bilinen_ve_bilinmeyen_birlikte_yalniz_bilinmeyeni_sayar(
+    lotm_modulu, depo, monkeypatch
+):
+    _en_yaz(depo, [1, 2, 3, 5, 7])
+    tamam, cikti = _en_kontrol(lotm_modulu, monkeypatch, {"EN": {4: "bilinen"}})
+    assert tamam is False
+    assert "1 EKSIK: [6]" in cikti
+    assert "bilinen eksik: 4 (bilinen)" in cikti
+
+
+def test_eskimis_giris_uyarilir_ama_sorun_sayilmaz(lotm_modulu, depo, monkeypatch):
+    _en_yaz(depo, [1, 2, 3])
+    tamam, cikti = _en_kontrol(lotm_modulu, monkeypatch, {"EN": {2: "eskidi"}})
+    assert "ESKIMIS GIRIS: 2" in cikti
+    assert "BILINEN_EKSIK" in cikti
+    assert tamam is True
+
+
+def test_yuklenmeyen_kaynagin_tablo_girisi_patlatmaz(lotm_modulu, depo, monkeypatch):
+    _en_yaz(depo, [1, 2, 3])
+    tamam, cikti = _en_kontrol(
+        lotm_modulu, monkeypatch, {"EN": {}, "TR": {9: "yok"}, "XX": {1: "?"}}
+    )
+    assert tamam is True
+    assert "bilinen eksik" not in cikti

@@ -423,3 +423,24 @@ eklenmis_sus:
     hiç gayet tamamen büsbütün bütünüyle yegâne fevkalade ziyadesiyle
     oldukça epey epeyce iyice adamakıllı son_derece katiyen
   atmosfer: köhne kapkara simsiyah zifiri kasvetli
+
+# ---------------------------------------------------------------
+# TERİM KESMESİ (12 Kas, çekirdek v5.5 "Dünya terimlerine gelen ek")
+# Büyük harfli dünya terimine gelen hâl, iyelik ve ek-fiil kesmeyle ayrılır
+# (Ruhaniyet'ini, Mertebe'nin, Kâhin'imiz, bir Aşkın'sın); çoğul eki ve
+# ardından gelenler ayrılmaz (Aşkınlar, Ayinlerde). Yapım eki ayrılmaz
+# (Kâhinlik). Cümle başı ve büyük harfli sözcüğün ardı (bileşik ad) atlanır.
+# Kökler: sözlüğün tek sözcüklü büyük harfli terimleri; "ekle" / "atla" ile
+# ayarlanır ("kokler:" verilirse sözlük yerine yalnız o liste kullanılır).
+# "atla": sıradan sözcükle ya da bileşikle çakışan kısa terimler.
+# ---------------------------------------------------------------
+terim_kesme:
+  duzelt: true
+  ekle: []
+  # istisna: bu hazır ifadelerin içindeki terim çekimine dokunulmaz.
+  #  - "sihir Ayini": bileşik adın -i'si, hâl eki değil (22).
+  istisna:
+    - "sihir Ayini"
+  atla: [Ay, Ana, Haz, Şan, Kapı, Kusur, Ölüm, Karanlık, Kadı, Afet, Okur,
+         Yazar, Aktar, Kotar, Galip, Fatih, Arif, Bilge, Solmaz, Adalet,
+         Felaket, Yargı, MI9]

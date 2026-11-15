@@ -47,6 +47,33 @@ def test_virgulle_kapanan_replik(tmp_path):
     assert "B03" not in _hatalar(tmp_path, '"Gel." dedi.\n')
 
 
+def test_mektup_hitabi_virgulle_kapanabilir(tmp_path):
+    assert "B03" not in _hatalar(tmp_path, 'Kâğıdın en üstüne yazdı.\n\n"Muhterem Hocam,"\n\nDevam etti.\n')
+    assert "B03" in _hatalar(tmp_path, '"Ne var ki,"\n')
+
+
+def test_k03_tarih_ve_kapi_numarasi_sayilmaz():
+    import bicim_denetle as B
+    assert B._RAKAM_TARIH_SONRA.match(" Mayıs. Bay Azik")
+    assert B._RAKAM_TARIH_SONRA.match("'sinde yani")
+    assert B._RAKAM_TARIH_ONCE.search("Hatta ayın ")
+    assert B._RAKAM_ADRES_SONRA.match(" Nergis Sokağı'nın kapısında")
+    assert not B._RAKAM_ADRES_SONRA.match(" soli kira ve")
+    assert not B._RAKAM_TARIH_SONRA.match(" soli kira")
+    assert B._RAKAM_TARIH_ONCE.search("Tuzdiyarı Sokağı ")
+    assert B._RAKAM_NUMARA_SONRA.match(" numaraya gitti")
+    assert B._RAKAM_ISTISNA.match(" damla kan")
+
+
+def test_k06_replik_acilisi_tirnakli_ad_degil():
+    import bicim_denetle as B
+    d = B.kod_adi_deseni()
+    if d is None:
+        return
+    assert d.search("Belki 'Seyirci' iksirinin formülü")
+    assert not d.search('"Seyirci\'nin dediği doğru."')
+
+
 def test_atiftan_sonra_iki_nokta(tmp_path):
     assert "B04" in _hatalar(tmp_path, 'Klein konuştu: "Gel."\n')
 

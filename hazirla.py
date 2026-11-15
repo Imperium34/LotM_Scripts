@@ -90,6 +90,7 @@ from __future__ import annotations
 import argparse
 import dataclasses
 import difflib
+import functools
 import re
 import sys
 from collections import Counter, defaultdict
@@ -218,8 +219,22 @@ def _zh_parcalari(t) -> list:
     ]
 
 
+# _bilesik_deseni onbellegi: [hepsi listesi, uzunlugu, {z: desen}]. Desen yalniz
+# (z, hepsi)'ye baglidir ama her cagri hepsi'nin ~1000 ogesini suzup desen
+# metnini yeniden kuruyordu (bolum basina binlerce kez, hazirla_dogrula'da
+# her bolumde). Liste nesnesi ayni ve uzunlugu ayni kaldikca sonuc aynidir:
+# kaynak_yukle ve cikarimla_yeniden listeyi hep YENI kurar, yerinde degistirmez.
+_BILESIK_ONBELLEK: list = [None, 0, {}]
+
+
 def _bilesik_deseni(z: str, hepsi: list):
-    return lotm.zh_desen(z, [b for b in hepsi if z in b and b != z])
+    o = _BILESIK_ONBELLEK
+    if o[0] is not hepsi or o[1] != len(hepsi):
+        o[0], o[1], o[2] = hepsi, len(hepsi), {}
+    d = o[2].get(z)
+    if d is None:
+        d = o[2][z] = lotm.zh_desen(z, [b for b in hepsi if z in b and b != z])
+    return d
 
 
 def _ingilizce_adlari(t) -> set:
@@ -293,12 +308,63 @@ class Korpus:
         return k > 0 and self.orta.get(w, 0) <= max(2, k // 10)
 
 
+# Korpus._ORTA'nin hizli esdegeri icin parcalari (bkz. _orta_sozcukler).
+_ORTA_ADAY = re.compile(r" ([A-Z][a-z'\-]+)")
+_ORTA_UNVAN = re.compile(r"\b(?:Mr|Mrs|Ms|Mx|Dr|St|Prof|Capt|Sgt|Lt|Col|Gen|Rev)\.")
+
+
+def _orta_sozcukler(m: str) -> list:
+    """
+    Korpus._ORTA.findall(m) ile AYNI listeyi verir, ama cok daha hizli.
+
+    _ORTA her konumda iki secenekli bir on-ek dener ve 16 MB'lik korpusta
+    en pahali tarama buydu. Her eslesmenin icinde "bosluk + Buyuk sozcuk"
+    bulunur; once yalniz onu ararim (sabit bosluk ile baslayan desen cok
+    ucuz) ve on-eki adayin hemen onunde ayri sinarim:
+      - tek harf [a-z,;] (aday konumu - 1), ya da
+      - unvan + nokta, basinda \b (3-5 karakter).
+    Ayni aday icin ikisi birden uygun olamaz (onceki karakter ya harf/,/;
+    ya nokta). Eslesmeler ust uste binmez: _ORTA bir eslesmeden SONRA
+    taramaya devam eder, yani yeni on-ek onceki eslesmenin sonundan once
+    baslayamaz ("a Foo Bar": Bar'in on-eki Foo'nun icinde, sayilmaz);
+    son_bitis bunu uygular. Adaylar birbirinden ayrik (sozcuk bosluk
+    icermez), bu yuzden reddedilen aday baska bir adayi gizleyemez.
+    """
+    out = []
+    son_bitis = 0
+    for c in _ORTA_ADAY.finditer(m):
+        b = c.start()  # bosluk
+        if b - 1 >= son_bitis and b and m[b - 1] in "abcdefghijklmnopqrstuvwxyz,;":
+            pass
+        elif not (
+            b
+            and m[b - 1] == "."
+            and any(
+                b - k >= son_bitis and _ORTA_UNVAN.fullmatch(m, b - k, b)
+                for k in (3, 4, 5)
+            )
+        ):
+            continue
+        out.append(c.group(1))
+        son_bitis = c.end()
+    return out
+
+
 def kucuk_sozcukler(metinler) -> Korpus:
     """Korpusun kucuk harfli sozcukleri ve cumle ortasinda buyuk yazilanlar."""
-    kucuk, orta = Counter(), Counter()
+    # Ham sozcukler once oldugu gibi sayilir (Counter.update(liste) C'de
+    # calisir), rstrip/_IYELIK katlamasi yalniz BENZERSIZ sozcuklere uygulanir:
+    # 16 MB'lik korpusta milyonlarca sozcuk icin tek tek rstrip cagirmak
+    # saniyeler tutuyordu. Sayilar ayni: katlama toplamlari degistirmez.
+    ham_kucuk, ham_orta = Counter(), Counter()
     for m in metinler:
-        kucuk.update(w.rstrip("'-") for w in _KUCUK_SOZCUK.findall(m))
-        orta.update(_IYELIK.sub("", w.rstrip("-")) for w in Korpus._ORTA.findall(m))
+        ham_kucuk.update(_KUCUK_SOZCUK.findall(m))
+        ham_orta.update(_orta_sozcukler(m))
+    kucuk, orta = Counter(), Counter()
+    for w, n in ham_kucuk.items():
+        kucuk[w.rstrip("'-")] += n
+    for w, n in ham_orta.items():
+        orta[_IYELIK.sub("", w.rstrip("-"))] += n
     return Korpus(kucuk, orta)
 
 
@@ -367,6 +433,58 @@ def arama_adlari(t) -> list:
     return t.arama_adaylari()
 
 
+@functools.lru_cache(maxsize=None)
+def _en_deseni(aday: str, duyarli: bool):
+    """Ingilizce aday deseni; re'nin 512'lik onbellegi 1200 terim icin yetmiyor."""
+    bayrak = 0 if duyarli else re.IGNORECASE
+    return re.compile(r"(?<![\w-])" + re.escape(aday) + r"(?:e?s)?(?![\w-])", bayrak)
+
+
+# IGNORECASE'in ASCII harfe esledigi ASCII-disi karakterler: Kelvin isareti
+# (k), uzun s (s), noktali buyuk I (i) ve noktasiz kucuk i (i).
+_EN_OZEL_HARF = ("\u212a", "\u017f", "\u0130", "\u0131")
+_EN_DURUM: list = [None, None, None, {}]  # [en, en.lower(), lower guvenli mi, {(aday, duyarli): araliklar}]
+
+
+def _en_araliklari(en: str, aday: str, duyarli: bool) -> tuple:
+    """
+    aday'in en'deki (bas, son) gecisleri. Ayni bolumde ayni (aday, duyarli)
+    ikinci kez sorulur (terimleri_bul, hazirla_bolum'deki en_bulunan, anahtar
+    cikarimi sonrasi yeniden kurulus): sonuc en'e bagli bir onbellekte tutulur.
+
+    Regex'ten once ucuz bir alt dize sinamasi: desenin ZORUNLU parcasi aday'in
+    kendisidir (kalan (?:e?s)? ve bakislar yalniz ekleme/kosul koyar), yani
+    aday metinde yoksa desen eslesemez. Harf duyarliysa alt dize sinamasi
+    birebir; duyarsizda re.IGNORECASE ile ayni sonuc icin sinama yalniz
+    aday ASCII ve metinde ASCII harfle denk sayilan ASCII-disi karakter
+    (_EN_OZEL_HARF) yokken yapilir; o zaman IGNORECASE ASCII harf icin
+    basit buyuk/kucuk esitligidir ve en.lower() ile birebir ayni sonucu verir.
+    Sinama gecemezse sonuc kesin olarak bostur; gecerse regex yine calisir.
+    """
+    d = _EN_DURUM
+    if d[0] is not en:
+        d[0], d[1], d[2], d[3] = en, None, None, {}
+    anahtar = (aday, duyarli)
+    sonuc = d[3].get(anahtar)
+    if sonuc is not None:
+        return sonuc
+    var = None
+    if duyarli:
+        var = aday in en
+    elif aday.isascii():
+        if d[2] is None:
+            d[2] = not any(c in en for c in _EN_OZEL_HARF)
+            d[1] = en.lower() if d[2] else None
+        if d[2]:
+            var = aday.lower() in d[1]
+    if var is False:
+        sonuc = ()
+    else:
+        sonuc = tuple(m.span() for m in _en_deseni(aday, duyarli).finditer(en))
+    d[3][anahtar] = sonuc
+    return sonuc
+
+
 def en_isabetleri(en: str, terimler: list) -> dict:
     """
     {id(terim): [(bas, son), ...]} -- her terimin Ingilizce adaylarinin
@@ -382,25 +500,31 @@ def en_isabetleri(en: str, terimler: list) -> dict:
     for t in terimler:
         if not t.tr:
             continue
-        bayrak = 0 if harf_duyarli_mi(t) else re.IGNORECASE
+        duyarli = harf_duyarli_mi(t)
         araliklar = set()
         for aday in arama_adlari(t):
             if len(aday) < 4:
                 continue
-            d = re.compile(
-                r"(?<![\w-])" + re.escape(aday) + r"(?:e?s)?(?![\w-])", bayrak
-            )
-            araliklar.update(m.span() for m in d.finditer(en))
+            araliklar.update(_en_araliklari(en, aday, duyarli))
         if araliklar:
             ham[id(t)] = araliklar
     hepsi = {a for s in ham.values() for a in s}
+    # "Baska bir gecisin DAHA UZUN olani icinde" sinamasi her gecis icin
+    # butun gecisleri taramak yerine tek siralamayla yapilir. Aralik (a, b)
+    # icin ona esit olmayan bir (a2, b2) a2 <= a ve b >= b iken vardir; esit
+    # olmayan ve kapsayan aralik zorunlu olarak daha uzundur. (a artan, b
+    # azalan) siralamada kapsayan her aralik (a, b)'den ONCE gelir ve hepsi
+    # tekil oldugu icin (a, b)'nin kendisi onceki en buyuk b2'ye girmez.
+    kapsanan = set()
+    en_b = -1
+    for a, b in sorted(hepsi, key=lambda x: (x[0], -x[1])):
+        if en_b >= b:
+            kapsanan.add((a, b))
+        elif b > en_b:
+            en_b = b
     out = {}
     for k, araliklar in ham.items():
-        kalan = sorted(
-            (a, b)
-            for a, b in araliklar
-            if not any(a2 <= a and b <= b2 and (b2 - a2) > (b - a) for a2, b2 in hepsi)
-        )
+        kalan = sorted(x for x in araliklar if x not in kapsanan)
         if kalan:
             out[k] = kalan
     return out
@@ -683,26 +807,55 @@ def yayim_bicimleri(t, kardesler: set = frozenset()) -> list:
     return list(dict.fromkeys(bicimler))
 
 
+# yayim_kullanimi onbellegi: [bolumler, parmak izi, {(bicimler, duyarli): [no, ...]}].
+# Bir terimin hangi yayimlanmis bolumlerde gectigi YALNIZ terime ve korpusa
+# baglidir; bolumden bolume yalniz `haric` degisir. hazirla_dogrula 10-100
+# bolumu ayni Kaynak ile dolasir ve ayni yerlesik terimler her bolumde
+# yeniden cikar: bolum basina ~2 sn'lik tarama bir kez yapilir, sonrasi sozluk
+# sorgusudur. Parmak izi (no, metin kimligi) korpusun ayni kaldigini sinar;
+# metin nesneleri onbellekte tutulur ki kimlikleri baska nesneye devredilmesin.
+_YAYIM_ONBELLEK: list = [None, None, {}]
+
+
+def _yayim_onbellegi(tr_bolumler: list) -> dict:
+    iz = tuple((b.no, id(b.metin)) for b in tr_bolumler)
+    o = _YAYIM_ONBELLEK
+    if o[1] != iz:
+        o[0] = [b.metin for b in tr_bolumler]  # kimlikleri sabit tut
+        o[1], o[2] = iz, {}
+    return o[2]
+
+
+def _gecen_bolumler(onbellek: dict, tr_bolumler: list, bicimler: list, duyarli: bool) -> list:
+    """Desenlerden herhangi biri eslesen TUM bolumlerin no'lari (korpus sirasiyla)."""
+    anahtar = (tuple(bicimler), duyarli)
+    nolar = onbellek.get(anahtar)
+    if nolar is None:
+        # desen_kur vekili tembeldir ve metinde zorunlu parca yoksa derlemeden
+        # "eslesmez" der (on-sinama lotm'da tek yerde tutulur).
+        desenler = [lotm.desen_kur(b, harf_duyarli=duyarli) for b in bicimler]
+        nolar = [b.no for b in tr_bolumler if any(d.search(b.metin) for d in desenler)]
+        onbellek[anahtar] = nolar
+    return nolar
+
+
 def yayim_kullanimi(
     eslesmeler: list, tr_bolumler: list, haric: int, kardesler: set = frozenset()
 ) -> None:
     """Her eslesmenin .yayim alanini doldurur: bicimlerinin gectigi bolumler."""
+    onbellek = _yayim_onbellegi(tr_bolumler)
     for e in eslesmeler:
         duyarli = harf_duyarli_mi(e.terim)
         bicimler = yayim_bicimleri(e.terim, kardesler)
         katla = duyarli and _liste_buyuk_harfi(e.terim, kardesler)
-        desenler = [lotm.desen_kur(b, harf_duyarli=duyarli) for b in bicimler]
         e.yayim = sorted(
-            b.no
-            for b in tr_bolumler
-            if b.no is not None
-            and b.no != haric
-            and any(d.search(b.metin) for d in desenler)
+            n for n in _gecen_bolumler(onbellek, tr_bolumler, bicimler, duyarli)
+            if n is not None and n != haric
         )
         if katla:
-            kucuk = lotm.desen_kur(_bas_harfi_kucult(e.terim.tr), harf_duyarli=True)
-            if any(kucuk.search(b.metin) for b in tr_bolumler if b.no != haric):
-                e.kucuk_bicim = _bas_harfi_kucult(e.terim.tr)
+            kucuk = _bas_harfi_kucult(e.terim.tr)
+            if any(n != haric for n in _gecen_bolumler(onbellek, tr_bolumler, [kucuk], True)):
+                e.kucuk_bicim = kucuk
 
 
 # ------------------------------------------------- Cince anahtar cikarimi

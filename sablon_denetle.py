@@ -463,7 +463,32 @@ def denetle(metin: str, kay: Kaynaklar, zh_yan: dict | None = None) -> tuple:
                              f"Ch_{no} ({onceki.bolum}) aynı İngilizceye "
                              f"'{' / '.join(onceki.tr)}' vermiş. Çince farklıysa bilinçlidir; "
                              f"değilse bölümler arası kayma"))
+    out += sizinti(metin)
     return out, satirlar
+
+
+# Sablon cevirmenin istemine eklenir: Latin disi yazi, cekirdegin § numarasi ve
+# ses haritasi / Yanki Defteri kodu cevirmene bir sey soylemez, metne de sizabilir
+# (73: "ters방향으로", "Sabit Çekirdek §9", "K1.1–K1.2", "Yankı #80"). Tablo
+# satirlari Latin disi denetiminden muaf: Ingilizce hucre Cince anahtar tasiyabilir.
+_LATIN_DISI = re.compile(r"[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af\uf900-\ufaff]+")
+_KOD = re.compile(r"§\s?\d+(?:\.\d+)*|\b(?:[A-ZÇĞİÖŞÜ]{1,4}\d+\.\d+)(?:[–-][A-ZÇĞİÖŞÜ]{0,4}\d+\.\d+)?\b|Yankı\s+#\d+")
+
+
+def sizinti(metin: str) -> list:
+    """Latin disi yazi (tablo disinda) ve § / harita kodu: UYARI."""
+    out = []
+    for i, satir in enumerate(metin.splitlines(), 1):
+        if not satir.lstrip().startswith("|"):
+            for m in _LATIN_DISI.finditer(satir):
+                out.append(Bulgu("UYARI", "metin", f"satır {i}",
+                                 f"Latin dışı yazı '{m.group()}': şablon yalnız Latin harfiyle yazılır "
+                                 f"(Çince anahtar Ch_N_zh.tsv'ye)"))
+        for m in _KOD.finditer(satir):
+            out.append(Bulgu("UYARI", "metin", f"satır {i}",
+                             f"'{m.group()}': kurala adıyla atıf yapılır; § numarası ve harita kodu "
+                             f"çevirmene bir şey söylemez"))
+    return out
 
 
 def rapor_md(ad: str, bulgular: list, satirlar: list, kay: Kaynaklar, ayrinti: bool) -> str:

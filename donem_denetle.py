@@ -53,9 +53,29 @@ HARF = "A-Za-zÇĞİÖŞÜçğıöşüÂÎÛâîûÊê"
 KISA_EK = r"(?:[aeıioöuüâîû][%s]*|[ysnldtmc][aeıioöuüâîû][%s]*)?" % (HARF, HARF)
 
 
+_YAML_ONBELLEK: dict = {}
+
+
+def yaml_oku(yol: Path):
+    """
+    Kural dosyasini ayristirir; dosya degismedikce (mtime+boyut) ayni nesneyi
+    verir. Bolum basina 2-4 kez ayni 19 KB'lik YAML yeniden ayristiriliyordu
+    (bolum donguleri: main, ses_ayari). Donen nesneyi HICBIR cagiran degistirmez
+    (kurallar() kopya listeler kurar; yogunluk ve ses_ayari.gotik_say yalniz
+    .get ile okur); degistirecek biri cikarsa kendi kopyasini almali.
+    """
+    yol = Path(yol)
+    st = yol.stat()  # dosya yoksa read_text'le ayni FileNotFoundError
+    damga = (st.st_mtime_ns, st.st_size)
+    eski = _YAML_ONBELLEK.get(str(yol))
+    if eski is None or eski[0] != damga:
+        eski = _YAML_ONBELLEK[str(yol)] = (damga, lotm.yaml_yukle(yol.read_text(encoding="utf-8")))
+    return eski[1]
+
+
 def kurallar(yol: Path = KURALLAR) -> dict:
     import yaml
-    d = (yaml.safe_load(yol.read_text(encoding="utf-8")) or {}).get("donem_uyumu") or {}
+    d = (yaml_oku(yol) or {}).get("donem_uyumu") or {}
     liste = lambda v: v.split() if isinstance(v, str) else list(v or [])  # noqa: E731
     return {"alinti": liste(d.get("alinti")), "agiz": liste(d.get("agiz")),
             "istisna": liste(d.get("istisna")), "ozdes": dict(d.get("ozdes") or {}),
@@ -152,7 +172,7 @@ def yogunluk(metin: str) -> dict:
     try:
         import yaml
         import sozluk_lint as L
-        kur = yaml.safe_load(KURALLAR.read_text(encoding="utf-8")) or {}
+        kur = yaml_oku(KURALLAR) or {}
         rapor = type("R", (), {"olcumler": {}, "ekle": lambda *a, **k: None})()
         L.denetle_register(rapor, {"b": metin}, kur)
         ayr = rapor.olcumler.get("register_ayrinti", {}).get("b", {})

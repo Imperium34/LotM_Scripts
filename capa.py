@@ -300,7 +300,9 @@ def sozluk_yukle(yol: str = CAPA_DOSYASI) -> dict:
             f"uyarı: {yol} yok, yalnızca rakam çapaları kullanılacak", file=sys.stderr
         )
         return {}
-    return yaml.safe_load(p.read_text(encoding="utf-8")) or {}
+    # C yukleyici (libyaml), yoksa saf Python; capa lotm'a bagimli degil.
+    yukleyici = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+    return yaml.load(p.read_text(encoding="utf-8"), Loader=yukleyici) or {}
 
 
 def capa_oner(bolumler: dict, en_az: int = 5, esik: float = 0.9) -> list:

@@ -214,6 +214,7 @@ def yedek_klasoru(etiket: str, zaman: float | None = None) -> Path:
     da Reports/'a degil. LOTM_YEDEK kok klasoru degistirir (testler icin).
     Kok cagri aninda okunur ki test ortami sonradan ayarlayabilsin."""
     import time
+
     t = time.localtime(zaman)
     kok = Path(os.environ.get("LOTM_YEDEK") or KOK / "yedek")
     return kok / time.strftime("%Y-%m-%d", t) / f"{etiket}-{time.strftime('%H%M%S', t)}"
@@ -231,7 +232,9 @@ def bolum_listesi(alan) -> list:
             continue
         m = re.fullmatch(r"(\d+)(?:-(\d+))?", parca)
         if not m or int(m.group(2) or m.group(1)) < int(m.group(1)):
-            raise ValueError(f"bolum araligi okunamadi: {parca!r} (ornek: 61, 61-64, 61,63,70-72)")
+            raise ValueError(
+                f"bolum araligi okunamadi: {parca!r} (ornek: 61, 61-64, 61,63,70-72)"
+            )
         nolar += range(int(m.group(1)), int(m.group(2) or m.group(1)) + 1)
     if not nolar:
         raise ValueError("bolum araligi bos (ornek: 61, 61-64, 61,63,70-72)")
@@ -268,7 +271,7 @@ CILTLER = [
     (2, "Suretsiz", 214, 482),
     (3, "Gezgin", 483, 732),
     (4, "Ölmez", 733, 946),
-    (5, "Ahmer_Hünkar", 947, 1150),
+    (5, "Ahmer_Hünkâr", 947, 1150),
     (6, "Işıkperest", 1151, 1266),
     (7, "Asılmış_Adam", 1267, 1353),
     (8, "Soytarı", 1354, 1394),
@@ -284,6 +287,22 @@ SON_BOLUM = 1409  # Ingilizce metnin sonu (yan hikayeler dahil)
 # Her kaynagin kendi beklentisi var; tek bir global sabit ucune de uymuyor.
 # TR yayimlanmakta oldugu icin hicbir sona ulasmasi beklenmez.
 BEKLENEN = {"ZH": ANA_HIKAYE_SONU, "EN": SON_BOLUM, "TR": None}
+
+# KABUL EDILMIS (BILINEN) EKSIK NUMARALAR. Kaynak verideki kalici bir
+# tutarsizlik her calistirmada "SORUN VAR" basarsa kontrol surekli kirmizi
+# kalir ve YENI, gercek bir numaralandirma sorunu da ayni gorunur -- yani
+# kontrol kor olur. Bu tablo bilinen durumu acikca kabul eder: listedeki
+# numara sorun sayilmaz, nedeniyle birlikte "bilinen eksik" diye basilir;
+# listede olmayan her eksik eskisi gibi sorundur.
+# Giris YALNIZCA nedeni dogrulandiktan sonra eklenir: once
+# `python3 lotm.py iz <no> <kaynak>` ile ham metinde izi surun, nedeni
+# oradaki kanita gore yazin (tahminle degil).
+# Giris silmek icin: numara kaynakta artik bulunuyorsa kontrol "eskimis
+# giris" uyarisi basar; satiri buradan silin. Kaynak duzelince kendiliginden
+# uyarir, o yuzden tabloyu kendiniz temizlemek zorunda kalmazsiniz.
+# (Su an bos: EN 1401 basliginin basindaki bosluk kaynaktan silindi, 1401
+# artik kendi bolumu; eski giris kaldirildi.)
+BILINEN_EKSIK = {}
 
 
 # =====================================================================
@@ -860,8 +879,28 @@ _SAYI_ONCESI = (
 OLCU_EKI = r"l[iıuü][kğ]"
 
 
+# Terim kelimeleri arasi: aradaki tek bir "bir" kabul edilir (bkz. _govde_parcalari)
+_KELIME_ARASI = r"\s+(?:bir\s+)?"
+
+
 def _govde(terim: str, olcu: bool = False) -> str:
+    parcalar, _ = _govde_parcalari(terim, olcu)
+    if olcu and parcalar:
+        parcalar[-1] += OLCU_EKI + EK
+    return _KELIME_ARASI.join(parcalar)
+
+
+def _govde_parcalari(terim: str, olcu: bool = False):
+    """
+    (kelime desenleri listesi, duz_son). desen_kur ortak kuyruklari bir kez
+    yazabilsin diye govde parca parca verilir (bkz. desen_kur).
+
+    duz_son: son kelimenin deseni tam olarak `g + EK` ise o g, yoksa (tamlama,
+    fiil, dusmus, turetme dali var ya da olcu=True) None. olcu=True'da son
+    parca -lIk eki ve EK'siz GOVDEdir; cagiran OLCU_EKI + EK'yi ekler.
+    """
     parcalar = []
+    duz_son = None
     kelimeler = terim.split()
     son = len(kelimeler) - 1
     for i, kelime in enumerate(kelimeler):
@@ -880,8 +919,9 @@ def _govde(terim: str, olcu: bool = False) -> str:
             continue
         if olcu:
             # yalnizca -lIk'li bicim; cagiran (desen_kur) sayi sartini koyar
-            parcalar.append(g + OLCU_EKI + EK)
+            parcalar.append(g)
             continue
+        g_duz = g
         g += EK
         # Yalnizca cok kelimeli terimlerde: tek kelimede sondaki -i cogu
         # zaman kokun kendisidir (idadi, Kabine degil ama benzerleri).
@@ -903,30 +943,18 @@ def _govde(terim: str, olcu: bool = False) -> str:
         turev = _turetme_deseni(kelime)
         if turev:
             g = f"(?:{g}|{turev})"
+        if g == g_duz + EK:
+            duz_son = g_duz
         parcalar.append(g)
     # Sifat ile ad arasina belirsizlik tanimligi girer: "grimsi beyaz bir
     # sis", "habis bir ruh", "yarım boy bir silindir şapka". Eskiden bunlar
     # eslesmeyen sayiliyordu; terim kelimeleri arasinda tek bir "bir" kabul
-    # edilir.
-    return r"\s+(?:bir\s+)?".join(parcalar)
+    # edilir (_KELIME_ARASI).
+    return parcalar, duz_son
 
 
-@functools.lru_cache(maxsize=None)
-def desen_kur(terim: str, harf_duyarli: bool = True):
-    """
-    Turkce bir terim icin cekim eklerine dayanikli desen (bkz. EK, _govde).
-
-    Harf duyarliligi VARSAYILAN olarak aciktir ve oyle kalmalidir: Mertebe
-    adlari ozel isimdir, cakismalari kucuk harflidir (Yol/yolu, Haz/hazine,
-    Maraz/marazi, San/sansli).
-
-    HARF DUYARSIZ DALDA re.IGNORECASE KULLANILMAZ (bkz. turkce.py, 3.
-    tuzak): ı ile i ayni sinifa duser ve "Ayin" deseni "ayının"i bulur.
-    Bunun yerine terimin kucuk ve bas harfi buyuk bicimleri ACIKCA uretilip
-    alternatif olarak baglanir.
-
-    Sonuc onbellege alinir: ayni terim her bolum icin yeniden derlenmez.
-    """
+def _bicimler(terim: str, harf_duyarli: bool):
+    """(harf bicimleri, baslik bicimi ya da None) -- bkz. desen_kur."""
     bicimler = (
         [terim]
         if harf_duyarli
@@ -947,33 +975,290 @@ def desen_kur(terim: str, harf_duyarli: bool = True):
             )
         )
     )
-    secenekler = [_govde(b) for b in bicimler]
-
     # HER KELIMESI BUYUK bicim (duyarsiz dalda). Cumle basi bicimi yukarida
     # zaten var; ortak isim bir de daha uzun bir ozel adin icinde gecer:
     # "Arama Çubuğu Kehaneti'ne başvurdu" (arama çubuğu). YALNIZ arkasindan
     # buyuk harfli bir sozcuk geliyorsa: tek basina "Dolunay Yağı" bir imla
     # kaymasidir ve eslesmeyen kalmali. Duyarli dala dokunulmaz; cagiranlar
     # (yayim_denetle, hazirla) orada kucuk harfli bicimi bilerek sorar.
+    baslik = None
     if not harf_duyarli and " " in terim:
-        baslik = " ".join(tr_buyut(k) for k in tr_kucult(terim).split())
-        if baslik not in bicimler:
-            secenekler.append(_govde(baslik) + rf"(?=\s+[{_BUYUK_HARF}])")
+        b = " ".join(tr_buyut(k) for k in tr_kucult(terim).split())
+        if b not in bicimler:
+            baslik = b
+    return bicimler, baslik
+
+
+def _kalip_kur(terim: str, harf_duyarli: bool) -> str:
+    """desen_kur'un regex dizesi (derlemeden)."""
+    bicimler, baslik = _bicimler(terim, harf_duyarli)
+
+    # Ana dal. Bicimler yalnizca harf boyunca ayrisir; ayni konumda ikisi
+    # birden eslesemez (en az bir sabit harf farkli). Bu yuzden ortak kuyruk
+    # bir kez yazilip basliklar (?:a|b) ile toplanir: sira degismeden
+    # ayni durumlar denenir ama desen ~EK sayisi kadar kucuk derlenir.
+    # Eskiden her bicim EK'yi ayri tasiyordu (EK tek basina ~1.2 ms derlenir).
+    #   tek kelime, duz deseni (g+EK):  (?:g1|g2)EK
+    #   cok kelime:                     (?:ilk1|ilk2) ayrac ortak_kuyruk
+    # Boyle olmayan (fiil, tamlama, dusmus, turetme dalli) bicim oldugu gibi
+    # kalir; kuyrugu kendisi oldugu icin hic birlesmez.
+    gruplar: dict = {}
+    for b in bicimler:
+        parcalar, duz_son = _govde_parcalari(b)
+        if len(parcalar) > 1:
+            bas = parcalar[0]
+            kuyruk = _KELIME_ARASI + _KELIME_ARASI.join(parcalar[1:])
+        elif parcalar and duz_son is not None:
+            bas, kuyruk = duz_son, EK
+        else:
+            bas, kuyruk = "", "".join(parcalar)
+        gruplar.setdefault(kuyruk, {})[bas] = None
+    secenekler = [
+        ("(?:" + "|".join(basl) + ")" if len(basl) > 1 else next(iter(basl))) + kuyruk
+        for kuyruk, basl in gruplar.items()
+    ]
+
+    if baslik is not None:
+        secenekler.append(_govde(baslik) + rf"(?=\s+[{_BUYUK_HARF}])")
 
     # Olcu bicimi (bkz. OLCU_EKI): sayi on-kosulu bir kez yazilir, uc harf
     # bicimi onun arkasinda alternatif olur. Eskiden her bicim kendi
-    # ~60 lookbehind'ini tasiyordu.
+    # ~60 lookbehind'ini tasiyordu. Her bicimin sonu ayni OLCU_EKI + EK
+    # oldugu icin o da bir kez yazilir: (?:P1|P2)OLCU_EKI+EK.
     #
     # Basta bir ILERI BAKIS var: lookbehind'lar ancak terimin kendisi o
     # konumda basliyorsa denenir. Yoksa alternatif bir lookbehind'la
     # basladigi icin motor metindeki HER konumda ~54 lookbehind calistirir
     # ve harf onekiyle ileri atlayamaz. yayim_denetle'nin 2 dakikasinin
     # cogu buydu; ileri bakisla ayni eslesmeler ~9 kat hizli.
-    olcu = "(?:" + "|".join(_govde(b, olcu=True) for b in bicimler) + ")"
-    secenekler.append(f"(?={olcu})" + _SAYI_ONCESI + olcu)
+    #
+    # Ileri bakis artik olcu'nun tamami degil, ucuz bir gerekli kosul:
+    # her bicimin ilk kelimesinin degismez oneki (son harf yumusayabilir,
+    # o yuzden atilir). Tam olcu'yu iki kez derlemek desenin yarisiydi.
+    # Onek bos kalirsa (tek harfli ilk kelime) eski tam ileri bakis kalir.
+    govdeler = [_KELIME_ARASI.join(_govde_parcalari(b, olcu=True)[0]) for b in bicimler]
+    kuyruk = OLCU_EKI + EK if terim.split() else ""
+    olcu = "(?:" + "|".join(govdeler) + ")" + kuyruk
+    oneks = [re.escape(b.split()[0][:-1]) for b in bicimler if b.split()]
+    if oneks and all(oneks):
+        ileri = "(?:" + "|".join(dict.fromkeys(oneks)) + ")"
+    else:
+        ileri = olcu
+    secenekler.append(f"(?={ileri})" + _SAYI_ONCESI + olcu)
 
-    kalip = r"(?<![^\W_])(?:" + "|".join(secenekler) + r")"
-    return re.compile(kalip)
+    return r"(?<![^\W_])(?:" + "|".join(secenekler) + r")"
+
+
+# ON SUZGEC. Denetleyiciler binlerce (desen, metin) cifti tarar ve ciftlerin
+# cogunda terimin govdesi metinde hic gecmez; ama desenin derlenmesi 4-26 ms
+# tutar. desen_kur bu yuzden derlenmemis bir vekil dondurur: metinde terimin
+# degismez harf dizileri (ipucu) yoksa eslesme IMKANSIZDIR ve derlemeden bos
+# sonuc doner. Gerekli kosul olmak zorunda: yanlis eksik sessiz bir kacirmadir.
+# LOTM_ONELEME=0 suzgeci kapatir (supheli bir kacirmayi ayiklamak icin).
+@functools.lru_cache(maxsize=256)
+def _katla(metin: str) -> str:
+    # Harf harfine katlama: tr_kucult kullanilmaz (I + U+0307 kurali harf
+    # harfine degil). Ayni metin her duyarsiz desen icin yeniden katlanmasin
+    # diye onbellekte; str hash'ini kendi tasidigi icin sorgu ucuz.
+    return metin.replace("İ", "i").replace("I", "ı").lower()
+
+
+def _ipucu_sozcuk(kelime: str, son: bool, cok_kelimeli: bool) -> str:
+    """
+    Kelimeden desende KESINLIKLE gecen en kisa on ek. Hepsi kelimenin
+    onekidir; bu yuzden en kisasi hepsinin gerekli kosuludur.
+      her kelime      kelime[:-1]   (son harf yumusayabilir)
+      son, fiil       kok[:-1]      (_fiil_deseni govde[:-1] + sinif yazar)
+      son, DUSEN      kelime[:-2]   (_dusmus_desen: unlu dusmus)
+      son, tamlama    kelime[:-2]   (_tamlama_koku: -sI / -I atilmis kok)
+    """
+    n = kelime[:-1]
+    if son:
+        kok = fiil_govdesi(kelime)
+        if kok is not None and len(kok) - 1 < len(n):
+            n = kok[:-1]
+        if tr_kucult(kelime) in DUSEN and len(kelime) - 2 < len(n):
+            n = kelime[:-2]
+        if (
+            cok_kelimeli
+            and _tamlama_koku(kelime) is not None
+            and len(kelime) - 2 < len(n)
+        ):
+            n = kelime[:-2]
+    return n
+
+
+def _ipuclari(terim: str, harf_duyarli: bool) -> tuple:
+    """
+    Metinde bulunmasi ZORUNLU harf dizileri (bos tuple: suzgec yok).
+    Duyarsiz dalda katlanmis hali verilir (bkz. _katla).
+    """
+    bicimler, baslik = _bicimler(terim, harf_duyarli)
+    if baslik is not None:
+        bicimler = bicimler + [baslik]
+    kelime_sayisi = len(terim.split())
+    if not kelime_sayisi:
+        return ()
+    tum = []  # bicim basina kelime basina ipucu
+    for b in bicimler:
+        kl = b.split()
+        if len(kl) != kelime_sayisi:
+            return ()
+        tum.append(
+            [
+                _ipucu_sozcuk(k, i == kelime_sayisi - 1, kelime_sayisi > 1)
+                for i, k in enumerate(kl)
+            ]
+        )
+    if not harf_duyarli:
+        # Baglama bagli ya da cok karakterli kucultme (Yunanca sigma, ß ...)
+        # harf harfine katlamayla tutmaz: bu terimlerde suzgec yok.
+        for satir in tum:
+            for lit in satir:
+                for c in lit:
+                    if c == "Σ" or (c != "İ" and len(c.lower()) != 1):
+                        return ()
+        tum = [[_katla(lit) for lit in satir] for satir in tum]
+    sonuc = []
+    for sutun in zip(*tum):
+        # Bicimler ayni kelimenin harf bicimleri; katlaninca ayni onek
+        # olmali. Biri digerinin oneki degilse (beklenmedik) suzgec yok. En
+        # kisasi hepsinin gerekli kosuludur (fiil/tamlama dalinin varligi
+        # buyuk harfli bicimde farkli cikabilir: m[ae]k$ buyuk harfe bakmaz).
+        en_kisa = min(sutun, key=len)
+        if not all(x.startswith(en_kisa) for x in sutun):
+            return ()
+        if len(en_kisa) >= 2:
+            sonuc.append(en_kisa)
+    return tuple(dict.fromkeys(sonuc))
+
+
+class _Desen:
+    """
+    Derlenmemis desen vekili: re.Pattern'in aranma yuzeyini tasir, desen
+    ilk gercek ihtiyacta derlenir. search/finditer/findall/match/fullmatch/
+    sub/subn/split once on suzgece bakar; metin eslesemezse derlemeden,
+    re.Pattern'in eslesmeme sonucunu aynen dondurur. Digerleri (flags,
+    groups, groupindex, scanner...) derlenmis desene gecer.
+    """
+
+    __slots__ = ("terim", "harf_duyarli", "ipucu", "_kalip", "_derli")
+
+    def __init__(self, terim: str, harf_duyarli: bool, ipucu: tuple):
+        self.terim = terim
+        self.harf_duyarli = harf_duyarli
+        self.ipucu = ipucu
+        self._kalip = None
+        self._derli = None
+
+    @property
+    def pattern(self) -> str:
+        # Derlemeden: toplu_denetle desenleri buyuk bir desene yapistirir.
+        if self._kalip is None:
+            self._kalip = _kalip_kur(self.terim, self.harf_duyarli)
+        return self._kalip
+
+    def _re(self):
+        if self._derli is None:
+            self._derli = re.compile(self.pattern)
+        return self._derli
+
+    def derlendi_mi(self) -> bool:
+        return self._derli is not None
+
+    def olabilir_mi(self, metin) -> bool:
+        """False: bu metinde eslesme imkansiz (derleme gerekmez)."""
+        if not self.ipucu or os.environ.get("LOTM_ONELEME") == "0":
+            return True
+        if not isinstance(metin, str):
+            return True  # bytes vb.: re.Pattern kendi hatasini versin
+        if not self.harf_duyarli:
+            metin = _katla(metin)
+        return all(i in metin for i in self.ipucu)
+
+    def search(self, string, pos=0, endpos=sys.maxsize):
+        if not self.olabilir_mi(string):
+            return None
+        return self._re().search(string, pos, endpos)
+
+    def match(self, string, pos=0, endpos=sys.maxsize):
+        if not self.olabilir_mi(string):
+            return None
+        return self._re().match(string, pos, endpos)
+
+    def fullmatch(self, string, pos=0, endpos=sys.maxsize):
+        if not self.olabilir_mi(string):
+            return None
+        return self._re().fullmatch(string, pos, endpos)
+
+    def finditer(self, string, pos=0, endpos=sys.maxsize):
+        if not self.olabilir_mi(string):
+            return iter(())
+        return self._re().finditer(string, pos, endpos)
+
+    def findall(self, string, pos=0, endpos=sys.maxsize):
+        if not self.olabilir_mi(string):
+            return []
+        return self._re().findall(string, pos, endpos)
+
+    def sub(self, repl, string, count=0):
+        if not self.olabilir_mi(string):
+            return string
+        return self._re().sub(repl, string, count)
+
+    def subn(self, repl, string, count=0):
+        if not self.olabilir_mi(string):
+            return (string, 0)
+        return self._re().subn(repl, string, count)
+
+    def split(self, string, maxsplit=0):
+        if not self.olabilir_mi(string):
+            return [string]
+        return self._re().split(string, maxsplit)
+
+    def __getattr__(self, ad):
+        # Yalniz bulunamayan adlar gelir (slot'lar __init__'te dolu). Ozel
+        # adlar (__deepcopy__ ...) derlemeyi tetiklememeli.
+        if ad.startswith("__"):
+            raise AttributeError(ad)
+        return getattr(self._re(), ad)
+
+    def __copy__(self):
+        return self
+
+    def __deepcopy__(self, memo):
+        return self  # re.Pattern de kendini dondurur
+
+    def __repr__(self):
+        return f"<lotm._Desen {self.terim!r} harf_duyarli={self.harf_duyarli}>"
+
+
+@functools.lru_cache(maxsize=None)
+def desen_kur(terim: str, harf_duyarli: bool = True):
+    """
+    Turkce bir terim icin cekim eklerine dayanikli desen (bkz. EK, _govde).
+
+    Harf duyarliligi VARSAYILAN olarak aciktir ve oyle kalmalidir: Mertebe
+    adlari ozel isimdir, cakismalari kucuk harflidir (Yol/yolu, Haz/hazine,
+    Maraz/marazi, San/sansli).
+
+    HARF DUYARSIZ DALDA re.IGNORECASE KULLANILMAZ (bkz. turkce.py, 3.
+    tuzak): ı ile i ayni sinifa duser ve "Ayin" deseni "ayının"i bulur.
+    Bunun yerine terimin kucuk ve bas harfi buyuk bicimleri ACIKCA uretilip
+    alternatif olarak baglanir.
+
+    Sonuc onbellege alinir: ayni terim her bolum icin yeniden derlenmez.
+
+    DONEN NESNE re.Pattern DEGIL, onun yuzeyini tasiyan tembel bir vekildir
+    (_Desen): desen ilk aramada derlenir ve metinde terimin govdesi hic
+    yoksa hic derlenmez. search/finditer/findall/match/fullmatch/sub/subn/
+    split ayni sonucu verir; .pattern dize olarak hazirdir; digerleri
+    derlenmis desene gecer. re.search(desen, ...) gibi MODUL islevlerine
+    vekil verilemez, onun yerine desen.search(...) ya da re.compile(
+    desen.pattern) kullanilir. LOTM_ONELEME=0 ortam degiskeni on suzgeci
+    kapatir (vekil hep derler); supheli bir kacirmayi ayiklarken kullanin.
+    """
+    return _Desen(terim, harf_duyarli, _ipuclari(terim, harf_duyarli))
 
 
 # =====================================================================
@@ -1421,7 +1706,9 @@ def denetim_etiketi(kalan: str) -> tuple:
             elif ad in ("hariç", "haric"):
                 haric += _parcala_zh(deger)
             elif ad:
-                raise ValueError(f"words.md: bilinmeyen tarama etiketi {{{parca.strip()}}}")
+                raise ValueError(
+                    f"words.md: bilinmeyen tarama etiketi {{{parca.strip()}}}"
+                )
     return _DENETIM_ETIKETI.sub("", kalan).strip(), genis, haric
 
 
@@ -1577,7 +1864,7 @@ def sozluk_yukle(yol=None, bicim_koru=False, kelimeler=False) -> Sozluk:
             veri = y.load(f) or []
     else:
         with open(yol, "r", encoding="utf-8") as f:
-            veri = yaml.safe_load(f) or []
+            veri = yaml_yukle(f) or []
 
     # Kok ogenin liste oldugu her yerde varsayiliyor ama hicbir yerde
     # dogrulanmiyordu. Sozluk yanlislikla ust duzey bir esleme icine
@@ -1989,13 +2276,27 @@ def numaralari_dogrula(cikti=sys.stdout) -> bool:
             return set()
         kume = set(nolar)
         tekrar = len(nolar) - len(kume)
-        eksik = [n for n in range(1, max(nolar) + 1) if n not in kume]
+        bilinen = BILINEN_EKSIK.get(ad, {})
+        tum_eksik = [n for n in range(1, max(nolar) + 1) if n not in kume]
+        eksik = [n for n in tum_eksik if n not in bilinen]
         print(f"  {ad}: {len(kume)} bolum, {min(nolar)}-{max(nolar)}", file=cikti)
         if adsiz:
             print(f"      {adsiz} parca numarasiz", file=cikti)
         if tekrar:
             print(f"      {tekrar} TEKRAR EDEN numara", file=cikti)
             sorun = True
+        for n in tum_eksik:
+            if n in bilinen:
+                print(f"      bilinen eksik: {n} ({bilinen[n]})", file=cikti)
+        # Eskimis giris sessizce kalmasin: sorun degil ama her calistirmada
+        # gorunur, yoksa tablo zamanla yanlis kabullerle dolar.
+        for n in sorted(bilinen):
+            if n in kume:
+                print(
+                    f"      ESKIMIS GIRIS: {n} artik {ad}'de var; "
+                    f"lotm.BILINEN_EKSIK'ten silin",
+                    file=cikti,
+                )
         if eksik:
             gosterim = eksik[:10]
             devam = " ..." if len(eksik) > 10 else ""

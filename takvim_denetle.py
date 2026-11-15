@@ -180,7 +180,8 @@ def takvim_oku(yol) -> Takvim:
     sessizce degistirebildigini gosterdi.
     """
     try:
-        ham = yaml.safe_load(Path(yol).read_text(encoding="utf-8")) or {}
+        # C yukleyici (libyaml): saf Python yukleyiciden ~10x hizli; ayni nesneleri uretir.
+        ham = lotm.yaml_yukle(Path(yol).read_text(encoding="utf-8")) or {}
     except FileNotFoundError:
         raise TakvimHatasi(f"takvim dosyasi yok: {yol}") from None
     except yaml.YAMLError as e:

@@ -292,7 +292,7 @@ def gotik_say(metin: str) -> list:
     try:
         import yaml
         import sozluk_lint as L
-        kur = (yaml.safe_load(D.KURALLAR.read_text(encoding="utf-8")) or {}).get("register") or {}
+        kur = (D.yaml_oku(D.KURALLAR) or {}).get("register") or {}
         desen = L.register_deseni(kur.get("gotik", "").split(), kur.get("istisna", "").split())
         return desen.findall(L.diyakritiksiz(L.tr_kucult(metin)))
     except Exception:

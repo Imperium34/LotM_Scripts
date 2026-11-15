@@ -2,6 +2,7 @@
 """sonra.py -- SADAKAT? ayristirma, okuma ¶ -> hizalama ¶ eslemesi, partiler, durum."""
 
 import os
+import re
 import sys
 import time
 from pathlib import Path
@@ -159,6 +160,33 @@ def test_kararlar_uygulanir_ve_deftere_yazilir(tmp_path, monkeypatch):
     assert "- ret · okuma 1.6 tekrar" in defter and "1.1" not in defter
     assert "<onceki_kararlar>" in S.kararlar_blogu()
     assert (tmp_path / "ist.tsv").read_text(encoding="utf-8").count("\n") == 3
+
+
+
+def test_donem_reddi_hep_olmadan_deftere_ve_cift_satir_yok(tmp_path, monkeypatch):
+    bolumler = tmp_path / "_chapters"
+    bolumler.mkdir()
+    (bolumler / "0060.md").write_text(BOLUM, encoding="utf-8")
+    monkeypatch.setattr(S, "BOLUMLER", bolumler)
+    monkeypatch.setattr(S, "RAPOR", tmp_path / "sonra")
+    monkeypatch.setattr(S, "KARARLAR", tmp_path / "kararlar.md")
+    monkeypatch.setattr(S, "ISTATISTIK", tmp_path / "ist.tsv")
+    monkeypatch.setattr(S, "OTOMATIK", set())
+    b = S.Bolum(60, 6000)
+    b.klasor.mkdir(parents=True)
+    karar = [{"p": 2, "sinif": "KARAR", "kural": "dönem D.1 konuşmak", "eski": "Veli konuştu.",
+              "yeni": "Veli tekellüm etti.", "neden": "", "kaynak": ["donem"]},
+             {"p": 1, "sinif": "KARAR", "kural": "okuma 1.1 noktalı virgül", "eski": "geldi; kapıyı",
+              "yeni": "geldi. Kapıyı", "neden": "", "kaynak": ["okuma"]}]
+    metin = S.inceleme_yaz(60, [], karar, [], kuru=False)
+    metin = metin.replace("[ ] kabul   [ ] ret   [ ] hep", "[ ] kabul   [x] ret   [ ] hep", 2)
+    (b.klasor / "5_inceleme.md").write_text(metin, encoding="utf-8")
+    b.kararlari_isle(kuru=False)
+    b.kararlari_isle(kuru=False)  # ikinci kosu cift satir yazmaz
+    defter = (tmp_path / "kararlar.md").read_text(encoding="utf-8")
+    assert defter.count("- ret · dönem D.1 konuşmak") == 1
+    assert "okuma 1.1" not in defter  # hep'siz okuma reddi deftere gitmez
+    assert all(not x.get("toplu") for x in S.inceleme_oku(metin))  # elle verilen ret
 
 
 # ------------------------------------------------------------------ yeni terimler
@@ -434,6 +462,8 @@ def test_katmanlar_ve_toplu_ret():
     sec = {s["k"]: s for s in S.inceleme_oku(inc2)}
     dusuk = [s for s in sec.values() if s["kural"].startswith("sadakat B")]
     assert dusuk and all(s["ret"] for s in dusuk)
+    # Toplu ret isaretlenir: elle verilmemis ret deftere (donem reddi kurali) gitmez.
+    assert all(s.get("toplu") for s in dusuk)
     assert not any(s["ret"] for s in sec.values() if not s["kural"].startswith("sadakat B"))
 
 
@@ -502,3 +532,29 @@ def test_defter_ozeti_kisaltir():
     assert "sadakat A · 1 · tek tek" in oz and "«x»" not in oz
     assert "detaylı → teferruatlı" in oz
     assert "- elle yazılmış bir satır" in oz
+
+
+def test_ayni_degisiklik_tek_soru_ve_bos_izleyen_onderi_izler():
+    karar = [{"p": 21, "sinif": "KARAR", "kural": "sadakat C terim kayması", "kaynak": ["sadakat"],
+              "eski": "Elinde el yazması vardı.", "yeni": "Elinde günlük vardı.", "neden": "ZH 笔记"},
+             {"p": 23, "sinif": "KARAR", "kural": "sadakat C terim kayması", "kaynak": ["sadakat"],
+              "eski": "El yazmasını açtı.", "yeni": "Günlüğü açtı.", "neden": "ZH 笔记"},
+             {"p": 25, "sinif": "KARAR", "kural": "okuma 1.6 yakın tekrar", "kaynak": ["okuma"],
+              "eski": "Kapıyı yavaşça kapattı.", "yeni": "Kapıyı kapattı.", "neden": "tekrar"}]
+    md = S.inceleme_katmanla(S.inceleme_yaz(9, [], karar, [], kuru=False))
+    assert "Grup: K1 ile aynı değişiklik" in md and "Aynı değişiklik: K2" in md
+    assert md.count("Grup: ") == 1  # baska aile, baska degisiklik: gruplanmaz
+    import inceleme_sunucu as I
+    yeni = I.madde_yaz(md, 1, kabul=True, ret=False, hep=True, yeni=None)
+    sec = {s["k"]: s for s in S.inceleme_oku(yeni)}
+    assert sec[2]["kabul"] and not sec[2]["hep"] and not (sec[3]["kabul"] or sec[3]["ret"])
+    # Elle farkli isaretlenen izleyen kendi kararini korur.
+    yeni = I.madde_yaz(yeni, 2, kabul=False, ret=True, hep=False, yeni=None)
+    sec = {s["k"]: s for s in S.inceleme_oku(yeni)}
+    assert sec[1]["kabul"] and sec[2]["ret"]
+
+
+def test_degisim_imzasi():
+    assert S.degisim_imzasi("el yazması vardı", "günlük vardı") == S.degisim_imzasi("El yazmasını açtı", "Günlüğü açtı")
+    assert S.degisim_imzasi("aynı", "aynı") is None
+    assert S.degisim_imzasi("bu Yolun", "bu Yol'un") != S.degisim_imzasi("Ayin İlminin", "Ayin İlmi'nin")

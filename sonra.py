@@ -571,6 +571,44 @@ def otomatige_uygun(d: dict) -> bool:
     return bozuk_oneri(d.get("eski", ""), d.get("yeni", "")) is None
 
 
+def degisim_imzasi(eski: str, yeni: str):
+    """Sozcuk duzeyinde ne degisti: ((silinen, eklenen), ...). Ekler farkli olsa da
+    ayni degisiklik ayni imzayi alsin diye sozcukler ilk bes harfine (kok) iner;
+    yalniz ek/kesme degisiyorsa ham sozcukler kullanilir. Degisiklik yoksa None."""
+    import difflib
+
+    def parca(kok: bool):
+        temiz = lambda w: re.sub(r"[^\w]", "", w.lower())  # noqa: E731
+        a = [temiz(w)[:5] if kok else w.lower() for w in eski.split()]
+        b = [temiz(w)[:5] if kok else w.lower() for w in yeni.split()]
+        out = []
+        for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
+            if op != "equal":
+                out.append((" ".join(a[i1:i2]), " ".join(b[j1:j2])))
+        return tuple(x for x in out if x[0] != x[1])
+
+    imza = parca(True) or parca(False)
+    return imza or None
+
+
+def ayni_degisiklik(maddeler: list) -> dict:
+    """{izleyen sira: onder sira}. Ayni aileden, ayni sozcuk degisikligini oneren
+    KARAR maddeleri (ayni terim uc paragrafta) tek soru olsun: ilki onder."""
+    onder, out = {}, {}
+    for i, d in enumerate(maddeler):
+        if d.get("sinif", "KARAR") != "KARAR":
+            continue
+        imza = degisim_imzasi(d.get("eski", ""), d.get("yeni", ""))
+        if not imza:
+            continue
+        anahtar = (frozenset(aileler(d.get("kural", ""))), imza)
+        if anahtar in onder:
+            out[i] = onder[anahtar]
+        else:
+            onder[anahtar] = i
+    return out
+
+
 def inceleme_yaz(no: int, uygulanan: list, karar: list, bilgi: list, kuru: bool,
                  terimler: list | None = None) -> str:
     out = [f"# {no}. bölüm — inceleme", ""]
@@ -592,6 +630,10 @@ def inceleme_yaz(no: int, uygulanan: list, karar: list, bilgi: list, kuru: bool,
     # Numaralar iki bolumde de K1'den devam eder; --kararlar hepsini ayni okur.
     metin_k = [d for d in karar if d.get("sinif") != "SABLON"]
     sablon_k = [d for d in karar if d.get("sinif") == "SABLON"]
+    izleyen = ayni_degisiklik(metin_k + sablon_k)
+    izleyenler = {}
+    for i, o in izleyen.items():
+        izleyenler.setdefault(o, []).append(i)
     for i, d in enumerate(metin_k + sablon_k, 1):
         if i == len(metin_k) + 1:
             out += [f"## Şablon geri bildirimi ({len(sablon_k)})", "",
@@ -609,6 +651,11 @@ def inceleme_yaz(no: int, uygulanan: list, karar: list, bilgi: list, kuru: bool,
             out.append(f"Sadakat: {'ikisi' if len(sm) > 1 else sm[0]}")
         if bozuk:
             out.append(f"Dikkat: {bozuk}; ✓ satırını düzeltmeden kabul etmeyin.")
+        if i - 1 in izleyen:
+            out.append(f"Grup: K{izleyen[i - 1] + 1} ile aynı değişiklik; kutusu boş kalırsa onun kabul/ret kararını alır.")
+        elif i - 1 in izleyenler:
+            out.append("Aynı değişiklik: " + ", ".join(f"K{j + 1}" for j in izleyenler[i - 1])
+                       + " (kabul/ret kararınız, boş bıraktıklarınıza da geçer).")
         out += ["[ ] kabul   [ ] ret   [ ] hep", ""]
     out += terimler_yaz(terimler or [])
     if bilgi:
@@ -712,7 +759,7 @@ def sus_sozcukleri() -> list:
     if _SUS is None:
         try:
             import yaml
-            k = yaml.safe_load(LINT_KURALLARI.read_text(encoding="utf-8")) or {}
+            k = lotm.yaml_yukle(LINT_KURALLARI.read_text(encoding="utf-8")) or {}  # C yukleyici
         except Exception:  # kural dosyasi yoksa ozellik sessizce kapali
             k = {}
         es, reg = k.get("eklenmis_sus") or {}, k.get("register") or {}
@@ -894,13 +941,23 @@ def geri_yaz(metin: str, i: int, geri: bool) -> str:
 def inceleme_oku(metin: str) -> list:
     """Isaretlenmis kararlar: [{"k", "p", "kural", "eski", "yeni", "kabul", "ret", "hep"}].
     Toplu ret kutusu isaretli bolumde, kutusu bos maddeler ret sayilir."""
-    out = []
+    out, toplu_k = [], set()
     for bolum in re.split(r"\n(?=## )", metin):
         toplu = bool(re.search(r"\[[xX✓✔]\] Bu bölümdeki işaretsiz", bolum.split("\n### ", 1)[0]))
         for s in inceleme_oku_bolum(bolum):
-            if toplu and not (s["kabul"] or s["ret"]):
-                s["ret"] = True
+            if toplu:
+                toplu_k.add(s["k"])
             out.append(s)
+    # Grup izleyeni bos birakildiysa onderin kabul/ret'ini alir (hep almaz: deftere bir kez yazilsin).
+    # Toplu ret'ten once: onderi kabul edilen izleyen 4. katmanda kalsa da kabul edilir.
+    karar = {s["k"]: s for s in out}
+    for s in out:
+        o = karar.get(s.get("grup"))
+        if o and not (s["kabul"] or s["ret"]) and (o["kabul"] or o["ret"]):
+            s["kabul"], s["ret"] = o["kabul"], o["ret"]
+    for s in out:
+        if s["k"] in toplu_k and not (s["kabul"] or s["ret"]):
+            s["ret"] = s["toplu"] = True
     return out
 
 
@@ -919,7 +976,8 @@ def inceleme_oku_bolum(metin: str) -> list:
                     "on": bool(re.search(r"^Ön: ", blok, re.M)),
                     "smotor": (re.search(r"^Sadakat: (\S+)", blok, re.M) or [None, None])[1],
                     "eski": x.group(1).replace(" ⏎ ", "\n"), "yeni": v.group(1).replace(" ⏎ ", "\n"),
-                    "kabul": isaret[0], "ret": isaret[1], "hep": isaret[2]})
+                    "kabul": isaret[0], "ret": isaret[1], "hep": isaret[2],
+                    "grup": int(g.group(1)) if (g := re.search(r"^Grup: K(\d+)", blok, re.M)) else None})
     return out
 
 
@@ -1331,7 +1389,7 @@ class Bolum:
                 "Dönem uyumu geçişi (çağdaş sözcükler). Bulguları okuma üslup bulguları gibidir: "
                 "deftere açıkça uymadıkça KARAR, `kaynak` [\"donem\"], `kural` "
                 "`dönem D.N <sözcük>` (örnek: `dönem D.1 detay`, `dönem D.2 falan`; ek yok, "
-                "sözcüğün yalın hâli). Aynı cümleye okuma da dokunuyorsa tek maddede birleşir. "
+                "sözcüğün yalın hâli). Aynı cümleye başka bir geçiş de dokunuyorsa ALANLAR'daki gibi ayrı madde yazılır. "
                 "ŞÜPHELİ, DÖNEM? ve (3) Bırakılan adaylar satırları `bilgi`'ye tek satır.\n\n"
                 f"{oku('1b_donem_cikti.md')}\n</donem>\n")
         girdi = k / "5_birlestir_girdi.md"
@@ -1455,7 +1513,11 @@ class Bolum:
                     uygulanan.append(s["k"])
                 else:
                     bulunamayan.append(s["k"])
-            if s["hep"] and (s["kabul"] or s["ret"]):
+            # Elle verilen donem reddi 'hep' olmadan da deftere gider (12 Kas; toplu ret gitmez): donem kurali sozcuge
+            # ozgudur ("dönem D.1 içerik"), defter ozeti ret'i "ayni sozcuk degisikligini
+            # onerme" diye verir; yoksa her yeniden kosuda ayni karsilik yine sorulur.
+            donem_ret = s["ret"] and not s.get("toplu") and s["kural"].startswith("dönem ")
+            if (s["hep"] and (s["kabul"] or s["ret"])) or donem_ret:
                 hukum = "kabul" if s["kabul"] else "ret"
                 defter.append(f"- {hukum} · {s['kural']} — örnek: «{tek_satir(s['eski'])}» → "
                               f"«{tek_satir(s['yeni'])}» ({self.no}. bölüm ¶{s['p']})")
@@ -1470,6 +1532,14 @@ class Bolum:
                 kelimelere_ekle(KELIMELER, terimler, self.no)
             if uygulanan or geri_alinan:
                 self.dosya.write_text(metin, encoding="utf-8")
+            if defter:
+                # Ayni karar (hukum, eski, yeni) zaten defterdeyse yeniden yazilmaz:
+                # --kararlar'in ikinci kez kosulmasi defterde cift satir birakiyordu.
+                eski_defter = KARARLAR.read_text(encoding="utf-8") if KARARLAR.exists() else ""
+                var = {(m.group(1), m.group(3), m.group(4)) for m in
+                       map(DEFTER_SATIRI.match, eski_defter.splitlines()) if m}
+                defter = [d for d in defter if not ((m := DEFTER_SATIRI.match(d))
+                                                    and (m.group(1), m.group(3), m.group(4)) in var)]
             if defter:
                 bas = "" if KARARLAR.exists() else (
                     "# Karar defteri\n\nsonra.py'nin inceleme adımında 'hep' denen kararlar. "
@@ -1498,7 +1568,9 @@ class Bolum:
         metin = (
             f"{istem('triyaj')}\n\n---\n\n"
             f"Not: aşağıdaki çıktı tam zincir (hepsi) değil, `./calistir.sh bolum {self.no}` "
-            f"zinciridir. Üzerinde çalışılan bölüm {self.no}; henüz yayımlanmadı.\n\n"
+            f"zinciridir. Üzerinde çalışılan bölüm {self.no}; henüz yayımlanmadı. Haftalık "
+            f"girdiler (`<uygulanan_duzeltmeler>`, `<bilinen>`, `<tikler>`, testler) bu kipte "
+            f"verilmez: eksik oldukları raporlanmaz, Uygulananlar ve Tikler bölümleri atlanır.\n\n"
             f"<calistir_ciktisi>\n{zincir.rstrip()}\n</calistir_ciktisi>\n"
         )
         yaz_degisirse(girdi, metin)

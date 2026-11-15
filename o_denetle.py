@@ -50,7 +50,8 @@ def bulgular(no: int) -> list:
     out = []
     for p, g in gruplar(no, "tr").items():
         tr, zh = g.get("TR", ""), g.get("ZH", "")
-        if not tr or "那" in zh:
+        # ZH bos/bosluk ise (hizalama TR'yi eslemesiz birakmis) karsilastiracak Cince yok; bulgu degil gurultu
+        if not tr or not zh.strip() or "那" in zh:
             continue
         for m in RX.finditer(tr):
             if m.group(2) in SABIT:
