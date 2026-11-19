@@ -137,7 +137,7 @@ anakronizm:
     - kelime: "kilogram"
       kaynak: ["公斤", "千克"]
     - kelime: "internet"
-      kaynak: ["网络", "互联网", "网上", "梗"]
+      kaynak: ["网络", "互联网", "网上", "梗", "网文"]
     - kelime: "telefon"
       kaynak: ["电话", "手机"]
     - kelime: "sosyal medya"
@@ -248,7 +248,7 @@ donem_uyumu:
 # ---------------------------------------------------------------
 # Lint "ÖZEL AD ADAYLARI"nda listelenip ad OLMAYAN kelimeler (ya da kural
 # istemeyen adlar). Sözlükte Türkçe adı geçen kelimeler zaten elenir.
-ozel_ad_disi: ["Ece"]
+ozel_ad_disi: ["Ece", "Rabb"]
 # En az kaç geçişte aday sayılsın.
 ozel_ad_esik: 3
 
@@ -406,7 +406,8 @@ ozel_adlar:
     dogru_ekler: ["nın", "ya", "yı", "dan", "da"] # Lo-ret-ta
   Rochelle:
     dogru_ekler: ["in", "e", "i", "den", "de"] # Roç-el
-
+  Borgia:
+    dogru_ekler: ["nın", "ya", "yı", "dan", "da"]  # Bor-ciya
 
 # ---------------------------------------------------------------
 # 5c. EKLENMİŞ SÜS (sonra.py inceleme katmanı; lint bu anahtarı okumaz)

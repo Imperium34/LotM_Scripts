@@ -558,3 +558,41 @@ def test_degisim_imzasi():
     assert S.degisim_imzasi("el yazması vardı", "günlük vardı") == S.degisim_imzasi("El yazmasını açtı", "Günlüğü açtı")
     assert S.degisim_imzasi("aynı", "aynı") is None
     assert S.degisim_imzasi("bu Yolun", "bu Yol'un") != S.degisim_imzasi("Ayin İlminin", "Ayin İlmi'nin")
+
+
+def _sahte_agy(tmp_path, monkeypatch):
+    """stdin'i okuyup 'CEVAP:' + ilk satir basan sahte agy; argumanlari dosyaya yazar."""
+    betik = tmp_path / "agy"
+    # -p='... <dosya> ...': istemdeki yolu bulup dosyanin ilk satirini basar.
+    betik.write_text("#!/bin/sh\necho \"$@\" > \"$(dirname \"$0\")/args\"\n"
+                     "for a; do f=\"$a\"; done\n"
+                     "f=${f#-p=}; f=${f%% dosyasını*}\n"
+                     "printf 'CEVAP: '; head -n1 \"$f\"\n", encoding="utf-8")
+    betik.chmod(0o755)
+    monkeypatch.setenv("LOTM_AGY", f"{betik} --output-format text --disable-slash-commands --mode plan")
+    return tmp_path / "args"
+
+
+def test_antigravity_yurut_stdin_ve_motor_etiketi(tmp_path, monkeypatch):
+    args = _sahte_agy(tmp_path, monkeypatch)
+    girdi, cikti = tmp_path / "2_sadakat_girdi_01.md", tmp_path / "2_sadakat_cikti_01.md"
+    girdi.write_text("merhaba\n", encoding="utf-8")
+    assert S.yurut(girdi, cikti, None, 30, None, "antigravity")
+    assert cikti.read_text(encoding="utf-8").strip() == "CEVAP: merhaba"
+    assert (tmp_path / "2_sadakat_cikti_01.md.motor").read_text().strip() == "antigravity"
+    a = args.read_text()
+    assert "--mode plan" in a and "--effort" not in a and "-p=" in a
+    assert not (tmp_path / "2_sadakat_cikti_01.md.agy-girdi.md").exists()
+
+
+def test_antigravity_secim_ve_ikinci_motor(tmp_path, monkeypatch):
+    _sahte_agy(tmp_path, monkeypatch)
+    assert S.motor_sec("sadakat", {"sadakat": "antigravity"}) == "antigravity"
+    assert S.cikti_motoru(Path("2_sadakat_cikti_01.antigravity.md"), "codex") == "antigravity"
+    monkeypatch.delenv("LOTM_MOTOR_SADAKAT2", raising=False)
+    assert S.ikinci_motor("antigravity") == "claude"
+    assert S.ikinci_motor("claude") == "codex"
+    monkeypatch.setenv("LOTM_MOTOR_SADAKAT2", "antigravity")
+    assert S.ikinci_motor("codex") == "antigravity"
+    monkeypatch.setenv("LOTM_AGY", str(tmp_path / "yok-boyle-komut"))
+    assert S.motor_sec("sadakat", {"sadakat": "antigravity"}) == "claude"

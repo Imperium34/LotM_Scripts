@@ -77,7 +77,6 @@ from __future__ import annotations
 import argparse
 import os
 import re
-import shlex
 import shutil
 import subprocess
 import sys
@@ -220,12 +219,7 @@ def paralel_sayisi(deger, bolum_sayisi: int) -> tuple:
 #              sifirlaninca ayni komut kalanlari tamamlar.
 #   HIZ_SINIRI gecici hiz siniri / asiri yuk. Otomatik paralel kipte ayni anda
 #              kosan bolum sayisi bir dusurulur, bolum bir kez yeniden denenir.
-KOTA = re.compile(r"session limit|usage limit|weekly limit|hit your [\w ]{0,20}limit|limit reached|quota", re.I)
-HIZ_SINIRI = re.compile(r"rate.?limit|too many requests|\b429\b|\b529\b|overloaded", re.I)
-# Bu surecte kotasi dolan motorlar: {motor: hata metni}. Paralel kipte ebeveyn
-# LOTM_KOTA_DOLU=claude,codex ile alt sureclere de bildirir.
-KOTA_DOLU = {m: "ebeveyn surecte kota doldu" for m in
-             (os.environ.get("LOTM_KOTA_DOLU") or "").split(",") if m}
+# KOTA / HIZ_SINIRI / KOTA_DOLU motorlar.py'de; KOTA_DOLU ayni sozluk (asagidaki import).
 
 
 def yaz_degisirse(yol: Path, metin: str) -> bool:
@@ -1033,7 +1027,7 @@ def motor_ozeti(yol: Path) -> str:
     n = len(bolumler) or 1
     satirlar = [f"Çift sadakat ({len(bolumler)} bölüm: {', '.join(sorted(bolumler, key=int))})",
                 f"{'kim buldu':12} kabul  ret  boş  bölüm başına kabul"]
-    for m in ("ikisi", "codex", "claude"):
+    for m in ("ikisi",) + tuple(sorted(set(MOTORLAR) | (set(say) - {"ikisi"}))):
         x = say.get(m, {"kabul": 0, "ret": 0, "bos": 0})
         satirlar.append(f"{m:12} {x['kabul']:5} {x['ret']:4} {x['bos']:4}  {x['kabul'] / n:.1f}")
     return "\n".join(satirlar)
@@ -1579,53 +1573,14 @@ class Bolum:
 
 # ------------------------------------------------------------------ otomatik
 
-# Butun claude -p cagrilari (sonra, cevir, zincir_oku) buradan gecer: model ve
-# efor sabit, Claude Code'un o makinedeki varsayilani (/model) hatti degistirmesin.
-# "opus" takma adi en yeni Opus'a cozulur. Bos dize = bayrak hic verilmez.
-VARSAYILAN_MODEL = os.environ.get("LOTM_MODEL", "opus")
-VARSAYILAN_EFOR = os.environ.get("LOTM_EFOR", "high")
-
-
-def claude_komutu(model: str | None, araclar: list | None = None,
-                  efor: str | None = None) -> list:
-    komut = shlex.split(os.environ.get("LOTM_CLAUDE", "claude -p --output-format text"))
-    model = model or VARSAYILAN_MODEL
-    efor = VARSAYILAN_EFOR if efor is None else efor
-    if model:
-        komut += ["--model", model]
-    if efor:
-        komut += ["--effort", efor]
-    if araclar:
-        komut += ["--allowedTools", ",".join(araclar)]
-    return komut
-
-
-def claude_calistir(komut: list, girdi: str, sure: int, cwd: Path):
-    """subprocess.run; CLI --effort'u tanimiyorsa (eski surum) bir kez onsuz dener."""
-    p = subprocess.run(komut, input=girdi, capture_output=True, text=True, timeout=sure, cwd=cwd)
-    if p.returncode != 0 and "--effort" in komut and "effort" in p.stderr.lower():
-        print("  UYARI: claude --effort'u tanimadi, efor bayragi olmadan yeniden deneniyor "
-              "(Claude Code'u guncelleyin ya da LOTM_EFOR= ile kapatin)", flush=True)
-        i = komut.index("--effort")
-        komut = komut[:i] + komut[i + 2:]
-        p = subprocess.run(komut, input=girdi, capture_output=True, text=True, timeout=sure, cwd=cwd)
-    return p
-
-
-# Gecis basina motor (3 Kas): sadakat'i ceviriyi yapan modelden FARKLI bir
-# modelle okutmak icin. Varsayilan claude; LOTM_MOTOR_<ADIM>=codex (ornek:
-# LOTM_MOTOR_SADAKAT=codex) ya da --motor sadakat=codex. Codex: ChatGPT
-# aboneligiyle gelen 'codex exec'; stdin'den okur, son cevabi
-# --output-last-message dosyasina yazar (ekrana yazdigi baslik/iz cikmaz).
-MOTORLAR = ("claude", "codex")
-CODEX_EFOR = os.environ.get("LOTM_CODEX_EFOR", "high")
-CODEX_MODEL = os.environ.get("LOTM_CODEX_MODEL", "")  # bos: codex'in varsayilani
-
-
-# Varsayilan motorlar (3 Kas): sadakat codex, cunku ceviriyi Claude yapiyor ve
-# her model kendi kaymasini dogal bulur (ch70: iki motorun bulgulari yalniz
-# bir yerde ortustu). Codex yoksa claude'a duser.
-VARSAYILAN_MOTOR = {"sadakat": "codex"}
+# Model cagrilarinin hepsi motorlar.py'de (claude/codex/antigravity komutlari,
+# motor secimi, kota). Buradaki adlar eski yerinden de cagrilabilsin diye
+# yeniden disa verilir (S.claude_komutu, S.motor_sec, S.KOTA_DOLU ...).
+import motorlar  # noqa: E402
+from motorlar import (VARSAYILAN_MODEL, VARSAYILAN_EFOR, claude_komutu, claude_calistir,  # noqa: E402,F401
+                      MOTORLAR, MOTOR_KOMUTU, AGY_EFOR, AGY_MODEL, CODEX_EFOR, CODEX_MODEL,
+                      VARSAYILAN_MOTOR, ikinci_motor, cikti_motoru, motor_sec, codex_komutu,
+                      agy_komutu, DOSYA_ARAMA_NOTU, KOTA, HIZ_SINIRI, KOTA_DOLU)
 
 
 # Cift sadakat (3 Kas): ayni girdiyi iki motor birbirinden habersiz okur;
@@ -1637,87 +1592,23 @@ CIFT = os.environ.get("LOTM_CIFT_SADAKAT", "") not in ("", "0")
 MOTOR_IST = Path(os.environ.get("LOTM_MOTOR_IST") or KOK / "Tools" / "karar_motor.tsv")
 
 
-def ikinci_motor(birinci: str) -> str:
-    return "claude" if birinci == "codex" else "codex"
-
-
-def cikti_motoru(cikti: Path, varsayilan: str) -> str:
-    """2_sadakat_cikti_01.claude.md -> claude; ekisiz ad varsayilan motorundur."""
-    m = re.match(r".*_\d+\.([a-z]+)\.md$", cikti.name)
-    return m.group(1) if m and m.group(1) in MOTORLAR else varsayilan
-
-
-def motor_sec(adim: str, secimler: dict | None = None) -> str:
-    m = ((secimler or {}).get(adim) or os.environ.get(f"LOTM_MOTOR_{adim.upper()}")
-         or VARSAYILAN_MOTOR.get(adim, "claude"))
-    if m == "codex" and not shutil.which(shlex.split(os.environ.get("LOTM_CODEX", "codex exec"))[0]):
-        print(f"  UYARI: {adim} icin codex bulunamadi, claude ile calisiyor", flush=True)
-        m = "claude"
-    if m not in MOTORLAR:
-        raise SystemExit(f"bilinmeyen motor: {m} ({', '.join(MOTORLAR)})")
-    return m
-
-
-def codex_komutu(son_mesaj: Path) -> list:
-    komut = shlex.split(os.environ.get("LOTM_CODEX", "codex exec"))
-    komut += ["-", "--output-last-message", str(son_mesaj), "-s", "read-only",
-              "-c", f"model_reasoning_effort={CODEX_EFOR}"]
-    if CODEX_MODEL:
-        komut += ["-m", CODEX_MODEL]
-    return komut
-
-
-# Arac gerektirmeyen gecislere stdin'de eklenen not (8 Kas). Codex okuma/duzeltme
-# oturumlarinin cogu AGENTS.md ve bolum dosyasini diskte ariyor, her arama turu
-# tum baglami yeniden yukluyordu. Metin uzerinde hesap (python ile sayma) serbest.
-# Girdi dosyasina yazilmaz, bu yuzden gecisler ESKIMIS olmaz.
-DOSYA_ARAMA_NOTU = ("\n\n---\nNot: Bu iş için gereken her şey bu mesajda (bölüm metni, şablon, "
-                    "defter). AGENTS.md'yi, bölüm dosyasını ya da başka bir dosyayı diskte arama "
-                    "veya açma; doğrudan bu girdiye göre cevap ver.\n")
-
-
 def yurut(girdi: Path, cikti: Path, model: str | None, sure: int,
           araclar: list | None = None, motor: str = "claude") -> bool:
-    """Taze bir oturum: girdi stdin'den, cevap ciktiya. Hata olursa cikti yazilmaz."""
+    """Taze bir oturum: girdi dosyasi modele, cevap ciktiya. Hata olursa cikti yazilmaz."""
     if motor in KOTA_DOLU:
         print(f"  ATLANDI {motor}: {girdi.name} (kota dolu: {KOTA_DOLU[motor]})", flush=True)
         return False
     print(f"  {motor}: {girdi.name} -> {cikti.name} ...", flush=True)
-    son = cikti.with_name(cikti.name + ".codex-son")
     metin_girdi = girdi.read_text(encoding="utf-8")
     if not araclar and os.environ.get("LOTM_DOSYA_NOTU", "1") != "0":
         metin_girdi += DOSYA_ARAMA_NOTU
-    try:
-        if motor == "codex":
-            son.unlink(missing_ok=True)
-            p = subprocess.run(codex_komutu(son), input=metin_girdi,
-                               capture_output=True, text=True, timeout=sure, cwd=BETIKLER)
-        else:
-            p = claude_calistir(claude_komutu(model, araclar), metin_girdi,
-                                sure, BETIKLER)
-    except FileNotFoundError:
-        print(f"  HATA: {motor} komutu bulunamadi (LOTM_CLAUDE / LOTM_CODEX ile verin)")
+    # kota=KOTA_DOLU: sonra'nin adi uzerinden (testler S.KOTA_DOLU'yu degistirebilir)
+    s = motorlar.calistir(metin_girdi, motor, model, sure, araclar, cwd=BETIKLER,
+                          gecici=cikti, kota=KOTA_DOLU)
+    if not s.ok:
         return False
-    except subprocess.TimeoutExpired:
-        print(f"  HATA: {sure} sn icinde bitmedi")
-        return False
-    metin = p.stdout
-    if motor == "codex":
-        metin = son.read_text(encoding="utf-8") if son.exists() else ""
-        son.unlink(missing_ok=True)
-    if p.returncode != 0 or not metin.strip():
-        hata = (p.stderr or p.stdout).strip()[-400:]
-        print(f"  HATA (cikis {p.returncode}): {hata}")
-        if KOTA.search(hata):
-            KOTA_DOLU[motor] = tek_satir(hata)[-160:]
-            # Ebeveyn (paralel kip) bu satiri arar.
-            print(f"  KOTA {motor}: {KOTA_DOLU[motor]}", flush=True)
-        return False
-    cikti.write_text(metin, encoding="utf-8")
-    if motor != "claude":
-        (cikti.with_name(cikti.name + ".motor")).write_text(motor + "\n", encoding="utf-8")
-    else:
-        cikti.with_name(cikti.name + ".motor").unlink(missing_ok=True)
+    cikti.write_text(s.metin, encoding="utf-8")
+    motorlar.motor_etiketi_yaz(cikti, s.motor)
     return True
 
 
@@ -1755,7 +1646,8 @@ def main(argv=None) -> int:
     ap.add_argument("--donem-yok", action="store_true",
                     help="donem uyumu gecisini atla (LOTM_DONEM=0 ayni)")
     ap.add_argument("--motor", action="append", default=[], metavar="ADIM=MOTOR",
-                    help="gecis basina motor, ornek: --motor sadakat=codex (claude|codex)")
+                    help="gecis basina motor, ornek: --motor sadakat=codex (claude|codex|antigravity); "
+                         "cift sadakatte ikinci okuyucu: --motor sadakat2=antigravity")
     ap.add_argument("--sure", type=int, default=1800, help="gecis basina zaman asimi (sn)")
     ap.add_argument("--kesin-yok", action="store_true",
                     help="hicbir duzeltmeyi otomatik uygulama, hepsi 5_inceleme.md'ye (LOTM_KESIN_YOK=1); "
@@ -1784,8 +1676,8 @@ def main(argv=None) -> int:
     motor_secimleri = {}
     for m in a.motor:
         adim, _, mt = m.partition("=")
-        if adim not in MODEL_ADIMLARI + ("donem",) or mt not in MOTORLAR:
-            ap.error(f"--motor {m}: adim {MODEL_ADIMLARI + ('donem',)}, motor {MOTORLAR}")
+        if adim not in MODEL_ADIMLARI + ("donem", "sadakat2") or mt not in MOTORLAR:
+            ap.error(f"--motor {m}: adim {MODEL_ADIMLARI + ('donem', 'sadakat2')}, motor {MOTORLAR}")
         motor_secimleri[adim] = mt
 
     if a.inceleme_yenile:
@@ -2048,6 +1940,8 @@ def bolum_isle(no: int, a, otomatik, motor_secimleri: dict, cift: bool, donem: b
         else:
             ciftler = getattr(b, adim)()
         if adim == "sadakat" and cift:
+            if "sadakat2" in motor_secimleri:
+                os.environ["LOTM_MOTOR_SADAKAT2"] = motor_secimleri["sadakat2"]
             ikinci = ikinci_motor(motor_sec("sadakat", motor_secimleri))
             ciftler = ciftler + [(g, c.with_name(f"{c.stem}.{ikinci}.md")) for g, c in ciftler]
         if otomatik and adim in otomatik:

@@ -19,7 +19,8 @@ cevirmen Claude (claude -p). Adimlar:
               Cekirdek (lotm.cekirdek_istem(): en yeni Tools/Prompts/
               lotm_system_prompt_vX.Y.md) mesaja girmez, --system-prompt-file
               ile sistem istemi olarak gider (1 Kas'tan beri tek yol).
-    ceviri    claude -p -> cikti_ham.md. Girdi degismediyse ve cikti
+    ceviri    motorlar.calistir (varsayilan claude -p; --motor codex|antigravity)
+              -> cikti_ham.md (+ .motor etiketi claude disi motorda). Girdi degismediyse ve cikti
               varsa model yeniden calismaz (--yeniden ile zorlanir).
     kontrol   Cince harf, baslik, DURUM NOTU, paragraf orani. Sert bir
               sorun varsa bolum dosyasi yazilmaz.
@@ -41,10 +42,11 @@ Kullanim:
     cevir.py 70 --kuru             cevir ama bolum dosyasina/tikler.md'ye yazma
     cevir.py 70 --yeniden          cikti varsa da yeniden cevir
     cevir.py 70 --uzerine-yaz      var olan 0070.md'nin ustune (yedekli)
+    cevir.py 70 --motor codex      claude yerine codex/antigravity (LOTM_MOTOR_CEVIR ayni)
     --model M, --sure SN, --haritalar, --zorla
 
-Ortam: LOTM_CLAUDE (komut, sonra.py ile ayni), LOTM_CEVIRI_RAPOR (rapor
-klasoru), LOTM_CEKIRDEK (cekirdek istem yolu), LOTM_TIKLER (tik defteri).
+Ortam: LOTM_CLAUDE / LOTM_CODEX / LOTM_AGY (komutlar, motorlar.py), LOTM_MOTOR_CEVIR,
+LOTM_CEVIRI_RAPOR (rapor klasoru), LOTM_CEKIRDEK (cekirdek istem yolu), LOTM_TIKLER (tik defteri).
 """
 
 from __future__ import annotations
@@ -65,7 +67,8 @@ sys.path.insert(0, str(BETIKLER / "harita"))
 
 KOK = Path(os.environ.get("LOTM_KOK") or BETIKLER.parent)
 import lotm  # noqa: E402  (ortak: yedek_klasoru, cekirdek_istem)
-import sonra  # noqa: E402  (claude_komutu, claude_calistir, yaz_degisirse)
+import sonra  # noqa: E402  (yaz_degisirse)
+import motorlar as M  # noqa: E402  (claude/codex/antigravity cagrilari)
 SITE = KOK / "Imperium34.github.io"
 BOLUMLER = SITE / "_chapters"
 SABLONLAR = Path(os.environ.get("LOTM_SABLONLAR") or KOK / "Tools" / "Schemas")
@@ -128,12 +131,23 @@ def girdi_kur(no: int, sablon: Path, haritalar: bool) -> tuple:
 yaz_degisirse = sonra.yaz_degisirse
 
 
-def claude_komutu(model: str | None, sistem: Path) -> list:
-    """sonra.claude_komutu (model + efor sabit) + cekirdek sistem istemi.
-
-    Claude Code'un kendi (kodlama) sistem isteminin YERINE cekirdek; araclar
+def sistem_argumanlari(sistem: Path) -> list:
+    """Claude Code'un kendi (kodlama) sistem isteminin YERINE cekirdek; araclar
     da kapali: ceviri dosya okumaz."""
-    return sonra.claude_komutu(model) + ["--system-prompt-file", str(sistem), "--tools", ""]
+    return ["--system-prompt-file", str(sistem), "--tools", ""]
+
+
+def claude_komutu(model: str | None, sistem: Path) -> list:
+    """motorlar.claude_komutu (model + efor sabit) + cekirdek sistem istemi."""
+    return M.claude_komutu(model) + sistem_argumanlari(sistem)
+
+
+def motor_adi(motor: str, model: str | None) -> str:
+    """tikler.md ve DURUM.md icin: hangi motor/model cevirdi."""
+    if motor == "claude":
+        return model or M.VARSAYILAN_MODEL
+    m = M.CODEX_MODEL if motor == "codex" else M.AGY_MODEL
+    return f"{motor}/{m}" if m else motor
 
 
 def ayristir(ham: str, no: int) -> dict:
@@ -200,7 +214,7 @@ def tik_ekle(no: int, tikler: list, model: str | None) -> None:
             "Bir kalıp iki üç bölümde tekrar ederse çekirdeğin §2/§3/§5 tablosuna işlenir "
             "(ya da bir denetleyiciye dönüşür) ve buradaki satırın başına ✓ konur.\n\n",
             encoding="utf-8")
-    satirlar = [f"- {no} · {datetime.now():%Y-%m-%d} · {model or sonra.VARSAYILAN_MODEL} · {t}" for t in tikler]
+    satirlar = [f"- {no} · {datetime.now():%Y-%m-%d} · {model or M.VARSAYILAN_MODEL} · {t}" for t in tikler]
     with TIKLER.open("a", encoding="utf-8") as f:
         f.write("\n".join(satirlar) + "\n")
 
@@ -258,6 +272,9 @@ def main(argv=None) -> int:
     # Varsayilan model ve efor sonra.py'de (LOTM_MODEL, LOTM_EFOR): opus, high.
     ap.add_argument("--model", default=os.environ.get("LOTM_CEVIRI_MODEL") or None)
     ap.add_argument("--sure", type=int, default=1800, help="model zaman asimi, sn")
+    ap.add_argument("--motor", choices=M.MOTORLAR, default=None,
+                    help="ceviri motoru (varsayilan claude; LOTM_MOTOR_CEVIR ayni). --model yalniz "
+                         "claude icin; codex/antigravity LOTM_CODEX_MODEL / LOTM_AGY_MODEL")
     a = ap.parse_args(argv)
     no = a.no
 
@@ -296,26 +313,37 @@ def main(argv=None) -> int:
         return 0
 
     # 3. ceviri
-    taze = ham.exists() and ham.stat().st_mtime >= girdi.stat().st_mtime
+    motor = M.motor_sec("cevir", {"cevir": a.motor} if a.motor else None)
+    taze = (ham.exists() and ham.stat().st_mtime >= girdi.stat().st_mtime
+            and M.etiket_oku(ham) == motor)
     if taze and not a.yeniden:
         print(f"çeviri: {ham.name} güncel, model çalıştırılmadı (--yeniden ile zorlanır)")
     else:
-        komut = claude_komutu(a.model, cekirdek)
-        if not shutil.which(komut[0]):
-            print(f"YOK: '{komut[0]}' komutu (LOTM_CLAUDE ile verin). girdi.md hazır.")
-            return 1
-        print(f"çeviri: {' '.join(komut[:1] + komut[1:8])} ...", flush=True)
+        if motor == "claude":
+            komut = claude_komutu(a.model, cekirdek)
+            if not shutil.which(komut[0]):
+                print(f"YOK: '{komut[0]}' komutu (LOTM_CLAUDE ile verin). girdi.md hazır.")
+                return 1
+            print(f"çeviri: {' '.join(komut[:1] + komut[1:8])} ...", flush=True)
+            gonder, ek = metin, sistem_argumanlari(cekirdek)
+        else:
+            # codex/agy'de sistem istemi bayragi yok: cekirdek mesajin basina.
+            print(f"  UYARI: {motor} sistem istemi almıyor; çekirdek ({cekirdek.name}) "
+                  "girdinin başına eklendi", flush=True)
+            gonder = cekirdek.read_text(encoding="utf-8").rstrip() + "\n\n---\n\n" + metin
+            ek = None
+            print(f"çeviri: {motor_adi(motor, a.model)} ...", flush=True)
         t0 = time.time()
-        try:
-            q = sonra.claude_calistir(komut, metin, a.sure, klasor)
-        except subprocess.TimeoutExpired:
-            print(f"HATA: {a.sure} sn içinde bitmedi")
+        q = M.calistir(gonder, motor, a.model, a.sure, cwd=klasor, ek_argumanlar=ek, gecici=ham)
+        if not q.ok:
             return 1
-        if q.returncode != 0 or not q.stdout.strip():
-            print(f"HATA (çıkış {q.returncode}): {q.stderr.strip()[:400]}")
-            return 1
-        ham.write_text(q.stdout, encoding="utf-8")
-        print(f"  {time.time() - t0:.0f} sn, {len(q.stdout) // 1000} KB")
+        motor = q.motor
+        ham.write_text(q.metin, encoding="utf-8")
+        M.motor_etiketi_yaz(ham, motor)
+        print(f"  {time.time() - t0:.0f} sn, {len(q.metin) // 1000} KB")
+    motor = M.etiket_oku(ham)
+    if motor != "claude":
+        durum.append(f"- Motor: {motor_adi(motor, a.model)} (çekirdek girdinin başında, sistem istemi değil)")
 
     # 4. kontrol
     parca = ayristir(ham.read_text(encoding="utf-8"), no)
@@ -357,7 +385,7 @@ def main(argv=None) -> int:
                 durum.append(f"- {t}")
                 print(f"  {t}")
             tikler = yeni_tikler(parca["durum_notu"])
-            tik_ekle(no, tikler, a.model)
+            tik_ekle(no, tikler, motor_adi(motor, a.model))
             if tikler:
                 durum.append(f"- {len(tikler)} yeni tik → {TIKLER.name}")
                 print(f"  {len(tikler)} yeni tik → {TIKLER}")
