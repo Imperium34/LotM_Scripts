@@ -183,6 +183,9 @@ class Kip:
         if ad == "ses_ayari":
             import ses_ayari as A
             self.kok, self.dosya, self.betik, self.isaret = A.RAPOR, "inceleme.md", "ses_ayari.py", "uygulandi.json"
+        elif ad == "sablon":  # sablon onerileri (sablon_oneri.py)
+            import sablon as SB
+            self.kok, self.dosya, self.betik, self.isaret = SB.RAPOR, "oneriler.md", "sablon.py", "oneriler_uygulandi.json"
         else:
             self.kok, self.dosya, self.betik, self.isaret = S.RAPOR, "5_inceleme.md", "sonra.py", S.KARARLAR_ISLENDI
 
@@ -614,7 +617,7 @@ def main(argv=None) -> int:
             m = re.search(r"Ch_(\d+)", str(yol))
             no = int(m.group(1)) if m else None
         kip = None
-        for ad in ("ses_ayari", "sonra"):
+        for ad in ("ses_ayari", "sonra", "sablon"):
             k = Kip(ad)
             if no is not None and k.yol(no).resolve() == yol:
                 kip = k

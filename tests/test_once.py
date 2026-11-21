@@ -108,3 +108,18 @@ def test_hata_varsa_cikis_1(tmp_path, monkeypatch):
     assert once.main(["77"]) == 1
     assert "HATA      sablon_denetimi.md — 2 HATA, 0 UYARI" in (
         d["rapor"] / "Ch_77" / "DURUM.md").read_text(encoding="utf-8")
+
+
+def test_sadece_hazirlik_sablon_denetle_calistirmaz(tmp_path, monkeypatch, capsys):
+    d = _kur(tmp_path, monkeypatch)
+    cagrilar = []
+
+    def sahte_run(cmd, **kw):
+        cagrilar.append(cmd)
+        return subprocess.CompletedProcess(cmd, 0, "", "")
+
+    monkeypatch.setattr(once.subprocess, "run", sahte_run)
+    assert once.main(["77", "--sadece-hazirlik"]) == 0
+    assert cagrilar == []
+    assert not (d["rapor"] / "Ch_77" / "sablon_denetimi.md").exists()
+    assert "## Hazırlık" in capsys.readouterr().out

@@ -77,6 +77,7 @@ class Ayrilmis:
     en: str | None = None
     zh: str | None = None
     not_: str = ""  # yasak: notun ilgili cumlesi; salahiyet: alt tur
+    kapi: int | None = None  # eski: lotm.gecis_bolumu; bu bolumden ONCE eski bicim dogrudur
 
 
 # ------------------------------------------------------------ yasak notlari
@@ -139,7 +140,7 @@ def kayitlar(sozluk_terimleri, kelime_terimleri, salahiyetler) -> list:
         out += yasak_kayitlari(t)
     for t in sozluk_terimleri:
         for e in t.eski_karsiliklar or []:
-            out.append(Ayrilmis(str(e), "eski", t.tr, t.en, t.zh))
+            out.append(Ayrilmis(str(e), "eski", t.tr, t.en, t.zh, kapi=lotm.gecis_bolumu(t)))
     for t in sozluk_terimleri:
         if t.mertebe_mi:
             for b in t.tr_bicimleri():
@@ -232,7 +233,11 @@ def dizin_md(kayit_listesi: list) -> str:
     for k in gruplar["yasak"]:
         out.append(f"- **{k.kelime}** — {k.not_}  ·  madde: {k.sahip}")
     for k in gruplar["eski"]:
-        out.append(f"- **{k.kelime}** — eski karşılık; artık **{k.sahip}**")
+        if k.kapi:
+            out.append(f"- **{k.kelime}** — eski karşılık; {k.kapi}. bölümden itibaren **{k.sahip}**, "
+                       f"{k.kapi}'ten önceki bölümlerde '{k.kelime}' doğrudur")
+        else:
+            out.append(f"- **{k.kelime}** — eski karşılık; artık **{k.sahip}**")
 
     out += ["", "## 2. Mertebe adları (Yol Yol, 9 → 0)", ""]
     yollar: dict = {}

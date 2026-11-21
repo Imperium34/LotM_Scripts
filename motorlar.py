@@ -14,7 +14,7 @@ Yeni bir betikten:
 Motorlar:
     claude       'claude -p' (LOTM_CLAUDE); girdi stdin'den. Model/efor:
                  LOTM_MODEL (opus), LOTM_EFOR (high). araclar -> --allowedTools.
-    codex        'codex exec' (LOTM_CODEX); stdin'den okur, son cevabi
+    codex        'codex exec --ephemeral' (LOTM_CODEX); stdin'den okur, son cevabi
                  --output-last-message dosyasina yazar, -s read-only.
                  LOTM_CODEX_EFOR (high), LOTM_CODEX_MODEL.
     antigravity  'agy' (LOTM_AGY); stdin okumaz, istem -p='...' bayragina yapisik.
@@ -90,7 +90,7 @@ def claude_calistir(komut: list, girdi: str, sure: int, cwd: Path):
 # Gecis basina motor (3 Kas): LOTM_MOTOR_<ADIM>=codex ya da sonra --motor sadakat=codex.
 MOTORLAR = ("claude", "codex", "antigravity")
 MOTOR_KOMUTU = {
-    "codex": ("LOTM_CODEX", "codex exec"),
+    "codex": ("LOTM_CODEX", "codex exec --ephemeral"),
     "antigravity": (
         "LOTM_AGY",
         "agy --output-format text --disable-slash-commands --mode plan",
@@ -136,7 +136,10 @@ def ikinci_motor(birinci: str, secimler: dict | None = None) -> str:
         if m not in MOTORLAR:
             raise SystemExit(f"bilinmeyen motor: {m} ({', '.join(MOTORLAR)})")
         if not _komut_var(m):
-            print(f"  UYARI: sadakat2 icin {m} bulunamadi, baska motor seciliyor", flush=True)
+            print(
+                f"  UYARI: sadakat2 icin {m} bulunamadi, baska motor seciliyor",
+                flush=True,
+            )
             m = None
     if m and m != birinci:
         return m
@@ -164,7 +167,7 @@ def motor_sec(adim: str, secimler: dict | None = None) -> str:
 
 
 def codex_komutu(son_mesaj: Path) -> list:
-    komut = _komut_bol("LOTM_CODEX", "codex exec")
+    komut = _komut_bol("LOTM_CODEX", "codex exec --ephemeral")
     efor = os.environ.get("LOTM_CODEX_EFOR", CODEX_EFOR)
     model = os.environ.get("LOTM_CODEX_MODEL", CODEX_MODEL)
     komut += [
@@ -242,8 +245,12 @@ def calistir(
     ek_argumanlar: list | None = None,
     gecici: Path | None = None,
     kota: dict | None = None,
+    oturum: str | None = None,
 ) -> Sonuc:
-    """Taze bir oturum. model ve ek_argumanlar yalniz claude icindir.
+    """Taze bir oturum. model, ek_argumanlar ve oturum yalniz claude icindir.
+
+    oturum: claude oturumuna verilecek UUID (--session-id); sonradan
+    'claude --resume <oturum>' ile ayni cwd'den sohbet olarak surdurulur.
 
     gecici: gecici dosyalarin oneki (<gecici>.codex-son, <gecici>.agy-girdi.md);
     verilmezse cwd'de tempfile. kota: KOTA_DOLU yerine kullanilacak sozluk."""
@@ -295,7 +302,9 @@ def calistir(
                     pass
         else:
             p = claude_calistir(
-                claude_komutu(model, araclar) + list(ek_argumanlar or []),
+                claude_komutu(model, araclar)
+                + (["--session-id", oturum] if oturum else [])
+                + list(ek_argumanlar or []),
                 metin,
                 sure,
                 cwd,

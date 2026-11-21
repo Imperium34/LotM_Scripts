@@ -98,39 +98,147 @@ def hitapsiz(s: str) -> str:
     return _HITAP_TR.sub("", s.strip()).strip() or s
 
 
+_NOKTALAMA = ".,;:!?…\"'“”‘’"
+_SERTLESTIR = {"b": "p", "c": "ç", "d": "t", "ğ": "k", "g": "k"}
+_UNLU = set("aeıioöuü")  # sapkali âîû bilincli olarak disarida
+_DAR_UNLU = set("ıiuü")
+_UNSUZ = set("bcçdfgğhjklmnprsştvyz")
+_HARF_TIRE = re.compile(r"(?<=[a-zçğıöşüâîû])-(?=[a-zçğıöşüâîû])")
+
+# Turkce ad cekim ekleri (sagdan sola): kesme -> hal/ki -> iyelik -> cogul.
+_HAL_EKI = re.compile(
+    r"(?:ndaki|ndeki|daki|deki|taki|teki|ki"
+    r"|ndan|nden|dan|den|tan|ten"
+    r"|nda|nde|da|de|ta|te"
+    r"|nın|nin|nun|nün|ın|in|un|ün"
+    r"|yla|yle|la|le"
+    r"|yı|yi|yu|yü|nı|ni|nu|nü"
+    r"|ya|ye|na|ne"
+    r"|ı|i|u|ü|a|e)$"
+)
+_IYELIK_EKI = re.compile(
+    r"(?:larımız|lerimiz|larınız|leriniz|ları|leri"
+    r"|ımız|imiz|umuz|ümüz|ınız|iniz|unuz|ünüz"
+    r"|mız|miz|muz|müz|nız|niz|nuz|nüz"
+    r"|sı|si|su|sü"
+    r"|ım|im|um|üm|ın|in|un|ün"
+    r"|ı|i|u|ü)$"
+)
+_COGUL_EKI = re.compile(r"(?:lar|ler)$")
+_KESME_EKI = re.compile(
+    r"['’](?:"
+    r"(?:lar|ler)?(?:ımız|imiz|umuz|ümüz|ınız|iniz|unuz|ünüz|sı|si|su|sü|ım|im|um|üm|ın|in|un|ün|ı|i|u|ü)?"
+    r"(?:ndaki|ndeki|daki|deki|taki|teki|ki|ndan|nden|dan|den|tan|ten|nda|nde|da|de|ta|te"
+    r"|nın|nin|nun|nün|ın|in|un|ün|yla|yle|la|le|yı|yi|yu|yü|nı|ni|nu|nü|ya|ye|na|ne|ı|i|u|ü|a|e)"
+    r"|(?:lar|ler)(?:ı|i|u|ü)?"
+    r"|(?:ımız|imiz|umuz|ümüz|ınız|iniz|unuz|ünüz|mız|miz|muz|müz|nız|niz|nuz|nüz|sı|si|su|sü|ım|im|um|üm)"
+    r")$"
+)
+_FIIL_EK_RE = re.compile(lotm._FIIL_ILK_EK + r"[^\W\d_]*$")
+
+
+def _unlu_dusur(kok: str) -> str | None:
+    """Unlu dusmesi govdesi: 'şehir' -> 'şehr', 'isim' -> 'ism', 'kayıt' -> 'kayt'."""
+    if len(kok) >= 4 and kok[-3] in _UNSUZ and kok[-2] in _DAR_UNLU and kok[-1] in _UNSUZ:
+        return kok[:-2] + kok[-1]
+    return None
+
+
+def _kok_adaylari(w: str) -> dict[str, bool]:
+    """
+    Bir Turkce sozcugun olasi kok adaylari -> guclu_mu.
+
+    guclu_mu yalnizca 3 harfli bir kokte tek harflik unlu eki atilmissa False
+    olur ("dere"->"der", "deri"->"der"): boylece iki ayri 4 harfli kok
+    (dere/deri, sure/suru, yara/yari) yalnizca 3 harfli ortak onekten eslesmez.
+    """
+    adaylar: dict[str, bool] = {w: True}
+
+    def ekle(kok: str, guclu: bool) -> None:
+        if kok:
+            adaylar[kok] = adaylar.get(kok, False) or guclu
+
+    g = lotm.fiil_govdesi(w)
+    if g:
+        ekle(g, True)
+    m = _KESME_EKI.search(w)
+    if m and m.start() >= 2:
+        ekle(w[: m.start()], True)
+
+    for desen in (_HAL_EKI, _IYELIK_EKI, _COGUL_EKI):
+        for s in list(adaylar):
+            m = desen.search(s)
+            if not m:
+                continue
+            kok, ek = s[: m.start()], m.group()
+            min_kok = 2 if ek in ("lar", "ler", "ları", "leri") else 3
+            if len(kok) < min_kok:
+                continue
+            guclu = len(kok) >= 4 or (len(w) - len(kok)) >= 2
+            ekle(kok, guclu)
+            if ek[0] in _UNLU and kok[-1] in _SERTLESTIR:
+                ekle(kok[:-1] + _SERTLESTIR[kok[-1]], guclu)
+
+    for s, guclu in list(adaylar.items()):
+        d = _unlu_dusur(s)
+        if d:
+            ekle(d, guclu)
+    return adaylar
+
+
+def _fiil_eslesir(govde: str, kelime: str) -> bool:
+    """Fiil govdesi ('et', 'yitir', 'ol') cekimli bicimle ('etti', 'ediyor', 'yitirdi') eslesir mi?"""
+    return any(
+        kelime.startswith(g)
+        and (len(kelime) == len(g) or bool(_FIIL_EK_RE.match(kelime[len(g) :])))
+        for g in K.govde_bicimleri(govde)
+    )
+
+
 def _kelime_esit(a: str, b: str) -> bool:
-    """Ek farki: usul/usulü, beden/bedeni, sarkaç/sarkacı (yumusama), ilah/ilahlar."""
+    """
+    Iki Turkce sozcuk ayni kokun cekimli bicimleri mi?
+    Ek/yumusama/unlu dusmesi/kesme/fiil cekimi: usul/usulü, beden/bedeni,
+    sarkaç/sarkacı, çiçeği/çiçekleri, kâhin/kâhinlerin, şehir/şehri,
+    Tanrıça/Tanrıça'nın, et/etmek/etti/ediyor. Sapka farki esit DEGILDIR.
+    """
+    a, b = a.strip(_NOKTALAMA), b.strip(_NOKTALAMA)
+    if not a or not b:
+        return False
     if a == b:
         return True
-    kisa, uzun = sorted((a, b), key=len)
-    # Fiil: sablon govde+tire yazar (tr_norm tireyi atar), sozluk mastar.
-    # "et" uc harften kisa oldugu icin asagidaki ek karsilastirmasina girmez.
-    if lotm.fiil_govdesi(uzun) == kisa:
+    ka, kb = _kok_adaylari(a), _kok_adaylari(b)
+    if any(ka[k] or kb[k] for k in ka.keys() & kb.keys()):
         return True
-    if len(kisa) < 3:
-        return False
-    return any(
-        uzun.startswith(k) and len(uzun) - len(k) <= 4 for k in K.govde_bicimleri(kisa)
-    )
+    ga, gb = lotm.fiil_govdesi(a), lotm.fiil_govdesi(b)
+    if ga and _fiil_eslesir(ga, b):
+        return True
+    if gb and _fiil_eslesir(gb, a):
+        return True
+    if (len(a) >= 4 or a in ("et", "ol")) and _fiil_eslesir(a, b):
+        return True
+    if (len(b) >= 4 or b in ("et", "ol")) and _fiil_eslesir(b, a):
+        return True
+    return False
 
 
 def bicim_esit(a: str, b: str) -> bool:
     """
-    Iki Turkce bicim AYNI karar mi? Sablonlar terimi cogu zaman govde ya da
-    cekimli bicimle yazar: "kehanet usul" (govde) = "Kehanet usulü",
+    Iki Turkce bicim AYNI karar mi? Sablonlar terimi cogu zaman govde, cekimli
+    bicim ya da araya niteleyici alarak yazar: "kehanet usul" = "Kehanet usulü",
     "şirazesini yitir" = "Şirazesini Yitirmek", "himaye et" = "himaye",
-    "tekerlekli fayton" ⊂ "iki tekerlekli fayton". Kelime kelime, kisa bicim
-    uzunun icinde ardisik ve her kelime ek farkiyla. Sapka farki (umumi /
+    "tekerlekli fayton" ⊂ "iki tekerlekli fayton", "umumî fayton" ⊂ "umumî at
+    faytonu", "elf çiçeği" = "elf çiçekleri". Kisa bicimin her kelimesi uzunda
+    ayni sirayla ve ek farkiyla gecer (sirali altdizi). Sapka farki (umumi /
     umumî, Alem / Âlem) esit DEGILDIR: o bir karar farkidir.
     """
-    wa, wb = tr_norm(a).split(), tr_norm(b).split()
+    wa = _HARF_TIRE.sub(" ", tr_norm(a)).split()
+    wb = _HARF_TIRE.sub(" ", tr_norm(b)).split()
     if not wa or not wb:
         return False
     kisa, uzun = sorted((wa, wb), key=len)
-    return any(
-        all(_kelime_esit(x, y) for x, y in zip(kisa, uzun[i : i + len(kisa)]))
-        for i in range(len(uzun) - len(kisa) + 1)
-    )
+    it = iter(uzun)
+    return all(any(_kelime_esit(x, y) for y in it) for x in kisa)
 
 
 def _aynen_ac(trler, enler) -> set:
@@ -231,6 +339,7 @@ class Kaynaklar:
     zh_yanlar: dict = field(default_factory=dict)  # bolum no -> zh_yan_oku() ciktisi
     yayim: list = field(default_factory=list)  # lotm.Bolum (Turkce)
     zh_metin: str = ""  # bu bolumun Cince metni; bossa Cince suzme yapilmaz
+    no: int | None = None  # denetlenen bolum: eski karsiligin kapisindan (bolum_siniri) once mi
 
     def __post_init__(self):
         self.en_dizin: dict = {}
@@ -289,6 +398,7 @@ def yukle(no: int, sablon_klasoru: Path = SABLONLAR) -> Kaynaklar:
         zh_yanlar=zh_yanlar,
         yayim=yayim,
         zh_metin=zh_metin,
+        no=no,
     )
 
 
@@ -301,6 +411,17 @@ def nerede(bicim: str, kay: Kaynaklar, en_cok: int = 3) -> list:
     n = tr_norm(bicim)
     if n in kay.tr_dizin:
         out.append("sözlük: " + ", ".join(dict.fromkeys(t.tr for t in kay.tr_dizin[n])))
+    else:
+        nw = n.split()
+        eslesen = [
+            t.tr
+            for k, ts in kay.tr_dizin.items()
+            if (kw := k.split()) and len(kw) == len(nw)
+            and all(_kelime_esit(x, y) for x, y in zip(nw, kw))
+            for t in ts
+        ]
+        if eslesen:
+            out.append("sözlük: " + ", ".join(dict.fromkeys(eslesen)))
     for no in sorted(kay.sablon_satirlari, reverse=True):
         if any(n in {tr_norm(t) for t in s.tr} for s in kay.sablon_satirlari[no]):
             out.append(f"Ch_{no}")
@@ -396,6 +517,12 @@ def _etiket(s: SablonSatiri) -> str:
     return f"{' / '.join(s.tr)} ← {' / '.join(s.en) or '—'}"
 
 
+def erken(t, no: int | None) -> bool:
+    """Bolum, terimin eski karsiliktan yeni ada gecis bolumunden once mi?"""
+    g = lotm.gecis_bolumu(t)
+    return bool(g and no is not None and no < g)
+
+
 def denetle(metin: str, kay: Kaynaklar, zh_yan: dict | None = None) -> tuple:
     """(bulgular, satirlar)"""
     satirlar = sablon_satirlari(metin, zh_yan)
@@ -411,8 +538,12 @@ def denetle(metin: str, kay: Kaynaklar, zh_yan: dict | None = None) -> tuple:
         # bir kisi adidir; sozlukte ayni Ingilizceyi parantezde tasiyan kod
         # adi kaydina (Yıldız (Leonard Mitchell)) baglanmaz.
         ad_satiri = tr_n <= ({en_norm(e) for e in s.en} | {"aynen"})
+        sozlukte = [b for t in en_terimler for b in t.tr_bicimleri()]
+        # Kapidan (bolum_siniri) once eski karsilik o donemin dogru kelimesidir
+        # (Ayin/ritüel 22, Rol İfası/rol yapma 93): lotm.gecis_bolumu.
+        sozlukte += [b for t in en_terimler if erken(t, kay.no)
+                     for e in t.eski_karsiliklar or [] for b in (e, re.sub(r"m[ae]k?$", "", e))]
         if s.bolum == "A.1" and en_terimler and not ad_satiri:
-            sozlukte = [b for t in en_terimler for b in t.tr_bicimleri()]
             if not any(bicim_esit(a, b) for a in s.tr for b in sozlukte):
                 adlar = ", ".join(dict.fromkeys(t.tr for t in en_terimler))
                 # Ozel ad ya da cok kelimeli Ingilizce: kesin celiski. Tek
@@ -425,7 +556,11 @@ def denetle(metin: str, kay: Kaynaklar, zh_yan: dict | None = None) -> tuple:
                     f"yazıyor" + ("" if kesin else " (tek, sıradan bir İngilizce sözcük: "
                                   "Çince aynıysa çelişki)")))
         if s.bolum == "A.1":
-            yok = [t for t in s.tr if not nerede(hitapsiz(t), kay, en_cok=1)]
+            yok = [
+                t for t in s.tr
+                if not any(bicim_esit(t, b) for b in sozlukte)
+                and not nerede(hitapsiz(t), kay, en_cok=1)
+            ]
             if yok:
                 out.append(Bulgu("UYARI", s.bolum, et,
                                  f"{', '.join(yok)} hiçbir yerde karara bağlanmamış (sözlük, "
@@ -450,6 +585,8 @@ def denetle(metin: str, kay: Kaynaklar, zh_yan: dict | None = None) -> tuple:
             turler = AY.CARPISMA_TURLERI if s.bolum == "A.2" else ("yasak", "eski")
             for t in s.tr:
                 for k, (a, b) in AY.icerenler(t, kay.ayrilmis, turler):
+                    if k.tur == "eski" and k.kapi and kay.no is not None and kay.no < k.kapi:
+                        continue  # kapidan once eski bicim dogru
                     if tr_norm(k.kelime) == tr_norm(t) and s.bolum == "A.2" and k.tur in ("mertebe", "salahiyet"):
                         continue  # ayni sozcuk: yukaridaki 'sözlükte zaten var' soyler
                     if k.tur == "yasak":

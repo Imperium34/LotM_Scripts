@@ -190,8 +190,68 @@ def test_onceki_sablonun_yan_dosyasi_da_okunur():
 
 
 def test_bicim_esit_govde_tire_mastar():
-    for a, b in [("işaret et-", "işaret etmek"), ("niyaz et", "niyaz etmek"), ("ol-", "olmak")]:
+    for a, b in [
+        ("işaret et-", "işaret etmek"),
+        ("işaret ediyor", "işaret etmek"),
+        ("işaret etti", "işaret etmek"),
+        ("niyaz et", "niyaz etmek"),
+        ("ol-", "olmak"),
+        ("şirazesini yitirdi", "Şirazesini Yitirmek"),
+    ]:
         assert SD.bicim_esit(a, b), (a, b)
+
+
+def test_bicim_esit_araya_niteleyici_ve_cekim_farklari():
+    # Ch_85: umumî at faytonu vs umumî fayton; Ch_79: yarım boy ipek silindir şapka;
+    # Ch_69: elf çiçekleri vs elf çiçeği; unlu dusmesi, kesme, coklu ek.
+    for a, b in [
+        ("umumî at faytonu", "umumî fayton"),
+        ("yarım boy ipek silindir şapka", "yarım boy silindir şapka"),
+        ("elf çiçekleri", "elf çiçeği"),
+        ("at faytonları", "at faytonu"),
+        ("yatak odaları", "yatak odası"),
+        ("kâhinlerin", "kâhin"),
+        ("Gümüş Şehri", "Gümüş Şehir"),
+        ("Tanrıça'nın", "Tanrıça"),
+        ("Tingen'deki", "Tingen"),
+        ("kayıtları", "kaydı"),
+    ]:
+        assert SD.bicim_esit(a, b), (a, b)
+    # Gercek karar farklari, sapka farklari ve kisa kok carpismalari esit DEGILDIR.
+    for a, b in [
+        ("umumî at arabası", "umumî fayton"),
+        ("umumi fayton", "umumî fayton"),
+        ("Ruhanî Alem", "Ruhanî Âlem"),
+        ("Tarot Kulübü", "Tarot Cemiyeti"),
+        ("arabacı", "faytoncu"),
+        ("fayton", "faytoncu"),
+        ("kızıl mehtap", "Kızıl Ay"),
+        ("dere", "deri"),
+        ("süre", "sürü"),
+        ("kar", "karar"),
+        ("Mühürlü Eser 2-049", "2-049 numaralı Mühürlü Eser"),
+    ]:
+        assert not SD.bicim_esit(a, b), (a, b)
+
+
+def test_araya_niteleyici_ve_cekim_a1_ve_onceki_sablonda_hata_vermez():
+    kay = _kaynak(
+        [
+            _t("umumî fayton", "public carriage", kategori="words.md › Transport"),
+            _t("elf çiçeği", "elf flower", kategori="words.md › Herbs"),
+        ],
+        sablonlar={79: _sablon(a1=[("public carriage", "umumî fayton", "—")])},
+    )
+    md = _sablon(a1=[
+        ("public carriage", "umumî at faytonu", "—"),
+        ("elf flowers", "elf çiçekleri", "—"),
+    ])
+    assert _bulgular(md, kay) == []
+    # Gercek kayma yine yakalanir: umumî at arabası != umumî fayton.
+    md_hata = _sablon(a1=[("public carriage", "umumî at arabası", "—")])
+    b = _bulgular(md_hata, kay)
+    assert any(x[0] == "HATA" and "sözlükte bu İngilizcenin" in x[2] for x in b)
+    assert any(x[0] == "UYARI" and "Ch_79" in x[2] for x in b)
 
 
 def test_latin_disi_yazi_ve_kod_sizintisi():

@@ -73,8 +73,10 @@ BAKIM RAPORU (--bakim):
   3. Veri eksikleri: Cincesi girilmemis kayitlar, Cince anahtari tutmayan
      kayitlar, sozluge eklenebilecek Ingilizce varyantlar.
 
-KAPI (bolum_siniri) BURADA YOKTUR: okurun sozluk sayfasinda neyi ne zaman
-gorecegini belirler, cevirmenin hangi kelimeyi kullanacagini degil.
+KAPI (bolum_siniri) BURADA YAZILMAZ: okurun sozluk sayfasinda neyi ne zaman
+gorecegini belirler. Tek istisna eski karsiliklar (lotm.gecis_bolumu): kapidan
+once eski bicim o donemin dogru kelimesidir (ritüel < 22, rol yapma < 93), dokum
+bunu sayi vermeden soyler ('BU BÖLÜMDE ESKİ KARŞILIK GEÇERLİ').
 
 Kullanim:
     hazirla.py 54                       ekrana
@@ -2145,7 +2147,12 @@ def _terim_satirlari(e: Eslesme, zh, notlar: bool, no: int | None = None) -> lis
             f"liste usulü)"
         )
     if t.eski_karsiliklar:
-        out.append(f"  - KULLANILMAZ (eski karşılık): {', '.join(t.eski_karsiliklar)}")
+        gecis = lotm.gecis_bolumu(t)
+        if gecis and no is not None and no < gecis:
+            out.append(f"  - BU BÖLÜMDE ESKİ KARŞILIK GEÇERLİ: {', '.join(t.eski_karsiliklar)} "
+                       f"(yeni ad '{t.tr}' bu bölümde henüz açılmadı)")
+        else:
+            out.append(f"  - KULLANILMAZ (eski karşılık): {', '.join(t.eski_karsiliklar)}")
     mudahale = (t.ham or {}).get("mudahale") if isinstance(t.ham, dict) else None
     if mudahale in ("ozgun", "degistirme", "birlestirme", "tamamlama"):
         out.append(

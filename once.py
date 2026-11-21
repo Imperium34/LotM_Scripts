@@ -64,6 +64,8 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="Ceviri oncesi hat.")
     ap.add_argument("no", type=int)
     ap.add_argument("--yeniden", action="store_true")
+    ap.add_argument("--sadece-hazirlik", action="store_true",
+                    help="yalniz hazirlik ve ses haritasi; sablon denetimi yok")
     a = ap.parse_args(argv)
     no = a.no
 
@@ -99,6 +101,9 @@ def main(argv=None) -> int:
     satirlar += ["## Hazırlık", "Şablon üreticisine verilecekler:",
                  f"- {dokum}", f"- {dizin}"] + ([f"- {ses}"] if ses.exists() else []) + [
                  f"- {onceki}" if onceki.exists() else f"- (önceki şablon yok: {onceki.name})", ""]
+    if a.sadece_hazirlik:
+        print("\n".join(satirlar))
+        return 0
 
     # 2. sablon
     satirlar.append("## Şablon")

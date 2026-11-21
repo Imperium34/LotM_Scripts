@@ -66,12 +66,16 @@ def test_aday_adlar_iyelik_satir_sonu_ve_bilinenler():
     assert "Klein Moretti" not in adaylar and "Klein" not in adaylar
 
 
-def test_yaz_kapi_icermez_ve_eski_karsiligi_yasaklar():
+def test_yaz_kapi_icermez_ve_eski_karsiligi_kapiya_gore_yasaklar():
     t = _t("Ayin", "Ritual", "仪式", bolum_siniri=22, eski_karsiliklar=["ritüel"],
            ham={"aciklama": "Bir tören.", "mudahale": "ceviri"})
     e = H.Eslesme(t, "zh", 2, 0, yayim=[30, 40])
-    md = H.yaz_dokum(10, "仪式", None, [e], [], [], [], [], 53)
+    md = H.yaz_dokum(30, "仪式", None, [e], [], [], [], [], 53)
     assert "KULLANILMAZ (eski karşılık): ritüel" in md
+    # kapidan once eski bicim dogrudur (lotm.gecis_bolumu); sayi yine yazilmaz
+    erken = H.yaz_dokum(10, "仪式", None, [e], [], [], [], [], 53)
+    assert "ESKİ KARŞILIK GEÇERLİ: ritüel" in erken and "KULLANILMAZ" not in erken
+    assert "22" not in erken
     assert "yayımlanmış 2 bölümde (son: 40)" in md
     assert "22" not in md                                # bolum_siniri yazilmaz
     assert "yalnız Çince" in md

@@ -77,6 +77,10 @@
 #      ./calistir.sh once 61  ceviriden once: hazirlik (gerekirse yeniden) ve
 #                             Ch_61.md kaydedilince sablon_denetle; durum
 #                             Reports/once/Ch_61/ (bkz. once.py)
+#      ./calistir.sh sablon 61 sablonu lotm-chapter-template ile claude -p'de
+#                             uretir (girdiler yerelden), Tools/Schemas'a koyar,
+#                             denetler; oturum kimligini basar: claude --resume
+#                             <id> ile sohbet olarak surer (bkz. sablon.py)
 #      ./calistir.sh cevir 61 sablon denetlenir (once), bolum claude -p ile
 #                             cevrilir, _chapters/0061.md yazilir (DURUM NOTU
 #                             Reports/ceviri/Ch_61/'a, yeni tikler Tools/tikler.md'ye).
@@ -732,9 +736,10 @@ fi
 #   sayi:   Cincedeki sayilar Turkcede var mi (bkz. sayi_denetle.py)
 #   kaynak: Cince ve Ingilizce kaynak birbirine uyuyor mu (bkz. kaynak_denetle.py)
 case "${1:-}" in
-once | duzelt | cevir | incele | sonra | kiyas | sayi | kaynak)
+once | sablon | duzelt | cevir | incele | sonra | kiyas | sayi | kaynak)
   case "$1" in
   once) betik=once.py ;;
+  sablon) betik=sablon.py ;;
   duzelt) betik=duzelt.py ;;
   cevir) betik=cevir.py ;;
   incele) betik=inceleme_sunucu.py ;;
