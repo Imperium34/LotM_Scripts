@@ -124,3 +124,83 @@ def test_grup_onderi_izleyenleri_tasir():
     md = I.grup_yaz(md, 1, kabul=False, ret=False, hep=False, yeni=None)
     ms = {m["k"]: m for m in I.maddeler(md)[0]}
     assert ms[2]["kabul"]
+
+
+def test_baglam_grup_cakismaz_ve_kisa_eski_zh_bulur():
+    b = I.Baglam(None)
+    b.bloklar = ["İlk paragrafta kısa bir cevap vardı: Evet."]
+    b.gruplar = {3: {"TR": "İlk paragrafta kısa bir cevap vardı: Evet.", "ZH": "第一段有个简短回答：是的。"}}
+    sonuc = b.bul({"p": "1", "eski": "Evet."})
+    assert sonuc["hizalama_grup"] == 3 and "是的" in sonuc["zh"]
+    assert "grup" not in sonuc
+
+
+def test_celiskili_post_ve_bitti_sonrasi_cift_uygula_reddedilir(tmp_path, monkeypatch):
+    import json
+    import threading
+    import urllib.error
+    import urllib.request
+    from http.server import ThreadingHTTPServer
+
+    kok, rapor = _kok(tmp_path, [7])
+    for ad, deger in {"LOTM_KOK": kok, "LOTM_SONRA_RAPOR": rapor, "LOTM_KARARLAR": tmp_path / "kararlar.md",
+                      "LOTM_ISTATISTIK": tmp_path / "ist.tsv", "LOTM_KELIMELER": tmp_path / "words.md",
+                      "LOTM_YEDEK": tmp_path / "yedek"}.items():
+        monkeypatch.setenv(ad, str(deger))
+    monkeypatch.setattr(S, "RAPOR", rapor)
+    monkeypatch.setattr(S, "ISTATISTIK", tmp_path / "ist.tsv")
+    monkeypatch.setattr(S, "BOLUMLER", kok / "Imperium34.github.io" / "_chapters")
+
+    kip = I.Kip("sonra")
+    oturum = I.Oturum(kip, [7])
+    sunucu = ThreadingHTTPServer(("127.0.0.1", 0), None)
+    sunucu.RequestHandlerClass = I.uygulama(oturum)
+    threading.Thread(target=sunucu.serve_forever, daemon=True).start()
+    adres = f"http://127.0.0.1:{sunucu.server_address[1]}"
+    try:
+        # kabul+ret ayni anda 400 donmeli
+        req = urllib.request.Request(
+            adres + "/api/madde",
+            data=json.dumps({"k": 1, "kabul": True, "ret": True, "hep": False}).encode(),
+            headers={"Content-Type": "application/json"},
+        )
+        try:
+            urllib.request.urlopen(req, timeout=10)
+            assert False, "400 bekleniyordu"
+        except urllib.error.HTTPError as e:
+            assert e.code == 400
+
+        # Ilk uygula bitirir; ikinci uygula kip.uygula'yi yeniden cagirmaz
+        req_u = urllib.request.Request(adres + "/api/uygula", data=b"{}", headers={"Content-Type": "application/json"})
+        d1 = json.loads(urllib.request.urlopen(req_u, timeout=30).read())
+        assert d1["bitti"] and len(d1["uygulananlar"]) == 1
+        monkeypatch.setattr(kip, "uygula", lambda no: (_ for _ in ()).throw(AssertionError("yeniden cagrilmamali")))
+        d2 = json.loads(urllib.request.urlopen(req_u, timeout=10).read())
+        assert d2["bitti"] and len(d2["uygulananlar"]) == 1
+    finally:
+        sunucu.shutdown()
+
+
+def test_islenmis_baska_bolumun_istatistigiyle_yanilmaz(tmp_path, monkeypatch):
+    import os
+    rapor = tmp_path / "sonra"
+    ist = tmp_path / "ist.tsv"
+    ist.write_text("bolum\tk\taile\ton\tkarar\n10\t1\tsadakat\t0\tkabul\n", encoding="utf-8")
+    os.utime(ist, (1000, 1000))
+    ch10 = rapor / "Ch_10" / "5_inceleme.md"
+    ch10.parent.mkdir(parents=True)
+    ch10.write_text("# 10\n", encoding="utf-8")
+    os.utime(ch10, (2000, 2000))  # istatistikten sonra yeniden uretilmis
+    monkeypatch.setattr(S, "RAPOR", rapor)
+    monkeypatch.setattr(S, "ISTATISTIK", ist)
+
+    kip = I.Kip("sonra")
+    assert not kip.islenmis(10)
+    # Baska bir bolum (11) islenip ortak ist.tsv'nin mtime'ini ileri tasiyor
+    os.utime(ist, (3000, 3000))
+    assert not kip.islenmis(10)
+
+
+def test_olmayan_dosya_ve_kisayol_korumasi(tmp_path):
+    assert I.main(["--dosya", str(tmp_path / "yok.md"), "--acma"]) == 1
+    assert "if(e.ctrlKey||e.metaKey||e.altKey) return;" in I.SAYFA

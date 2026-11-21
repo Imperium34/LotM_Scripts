@@ -150,6 +150,20 @@ def test_calistir_ansi_atar_stderr_ekler(tmp_path):
     assert out == "kalin\nhata"
 
 
+def test_calistir_basarisiz_cikis_kodunu_yazar(tmp_path):
+    out = _asil_calistir(["sh", "-c", "echo sorun >&2; exit 2"], tmp_path)
+    assert "sorun" in out and "(çıkış kodu: 2)" in out
+
+
+def test_eksik_zincir_veya_istemde_duzelt_cagrilmaz(depo, capsys):
+    # Fixture duzelt()'i yasakliyor; cagrilsa AssertionError atar.
+    assert Z.main([str(depo["t"] / "olmayan.txt")]) == 1
+    assert "zincir çıktısı yok" in capsys.readouterr().out
+    depo["istem"].unlink()
+    assert Z.main([str(depo["zincir"])]) == 1
+    assert "istem yok" in capsys.readouterr().out
+
+
 def test_cat_tek_basina_yetmez_allowedtools_yuzunden(tmp_path, monkeypatch):
     # Proje notu "LOTM_CLAUDE=cat model cagirmadan girdi uretir" der; zincir_oku'nun
     # okuma gecisi araclar verdigi icin --allowedTools eklenir ve cat bunu tanimaz.

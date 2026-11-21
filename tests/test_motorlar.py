@@ -119,3 +119,40 @@ def test_cevir_motor_adi():
     assert cevir.motor_adi("claude", "sonnet") == "sonnet"
     assert cevir.motor_adi("claude", None) == M.VARSAYILAN_MODEL
     assert cevir.motor_adi("codex", None).startswith("codex")
+
+
+def test_agy_arac_dususu_claude_kotasina_uyar(tmp_path, monkeypatch, capsys):
+    _agy(tmp_path, monkeypatch)
+    _claude(tmp_path, monkeypatch)
+    kota = {"claude": "session limit"}
+    s = M.calistir("selam", "antigravity", sure=30, araclar=["Read"], cwd=tmp_path, kota=kota)
+    assert not s.ok and s.kota and s.motor == "claude"
+    assert "ATLANDI claude" in capsys.readouterr().out
+
+
+def test_stdout_kota_stderr_gurultusunde_kacmaz(tmp_path, monkeypatch):
+    _claude(tmp_path, monkeypatch,
+            'cat >/dev/null\necho "DeprecationWarning: minor" >&2\n'
+            'echo "You have hit your session limit · resets 6:30am"\nexit 1\n')
+    kota = {}
+    s = M.calistir("a", "claude", sure=30, cwd=tmp_path, kota=kota)
+    assert not s.ok and s.kota and "session limit" in kota["claude"]
+
+
+def test_bos_ortam_ve_bilinmeyen_motor(tmp_path, monkeypatch):
+    import pytest
+    monkeypatch.setenv("LOTM_CODEX", "")
+    assert M.codex_komutu(tmp_path / "son")[0] == "codex"
+    with pytest.raises(ValueError):
+        M.calistir("a", "bilinmeyen", sure=30, cwd=tmp_path, kota={})
+
+
+def test_ikinci_motor_varsayilan_ve_secimler(tmp_path, monkeypatch):
+    _codex(tmp_path, monkeypatch)
+    _agy(tmp_path, monkeypatch)
+    monkeypatch.delenv("LOTM_MOTOR_SADAKAT2", raising=False)
+    assert M.ikinci_motor("antigravity") == "codex"
+    assert M.ikinci_motor("codex") == "claude"
+    assert M.ikinci_motor("codex", {"sadakat2": "antigravity"}) == "antigravity"
+    monkeypatch.setenv("LOTM_CODEX", str(tmp_path / "yok-boyle"))
+    assert M.ikinci_motor("antigravity") == "claude"

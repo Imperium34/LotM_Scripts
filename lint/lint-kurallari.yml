@@ -303,9 +303,11 @@ ozel_adlar:
   Neil:
     dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Nil
   Rozanne:
-    dogru_ekler: ["in", "e", "i", "den", "de"] # Ro-zen / Ro-zan
+    dogru_ekler: ["in", "e", "i", "den", "de"] # Ro-zen
   Frye:
     dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Fray
+  Kenley:
+    dogru_ekler: ["in", "e", "i", "den", "de"]  # Ken- ley
   Royale:
     dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Ro-yal
   Seeka:
@@ -372,6 +374,8 @@ ozel_adlar:
     dogru_ekler: ["ın", "a", "ı", "dan", "da"] # Bek-lınd
   Tingen:
     dogru_ekler: ["in", "e", "i", "den", "de"] # Tin-gen
+  Hornacis:
+    dogru_ekler: ["in", "e", "i", "ten", "te"]  # Hor-ney-şis
 
   # --- Tingen Residents & Minor Characters ---
   Anna:

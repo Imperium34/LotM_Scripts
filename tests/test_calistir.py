@@ -192,3 +192,43 @@ def test_kaynak_python_betigine_gider(depo, betikler):
         assert s.returncode in (0, 1, 2)
     else:
         assert s.returncode == 2 and "kaynak_denetle.py" in s.stderr
+
+
+def test_bolum_gecersiz_numara_reddedilir(depo_tam, betikler):
+    s = _calistir(betikler, depo_tam, "bolum", "abc")
+    assert s.returncode == 1 and "kullanim:" in s.cikti
+
+
+def test_kontrol_cokmesi_bulgu_degil_hata_sayilir(depo_tam, betikler, tmp_path):
+    d = tmp_path / "stub_k"
+    d.mkdir()
+    gercek = shutil.which("python3")
+    st = d / "python3"
+    st.write_text(f'#!/bin/bash\ncase "$*" in *"lotm.py kontrol"*) exit 2;; esac\nexec "{gercek}" "$@"\n')
+    st.chmod(st.stat().st_mode | stat.S_IEXEC)
+    yol = f"{d}{os.pathsep}{os.environ['PATH']}"
+    s = _calistir(betikler, depo_tam, "hepsi", ortam={"PATH": yol, "LOTM_HEPSI_KATI": "1"})
+    assert s.returncode == 1
+    assert _tablo(s.cikti)["kontrol"][:2] == ("HATA", "2")
+
+
+def test_dogrula_numarasiz_bolumde_zinciri_kesmez(_dolu, betikler):
+    # _dolu'da bolum-001.md var, NNNN.md yok: dogrula ATLANDI demeli, 10# hatasiyla cokmemeli.
+    (_dolu / "Imperium34.github.io/_data/takvim.yml").write_text(
+        'saat: "20:00:00 +0300"\ndonemler:\n  - {baslangic: 1, gunler: [çarşamba, cumartesi]}\n',
+        encoding="utf-8")
+    s = _calistir(betikler, _dolu, "hepsi")
+    assert s.returncode == 0
+    assert _tablo(s.cikti)["dogrula"][:2] == ("ATLANDI", "1")
+
+
+def test_takvim_ek_argumani_iletir(depo_tam, betikler):
+    s = _calistir(betikler, depo_tam, "takvim", "--bolum", "1")
+    assert s.returncode in (0, 1)
+    assert "fark [takvim]" not in s.cikti  # tek bolum kipinde fark yazilmaz
+
+
+def test_basarisiz_adim_atlandi_demez(depo_tam, betikler, python_stub):
+    yol = f"{python_stub}{os.pathsep}{os.environ['PATH']}"
+    s = _calistir(betikler, depo_tam, "hepsi", ortam={"PATH": yol})
+    assert "tarama basarisiz" in s.cikti and "tarama atlandi" not in s.cikti

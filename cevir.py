@@ -22,8 +22,9 @@ cevirmen Claude (claude -p). Adimlar:
     ceviri    motorlar.calistir (varsayilan claude -p; --motor codex|antigravity)
               -> cikti_ham.md (+ .motor etiketi claude disi motorda). Girdi degismediyse ve cikti
               varsa model yeniden calismaz (--yeniden ile zorlanir).
-    kontrol   Cince harf, baslik, DURUM NOTU, paragraf orani. Sert bir
-              sorun varsa bolum dosyasi yazilmaz.
+    kontrol   Cince harf, baslik, DURUM NOTU, paragraf orani, cift taslak
+              (baslik ya da ilk paragraf iki kez). Sert bir sorun varsa
+              bolum dosyasi yazilmaz.
     yazim     _chapters/00NN.md (front matter + metin). DURUM NOTU bolume
               girmez, Reports/ceviri/Ch_N/durum_notu.md'ye gider; "Yeni tik"
               satirlari Tools/tikler.md'ye eklenir. [BELIRSIZ]/[ONERI]
@@ -77,7 +78,7 @@ RAPOR = Path(os.environ.get("LOTM_CEVIRI_RAPOR") or BETIKLER / "Reports" / "cevi
 TIKLER = Path(os.environ.get("LOTM_TIKLER") or KOK / "Tools" / "tikler.md")
 
 CJK = re.compile(r"[㐀-鿿豈-﫿]")
-BASLIK = re.compile(r"^#{1,3}\s*Bölüm\s+(\d+)\s*[:：—-]\s*(.+?)\s*$", re.M)
+BASLIK = re.compile(r"^#{1,3}\s*Bölüm\s+(\d+)\s*[:：—–-]\s*(.+?)\s*$", re.M)
 DURUM = re.compile(r"^\s*>?\s*\**\[DURUM NOTU\]\**", re.M)
 
 
@@ -114,6 +115,26 @@ def gorev_blogu(no: int) -> str:
     )
 
 
+# 21 Kas: agy (gemini) iki kez (Ch82, Ch84) once yarim kalan bir taslak, ardindan
+# bastan tam bolumu yazdi. Yalniz claude disi motorlara, mesajin sonuna eklenir.
+TEK_KOPYA_NOTU = (
+    "\n---\nÖnemli: Bölümü önce baştan sona bitir ve kontrol et, cevabı ancak ondan "
+    "sonra yaz. Cevapta bölüm yalnız bir kez ve tam olarak yer alsın: yarım bir taslak "
+    "bırakıp baştan yeniden başlama.\n"
+)
+
+
+def cift_taslak(govde: str, no: int) -> str | None:
+    """Govdede ikinci bir kopya baslıyorsa (baslik satiri ya da ilk paragraf tekrar) aciklama."""
+    m = BASLIK.search(govde)
+    if m and int(m.group(1)) == no:
+        return f"başlık satırı (`{m.group(0).strip()}`) metinde ikinci kez geçiyor"
+    ilk = next((b.strip() for b in re.split(r"\n\s*\n", govde) if b.strip()), "")
+    if len(ilk) >= 40 and govde.count(ilk) > 1:
+        return f"ilk paragraf metinde ikinci kez geçiyor (`{ilk[:50]}…`)"
+    return None
+
+
 def girdi_kur(no: int, sablon: Path, haritalar: bool) -> tuple:
     """Cekirdek mesaja girmez, --system-prompt-file ile gider."""
     cekirdek = cekirdek_yolu()
@@ -145,21 +166,32 @@ def claude_komutu(model: str | None, sistem: Path) -> list:
 def motor_adi(motor: str, model: str | None) -> str:
     """tikler.md ve DURUM.md icin: hangi motor/model cevirdi."""
     if motor == "claude":
-        return model or M.VARSAYILAN_MODEL
-    m = M.CODEX_MODEL if motor == "codex" else M.AGY_MODEL
+        return model or os.environ.get("LOTM_MODEL", M.VARSAYILAN_MODEL)
+    if motor == "codex":
+        m = os.environ.get("LOTM_CODEX_MODEL", M.CODEX_MODEL)
+    else:
+        m = os.environ.get("LOTM_AGY_MODEL", M.AGY_MODEL)
     return f"{motor}/{m}" if m else motor
 
 
-def ayristir(ham: str, no: int) -> dict:
+def ayristir(ham: str, no: int | None = None) -> dict:
     """Ham ciktidan baslik, govde, durum notu."""
     metin = ham.strip()
-    # Model bazen ```markdown ... ``` ile sarar.
-    metin = re.sub(r"^```[a-z]*\n|\n```\s*$", "", metin)
-    m = BASLIK.search(metin)
+    # Model bazen butun ciktiyi ```markdown ... ``` ile sarar.
+    cerceve = re.fullmatch(r"```[a-zA-Z0-9_-]*[ \t]*\r?\n(.*?)\r?\n```", metin, re.S)
+    if cerceve:
+        metin = cerceve.group(1).strip()
+    d = DURUM.search(metin)
+    ust = metin[:d.start()] if d else metin
+    m = BASLIK.search(ust)
+    # Baslik yalniz metnin basinda (kisa onsoz varsa ondan hemen sonra) kabul edilir;
+    # govde ortasinda ya da DURUM NOTU'ndaki baslik metni yutmasin.
+    if m and len(ust[:m.start()].strip()) >= 300:
+        m = None
     baslik = m.group(2).strip() if m else None
     if m:
         metin = metin[m.end():]
-    d = DURUM.search(metin)
+        d = DURUM.search(metin)
     notu = metin[d.start():].strip() if d else ""
     govde = (metin[:d.start()] if d else metin).strip()
     # Durum notundan once kalan yatay cizgiyi at.
@@ -169,7 +201,7 @@ def ayristir(ham: str, no: int) -> dict:
 
 
 def kontrol_et(p: dict, no: int, grup: int) -> tuple:
-    """(sert sorunlar, uyarilar)."""
+    """(sert sorunlar, uyarilar, paragraf)."""
     sert, uyari = [], []
     if not p["govde"]:
         sert.append("çeviri metni boş")
@@ -189,7 +221,11 @@ def kontrol_et(p: dict, no: int, grup: int) -> tuple:
     if oran < 0.7 or oran > 1.5:
         uyari.append(f"paragraf sayısı {paragraf}, kaynak grubu {grup} (oran {oran:.2f}): "
                      "eksik ya da birleşmiş paragraf olabilir")
-    etiket = len(re.findall(r"\[BELİRSİZ\]|\[ÖNERİ:", p["govde"]))
+    cift = cift_taslak(p["govde"], no)
+    if cift:
+        sert.append(f"çift taslak olabilir: {cift}. Ham çıktıda baştaki yarım kopyayı "
+                    f"elle silip `cevir {no}`'i yeniden çalıştırın (model çağrılmaz)")
+    etiket = len(re.findall(r"\[BELİRSİZ(?:\]|:)|\[ÖNERİ:", p["govde"]))
     if etiket:
         uyari.append(f"{etiket} [BELİRSİZ]/[ÖNERİ] etiketi metinde (sonra'da çözülür)")
     return sert, uyari, paragraf
@@ -204,9 +240,11 @@ def yeni_tikler(notu: str) -> list:
     return out
 
 
-def tik_ekle(no: int, tikler: list, model: str | None) -> None:
+def tik_ekle(no: int, tikler: list, model: str | None) -> int:
+    """Yeni tikleri Tools/tikler.md'ye ekler (ayni bolum + metin varsa atlar); eklenen sayisi."""
     if not tikler:
-        return
+        return 0
+    TIKLER.parent.mkdir(parents=True, exist_ok=True)
     if not TIKLER.exists():
         TIKLER.write_text(
             "# Çevirmen tik defteri\n\n"
@@ -214,22 +252,42 @@ def tik_ekle(no: int, tikler: list, model: str | None) -> None:
             "Bir kalıp iki üç bölümde tekrar ederse çekirdeğin §2/§3/§5 tablosuna işlenir "
             "(ya da bir denetleyiciye dönüşür) ve buradaki satırın başına ✓ konur.\n\n",
             encoding="utf-8")
-    satirlar = [f"- {no} · {datetime.now():%Y-%m-%d} · {model or M.VARSAYILAN_MODEL} · {t}" for t in tikler]
+    eski = TIKLER.read_text(encoding="utf-8")
+    var = set()
+    for satir in eski.splitlines():
+        m = re.match(r"^- (?:✓\s*)?(\d+)\s*·[^·]*·[^·]*·\s*(.+?)\s*$", satir)
+        if m:
+            var.add((int(m.group(1)), m.group(2)))
+    yeni = [t for t in tikler if (no, t) not in var and not var.add((no, t))]
+    if not yeni:
+        return 0
+    m_ad = model or os.environ.get("LOTM_MODEL", M.VARSAYILAN_MODEL)
+    satirlar = [f"- {no} · {datetime.now():%Y-%m-%d} · {m_ad} · {t}" for t in yeni]
     with TIKLER.open("a", encoding="utf-8") as f:
         f.write("\n".join(satirlar) + "\n")
+    return len(yeni)
+
+
+def _front_matter(metin: str | None) -> str | None:
+    if metin and metin.startswith("---"):
+        son = metin.find("\n---", 3)
+        if son > 0:
+            return metin[: son + 4]
+    return None
 
 
 def bolum_dosyasi(baslik: str | None, no: int, govde: str, eski: str | None) -> str:
     # Var olan dosyanin front matter'i (tarih dahil) korunur, yalniz baslik yenilenir.
-    fm = None
-    if eski and eski.startswith("---"):
-        son = eski.find("\n---", 3)
-        if son > 0:
-            fm = eski[: son + 4]
+    fm = _front_matter(eski)
     if fm is None:
         fm = "---\nlayout: post\ntitle: \"\"\n---"
     if baslik:
-        fm = re.sub(r'^title:.*$', f'title: "Bölüm {no}: {baslik}"', fm, count=1, flags=re.M)
+        temiz = baslik.replace("\\", "\\\\").replace('"', '\\"')
+        satir = f'title: "Bölüm {no}: {temiz}"'
+        if re.search(r"^title:.*$", fm, re.M):
+            fm = re.sub(r"^title:.*$", lambda _: satir, fm, count=1, flags=re.M)
+        else:
+            fm = fm[:-3].rstrip("\n") + "\n" + satir + "\n---"
     return f"{fm}\n\n{govde}\n"
 
 
@@ -244,6 +302,9 @@ def tarih_ver(dosya: Path) -> str:
     """takvim_ata kuru; yalniz bu dosya degisiyorsa yaz."""
     ata = [sys.executable, str(BETIKLER / "takvim_ata.py")]
     p = subprocess.run(ata, capture_output=True, text=True, cwd=BETIKLER)
+    if p.returncode != 0:
+        hata = (p.stderr or p.stdout).strip()[:200]
+        return f"takvim: HATA (cikis {p.returncode}) {hata}"
     degisen = [Path(x).name for x in re.findall(r"^\s+(\S+\.md)\s+.*->", p.stdout, re.M)]
     if not degisen:
         return "takvim: değişiklik yok"
@@ -314,7 +375,9 @@ def main(argv=None) -> int:
 
     # 3. ceviri
     motor = M.motor_sec("cevir", {"cevir": a.motor} if a.motor else None)
-    taze = (ham.exists() and ham.stat().st_mtime >= girdi.stat().st_mtime
+    en_yeni_girdi = max(girdi.stat().st_mtime, cekirdek.stat().st_mtime)
+    taze = (ham.exists() and bool(ham.read_text(encoding="utf-8").strip())
+            and ham.stat().st_mtime >= en_yeni_girdi
             and M.etiket_oku(ham) == motor)
     if taze and not a.yeniden:
         print(f"çeviri: {ham.name} güncel, model çalıştırılmadı (--yeniden ile zorlanır)")
@@ -324,13 +387,14 @@ def main(argv=None) -> int:
             if not shutil.which(komut[0]):
                 print(f"YOK: '{komut[0]}' komutu (LOTM_CLAUDE ile verin). girdi.md hazır.")
                 return 1
-            print(f"çeviri: {' '.join(komut[:1] + komut[1:8])} ...", flush=True)
+            print(f"çeviri: {' '.join(komut[:8])} ...", flush=True)
             gonder, ek = metin, sistem_argumanlari(cekirdek)
         else:
             # codex/agy'de sistem istemi bayragi yok: cekirdek mesajin basina.
             print(f"  UYARI: {motor} sistem istemi almıyor; çekirdek ({cekirdek.name}) "
                   "girdinin başına eklendi", flush=True)
-            gonder = cekirdek.read_text(encoding="utf-8").rstrip() + "\n\n---\n\n" + metin
+            gonder = (cekirdek.read_text(encoding="utf-8").rstrip() + "\n\n---\n\n" + metin
+                      + TEK_KOPYA_NOTU)
             ek = None
             print(f"çeviri: {motor_adi(motor, a.model)} ...", flush=True)
         t0 = time.time()
@@ -338,7 +402,7 @@ def main(argv=None) -> int:
         if not q.ok:
             return 1
         motor = q.motor
-        ham.write_text(q.metin, encoding="utf-8")
+        lotm.atomik_yaz(ham, q.metin)
         M.motor_etiketi_yaz(ham, motor)
         print(f"  {time.time() - t0:.0f} sn, {len(q.metin) // 1000} KB")
     motor = M.etiket_oku(ham)
@@ -376,19 +440,20 @@ def main(argv=None) -> int:
                 y = yedekle(hedef)
                 durum.append(f"- Yedek: {y}")
                 print(f"  yedek: {y}")
-            hedef.write_text(bolum_dosyasi(parca["baslik"], no, parca["govde"], eski),
-                             encoding="utf-8")
+            hedef.parent.mkdir(parents=True, exist_ok=True)
+            lotm.atomik_yaz(hedef, bolum_dosyasi(parca["baslik"], no, parca["govde"], eski))
             durum.append(f"- Yazıldı: {hedef}")
             print(f"yazıldı: {hedef}")
-            if eski is None or "date:" not in eski:
+            eski_fm = _front_matter(eski) or ""
+            if not re.search(r"^date:", eski_fm, re.M):
                 t = tarih_ver(hedef)
                 durum.append(f"- {t}")
                 print(f"  {t}")
             tikler = yeni_tikler(parca["durum_notu"])
-            tik_ekle(no, tikler, motor_adi(motor, a.model))
-            if tikler:
-                durum.append(f"- {len(tikler)} yeni tik → {TIKLER.name}")
-                print(f"  {len(tikler)} yeni tik → {TIKLER}")
+            eklenen = tik_ekle(no, tikler, motor_adi(motor, a.model))
+            if eklenen:
+                durum.append(f"- {eklenen} yeni tik → {TIKLER.name}")
+                print(f"  {eklenen} yeni tik → {TIKLER}")
 
     (klasor / "DURUM.md").write_text("\n".join(durum) + "\n", encoding="utf-8")
     if kod:

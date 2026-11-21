@@ -17,13 +17,21 @@ def test_ek_uyumu():
              ("bilgi", "malumat", "nin", "ın"), ("bilgi", "malumat", "yle", "la"),
              ("bilgi", "malumat", "ydi", "tı"), ("soruşturma", "tahkikat", "sı", "ı"),
              ("eksik", "noksan", "ti", "dı"), ("eksik", "noksan", "liği", "lığı"),
-             ("önem", "ehemmiyet", "siz", "siz"), ("yaklaşık", "takriben", "", "")]
+             ("önem", "ehemmiyet", "siz", "siz"), ("yaklaşık", "takriben", "", ""),
+             # Unlu->unsuz iyelik, yalin -ken, -ki + ek, buyuk Turkce harf
+             ("bilgi", "malumat", "m", "ım"), ("bilgi", "malumat", "miz", "ımız"),
+             ("bilgi", "malumat", "niz", "ınız"), ("bilgi", "malumat", "nizi", "ınızı"),
+             ("soruşturma", "tahkikat", "n", "ın"), ("soruşturma", "tahkikat", "mız", "ımız"),
+             ("bilgi", "malumat", "yken", "ken"), ("eksik", "noksan", "ken", "ken"),
+             ("bilgi", "malumat", "dekiler", "takiler"), ("bilgi", "malumat", "ninkiler", "ınkiler"),
+             ("bilgi", "malumat", "Yİ", "ı")]
     for eski, yeni, ek, beklenen in ornek:
         assert A.ek_cevir(eski, yeni, ek) == beklenen, (eski, ek)
-    # Fiil/yapim ekleri ve zarfa gelen ek cevrilmez.
+    # Fiil/yapim ekleri, baska kokler (bilginler) ve zarfa gelen ek cevrilmez.
     for eski, yeni, ek in [("bilgi", "malumat", "sayar"), ("bilgi", "malumat", "lendirdi"),
                            ("önem", "ehemmiyet", "sedi"), ("soruşturma", "tahkikat", "cı"),
-                           ("yaklaşık", "takriben", "la")]:
+                           ("yaklaşık", "takriben", "la"), ("bilgi", "malumat", "nler"),
+                           ("soruşturma", "tahkikat", "mak")]:
         assert A.ek_cevir(eski, yeni, ek) is None, (eski, ek)
 
 
@@ -34,12 +42,14 @@ def test_yalniz_anlati_ve_birebir():
     metin = ("---\ntitle: x\n---\n\n"
              "Durum buydu. \"Durum kötü,\" dedi bilgin.\n\n"
              "_Bu durum da ne?_ Klein bilgiyi not etti.\n\n"
+             "Bilginler bu bilginin kaynağını sordu.\n\n"
              "Durum buydu.")
     out = A.taban_adaylari(metin, KURAL, donmus=[])
     # ¶1'deki "Durum buydu." metinde iki kez geciyor: birebir kurali eler.
-    # Diyalog, ic ses ve 'bilgin' atlanir.
+    # Diyalog, ic ses, 'bilgin' ve 'bilginler' atlanir; 'bilginin' yakalanir.
     assert [(x["p"], x["eski"], x["yeni"]) for x in out] == [
-        (2, "Klein bilgiyi not etti.", "Klein malumatı not etti.")]
+        (2, "Klein bilgiyi not etti.", "Klein malumatı not etti."),
+        (3, "Bilginler bu bilginin kaynağını sordu.", "Bilginler bu malumatın kaynağını sordu.")]
 
 
 def test_taban_secimi_yayilir_ve_tekrari_sinirlar():
@@ -64,6 +74,13 @@ def test_doruk_ayristirma():
     assert "Algı fiili" not in t
     assert [(d["bas"], d["son"], d["butce"]) for d in A.doruklar(t)] == [
         (37, 39, 3), (74, 79, 4), (80, 80, 1)]
+    # Buyuk Turkce İ/I ve acik butcesiz ic aralik dis butceyi dusurmemeli.
+    t2 = ("- **Gotik sözcük tahsisi:**\n"
+          "  - ¶10–¶15: İzinli doruk, en çok dört. ¶12 doruk noktasıdır.\n"
+          "  - ¶20–¶22: İki ila üç sözcük.\n"
+          "  - ¶30–¶35: SIFIR.\n")
+    assert [(d["bas"], d["son"], d["butce"]) for d in A.doruklar(t2)] == [
+        (10, 15, 4), (20, 22, 3)]
 
 
 def test_doruk_maddeleri_birebir():
@@ -108,3 +125,32 @@ def test_kararlar_yedekle_ve_uygula(tmp_path):
             os.environ.pop("LOTM_YEDEK", None)
         else:
             os.environ["LOTM_YEDEK"] = eski_yedek
+
+
+def test_celiskili_karar_ve_cikis_kodu_ve_yalniz_taban(tmp_path, monkeypatch):
+    bolumler = tmp_path / "_chapters"
+    bolumler.mkdir()
+    rapor = tmp_path / "ses_ayari"
+    monkeypatch.setattr(S, "BOLUMLER", bolumler)
+    monkeypatch.setattr(A, "RAPOR", rapor)
+    monkeypatch.setattr(S, "SABLONLAR", tmp_path / "Schemas")
+    monkeypatch.setattr(S, "KARARLAR", tmp_path / "alt" / "kararlar.md")
+    monkeypatch.setenv("LOTM_YEDEK", str(tmp_path / "yedek"))
+
+    # Olmayan bolum: cikis kodu 1
+    assert A.main(["99", "--kararlar"]) == 1
+
+    # Varsayilan aralik (23-33,62-72) disindaki bolumde --yalniz taban calismali
+    (bolumler / "0099.md").write_text(
+        "---\nt: x\n---\n\nDurum kötüydü.\n\nBilgi eksikti.\n", encoding="utf-8")
+    assert A.main(["99", "--yalniz", "taban"]) == 0
+    inc = rapor / "Ch_99" / "inceleme.md"
+    assert inc.exists() and "Durum kötüydü." in inc.read_text(encoding="utf-8")
+
+    # Hem kabul hem ret isaretliyse uygulanmaz, celiskili bildirilir
+    metin = inc.read_text(encoding="utf-8").replace(
+        "[ ] kabul   [ ] ret   [ ] hep", "[x] kabul   [x] ret   [x] hep", 1)
+    inc.write_text(metin, encoding="utf-8")
+    sonuc = A.kararlari_isle(99, bolumler / "0099.md", rapor / "Ch_99", kuru=False)
+    assert "0 uygulandı" in sonuc and "çelişkili" in sonuc
+    assert "Durum kötüydü." in (bolumler / "0099.md").read_text(encoding="utf-8")

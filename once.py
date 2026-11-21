@@ -34,6 +34,10 @@ import sys
 from pathlib import Path
 
 BETIKLER = Path(__file__).resolve().parent
+sys.path.insert(0, str(BETIKLER))
+
+import lotm  # noqa: E402
+
 KOK = Path(os.environ.get("LOTM_KOK") or BETIKLER.parent)
 SITE = KOK / "Imperium34.github.io"
 SABLONLAR = Path(os.environ.get("LOTM_SABLONLAR") or KOK / "Tools" / "Schemas")
@@ -76,7 +80,7 @@ def main(argv=None) -> int:
         print(f"hazirlik: calistir.sh hazirla {no} ...", flush=True)
         p = subprocess.run(["bash", str(BETIKLER / "calistir.sh"), "hazirla", str(no)],
                            capture_output=True, text=True, cwd=BETIKLER)
-        if p.returncode != 0 or not dokum.exists():
+        if p.returncode != 0 or not dokum.exists() or not dizin.exists():
             print(p.stdout[-2000:], p.stderr[-2000:], sep="\n")
             print("HATA: hazirlik uretilemedi")
             return 1
@@ -89,7 +93,7 @@ def main(argv=None) -> int:
             metin = SH.kaynak_metni(no, tr=False)
             if metin:
                 klasor.mkdir(parents=True, exist_ok=True)
-                ses.write_text(SH.tam(no, metin), encoding="utf-8")
+                lotm.atomik_yaz(ses, SH.tam(no, metin))
     except Exception as e:  # yardimci cikti; hazirlik onsuz da yurur
         print(f"  UYARI: ses haritasi ozeti kurulamadi ({e})")
     satirlar += ["## Hazırlık", "Şablon üreticisine verilecekler:",
@@ -102,32 +106,39 @@ def main(argv=None) -> int:
     if not sablon.exists():
         satirlar.append(f"BEKLIYOR  {sablon} — kaydedince bu komutu yeniden çalıştırın.")
     else:
-        if a.yeniden or bayat_mi(denetim, [sablon, *VERILER]):
+        zh_yan = SABLONLAR / f"Ch_{no}_zh.tsv"
+        if a.yeniden or bayat_mi(denetim, [sablon, zh_yan, *VERILER]):
             print(f"sablon: sablon_denetle.py {sablon.name} ...", flush=True)
             klasor.mkdir(parents=True, exist_ok=True)
+            gecici = denetim.with_name(denetim.name + ".yeni")
+            gecici.unlink(missing_ok=True)
             p = subprocess.run([sys.executable, str(BETIKLER / "sablon_denetle.py"), str(sablon),
-                                "--cikti", str(denetim)],
+                                "--sablonlar", str(SABLONLAR), "--cikti", str(gecici)],
                                capture_output=True, text=True, cwd=BETIKLER)
-            if not denetim.exists():
+            if p.returncode not in (0, 1) or not gecici.exists():
+                gecici.unlink(missing_ok=True)
                 print(p.stdout[-2000:], p.stderr[-2000:], sep="\n")
                 print("HATA: sablon denetimi calismadi")
                 return 1
+            os.replace(gecici, denetim)
         hata, uyari = ozet(denetim.read_text(encoding="utf-8"))
-        if hata:
+        if hata is None:
+            satirlar.append(f"HATA      {denetim.name} — özet satırı okunamadı")
+            kod = 1
+        elif hata:
             durum, kod = "HATA", 1
+            satirlar.append(f"{durum:9} {denetim.name} — {hata} HATA, {uyari} UYARI")
+            satirlar.append("  Şablon verilmiş bir kararı değiştiriyor: çeviriden önce düzeltin.")
         else:
             durum = "UYARI" if uyari else "TEMIZ"
-        satirlar.append(f"{durum:9} {denetim.name} — {hata} HATA, {uyari} UYARI")
-        if hata:
-            satirlar.append("  Şablon verilmiş bir kararı değiştiriyor: çeviriden önce düzeltin.")
-        elif uyari:
-            satirlar.append("  Uyarılar karar değil aday: A.2'deki satır zaten sözlükte olabilir.")
-        if not hata:
+            satirlar.append(f"{durum:9} {denetim.name} — {hata} HATA, {uyari} UYARI")
+            if uyari:
+                satirlar.append("  Uyarılar karar değil aday: A.2'deki satır zaten sözlükte olabilir.")
             satirlar += ["", f"Çeviriden sonra: ./calistir.sh sonra {no} --otomatik"]
 
     rapor = "\n".join(satirlar) + "\n"
     if sablon.exists():
-        (klasor / "DURUM.md").write_text(rapor, encoding="utf-8")
+        lotm.atomik_yaz(klasor / "DURUM.md", rapor)
     print()
     print(rapor)
     return kod

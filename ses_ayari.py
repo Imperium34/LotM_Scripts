@@ -49,10 +49,11 @@ from pathlib import Path
 BETIKLER = Path(__file__).resolve().parent
 sys.path.insert(0, str(BETIKLER))
 sys.path.insert(0, str(BETIKLER / "harita"))
+sys.path.insert(0, str(BETIKLER / "lint"))
 
 import donem_denetle as D  # noqa: E402
 import sonra as S  # noqa: E402
-from turkce import tr_desen  # noqa: E402
+from turkce import tr_desen, tr_kucult  # noqa: E402
 
 KOK = S.KOK
 RAPOR = Path(os.environ.get("LOTM_SES_RAPOR") or BETIKLER / "Reports" / "ses_ayari")
@@ -70,38 +71,14 @@ YALIN = {"yaklaşık"}
 # ------------------------------------------------------------------ ek uyumu
 
 def son_sesli(s: str) -> str:
-    for c in reversed(s.lower()):
+    for c in reversed(tr_kucult(s)):
         if c in SESLI:
             return c
     return "a"
 
 
-def ek_cevir(eski_kok: str, yeni_kok: str, ek: str) -> str | None:
-    """'durum'+'da' -> 'te' (vaziyet+te). Cevrilemeyen (fiil yapan) ek: None.
-
-    Yalniz isim ekleri: cogul, iyelik, hal, ek-fiil, -ki, -ken, -li, -siz.
-    Eski kok sesliyle bitip yeni kok unsuzle bitiyorsa kaynastirma harfi duser
-    (bilgi-si -> malumat-i, bilgi-yle -> malumat-la, bilgi-nin -> malumat-in).
-    """
-    if not ek:
-        return ""
-    if eski_kok in YALIN:  # zarf: ek almaz ("yaklasik" -> "takriben")
-        return None
-    if re.match(r"l[ae][nşt]|s[ae]|s[ae]l|c[ıiuü]|ş", ek):  # bilgilendir, onemse-, durumsal, bilgici
-        return None
-    if eski_kok[-1] in SESLI and yeni_kok[-1] not in SESLI:
-        if ek[0] == "y":
-            ek = ek[1:]
-        elif ek[0] in "ns" and len(ek) > 1 and ek[1] in SESLI and not re.match(r"s[ıiuü]z", ek):
-            ek = ek[1:]
-        if not ek:
-            return ""
-    # Degismez parcalar: sondaki -ki ve -ken.
-    kuyruk = ""
-    m = re.search(r"(ki|ken)$", ek)
-    if m and len(ek) > len(m.group(1)):
-        ek, kuyruk = ek[:m.start()], m.group(1)
-    out, onceki_s, onceki_c = [], son_sesli(yeni_kok), yeni_kok[-1]
+def _ek_uyum(ek: str, onceki_s: str, onceki_c: str) -> tuple[str, str, str]:
+    out = []
     for c in ek:
         if c in "ae":
             c = "e" if onceki_s in INCE else "a"
@@ -116,7 +93,49 @@ def ek_cevir(eski_kok: str, yeni_kok: str, ek: str) -> str | None:
             onceki_s = c
         onceki_c = c
         out.append(c)
-    return "".join(out) + kuyruk
+    return "".join(out), onceki_s, onceki_c
+
+
+def ek_cevir(eski_kok: str, yeni_kok: str, ek: str) -> str | None:
+    """'durum'+'da' -> 'te' (vaziyet+te). Cevrilemeyen (fiil yapan) ek: None.
+
+    Yalniz isim ekleri: cogul, iyelik, hal, ek-fiil, -ki, -ken, -li, -siz.
+    Eski kok sesliyle bitip yeni kok unsuzle bitiyorsa kaynastirma harfi duser
+    (bilgi-si -> malumat-i, bilgi-yle -> malumat-la, bilgi-nin -> malumat-in),
+    iyelik (-m/-n/-miz/-niz) unsuzle biten yeni kokte dar unlu alir
+    (bilgi-m -> malumat-im, bilgi-niz -> malumat-iniz).
+    """
+    ek = tr_kucult(ek)
+    if not ek:
+        return ""
+    if eski_kok in YALIN:  # zarf: ek almaz ("yaklasik" -> "takriben")
+        return None
+    if re.match(r"l[ae][nşt]|s[ae]|s[ae]l|c[ıiuü]|ş|m[ae][kzl]", ek):  # bilgilendir, onemse-, durumsal, bilgici, sorusturmamak
+        return None
+    if eski_kok[-1] in SESLI and yeni_kok[-1] not in SESLI:
+        if ek[0] == "y":
+            ek = ek[1:]
+        elif re.match(r"n[ıiuü]n(?:$|ki)", ek):  # tamlayan: bilgi-nin -> malumat-in
+            ek = ek[1:]
+        elif ek[0] == "s" and len(ek) > 1 and ek[1] in SESLI and not re.match(r"s[ıiuü]z", ek):
+            ek = ek[1:]  # 3. tekil iyelik: bilgi-si -> malumat-i
+        elif re.match(r"[mn](?:$|[ıiuü]z|[ıiuü](?:$|n)|[ae]$|[dt][aeıiuü]|l[ae]$)", ek):
+            ek = "ı" + ek  # 1./2. kisilik iyelik: bilgi-m -> malumat-im, bilgi-niz -> malumat-iniz
+        elif ek[0] in "mnç":  # bilginler, bilginlik, bilgicler gibi baska kokler
+            return None
+        if not ek:
+            return ""
+    # Degismez parcalar: -ki ve -ken uyuma girmez; -ki'den sonra gelen ekler ince unluye uyar.
+    onceki_s, onceki_c = son_sesli(yeni_kok), yeni_kok[-1]
+    m = re.search(r"(ken$|ki(?=$|l[ae]r|n[ıiuüae]|nd[ae]))", ek)
+    if m:
+        on, onceki_s, onceki_c = _ek_uyum(ek[:m.start()], onceki_s, onceki_c)
+        sabit = m.group(1)
+        onceki_s, onceki_c = son_sesli(sabit), sabit[-1]
+        arka, _, _ = _ek_uyum(ek[m.end():], onceki_s, onceki_c)
+        return on + sabit + arka
+    sonuc, _, _ = _ek_uyum(ek, onceki_s, onceki_c)
+    return sonuc
 
 
 def buyuk_bas(s: str) -> str:
@@ -137,14 +156,17 @@ def anlati_maskesi(blok: str) -> str:
 
 def taban_adaylari(metin: str, kural: dict, donmus: list, sablon: str = "") -> list:
     """Her anlati eslesmesi: {"p", "eski", "yeni", "cagdas", "donem"} (cumle duzeyinde)."""
+    istisna = "|".join(tr_desen(x) for x in kural["ozdes_istisna"])
+    ist_on = rf"(?!(?:{istisna})(?![{D.HARF}]))" if istisna else ""
+    desenler = [(cagdas, donem,
+                 re.compile(rf"(?<![{D.HARF}]){ist_on}({tr_desen(cagdas)})([{D.HARF}]*)"))
+                for cagdas, donem in kural["ozdes"].items()]
     out = []
     for p, blok in enumerate(D.bloklar(metin), 1):
         mask = anlati_maskesi(blok)
-        for cagdas, donem in kural["ozdes"].items():
-            d = re.compile(rf"(?<![{D.HARF}])(?!(?:{'|'.join(tr_desen(x) for x in kural['ozdes_istisna']) or '_'}))"
-                           rf"({tr_desen(cagdas)})([{D.HARF}]*)")
+        for cagdas, donem, d in desenler:
             for m in d.finditer(mask):
-                ek = ek_cevir(cagdas, donem, m.group(2).lower())
+                ek = ek_cevir(cagdas, donem, tr_kucult(m.group(2)))
                 if ek is None:
                     continue
                 cumle = D.cumle(blok, m.start(), m.end()).lstrip("_\"”’» ")
@@ -228,7 +250,7 @@ def tahsis_bolumu(sablon: str) -> str:
         if re.match(r"^#", s):
             break
         etiket = re.match(r"^\s{0,1}(?:- )?\*\*([^*]+)\*\*", s)
-        if etiket and not KONU.search(etiket.group(1)):
+        if etiket and not KONU.search(tr_kucult(etiket.group(1))):
             break
         out.append(s)
         if sum(len(x) for x in out) > 3000:
@@ -237,11 +259,11 @@ def tahsis_bolumu(sablon: str) -> str:
 
 
 def _butce(c: str) -> int | None:
-    m = BUTCE.search(c)
+    m = BUTCE.search(tr_kucult(c))
     if not m:
         return None
-    sayi = [2 if x.lower() == "bir iki" else 1 if x.lower() == "tek" else int(x) if x.isdigit()
-            else RAKAM.get(x.lower(), 0) for x in m.groups() if x]
+    sayi = [2 if x == "bir iki" else 1 if x == "tek" else int(x) if x.isdigit()
+            else RAKAM.get(x, 0) for x in m.groups() if x]
     return max(sayi) if sayi else None
 
 
@@ -250,25 +272,28 @@ def doruklar(tahsis: str) -> list:
 
     Cumle araligi ve olumlu bir soz tasiyorsa doruktur; yalniz aralik tasiyorsa
     bekler, ardindan gelen araliksiz olumlu cumle ("burada en fazla bir")
-    onu doruk yapar. Baska bir dorugun icindeki aralik ayri sayilmaz, butcesi
-    (daha ozel oldugu icin) dis doruga gecer."""
+    onu doruk yapar. Baska bir dorugun icindeki aralik ayri sayilmaz, acik
+    butcesi (daha ozel oldugu icin) dis doruga gecer."""
     adaylar, bekleyen, son = [], [], []
     for c in re.split(r"(?<=[.;])\s+|\n", tahsis.replace("**", "")):
         c = c.strip(" -")
         if not c:
             continue
         araliklar = [(int(a), int(b or a)) for a, b in ARALIK.findall(c)]
-        butce, olumsuz, olumlu = _butce(c), OLUMSUZ.search(c), OLUMLU.search(c)
+        c_k = tr_kucult(c)
+        butce, olumsuz = _butce(c_k), OLUMSUZ.search(c_k)
+        olumlu = bool(OLUMLU.search(c_k) or butce is not None)
         if not araliklar:
             if olumlu and not olumsuz:
                 hedef = bekleyen or son
                 for d in hedef:
-                    d["butce"] = butce or d["butce"]
+                    if butce is not None:
+                        d["butce"] = butce
                     if d not in adaylar:
                         adaylar.append(d)
             bekleyen, son = [], son if not olumsuz else []
             continue
-        yeni = [{"bas": a, "son": b, "butce": butce or 3, "cumle": re.sub(r"\s+", " ", c)}
+        yeni = [{"bas": a, "son": b, "butce": butce, "cumle": re.sub(r"\s+", " ", c)}
                 for a, b in araliklar if a <= b <= a + 30]
         if olumsuz:
             bekleyen, son = [], []
@@ -281,16 +306,19 @@ def doruklar(tahsis: str) -> list:
     for d in sorted(adaylar, key=lambda d: (d["bas"], -(d["son"] - d["bas"]))):
         dis = next((o for o in out if o["bas"] <= d["bas"] and d["son"] <= o["son"]), None)
         if dis:
-            dis["butce"] = min(dis["butce"], d["butce"])
+            if d["butce"] is not None:
+                dis["butce"] = d["butce"] if dis["butce"] is None else min(dis["butce"], d["butce"])
             continue
         out.append(d)
+    for d in out:
+        if d["butce"] is None:
+            d["butce"] = 3
     return out
 
 
 def gotik_say(metin: str) -> list:
     """Bir parcadaki gotik sozcukler (lint register sayaci, sapkasiz)."""
     try:
-        import yaml
         import sozluk_lint as L
         kur = (D.yaml_oku(D.KURALLAR) or {}).get("register") or {}
         desen = L.register_deseni(kur.get("gotik", "").split(), kur.get("istisna", "").split())
@@ -413,7 +441,8 @@ def bolum_isle(no: int, a, otomatik: bool) -> str:
             girdi, cikti = klasor / "doruk_girdi.md", klasor / "doruk_cikti.md"
             S.yaz_degisirse(girdi, girdi_metni)
             if otomatik and S.durum(girdi, cikti) != "TAMAM":
-                S.yurut(girdi, cikti, a.model, a.sure)
+                motor = S.motor_sec("ses_ayari", {"ses_ayari": a.motor} if getattr(a, "motor", None) else None)
+                S.yurut(girdi, cikti, a.model, a.sure, motor=motor)
             d = S.durum(girdi, cikti)
             notlar.append(f"doruk: {d} {girdi.name} -> {cikti.name}")
             if d == "TAMAM":
@@ -435,7 +464,7 @@ def bolum_isle(no: int, a, otomatik: bool) -> str:
     ic = S.inceleme_yaz(no, [], maddeler, bilgi, kuru=False)
     ic = (ic.replace(f"# {no}. bölüm — inceleme", f"# {no}. bölüm — ses ayarı incelemesi", 1)
             .replace(f"`./calistir.sh sonra {no} --kararlar`", f"`python3 ses_ayari.py {no} --kararlar`"))
-    inceleme.write_text(ic, encoding="utf-8")
+    S.lotm.atomik_yaz(inceleme, ic)
     return "; ".join(notlar) + f" — {len(maddeler)} madde -> {inceleme}"
 
 
@@ -447,8 +476,11 @@ def kararlari_isle(no: int, dosya: Path, klasor: Path, kuru: bool) -> str:
         return "zaten uygulanmış (uygulandi.json)"
     secimler = S.inceleme_oku(inceleme.read_text(encoding="utf-8"))
     asil = dosya.read_text(encoding="utf-8")
-    metin, uygulanan, bulunamayan, defter = asil, [], [], []
+    metin, uygulanan, bulunamayan, celiskili, defter = asil, [], [], [], []
     for s in secimler:
+        if s["kabul"] and s["ret"]:
+            celiskili.append(s["k"])
+            continue
         if s["kabul"]:
             if metin.count(s["eski"]) == 1:
                 metin = metin.replace(s["eski"], s["yeni"], 1)
@@ -459,21 +491,34 @@ def kararlari_isle(no: int, dosya: Path, klasor: Path, kuru: bool) -> str:
             defter.append(f"- {'kabul' if s['kabul'] else 'ret'} · {s['kural']} — örnek: "
                           f"«{S.tek_satir(s['eski'])}» → «{S.tek_satir(s['yeni'])}» ({no}. bölüm ¶{s['p']})")
     sonuc = (f"{len(uygulanan)} uygulandı, {len(defter)} kalıcı karar"
-             + (f"; metinde bulunamayan: {', '.join('K%d' % k for k in bulunamayan)}" if bulunamayan else ""))
+             + (f"; metinde bulunamayan: {', '.join('K%d' % k for k in bulunamayan)}" if bulunamayan else "")
+             + (f"; çelişkili (kabul+ret): {', '.join('K%d' % k for k in celiskili)}" if celiskili else ""))
     if kuru:
         return "kuru: " + sonuc
     if uygulanan:
         yedek = S.lotm.yedek_klasoru("ses_ayari")
         yedek.mkdir(parents=True, exist_ok=True)
         (yedek / dosya.name).write_text(asil, encoding="utf-8")
-        dosya.write_text(metin, encoding="utf-8")
+        S.lotm.atomik_yaz(dosya, metin)
         S.fark_yaz(asil, metin, klasor / "uygulanan.diff", dosya.name)
         sonuc += f"; yedek {yedek}"
     if defter:
+        eski_defter = S.KARARLAR.read_text(encoding="utf-8") if S.KARARLAR.exists() else ""
+        var = {(m.group(1), m.group(3), m.group(4)) for m in
+               map(S.DEFTER_SATIRI.match, eski_defter.splitlines()) if m}
+        defter = [d for d in defter if not ((m := S.DEFTER_SATIRI.match(d))
+                                            and (m.group(1), m.group(3), m.group(4)) in var)]
+    if defter:
+        S.KARARLAR.parent.mkdir(parents=True, exist_ok=True)
+        bas = "" if S.KARARLAR.exists() else (
+            "# Karar defteri\n\nsonra.py'nin inceleme adımında 'hep' denen kararlar. "
+            "Her geçişe verilir; elle düzenlenebilir.\n\n")
+        ayir = "\n" if eski_defter and not eski_defter.endswith("\n") else ""
         with S.KARARLAR.open("a", encoding="utf-8") as f:
-            f.write("\n".join(defter) + "\n")
+            f.write(bas + ayir + "\n".join(defter) + "\n")
     (klasor / "uygulandi.json").write_text(json.dumps(
-        {"zaman": time.strftime("%Y-%m-%d %H:%M"), "uygulanan": uygulanan}, ensure_ascii=False),
+        {"zaman": time.strftime("%Y-%m-%d %H:%M"), "uygulanan": uygulanan,
+         "bulunamayan": bulunamayan, "celiskili": celiskili}, ensure_ascii=False),
         encoding="utf-8")
     return sonuc
 
@@ -482,35 +527,44 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="Eski bölümlerin sicil ayarı: dönem tabanı + gotik doruklar.")
     ap.add_argument("bolum", help="N, A-B ya da N,M (örnek: 23-33,62-72)")
     ap.add_argument("--yalniz", choices=("taban", "doruk"), help="yalnız bir adım")
-    ap.add_argument("--taban-bolumleri", default=TABAN_VARSAYILAN,
-                    help=f"taban adımının çalışacağı bölümler (varsayılan {TABAN_VARSAYILAN})")
+    ap.add_argument("--taban-bolumleri", default=None,
+                    help=f"taban adımının çalışacağı bölümler (varsayılan {TABAN_VARSAYILAN}; --yalniz taban ile verilen bölümler)")
     ap.add_argument("--hedef", type=float, default=HEDEF, help=f"dönem yoğunluğu hedefi (/1000, {HEDEF})")
     ap.add_argument("--otomatik", action="store_true", help="doruk geçişini claude -p ile yürüt")
     ap.add_argument("--kararlar", action="store_true", help="inceleme.md'de işaretlenenleri uygula")
     ap.add_argument("--kuru", action="store_true", help="--kararlar: bölüme ve deftere yazma")
     ap.add_argument("--yeniden", action="store_true", help="var olan inceleme.md'nin üzerine yaz")
     ap.add_argument("--model")
+    ap.add_argument("--motor", choices=S.MOTORLAR, help="doruk motoru (varsayılan: claude / LOTM_MOTOR_SES_AYARI)")
     ap.add_argument("--sure", type=int, default=900)
     a = ap.parse_args(argv)
     try:
         nolar = S.bolum_listesi(a.bolum)
-        a.taban_bolumleri = set(S.bolum_listesi(a.taban_bolumleri))
+        if a.taban_bolumleri is not None:
+            a.taban_bolumleri = set(S.bolum_listesi(a.taban_bolumleri))
+        elif a.yalniz == "taban":
+            a.taban_bolumleri = set(nolar)
+        else:
+            a.taban_bolumleri = set(S.bolum_listesi(TABAN_VARSAYILAN))
     except ValueError as e:
         ap.error(str(e))
     a.adimlar = (a.yalniz,) if a.yalniz else ("taban", "doruk")
-    ozet = []
+    ozet, kod = [], 0
     for no in nolar:
         try:
             s = bolum_isle(no, a, a.otomatik)
+            if s.startswith(("HATA:", "YOK:")):
+                kod = 1
         except Exception as e:  # noqa: BLE001 -- bir bolum digerlerini durdurmasin
             s = f"HATA: {type(e).__name__}: {e}"
+            kod = 1
         print(f"{no:4}  {s}", flush=True)
         ozet.append(f"{no:4}  {s}")
     if len(nolar) > 1:
         RAPOR.mkdir(parents=True, exist_ok=True)
         (RAPOR / "OZET.md").write_text(f"# ses_ayari ({time.strftime('%Y-%m-%d %H:%M')})\n\n"
                                        + "\n".join(ozet) + "\n", encoding="utf-8")
-    return 0
+    return kod
 
 
 if __name__ == "__main__":

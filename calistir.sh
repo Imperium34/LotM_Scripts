@@ -202,6 +202,7 @@ kos() {
   # Eski bir calistirmadan kalan bulgu dosyasi sayilmasin: dosya adimdan once
   # olusturulan isaret dosyasindan eski degilse bu calistirmanin sayilir.
   ref="$RAPOR/.kos-$$"
+  trap 'rm -f "$RAPOR/.kos-$$"' EXIT
   : >"$ref"
   "$fn" "$@" || kod=$?
   if ((kod == 0)); then
@@ -266,7 +267,7 @@ yedekle() {
   cp "$SOZLUK" "$RAPOR/sozluk-$damga.yedek.yml"
   mavi "  yedek: Reports/sozluk-$damga.yedek.yml"
   # 10'dan eskilerini at; yoksa Reports/ suresiz buyur.
-  ls -1t "$RAPOR"/sozluk-*.yedek.yml 2>/dev/null | tail -n +11 | xargs -r rm --
+  ls -1t "$RAPOR"/sozluk-*.yedek.yml 2>/dev/null | tail -n +11 | xargs -d '\n' -r rm --
 }
 
 adim_test() {
@@ -298,11 +299,13 @@ adim_kontrol() {
   # Zincirin geri kalani bolum numaralarinin uc kaynakta ayni seyi
   # gostermesine guveniyor. Bir kayma varsa "ceviri hatasi" gibi gorunur;
   # burada gorulmesi cok daha ucuz.
-  if ! python3 "$TOOLS/lotm.py" kontrol; then
+  local kod=0
+  python3 "$TOOLS/lotm.py" kontrol || kod=$?
+  if ((kod != 0)); then
     kirmizi "  Numaralandirma tutarsiz. Devam etmeden once bakin:"
     kirmizi "    python3 lotm.py ciltler"
     kirmizi "    python3 lotm.py anomali"
-    return 1
+    return "$kod"
   fi
   yesil "  numaralandirma tutarli"
 }
@@ -346,16 +349,18 @@ adim_etiket() {
     return 1
   fi
   yedekle
+  local kod=0
   python3 "$TOOLS/etiketle.py" \
     --sozluk "$SOZLUK" \
     --rapor "$RAPOR/rapor.tsv" \
-    --yerinde || {
+    --yerinde || kod=$?
+  if ((kod != 0)); then
     # Eskiden cokse de "guncellendi" yaziyordu (26 Eki: sozluk.yml'de cift
     # 'aciklama' anahtari, DuplicateKeyError). Cagiran '|| ...' ile sardigi
     # icin set -e burada islemez; cikis kodu elle denetlenir.
     kirmizi "  HATA: etiketle.py coktu, sozluk.yml YAZILMADI (yukaridaki hataya bakin)"
-    return 1
-  }
+    return "$kod"
+  fi
   yesil "  -> _data/sozluk.yml guncellendi"
   mavi "  DIFF'I OKUYUN: git -C \"$SITE\" diff _data/sozluk.yml"
 }
@@ -431,7 +436,7 @@ adim_bicim_taban() {
   # gecmis" yapar. Uzerinde calisilan bir taslak varken yazilirsa o
   # taslagin hatalari da sessizce kabul edilir. Bu yuzden once soruluyor.
   local son
-  son=$(son_bolum_dosyasi)
+  son=$(son_bolum_dosyasi || true)
   mavi "  en son bolum: ${son:-?} -- bu bolum hala taslaksa once onu bitirin."
   read -r -p "  Devam edilsin mi? [e/H] " cevap
   [[ "$cevap" == "e" || "$cevap" == "E" ]] || {
@@ -454,11 +459,19 @@ adim_sapka_taban() {
     mavi "  iptal edildi"
     return 1
   }
-  local belgeler=() d
+  local belgeler=() d eski_nullglob
+  eski_nullglob=$(shopt -p nullglob || true)
+  shopt -s nullglob
   for d in "$KOK/Tools/Voice_Maps" "$KOK/Tools/Prompts"; do
     [[ -d "$d" ]] && belgeler+=("$d"/*.md)
   done
-  python3 "$TOOLS/lint/sapka.py" --taban-yaz "$SAPKA_TABAN" "$BOLUMLER"/*.md ${belgeler[@]+"${belgeler[@]}"}
+  local bolum_md=("$BOLUMLER"/*.md)
+  eval "$eski_nullglob"
+  [[ ${#bolum_md[@]} -gt 0 || ${#belgeler[@]} -gt 0 ]] || {
+    mavi "  taranacak dosya yok"
+    return 0
+  }
+  python3 "$TOOLS/lint/sapka.py" --taban-yaz "$SAPKA_TABAN" ${bolum_md[@]+"${bolum_md[@]}"} ${belgeler[@]+"${belgeler[@]}"}
   mavi "  surum denetimine eklemeyi unutmayin: git add \"$SAPKA_TABAN\""
 }
 
@@ -556,7 +569,7 @@ adim_bolum() {
   local dkod=0
   python3 "$TOOLS/duzelt.py" sapka lint bicim --bolum "$no" || dkod=$?
   if ((dkod == 3)); then
-    kirmizi "  KESIN DUZELTME BEKLIYOR -- yazmak: ./calistir.sh duzelt --bolum $no --uygula"
+    kirmizi "  KESIN DUZELTME BEKLIYOR -- yazmak: ./calistir.sh duzelt sapka lint bicim --bolum $no --uygula"
   elif ((dkod != 0)); then
     kirmizi "  duzelt calismadi (cikis $dkod)"
   fi
@@ -596,7 +609,12 @@ adim_dogrula() {
   local aralik="${1:-}"
   if [[ -z "$aralik" ]]; then
     local son
-    son=$(son_bolum_dosyasi)
+    son=$(son_bolum_dosyasi || true)
+    if [[ -z "$son" ]]; then
+      kirmizi "  ATLANDI: $BOLUMLER icinde numarali bolum yok."
+      ADIM_ATLANDI=1
+      return 1
+    fi
     son=$((10#${son%.md}))
     aralik="$((son > 10 ? son - 9 : 1))-$son"
   fi
@@ -689,6 +707,12 @@ if [[ "${1:-}" == "bolum" ]]; then
     }
     no=$((10#${son%.md}))
     mavi "numara verilmedi -- en son bolum: $no"
+  else
+    [[ "$no" =~ ^[0-9]+$ ]] || {
+      kirmizi "kullanim: ./calistir.sh bolum [numara]"
+      exit 1
+    }
+    no=$((10#$no))
   fi
   adim_bolum "$no"
   yesil "bitti."
@@ -737,7 +761,7 @@ bicim-taban) adim_bicim_taban ;;
 sapka) adim_sapka ;;
 sapka-taban) adim_sapka_taban ;;
 toplu) adim_toplu ;;
-takvim) adim_takvim ;;
+takvim) adim_takvim "${@:2}" ;;
 belgeler) adim_belgeler ;;
 kanca) adim_kanca ;;
 ciltler) adim_ciltler "${2:-}" ;;
@@ -756,19 +780,20 @@ hepsi)
     # kesin duzeltmeler (duzelt.py; takvim haric) + claude -p ile okuma ->
     # Reports/haftalik/<tarih>.md. Geri kalan argumanlar zincir_oku'ya gider
     # (--kuru, --model). Haftalik zamanlayici bunu cagirir.
-    mkdir -p "$RAPOR/haftalik"
-    cikti="$RAPOR/haftalik/$(date +%F)_zincir.txt"
-    "$TOOLS/calistir.sh" hepsi 2>&1 | tee "$cikti" || true
+    haftalik="${LOTM_HAFTALIK:-$RAPOR/haftalik}"
+    mkdir -p "$haftalik"
+    cikti="$haftalik/$(date +%F)_zincir.txt"
+    bash "$TOOLS/calistir.sh" hepsi 2>&1 | tee "$cikti" || true
     shift 2
     python3 "$TOOLS/zincir_oku.py" "$cikti" "$@"
     exit $?
   fi
-  kos test adim_test || mavi "  (testler atlandi, zincire devam)"
+  kos test adim_test || { ((ADIM_ATLANDI)) && mavi "  (testler atlandi, zincire devam)" || kirmizi "  (testler basarisiz, zincire devam)"; }
   kos kontrol adim_kontrol || kirmizi "  (numaralandirma sorunlu, zincire yine de devam)"
   mavi "  basliklar ve yayin tarihleri..."
   kos takvim adim_takvim || kirmizi "  (baslik/tarih hatasi var, yukariya bakin)"
-  kos tarama adim_tarama || mavi "  (tarama atlandi, zincire devam)"
-  kos etiket adim_etiket || mavi "  (etiketleme atlandi, zincire devam)"
+  kos tarama adim_tarama || { ((ADIM_ATLANDI)) && mavi "  (tarama atlandi, zincire devam)" || kirmizi "  (tarama basarisiz, zincire devam)"; }
+  kos etiket adim_etiket || { ((ADIM_ATLANDI)) && mavi "  (etiketleme atlandi, zincire devam)" || kirmizi "  (etiketleme basarisiz, zincire devam)"; }
   # Her adim "|| ..." ile: set -e altinda bulgu bildiren (cikis 1) tek bir
   # adim zincirin GERI KALANINI sessizce keserdi. adim_denetim eskiden
   # boyle cagriliyordu; yayim_denetle bir sey buldugu anda lint, bicim,
@@ -776,13 +801,13 @@ hepsi)
   kos denetim adim_denetim || kirmizi "  (yayim denetimi bulgu bildirdi, yukariya bakin)"
   kos lint adim_lint || mavi "  (lint bulgu bildirdi, yukariya bakin)"
   kos bicim adim_bicim || kirmizi "  (bicim denetimi tabanda olmayan HATA buldu, yukariya bakin)"
-  kos sapka adim_sapka || mavi "  (sapka taramasi atlandi)"
-  kos toplu adim_toplu || mavi "  (terim tutarliligi atlandi)"
+  kos sapka adim_sapka || { ((ADIM_ATLANDI)) && mavi "  (sapka taramasi atlandi)" || kirmizi "  (sapka taramasi basarisiz)"; }
+  kos toplu adim_toplu || { ((ADIM_ATLANDI)) && mavi "  (terim tutarliligi atlandi)" || kirmizi "  (terim tutarliligi basarisiz)"; }
   kos belgeler adim_belgeler || kirmizi "  (belgelerde hata var, yukariya bakin)"
   mavi "[9/10] Arsivin cilt tablosu guncel mi..."
   kos ciltler adim_ciltler || kirmizi "  (ciltler.yml geride: ./calistir.sh ciltler --yaz)"
   mavi "[10/10] Terim dokumu son bolumlerde dogru mu (hazirla_dogrula)..."
-  kos dogrula adim_dogrula || mavi "  (dogrulama atlandi)"
+  kos dogrula adim_dogrula || { ((ADIM_ATLANDI)) && mavi "  (dogrulama atlandi)" || kirmizi "  (dogrulama basarisiz)"; }
   ozet_yaz
   # Opt-in: zincir varsayilan olarak hep 0 doner (--otomatik buna guvenir).
   # Bulgu ve ATLANDI hata sayilmaz; yalniz HATA.
@@ -800,7 +825,7 @@ hepsi)
   echo "          ./calistir.sh bolum [numara]   (numarasiz: en son bolum)"
   echo "          ./calistir.sh once <numara>    (ceviriden once: hazirlik + sablon denetimi)"
   echo "          ./calistir.sh cevir <numara> [--sonra] [--hazirla|--kuru] [--model M]"
-  echo "          ./calistir.sh sonra <N|A-B|N,M> [--otomatik [adim...]] [--donem-yok] [--paralel N|oto]"
+  echo "          ./calistir.sh sonra <N|A-B|N,M> [--otomatik [adim...]] [--donem-yok] [--ses-ayari-yok] [--paralel N|oto]"
   echo "          ./calistir.sh incele <numara>   (inceleme sayfasi, tarayicida)"
   echo "          ./calistir.sh kiyas [adim...] [--taban-yaz [--uzerine-yaz]] [--liste] [--seri]   (gercek korpusta cikti degisti mi?)"
   echo "          ./calistir.sh sayi <N|A-B|N,M>   (Cincedeki sayilar Turkcede var mi)"

@@ -42,15 +42,11 @@ from pathlib import Path
 BETIKLER = Path(__file__).resolve().parent
 sys.path.insert(0, str(BETIKLER))
 
-import sonra  # noqa: E402  (claude_komutu, yurut, TRIYAJ_ARACLARI)
+import sonra  # noqa: E402  (yurut, TRIYAJ_ARACLARI, MOTORLAR, motor_sec)
 
 KOK = Path(os.environ.get("LOTM_KOK") or BETIKLER.parent)
 SITE = KOK / "Imperium34.github.io"
-SOZLUK = SITE / "_data" / "sozluk.yml"
-BOLUMLER = SITE / "_chapters"
-KELIMELER = Path(os.environ.get("LOTM_KELIMELER") or KOK / "Tools" / "words.md")
 ISTEM = KOK / "Tools" / "Prompts" / "zincir-okuma-istemi.md"
-BELGE_KLASORLERI = [KOK / "Tools" / "Voice_Maps", KOK / "Tools" / "Prompts"]
 BILINEN = Path(os.environ.get("LOTM_BILINEN") or KOK / "Tools" / "bilinen.md")
 # cevir.py'nin tik defteri: DURUM NOTU'larindaki "Yeni tik" satirlari.
 TIKLER = Path(os.environ.get("LOTM_TIKLER") or KOK / "Tools" / "tikler.md")
@@ -60,7 +56,10 @@ ANSI = re.compile(r"\x1b\[[0-9;]*m")
 
 def calistir(komut: list, cwd: Path = BETIKLER) -> str:
     p = subprocess.run(komut, capture_output=True, text=True, cwd=cwd)
-    return ANSI.sub("", p.stdout + (("\n" + p.stderr) if p.stderr.strip() else "")).strip()
+    cikti = ANSI.sub("", p.stdout + (("\n" + p.stderr) if p.stderr.strip() else "")).strip()
+    if p.returncode != 0:
+        return f"{cikti}\n(çıkış kodu: {p.returncode})".strip()
+    return cikti
 
 
 # Haftalik zincirin yazdigi adimlar. 'takvim' bilerek disarida: yayin
@@ -98,8 +97,18 @@ def main(argv=None) -> int:
     ap.add_argument("zincir", type=Path, help="calistir.sh hepsi ciktisi")
     ap.add_argument("--kuru", action="store_true", help="duzelticileri calistirma")
     ap.add_argument("--model")
+    ap.add_argument("--motor", choices=sonra.MOTORLAR, help="okuma motoru (varsayilan: claude / LOTM_MOTOR_ZINCIR)")
     ap.add_argument("--sure", type=int, default=1800)
     a = ap.parse_args(argv)
+
+    # Girdi dosyalari dogrulanmadan duzeltici calistirilmaz (depoyu degistirip cokmesin).
+    if not a.zincir.exists():
+        print(f"HATA: zincir çıktısı yok: {a.zincir}")
+        return 1
+    if not ISTEM.exists():
+        print(f"HATA: istem yok: {ISTEM}")
+        return 1
+    zincir_metni = a.zincir.read_text(encoding="utf-8")
 
     RAPOR.mkdir(parents=True, exist_ok=True)
     tarih = time.strftime("%Y-%m-%d")
@@ -107,8 +116,9 @@ def main(argv=None) -> int:
     print(duzeltmeler)
     girdi = RAPOR / f"{tarih}_girdi.md"
     cikti = RAPOR / f"{tarih}.md"
-    girdi.write_text(girdi_metni(a.zincir.read_text(encoding="utf-8"), duzeltmeler), encoding="utf-8")
-    if not sonra.yurut(girdi, cikti, a.model, a.sure, sonra.TRIYAJ_ARACLARI):
+    sonra.lotm.atomik_yaz(girdi, girdi_metni(zincir_metni, duzeltmeler))
+    motor = sonra.motor_sec("zincir", {"zincir": a.motor} if a.motor else None)
+    if not sonra.yurut(girdi, cikti, a.model, a.sure, sonra.TRIYAJ_ARACLARI, motor=motor):
         print(f"okuma yapilamadi; girdi hazir: {girdi}")
         return 1
     print(f"rapor: {cikti}")

@@ -47,12 +47,18 @@ VARSAYILAN_MODEL = os.environ.get("LOTM_MODEL", "opus")
 VARSAYILAN_EFOR = os.environ.get("LOTM_EFOR", "high")
 
 
+def _komut_bol(ortam_adi: str, varsayilan: str) -> list:
+    """Ortam degiskenini komut listesine boler; bos dize varsa varsayilana doner."""
+    ham = os.environ.get(ortam_adi)
+    return shlex.split(ham if ham and ham.strip() else varsayilan)
+
+
 def claude_komutu(
     model: str | None, araclar: list | None = None, efor: str | None = None
 ) -> list:
-    komut = shlex.split(os.environ.get("LOTM_CLAUDE", "claude -p --output-format text"))
-    model = model or VARSAYILAN_MODEL
-    efor = VARSAYILAN_EFOR if efor is None else efor
+    komut = _komut_bol("LOTM_CLAUDE", "claude -p --output-format text")
+    model = model or os.environ.get("LOTM_MODEL", VARSAYILAN_MODEL)
+    efor = os.environ.get("LOTM_EFOR", VARSAYILAN_EFOR) if efor is None else efor
     if model:
         komut += ["--model", model]
     if efor:
@@ -99,21 +105,39 @@ AGY_MODEL = os.environ.get(
 CODEX_EFOR = os.environ.get("LOTM_CODEX_EFOR", "high")
 CODEX_MODEL = os.environ.get("LOTM_CODEX_MODEL", "")  # bos: codex'in varsayilani
 
-# Varsayilan motorlar (3 Kas): sadakat codex, cunku ceviriyi Claude yapiyor ve
-# her model kendi kaymasini dogal bulur. Codex yoksa claude'a duser.
+# Varsayilan motorlar: okuma/triyaj/birlestir claude; donem/sadakat/duzeltme
+# antigravity; cift sadakatte ikinci okuyucu (sadakat2) codex. Secilen CLI
+# yoksa claude'a duser.
 VARSAYILAN_MOTOR = {
     "okuma": "claude",
     "donem": "antigravity",
     "sadakat": "antigravity",
+    "sadakat2": "codex",
     "duzeltme": "antigravity",
     "triyaj": "claude",
     "birlestir": "claude",
 }
 
 
-def ikinci_motor(birinci: str) -> str:
-    """Cift sadakatte ikinci okuyucu. LOTM_MOTOR_SADAKAT2 / --motor sadakat2=... ile secilir."""
-    m = os.environ.get("LOTM_MOTOR_SADAKAT2")
+def _komut_var(motor: str) -> bool:
+    if motor not in MOTOR_KOMUTU:
+        return True
+    return bool(shutil.which(_komut_bol(*MOTOR_KOMUTU[motor])[0]))
+
+
+def ikinci_motor(birinci: str, secimler: dict | None = None) -> str:
+    """Cift sadakatte ikinci okuyucu. --motor sadakat2=... / LOTM_MOTOR_SADAKAT2 / VARSAYILAN_MOTOR['sadakat2']."""
+    m = (
+        (secimler or {}).get("sadakat2")
+        or os.environ.get("LOTM_MOTOR_SADAKAT2")
+        or VARSAYILAN_MOTOR.get("sadakat2")
+    )
+    if m:
+        if m not in MOTORLAR:
+            raise SystemExit(f"bilinmeyen motor: {m} ({', '.join(MOTORLAR)})")
+        if not _komut_var(m):
+            print(f"  UYARI: sadakat2 icin {m} bulunamadi, baska motor seciliyor", flush=True)
+            m = None
     if m and m != birinci:
         return m
     return "claude" if birinci != "claude" else "codex"
@@ -131,9 +155,7 @@ def motor_sec(adim: str, secimler: dict | None = None) -> str:
         or os.environ.get(f"LOTM_MOTOR_{adim.upper()}")
         or VARSAYILAN_MOTOR.get(adim, "claude")
     )
-    if m in MOTOR_KOMUTU and not shutil.which(
-        shlex.split(os.environ.get(*MOTOR_KOMUTU[m]))[0]
-    ):
+    if m in MOTOR_KOMUTU and not _komut_var(m):
         print(f"  UYARI: {adim} icin {m} bulunamadi, claude ile calisiyor", flush=True)
         m = "claude"
     if m not in MOTORLAR:
@@ -142,7 +164,9 @@ def motor_sec(adim: str, secimler: dict | None = None) -> str:
 
 
 def codex_komutu(son_mesaj: Path) -> list:
-    komut = shlex.split(os.environ.get("LOTM_CODEX", "codex exec"))
+    komut = _komut_bol("LOTM_CODEX", "codex exec")
+    efor = os.environ.get("LOTM_CODEX_EFOR", CODEX_EFOR)
+    model = os.environ.get("LOTM_CODEX_MODEL", CODEX_MODEL)
     komut += [
         "-",
         "--output-last-message",
@@ -150,19 +174,21 @@ def codex_komutu(son_mesaj: Path) -> list:
         "-s",
         "read-only",
         "-c",
-        f"model_reasoning_effort={CODEX_EFOR}",
+        f"model_reasoning_effort={efor}",
     ]
-    if CODEX_MODEL:
-        komut += ["-m", CODEX_MODEL]
+    if model:
+        komut += ["-m", model]
     return komut
 
 
 def agy_komutu(girdi_dosyasi: Path) -> list:
-    komut = shlex.split(os.environ.get(*MOTOR_KOMUTU["antigravity"]))
-    if AGY_EFOR:
-        komut += ["--effort", AGY_EFOR]
-    if AGY_MODEL:
-        komut += ["--model", AGY_MODEL]
+    komut = _komut_bol(*MOTOR_KOMUTU["antigravity"])
+    efor = os.environ.get("LOTM_AGY_EFOR", AGY_EFOR)
+    model = os.environ.get("LOTM_AGY_MODEL", AGY_MODEL)
+    if efor:
+        komut += ["--effort", efor]
+    if model:
+        komut += ["--model", model]
     istem = (
         f"{girdi_dosyasi} dosyasını baştan sona eksiksiz oku (uzunsa parça parça) ve "
         "içindeki görevi yap. Cevap olarak yalnız görevin istediği çıktıyı yaz; "
@@ -221,16 +247,18 @@ def calistir(
 
     gecici: gecici dosyalarin oneki (<gecici>.codex-son, <gecici>.agy-girdi.md);
     verilmezse cwd'de tempfile. kota: KOTA_DOLU yerine kullanilacak sozluk."""
-    kota = KOTA_DOLU if kota is None else kota
-    if motor in kota:
-        print(f"  ATLANDI {motor}: (kota dolu: {kota[motor]})", flush=True)
-        return Sonuc(False, hata=kota[motor], kota=True, motor=motor)
+    if motor not in MOTORLAR:
+        raise ValueError(f"bilinmeyen motor: {motor} ({', '.join(MOTORLAR)})")
     if motor == "antigravity" and araclar:
         print(
             "  UYARI: antigravity arac izni ayarlanamiyor, bu gecis claude ile",
             flush=True,
         )
         motor = "claude"
+    kota = KOTA_DOLU if kota is None else kota
+    if motor in kota:
+        print(f"  ATLANDI {motor}: (kota dolu: {kota[motor]})", flush=True)
+        return Sonuc(False, hata=kota[motor], kota=True, motor=motor)
     if gecici is None:
         fd, ad = tempfile.mkstemp(prefix=".motor-", dir=cwd)
         os.close(fd)
@@ -286,9 +314,15 @@ def calistir(
         cevap = son.read_text(encoding="utf-8") if son.exists() else ""
         son.unlink(missing_ok=True)
     if p.returncode != 0 or not cevap.strip():
-        hata = (p.stderr or p.stdout).strip()[-400:]
+        stderr_t, stdout_t = p.stderr.strip(), p.stdout.strip()
+        hata = (stderr_t or stdout_t)[-400:]
+        birlesik = "\n".join(x for x in (stdout_t, stderr_t) if x)
+        dolu = bool(KOTA.search(birlesik))
+        if dolu and not KOTA.search(hata):
+            hata = stdout_t[-400:]
+        elif not dolu and HIZ_SINIRI.search(birlesik) and not HIZ_SINIRI.search(hata):
+            hata = stdout_t[-400:]
         print(f"  HATA (cikis {p.returncode}): {hata}")
-        dolu = bool(KOTA.search(hata))
         if dolu:
             kota[motor] = hata.replace("\n", " ⏎ ")[-160:]
             # Ebeveyn (paralel kip) bu satiri arar.

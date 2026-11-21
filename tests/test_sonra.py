@@ -139,6 +139,7 @@ def test_kararlar_uygulanir_ve_deftere_yazilir(tmp_path, monkeypatch):
     monkeypatch.setattr(S, "KARARLAR", tmp_path / "kararlar.md")
     monkeypatch.setattr(S, "ISTATISTIK", tmp_path / "ist.tsv")
     monkeypatch.setattr(S, "OTOMATIK", set())  # kutular elle isaretleniyor
+    monkeypatch.setenv("LOTM_YEDEK", str(tmp_path / "yedek"))
     b = S.Bolum(60, 6000)
     b.klasor.mkdir(parents=True)
     karar = [{"p": 1, "sinif": "KARAR", "kural": "okuma 1.1 noktalı virgül", "eski": "geldi; kapıyı",
@@ -172,6 +173,7 @@ def test_donem_reddi_hep_olmadan_deftere_ve_cift_satir_yok(tmp_path, monkeypatch
     monkeypatch.setattr(S, "KARARLAR", tmp_path / "kararlar.md")
     monkeypatch.setattr(S, "ISTATISTIK", tmp_path / "ist.tsv")
     monkeypatch.setattr(S, "OTOMATIK", set())
+    monkeypatch.setenv("LOTM_YEDEK", str(tmp_path / "yedek"))
     b = S.Bolum(60, 6000)
     b.klasor.mkdir(parents=True)
     karar = [{"p": 2, "sinif": "KARAR", "kural": "dönem D.1 konuşmak", "eski": "Veli konuştu.",
@@ -288,6 +290,7 @@ def test_yanki_girisleri_alanlar_ve_kullanim_kesilir():
     assert sorted(g) == [7, 75, 79, 82]
     assert g[75]["kurulum"] == "62 ¶34" and g[75]["odeme"].startswith("**115**")
     assert "## Kullanım" not in g[82]["blok"] and g[82]["blok"].startswith("### #82")
+    assert g[75]["blok"].count("Glacis'in pişmanlığı") == 1
 
 
 def test_yanki_secimi_kurulum_odeme_ve_ek():
@@ -456,7 +459,8 @@ def test_katmanlar_ve_toplu_ret():
     assert S.inceleme_katmanla(inc) == inc  # tekrar uygulanabilir
     sira = [b.split("\n", 1)[0] for b in inc.split("\n## ")]
     assert any(s.startswith("1. Anlam") for s in sira) and any(s.startswith("4. Düşük") for s in sira)
-    assert S.madde_katmani(next(b for b in inc.split("\n### ") if "K3 " in b[:4].join(["### ", ""]) or b.startswith("K3 ")).__str__()) in ("terim",) or True
+    k3 = "### " + next(b for b in inc.split("\n### ") if b.startswith("K3 "))
+    assert S.madde_katmani(k3) == "terim"
     # Toplu ret: dusuk katmanda isaretsiz madde ret sayilir, isaretli olan korunur.
     inc2 = inc.replace(S.TOPLU_RET, S.TOPLU_RET.replace("[ ]", "[x]"))
     sec = {s["k"]: s for s in S.inceleme_oku(inc2)}
@@ -587,12 +591,178 @@ def test_antigravity_yurut_stdin_ve_motor_etiketi(tmp_path, monkeypatch):
 
 def test_antigravity_secim_ve_ikinci_motor(tmp_path, monkeypatch):
     _sahte_agy(tmp_path, monkeypatch)
+    sahte_codex = tmp_path / "codex"
+    sahte_codex.write_text("#!/bin/sh\necho ok\n", encoding="utf-8")
+    sahte_codex.chmod(0o755)
+    monkeypatch.setenv("LOTM_CODEX", f"{sahte_codex} exec")
     assert S.motor_sec("sadakat", {"sadakat": "antigravity"}) == "antigravity"
     assert S.cikti_motoru(Path("2_sadakat_cikti_01.antigravity.md"), "codex") == "antigravity"
     monkeypatch.delenv("LOTM_MOTOR_SADAKAT2", raising=False)
-    assert S.ikinci_motor("antigravity") == "claude"
+    assert S.ikinci_motor("antigravity") == "codex"
     assert S.ikinci_motor("claude") == "codex"
     monkeypatch.setenv("LOTM_MOTOR_SADAKAT2", "antigravity")
     assert S.ikinci_motor("codex") == "antigravity"
     monkeypatch.setenv("LOTM_AGY", str(tmp_path / "yok-boyle-komut"))
     assert S.motor_sec("sadakat", {"sadakat": "antigravity"}) == "claude"
+    monkeypatch.delenv("LOTM_MOTOR_SADAKAT2", raising=False)
+    monkeypatch.setenv("LOTM_CODEX", str(tmp_path / "yok-codex"))
+    assert S.ikinci_motor("antigravity") == "claude"
+
+
+def test_kelimelere_ekle_cift_eklemez(tmp_path):
+    yol = tmp_path / "words.md"
+    yol.write_text("# XII. Frozen Lines\n", encoding="utf-8")
+    terimler = [{"tr": "Kara Burç", "en": "Black Tower"}]
+    assert S.kelimelere_ekle(yol, terimler, 60) == 1
+    assert S.kelimelere_ekle(yol, terimler, 60) == 0
+    assert yol.read_text(encoding="utf-8").count("**Kara Burç**") == 1
+
+
+def test_kararlar_celiskili_ve_eski_esit_yeni(tmp_path, monkeypatch):
+    bolumler = tmp_path / "_chapters"
+    bolumler.mkdir()
+    (bolumler / "0060.md").write_text(BOLUM, encoding="utf-8")
+    monkeypatch.setattr(S, "BOLUMLER", bolumler)
+    monkeypatch.setattr(S, "RAPOR", tmp_path / "sonra")
+    monkeypatch.setattr(S, "KARARLAR", tmp_path / "kararlar.md")
+    monkeypatch.setattr(S, "ISTATISTIK", tmp_path / "ist.tsv")
+    monkeypatch.setenv("LOTM_YEDEK", str(tmp_path / "yedek"))
+    b = S.Bolum(60, 6000)
+    b.klasor.mkdir(parents=True)
+    karar = [
+        {"p": 1, "sinif": "KARAR", "kural": "okuma 1.1 x", "eski": "geldi; kapıyı",
+         "yeni": "geldi. Kapıyı", "neden": "", "kaynak": ["okuma"]},
+        {"p": 2, "sinif": "SABLON", "kural": "sadakat Ş", "eski": "Veli konuştu.",
+         "yeni": "Veli konuştu.", "neden": "not", "kaynak": ["sadakat"]},
+    ]
+    md = S.inceleme_yaz(60, [], karar, [], kuru=False)
+    md = md.replace("[ ] kabul   [ ] ret   [ ] hep", "[x] kabul   [x] ret   [x] hep", 1)
+    md = md.replace("[ ] kabul   [ ] ret   [ ] hep", "[x] kabul   [ ] ret   [ ] hep", 1)
+    (b.klasor / "5_inceleme.md").write_text(md, encoding="utf-8")
+    sonuc = b.kararlari_isle(kuru=False)
+    assert "0 karar uygulandi" in sonuc and "çelişkili (kabul+ret): K1" in sonuc
+    assert (bolumler / "0060.md").read_text(encoding="utf-8") == BOLUM
+    assert not (tmp_path / "kararlar.md").exists()
+
+
+def test_istatistik_otomatik_satirlari_korur(tmp_path, monkeypatch):
+    rapor = tmp_path / "sonra"
+    ist = tmp_path / "ist.tsv"
+    (rapor / "Ch_60").mkdir(parents=True)
+    monkeypatch.setattr(S, "RAPOR", rapor)
+    monkeypatch.setattr(S, "ISTATISTIK", ist)
+    monkeypatch.setattr(S, "MOTOR_IST", tmp_path / "motor.tsv")
+    uyg = [{"p": 1, "kural": "okuma 1.6 tekrar", "kaynak": ["okuma"], "otomatik": True,
+            "eski": "a", "yeni": "b"}]
+    md = S.inceleme_yaz(60, uyg, [], [], kuru=False)
+    (rapor / "Ch_60" / "5_inceleme.md").write_text(md, encoding="utf-8")
+    assert S.main(["60", "--istatistik"]) == 0
+    assert "60\tO1\tokuma 1.6\t0\tkabul" in ist.read_text(encoding="utf-8")
+
+
+def test_birlestir_duzeltme_ikinci_basliktan_keser_ve_json_tip_kontrolu(tmp_path, monkeypatch):
+    bolumler = tmp_path / "_chapters"
+    bolumler.mkdir()
+    (bolumler / "0060.md").write_text(BOLUM, encoding="utf-8")
+    monkeypatch.setattr(S, "BOLUMLER", bolumler)
+    monkeypatch.setattr(S, "RAPOR", tmp_path / "sonra")
+    monkeypatch.setattr(S, "SABLONLAR", tmp_path / "yok")
+    monkeypatch.setattr(S, "KARARLAR", tmp_path / "yok.md")
+    monkeypatch.setattr(S, "istem", lambda ad: "ISTEM")
+    b = S.Bolum(60, 6000)
+    b.klasor.mkdir(parents=True)
+    duz_cikti = (
+        "**(1) Düzeltilmiş bölüm**\n\n```markdown\n---\nlayout: post\n---\n\n"
+        "Listede (2) numaralı madde vardı.\n```\n\n"
+        "**(2) Değişiklik dökümü**\n- ¶1 degisiklik\n"
+    )
+    (b.klasor / "3_duzeltme_cikti.md").write_text(duz_cikti, encoding="utf-8")
+    girdi, _ = b.birlestir([])[0]
+    metin = girdi.read_text(encoding="utf-8")
+    dokum = metin.split("<duzeltme_dokum>\n", 1)[1].split("\n</duzeltme_dokum>", 1)[0]
+    assert "Listede (2)" not in dokum and "¶1 degisiklik" in dokum
+    # JSON nesne degilse (ornegin liste) cokmek yerine HATA doner.
+    (b.klasor / "5_birlestir_cikti.md").write_text("[1, 2, 3]", encoding="utf-8")
+    assert b.son_adim(kuru=True).startswith("HATA:")
+
+
+def test_eskimis_gecis_varken_birlestir_kurulmaz(tmp_path, monkeypatch):
+    bolumler = tmp_path / "_chapters"
+    bolumler.mkdir()
+    (bolumler / "0060.md").write_text(BOLUM, encoding="utf-8")
+    monkeypatch.setattr(S, "BOLUMLER", bolumler)
+    monkeypatch.setattr(S, "RAPOR", tmp_path / "sonra")
+    monkeypatch.setattr(S, "SABLONLAR", tmp_path / "yok")
+    monkeypatch.setattr(S, "KARARLAR", tmp_path / "yok.md")
+    monkeypatch.setattr(S, "istem", lambda ad: "ISTEM")
+    monkeypatch.setattr(S.Bolum, "zincir_calistir", lambda self, zorla: None)
+    monkeypatch.setattr(S.Bolum, "sadakat", lambda self: ([(self.klasor / "2_sadakat_girdi_01.md",
+                                                            self.klasor / "2_sadakat_cikti_01.md")], None))
+    b = S.Bolum(60, 6000)
+    b.klasor.mkdir(parents=True)
+    # Tum ciktilar var ama 1_okuma_cikti.md ESKIMIS (girdiden eski)
+    for ad in ("1_okuma_cikti.md", "2_sadakat_cikti_01.md", "3_duzeltme_cikti.md", "4_triyaj_cikti.md"):
+        p = b.klasor / ad
+        p.write_text("eski cikti", encoding="utf-8")
+        eski = time.time() - 200
+        os.utime(p, (eski, eski))
+    (b.klasor / "2_sadakat_girdi_01.md").write_text("g", encoding="utf-8")
+    assert S.main(["60", "--donem-yok"]) == 0
+    assert not (b.klasor / "5_birlestir_girdi.md").exists()
+
+
+def test_ses_ayari_acik_kurallari():
+    assert S.ses_ayari_acik(False, False, None, ortam=True)
+    assert not S.ses_ayari_acik(False, False, None, ortam=False)
+    assert not S.ses_ayari_acik(True, True, ["ses_ayari"], ortam=True)
+    assert S.ses_ayari_acik(True, False, None, ortam=False)
+    assert S.ses_ayari_acik(False, False, ["ses_ayari"], ortam=False)
+
+
+def test_ses_ayari_birlestire_girer_ve_kendi_kendini_kapilar(tmp_path, monkeypatch):
+    import ses_ayari as SA
+    bolumler = tmp_path / "_chapters"
+    bolumler.mkdir()
+    sablonlar = tmp_path / "Schemas"
+    sablonlar.mkdir()
+    (bolumler / "0077.md").write_text(
+        "---\ntitle: x\n---\n\nDurum kötüydü.\n\nBilgi eksikti.\n", encoding="utf-8")
+    (sablonlar / "Ch_77.md").write_text("# 77\n", encoding="utf-8")
+    monkeypatch.setattr(S, "BOLUMLER", bolumler)
+    monkeypatch.setattr(S, "RAPOR", tmp_path / "sonra")
+    monkeypatch.setattr(S, "SABLONLAR", sablonlar)
+    monkeypatch.setattr(S, "KARARLAR", tmp_path / "yok.md")
+    monkeypatch.setattr(S, "istem", lambda ad: "ISTEM")
+
+    b = S.Bolum(77, 6000)
+    b.klasor.mkdir(parents=True)
+    # 1. Doruk istemi / tahsis yok -> 0 model cagrisi, ama taban 1c_ses_taban.md yazar.
+    ciftler, not_ = b.ses_ayari()
+    assert ciftler == [] and "taban:" in not_
+    assert (b.klasor / "1c_ses_taban.md").exists()
+    assert "Durum kötüydü." in (b.klasor / "1c_ses_taban.md").read_text(encoding="utf-8")
+
+    # 2. Doruk girdisi varsa 1c_ses_doruk_girdi.md kurulur ve birlestir'e girer.
+    sahte_istem = tmp_path / "doruk_istem.md"
+    sahte_istem.write_text("DORUK ISTEM", encoding="utf-8")
+    monkeypatch.setattr(SA, "ISTEM", sahte_istem)
+    monkeypatch.setattr(SA, "doruk_girdisi", lambda no, sab: ("DORUK GIRDI METNI", "1 doruk, harcanabilir 2 sözcük"))
+    ciftler, not_ = b.ses_ayari()
+    assert len(ciftler) == 1 and ciftler[0][0].name == "1c_ses_doruk_girdi.md"
+    ciftler[0][1].write_text('{"doruklar": [{"aralik": "¶1", "oneriler": []}]}', encoding="utf-8")
+
+    girdi, _ = b.birlestir([])[0]
+    birlestir_metin = girdi.read_text(encoding="utf-8")
+    assert "<ses_ayari>" in birlestir_metin
+    assert "Durum kötüydü." in birlestir_metin
+    assert "Gotik doruk önerileri:" in birlestir_metin
+
+    # 3. Ihtiyac yoksa (taban bos, doruk yok) eski dosyalar temizlenir ve <ses_ayari> eklenmez.
+    monkeypatch.setattr(SA, "taban", lambda no, m, s, h: ([], "hedefe ulasildi"))
+    monkeypatch.setattr(SA, "doruk_girdisi", lambda no, sab: (None, "bütçe zaten harcanmış"))
+    ciftler, _ = b.ses_ayari()
+    assert ciftler == []
+    assert not (b.klasor / "1c_ses_taban.md").exists()
+    assert not (b.klasor / "1c_ses_doruk_girdi.md").exists()
+    girdi, _ = b.birlestir([])[0]
+    assert "<ses_ayari>" not in girdi.read_text(encoding="utf-8")
