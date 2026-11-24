@@ -119,3 +119,35 @@ def test_sapka_kancasi_words_md_yonunu_duzelt_gibi_kullanir(depo, monkeypatch, t
         _bolum(2, "İki", "2026-09-30 20:00:00 +0300", "Gel evlat, dedi Klein."), encoding="utf-8")
     r = _commit(depo, "evlat")
     assert r.returncode == 0, r.stdout + r.stderr
+
+
+def test_sapka_ve_bicim_index_sozlugunu_kullanir(depo):
+    sozluk = depo / "_data" / "sozluk.yml"
+    sozluk.write_text("- terim: Pekâlâ\n- terim: Denizci\n  kategori: Tarot Cemiyeti\n")
+    bolum = depo / "_chapters" / "0002.md"
+    govde = "Pekala, diye düşündü. 'Denizci' olduğunu söyledi."
+    # B03 hatası biçim çıktısını gösterir. K06 kendi başına yalnızca uyarıdır.
+    bolum.write_text(_bolum(2, "İki", "2026-09-30 20:00:00 +0300",
+                            govde + '\n\n"Gel," dedi Klein.'))
+    assert _git(depo, "add", "-A").returncode == 0
+    sozluk.write_text("- terim: Pekala\n")
+    r = _git(depo, "commit", "-q", "-m", "index glossary")
+    assert r.returncode == 1
+    assert "kesin duzeltme bekliyor (sapka)" in r.stdout + r.stderr
+    assert "K06" in r.stdout + r.stderr
+    assert _git(depo, "add", str(sozluk)).returncode == 0
+    r = _git(depo, "commit", "-q", "-m", "updated glossary")
+    assert r.returncode == 1 and "B03" in r.stdout + r.stderr
+    assert "K06" not in r.stdout + r.stderr
+    assert "kesin duzeltme bekliyor (sapka)" not in r.stdout + r.stderr
+    bolum.write_text(_bolum(2, "İki", "2026-09-30 20:00:00 +0300", govde))
+    assert _commit(depo, "clean chapter").returncode == 0
+
+
+def test_index_sozlugu_yokken_calisma_agacindaki_sozluk_atlanir(depo):
+    bolum = depo / "_chapters" / "0002.md"
+    bolum.write_text(_bolum(2, "İki", "2026-09-30 20:00:00 +0300", "Pekala, dedi Klein."))
+    assert _git(depo, "add", str(bolum)).returncode == 0
+    (depo / "_data" / "sozluk.yml").write_text("- terim: Pekâlâ\n")
+    r = _git(depo, "commit", "-q", "-m", "glossary remains unstaged")
+    assert r.returncode == 0, r.stdout + r.stderr

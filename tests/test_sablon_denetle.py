@@ -155,6 +155,17 @@ def test_onceki_sablon_baska_cince_ise_kayma_degil():
     assert [x for x in _bulgular(yeni, kay) if "aynı İngilizceye" in x[2]]
 
 
+def test_cincesiz_eski_sablonda_cince_metinden_suzulur():
+    # 61'in sablonunda Ch_61_zh.tsv yok; 87'nin 纸币'si (banknot) 61'de hic gecmiyor.
+    eski = _sablon(a1=[("notes", "defter / yaprak", "—")])
+    kay = _kaynak(metinler={"x": "defter yaprak banknot"}, sablonlar={61: eski})
+    kay.zh_metinler = {61: "笔记本 纸张"}
+    yeni = _sablon(a1=[("notes (纸币)", "banknot", "—")])
+    assert not [x for x in _bulgular(yeni, kay) if "aynı İngilizceye" in x[2]]
+    kay.zh_metinler = {61: "纸币 笔记本"}  # Cince o bolumde de geciyor: kayma olabilir
+    assert [x for x in _bulgular(yeni, kay) if "aynı İngilizceye" in x[2]]
+
+
 def test_onceki_karar_bolumde_gecmeyen_cince_terimin_ise_kayma_degil():
     eski = _sablon(a2=[("Moon flower", "mehtap çiçeği", "[YENİ]", "—")])
     kw = dict(terimler=[_t("mehtap çiçeği", "Moon flower", zh="月亮花")], salahiyetler=[],

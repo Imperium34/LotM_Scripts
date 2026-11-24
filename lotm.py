@@ -59,6 +59,7 @@ kaynak da tutarli gorunebilir.
 
 from __future__ import annotations
 
+import fcntl
 import os
 import re
 import sys
@@ -341,7 +342,7 @@ def metin_oku(yol) -> str:
 # =====================================================================
 
 
-def atomik_yaz(yol, icerik) -> None:
+def atomik_yaz(yol, icerik, *, degistirmeden_once=None) -> None:
     """
     Dosyayi ya tamamen yazar ya hic dokunmaz. Veri yazan HER betik bunu
     kullanir (etiketle -> sozluk.yml, sapka -> bolumler/words.md,
@@ -375,10 +376,78 @@ def atomik_yaz(yol, icerik) -> None:
             f.flush()
             os.fsync(f.fileno())
         os.chmod(gecici, mod)
+        if degistirmeden_once is not None:
+            degistirmeden_once()
         os.replace(gecici, yol)
     except BaseException:
         Path(gecici).unlink(missing_ok=True)
         raise
+
+
+class BolumYazmaHatasi(OSError):
+    pass
+
+
+def dosya_anlik(yol: Path) -> bytes | None:
+    try:
+        return yol.read_bytes()
+    except FileNotFoundError:
+        return None
+
+
+def bolumleri_yaz(klasor: Path, anlik: dict, yazilacak: dict, *,
+                  etiket: str, yedek_yolu=None, ek_yedek=None, dogrula=None) -> Path | None:
+    """Validate snapshots and commit while holding the canonical directory lock."""
+    yollar = {yol: yol.resolve() for yol in anlik}
+
+    def denetle(kontrol):
+        eskiyen = [str(yol) for yol in kontrol
+                   if yol.resolve() != yollar[yol] or dosya_anlik(yollar[yol]) != anlik[yol]]
+        if eskiyen:
+            raise BolumYazmaHatasi("okunduktan sonra değişti: " + ", ".join(eskiyen))
+
+    def toplu_denetle():
+        if dogrula is not None:
+            dogrula()
+        denetle(anlik)
+
+    yedek = None
+    yazilan = []
+    try:
+        fd = os.open(klasor.resolve(), os.O_RDONLY | os.O_DIRECTORY)
+        try:
+            fcntl.flock(fd, fcntl.LOCK_EX)
+            toplu_denetle()
+            kopyalar = {(yedek_yolu(yol) if yedek_yolu else yol.name): anlik[yol]
+                        for yol in yazilacak if anlik[yol] is not None}
+            kopyalar.update(ek_yedek or {})
+            if kopyalar:
+                aday = yedek_klasoru(etiket)
+                aday.parent.mkdir(parents=True, exist_ok=True)
+                sira = 0
+                while True:
+                    hedef = aday if not sira else aday.with_name(f"{aday.name}-{sira}")
+                    try:
+                        hedef.mkdir()
+                        yedek = hedef
+                        break
+                    except FileExistsError:
+                        sira += 1
+                for ad, veri in kopyalar.items():
+                    hedef = yedek / ad
+                    hedef.parent.mkdir(parents=True, exist_ok=True)
+                    atomik_yaz(hedef, veri)
+            for yol, veri in yazilacak.items():
+                denetim = (lambda: denetle((yol,))) if yazilan else toplu_denetle
+                atomik_yaz(yollar[yol], veri, degistirmeden_once=denetim)
+                yazilan.append(str(yol))
+        finally:
+            os.close(fd)
+    except OSError as e:
+        durum = ", ".join(yazilan) if yazilan else "yok"
+        raise BolumYazmaHatasi(f"{e}; yazılan dosyalar: {durum}"
+                               + (f"; yedek: {yedek}" if yedek else "")) from e
+    return yedek
 
 
 def bulgulari_yaz(yol, kayitlar) -> None:

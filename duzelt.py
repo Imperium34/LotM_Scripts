@@ -98,7 +98,6 @@ class Calisma:
     def __init__(self):
         self.kok = Path(tempfile.mkdtemp(prefix="lotm-duzelt-"))
         self.ozgun: dict[Path, bytes] = {}  # gercek yol -> okunan icerik
-        self.mtime: dict[Path, float] = {}
         self.adim_sayilari: dict[str, dict[Path, int]] = {}
         self.notlar: list[str] = []
         self.sapka_liste: dict | None = None  # adim_sapka'nin uygulanacak listesi (bir kez)
@@ -113,7 +112,6 @@ class Calisma:
         if gercek not in self.ozgun:
             veri = gercek.read_bytes()
             self.ozgun[gercek] = veri
-            self.mtime[gercek] = gercek.stat().st_mtime
             k.parent.mkdir(parents=True, exist_ok=True)
             k.write_bytes(veri)
         return k
@@ -366,28 +364,17 @@ def tam_fark(c: Calisma, degisen) -> str:
 # ------------------------------------------------------------ yazma
 
 
-def yedek_klasoru() -> Path:
-    return lotm.yedek_klasoru("duzelt")
-
-
 def yaz(c: Calisma, degisen) -> Path | None:
-    # Once denetim: okunduktan sonra degismis dosya varsa HICBIRINE yazilmaz.
-    oynayan = [g for g in degisen
-               if g.stat().st_mtime != c.mtime[g] or g.read_bytes() != c.ozgun[g]]
-    if oynayan:
-        print(_r("31", "HATA: bu dosyalar okunduktan sonra değişti; hiçbir şey yazılmadı:"))
-        for g in oynayan:
-            print(f"  {_goreli(g)}")
-        print("  Komutu yeniden çalıştırın.")
+    kilit_klasoru = Path(BOLUMLER)
+    if not kilit_klasoru.is_dir():
+        kilit_klasoru = KOK  # Yalnız belge düzenleyen bir çalıştırma olabilir.
+    try:
+        return lotm.bolumleri_yaz(kilit_klasoru, c.ozgun,
+                                  {g: c.kopyasi(g).read_bytes() for g in degisen},
+                                  etiket="duzelt", yedek_yolu=lambda g: _goreli(g).lstrip("/"))
+    except OSError as e:
+        print(_r("31", f"HATA: {e}"))
         return None
-    yedek = yedek_klasoru()
-    for g in degisen:
-        hedef = yedek / _goreli(g)
-        hedef.parent.mkdir(parents=True, exist_ok=True)
-        hedef.write_bytes(c.ozgun[g])
-    for g in degisen:
-        lotm.atomik_yaz(g, c.kopyasi(g).read_bytes())
-    return yedek
 
 
 def geri_al(klasor: Path) -> int:

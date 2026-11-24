@@ -232,3 +232,15 @@ def test_basarisiz_adim_atlandi_demez(depo_tam, betikler, python_stub):
     yol = f"{python_stub}{os.pathsep}{os.environ['PATH']}"
     s = _calistir(betikler, depo_tam, "hepsi", ortam={"PATH": yol})
     assert "tarama basarisiz" in s.cikti and "tarama atlandi" not in s.cikti
+
+
+def test_otomatik_zincir_hatasinda_duzeltmeler_baslamaz(depo_tam, betikler, python_stub):
+    isaret = betikler / "duzeltme_basladi"
+    (betikler / "zincir_oku.py").write_text(
+        f"from pathlib import Path\nPath({str(isaret)!r}).touch()\n")
+    yol = f"{python_stub}{os.pathsep}{os.environ['PATH']}"
+    sonuc = _calistir(betikler, depo_tam, "hepsi", "--otomatik",
+                      ortam={"PATH": yol, "LOTM_HEPSI_KATI": "1"})
+    assert sonuc.returncode == 1
+    assert _tablo(sonuc.cikti)["tarama"][:2] == ("HATA", "7")
+    assert not isaret.exists()

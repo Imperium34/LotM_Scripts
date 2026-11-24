@@ -119,13 +119,13 @@ def plan_kur(ks: list, takvim: TD.Takvim, simdi: datetime):
     return degisiklikler, notlar
 
 
-def yeni_icerik(yol: Path, yeni: datetime) -> bytes:
+def yeni_icerik(yol: Path, yeni: datetime, veri: bytes | None = None) -> bytes:
     """
     Dosyanin, YALNIZCA front matter'daki 'date:' satiri degismis hâli
     (satir yoksa kapanis '---'inden once eklenir). Satir sonlari (LF/CRLF)
     ve dosyanin geri kalani bayt bayt korunur. Diske yazmaz.
     """
-    ham = yol.read_bytes().decode("utf-8")
+    ham = (yol.read_bytes() if veri is None else veri).decode("utf-8")
     satir_sonu = "\r\n" if "\r\n" in ham else "\n"
     if not ham.startswith("---"):
         raise ValueError(f"{yol.name}: front matter yok")
@@ -144,6 +144,13 @@ def yeni_icerik(yol: Path, yeni: datetime) -> bytes:
             fm += satir_sonu
         fm += f"date: {deger}{satir_sonu}"
     return (fm + govde).encode("utf-8")
+
+
+def bolum_listesini_dogrula(klasor: Path, anlik: dict) -> None:
+    beklenen = {yol for yol, veri in anlik.items() if veri is not None}
+    degisen = beklenen.symmetric_difference(TD.kunye_yollari(klasor))
+    if degisen:
+        raise lotm.BolumYazmaHatasi("bölüm listesi değişti: " + ", ".join(map(str, sorted(degisen))))
 
 
 def main() -> int:
@@ -181,7 +188,12 @@ def main() -> int:
     else:
         simdi = datetime.now(takvim.donemler[0].saat.tzinfo)
 
-    ks = TD.kunyeler(klasor)
+    try:
+        anlik = {yol: yol.read_bytes() for yol in TD.kunye_yollari(klasor)}
+        ks = TD.kunyeler(klasor, anlik)
+    except (OSError, ValueError) as e:
+        print(f"  !! {e}", file=sys.stderr)
+        return 2
     okunamayan = [k.no for k in ks if k.tarih_ham and not k.tarih]
     if okunamayan:
         print(
@@ -210,15 +222,15 @@ def main() -> int:
         # Aksi hâlde yarida kalan bir calisma tamponu karisik birakirdi:
         # bir kismi yeni, bir kismi eski takvime gore.
         try:
-            hazir = [
-                (klasor / k.dosya, yeni_icerik(klasor / k.dosya, yeni))
+            hazir = {
+                klasor / k.dosya: yeni_icerik(klasor / k.dosya, yeni, anlik[klasor / k.dosya])
                 for k, _eski, yeni in degisiklikler
-            ]
-        except (ValueError, UnicodeDecodeError, OSError) as e:
-            print(f"  !! {e} -- hiçbir şey yazılmadı", file=sys.stderr)
+            }
+            lotm.bolumleri_yaz(klasor, anlik, hazir, etiket="takvim",
+                               dogrula=lambda: bolum_listesini_dogrula(klasor, anlik))
+        except (ValueError, OSError) as e:
+            print(f"  !! {e}", file=sys.stderr)
             return 2
-        for yol, icerik in hazir:
-            lotm.atomik_yaz(yol, icerik)
         print(f"  {len(hazir)} bölümün tarihi yazıldı")
         sonuc = TD.kunyeler(klasor)  # yazilmis hâli diskten yeniden oku
     else:

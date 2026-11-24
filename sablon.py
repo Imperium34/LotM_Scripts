@@ -280,10 +280,15 @@ def _eylem_incele(no: int, klasor: Path) -> int:
     if not yol.exists():
         print(f"HATA: {yol} yok: once ./calistir.sh sablon {no} oneriler")
         return 1
-    return subprocess.call([
+    rc = subprocess.call([
         sys.executable, str(BETIKLER / "inceleme_sunucu.py"),
         "--dosya", str(yol), "--bolum", str(no), "--tek",
     ])
+    import sablon_oneri as O
+    kn = O.kuyruk_notu(O.kuyruk_sayisi())
+    if kn:
+        print(kn)
+    return rc
 
 
 def _hazirla_ve_istem(no: int, klasor: Path) -> tuple[str | None, int]:

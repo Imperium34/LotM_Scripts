@@ -54,12 +54,15 @@ RAPOR = Path(os.environ.get("LOTM_HAFTALIK") or BETIKLER / "Reports" / "haftalik
 ANSI = re.compile(r"\x1b\[[0-9;]*m")
 
 
-def calistir(komut: list, cwd: Path = BETIKLER) -> str:
-    p = subprocess.run(komut, capture_output=True, text=True, cwd=cwd)
+def calistir(komut: list, cwd: Path = BETIKLER) -> tuple[int, str]:
+    try:
+        p = subprocess.run(komut, capture_output=True, text=True, cwd=cwd)
+    except OSError as e:
+        return 1, str(e)
     cikti = ANSI.sub("", p.stdout + (("\n" + p.stderr) if p.stderr.strip() else "")).strip()
     if p.returncode != 0:
-        return f"{cikti}\n(çıkış kodu: {p.returncode})".strip()
-    return cikti
+        cikti = f"{cikti}\n(çıkış kodu: {p.returncode})".strip()
+    return p.returncode if p.returncode >= 0 else 128 - p.returncode, cikti
 
 
 # Haftalik zincirin yazdigi adimlar. 'takvim' bilerek disarida: yayin
@@ -67,19 +70,20 @@ def calistir(komut: list, cwd: Path = BETIKLER) -> str:
 HAFTALIK_ADIMLAR = ["sapka", "lint", "bicim", "belgeler", "ciltler"]
 
 
-def duzelt() -> str:
+def duzelt() -> tuple[int, str]:
     """
     Deterministik duzelticiler, tek komutla: duzelt.py (fark + yedek +
     yazma). Ciktisi -- adim sayilari, kelime duzeyinde fark, yedek klasoru,
     elle kalanlar -- oldugu gibi modele gider; ayri ayri betik ciktisi
     toplamaya gerek kalmaz.
     """
-    out = [calistir(["python3", "duzelt.py", *HAFTALIK_ADIMLAR, "--uygula", "--evet"])]
-    fark = calistir(["git", "diff", "--stat"], cwd=SITE)
+    kod, cikti = calistir(["python3", "duzelt.py", *HAFTALIK_ADIMLAR, "--uygula", "--evet"])
+    out = [cikti]
+    _, fark = calistir(["git", "diff", "--stat"], cwd=SITE)
     out.append("site git diff --stat:\n" + (fark or "(değişiklik yok)"))
-    fark = calistir(["git", "diff", "--stat", "--", "Voice_Maps", "Prompts"], cwd=KOK / "Tools")
+    _, fark = calistir(["git", "diff", "--stat", "--", "Voice_Maps", "Prompts"], cwd=KOK / "Tools")
     out.append("Tools git diff --stat (belgeler):\n" + (fark or "(değişiklik yok)"))
-    return "\n\n".join(out)
+    return kod, "\n\n".join(out)
 
 
 def girdi_metni(zincir: str, duzeltmeler: str) -> str:
@@ -112,7 +116,7 @@ def main(argv=None) -> int:
 
     RAPOR.mkdir(parents=True, exist_ok=True)
     tarih = time.strftime("%Y-%m-%d")
-    duzeltmeler = "(kuru çalıştırma: düzeltici çalıştırılmadı)" if a.kuru else duzelt()
+    kod, duzeltmeler = (0, "(kuru çalıştırma: düzeltici çalıştırılmadı)") if a.kuru else duzelt()
     print(duzeltmeler)
     girdi = RAPOR / f"{tarih}_girdi.md"
     cikti = RAPOR / f"{tarih}.md"
@@ -120,9 +124,9 @@ def main(argv=None) -> int:
     motor = sonra.motor_sec("zincir", {"zincir": a.motor} if a.motor else None)
     if not sonra.yurut(girdi, cikti, a.model, a.sure, sonra.TRIYAJ_ARACLARI, motor=motor):
         print(f"okuma yapilamadi; girdi hazir: {girdi}")
-        return 1
+        return kod or 1
     print(f"rapor: {cikti}")
-    return 0
+    return kod
 
 
 if __name__ == "__main__":

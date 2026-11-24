@@ -736,7 +736,7 @@ fi
 #   sayi:   Cincedeki sayilar Turkcede var mi (bkz. sayi_denetle.py)
 #   kaynak: Cince ve Ingilizce kaynak birbirine uyuyor mu (bkz. kaynak_denetle.py)
 case "${1:-}" in
-once | sablon | duzelt | cevir | incele | sonra | kiyas | sayi | kaynak)
+once | sablon | duzelt | cevir | incele | sonra | okuma | kiyas | sayi | kaynak)
   case "$1" in
   once) betik=once.py ;;
   sablon) betik=sablon.py ;;
@@ -744,6 +744,7 @@ once | sablon | duzelt | cevir | incele | sonra | kiyas | sayi | kaynak)
   cevir) betik=cevir.py ;;
   incele) betik=inceleme_sunucu.py ;;
   sonra) betik=sonra.py ;;
+  okuma) betik=okuma.py ;;
   kiyas) betik=kiyas.py ;;
   sayi) betik=sayi_denetle.py ;;
   kaynak) betik=kaynak_denetle.py ;;
@@ -788,7 +789,7 @@ hepsi)
     haftalik="${LOTM_HAFTALIK:-$RAPOR/haftalik}"
     mkdir -p "$haftalik"
     cikti="$haftalik/$(date +%F)_zincir.txt"
-    bash "$TOOLS/calistir.sh" hepsi 2>&1 | tee "$cikti" || true
+    bash "$TOOLS/calistir.sh" hepsi 2>&1 | tee "$cikti" || exit $?
     shift 2
     python3 "$TOOLS/zincir_oku.py" "$cikti" "$@"
     exit $?
@@ -831,7 +832,8 @@ hepsi)
   echo "          ./calistir.sh once <numara>    (ceviriden once: hazirlik + sablon denetimi)"
   echo "          ./calistir.sh cevir <numara> [--sonra] [--hazirla|--kuru] [--model M]"
   echo "          ./calistir.sh sonra <N|A-B|N,M> [--otomatik [adim...]] [--donem-yok] [--ses-ayari-yok] [--paralel N|oto]"
-  echo "          ./calistir.sh incele <numara>   (inceleme sayfasi, tarayicida)"
+  echo "          ./calistir.sh okuma <N|A-B|N,M> [--otomatik] [--zh-kontrol-yok] [--cift-okuma] [--paralel N|oto] [--kararlar]"
+  echo "          ./calistir.sh incele <numara|--okuma A-B|--dosya YOL>   (inceleme sayfasi, tarayicida)"
   echo "          ./calistir.sh kiyas [adim...] [--taban-yaz [--uzerine-yaz]] [--liste] [--seri]   (gercek korpusta cikti degisti mi?)"
   echo "          ./calistir.sh sayi <N|A-B|N,M>   (Cincedeki sayilar Turkcede var mi)"
   echo "          ./calistir.sh kaynak [A-B] [--esik X] [--hepsi]   (Cince ve Ingilizce kaynak uyusuyor mu)"

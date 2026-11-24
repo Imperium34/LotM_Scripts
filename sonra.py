@@ -75,6 +75,7 @@ Kullanim:
 from __future__ import annotations
 
 import argparse
+import fcntl
 import os
 import re
 import shutil
@@ -376,7 +377,7 @@ def yanki_girisleri(metin: str) -> dict:
             f = re.search(r"- \*\*%s:\*\* (.*)" % ad, blok)
             return f.group(1) if f else ""
         out[no] = {"blok": blok, "kurulum": alan("Kurulum"),
-                   "odeme": alan("Ödeme")}
+                   "donmus": alan("Donmuş"), "odeme": alan("Ödeme")}
     return out
 
 
@@ -612,21 +613,27 @@ def ayni_degisiklik(maddeler: list) -> dict:
     return out
 
 
-def inceleme_yaz(no: int, uygulanan: list, karar: list, bilgi: list, kuru: bool,
-                 terimler: list | None = None) -> str:
-    out = [f"# {no}. bölüm — inceleme", ""]
+def inceleme_yaz(no: int | str, uygulanan: list, karar: list, bilgi: list, kuru: bool,
+                 terimler: list | None = None, *, onizleme: bool = False) -> str:
+    baslik_no = f"{no}. bölüm" if isinstance(no, int) else str(no)
+    out = [f"# {baslik_no} — inceleme", ""]
     if kuru:
         out += ["_Kuru çalıştırma: bölüm dosyasına hiçbir şey yazılmadı._", ""]
-    out += [f"## Uygulananlar ({len(uygulanan)})", ""]
-    if uygulanan:
+    baslik = "Simüle edilen otomatik düzenlemeler" if onizleme else "Uygulananlar"
+    out += [f"## {baslik} ({len(uygulanan)})", ""]
+    if uygulanan and not onizleme:
         out += ["Bunlar bölüme yazıldı. Birini geri almak için kutusunu [x] yapın; --kararlar",
                 "✓'yi ✗'ye döndürür (inceleme sayfasında: g).", ""]
     for d in uygulanan:
-        out += [f"- ¶{d.get('p') or '?'} · {d.get('kural', '')} ({', '.join(d.get('kaynak', []))})"
+        b_on = f"Ch_{d['bolum']} · " if d.get("bolum") is not None else ""
+        out += [f"- {b_on}¶{d.get('p') or '?'} · {d.get('kural', '')} ({', '.join(d.get('kaynak', []))})"
                 + (" · otomatik" if d.get("otomatik") else ""),
-                f"  ✗ {tek_satir(d['eski'])}", f"  ✓ {tek_satir(d['yeni'])}", f"  {GERI_KUTU}"]
-    out += ["", f"## Kararınızı bekleyenler ({sum(d.get('sinif') != 'SABLON' for d in karar)})", "",
-            "Her maddede bir kutuyu [x] yapın; ✓ satırını isterseniz değiştirin. 'hep' kararı",
+                f"  ✗ {tek_satir(d['eski'])}", f"  ✓ {tek_satir(d['yeni'])}"]
+        if not onizleme:
+            out.append(f"  {GERI_KUTU}")
+    out += ["", f"## Kararınızı bekleyenler ({sum(d.get('sinif') != 'SABLON' for d in karar)})", ""]
+    if not onizleme:
+        out += ["Her maddede bir kutuyu [x] yapın; ✓ satırını isterseniz değiştirin. 'hep' kararı",
             "karar defterine yazar, aynı örüntü bir daha sorulmaz. Sonra:",
             f"`./calistir.sh sonra {no} --kararlar`", ""]
     # SABLON maddeleri ayri bolumde: metin icin degil sablon icin geri bildirim.
@@ -643,7 +650,8 @@ def inceleme_yaz(no: int, uygulanan: list, karar: list, bilgi: list, kuru: bool,
                     "Dondurulmuş ya da öngörülmüş satırlar. Kabul, yalnız bu bölümün metnini değiştirir;",
                     "kalıp başka bölümlerde de geçiyorsa şablona/sözlüğe ayrıca işlenmeli.", ""]
         bozuk = bozuk_oneri(d.get("eski", ""), d.get("yeni", ""))
-        out += [f"### K{i} · ¶{d.get('p') or '?'} · {d.get('sinif', 'KARAR')} · {d.get('kural', '')}",
+        b_on = f"Ch_{d['bolum']} · " if d.get("bolum") is not None else ""
+        out += [f"### K{i} · {b_on}¶{d.get('p') or '?'} · {d.get('sinif', 'KARAR')} · {d.get('kural', '')}",
                 f"✗ {tek_satir(d.get('eski', ''))}",
                 f"✓ {tek_satir(d.get('yeni', ''))}",
                 f"Neden: {d.get('neden', '')}",
@@ -652,34 +660,47 @@ def inceleme_yaz(no: int, uygulanan: list, karar: list, bilgi: list, kuru: bool,
         if sm:
             sm = [sm] if isinstance(sm, str) else sorted(set(sm))
             out.append(f"Sadakat: {'ikisi' if len(sm) > 1 else sm[0]}")
+        om = d.get("okuma_motor")
+        if om:
+            om = [om] if isinstance(om, str) else sorted(set(om))
+            out.append(f"Okuma: {'ikisi' if len(om) > 1 else om[0]}")
         if bozuk:
             out.append(f"Dikkat: {bozuk}; ✓ satırını düzeltmeden kabul etmeyin.")
-        if i - 1 in izleyen:
-            out.append(f"Grup: K{izleyen[i - 1] + 1} ile aynı değişiklik; kutusu boş kalırsa onun kabul/ret kararını alır.")
-        elif i - 1 in izleyenler:
-            out.append("Aynı değişiklik: " + ", ".join(f"K{j + 1}" for j in izleyenler[i - 1])
-                       + " (kabul/ret kararınız, boş bıraktıklarınıza da geçer).")
-        out += ["[ ] kabul   [ ] ret   [ ] hep", ""]
-    out += terimler_yaz(terimler or [])
+        if d.get("dikkat"):
+            out.append(f"Dikkat: {d['dikkat']}")
+        if not onizleme:
+            if i - 1 in izleyen:
+                out.append(f"Grup: K{izleyen[i - 1] + 1} ile aynı değişiklik; kutusu boş kalırsa onun kabul/ret kararını alır.")
+            elif i - 1 in izleyenler:
+                out.append("Aynı değişiklik: " + ", ".join(f"K{j + 1}" for j in izleyenler[i - 1])
+                           + " (kabul/ret kararınız, boş bıraktıklarınıza da geçer).")
+            out.append("[ ] kabul   [ ] ret   [ ] hep")
+        out.append("")
+    out += terimler_yaz(terimler or [], onizleme=onizleme)
     if bilgi:
         out += [f"## Bilgi ({len(bilgi)})", ""]
-        out += [f"- ¶{x.get('p') or '-'}: {x.get('not', '')}" for x in bilgi]
+        out += [f"- {('Ch_' + str(x['bolum']) + ' · ') if x.get('bolum') is not None else ''}¶{x.get('p') or '-'}: {x.get('not', '')}"
+                for x in bilgi]
     return "\n".join(out).rstrip() + "\n"
 
 
-def terimler_yaz(terimler: list) -> list:
+def terimler_yaz(terimler: list, *, onizleme: bool = False) -> list:
     """Sablonun A.2'de verdigi, bolumde kullanilan, veride olmayan terimler."""
     if not terimler:
         return []
     out = [f"## Veriye eklenecek terimler ({len(terimler)})", "",
-           "Şablonun bu bölüm için verdiği yeni karşılıklar; metinde geçiyor ama sözlükte ya da",
-           "words.md'de yok. İşaretlenen words.md'nin sonundaki 'Yerleştirilecek' bölümüne yazılır;",
-           "Türkçe ya da İngilizceyi işaretlemeden önce düzeltebilirsiniz. Çincesini sonra ekleyin.", ""]
+           "Şablonun bu bölüm için verdiği yeni karşılıklar; metinde geçiyor ama sözlükte ya da words.md'de yok."]
+    if not onizleme:
+        out += ["İşaretlenen words.md'nin sonundaki 'Yerleştirilecek' bölümüne yazılır;",
+                "Türkçe ya da İngilizceyi işaretlemeden önce düzeltebilirsiniz. Çincesini sonra ekleyin."]
+    out.append("")
     for i, t in enumerate(terimler, 1):
         etiket = " · ".join(e for e in ("GEÇİCİ" if t.get("gecici") else "",
                                         "TEREDDÜT" if t.get("tereddut") else "") if e)
-        out += [f"### T{i} · {t['tr']} ← {t['en']}" + (f" · {etiket}" if etiket else ""),
-                "[ ] words.md'ye ekle", ""]
+        out.append(f"### T{i} · {t['tr']} ← {t['en']}" + (f" · {etiket}" if etiket else ""))
+        if not onizleme:
+            out.append("[ ] words.md'ye ekle")
+        out.append("")
     return out
 
 
@@ -805,12 +826,14 @@ def eklenen_sus(eski: str, yeni: str, en_cok: int = 3) -> str | None:
 
 
 def madde_katmani(blok: str) -> str:
-    bas = re.match(r"### K\d+ · ¶\S+ · \S+ · (.*)", blok)
+    bas = re.match(r"### K\d+ · (?:Ch_\d+ · )?¶\S+ · \S+ · (.*)", blok)
     kural = bas.group(1) if bas else ""
     neden = (re.search(r"^Neden: (.*)$", blok, re.M) or [None, ""])[1]
     kaynak = (re.search(r"^Kaynak: (.*)$", blok, re.M) or [None, ""])[1]
     x = (re.search(r"^✗ (.*)$", blok, re.M) or [None, ""])[1]
     v = (re.search(r"^✓ (.*)$", blok, re.M) or [None, ""])[1]
+    if re.search(r"^Dikkat: ZH kontrol ret", blok, re.M):
+        return "dusuk"
     if TERIM_DESEN.search(neden) or re.search(r"terim (?:kayması|karşılığı|daralması)|unvan", kural, re.I):
         return "terim"
     if (re.search(r"sadakat [BC]\b", kural) and not re.search(r"sadakat [AD]\b", kural)) \
@@ -909,11 +932,11 @@ def terim_listesi(nolar: list) -> str:
 
 
 GERI_KUTU = "[ ] geri al"
-UYG_BASI = re.compile(r"^- ¶(\S+) · (.*?) \(([^()]*)\)( · otomatik)?$")
+UYG_BASI = re.compile(r"^- (?:Ch_(\d+) · )?¶(\S+) · (.*?) \(([^()]*)\)( · otomatik)?$")
 
 
 def uygulanan_oku(metin: str) -> list:
-    """'## Uygulananlar' maddeleri: [{"i", "p", "kural", "kaynak", "otomatik", "eski", "yeni",
+    """'## Uygulananlar' maddeleri: [{"i", "bolum", "p", "kural", "kaynak", "otomatik", "eski", "yeni",
     "geri"}]. 'geri' kutusu olmayan (7 Kas oncesi) dosyalarda geri None."""
     m = re.search(r"^## Uygulananlar.*?$(.*?)(?=^## |\Z)", metin, re.M | re.S)
     if not m:
@@ -922,8 +945,9 @@ def uygulanan_oku(metin: str) -> list:
     for satir in m.group(1).splitlines():
         b = UYG_BASI.match(satir)
         if b:
-            d = {"i": len(out) + 1, "p": b.group(1), "kural": b.group(2), "kaynak": b.group(3),
-                 "otomatik": bool(b.group(4)), "eski": "", "yeni": "", "geri": None}
+            d = {"i": len(out) + 1, "bolum": int(b.group(1)) if b.group(1) else None,
+                 "p": b.group(2), "kural": b.group(3), "kaynak": b.group(4),
+                 "otomatik": bool(b.group(5)), "eski": "", "yeni": "", "geri": None}
             out.append(d)
         elif d is not None:
             t = satir.strip()
@@ -981,17 +1005,19 @@ def inceleme_oku(metin: str) -> list:
 def inceleme_oku_bolum(metin: str) -> list:
     out = []
     for blok in re.split(r"\n(?=### K\d+ )", metin)[1:]:
-        bas = re.match(r"### K(\d+) · ¶(\S+) · (\S+) · (.*)", blok)
+        bas = re.match(r"### K(\d+) · (?:Ch_(\d+) · )?¶(\S+) · (\S+) · (.*)", blok)
         x = re.search(r"^✗ (.*)$", blok, re.M)
         v = re.search(r"^✓ (.*)$", blok, re.M)
         kutu = re.search(r"\[(.)\] kabul\s+\[(.)\] ret\s+\[(.)\] hep", blok)
         if not (bas and x and v and kutu):
             continue
         isaret = [c.strip().lower() in ("x", "✓", "✔") for c in kutu.groups()]
-        out.append({"k": int(bas.group(1)), "p": bas.group(2), "sinif": bas.group(3),
-                    "kural": bas.group(4).strip(),
+        out.append({"k": int(bas.group(1)), "bolum": int(bas.group(2)) if bas.group(2) else None,
+                    "p": bas.group(3), "sinif": bas.group(4),
+                    "kural": bas.group(5).strip(),
                     "on": bool(re.search(r"^Ön: ", blok, re.M)),
                     "smotor": (re.search(r"^Sadakat: (\S+)", blok, re.M) or [None, None])[1],
+                    "omotor": (re.search(r"^Okuma: (\S+)", blok, re.M) or [None, None])[1],
                     "eski": x.group(1).replace(" ⏎ ", "\n"), "yeni": v.group(1).replace(" ⏎ ", "\n"),
                     "kabul": isaret[0], "ret": isaret[1], "hep": isaret[2],
                     "grup": int(g.group(1)) if (g := re.search(r"^Grup: K(\d+)", blok, re.M)) else None})
@@ -1000,7 +1026,45 @@ def inceleme_oku_bolum(metin: str) -> list:
 
 # ------------------------------------------------------------------ istatistik
 
-IST_BASLIK = "bolum\tk\taile\ton\tkarar"
+INCELEME_ONIZLEME = "inceleme_onizleme.md"
+IST_BASLIK = "bolum\tk\taile\ton\tkarar\tworkflow"
+
+
+def istatistik_satirlari(yol: Path, alan_sayisi: int) -> list:
+    if not yol.exists():
+        return []
+    satirlar = []
+    for satir in yol.read_text(encoding="utf-8").splitlines()[1:]:
+        alanlar = satir.split("\t")
+        if len(alanlar) == alan_sayisi - 1:
+            alanlar.append("")
+        if len(alanlar) == alan_sayisi and alanlar[0].isdigit():
+            satirlar.append(alanlar)
+    return satirlar
+
+
+def _istatistik_anahtari(alanlar: list, motor: bool) -> tuple:
+    if motor:
+        return alanlar[0], "okuma" if alanlar[4].startswith("okuma:") else "sadakat"
+    return (alanlar[0],)
+
+
+def guncel_istatistik(yol: Path, motor: bool = False) -> list:
+    satirlar = istatistik_satirlari(yol, 7 if motor else 6)
+    guncel = {_istatistik_anahtari(p, motor) for p in satirlar if p[-1]}
+    return [p for p in satirlar if p[-1] or _istatistik_anahtari(p, motor) not in guncel]
+
+
+def _istatistik_yaz(yol: Path, baslik: str, no: int, akis: str, yeni: list, *, motor: bool = False) -> None:
+    yol.parent.mkdir(parents=True, exist_ok=True)
+    with yol.with_name(yol.name + ".lock").open("a") as kilit:
+        fcntl.flock(kilit, fcntl.LOCK_EX)
+        eski = istatistik_satirlari(yol, len(baslik.split("\t")))
+        yeni_anahtarlar = {_istatistik_anahtari(s.split("\t"), motor) for s in yeni}
+        kalan = ["\t".join(p) for p in eski
+                 if (p[0], p[-1]) != (str(no), akis)
+                 and (p[-1] or _istatistik_anahtari(p, motor) not in yeni_anahtarlar)]
+        lotm.atomik_yaz(yol, "\n".join([baslik, *kalan, *yeni]) + "\n")
 
 
 def otomatik_secimler(metin: str) -> list:
@@ -1010,59 +1074,65 @@ def otomatik_secimler(metin: str) -> list:
             for u in uygulanan_oku(metin) if u["otomatik"] and u["geri"] is not None]
 
 
-def istatistik_kaydet(yol: Path, no: int, secimler: list) -> int:
+def istatistik_kaydet(yol: Path, no: int, secimler: list, akis: str = "sonra") -> int:
     """Bolumun satirlarini yeniler (ayni bolum iki kez islenirse cift sayilmaz).
     Bir madde birden cok aileye dustuyse her aileye bir satir."""
-    eski = yol.read_text(encoding="utf-8").splitlines()[1:] if yol.exists() else []
-    kalan = [s for s in eski if s and s.split("\t")[0] != str(no)]
     yeni = []
     for s in secimler:
         if s["kabul"] and s["ret"]:
             continue
         karar = "kabul" if s["kabul"] else "ret" if s["ret"] else "bos"
         for a in sorted(aileler(s["kural"], s.get("sinif", "KARAR"))):
-            yeni.append(f"{no}\t{s['k']}\t{a}\t{int(s.get('on', False))}\t{karar}")
-    yol.parent.mkdir(parents=True, exist_ok=True)
-    lotm.atomik_yaz(yol, "\n".join([IST_BASLIK] + kalan + yeni) + "\n")
+            yeni.append(f"{no}\t{s['k']}\t{a}\t{int(s.get('on', False))}\t{karar}\t{akis}")
+    _istatistik_yaz(yol, IST_BASLIK, no, akis, yeni)
     return len(yeni)
 
 
-MOTOR_BASLIK = "bolum\tk\tsinif\tkural\tsadakat\tkarar"
+MOTOR_BASLIK = "bolum\tk\tsinif\tkural\tsadakat\tkarar\tworkflow"
 
 
-def motor_kaydet(yol: Path, no: int, secimler: list) -> int:
+def motor_kaydet(yol: Path, no: int, secimler: list, akis: str = "sonra") -> int:
     """Cift sadakat kararlari: hangi motor buldu, kabul mu. Bolum yenilenir."""
-    satir = [s for s in secimler if s.get("smotor") and not (s["kabul"] and s["ret"])]
-    if not satir:
-        return 0
-    eski = yol.read_text(encoding="utf-8").splitlines()[1:] if yol.exists() else []
-    kalan = [s for s in eski if s and s.split("\t")[0] != str(no)]
+    satir = []
+    for s in secimler:
+        if s["kabul"] and s["ret"]:
+            continue
+        if s.get("smotor"):
+            satir.append(s)
+        if s.get("omotor"):  # cift okuma: ayni dosyada 'okuma:<motor>'
+            satir.append(dict(s, smotor="okuma:" + s["omotor"]))
     yeni = [f"{no}\t{s['k']}\t{s.get('sinif', 'KARAR')}\t{s['kural']}\t{s['smotor']}\t"
-            f"{'kabul' if s['kabul'] else 'ret' if s['ret'] else 'bos'}" for s in satir]
-    yol.parent.mkdir(parents=True, exist_ok=True)
-    lotm.atomik_yaz(yol, "\n".join([MOTOR_BASLIK] + kalan + yeni) + "\n")
+            f"{'kabul' if s['kabul'] else 'ret' if s['ret'] else 'bos'}\t{akis}" for s in satir]
+    if yeni or yol.exists():
+        _istatistik_yaz(yol, MOTOR_BASLIK, no, akis, yeni, motor=True)
     return len(yeni)
 
 
 def motor_ozeti(yol: Path) -> str:
-    """Bolum basina: ikisi / yalniz claude / yalniz codex bulgularinin kabul sayisi."""
+    """Bolum basina: ikisi / yalniz biri bulgularinin kabul sayisi; cift sadakat ve
+    cift okuma ('okuma:<motor>' satirlari) ayri tablo."""
     if not yol.exists():
         return ""
-    say, bolumler = {}, set()
-    for s in yol.read_text(encoding="utf-8").splitlines()[1:]:
-        p = s.split("\t")
-        if len(p) != 6:
-            continue
+    tablolar = {}  # ad -> (say, bolumler)
+    for p in guncel_istatistik(yol, motor=True):
+        ad, _, motor = p[4].rpartition(":")
+        say, bolumler = tablolar.setdefault("okuma" if ad == "okuma" else "sadakat", ({}, set()))
         bolumler.add(p[0])
-        x = say.setdefault(p[4], {"kabul": 0, "ret": 0, "bos": 0})
+        x = say.setdefault(motor, {"kabul": 0, "ret": 0, "bos": 0})
         x[p[5]] += 1
-    n = len(bolumler) or 1
-    satirlar = [f"Çift sadakat ({len(bolumler)} bölüm: {', '.join(sorted(bolumler, key=int))})",
-                f"{'kim buldu':12} kabul  ret  boş  bölüm başına kabul"]
-    for m in ("ikisi",) + tuple(sorted(set(MOTORLAR) | (set(say) - {"ikisi"}))):
-        x = say.get(m, {"kabul": 0, "ret": 0, "bos": 0})
-        satirlar.append(f"{m:12} {x['kabul']:5} {x['ret']:4} {x['bos']:4}  {x['kabul'] / n:.1f}")
-    return "\n".join(satirlar)
+    parcalar = []
+    for ad in ("sadakat", "okuma"):
+        if ad not in tablolar:
+            continue
+        say, bolumler = tablolar[ad]
+        n = len(bolumler) or 1
+        satirlar = [f"Çift {ad} ({len(bolumler)} bölüm: {', '.join(sorted(bolumler, key=int))})",
+                    f"{'kim buldu':12} kabul  ret  boş  bölüm başına kabul"]
+        for m in ("ikisi",) + tuple(sorted(set(MOTORLAR) | (set(say) - {"ikisi"}))):
+            x = say.get(m, {"kabul": 0, "ret": 0, "bos": 0})
+            satirlar.append(f"{m:12} {x['kabul']:5} {x['ret']:4} {x['bos']:4}  {x['kabul'] / n:.1f}")
+        parcalar.append("\n".join(satirlar))
+    return "\n\n".join(parcalar)
 
 
 def istatistik_ozeti(yol: Path) -> str:
@@ -1070,10 +1140,7 @@ def istatistik_ozeti(yol: Path) -> str:
     if not yol.exists():
         return f"YOK: {yol}"
     say = {}
-    for s in yol.read_text(encoding="utf-8").splitlines()[1:]:
-        p = s.split("\t")
-        if len(p) != 5:
-            continue
+    for p in guncel_istatistik(yol):
         x = say.setdefault(p[2], {"kabul": 0, "ret": 0, "bos": 0, "kaldirilan": 0, "bolum": set()})
         x[p[4]] += 1
         x["bolum"].add(p[0])
@@ -1326,16 +1393,15 @@ class Bolum:
         return ciftler, f"taban: {taban_not}; doruk: {doruk_not}"
 
     # -- sadakat
-    def sadakat(self) -> tuple:
+    def sadakat(self, okuma_dosyalari: list[Path]) -> tuple:
         sys.path.insert(0, str(BETIKLER / "harita"))
         from gruplar import gruplar as _gruplar  # bolum.py'nin ¶ duzeni
 
         gruplar = _gruplar(self.no, "tr")
         if not gruplar:
             raise SystemExit(f"sadakat: {self.no}. bolum hizalanamadi (ZH ya da TR yok)")
-        okuma_cikti = self.klasor / "1_okuma_cikti.md"
-        sorular = (sadakat_sorulari(okuma_cikti.read_text(encoding="utf-8"))
-                   if okuma_cikti.exists() else None)
+        sorular = [s for p in okuma_dosyalari
+                   for s in sadakat_sorulari(p.read_text(encoding="utf-8"))] if okuma_dosyalari else None
         bloklar = tr_bloklari(self.dosya.read_text(encoding="utf-8"))
         yerli, yersiz = {}, []
         for s in sorular or []:
@@ -1413,7 +1479,8 @@ class Bolum:
         return f"{n} paragraf degisti -> 3_duzeltme_fark.diff" if n else "metin degismedi"
 
     # -- birlestir
-    def birlestir(self, sadakat_ciktilari: list[Path] | None = None) -> list:
+    def birlestir(self, sadakat_ciktilari: list[Path] | None = None,
+                  okuma_dosyalari: list[Path] | None = None) -> list:
         """Butun gecislerin bulgulari tek listeye: KESIN / KARAR / SABLON + bilgi."""
         k = self.klasor
 
@@ -1441,6 +1508,21 @@ class Bolum:
                 "farklı sorunlar ayrı maddedir. `yeni` için iki öneri farklıysa birini harfi "
                 "harfine al, ötekini `neden`'e yaz. Bu modda sadakat kaynaklı madde KESIN "
                 "olamaz, KARAR'dır.\n\n" + sadakat)
+        if okuma_dosyalari is None:
+            okuma_dosyalari = [k / "1_okuma_cikti.md"]
+        if len(okuma_dosyalari) > 1:
+            okuma = (
+                "ÇİFT OKUMA: bölüm iki ayrı model tarafından, birbirinden habersiz okundu ("
+                + ", ".join(motoru(p) or motorlar.etiket_oku(p) for p in okuma_dosyalari)
+                + "; her bloğun başındaki `motor:` etiketi). Her okuma bulgusuna `okuma_motor` alanı "
+                "ekle: aynı yer ve aynı sorun için ikisi de bulgu verdiyse tek maddede birleştir ve iki "
+                'motoru da yaz (`"okuma_motor": ["antigravity", "codex"]`); biri verdiyse yalnız onu. '
+                "`yeni` için iki öneri farklıysa birini harfi harfine al, ötekini `neden`'e yaz. "
+                "Okuma maddelerinin KESIN/KARAR ayrımı değişmez.\n\n"
+                + "\n\n".join(f"<!-- {p.name} · motor: {motoru(p) or motorlar.etiket_oku(p)} -->\n"
+                                f"{p.read_text(encoding='utf-8').strip()}" for p in okuma_dosyalari))
+        else:
+            okuma = oku(okuma_dosyalari[0].name) if okuma_dosyalari else "(yok)"
         duz = oku("3_duzeltme_cikti.md")
         # Tam metin tekrar verilmez: cerceveli (1) blogundan sonra gelen (2) basligindan itibaren al.
         cerceve = re.search(r"```(?:markdown|md)?\n---\n.*?\n```", duz, re.S)
@@ -1452,7 +1534,7 @@ class Bolum:
             f"{kararlar_blogu()}"
             f"{self.sablon_blogu('bolum_sablonu')}\n\n"
             f"<bolum>\n{self.dosya.read_text(encoding='utf-8').rstrip()}\n</bolum>\n\n"
-            f"<okuma>\n{oku('1_okuma_cikti.md')}\n</okuma>\n\n"
+            f"<okuma>\n{okuma}\n</okuma>\n\n"
             f"<sadakat>\n{sadakat}\n</sadakat>\n\n"
             f"<duzeltme_fark>\n{oku('3_duzeltme_fark.diff')}\n</duzeltme_fark>\n\n"
             f"<duzeltme_dokum>\n{dokum}\n</duzeltme_dokum>\n\n"
@@ -1527,7 +1609,7 @@ class Bolum:
         return out
 
     # -- son adim: uygula
-    def son_adim(self, kuru: bool, kesin_yok: bool = False) -> str:
+    def son_adim(self, kuru: bool, kesin_yok: bool = False, *, anlik: bytes | None = None) -> str:
         import json
         cikti = self.klasor / "5_birlestir_cikti.md"
         try:
@@ -1536,7 +1618,9 @@ class Bolum:
                 raise ValueError(f"JSON nesne degil: {type(veri).__name__}")
         except (ValueError, KeyError) as e:
             return f"HATA: 5_birlestir_cikti.md JSON olarak okunamadi ({e})"
-        asil = self.dosya.read_text(encoding="utf-8")
+        if anlik is None:
+            anlik = self.dosya.read_bytes()
+        asil = anlik.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n")
         for d in veri.get("duzeltmeler", []):
             if d.get("sadakat_motor") and d.get("sinif") == "KESIN":
                 d["sinif"] = "KARAR"  # cift sadakat: her bulgu kararla sayilsin
@@ -1554,20 +1638,27 @@ class Bolum:
         yeni, uygulanan, karar = uygula(asil, veri.get("duzeltmeler", []), kesin_yok=kesin_yok)
         for d in karar:  # boyut/sayi yuzunden uygulanamadiysa yine elle sorulur
             d.pop("otomatik", None)
-        inceleme = self.klasor / "5_inceleme.md"
+        inceleme = self.klasor / (INCELEME_ONIZLEME if kuru else "5_inceleme.md")
         try:
             # Yayimlanmis bolumde sablonun A.2'si eski olabilir: veriye eklenecek terim onerilmez.
             terimler = [] if yayimli else self.yeni_terimler()
         except Exception as e:  # terim listesi yardimci; hat onun yuzunden durmasin
             terimler = []
             veri.setdefault("bilgi", []).append({"p": None, "not": f"yeni terim listesi kurulamadı: {e}"})
-        inceleme.write_text(inceleme_katmanla(inceleme_yaz(self.no, uygulanan, karar, veri.get("bilgi", []),
-                                                            kuru, terimler)), encoding="utf-8")
+        metin = inceleme_yaz(self.no, uygulanan, karar, veri.get("bilgi", []),
+                             kuru, terimler, onizleme=kuru)
         if kuru:
-            return f"kuru: {len(uygulanan)} uygulanirdi, {len(karar)} karar -> 5_inceleme.md"
+            lotm.atomik_yaz(inceleme, metin)
+            return f"kuru: {len(uygulanan)} uygulanirdi, {len(karar)} karar -> {inceleme.name}"
+        metin = inceleme_katmanla(metin)
+        try:
+            lotm.bolumleri_yaz(self.dosya.parent, {self.dosya: anlik},
+                               {self.dosya: yeni} if uygulanan else {},
+                               etiket=f"sonra-Ch_{self.no}")
+        except lotm.BolumYazmaHatasi as e:
+            return f"HATA: {e}"
+        lotm.atomik_yaz(inceleme, metin)
         if uygulanan:
-            yedek_al(f"sonra-Ch_{self.no}", self.dosya)
-            lotm.atomik_yaz(self.dosya, yeni)
             fark_yaz(asil, yeni, self.klasor / "5_uygulanan.diff", self.dosya.name)
         (self.klasor / UYGULANDI).write_text(json.dumps(
             {"zaman": time.strftime("%Y-%m-%d %H:%M"), "uygulanan": len(uygulanan),
@@ -1581,7 +1672,8 @@ class Bolum:
             return "YOK: 5_inceleme.md (once hattin sonuna kadar calistirin)"
         inc_metin = inceleme.read_text(encoding="utf-8")
         secimler = inceleme_oku(inc_metin)
-        metin = self.dosya.read_text(encoding="utf-8")
+        anlik = self.dosya.read_bytes()
+        metin = anlik.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n")
         uygulanan, bulunamayan, celiskili, defter = [], [], [], []
         # Otomatik/kesin uygulananlardan geri alinanlar: ✓ metinde tek ise ✗'ye doner.
         geri_alinan, geri_yok = [], []
@@ -1620,14 +1712,17 @@ class Bolum:
         terimler = terimler_oku(inc_metin)
         eklenen_terim = len(terimler)
         if not kuru:
-            # Bolum ve words.md yazilmadan once (eskiden --kararlar yedeksizdi).
-            yedek_al(f"sonra-kararlar-Ch_{self.no}",
-                     *([self.dosya] if uygulanan or geri_alinan else []), *([KELIMELER] if terimler else []))
+            try:
+                kelimeler = lotm.dosya_anlik(KELIMELER) if terimler else None
+                lotm.bolumleri_yaz(self.dosya.parent, {self.dosya: anlik},
+                                   {self.dosya: metin} if uygulanan or geri_alinan else {},
+                                   etiket=f"sonra-kararlar-Ch_{self.no}",
+                                   ek_yedek={KELIMELER.name: kelimeler} if kelimeler is not None else {})
+            except OSError as e:
+                return f"HATA: {e}"
             istatistik_kaydet(ISTATISTIK, self.no, secimler + oto_secim)
             motor_kaydet(MOTOR_IST, self.no, secimler)
             eklenen_terim = kelimelere_ekle(KELIMELER, terimler, self.no) if terimler else 0
-            if uygulanan or geri_alinan:
-                lotm.atomik_yaz(self.dosya, metin)
             if defter:
                 # Ayni karar (hukum, eski, yeni) zaten defterdeyse yeniden yazilmaz:
                 # --kararlar'in ikinci kez kosulmasi defterde cift satir birakiyordu.
@@ -1684,6 +1779,12 @@ class Bolum:
 # kararlar Tools/karar_motor.tsv'ye gider. Adil olsun diye sadakat kaynakli
 # hicbir madde KESIN uygulanmaz: hepsi kararla sayilir.
 CIFT = os.environ.get("LOTM_CIFT_SADAKAT", "") not in ("", "0")
+# Cift okuma (22 Kas): ayni okuma girdisi ikinci motorla (varsayilan codex);
+# cikti 1_okuma_cikti.<motor>.md. SADAKAT? sorulari ikisinden toplanir, birlestir
+# her okuma bulgusuna okuma_motor yazar ("Okuma: ikisi|claude|codex"), kararlar
+# karar_motor.tsv'ye 'okuma:<motor>' olarak gider. KESIN okuma maddeleri (1.6)
+# olagan yolundan uygulanir; istatistik yalniz KARAR'lari sayar.
+CIFT_OKUMA = os.environ.get("LOTM_CIFT_OKUMA", "") not in ("", "0")
 MOTOR_IST = Path(os.environ.get("LOTM_MOTOR_IST") or KOK / "Tools" / "karar_motor.tsv")
 
 
@@ -1737,6 +1838,9 @@ def main(argv=None) -> int:
     ap.add_argument("--cift-sadakat", action="store_true",
                     help="sadakati iki motorla ayri ayri calistir, bulgulari kaynagiyla etiketle "
                          "(LOTM_CIFT_SADAKAT=1 ayni)")
+    ap.add_argument("--cift-okuma", action="store_true",
+                    help="okumayi ikinci bir motorla da (varsayilan codex; --motor okuma2=...) ayri "
+                         "calistir, bulgulari kaynagiyla etiketle (LOTM_CIFT_OKUMA=1 ayni)")
     ap.add_argument("--donem", action="store_true",
                     help="donem uyumu gecisini ekle (varsayilan zaten acik; LOTM_DONEM=0 iken acar)")
     ap.add_argument("--donem-yok", action="store_true",
@@ -1747,7 +1851,7 @@ def main(argv=None) -> int:
                     help="sicil ayari gecisini atla (LOTM_SES_AYARI=0 ayni)")
     ap.add_argument("--motor", action="append", default=[], metavar="ADIM=MOTOR",
                     help="gecis basina motor, ornek: --motor sadakat=codex (claude|codex|antigravity); "
-                         "cift sadakatte ikinci okuyucu: --motor sadakat2=antigravity")
+                         "cift sadakat / okumada ikinci okuyucu: --motor sadakat2=antigravity, okuma2=claude")
     ap.add_argument("--sure", type=int, default=1800, help="gecis basina zaman asimi (sn)")
     ap.add_argument("--kesin-yok", action="store_true",
                     help="hicbir duzeltmeyi otomatik uygulama, hepsi 5_inceleme.md'ye (LOTM_KESIN_YOK=1); "
@@ -1763,6 +1867,8 @@ def main(argv=None) -> int:
                          "takilinca birer dusurur. 1 = sirayla. Betik zinciri once sirayla "
                          "kosar; --kararlar her zaman sirayla.")
     a = ap.parse_args(argv)
+    if a.kuru and (a.bastan or a.inceleme_yenile):
+        ap.error("--kuru ile --bastan veya --inceleme-yenile birlikte kullanılamaz")
     try:
         nolar = bolum_listesi(a.no)
     except ValueError as e:
@@ -1776,8 +1882,8 @@ def main(argv=None) -> int:
     motor_secimleri = {}
     for m in a.motor:
         adim, _, mt = m.partition("=")
-        if adim not in MODEL_ADIMLARI + ("donem", "ses_ayari", "sadakat2") or mt not in MOTORLAR:
-            ap.error(f"--motor {m}: adim {MODEL_ADIMLARI + ('donem', 'ses_ayari', 'sadakat2')}, motor {MOTORLAR}")
+        if adim not in MODEL_ADIMLARI + ("donem", "ses_ayari", "sadakat2", "okuma2") or mt not in MOTORLAR:
+            ap.error(f"--motor {m}: adim {MODEL_ADIMLARI + ('donem', 'ses_ayari', 'sadakat2', 'okuma2')}, motor {MOTORLAR}")
         motor_secimleri[adim] = mt
 
     if a.inceleme_yenile:
@@ -1820,6 +1926,7 @@ def main(argv=None) -> int:
 
     otomatik = None if a.otomatik is None else (a.otomatik or list(MODEL_ADIMLARI) + ["donem", "ses_ayari"])
     cift = a.cift_sadakat or CIFT
+    cift_okuma = a.cift_okuma or CIFT_OKUMA
     donem_etkin = donem_acik(a.donem, a.donem_yok, a.otomatik)
     ses_ayari_etkin = ses_ayari_acik(a.ses_ayari, a.ses_ayari_yok, a.otomatik)
     # Sadakat motoru bir kez secilir: codex/agy yoksa uyari her bolumde tekrarlanmasin.
@@ -1831,6 +1938,8 @@ def main(argv=None) -> int:
         gereken_motorlar = {motor_sec(ad, motor_secimleri) for ad in gereken_adimlar}
         if "sadakat" in gereken_adimlar and cift:
             gereken_motorlar.add(ikinci_motor(motor_sec("sadakat", motor_secimleri), motor_secimleri))
+        if "okuma" in gereken_adimlar and cift_okuma:
+            gereken_motorlar.add(ikinci_motor(motor_sec("okuma", motor_secimleri), motor_secimleri, "okuma"))
         if "triyaj" in gereken_adimlar and motor_sec("triyaj", motor_secimleri) == "antigravity":
             gereken_motorlar.add("claude")
         if "claude" in gereken_motorlar and not shutil.which(claude_komutu(None)[0]):
@@ -1840,7 +1949,7 @@ def main(argv=None) -> int:
             print("  ya da LOTM_CLAUDE ile baska bir komut verin. Simdilik yalniz girdiler hazirlaniyor.")
             otomatik = None
     ayar = dict(otomatik=otomatik, motor_secimleri=motor_secimleri,
-                cift=cift, donem=donem_etkin, ses_ayari=ses_ayari_etkin)
+                cift=cift, donem=donem_etkin, ses_ayari=ses_ayari_etkin, cift_okuma=cift_okuma)
 
     if len(nolar) == 1:
         k, kisa = bolum_isle(nolar[0], a, **ayar)
@@ -1853,7 +1962,7 @@ def main(argv=None) -> int:
     # Coklu kip: bolumler sirayla; biri dusse de digerleri yurur.
     print(f"Coklu kip: {len(nolar)} bolum ({nolar[0]}…{nolar[-1]})"
           + (f", sadakat motoru: {motor_secimleri['sadakat']}" if "sadakat" in motor_secimleri else "")
-          + (" + ikincisi (cift)" if cift else ""))
+          + (" + ikincisi (cift)" if cift else "") + (", cift okuma" if cift_okuma else ""))
     ozetler, kod = [], 0
     for no in nolar:
         print(f"\n{'=' * 24} {no}. bolum {'=' * 24}", flush=True)
@@ -1948,7 +2057,7 @@ def paralel_kos(nolar: list, a, argv: list) -> int:
             print(f"  {no}: YOK {b.dosya.name}")
             sonuc[no] = (1, f"YOK: {b.dosya.name}")
             continue
-        if (b.klasor / UYGULANDI).exists() and not a.bastan:
+        if (b.klasor / UYGULANDI).exists() and not (a.bastan or a.kuru):
             print(f"  {no}: donuk (kesin duzeltmeler uygulanmis), atlandi")
             sonuc[no] = (0, "donuk: kesin duzeltmeler uygulanmis, kararlar bekliyor (5_inceleme.md)")
             continue
@@ -2022,7 +2131,7 @@ def paralel_kos(nolar: list, a, argv: list) -> int:
 
 
 def bolum_isle(no: int, a, otomatik, motor_secimleri: dict, cift: bool, donem: bool,
-               ses_ayari: bool = False) -> tuple:
+               ses_ayari: bool = False, cift_okuma: bool = False) -> tuple:
     """Tek bolumun hatti. (cikis kodu, coklu kip icin tek satir ozet)."""
     b = Bolum(no, a.parti_boyu,
               tuple(int(x) for x in re.findall(r"\d+", a.yanki)))
@@ -2035,19 +2144,22 @@ def bolum_isle(no: int, a, otomatik, motor_secimleri: dict, cift: bool, donem: b
     if a.kararlar:
         sonuc = b.kararlari_isle(a.kuru)
         print(sonuc)
-        return 0, sonuc
+        return int(sonuc.startswith("HATA:")), sonuc
     # Kesin duzeltmeler uygulandiktan sonra bolum degisir; hat yeniden
     # kurulsa her gecis ESKIMIS gorunur ve bastan calisirdi. Isaret varken
     # hat donuktur: yalniz kararlar kalir.
-    if isaret.exists() and not a.bastan:
+    if isaret.exists() and not (a.bastan or a.kuru):
         print(f"{no}. bolumde kesin duzeltmeler uygulanmis ({isaret.read_text(encoding='utf-8')}).")
         print(f"  kalan kararlar: {b.klasor / '5_inceleme.md'}")
         print(f"  isledikten sonra: ./calistir.sh sonra {no} --kararlar")
         print(f"  hatti bastan kurmak icin: ./calistir.sh sonra {no} --bastan")
         return 0, "donuk: kesin duzeltmeler uygulanmis, kararlar bekliyor (5_inceleme.md)"
-    if isaret.exists():
-        isaret.unlink()
+    if a.kuru and isaret.exists() and (b.klasor / "5_birlestir_cikti.md").exists():
+        son = b.son_adim(True, a.kesin_yok or KESIN_YOK)
+        print(son)
+        return int(son.startswith("HATA:")), son
 
+    anlik = b.dosya.read_bytes()
     b.zincir_calistir(a.zincir_yeniden)
 
     # Donem ve ses_ayari bir kez calistiysa birlestirmeye girer; hatta da gorunsun.
@@ -2057,23 +2169,29 @@ def bolum_isle(no: int, a, otomatik, motor_secimleri: dict, cift: bool, donem: b
     if ses_ayari or (b.klasor / "1c_ses_doruk_cikti.md").exists():
         adimlar.insert(adimlar.index("sadakat"), "ses_ayari")
     sonuc, notlar, hata_var = {}, {}, False
+    basarisiz_ciktilar = set()
     acik_motor = {m.partition("=")[0] for m in getattr(a, "motor", [])}
     for adim in adimlar:
         if adim == "sadakat":
-            ciftler, notlar["sadakat"] = b.sadakat()
+            hazir_okumalar = [c for g, c in sonuc["okuma"]
+                              if c not in basarisiz_ciktilar and durum(g, c) == "TAMAM"]
+            ciftler, notlar["sadakat"] = b.sadakat(hazir_okumalar)
         elif adim == "ses_ayari":
             ciftler, notlar["ses_ayari"] = b.ses_ayari()
         elif adim == "birlestir":
             onceki = [(g, c) for ad in adimlar[:-1] for g, c in sonuc[ad]]
-            if not all(durum(g, c) == "TAMAM" for g, c in onceki):
+            if not all(c not in basarisiz_ciktilar and durum(g, c) == "TAMAM" for g, c in onceki):
                 sonuc[adim] = []
                 notlar[adim] = "onceki gecisler bitince (ve guncel olunca) kurulur"
                 continue
-            ciftler = b.birlestir([c for _, c in sonuc["sadakat"]])
+            ciftler = b.birlestir([c for _, c in sonuc["sadakat"]], [c for _, c in sonuc["okuma"]])
         else:
             ciftler = getattr(b, adim)()
         if adim == "sadakat" and cift:
             ikinci = ikinci_motor(motor_sec("sadakat", motor_secimleri), motor_secimleri)
+            ciftler = ciftler + [(g, c.with_name(f"{c.stem}.{ikinci}.md")) for g, c in ciftler]
+        if adim == "okuma" and cift_okuma:
+            ikinci = ikinci_motor(motor_sec("okuma", motor_secimleri), motor_secimleri, "okuma")
             ciftler = ciftler + [(g, c.with_name(f"{c.stem}.{ikinci}.md")) for g, c in ciftler]
         if otomatik and adim in otomatik:
             araclar = TRIYAJ_ARACLARI if adim == "triyaj" else None
@@ -2085,6 +2203,7 @@ def bolum_isle(no: int, a, otomatik, motor_secimleri: dict, cift: bool, donem: b
                 if durum(girdi, cikti) != "TAMAM" or motor_degisti:
                     if not yurut(girdi, cikti, a.model, a.sure, araclar, hedef_motor):
                         hata_var = True
+                        basarisiz_ciktilar.add(cikti)
         if adim == "duzeltme":
             notlar[adim] = b.duzeltme_farki()
         if adim == "donem":
@@ -2095,7 +2214,7 @@ def bolum_isle(no: int, a, otomatik, motor_secimleri: dict, cift: bool, donem: b
 
     son = None
     if sonuc["birlestir"] and durum(*sonuc["birlestir"][0]) == "TAMAM":
-        son = b.son_adim(a.kuru, a.kesin_yok or KESIN_YOK)
+        son = b.son_adim(a.kuru, a.kesin_yok or KESIN_YOK, anlik=anlik)
         if son.startswith("HATA:"):
             hata_var = True
 

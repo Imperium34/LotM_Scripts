@@ -75,7 +75,7 @@ def maddeler(metin: str) -> tuple:
             toplu_var = True
             toplu = bool(re.search(r"\[[xX✓✔]\] Bu bölümdeki işaretsiz", bas))
         for blok in re.split(r"\n(?=### K\d+ )", bolum)[1:]:
-            h = re.match(r"### K(\d+) · ¶(\S+) · (\S+) · (.*)", blok)
+            h = re.match(r"### K(\d+) · (?:Ch_(\d+) · )?¶(\S+) · (\S+) · (.*)", blok)
             kutu = KUTU.search(blok)
             if not (h and kutu):
                 continue
@@ -83,12 +83,13 @@ def maddeler(metin: str) -> tuple:
             def satir(on):
                 m = re.search(rf"^{on} (.*)$", blok, re.M)
                 return m.group(1) if m else ""
-            out.append({"k": int(h.group(1)), "p": h.group(2), "sinif": h.group(3), "kural": h.group(4).strip(),
+            out.append({"k": int(h.group(1)), "bolum": int(h.group(2)) if h.group(2) else None,
+                        "p": h.group(3), "sinif": h.group(4), "kural": h.group(5).strip(),
                         "katman": re.sub(r"\s*\(\d+\)$", "", baslik),
                         "eski": satir("✗").replace(" ⏎ ", "\n"), "yeni": satir("✓").replace(" ⏎ ", "\n"),
                         "neden": satir("Neden:"), "kaynak": satir("Kaynak:"),
                         "ekler": [s for s in blok.splitlines()[1:]
-                                  if s.startswith(("Dikkat:", "Ön:", "Sadakat:", "Grup:", "Aynı değişiklik:"))],
+                                  if s.startswith(("Dikkat:", "Ön:", "Sadakat:", "Okuma:", "Grup:", "Aynı değişiklik:"))],
                         "grup": int(g.group(1)) if (g := re.search(r"^Grup: K(\d+)", blok, re.M)) else None,
                         "kabul": kutu.group(1) in ISARET, "ret": kutu.group(3) in ISARET,
                         "hep": kutu.group(5) in ISARET})
@@ -178,22 +179,31 @@ class Baglam:
 class Kip:
     """Hangi inceleme dosyasi, nasil uygulanir, ne zaman 'islenmis' sayilir."""
 
-    def __init__(self, ad: str):
+    def __init__(self, ad: str, dosya_yolu: Path | None = None):
         self.ad = ad
+        self.dosya_yolu = dosya_yolu
         if ad == "ses_ayari":
             import ses_ayari as A
             self.kok, self.dosya, self.betik, self.isaret = A.RAPOR, "inceleme.md", "ses_ayari.py", "uygulandi.json"
         elif ad == "sablon":  # sablon onerileri (sablon_oneri.py)
             import sablon as SB
             self.kok, self.dosya, self.betik, self.isaret = SB.RAPOR, "oneriler.md", "sablon.py", "oneriler_uygulandi.json"
+        elif ad == "okuma":  # coklu okuma (okuma.py): tek inceleme.md
+            import okuma as O
+            self.kok, self.dosya, self.betik, self.isaret = O.RAPOR, "inceleme.md", "okuma.py", O.KARARLAR_ISLENDI
         else:
             self.kok, self.dosya, self.betik, self.isaret = S.RAPOR, "5_inceleme.md", "sonra.py", S.KARARLAR_ISLENDI
 
-    def yol(self, no: int) -> Path:
+    def yol(self, no) -> Path:
+        if self.ad == "okuma":
+            if self.dosya_yolu is not None:
+                return self.dosya_yolu
+            return self.kok / str(no) / self.dosya
         return self.kok / f"Ch_{no}" / self.dosya
 
-    def islenmis(self, no: int) -> bool:
-        isaret, inc = self.kok / f"Ch_{no}" / self.isaret, self.yol(no)
+    def islenmis(self, no) -> bool:
+        inc = self.yol(no)
+        isaret = inc.parent / self.isaret
         if not inc.exists():
             return False
         if not isaret.exists():
@@ -206,7 +216,7 @@ class Kip:
             en_eski = self._en_eski_isaret()
             sinir = min(self._ist_mtime, en_eski) if en_eski is not None else self._ist_mtime
             return sinir >= inc.stat().st_mtime
-        # sonra: inceleme sonradan yeniden isaretlendiyse yine bekliyor say.
+        # sonra / okuma: inceleme sonradan yeniden isaretlendiyse yine bekliyor say.
         return self.ad == "ses_ayari" or isaret.stat().st_mtime >= inc.stat().st_mtime
 
     def _en_eski_isaret(self) -> float | None:
@@ -221,13 +231,14 @@ class Kip:
             self._ist_mtime = None
             if S.ISTATISTIK.exists():
                 self._ist_mtime = S.ISTATISTIK.stat().st_mtime
-                for s in S.ISTATISTIK.read_text(encoding="utf-8").splitlines()[1:]:
-                    if s.split("\t", 1)[0].isdigit():
-                        self._ist.add(int(s.split("\t", 1)[0]))
+                self._ist = {int(p[0]) for p in S.guncel_istatistik(S.ISTATISTIK)
+                             if p[-1] in ("", "sonra")}
         return self._ist
 
     def hazirlar(self, sonra_: int) -> list:
         """sonra_'dan buyuk, incelemesi hazir ve islenmemis bolumler (sirali)."""
+        if self.ad == "okuma":
+            return []
         out = []
         for k in self.kok.glob("Ch_*"):
             m = re.fullmatch(r"Ch_(\d+)", k.name)
@@ -236,10 +247,14 @@ class Kip:
                 out.append(int(m.group(1)))
         return sorted(out)
 
-    def uygula(self, no: int) -> tuple:
+    def uygula(self, no) -> tuple:
         """(basarili mi, cikti) -- komut satirindaki --kararlar."""
-        p = subprocess.run([sys.executable, str(BETIKLER / self.betik), str(no), "--kararlar"],
-                           capture_output=True, text=True, cwd=BETIKLER, timeout=600)
+        if self.ad == "okuma":
+            cmd = [sys.executable, str(BETIKLER / self.betik), str(no), "--kararlar",
+                   "--dosya", str(self.yol(no))]
+        else:
+            cmd = [sys.executable, str(BETIKLER / self.betik), str(no), "--kararlar"]
+        p = subprocess.run(cmd, capture_output=True, text=True, cwd=BETIKLER, timeout=600)
         cikti = (p.stdout.strip().splitlines() or [""])[-1] if p.returncode == 0 else \
             (p.stderr or p.stdout).strip()[-600:]
         return p.returncode == 0, cikti
@@ -255,17 +270,19 @@ class Oturum:
         self.yol = yol or (kip.yol(self.no) if kip and self.no is not None else None)
         self._baglam, self._baglam_kilit = {}, threading.Lock()
         self.bitti, self.uygulananlar = False, []
-        self.baglam = self.baglam_al(self.no)
+        self.baglam = self.baglam_al(self.no if isinstance(self.no, int) else None)
         self.onden_kur()
 
     def baglam_al(self, no):
+        if not isinstance(no, int):
+            no = None
         with self._baglam_kilit:
             if no not in self._baglam:
                 self._baglam[no] = Baglam(no)
             return self._baglam[no]
 
     def onden_kur(self):
-        if self.kuyruk:
+        if self.kuyruk and isinstance(self.kuyruk[0], int):
             sonraki = self.kuyruk[0]
             threading.Thread(target=self.baglam_al, args=(sonraki,), daemon=True).start()
 
@@ -274,7 +291,7 @@ class Oturum:
             no = self.kuyruk.pop(0)
             if self.kip.yol(no).exists() and not self.kip.islenmis(no):
                 self.no, self.yol = no, self.kip.yol(no)
-                self.baglam = self.baglam_al(no)
+                self.baglam = self.baglam_al(no if isinstance(no, int) else None)
                 self.onden_kur()
                 return True
         self.no = None
@@ -286,7 +303,8 @@ def yazilanlar(metin: str) -> list:
     """Hattin bolume zaten yazdigi duzeltmeler, sayfa icin madde bicimiyle."""
     out = []
     for u in S.uygulanan_oku(metin):
-        out.append({"k": f"U{u['i']}", "i": u["i"], "tur": "uyg", "p": u["p"], "sinif": "UYGULANDI",
+        out.append({"k": f"U{u['i']}", "i": u["i"], "tur": "uyg", "bolum": u.get("bolum"),
+                    "p": u["p"], "sinif": "UYGULANDI",
                     "kural": u["kural"], "katman": "0. Uygulananlar", "kaynak": u["kaynak"],
                     "otomatik": u["otomatik"], "geri": bool(u["geri"]), "geri_var": u["geri"] is not None,
                     "eski": u["eski"], "yeni": u["yeni"], "neden": "", "ekler": [],
@@ -349,10 +367,12 @@ def uygulama(oturum, baglam: Baglam | None = None, kapat=None):
             ms, toplu_var, toplu = maddeler(metin)
             for m in ms:
                 m["fark_eski"], m["fark_yeni"] = farklar(m["eski"], m["yeni"])
-                m.update(baglam.bul(m))
+                b = oturum.baglam_al(m["bolum"]) if m.get("bolum") is not None else baglam
+                m.update(b.bul(m))
             for u in yazilanlar(metin):
                 u["fark_eski"], u["fark_yeni"] = farklar(u["eski"], u["yeni"])
-                u.update(baglam.bul(dict(u, eski=u["yeni"])))  # bolumde artik ✓ duruyor
+                b = oturum.baglam_al(u["bolum"]) if u.get("bolum") is not None else baglam
+                u.update(b.bul(dict(u, eski=u["yeni"])))  # bolumde artik ✓ duruyor
                 ms.append(u)
             return {"dosya": str(yol), "maddeler": ms, "toplu_var": toplu_var, "toplu": toplu,
                     "bolum": oturum.no, "kuyruk": list(oturum.kuyruk), "isaretsiz": isaretsiz(metin),
@@ -407,17 +427,18 @@ def uygulama(oturum, baglam: Baglam | None = None, kapat=None):
                 if oturum.kip is None or oturum.no is None:
                     return self.json_gonder({"hata": "bu dosya buradan uygulanamaz (komut satirindan --kararlar)"}, 400)
                 no = oturum.no
+                no_ad = f"{no}. bölüm" if isinstance(no, int) else str(no)
                 tamam, cikti = oturum.kip.uygula(no)
                 if not tamam:
-                    return self.json_gonder({"hata": f"{no}. bölüm uygulanamadı: {cikti}"}, 500)
+                    return self.json_gonder({"hata": f"{no_ad} uygulanamadı: {cikti}"}, 500)
                 oturum.uygulananlar.append(f"{no}: {cikti}")
                 print(f"  uygulandı {no}: {cikti}", flush=True)
                 if oturum.ilerle():
                     veri = self.durum()
-                    veri["sonuc"] = f"{no}. bölüm: {cikti}"
+                    veri["sonuc"] = f"{no_ad}: {cikti}"
                     return self.json_gonder(veri)
                 son_uyg = list(oturum.uygulananlar)
-            self.json_gonder({"bitti": True, "sonuc": f"{no}. bölüm: {cikti}",
+            self.json_gonder({"bitti": True, "sonuc": f"{no_ad}: {cikti}",
                               "uygulananlar": son_uyg})
             if kapat:
                 threading.Timer(1.0, kapat).start()
@@ -465,7 +486,7 @@ textarea{width:100%;min-height:90px;font:inherit;background:var(--bg);color:var(
 .rozet{font-size:13px;color:var(--vurgu);cursor:pointer;text-decoration:underline dotted}
 .kutular button.acik.geri{background:var(--ret);color:#fff;border-color:var(--ret)}
 </style></head><body>
-<header><strong id="baslik">İnceleme</strong><select id="suzgec"></select>
+<header><strong id="baslik">İnceleme</strong><select id="suzgec"></select><select id="bolumSuzgec" hidden></select>
 <span id="sayac"></span><span id="uygRozet" class="rozet" hidden></span><div class="ilerleme"><div id="cubuk" style="width:0"></div></div>
 <label id="topluK" hidden><input type="checkbox" id="toplu"> 4. katmanda işaretsizlerin hepsi: ret</label>
 <button id="uygula" hidden title="Shift+A">Uygula ve sonraki bölüm (A)</button><span id="kuyruk"></span></header>
@@ -477,7 +498,7 @@ n sıradaki işaretsiz · u geri al · g uygulanmış düzeltmeyi geri alınacak
 let veri=null, sira=0, gecmis=[], duzenle=false, isleniyor=false;
 const $=id=>document.getElementById(id);
 const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-function gorunen(){const f=$("suzgec").value;return veri.maddeler.filter(m=>!f||m.katman===f)}
+function gorunen(){const f=$("suzgec").value, b=$("bolumSuzgec").value;return veri.maddeler.filter(m=>(!f||m.katman===f)&&(!b||String(m.bolum)===b))}
 const karar=m=>m.tur!=="uyg";
 async function al(){
  try{const r=await fetch("/api/maddeler");veri=await r.json();kur()}
@@ -494,6 +515,11 @@ async function gonder(yol,govde){
 }
 function kur(){
  const katmanlar=[...new Set(veri.maddeler.map(m=>m.katman))], s=$("suzgec"), eski=s.value;
+ const bolumler=[...new Set(veri.maddeler.map(m=>m.bolum).filter(b=>b!==null&&b!==undefined))].sort((a,b)=>a-b);
+ const bs=$("bolumSuzgec"), eskiB=bs.value;
+ bs.hidden=bolumler.length<2;
+ if(bolumler.length>=2){bs.innerHTML='<option value="">Tüm bölümler</option>'+bolumler.map(b=>`<option value="${b}" ${String(b)===eskiB?"selected":""}>Ch_${b}</option>`).join("")}
+ else{bs.value=""}
  const uyg=veri.maddeler.filter(m=>!karar(m)), oto=uyg.filter(m=>m.otomatik).length, geri=uyg.filter(m=>m.geri).length;
  $("uygRozet").hidden=!uyg.length;
  $("uygRozet").textContent=`uygulanan ${uyg.length}${oto?` (${oto} otomatik)`:""}${geri?` · ${geri} geri alınacak`:""}`;
@@ -510,12 +536,16 @@ function kur(){
 function parcalar(p){return p.map(([t,s])=>t==="="?esc(s):`<b class="d">${esc(s)}</b>`).join("")}
 function goster(){
  const g=gorunen(), m=g[sira];
- $("liste").innerHTML=g.map((x,i)=>karar(x)?`<span class="${x.kabul?"k":x.ret?"r":""} ${i===sira?"su":""}" data-i="${i}">K${x.k}</span>`
-  :`<span class="u ${x.otomatik?"o":""} ${x.geri?"g":""} ${i===sira?"su":""}" data-i="${i}" title="${x.otomatik?"otomatik":"kesin"}">${x.k}</span>`).join("");
+ $("liste").innerHTML=g.map((x,i)=>{
+  const bt=x.bolum!=null?`Ch_${x.bolum} ¶${x.p}`:`¶${x.p}`;
+  return karar(x)?`<span class="${x.kabul?"k":x.ret?"r":""} ${i===sira?"su":""}" data-i="${i}" title="${esc(bt)}">K${x.k}</span>`
+   :`<span class="u ${x.otomatik?"o":""} ${x.geri?"g":""} ${i===sira?"su":""}" data-i="${i}" title="${esc(bt)} · ${x.otomatik?"otomatik":"kesin"}">${x.k}</span>`;
+ }).join("");
  if(!m){$("kart").textContent="Bu süzgeçte madde yok.";return}
  let tr=esc(m.tr); const ip=esc(((karar(m)?m.eski:m.yeni)||"").slice(0,60));
  if(ip&&tr.includes(ip)) tr=tr.replace(ip,()=>`<mark>${ip}</mark>`);
- if(!karar(m)){$("kart").innerHTML=`<div class="ust"><span>${m.k}</span><span>¶${esc(m.p)}${m.hizalama_grup?` · hizalama ¶${m.hizalama_grup}`:""}</span>
+ const bRozet=m.bolum!=null?`<span><strong>Ch_${m.bolum}</strong></span>`:"";
+ if(!karar(m)){$("kart").innerHTML=`<div class="ust"><span>${m.k}</span>${bRozet}<span>¶${esc(m.p)}${m.hizalama_grup?` · hizalama ¶${m.hizalama_grup}`:""}</span>
  <span>${m.otomatik?"otomatik uygulandı":"kesin, uygulandı"}</span><span>${esc(m.kaynak)}</span><span>${sira+1}/${g.length}</span></div>
  <div class="kural">${esc(m.kural)}</div>
  <div class="satir sx"><span class="etiket">✗</span>${parcalar(m.fark_eski)}</div>
@@ -523,7 +553,7 @@ function goster(){
  <div class="kutular">${m.geri_var?`<button class="geri ${m.geri?"acik":""}" data-a="g">${m.geri?"geri alınacak (g)":"geri al (g)"}</button>`
   :`<span class="ek">Bu dosya eski biçimde; geri almak için yedekten dönün.</span>`}</div>
  <div class="baglam"><div><strong>TR</strong>\n${tr||"(paragraf bulunamadı)"}</div><div><strong>ZH</strong>\n${esc(m.zh)||"(hizalama yok)"}</div></div>`;return}
- $("kart").innerHTML=`<div class="ust"><span>K${m.k}</span><span>¶${esc(m.p)}${m.hizalama_grup?` · hizalama ¶${m.hizalama_grup}`:""}</span>
+ $("kart").innerHTML=`<div class="ust"><span>K${m.k}</span>${bRozet}<span>¶${esc(m.p)}${m.hizalama_grup?` · hizalama ¶${m.hizalama_grup}`:""}</span>
  <span>${esc(m.katman)}</span><span>${esc(m.kaynak)}</span><span>${sira+1}/${g.length}</span></div>
  <div class="kural">${esc(m.kural)}</div>
  <div class="satir sx"><span class="etiket">✗</span>${parcalar(m.fark_eski)}</div>
@@ -559,8 +589,9 @@ async function eylem(a){
 let uyguluyor=false;
 async function uygula(){
  if(!veri||!veri.uygulanabilir||uyguluyor) return;
- if(veri.isaretsiz&&!confirm(`${veri.bolum}. bölümde ${veri.isaretsiz} işaretsiz madde var; uygulanmayacaklar (kutusu boş kalır). Yine de uygulansın mı?`)) return;
- uyguluyor=true; $("uygula").disabled=true; $("sonuc").textContent=`${veri.bolum}. bölüm uygulanıyor…`;
+ const bas=typeof veri.bolum==="number"?`${veri.bolum}. bölümde`:`${veri.bolum} için`;
+ if(veri.isaretsiz&&!confirm(`${bas} ${veri.isaretsiz} işaretsiz madde var; uygulanmayacaklar (kutusu boş kalır). Yine de uygulansın mı?`)) return;
+ uyguluyor=true; $("uygula").disabled=true; $("sonuc").textContent=`${veri.bolum} uygulanıyor…`;
  try{
   const r=await fetch("/api/uygula",{method:"POST",headers:{"Content-Type":"application/json"},body:"{}"});
   const j=await r.json();
@@ -569,7 +600,7 @@ async function uygula(){
   if(j.bitti){
    document.querySelector("main").innerHTML=`<div class="kart"><strong>Bitti.</strong><p>${(j.uygulananlar||[]).map(esc).join("<br>")}</p><p class="tuslar">Sunucu kapandı; bu sekmeyi kapatabilirsiniz.</p></div>`;
    document.querySelector("header").hidden=true; setTimeout(()=>window.close(),1500); return}
-  veri=j; sira=0; gecmis=[]; duzenle=false; $("suzgec").value=""; kur(); window.scrollTo(0,0);
+  veri=j; sira=0; gecmis=[]; duzenle=false; $("suzgec").value=""; $("bolumSuzgec").value=""; kur(); window.scrollTo(0,0);
  }catch(e){$("hata").textContent=`Uygulama başarısız: ${e}`;$("sonuc").textContent=""}
  finally {uyguluyor=false; $("uygula").disabled=false}
 }
@@ -580,6 +611,7 @@ $("uygRozet").addEventListener("click",()=>{$("suzgec").value="0. Uygulananlar";
 document.addEventListener("click",e=>{const a=e.target.dataset.a; if(a) eylem(a);
  const i=e.target.dataset.i; if(i!==undefined){sira=+i;duzenle=false;goster()}});
 $("suzgec").addEventListener("change",()=>{sira=0;kur()});
+$("bolumSuzgec").addEventListener("change",()=>{sira=0;kur()});
 $("toplu").addEventListener("change",e=>gonder("/api/toplu",{isaret:e.target.checked}));
 document.addEventListener("keydown",async e=>{
  if(duzenle){ if(e.key==="Escape"){duzenle=false;goster()}
@@ -602,13 +634,33 @@ al();
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="5_inceleme.md için yerel inceleme sayfası.")
     ap.add_argument("no", nargs="?", help="bölüm, aralık ya da liste: 9, 20-25, 20,22,24")
-    ap.add_argument("--dosya", type=Path, help="başka bir inceleme dosyası (ör. ses_ayari)")
+    ap.add_argument("--okuma", metavar="ARALIK",
+                    help="okuma.py'nin tek inceleme.md dosyasını aç (ör. 1-20 ya da etiket)")
+    ap.add_argument("--dosya", type=Path, help="başka bir inceleme dosyası (ör. ses_ayari, okuma)")
     ap.add_argument("--bolum", type=int, help="--dosya ile: bağlam için bölüm numarası")
     ap.add_argument("--tek", action="store_true", help="kuyruk yok: yalnız bu bölüm")
     ap.add_argument("--port", type=int, default=0, help="varsayılan: boş bir port")
     ap.add_argument("--acma", action="store_true", help="tarayıcıyı açma")
     a = ap.parse_args(argv)
-    if a.dosya:
+    if a.dosya and a.dosya.resolve().name == S.INCELEME_ONIZLEME:
+        ap.error("önizleme dosyasında karar işlenemez")
+    if a.okuma:
+        import okuma as O
+        etiket = a.okuma
+        yol = O.RAPOR / etiket / "inceleme.md"
+        if not yol.exists():
+            try:
+                etiket = O.aralik_etiketi(S.lotm.bolum_listesi(a.okuma))
+                yol = O.RAPOR / etiket / "inceleme.md"
+            except ValueError:
+                pass
+        if not yol.exists():
+            print(f"YOK: {yol}")
+            return 1
+        kip = Kip("okuma", dosya_yolu=yol.resolve())
+        oturum = Oturum(kip, [etiket], yol=yol.resolve())
+        no = None
+    elif a.dosya:
         yol, no = a.dosya.resolve(), a.bolum
         if not yol.exists():
             print(f"YOK: {yol}")
@@ -621,10 +673,20 @@ def main(argv=None) -> int:
             k = Kip(ad)
             if no is not None and k.yol(no).resolve() == yol:
                 kip = k
-        kuyruk = [no] + ([] if a.tek or kip is None else kip.hazirlar(no)) if no is not None else []
-        oturum = Oturum(kip, kuyruk, yol=yol) if kuyruk else None
-        if oturum is None:
-            oturum = yol
+        if kip is None:
+            try:
+                import okuma as O
+                if O.RAPOR.resolve() in yol.parents and yol.name == "inceleme.md":
+                    kip = Kip("okuma", dosya_yolu=yol)
+            except Exception:
+                pass
+        if kip is not None and kip.ad == "okuma":
+            oturum = Oturum(kip, [yol.parent.name], yol=yol)
+        else:
+            kuyruk = [no] + ([] if a.tek or kip is None else kip.hazirlar(no)) if no is not None else []
+            oturum = Oturum(kip, kuyruk, yol=yol) if kuyruk else None
+            if oturum is None:
+                oturum = yol
     elif a.no is not None:
         try:
             nolar = S.lotm.bolum_listesi(a.no)

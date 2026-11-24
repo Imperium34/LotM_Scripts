@@ -34,10 +34,11 @@ gecici=$(mktemp -d)
 trap 'rm -rf "$gecici"' EXIT
 # Index'teki hal disari aktarilir: butun bolumler (takvim sirayi ve
 # baslik tekrarini butun bolumlere bakarak denetler) ve takvim.
-git ls-files -z -- _chapters _data/takvim.yml |
-  xargs -0 git checkout-index --prefix="$gecici/" --
+git ls-files -z -- _chapters _data/takvim.yml _data/sozluk.yml |
+  xargs -0 -r git checkout-index --prefix="$gecici/" --
 
 klasor="$gecici/_chapters"
+sozluk="$gecici/_data/sozluk.yml"
 yollar=()
 for f in "${degisen[@]}"; do
   yollar+=("$gecici/$f")
@@ -60,7 +61,7 @@ calistir "takvim" python3 "$TOOLS/takvim_denetle.py" \
 
 if ((${#yollar[@]})); then
   calistir "bicim (HATA)" python3 "$TOOLS/bicim_denetle.py" "${yollar[@]}" \
-    --bolumler "$klasor" --taban "$TOOLS/lint/bicim-taban.tsv"
+    --bolumler "$klasor" --taban "$TOOLS/lint/bicim-taban.tsv" --sozluk "$sozluk"
   calistir "artik isaretler" python3 "$TOOLS/yayim_denetle.py" --yalniz-artik \
     --bolumler "$klasor" "${yollar[@]}"
   # Haftalik zincirin kendiliginden yazacagi kesin duzeltmeler: yayindan
@@ -71,7 +72,6 @@ if ((${#yollar[@]})); then
   # yazildigi icin evlat kalir); duzelt.py ile ayni girdiler, yoksa kanca
   # duzelt'in "yok" dedigi seyi bekliyor sayardi. Sozluk yoksa (ilk
   # kurulum) atlanir. words.md sirasi lotm.py ile ayni.
-  sozluk="$(git rev-parse --show-toplevel)/_data/sozluk.yml"
   if [[ -f "$sozluk" ]]; then
     sapka_arg=(--denetle --sozluk "$sozluk")
     for k in "${LOTM_KELIMELER:-}" "$TOOLS/words.md" "$TOOLS/../Tools/words.md"; do

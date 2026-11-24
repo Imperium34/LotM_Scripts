@@ -131,6 +131,7 @@ def test_inceleme_gidis_donus_ve_kullanici_duzenlemesi():
 
 
 def test_kararlar_uygulanir_ve_deftere_yazilir(tmp_path, monkeypatch):
+    monkeypatch.setattr(S, "MOTOR_IST", tmp_path / "motor.tsv")
     bolumler = tmp_path / "_chapters"
     bolumler.mkdir()
     (bolumler / "0060.md").write_text(BOLUM, encoding="utf-8")
@@ -165,6 +166,7 @@ def test_kararlar_uygulanir_ve_deftere_yazilir(tmp_path, monkeypatch):
 
 
 def test_donem_reddi_hep_olmadan_deftere_ve_cift_satir_yok(tmp_path, monkeypatch):
+    monkeypatch.setattr(S, "MOTOR_IST", tmp_path / "motor.tsv")
     bolumler = tmp_path / "_chapters"
     bolumler.mkdir()
     (bolumler / "0060.md").write_text(BOLUM, encoding="utf-8")
@@ -487,6 +489,7 @@ def test_eklenen_sus_dort_katmana_iner():
 
 
 def test_uygulananlar_geri_alinir_ve_istatistige_yazilir(tmp_path, monkeypatch):
+    monkeypatch.setattr(S, "MOTOR_IST", tmp_path / "motor.tsv")
     bolumler = tmp_path / "_chapters"
     bolumler.mkdir()
     (bolumler / "0060.md").write_text(BOLUM, encoding="utf-8")
@@ -619,6 +622,7 @@ def test_kelimelere_ekle_cift_eklemez(tmp_path):
 
 
 def test_kararlar_celiskili_ve_eski_esit_yeni(tmp_path, monkeypatch):
+    monkeypatch.setattr(S, "MOTOR_IST", tmp_path / "motor.tsv")
     bolumler = tmp_path / "_chapters"
     bolumler.mkdir()
     (bolumler / "0060.md").write_text(BOLUM, encoding="utf-8")
@@ -696,7 +700,7 @@ def test_eskimis_gecis_varken_birlestir_kurulmaz(tmp_path, monkeypatch):
     monkeypatch.setattr(S, "KARARLAR", tmp_path / "yok.md")
     monkeypatch.setattr(S, "istem", lambda ad: "ISTEM")
     monkeypatch.setattr(S.Bolum, "zincir_calistir", lambda self, zorla: None)
-    monkeypatch.setattr(S.Bolum, "sadakat", lambda self: ([(self.klasor / "2_sadakat_girdi_01.md",
+    monkeypatch.setattr(S.Bolum, "sadakat", lambda self, okumalar: ([(self.klasor / "2_sadakat_girdi_01.md",
                                                             self.klasor / "2_sadakat_cikti_01.md")], None))
     b = S.Bolum(60, 6000)
     b.klasor.mkdir(parents=True)
@@ -766,3 +770,113 @@ def test_ses_ayari_birlestire_girer_ve_kendi_kendini_kapilar(tmp_path, monkeypat
     assert not (b.klasor / "1c_ses_doruk_girdi.md").exists()
     girdi, _ = b.birlestir([])[0]
     assert "<ses_ayari>" not in girdi.read_text(encoding="utf-8")
+
+
+def test_secili_okuyucular_sadakat_ve_birlestirmeye_gider(tmp_path, monkeypatch):
+    monkeypatch.setattr(S, "BOLUMLER", tmp_path)
+    monkeypatch.setattr(S, "RAPOR", tmp_path / "sonra")
+    monkeypatch.setattr(S, "CIFT_OKUMA", False)
+    monkeypatch.setattr(S, "istem", lambda ad: "ISTEM")
+    monkeypatch.setattr(S.Bolum, "zincir_calistir", lambda self, zorla: None)
+    (tmp_path / "0060.md").write_text(BOLUM, encoding="utf-8")
+    b = S.Bolum(60, 6000)
+    b.klasor.mkdir(parents=True)
+    asil = b.klasor / "1_okuma_cikti.md"
+    eski = b.klasor / "1_okuma_cikti.codex.md"
+    secili = b.klasor / "1_okuma_cikti.antigravity.md"
+    for yol, metin in [(asil, "ASIL_OKUYUCU"), (eski, "ESKI_IKINCI_OKUYUCU"),
+                       (b.klasor / "3_duzeltme_cikti.md", "düzeltme"),
+                       (b.klasor / "4_triyaj_cikti.md", "triyaj")]:
+        yol.write_text(metin, encoding="utf-8")
+    monkeypatch.setattr(S.Bolum, "okuma", lambda self: [(self.klasor / "1_okuma_girdi.md", asil)])
+    for ad, sira in [("duzeltme", 3), ("triyaj", 4)]:
+        monkeypatch.setattr(S.Bolum, ad, lambda self, ad=ad, sira=sira: [
+            (self.klasor / f"{sira}_{ad}_girdi.md", self.klasor / f"{sira}_{ad}_cikti.md")
+        ])
+    monkeypatch.setattr(S.Bolum, "duzeltme_farki", lambda self: "")
+    sadakat_okumalari = []
+    monkeypatch.setattr(S.Bolum, "sadakat", lambda self, yollar: ([], sadakat_okumalari.append(yollar)))
+    girdi = b.klasor / "5_birlestir_girdi.md"
+    temel = ["60", "--donem-yok", "--ses-ayari-yok"]
+    cift = ["--cift-okuma", "--motor", "okuma=claude", "--motor", "okuma2=antigravity"]
+
+    assert S.main(temel + cift) == 0
+    assert sadakat_okumalari[-1] == [asil]
+    assert not girdi.exists()
+
+    secili.write_text("SECILI_IKINCI_OKUYUCU", encoding="utf-8")
+    assert S.main(temel + cift) == 0
+    assert sadakat_okumalari[-1] == [asil, secili]
+    metin = girdi.read_text(encoding="utf-8")
+    assert "SECILI_IKINCI_OKUYUCU" in metin and "ESKI_IKINCI_OKUYUCU" not in metin
+
+    assert S.main(temel) == 0
+    assert sadakat_okumalari[-1] == [asil]
+    metin = girdi.read_text(encoding="utf-8")
+    assert "ASIL_OKUYUCU" in metin and "IKINCI_OKUYUCU" not in metin
+    assert eski.exists() and secili.exists()
+
+
+def test_kuru_isaretli_incelemeye_onizleme_yazar(tmp_path, monkeypatch):
+    import json
+
+    monkeypatch.setattr(S, "BOLUMLER", tmp_path)
+    monkeypatch.setattr(S, "RAPOR", tmp_path / "rapor")
+    monkeypatch.setattr(S, "KESIN_YOK", False)
+    monkeypatch.setattr(S.Bolum, "yayimlandi", lambda self: False)
+    monkeypatch.setattr(S.Bolum, "yeni_terimler", lambda self: [{"tr": "Burç", "en": "Tower"}])
+    b = S.Bolum(60, 6000)
+    b.klasor.mkdir(parents=True)
+    b.dosya.write_text(BOLUM)
+    (b.klasor / "5_birlestir_cikti.md").write_text(json.dumps({"duzeltmeler": [
+        {"sinif": "KESIN", "eski": "geldi;", "yeni": "geldi.", "p": 1},
+        {"sinif": "KARAR", "eski": "Veli konuştu.", "yeni": "Veli sustu.", "p": 2},
+    ]}))
+    dosyalar = [b.klasor / ad for ad in ("5_inceleme.md", S.UYGULANDI, S.KARARLAR_ISLENDI)]
+    for yol in dosyalar:
+        yol.write_text("canlı [x]")
+    once = {yol: yol.read_bytes() for yol in [b.dosya, *dosyalar]}
+
+    assert S.main(["60", "--kuru"]) == 0
+    metin = (b.klasor / S.INCELEME_ONIZLEME).read_text()
+    assert "Simüle edilen otomatik düzenlemeler (1)" in metin
+    assert "Burç ← Tower" in metin and "Veli sustu." in metin
+    assert "[ ]" not in metin and "[x]" not in metin
+    assert {yol: yol.read_bytes() for yol in once} == once
+
+
+def test_kuru_canli_incelemeyi_degistiren_bayraklari_reddeder():
+    import pytest
+
+    for bayrak in ("--bastan", "--inceleme-yenile"):
+        with pytest.raises(SystemExit) as hata:
+            S.main(["60", "--kuru", bayrak])
+        assert hata.value.code == 2
+
+
+def test_sonra_kararlar_editor_kaydi_varsa_isaretleri_korur(tmp_path, monkeypatch, capsys):
+    monkeypatch.setattr(S, "BOLUMLER", tmp_path)
+    monkeypatch.setattr(S, "RAPOR", tmp_path / "rapor")
+    monkeypatch.setenv("LOTM_YEDEK", str(tmp_path / "yedek"))
+    b = S.Bolum(60, 6000)
+    b.klasor.mkdir(parents=True)
+    b.dosya.write_text(BOLUM)
+    karar = {"sinif": "KARAR", "eski": "Veli konuştu.", "yeni": "Veli sustu.", "p": 2}
+    canli = b.klasor / "5_inceleme.md"
+    metin = S.inceleme_yaz(60, [], [karar], [], kuru=False).replace("[ ] kabul", "[x] kabul")
+    canli.write_text(metin)
+    isaretler = [b.klasor / ad for ad in (S.UYGULANDI, S.KARARLAR_ISLENDI)]
+    for yol in isaretler:
+        yol.write_bytes(b"canli")
+
+    def editor(_):
+        b.dosya.write_text(BOLUM + "\nEditör kaydı.")
+        return []
+
+    monkeypatch.setattr(S, "otomatik_secimler", editor)
+    assert S.main(["60", "--kararlar"]) == 1
+    assert "0060.md" in capsys.readouterr().out
+    assert b.dosya.read_text() == BOLUM + "\nEditör kaydı."
+    assert canli.read_text() == metin
+    assert all(yol.read_bytes() == b"canli" for yol in isaretler)
+    assert not (tmp_path / "yedek").exists()

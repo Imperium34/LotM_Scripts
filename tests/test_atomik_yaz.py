@@ -65,3 +65,80 @@ def test_hata_olursa_eski_dosya_ve_klasor_temiz_kalir(tmp_path, monkeypatch):
         lotm.atomik_yaz(yol, "yeni")
     assert yol.read_text(encoding="utf-8") == "eski"
     assert [p.name for p in tmp_path.iterdir()] == ["sozluk.yml"]   # gecici dosya kalmadi
+
+
+def test_bolum_yazarlari_ayni_klasor_kilidini_paylasir(tmp_path, monkeypatch):
+    from concurrent.futures import ThreadPoolExecutor
+    from threading import Event
+
+    monkeypatch.setenv("LOTM_YEDEK", str(tmp_path / "yedek"))
+    klasor = tmp_path / "bolumler"
+    klasor.mkdir()
+    takma = tmp_path / "takma"
+    takma.symlink_to(klasor, target_is_directory=True)
+    yol = klasor / "0001.md"
+    yol.write_bytes(b"original\r\n")
+    ilk_kilitte, surdur, ikinci_kilit_deniyor = Event(), Event(), Event()
+    replace = os.replace
+    flock = lotm.fcntl.flock
+
+    def bekle(kaynak, hedef):
+        if hedef == yol:
+            ilk_kilitte.set()
+            assert surdur.wait(5)
+        replace(kaynak, hedef)
+
+    def kilitle(fd, kip):
+        if ilk_kilitte.is_set():
+            ikinci_kilit_deniyor.set()
+        return flock(fd, kip)
+
+    monkeypatch.setattr(lotm.os, "replace", bekle)
+    monkeypatch.setattr(lotm.fcntl, "flock", kilitle)
+    anlik = {yol: yol.read_bytes()}
+    with ThreadPoolExecutor(2) as havuz:
+        ilk = havuz.submit(lotm.bolumleri_yaz, klasor, anlik, {yol: b"bir"}, etiket="test")
+        assert ilk_kilitte.wait(5)
+        ikinci = havuz.submit(lotm.bolumleri_yaz, takma, anlik, {yol: b"iki"}, etiket="test")
+        try:
+            assert ikinci_kilit_deniyor.wait(5)
+            assert not ikinci.done()
+        finally:
+            surdur.set()
+        yedek = ilk.result(timeout=5)
+        with pytest.raises(lotm.BolumYazmaHatasi, match=r"değişti: .*0001.md"):
+            ikinci.result(timeout=5)
+    assert yol.read_bytes() == b"bir"
+    assert (yedek / yol.name).read_bytes() == b"original\r\n"
+    assert len(list((tmp_path / "yedek").rglob(yol.name))) == 1
+
+
+@pytest.mark.parametrize("editor", [True, False])
+def test_yarida_kesilen_yazim_yedekleri_ve_yazilanlari_korur(tmp_path, monkeypatch, editor):
+    yedek = tmp_path / "yedek"
+    monkeypatch.setenv("LOTM_YEDEK", str(yedek))
+    ilk, ikinci = (tmp_path / ad for ad in ("0001.md", "0002.md"))
+    anlik = {ilk: b"one\r\n", ikinci: b"two\r\n"}
+    for yol, veri in anlik.items():
+        yol.write_bytes(veri)
+    fsync = os.fsync
+    replace = os.replace
+
+    def kaydet(fd):
+        fsync(fd)
+        if editor and ilk.read_bytes() == b"yeni":
+            ikinci.write_bytes(b"editor")
+
+    def degistir(kaynak, hedef):
+        if not editor and hedef == ikinci:
+            raise OSError("disk arızası")
+        replace(kaynak, hedef)
+
+    monkeypatch.setattr(lotm.os, "fsync", kaydet)
+    monkeypatch.setattr(lotm.os, "replace", degistir)
+    with pytest.raises(lotm.BolumYazmaHatasi, match=r"yazılan dosyalar: .*0001.md; yedek:"):
+        lotm.bolumleri_yaz(tmp_path, anlik, {ilk: b"yeni", ikinci: b"yeni"}, etiket="test")
+    assert ilk.read_bytes() == b"yeni"
+    assert ikinci.read_bytes() == (b"editor" if editor else anlik[ikinci])
+    assert {p.name: p.read_bytes() for p in yedek.rglob("*.md")} == {
+        p.name: veri for p, veri in anlik.items()}

@@ -11,6 +11,8 @@ Maddeler (inceleme_sunucu'nun ### K<n> bicimi; ¶ alani '-'):
     EKLE      F satiri, words.md'de basligin sonuna eklenir
     DEGISTIR  F satiri, words.md'deki ✗ satirinin yerine (tam eslesme, count == 1)
     AD        H secenegi (F satiri bicimi); ayni adin iki secenegi birden kabul edilemez
+    HARITA    ses haritasi boslugu -> Tools/Voice_Maps/Harita_Kuyrugu.md, karakter
+              basligi altina '[N]' etiketiyle (23 Kas). Haritaya kullanici isler.
     YANKI     G girisi -> Echo_Notes.md, siradaki numarayla; Donmus'taki her
               tirnakli dize yayimlanmis metinde aynen gecmeli.
 
@@ -19,7 +21,9 @@ kullanici: sablonda ya da ceviride degisen karsilik iki dosyada duzeltilmesin).
 EKLE/DEGISTIR/AD satirinin Turkcesi de yayimlanmis metinde aranir; yoksa madde
 uygulanmaz ve ✓ bir kez, oneriler.md'de duzeltilir. oneriler.md kurulurken
 sablonun bugunku A karsiligi farkliysa 'Dikkat: sablonda simdi' yazilir.
-    BILGI     kod blogu disindaki notlar (celiski, kusur raporu): yalniz okunur.
+    Notlar    kod blogu disindaki notlar (celiski, kusur raporu): kutusuz liste,
+              madde degil (23 Kas). sozluk.yml'yi anan notlar ayri listede.
+              Eski oneriler.md'lerdeki BILGI maddeleri okunur ama uygulanmaz.
 
 Degistirme isareti modelden modele degisir: satir sonunda '← DEĞİŞTİRME: neden',
 '← replacement', ya da kategori basliginda '←' (altindaki her satir degistirme).
@@ -45,6 +49,13 @@ import lotm  # noqa: E402
 KOK = BETIKLER.parent
 KELIMELER = KOK / "Tools" / "words.md"
 YANKI = KOK / "Tools" / "Voice_Maps" / "Echo_Notes.md"
+KUYRUK = KOK / "Tools" / "Voice_Maps" / "Harita_Kuyrugu.md"
+KUYRUK_BAS = """# Ses haritası kuyruğu
+
+`sablon N oneriler`'in HARITA maddelerinden (sohbet.md 'Ses haritası boşlukları').
+ses_haritasi.py bunları metinde geçen karakterler için özetin sonuna ekler.
+Bir girişi Side_Character_Maps.md / Klein.md'ye işleyince buradan silin.
+"""
 BOLUMLER = KOK / "Imperium34.github.io" / "_chapters"
 SONRA = BETIKLER / "Reports" / "sonra"
 ISARET = "oneriler_uygulandi.json"
@@ -189,6 +200,50 @@ def h_secenekleri(metin: str) -> list:
     return f_satirlari(kod)
 
 
+def bosluk_maddeleri(metin: str) -> list:
+    """'Ses haritasi bosluklari' -> [(karakter adi, madde blogu)]. Ust duzey '- '
+    maddeleri girintili alt satirlariyla; bosluk olmayanlar ('yok', 'haritadan')
+    atlanir."""
+    out = []
+    for s in metin.splitlines():
+        if s.startswith("- "):
+            out.append([s.rstrip()])
+        elif out and s.strip() and s.startswith((" ", "\t")):
+            out[-1].append(s.rstrip())
+    maddeler = []
+    for b in out:
+        ilk = b[0][2:].strip()
+        m = re.match(r"\*\*(.+?)\*\*", ilk)
+        ad = (m.group(1) if m else ilk.split(":")[0]).strip().rstrip(":").strip()
+        govde = ilk[m.end():] if m else ilk[len(ilk.split(":")[0]):]
+        govde = govde.lstrip(" :·").strip()
+        if len(b) == 1 and re.match(r"^(yok|haritadan)\b", govde, re.I) and len(govde) < 40:
+            continue
+        maddeler.append((ad, "\n".join(b)))
+    return maddeler
+
+
+def kuyruk_sayisi(metin: str | None = None) -> int:
+    if metin is None:
+        metin = KUYRUK.read_text(encoding="utf-8") if KUYRUK.exists() else ""
+    return len(re.findall(r"^- \[\d+\]", metin, re.M))
+
+
+def kuyruk_notu(n: int) -> str:
+    return (f"Ses haritası kuyruğunda {n} giriş bekliyor: {KUYRUK} "
+            f"(haritaya işleyince oradan silin)") if n else ""
+
+
+def kuyruga_ekle(metin: str, ad: str, no: int, blok: str) -> str:
+    """Girisi '### <ad>' basligi altina '- [N] ...' olarak ekler; baslik yoksa acar."""
+    metin = metin or KUYRUK_BAS
+    giris = re.sub(r"^- ", f"- [{no}] ", blok, count=1)
+    yeni = basliga_ekle(metin, ad, giris)
+    if yeni is None:
+        yeni = metin.rstrip("\n") + f"\n\n### {ad}\n\n{giris}\n"
+    return yeni
+
+
 def madde(k: int, sinif: str, kural: str, eski: str, yeni: str, neden: str = "",
           kaynak: str = "", dikkat: list | None = None) -> str:
     s = [f"### K{k} · ¶- · {sinif} · {kural}", KUTULAR, f"✗ {tek(eski)}", f"✓ {tek(yeni)}"]
@@ -201,7 +256,8 @@ def madde(k: int, sinif: str, kural: str, eski: str, yeni: str, neden: str = "",
 
 
 def oneriler_kur(no: int, sohbet: str, kelimeler: str, yanki: str,
-                 sablon: str = "", zh_tsv: str = "", bolum: str = "") -> str:
+                 sablon: str = "", zh_tsv: str = "", bolum: str = "",
+                 kuyruk: int | None = None) -> str:
     """bolum: yayimlanmis metin (varsa); F/H satirlarinin Turkcesi orada aranir."""
     b = bolumler(sohbet)
 
@@ -242,9 +298,17 @@ def oneriler_kur(no: int, sohbet: str, kelimeler: str, yanki: str,
             bloklar.append(madde(k, "EKLE", baslik, "(yeni satır)", satir, "", "sohbet.md F", dikkat))
     katmanlar.append(("1. words.md (F)", bloklar))
 
-    # 2. Ad kararlari (H)
+    # 2. Ad kararlari (H). F'de ayni Cince anahtarla (ya da ayni Turkceyle) satiri
+    # olan ad tekrar sorulmaz (89: Cullen hem F hem H'de geldi, H reddedildi).
+    f_hepsi = [s for _, s, _, _ in f_satirlari(kod)]
+    f_anahtar = set().union(*[anahtarlar(s) for s in f_hepsi]) if f_hepsi else set()
+    f_kalin = {kalin(s) for s in f_hepsi if kalin(s)}
+    atlanan = []
     bloklar = []
     for baslik, satir, _, _ in h_secenekleri(b.get("H", "")):
+        if (anahtarlar(satir) & f_anahtar) or kalin(satir) in f_kalin:
+            atlanan.append(kalin(satir))
+            continue
         k += 1
         dikkat = baglam(satir) + ([] if baslik in basliklar else [f"words.md'de '{baslik}' başlığı yok"])
         bloklar.append(madde(k, "AD", baslik, "(yeni satır)", satir,
@@ -262,16 +326,30 @@ def oneriler_kur(no: int, sohbet: str, kelimeler: str, yanki: str,
                              "sohbet.md G", dikkat))
     katmanlar.append(("3. Yankı defteri (G)", bloklar))
 
-    # 4. Notlar
+    # 4. Ses haritasi bosluklari -> kuyruk
     bloklar = []
+    for ad, blok in bosluk_maddeleri(b.get("bosluk", "")):
+        k += 1
+        bloklar.append(madde(k, "HARITA", ad, "(kuyruğa)", blok,
+                             f"kabul → {KUYRUK.name}; haritaya işleyince oradan silin",
+                             "sohbet.md ses haritası"))
+    katmanlar.append(("4. Ses haritası boşlukları", bloklar))
+
+    # 4. Notlar: kutusuz, yalniz okunur (eskiden her biri BILGI maddesiydi: 8-14
+    # madde/bolum tek tek isaretleniyordu). sozluk.yml'yi isaret edenler ayri
+    # listede: hicbir sinif onlari uygulamaz, elle islenir.
+    notlar_sozluk, notlar_diger = [], []
     for kaynak, notlar in (("F", f_notlar), ("G", g_notlar)):
         for n in notlar:
             if n.startswith("**") and n.rstrip().endswith(("**", ":**")):
                 continue  # ara baslik
-            k += 1
-            bloklar.append(madde(k, "BILGI", f"sohbet.md {kaynak}", "", n, "yalnız okunur; kabul = okundu",
-                                 f"sohbet.md {kaynak}"))
-    katmanlar.append(("4. Notlar", bloklar))
+            if re.search(r"terfi edilmeyecek|eşleşme notları", n, re.I) and n.rstrip().endswith(":"):
+                continue  # baslik satiri
+            (notlar_sozluk if re.search(r"sozluk\.yml|sözlük\.yml", n, re.I) else notlar_diger).append(
+                f"- ({kaynak}) {n.lstrip('- ').strip()}")
+    if atlanan:
+        notlar_diger.append("- (H) F'de satırı olduğu için ad sorusu olarak sorulmadı: "
+                            + ", ".join(dict.fromkeys(atlanan)))
 
     ust = [f"# {no}. bölüm — şablon önerileri", "",
            f"Kaynak: `Reports/sablon/Ch_{no}/sohbet.md`. ✓ satırı düzenlenebilir (e).",
@@ -281,6 +359,14 @@ def oneriler_kur(no: int, sohbet: str, kelimeler: str, yanki: str,
            f"bölümde bir karşılığı değiştirdiyseniz ✓'yi burada bir kez düzeltin (e).", ""]
     for ad, bl in katmanlar:
         ust += [f"## {ad} ({len(bl)})", ""] + [x for b_ in bl for x in (b_, "")]
+    if notlar_sozluk:
+        ust += [f"## sozluk.yml'ye elle işlenecek ({len(notlar_sozluk)})", "",
+                "Bunları hiçbir madde uygulamaz; `_data/sozluk.yml`'de elle düzeltin.", ""] + notlar_sozluk + [""]
+    if notlar_diger:
+        ust += [f"## Notlar ({len(notlar_diger)})", "", "Yalnız okunur, işaretlenmez.", ""] + notlar_diger + [""]
+    kn = kuyruk_notu(kuyruk_sayisi() if kuyruk is None else kuyruk)
+    if kn:
+        ust += ["---", "", kn, ""]
     return "\n".join(ust).rstrip() + "\n"
 
 
@@ -396,8 +482,9 @@ def kararlar(no: int, klasor: Path) -> int:
     yapilan = kayit["uygulandi"]
     kelimeler = KELIMELER.read_text(encoding="utf-8")
     yanki = YANKI.read_text(encoding="utf-8")
-    k0, y0 = kelimeler, yanki
-    say = {"eklendi": 0, "değişti": 0, "yankı": 0, "bekliyor": 0, "reddedildi": 0, "uygulanamadı": 0}
+    kuyruk = KUYRUK.read_text(encoding="utf-8") if KUYRUK.exists() else ""
+    k0, y0, q0 = kelimeler, yanki, kuyruk
+    say = {"eklendi": 0, "değişti": 0, "yankı": 0, "harita": 0, "bekliyor": 0, "reddedildi": 0, "uygulanamadı": 0}
     sorunlar = []
 
     adlar: dict = {}
@@ -443,6 +530,9 @@ def kararlar(no: int, klasor: Path) -> int:
             satirlar[satirlar.index(m["eski"])] = m["yeni"]
             kelimeler = "\n".join(satirlar)
             say["değişti"] += 1
+        elif m["sinif"] == "HARITA":
+            kuyruk = kuyruga_ekle(kuyruk, m["kural"], no, m["yeni"])
+            say["harita"] += 1
         elif m["sinif"] == "YANKI":
             eksik = donmus_eksik(m["yeni"], bolum)
             if eksik:
@@ -457,7 +547,7 @@ def kararlar(no: int, klasor: Path) -> int:
             say["yankı"] += 1
         yapilan[kimlik(m)] = f"K{m['k']} {m['sinif']} {m['kural']}"
 
-    if kelimeler != k0 or yanki != y0:
+    if kelimeler != k0 or yanki != y0 or kuyruk != q0:
         yedek = lotm.yedek_klasoru(f"sablon-oneri-{no}")
         yedek.mkdir(parents=True, exist_ok=True)
         if kelimeler != k0:
@@ -466,6 +556,10 @@ def kararlar(no: int, klasor: Path) -> int:
         if yanki != y0:
             shutil.copy2(YANKI, yedek / YANKI.name)
             lotm.atomik_yaz(YANKI, yanki)
+        if kuyruk != q0:
+            if KUYRUK.exists():
+                shutil.copy2(KUYRUK, yedek / KUYRUK.name)
+            lotm.atomik_yaz(KUYRUK, kuyruk)
         print(f"yedek: {yedek}")
     lotm.atomik_yaz(isaret, json.dumps(kayit, ensure_ascii=False, indent=1) + "\n")
     for s in sorunlar:
@@ -474,5 +568,9 @@ def kararlar(no: int, klasor: Path) -> int:
         print(f"  {say['bekliyor']} madde bekliyor: {no} yayımlanıp 'sonra {no} --kararlar' "
               f"işlenince yeniden: ./calistir.sh sablon {no} --kararlar")
     print(f"words.md: {say['eklendi']} eklendi, {say['değişti']} değişti · Echo_Notes: {say['yankı']} eklendi, "
-          f"{say['bekliyor']} bekliyor · {say['uygulanamadı']} uygulanamadı, {say['reddedildi']} ret")
+          f"{say['bekliyor']} bekliyor · harita kuyruğu: {say['harita']} eklendi · "
+          f"{say['uygulanamadı']} uygulanamadı, {say['reddedildi']} ret")
+    kn = kuyruk_notu(kuyruk_sayisi(kuyruk))
+    if kn:
+        print(kn)
     return 0

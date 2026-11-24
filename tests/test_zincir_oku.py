@@ -120,7 +120,7 @@ def test_model_basarisizsa_cikis_1_girdi_hazir_rapor_yok(depo, capsys, monkeypat
 
 
 def test_kuru_degilse_duzelt_cagrilir_ciktisi_modele_gider(depo, monkeypatch):
-    monkeypatch.setattr(Z, "duzelt", lambda: "DUZELTME OZETI: 2 dosya")
+    monkeypatch.setattr(Z, "duzelt", lambda: (0, "DUZELTME OZETI: 2 dosya"))
     assert Z.main([str(depo["zincir"])]) == 0
     girdi = (depo["t"] / "haftalik" / f"{bugun()}_girdi.md").read_text(encoding="utf-8")
     assert "<uygulanan_duzeltmeler>\nDUZELTME OZETI: 2 dosya\n</uygulanan_duzeltmeler>" in girdi
@@ -132,10 +132,11 @@ def test_duzelt_yalniz_haftalik_adimlari_uygular_takvim_haric(depo, monkeypatch)
 
     def kayit(komut, cwd=Z.BETIKLER):
         cagrilar.append((komut, cwd))
-        return "ciktisi" if "duzelt.py" in komut else ""
+        return (0, "ciktisi" if "duzelt.py" in komut else "")
     monkeypatch.setattr(Z, "calistir", kayit)
     monkeypatch.setattr(Z, "duzelt", _asil_duzelt)
-    metin = Z.duzelt()
+    kod, metin = Z.duzelt()
+    assert kod == 0
     komut, cwd = cagrilar[0]
     assert komut[:2] == ["python3", "duzelt.py"] and komut[-2:] == ["--uygula", "--evet"]
     assert komut[2:-2] == Z.HAFTALIK_ADIMLAR and "takvim" not in komut
@@ -147,11 +148,12 @@ def test_duzelt_yalniz_haftalik_adimlari_uygular_takvim_haric(depo, monkeypatch)
 
 def test_calistir_ansi_atar_stderr_ekler(tmp_path):
     out = _asil_calistir(["sh", "-c", "printf '\\033[1mkalin\\033[0m'; echo hata >&2"], tmp_path)
-    assert out == "kalin\nhata"
+    assert out == (0, "kalin\nhata")
 
 
 def test_calistir_basarisiz_cikis_kodunu_yazar(tmp_path):
-    out = _asil_calistir(["sh", "-c", "echo sorun >&2; exit 2"], tmp_path)
+    kod, out = _asil_calistir(["sh", "-c", "echo sorun >&2; exit 2"], tmp_path)
+    assert kod == 2
     assert "sorun" in out and "(çıkış kodu: 2)" in out
 
 
@@ -172,3 +174,14 @@ def test_cat_tek_basina_yetmez_allowedtools_yuzunden(tmp_path, monkeypatch):
     assert komut[0] == "cat" and "--allowedTools" in komut
     p = subprocess.run(komut, input="x", capture_output=True, text=True)
     assert p.returncode != 0
+
+
+def test_duzelt_basarisizsa_rapor_yazilir_ve_cikis_kodu_korunur(depo, monkeypatch):
+    def calistir(komut, cwd=Z.BETIKLER):
+        return (4, "bölüm değişti (çıkış kodu: 4)") if "duzelt.py" in komut else (0, "")
+
+    monkeypatch.setattr(Z, "calistir", calistir)
+    monkeypatch.setattr(Z, "duzelt", _asil_duzelt)
+    assert Z.main([str(depo["zincir"])]) == 4
+    rapor = depo["t"] / "haftalik" / f"{bugun()}.md"
+    assert "bölüm değişti (çıkış kodu: 4)" in rapor.read_text()

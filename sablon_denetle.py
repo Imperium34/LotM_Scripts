@@ -339,6 +339,9 @@ class Kaynaklar:
     zh_yanlar: dict = field(default_factory=dict)  # bolum no -> zh_yan_oku() ciktisi
     yayim: list = field(default_factory=list)  # lotm.Bolum (Turkce)
     zh_metin: str = ""  # bu bolumun Cince metni; bossa Cince suzme yapilmaz
+    # onceki sablonu olan bolumlerin Cince metni: Ch_N_zh.tsv'si olmayan eski
+    # sablonlarda (<63) 'ayni Ingilizce' uyarisi Cince metinden suzulur
+    zh_metinler: dict = field(default_factory=dict)
     no: int | None = None  # denetlenen bolum: eski karsiligin kapisindan (bolum_siniri) once mi
 
     def __post_init__(self):
@@ -382,9 +385,10 @@ def yukle(no: int, sablon_klasoru: Path = SABLONLAR) -> Kaynaklar:
     except FileNotFoundError:
         yayim = []
     try:
-        zh_metin = next((b.metin for b in lotm.bolumler_zh() if b.no == no), "")
+        zh_hepsi = {b.no: b.metin for b in lotm.bolumler_zh() if b.no in sablonlar or b.no == no}
     except FileNotFoundError:
-        zh_metin = ""
+        zh_hepsi = {}
+    zh_metin = zh_hepsi.pop(no, "")
     return Kaynaklar(
         terimler=sozluk.terimler,
         salahiyetler=salahiyetler,
@@ -398,6 +402,7 @@ def yukle(no: int, sablon_klasoru: Path = SABLONLAR) -> Kaynaklar:
         zh_yanlar=zh_yanlar,
         yayim=yayim,
         zh_metin=zh_metin,
+        zh_metinler=zh_hepsi,
         no=no,
     )
 
@@ -494,6 +499,11 @@ def onceki_kararlar(satir: SablonSatiri, kay: Kaynaklar) -> list:
                 continue
             if satir.zh and s.zh and not set(satir.zh) & set(s.zh):
                 continue  # ayni Ingilizce, baska Cince: baska kavram
+            eski_zh = kay.zh_metinler.get(no, "")
+            if satir.zh and not s.zh and eski_zh and not any(z in eski_zh for z in satir.zh):
+                continue  # eski sablonun Cince anahtari yok; bu Cince o bolumde hic gecmiyor
+            if s.zh and not satir.zh and kay.zh_metin and not any(z in kay.zh_metin for z in s.zh):
+                continue  # ayni durum, ters yon
             if gecici_mi(s):
                 return []  # gecici karar: sonradan degismesi beklenir
             onceki = _aynen_ac(s.tr, s.en)

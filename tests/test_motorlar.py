@@ -147,6 +147,11 @@ def test_bos_ortam_ve_bilinmeyen_motor(tmp_path, monkeypatch):
         M.calistir("a", "bilinmeyen", sure=30, cwd=tmp_path, kota={})
 
 
+def test_bes_saatlik_kota_yakalanir():
+    assert M.KOTA.search("You've hit your 5-hour limit · resets 5:50pm (Europe/Istanbul) · out of usage credits")
+    assert M.KOTA.search("out of credits")
+
+
 def test_ikinci_motor_varsayilan_ve_secimler(tmp_path, monkeypatch):
     _codex(tmp_path, monkeypatch)
     _agy(tmp_path, monkeypatch)

@@ -113,6 +113,8 @@ VARSAYILAN_MOTOR = {
     "donem": "antigravity",
     "sadakat": "antigravity",
     "sadakat2": "codex",
+    "okuma2": "codex",
+    "zh": "antigravity",
     "duzeltme": "antigravity",
     "triyaj": "claude",
     "birlestir": "claude",
@@ -125,19 +127,21 @@ def _komut_var(motor: str) -> bool:
     return bool(shutil.which(_komut_bol(*MOTOR_KOMUTU[motor])[0]))
 
 
-def ikinci_motor(birinci: str, secimler: dict | None = None) -> str:
-    """Cift sadakatte ikinci okuyucu. --motor sadakat2=... / LOTM_MOTOR_SADAKAT2 / VARSAYILAN_MOTOR['sadakat2']."""
+def ikinci_motor(birinci: str, secimler: dict | None = None, adim: str = "sadakat") -> str:
+    """Cift sadakat / cift okumada ikinci okuyucu. --motor <adim>2=... /
+    LOTM_MOTOR_<ADIM>2 / VARSAYILAN_MOTOR['<adim>2'] (ikisi de codex)."""
+    anahtar = f"{adim}2"
     m = (
-        (secimler or {}).get("sadakat2")
-        or os.environ.get("LOTM_MOTOR_SADAKAT2")
-        or VARSAYILAN_MOTOR.get("sadakat2")
+        (secimler or {}).get(anahtar)
+        or os.environ.get(f"LOTM_MOTOR_{anahtar.upper()}")
+        or VARSAYILAN_MOTOR.get(anahtar)
     )
     if m:
         if m not in MOTORLAR:
             raise SystemExit(f"bilinmeyen motor: {m} ({', '.join(MOTORLAR)})")
         if not _komut_var(m):
             print(
-                f"  UYARI: sadakat2 icin {m} bulunamadi, baska motor seciliyor",
+                f"  UYARI: {anahtar} icin {m} bulunamadi, baska motor seciliyor",
                 flush=True,
             )
             m = None
@@ -147,8 +151,8 @@ def ikinci_motor(birinci: str, secimler: dict | None = None) -> str:
 
 
 def cikti_motoru(cikti: Path, varsayilan: str) -> str:
-    """2_sadakat_cikti_01.claude.md -> claude; ekisiz ad varsayilan motorundur."""
-    m = re.match(r".*_\d+\.([a-z]+)\.md$", cikti.name)
+    """2_sadakat_cikti_01.claude.md / 1_okuma_cikti.codex.md -> motor; ekisiz ad varsayilan motorundur."""
+    m = re.match(r".*\.([a-z]+)\.md$", cikti.name)
     return m.group(1) if m and m.group(1) in MOTORLAR else varsayilan
 
 
@@ -211,7 +215,7 @@ DOSYA_ARAMA_NOTU = (
 # KOTA       oturum/kullanim kotasi doldu; o motorun kalan cagrilari atlanir.
 # HIZ_SINIRI gecici hiz siniri / asiri yuk (sonra'nin paralel kipi paralelligi dusurur).
 KOTA = re.compile(
-    r"session limit|usage limit|weekly limit|hit your [\w ]{0,20}limit|limit reached|quota",
+    r"session limit|usage limit|weekly limit|hit your [\w -]{0,20}limit|limit reached|quota|out of (?:usage )?credits",
     re.I,
 )
 HIZ_SINIRI = re.compile(

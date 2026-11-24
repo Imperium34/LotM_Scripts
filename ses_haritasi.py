@@ -40,10 +40,13 @@ HARITALAR = Path(os.environ.get("LOTM_HARITALAR") or KOK / "Tools" / "Voice_Maps
 YAN = HARITALAR / "Side_Character_Maps.md"
 KLEIN = HARITALAR / "Klein.md"
 KARARLAR = HARITALAR / "Ses_Kararlari.md"
+# sablon oneri HARITA maddeleri (23 Kas): haritaya islenene kadar burada bekler
+KUYRUK = HARITALAR / "Harita_Kuyrugu.md"
 BOLUMLER = KOK / "Imperium34.github.io" / "_chapters"
 
 ARALIK = re.compile(r"(\d{1,4})\s*[–-]\s*(\d{1,4})|(?<![\d.])(\d{1,4})(?![\d.]|\. Aşama)")
 GENEL = re.compile(r"tüm|bütün|her aşama|tüm dönem", re.I)
+KURAL_KODU = re.compile(r"(?<![\wÇĞİÖŞÜçğıöşü])[A-ZÇĞİÖŞÜ]{1,4}\d+(?:\.\d+)*(?![\w])")
 # Ad aranirken atlanan basllik sozcukleri (toplu haritalar, unvanlar).
 DURAK = {"Toplu", "Harita", "Ahalisi", "Üyeler", "The", "Old", "Bay", "Bayan", "Sihirli", "Ayna",
          "Gece", "Şahinleri", "Tingen", "Backlund", "Şubesi", "Destek", "Personeli", "Müfreze",
@@ -69,8 +72,16 @@ def araliklar(metin: str) -> list:
 
 
 def kapsar(metin: str, no: int, asamalar: dict | None = None) -> bool | None:
-    """Kapsam metni bu bolumu kapsiyor mu? Bolum bilgisi yoksa None (genel)."""
-    ar = araliklar(re.sub(r"¶\d+", "", metin))
+    """Kapsam metni bu bolumu kapsiyor mu? Bolum bilgisi yoksa None (genel).
+    Kural kodlari (M1, K2, T1.3) sayi sayilmaz; ilk bolumu (· oncesi) 'butun
+    asamalar' gibi genel olan ve orada sayi tasimayan Kapsam geneldir: sonraki
+    sayilar ornektir ('en saf hâli 1390'). 23 Kas: M1, M6, M9, K3.3, K5.2 bu
+    yuzden 82'de dusuyordu."""
+    metin = KURAL_KODU.sub("", re.sub(r"¶\d+", "", metin))
+    ilk = metin.split("·")[0]
+    if GENEL.search(ilk) and not araliklar(ilk) and not re.search(r"\d\.\s*(?:–\s*\d\.\s*)?Aşama", ilk):
+        return None
+    ar = araliklar(metin)
     for m in re.finditer(r"(\d)\.\s*(?:–\s*(\d)\.\s*)?Aşama", metin):
         a, b = int(m.group(1)), int(m.group(2) or m.group(1))
         for k in range(a, b + 1):
@@ -222,6 +233,19 @@ def kirp(s: str, n: int) -> str:
     return (s[:i + 1] if i > n // 2 else s[:n].rsplit(" ", 1)[0] + " …")
 
 
+def kuyruk_girisleri(metin: str) -> list:
+    """[(karakter, girisler metni)] -- Harita_Kuyrugu.md'de metinde gecen karakterler."""
+    if not KUYRUK.exists():
+        return []
+    out = []
+    for baslik, gov in bolumle(KUYRUK.read_text(encoding="utf-8"), "###"):
+        ad = baslik.split("`")[0].strip()
+        anahtar = anahtarlar(ad) or [ad]
+        if gov.strip() and gecis_sayisi(anahtar, metin) >= 1:
+            out.append((ad, gov.strip()))
+    return out
+
+
 def tam(no: int, metin: str) -> str:
     asama, kg, maskeler = klein(no, metin)
     out = [f"# {no}. bölüm — ses haritası özeti", "",
@@ -234,6 +258,9 @@ def tam(no: int, metin: str) -> str:
     for g in kg:
         out += [f"- **{g['baslik']}** ({g['kapsam']})", f"  Yap: {g['yap']}"]
         out += [f"  Yapma: {g['yapma']}"] if g["yapma"] else []
+        # 23 Kas: Klein'in Ayar ornekleri de (82'de Klein.md tam okununca kurallarin
+        # uygulanmasini degistiren bunlardi); ~4–5 KB
+        out += [f"  Ayar: {g['ayar']}"] if g["ayar"] else []
     for ad, gl in maskeler:
         out += ["", f"### Maske: {ad}"]
         for g in gl:
@@ -249,6 +276,11 @@ def tam(no: int, metin: str) -> str:
             out += [f"- **{g['baslik']}** ({g['kapsam']})", f"  Yap: {g['yap']}"]
             out += [f"  Yapma: {g['yapma']}"] if g["yapma"] else []
             out += [f"  Ayar: {g['ayar']}"] if g["ayar"] else []
+    kuyruk = kuyruk_girisleri(metin)
+    if kuyruk:
+        out += ["", "## Kuyruktaki harita notları (haritaya henüz işlenmedi; [N] = öneren bölüm)"]
+        for ad, gov in kuyruk:
+            out += ["", f"### {ad}", gov]
     return "\n".join(out).rstrip() + "\n"
 
 

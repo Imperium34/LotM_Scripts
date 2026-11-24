@@ -32,7 +32,7 @@ cevirmen Claude (claude -p). Adimlar:
               engeller, sonra'nin okumasi onlari gorur). Var olan bolumun
               ustune yalniz --uzerine-yaz ile yazilir, once yedek alinir
               (LotM/yedek/<tarih>/cevir-<saat>/).
-    tarih     takvim_ata kuru calisir; yalniz bu bolumun tarihi degisiyorsa
+    tarih     takvim bellekte planlanir; yalniz bu bolumun tarihi degisiyorsa
               --yaz ile tarih verilir, baska bir bolume dokunacaksa yazilmaz.
     sonra     --sonra ile: sonra.py N --otomatik (bolum zinciri + gecisler).
 
@@ -70,6 +70,8 @@ KOK = Path(os.environ.get("LOTM_KOK") or BETIKLER.parent)
 import lotm  # noqa: E402  (ortak: yedek_klasoru, cekirdek_istem)
 import sonra  # noqa: E402  (yaz_degisirse)
 import motorlar as M  # noqa: E402  (claude/codex/antigravity cagrilari)
+import takvim_ata as TA  # noqa: E402
+import takvim_denetle as TD  # noqa: E402
 SITE = KOK / "Imperium34.github.io"
 BOLUMLER = SITE / "_chapters"
 SABLONLAR = Path(os.environ.get("LOTM_SABLONLAR") or KOK / "Tools" / "Schemas")
@@ -291,30 +293,29 @@ def bolum_dosyasi(baslik: str | None, no: int, govde: str, eski: str | None) -> 
     return f"{fm}\n\n{govde}\n"
 
 
-def yedekle(yol: Path) -> Path:
-    hedef = lotm.yedek_klasoru("cevir")
-    hedef.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(yol, hedef / yol.name)
-    return hedef / yol.name
-
-
-def tarih_ver(dosya: Path) -> str:
-    """takvim_ata kuru; yalniz bu dosya degisiyorsa yaz."""
-    ata = [sys.executable, str(BETIKLER / "takvim_ata.py")]
-    p = subprocess.run(ata, capture_output=True, text=True, cwd=BETIKLER)
-    if p.returncode != 0:
-        hata = (p.stderr or p.stdout).strip()[:200]
-        return f"takvim: HATA (cikis {p.returncode}) {hata}"
-    degisen = [Path(x).name for x in re.findall(r"^\s+(\S+\.md)\s+.*->", p.stdout, re.M)]
-    if not degisen:
-        return "takvim: değişiklik yok"
-    if degisen != [dosya.name]:
-        return (f"takvim: yazılmadı, başka bölümler de değişecekti ({', '.join(degisen)}); "
-                "./calistir.sh takvim ile bakın")
-    q = subprocess.run(ata + ["--yaz"], capture_output=True, text=True, cwd=BETIKLER)
-    satir = [s.strip() for s in p.stdout.splitlines() if dosya.name in s]
-    return f"takvim: {satir[0] if satir else 'tarih yazıldı'}" if q.returncode == 0 else \
-        f"takvim: HATA {q.stderr.strip()[:200]}"
+def tarih_ver(dosya: Path, ceviri: bytes, anlik: dict) -> bytes:
+    """Bölümü ve takvimi bellekte planla."""
+    takvim = TD.takvim_oku(TD.varsayilan_takvim_yolu(dosya.parent))
+    taslak = {yol: veri for yol, veri in anlik.items() if veri is not None}
+    taslak[dosya] = ceviri
+    ks = TD.kunyeler(dosya.parent, taslak)
+    okunamayan = [k.dosya for k in ks if k.tarih_ham and not k.tarih]
+    if okunamayan:
+        raise TD.TakvimHatasi("tarihi okunamayan bölümler: " + ", ".join(okunamayan))
+    TD._dilim_esitle(ks, takvim)
+    simdi = datetime.now(takvim.donemler[0].saat.tzinfo)
+    degisen, _ = TA.plan_kur(ks, takvim, simdi)
+    if [k.dosya for k, _, _ in degisen] != [dosya.name]:
+        adlar = ", ".join(k.dosya for k, _, _ in degisen) or "yok"
+        raise TD.TakvimHatasi(f"yalnız {dosya.name} tarih almalı; değişecek bölümler: {adlar}")
+    kunye, _, yeni = degisen[0]
+    kunye.tarih = yeni
+    kunye.tarih_ham = yeni.strftime(TA._TARIH_BICIMI)
+    hatalar = [f"{no:04d}.md: {mesaj}" for agirlik, no, mesaj, _ in TD.denetle(ks, takvim)
+               if agirlik == "hata"]
+    if hatalar:
+        raise TD.TakvimHatasi("; ".join(hatalar))
+    return TA.yeni_icerik(dosya, yeni, ceviri)
 
 
 def main(argv=None) -> int:
@@ -344,6 +345,7 @@ def main(argv=None) -> int:
     klasor = RAPOR / f"Ch_{no}"
     girdi, ham = klasor / "girdi.md", klasor / "cikti_ham.md"
     durum = [f"# {no}. bölüm — çeviri", ""]
+    eski_bayt = lotm.dosya_anlik(hedef)
 
     # 1. denetim
     if not sablon.exists():
@@ -430,30 +432,40 @@ def main(argv=None) -> int:
         durum.append("- --kuru: bölüm dosyası yazılmadı")
         print(f"--kuru: {hedef.name} yazılmadı; metin {ham}")
     else:
-        eski = hedef.read_text(encoding="utf-8") if hedef.exists() else None
+        eski = (eski_bayt.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n")
+                if eski_bayt is not None else None)
         if eski is not None and not a.uzerine_yaz:
             durum.append(f"- {hedef.name} zaten var; yazılmadı (--uzerine-yaz)")
             print(f"DUR: {hedef.name} zaten var. Üzerine yazmak için --uzerine-yaz (yedek alınır).")
             kod = 1
         else:
-            if eski is not None:
-                y = yedekle(hedef)
-                durum.append(f"- Yedek: {y}")
-                print(f"  yedek: {y}")
-            hedef.parent.mkdir(parents=True, exist_ok=True)
-            lotm.atomik_yaz(hedef, bolum_dosyasi(parca["baslik"], no, parca["govde"], eski))
-            durum.append(f"- Yazıldı: {hedef}")
-            print(f"yazıldı: {hedef}")
-            eski_fm = _front_matter(eski) or ""
-            if not re.search(r"^date:", eski_fm, re.M):
-                t = tarih_ver(hedef)
-                durum.append(f"- {t}")
-                print(f"  {t}")
-            tikler = yeni_tikler(parca["durum_notu"])
-            eklenen = tik_ekle(no, tikler, motor_adi(motor, a.model))
-            if eklenen:
-                durum.append(f"- {eklenen} yeni tik → {TIKLER.name}")
-                print(f"  {eklenen} yeni tik → {TIKLER}")
+            try:
+                ceviri = bolum_dosyasi(parca["baslik"], no, parca["govde"], eski).encode("utf-8")
+                anlik = {hedef: eski_bayt}
+                dogrula = None
+                if not TD.on_madde(ceviri.decode("utf-8")).get("date"):
+                    anlik.update({yol: yol.read_bytes() for yol in TD.kunye_yollari(hedef.parent)
+                                  if yol != hedef})
+                    ceviri = tarih_ver(hedef, ceviri, anlik)
+                    dogrula = lambda: TA.bolum_listesini_dogrula(hedef.parent, anlik)
+                yedek = lotm.bolumleri_yaz(hedef.parent, anlik, {hedef: ceviri},
+                                          etiket="cevir", dogrula=dogrula)
+            except (OSError, ValueError) as e:
+                mesaj = f"HATA: {e}. Çeviri çıktısı: {ham}"
+                durum.append(f"- {mesaj}")
+                print(mesaj)
+                kod = 1
+            else:
+                if yedek:
+                    durum.append(f"- Yedek: {yedek / hedef.name}")
+                    print(f"  yedek: {yedek / hedef.name}")
+                durum.append(f"- Yazıldı: {hedef}")
+                print(f"yazıldı: {hedef}")
+                tikler = yeni_tikler(parca["durum_notu"])
+                eklenen = tik_ekle(no, tikler, motor_adi(motor, a.model))
+                if eklenen:
+                    durum.append(f"- {eklenen} yeni tik → {TIKLER.name}")
+                    print(f"  {eklenen} yeni tik → {TIKLER}")
 
     (klasor / "DURUM.md").write_text("\n".join(durum) + "\n", encoding="utf-8")
     if kod:

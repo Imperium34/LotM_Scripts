@@ -8,6 +8,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+import pytest
+
 import cevir as C  # noqa: E402
 
 
@@ -84,15 +86,8 @@ def test_yeni_tikler_ve_tik_ekle_tekrar_yazmaz(tmp_path, monkeypatch):
     assert tik_dosya.read_text(encoding="utf-8").count("fazla sıfat") == 1
 
 
-def test_tarih_ver_takvim_hatasini_bildirir(tmp_path, monkeypatch):
-    sahte = tmp_path / "takvim_ata.py"
-    sahte.write_text("import sys; sys.stderr.write('bozuk takvim\\n'); sys.exit(2)\n", encoding="utf-8")
-    monkeypatch.setattr(C, "BETIKLER", tmp_path)
-    sonuc = C.tarih_ver(tmp_path / "0070.md")
-    assert "HATA" in sonuc and "bozuk takvim" in sonuc
-
-
-def test_cekirdek_guncellenince_taze_bozulur(tmp_path, monkeypatch):
+@pytest.fixture
+def ceviri_deposu(tmp_path, monkeypatch):
     sablonlar, bolumler, rapor = tmp_path / "sch", tmp_path / "ch", tmp_path / "rapor"
     sablonlar.mkdir()
     bolumler.mkdir()
@@ -101,8 +96,6 @@ def test_cekirdek_guncellenince_taze_bozulur(tmp_path, monkeypatch):
     cekirdek.write_text("CEKIRDEK v1", encoding="utf-8")
     once = tmp_path / "once.py"
     once.write_text("print('sablon_denetimi.md: 0 HATA')\n", encoding="utf-8")
-    takvim = tmp_path / "takvim_ata.py"
-    takvim.write_text("print('')\n", encoding="utf-8")
     sayac = tmp_path / "sayac"
     sahte_claude = tmp_path / "claude"
     sahte_claude.write_text(
@@ -121,6 +114,11 @@ def test_cekirdek_guncellenince_taze_bozulur(tmp_path, monkeypatch):
     monkeypatch.setenv("LOTM_CLAUDE", str(sahte_claude))
     monkeypatch.setenv("LOTM_YEDEK", str(tmp_path / "yedek"))
 
+    return bolumler, rapor, sayac, cekirdek
+
+
+def test_cekirdek_guncellenince_taze_bozulur(ceviri_deposu):
+    _, _, sayac, cekirdek = ceviri_deposu
     assert C.main(["70", "--kuru"]) == 0
     assert len(sayac.read_text().splitlines()) == 1
     # Ayni girdi ve cekirdek: model yeniden calismaz.
@@ -131,3 +129,67 @@ def test_cekirdek_guncellenince_taze_bozulur(tmp_path, monkeypatch):
     os.utime(cekirdek, (yeni_zaman, yeni_zaman))
     assert C.main(["70", "--kuru"]) == 0
     assert len(sayac.read_text().splitlines()) == 2
+
+
+def _takvim_kur(bolumler):
+    takvim = C.TD.varsayilan_takvim_yolu(bolumler)
+    takvim.parent.mkdir()
+    takvim.write_text('saat: "20:00:00 +0300"\ndonemler:\n  - {baslangic: 69, gunler: [çarşamba, cumartesi]}\n')
+    (bolumler / "0069.md").write_text(
+        '---\ntitle: "Bölüm 69: Önceki"\ndate: 2020-01-01 20:00:00 +0300\n---\n\nÖnceki.\n')
+    return takvim
+
+
+def test_ceviri_tarihiyle_tek_yazimda_kaydedilir(ceviri_deposu, monkeypatch):
+    bolumler, _, _, _ = ceviri_deposu
+    _takvim_kur(bolumler)
+    hedef = bolumler / "0070.md"
+    yazilan = []
+    atomik_yaz = C.lotm.atomik_yaz
+
+    def kaydet(yol, veri, **kw):
+        if yol == hedef:
+            yazilan.append(veri)
+        atomik_yaz(yol, veri, **kw)
+
+    monkeypatch.setattr(C.lotm, "atomik_yaz", kaydet)
+    assert C.main(["70"]) == 0
+    assert yazilan == [hedef.read_bytes()]
+    assert C.TD.kunyeler(bolumler)[-1].tarih is not None
+
+
+def test_uzerine_yazarken_tarih_ve_yedek_korunur(ceviri_deposu, tmp_path):
+    bolumler, _, _, _ = ceviri_deposu
+    hedef = bolumler / "0070.md"
+    eski = b'---\r\ndate: "2020-01-01 20:00:00 +0300"\r\n---\r\n\r\nEski.\r\n'
+    hedef.write_bytes(eski)
+    assert C.main(["70", "--uzerine-yaz"]) == 0
+    assert 'date: "2020-01-01 20:00:00 +0300"' in hedef.read_text()
+    assert [p.read_bytes() for p in (tmp_path / "yedek").rglob(hedef.name)] == [eski]
+
+
+@pytest.mark.parametrize("baska_bolum", [False, True])
+def test_takvim_hatasinda_ceviri_saklanir_ve_sonra_calismaz(ceviri_deposu, baska_bolum):
+    bolumler, rapor, sayac, _ = ceviri_deposu
+    hedef = bolumler / "0070.md"
+    eski = b"---\ndate:\n---\n\nEski.\n"
+    hedef.write_bytes(eski)
+    if baska_bolum:
+        _takvim_kur(bolumler)
+        (bolumler / "0071.md").write_text('---\ntitle: "Bölüm 71: Sonraki"\n---\n')
+    sonra_isareti = C.BETIKLER / "sonra_calisti"
+    (C.BETIKLER / "sonra.py").write_text(
+        f"from pathlib import Path\nPath({str(sonra_isareti)!r}).touch()\n")
+    assert C.main(["70", "--uzerine-yaz", "--sonra"]) == 1
+    assert hedef.read_bytes() == eski
+    assert "Paragraf bir." in (rapor / "Ch_70" / "cikti_ham.md").read_text()
+    assert "HATA" in (rapor / "Ch_70" / "DURUM.md").read_text()
+    assert not sonra_isareti.exists()
+    assert not (C.BETIKLER / "yedek").exists()
+
+    if baska_bolum:
+        (bolumler / "0071.md").unlink()
+    else:
+        _takvim_kur(bolumler)
+    assert C.main(["70", "--uzerine-yaz"]) == 0
+    assert sayac.read_text().splitlines() == ["x"]

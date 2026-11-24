@@ -44,3 +44,14 @@ def test_varsayilan_sicil(tmp_path, monkeypatch):
     monkeypatch.setattr(H, "YAN", yan)
     assert H.varsayilan_sicil() == "Sade modern değildir."
     assert H.modern_basliklar() == {"Roselle Gustav (Günlükler)"}
+
+
+def test_kapsar_kural_kodu_ve_genel_ilk_bolum():
+    import ses_haritasi as SH
+    # 'M1' / '(K2)' sayi degil; ilk bolumu genel olan Kapsam geneldir
+    assert SH.kapsar("bütün aşamalar · muhatap yok M1 — İç ses", 82) is None
+    assert SH.kapsar("bütün aşamalar · iç ses · mesafe tamamen kapandığında (K2)", 82) is None
+    assert SH.kapsar("Arrodes'le bütün konuşmalar · replik · en saf hâli 1390", 82) is None
+    assert SH.kapsar("1345–1346 · replik M5 — Esir alan akran", 5) is False
+    assert SH.kapsar("561–1366 · replik", 600) is True
+    assert SH.kapsar("4.–6. Aşama · replik", 82, {4: (1166, 1351), 5: (1352, 1380), 6: (1381, 1394)}) is False

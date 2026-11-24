@@ -304,7 +304,7 @@ class Kunye:
 
 def on_madde(metin: str) -> dict:
     """'---' arasindaki 'anahtar: deger' satirlari (tirnaklar atilir)."""
-    satirlar = metin.split("\n")
+    satirlar = metin.splitlines()
     if not satirlar or satirlar[0].strip() != "---":
         return {}
     out = {}
@@ -336,13 +336,16 @@ def tarih_oku(ham: str | None) -> datetime | None:
     return None
 
 
-def kunyeler(klasor) -> list:
+def kunye_yollari(klasor):
+    return sorted(p for p in Path(klasor).iterdir() if _DOSYA.match(p.name))
+
+
+def kunyeler(klasor, anlik=None) -> list:
+    kaynak = ((p, p.read_bytes()) for p in kunye_yollari(klasor)) if anlik is None else anlik.items()
     out = []
-    for p in sorted(Path(klasor).iterdir()):
+    for p, veri in kaynak:
         m = _DOSYA.match(p.name)
-        if not m:
-            continue
-        om = on_madde(p.read_text(encoding="utf-8"))
+        om = on_madde(veri.decode("utf-8"))
         k = Kunye(int(m.group(1)), p.name, om.get("title"), om.get("date"))
         k.tarih = tarih_oku(k.tarih_ham)
         out.append(k)
