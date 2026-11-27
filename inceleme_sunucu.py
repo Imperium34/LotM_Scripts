@@ -8,7 +8,8 @@ geri yazar; 'sonra.py N --kararlar' eskisi gibi calisir, dosya elle de
 duzenlenebilir (sayfa her istekte dosyayi yeniden okur).
 
 Sayfa: bir seferde bir madde; ✗/✓ satirlari degisen sozcukler isaretli,
-Neden, butun TR paragrafi ve hizali ZH paragrafi; katman suzgeci, ilerleme.
+Neden, metni cakisan oneriler, butun TR paragrafi ve hizali ZH
+paragrafi; katman suzgeci, ilerleme.
 Tuslar: k kabul · r ret · h hep · e ✓'yi duzenle · → / ← gezin · u geri al ·
 A (Shift+a) uygula ve sonraki bolum.
 
@@ -50,6 +51,7 @@ import sys
 import threading
 import webbrowser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from itertools import combinations
 from pathlib import Path
 
 BETIKLER = Path(__file__).resolve().parent
@@ -91,19 +93,25 @@ def maddeler(metin: str) -> tuple:
                         "ekler": [s for s in blok.splitlines()[1:]
                                   if s.startswith(("Dikkat:", "Ön:", "Sadakat:", "Okuma:", "Grup:", "Aynı değişiklik:"))],
                         "grup": int(g.group(1)) if (g := re.search(r"^Grup: K(\d+)", blok, re.M)) else None,
+                        "on": satir("Ön:"), "onay": bool(re.search(r"^Ön: .*· onaylandı$", blok, re.M)),
                         "kabul": kutu.group(1) in ISARET, "ret": kutu.group(3) in ISARET,
                         "hep": kutu.group(5) in ISARET})
     return out, toplu_var, toplu
 
 
-def madde_yaz(metin: str, k: int, kabul: bool, ret: bool, hep: bool, yeni: str | None) -> str:
-    """K maddesinin kutularini (ve verildiyse ✓ satirini) degistirir; baska yere dokunmaz."""
+def madde_yaz(metin: str, k: int, kabul: bool, ret: bool, hep: bool, yeni: str | None,
+              onay: bool | None = None) -> str:
+    """K maddesinin kutularini (ve verildiyse ✓ satirini) degistirir; baska yere dokunmaz.
+    onay: True/False, on-isaretli maddenin 'Ön:' satirina ' · onaylandı' ekler/kaldirir; None dokunmaz."""
     m = re.search(rf"(^### K{k} · .*?)(?=^### K\d+ |^## |\Z)", metin, re.M | re.S)
     if not m:
         raise KeyError(f"K{k} bulunamadi")
     blok = m.group(1)
     c = lambda b: "x" if b else " "  # noqa: E731
     blok = KUTU.sub(lambda x: f"[{c(kabul)}] kabul{x.group(2)}[{c(ret)}] ret{x.group(4)}[{c(hep)}] hep", blok, 1)
+    if onay is not None:
+        blok = re.sub(r"^(Ön: .*?)(?: · onaylandı)?$", lambda x: x.group(1) + (" · onaylandı" if onay else ""),
+                      blok, count=1, flags=re.M)
     if yeni is not None:
         yeni_satir = "✓ " + S.tek_satir(yeni.strip())
         blok = re.sub(r"^✓ ?.*$", lambda _: yeni_satir, blok, count=1, flags=re.M)
@@ -144,12 +152,14 @@ class Baglam:
     """Bolumun TR paragraflari ve hizali ZH gruplari (bir kez kurulur)."""
 
     def __init__(self, no: int | None):
-        self.bloklar, self.gruplar = [], {}
+        self.metin, self.bloklar, self.gruplar = "", [], {}
         if no is None:
             return
         yol = S.BOLUMLER / f"{no:04d}.md"
         if yol.exists():
-            self.bloklar = S.tr_bloklari(yol.read_text(encoding="utf-8"))
+            metin = yol.read_text(encoding="utf-8")
+            self.metin = S.front_matter_ayir(metin)
+            self.bloklar = S.tr_bloklari(metin)
         try:
             from gruplar import gruplar
             self.gruplar = gruplar(no, "tr")
@@ -170,6 +180,29 @@ class Baglam:
                     grup, zh = k, g["ZH"]
                     break
         return {"tr": tr, "zh": zh, "hizalama_grup": grup}
+
+    def cakisan_oneriler(self, maddeler: list) -> None:
+        """Uygulamanin birebir aradigi eski metin araliklarini karsilastir."""
+        konumlar = []
+        for m in maddeler:
+            eski = m["eski"]
+            if not eski or eski == m["yeni"]:
+                continue
+            bas = self.metin.find(eski)
+            aralik = None
+            if bas >= 0 and self.metin.find(eski, bas + 1) == -1:
+                aralik = bas, bas + len(eski)
+            konumlar.append((m, aralik))
+
+        for (m, a), (n, b) in combinations(konumlar, 2):
+            if a is not None and b is not None:
+                cakisma = max(a[0], b[0]) < min(a[1], b[1])
+            else:
+                # Eski raporlarda ayni paragraftaki birebir ayni ifadeyi bagli tut.
+                cakisma = m["p"].isdecimal() and m["p"] == n["p"] and m["eski"] == n["eski"]
+            if cakisma:
+                m.setdefault("cakisanlar", []).append(n["k"])
+                n.setdefault("cakisanlar", []).append(m["k"])
 
 
 # ------------------------------------------------------------------ sunucu
@@ -323,12 +356,13 @@ def isaretsiz(metin: str) -> int:
     return sum(1 for m in ms if bos(m) and not (toplu and m["katman"].startswith("4.")))
 
 
-def grup_yaz(metin: str, k: int, kabul: bool, ret: bool, hep: bool, yeni: str | None) -> str:
+def grup_yaz(metin: str, k: int, kabul: bool, ret: bool, hep: bool, yeni: str | None,
+             onay: bool | None = None) -> str:
     """K'yi yazar; K bir grubun onderiyse, onderin onceki kararini tasiyan (ya da bos)
     izleyenler de ayni kabul/ret'i alir. Elle farkli isaretlenen izleyene dokunulmaz."""
     ms, _, _ = maddeler(metin)
     onceki = next((m for m in ms if m["k"] == k), None)
-    metin = madde_yaz(metin, k, kabul, ret, hep, yeni)
+    metin = madde_yaz(metin, k, kabul, ret, hep, yeni, onay)
     if onceki is None:
         return metin
     for m in ms:
@@ -365,10 +399,14 @@ def uygulama(oturum, baglam: Baglam | None = None, kapat=None):
             yol, baglam = oturum.yol, oturum.baglam
             metin = yol.read_text(encoding="utf-8")
             ms, toplu_var, toplu = maddeler(metin)
+            bolum_maddeleri = {}
             for m in ms:
                 m["fark_eski"], m["fark_yeni"] = farklar(m["eski"], m["yeni"])
                 b = oturum.baglam_al(m["bolum"]) if m.get("bolum") is not None else baglam
                 m.update(b.bul(m))
+                bolum_maddeleri.setdefault(b, []).append(m)
+            for b, bolumdeki in bolum_maddeleri.items():
+                b.cakisan_oneriler(bolumdeki)
             for u in yazilanlar(metin):
                 u["fark_eski"], u["fark_yeni"] = farklar(u["eski"], u["yeni"])
                 b = oturum.baglam_al(u["bolum"]) if u.get("bolum") is not None else baglam
@@ -407,7 +445,7 @@ def uygulama(oturum, baglam: Baglam | None = None, kapat=None):
                         if kabul and ret:
                             return self.json_gonder({"hata": "kabul ve ret aynı anda seçilemez"}, 400)
                         metin = grup_yaz(metin, int(veri["k"]), kabul, ret,
-                                         bool(veri["hep"]), veri.get("yeni"))
+                                         bool(veri["hep"]), veri.get("yeni"), veri.get("onay"))
                     elif self.path == "/api/geri":
                         metin = S.geri_yaz(metin, int(veri["i"]), bool(veri["geri"]))
                     elif self.path == "/api/toplu":
@@ -484,21 +522,51 @@ textarea{width:100%;min-height:90px;font:inherit;background:var(--bg);color:var(
 .uyari{color:var(--ret)}
 .liste .u{border-style:dashed}.liste .u.o{border-color:var(--vurgu)}.liste .u.g{background:var(--ret);color:#fff}
 .rozet{font-size:13px;color:var(--vurgu);cursor:pointer;text-decoration:underline dotted}
+.onrozet{display:inline-block;margin:0 0 10px;padding:3px 10px;border-radius:6px;border:1px dashed var(--vurgu);color:var(--vurgu);font-size:14px}
+.onrozet.tamam{border-style:solid;opacity:.7}
+.liste .on{outline:2px dashed var(--vurgu);outline-offset:-2px}.liste .on.su{outline:2px solid var(--vurgu)}
 .kutular button.acik.geri{background:var(--ret);color:#fff;border-color:var(--ret)}
+.satir-onerileri{margin-top:16px;border:1px solid var(--cizgi);border-radius:6px;background:var(--bg);padding:10px 12px}
+.satir-onerileri h2{margin:0;font-size:1rem}
+.satir-onerisi{margin-top:8px;padding-top:8px;border-top:1px solid var(--cizgi)}
+.satir-onerisi .ust{align-items:center}.satir-onerisi .ust button{padding:1px 8px}
+.satir-onerisi p{margin:4px 0;font-size:14px}
 </style></head><body>
 <header><strong id="baslik">İnceleme</strong><select id="suzgec"></select><select id="bolumSuzgec" hidden></select>
+<select id="durumSuzgec"><option value="">Tüm durumlar</option><option value="bekleyen">Ön işaretli: onay bekleyen</option><option value="on">Ön işaretli: hepsi</option><option value="bos">İşaretsiz</option></select>
 <span id="sayac"></span><span id="uygRozet" class="rozet" hidden></span><div class="ilerleme"><div id="cubuk" style="width:0"></div></div>
 <label id="topluK" hidden><input type="checkbox" id="toplu"> 4. katmanda işaretsizlerin hepsi: ret</label>
 <button id="uygula" hidden title="Shift+A">Uygula ve sonraki bölüm (A)</button><span id="kuyruk"></span></header>
 <main><div id="kart" class="kart">Yükleniyor…</div><div class="liste" id="liste"></div>
-<p class="tuslar">k kabul · r ret · h hep · e ✓ satırını düzenle (Ctrl+Enter kaydet, Esc vazgeç) · → / ← sonraki / önceki ·
+<p class="tuslar">k kabul · r ret (ön işaretli maddede k/r kararı onaylar ve geçer; ters tuş kararı değiştirir) · Boşluk ön işareti onayla, sonraki · h hep · e ✓ satırını düzenle (Ctrl+Enter kaydet, Esc vazgeç) · → / ← sonraki / önceki ·
 n sıradaki işaretsiz · u geri al · g uygulanmış düzeltmeyi geri alınacak diye işaretle · A (Shift+a) kararları uygula ve sıradaki bölümü aç. Her tuş dosyaya hemen yazılır.</p>
 <p id="sonuc" class="ek"></p><p id="hata" class="uyari"></p></main>
 <script>
-let veri=null, sira=0, gecmis=[], duzenle=false, isleniyor=false;
+let veri=null, sirali=[], sira=0, listeDisi=null, gecmis=[], duzenle=false, isleniyor=false;
 const $=id=>document.getElementById(id);
 const esc=s=>(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-function gorunen(){const f=$("suzgec").value, b=$("bolumSuzgec").value;return veri.maddeler.filter(m=>(!f||m.katman===f)&&(!b||String(m.bolum)===b))}
+const bekleyen=m=>karar(m)&&m.on&&!m.onay;
+function durumUyar(m){const d=$("durumSuzgec").value;
+ return !d||(d==="bekleyen"&&bekleyen(m))||(d==="on"&&karar(m)&&m.on)||(d==="bos"&&karar(m)&&!m.kabul&&!m.ret)}
+function gorunen(){const f=$("suzgec").value, b=$("bolumSuzgec").value;return sirali.filter(m=>(!f||m.katman===f)&&(!b||String(m.bolum)===b)&&durumUyar(m))}
+function secili(g=gorunen()){
+ return listeDisi===null?g[sira]:sirali.find(m=>m.k===listeDisi);
+}
+function satirSirasinaAl(maddeler){
+ const kalan=new Map(maddeler.map(m=>[m.k,m])), sonuc=[];
+ for(const m of maddeler){
+  if(!kalan.has(m.k)) continue;
+  const ayniYer=[m.k];
+  for(const k of ayniYer){
+   const x=kalan.get(k);
+   if(!x) continue;
+   kalan.delete(k);
+   sonuc.push(x);
+   for(const diger of x.cakisanlar||[]) if(kalan.has(diger)) ayniYer.push(diger);
+  }
+ }
+ return sonuc;
+}
 const karar=m=>m.tur!=="uyg";
 async function al(){
  try{const r=await fetch("/api/maddeler");veri=await r.json();kur()}
@@ -509,11 +577,14 @@ async function gonder(yol,govde){
  isleniyor=true;
  try{
   const r=await fetch(yol,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(govde)});
-  const j=await r.json(); if(j.hata){$("hata").textContent=j.hata;return false} $("hata").textContent="";veri=j;kur();return true;
+  const j=await r.json(); if(j.hata){$("hata").textContent=j.hata;return false}
+  const k=secili()?.k;
+  $("hata").textContent="";veri=j;kur(k);return true;
  }catch(e){$("hata").textContent=`İstek başarısız: ${e}`;return false}
  finally{isleniyor=false}
 }
-function kur(){
+function kur(k){
+ sirali=satirSirasinaAl(veri.maddeler);
  const katmanlar=[...new Set(veri.maddeler.map(m=>m.katman))], s=$("suzgec"), eski=s.value;
  const bolumler=[...new Set(veri.maddeler.map(m=>m.bolum).filter(b=>b!==null&&b!==undefined))].sort((a,b)=>a-b);
  const bs=$("bolumSuzgec"), eskiB=bs.value;
@@ -529,17 +600,41 @@ function kur(){
  $("uygula").textContent=veri.kuyruk&&veri.kuyruk.length?`Uygula ve ${veri.kuyruk[0]}. bölüme geç (A)`:"Uygula ve bitir (A)";
  $("kuyruk").textContent=veri.kuyruk&&veri.kuyruk.length?`sırada: ${veri.kuyruk.join(", ")}`:"";
  $("topluK").hidden=!veri.toplu_var; $("toplu").checked=veri.toplu;
- const g=gorunen().filter(karar), bitti=g.filter(m=>m.kabul||m.ret).length;
- $("sayac").textContent=`${bitti}/${g.length}`; $("cubuk").style.width=(g.length?100*bitti/g.length:0)+"%";
- const tum=gorunen().length; if(sira>=tum) sira=Math.max(0,tum-1); goster();
+ const g=gorunen().filter(karar), bitti=g.filter(m=>(m.kabul||m.ret)&&!bekleyen(m)).length;  // onay bekleyen on-isaret bitmis sayilmaz
+ const onlar=veri.maddeler.filter(m=>karar(m)&&m.on), onBek=onlar.filter(m=>!m.onay).length;
+ $("sayac").textContent=`${bitti}/${g.length}`+(onlar.length?` · ön işaretli ${onlar.length-onBek}/${onlar.length} onaylı`:""); $("cubuk").style.width=(g.length?100*bitti/g.length:0)+"%";
+ const gorunenler=gorunen(), secilen=gorunenler.findIndex(m=>m.k===k);
+ if(secilen>=0){sira=secilen;listeDisi=null}
+ if(sira>=gorunenler.length) sira=Math.max(0,gorunenler.length-1);
+ goster();
 }
 function parcalar(p){return p.map(([t,s])=>t==="="?esc(s):`<b class="d">${esc(s)}</b>`).join("")}
+function satirOnerileri(m){
+ if(!m.cakisanlar?.length) return "";
+ const oneriler=m.cakisanlar.map(k=>{
+  const diger=sirali.find(x=>x.k===k);
+  const durum=diger.kabul?"Kabul":diger.ret?"Ret":"İşaretsiz";
+  const ciftKabul=m.kabul&&diger.kabul;
+  return `<div class="satir-onerisi"><div class="ust">
+   <button type="button" data-ilgili="${k}" aria-label="K${k} önerisini aç">K${k} · Aç</button>
+   <span>${esc(diger.kaynak)}</span><span>${esc(diger.katman)}</span>
+   <span>${durum}${bekleyen(diger)?" · onay bekliyor":""}</span>
+   ${ciftKabul?'<span class="uyari">İkisi de kabul edildi</span>':""}
+   </div>
+   ${diger.eski===m.eski?"":`<div class="satir sx"><span class="etiket">✗</span>${parcalar(diger.fark_eski)}</div>`}
+   <div class="satir sy"><span class="etiket">✓</span>${parcalar(diger.fark_yeni)}</div>
+   ${diger.neden?`<p>${esc(diger.neden)}</p>`:""}</div>`;
+ });
+ return `<section class="satir-onerileri" aria-labelledby="satir-onerileri-baslik">
+  <h2 id="satir-onerileri-baslik">Metni çakışan öneriler (${oneriler.length})</h2>${oneriler.join("")}</section>`;
+}
 function goster(){
- const g=gorunen(), m=g[sira];
+ const g=gorunen(), m=secili(g);
  $("liste").innerHTML=g.map((x,i)=>{
   const bt=x.bolum!=null?`Ch_${x.bolum} ¶${x.p}`:`¶${x.p}`;
-  return karar(x)?`<span class="${x.kabul?"k":x.ret?"r":""} ${i===sira?"su":""}" data-i="${i}" title="${esc(bt)}">K${x.k}</span>`
-   :`<span class="u ${x.otomatik?"o":""} ${x.geri?"g":""} ${i===sira?"su":""}" data-i="${i}" title="${esc(bt)} · ${x.otomatik?"otomatik":"kesin"}">${x.k}</span>`;
+  const secim=x===m?"su":"";
+  return karar(x)?`<span class="${x.kabul?"k":x.ret?"r":""} ${bekleyen(x)?"on":""} ${secim}" data-i="${i}" title="${esc(bt)}">K${x.k}</span>`
+   :`<span class="u ${x.otomatik?"o":""} ${x.geri?"g":""} ${secim}" data-i="${i}" title="${esc(bt)} · ${x.otomatik?"otomatik":"kesin"}">${x.k}</span>`;
  }).join("");
  if(!m){$("kart").textContent="Bu süzgeçte madde yok.";return}
  let tr=esc(m.tr); const ip=esc(((karar(m)?m.eski:m.yeni)||"").slice(0,60));
@@ -554,11 +649,14 @@ function goster(){
   :`<span class="ek">Bu dosya eski biçimde; geri almak için yedekten dönün.</span>`}</div>
  <div class="baglam"><div><strong>TR</strong>\n${tr||"(paragraf bulunamadı)"}</div><div><strong>ZH</strong>\n${esc(m.zh)||"(hizalama yok)"}</div></div>`;return}
  $("kart").innerHTML=`<div class="ust"><span>K${m.k}</span>${bRozet}<span>¶${esc(m.p)}${m.hizalama_grup?` · hizalama ¶${m.hizalama_grup}`:""}</span>
- <span>${esc(m.katman)}</span><span>${esc(m.kaynak)}</span><span>${sira+1}/${g.length}</span></div>
+ <span>${esc(m.katman)}</span><span>${esc(m.kaynak)}</span>
+ ${listeDisi===null?`<span>${sira+1}/${g.length}</span>`:`<button type="button" data-i="${sira}">Süzülen listeye dön</button>`}</div>
  <div class="kural">${esc(m.kural)}</div>
+ ${m.on?`<div class="onrozet ${m.onay?"tamam":""}">${esc(m.on.replace(/ · onaylandı$/,""))}${m.onay?" · onaylandı":" · Boşluk: onayla"}</div>`:""}
  <div class="satir sx"><span class="etiket">✗</span>${parcalar(m.fark_eski)}</div>
  ${duzenle?`<textarea id="duz">${esc(m.yeni)}</textarea>`:`<div class="satir sy"><span class="etiket">✓</span>${parcalar(m.fark_yeni)}</div>`}
- <div class="neden">${esc(m.neden)}</div>${m.ekler.map(e=>`<div class="ek">${esc(e)}</div>`).join("")}
+ <div class="neden">${esc(m.neden)}</div>${m.ekler.filter(e=>!e.startsWith("Ön:")||!m.on).map(e=>`<div class="ek">${esc(e)}</div>`).join("")}
+ ${satirOnerileri(m)}
  <div class="kutular"><button class="kabul ${m.kabul?"acik":""}" data-a="k">kabul (k)</button>
  <button class="ret ${m.ret?"acik":""}" data-a="r">ret (r)</button><button class="hep ${m.hep?"acik":""}" data-a="h">hep (h)</button>
  <button data-a="e">düzenle (e)</button></div>
@@ -567,13 +665,14 @@ function goster(){
 }
 async function isle(m,degisim){
  const onceki={k:m.k,kabul:m.kabul,ret:m.ret,hep:m.hep,yeni:m.yeni};
+ if(m.on){onceki.onay=m.onay; if(!("onay" in degisim)) degisim=Object.assign({onay:true},degisim)}
  const yeni=Object.assign({k:m.k,kabul:m.kabul,ret:m.ret,hep:m.hep},degisim);
  if(await gonder("/api/madde",yeni)){gecmis.push({yol:"/api/madde",govde:onceki});return true}
  return false;
 }
 async function eylem(a){
  if(isleniyor) return;
- const g=gorunen(), m=g[sira]; if(!m) return;
+ const m=secili(); if(!m) return;
  if(!karar(m)){
   if(a==="g"&&m.geri_var){
    const onceki={i:m.i,geri:m.geri};
@@ -581,8 +680,12 @@ async function eylem(a){
   }
   return;
  }
- if(a==="k"){if(await isle(m,{kabul:!m.kabul,ret:false})&&!m.kabul) ileri()}
- else if(a==="r"){if(await isle(m,{ret:!m.ret,kabul:false})&&!m.ret) ileri()}
+ const d=$("durumSuzgec").value, dusecek=d==="bekleyen"||d==="bos";
+ const gec=()=>gezin(dusecek?0:1);  // suzgecten dusen madde yerini sonrakine birakir
+ if(m.on&&!m.onay&&((a==="k"&&m.kabul)||(a==="r"&&m.ret))){if(await isle(m,{onay:true})) gec()}
+ else if(a==="k"){if(await isle(m,{kabul:!m.kabul,ret:false})&&!m.kabul) gec()}
+ else if(a==="r"){if(await isle(m,{ret:!m.ret,kabul:false})&&!m.ret) gec()}
+ else if(a===" "){ if(m.on&&!m.onay){if(await isle(m,{onay:true})) gec()} else gezin(1) }
  else if(a==="h") await isle(m,{hep:!m.hep});
  else if(a==="e"){duzenle=true;goster()}
 }
@@ -600,29 +703,45 @@ async function uygula(){
   if(j.bitti){
    document.querySelector("main").innerHTML=`<div class="kart"><strong>Bitti.</strong><p>${(j.uygulananlar||[]).map(esc).join("<br>")}</p><p class="tuslar">Sunucu kapandı; bu sekmeyi kapatabilirsiniz.</p></div>`;
    document.querySelector("header").hidden=true; setTimeout(()=>window.close(),1500); return}
-  veri=j; sira=0; gecmis=[]; duzenle=false; $("suzgec").value=""; $("bolumSuzgec").value=""; kur(); window.scrollTo(0,0);
+  veri=j; sira=0; listeDisi=null; gecmis=[]; duzenle=false; $("suzgec").value=""; $("bolumSuzgec").value=""; kur(); window.scrollTo(0,0);
  }catch(e){$("hata").textContent=`Uygulama başarısız: ${e}`;$("sonuc").textContent=""}
  finally {uyguluyor=false; $("uygula").disabled=false}
 }
 $("uygula").addEventListener("click",uygula);
-function ileri(){const g=gorunen(); if(sira<g.length-1) sira++; goster()}
-function sonrakiBos(){const g=gorunen(); for(let i=1;i<=g.length;i++){const j=(sira+i)%g.length; if(karar(g[j])&&!g[j].kabul&&!g[j].ret){sira=j;break}} goster()}
-$("uygRozet").addEventListener("click",()=>{$("suzgec").value="0. Uygulananlar";sira=0;kur()});
+function gezin(adim){
+ if(listeDisi===null) sira=Math.max(0,Math.min(sira+adim,gorunen().length-1));
+ listeDisi=null;
+ goster();
+}
+function ilgiliAc(k){
+ const i=gorunen().findIndex(m=>m.k===k);
+ listeDisi=i<0?k:null;
+ if(i>=0) sira=i;
+ duzenle=false;
+ goster();
+ window.scrollTo(0,0);
+}
+function sonrakiBos(){const g=gorunen(); listeDisi=null; for(let i=1;i<=g.length;i++){const j=(sira+i)%g.length; if(karar(g[j])&&!g[j].kabul&&!g[j].ret){sira=j;break}} goster()}
+function suzgecDegisti(){sira=0;listeDisi=null;duzenle=false;kur()}
+$("uygRozet").addEventListener("click",()=>{$("suzgec").value="0. Uygulananlar";suzgecDegisti()});
 document.addEventListener("click",e=>{const a=e.target.dataset.a; if(a) eylem(a);
- const i=e.target.dataset.i; if(i!==undefined){sira=+i;duzenle=false;goster()}});
-$("suzgec").addEventListener("change",()=>{sira=0;kur()});
-$("bolumSuzgec").addEventListener("change",()=>{sira=0;kur()});
+ const k=e.target.dataset.ilgili; if(k!==undefined) ilgiliAc(+k);
+ const i=e.target.dataset.i; if(i!==undefined){sira=+i;listeDisi=null;duzenle=false;goster()}});
+$("suzgec").addEventListener("change",suzgecDegisti);
+$("bolumSuzgec").addEventListener("change",suzgecDegisti);
+$("durumSuzgec").addEventListener("change",suzgecDegisti);
 $("toplu").addEventListener("change",e=>gonder("/api/toplu",{isaret:e.target.checked}));
 document.addEventListener("keydown",async e=>{
  if(duzenle){ if(e.key==="Escape"){duzenle=false;goster()}
-  else if(e.key==="Enter"&&(e.ctrlKey||e.metaKey)){const m=gorunen()[sira];duzenle=false;await isle(m,{yeni:$("duz").value})}
+  else if(e.key==="Enter"&&(e.ctrlKey||e.metaKey)){const m=secili();duzenle=false;await isle(m,{yeni:$("duz").value})}
   return}
  if(e.ctrlKey||e.metaKey||e.altKey) return;
  if(e.target.tagName==="SELECT") return;
  const t=e.key;
- if(t==="k"||t==="r"||t==="h"||t==="e"||t==="g"){e.preventDefault();eylem(t)}
- else if(t==="ArrowRight"){sira=Math.max(0,Math.min(sira+1,gorunen().length-1));goster()}
- else if(t==="ArrowLeft"){sira=Math.max(sira-1,0);goster()}
+ if(t===" "&&e.target.matches("button[data-ilgili],button[data-i]")) return;
+ if(t==="k"||t==="r"||t==="h"||t==="e"||t==="g"||t===" "){e.preventDefault();eylem(t)}
+ else if(t==="ArrowRight") gezin(1);
+ else if(t==="ArrowLeft") gezin(-1);
  else if(t==="n") sonrakiBos();
  else if(t==="u"){const o=gecmis.pop(); if(o) await gonder(o.yol,o.govde)}
  else if(t==="A"){e.preventDefault();uygula()}

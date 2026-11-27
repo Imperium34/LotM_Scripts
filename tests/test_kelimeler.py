@@ -231,3 +231,8 @@ def test_haric_kaynak_desenden_dusurur():
     assert not desen.search("先生，你好像也不")
     # Ingilizcede haric yok sayilir
     assert TD.kaynak_deseni("hello", "en", True, ["hello there"]).search("hello there")
+
+
+def test_ayri_kalin_adlar_cinceyle_eslesir(tmp_path):
+    ts = _yukle(tmp_path, "- **Hastalık** / **Veba** — Disease / Plague (疾病 / 瘟疫)\n")
+    assert {ad: t.zh for ad, t in ts.items()} == {"Hastalık": "疾病", "Veba": "瘟疫"}

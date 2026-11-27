@@ -109,11 +109,11 @@ CODEX_MODEL = os.environ.get("LOTM_CODEX_MODEL", "")  # bos: codex'in varsayilan
 # antigravity; cift sadakatte ikinci okuyucu (sadakat2) codex. Secilen CLI
 # yoksa claude'a duser.
 VARSAYILAN_MOTOR = {
-    "okuma": "claude",
+    "okuma": "antigravity",
+    "okuma2": "codex",
     "donem": "antigravity",
     "sadakat": "antigravity",
     "sadakat2": "codex",
-    "okuma2": "codex",
     "zh": "antigravity",
     "duzeltme": "antigravity",
     "triyaj": "claude",
@@ -127,7 +127,9 @@ def _komut_var(motor: str) -> bool:
     return bool(shutil.which(_komut_bol(*MOTOR_KOMUTU[motor])[0]))
 
 
-def ikinci_motor(birinci: str, secimler: dict | None = None, adim: str = "sadakat") -> str:
+def ikinci_motor(
+    birinci: str, secimler: dict | None = None, adim: str = "sadakat"
+) -> str:
     """Cift sadakat / cift okumada ikinci okuyucu. --motor <adim>2=... /
     LOTM_MOTOR_<ADIM>2 / VARSAYILAN_MOTOR['<adim>2'] (ikisi de codex)."""
     anahtar = f"{adim}2"

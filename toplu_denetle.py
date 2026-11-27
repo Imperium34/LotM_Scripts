@@ -430,7 +430,7 @@ def mertebe_isaret_deseni(desen):
 
 
 def terimi_tara(
-    sorgu, adaylar, onbellek, kaynak, hedef, duyarsiz, desen=None, isaret=None
+    sorgu, adaylar, onbellek, kaynak, hedef, duyarsiz, desen=None, isaret=None, ayin_tekil=None
 ):
     """
     Tek terim, onceden yuklenmis bolumler uzerinde. tara()'nin ucuzu.
@@ -480,6 +480,16 @@ def terimi_tara(
             )
     if vuruslar:
         CD.siniflandir(vuruslar, adaylar, hedef, kesif=False)
+        if ayin_tekil is not None:
+            ilim = lotm.desen_kur("Ayin İlmi", False)
+            ayin = lotm.desen_kur("Ayin", False)
+            for v in vuruslar:
+                if not ayin_tekil.search(v["kaynak_metin"]):
+                    continue
+                for alan, metin in (("bulunan", "hedef_metin"),
+                                   ("bulunan_dar", "hedef_metin_dar")):
+                    v[alan] = [a for a in v[alan] if a != "Ayin İlmi"
+                               and (a != "Ayin" or ayin.search(ilim.sub(" ", v[metin])))]
     return vuruslar
 
 
@@ -817,11 +827,24 @@ def main() -> int:
             f.unlink(missing_ok=True)
 
     terimler, atlanan = isleri_kur(a.kaynak, a.hedef, a.kelimeler)
+    ayin_tekil = None
+    if a.hedef == "tr":
+        ilim = next((x for x in terimler if x[0] == "zh" and x[2].tr == "Ayin İlmi"), None)
+        ayin = next((x for x in terimler if x[0] == "zh" and x[2].tr == "Ayin"), None)
+        if ilim and ayin:
+            dil, sorgu, t, adaylar, duyarli, eski = ayin
+            ayin_tekil = kaynak_deseni("仪式", dil, not duyarli, t.zh_haric)
+            terimler = [
+                (dil, f"{sorgu}/{ilim[1]}", t, [*adaylar, *ilim[3]], duyarli, eski)
+                if x is ayin else x for x in terimler if x is not ilim
+            ]
     # --ayrinti: yalnizca istenen terim taranir; bolumler de yalnizca o
     # terimin gectigi yerde hizalanir (bkz. HizalanmisBolum).
     if a.ayrinti:
         q = lotm.tr_kucult(a.ayrinti)
-        terimler = [x for x in terimler if q in lotm.tr_kucult(x[2].tr)]
+        terimler = [x for x in terimler if q in lotm.tr_kucult(x[2].tr)
+                    or (ayin_tekil is not None and x[2].tr == "Ayin"
+                        and q in lotm.tr_kucult("Ayin İlmi"))]
     kullanilan = sorted({k for k, *_ in terimler})
     onbellekler = {
         k: hizalama_onbellegi(k, a.hedef, CD.bolum_araligi(a.bolum)) for k in kullanilan
@@ -854,6 +877,7 @@ def main() -> int:
         vuruslar = terimi_tara(
             sorgu, adaylar, onbellekler[kaynak], kaynak, a.hedef, duyarsiz,
             desen=desen, isaret=isaret,
+            ayin_tekil=ayin_tekil if kaynak == "zh" and t.tr == "Ayin" else None,
         )
         if len(vuruslar) < a.en_az:
             continue

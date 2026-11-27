@@ -1654,7 +1654,7 @@ def salahiyetler_yukle(yol=None) -> list:
 
 # --------------------------------------------------------------- words.md
 
-_KELIME_MADDE = re.compile(r"^\s*-\s*\*\*(.+?)\*\*\s*[—–-]\s*(.*?)\s*$")
+_KELIME_MADDE = re.compile(r"^\s*-\s*\*\*([^*]+(?:\*\*\s*[/,]\s*\*\*[^*]+)*)\*\*\s*[—–-]\s*(.*?)\s*$")
 _MD_BASLIK = re.compile(r"^(#{1,6})\s+(.*?)\s*$")
 _CJK = re.compile(r"[\u3400-\u9fff]+")
 # Ad ayiricisi (·, ・) yalnizca iki CJK harfinin ARASINDAYSA korunur.
@@ -1824,7 +1824,7 @@ def kelimeler_yukle(yol=None) -> list:
         m = _KELIME_MADDE.match(satir)
         if not m:
             continue
-        kalin, kalan = m.group(1).strip(), m.group(2)
+        kalin, kalan = m.group(1).replace("**", "").strip(), m.group(2)
         kalan, genis, haric = denetim_etiketi(kalan)
         # Iki nokta ile BITEN madde kendisinden sonraki listenin basligidir
         # ("Şans artırma ayini çağrısı — 福生玄黄…, four steps:"), terim

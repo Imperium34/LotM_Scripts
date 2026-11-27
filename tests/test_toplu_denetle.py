@@ -176,3 +176,17 @@ def test_mertebe_isaret_deseni_tirnak_ve_序列():
     assert d.search("错误途径的非凡者")
     assert d.search("序列9错误")
     assert not d.search("这一定是错误的")
+
+
+def test_ayin_ilmi_tekil_ayin_yerine_sayilmaz():
+    kaynak = ["仪式魔法", "仪式", "仪式和仪式魔法", "仪式和仪式魔法", "仪式"]
+    hedef = ["Ayin İlmi", "Ayin İlmi", "Ayin İlmi", "Ayin İlmi ve Ayin", "ritüel"]
+    bolum = _bolum(23, kaynak, hedef, {i: [i] for i in range(len(kaynak))}, set())
+    vuruslar = TD.terimi_tara(
+        "仪式/仪式魔法", ["Ayin", "Ayin İlmi", "ritüel"], {23: bolum},
+        "zh", "tr", True, desen=re.compile("仪式"), ayin_tekil=re.compile("仪式(?!魔法)"),
+    )
+    assert [bool(v["bulunan_dar"]) for v in vuruslar] == [True, False, False, True, True]
+    sayim, *_ = TD.ozetle(vuruslar)
+    assert TD.eski_ozeti(vuruslar, sayim, {"ritüel"}, 22)[1] == {"ritüel": 1}
+    assert TD.eski_ozeti(vuruslar, sayim, {"ritüel"}, 24)[1] == {}

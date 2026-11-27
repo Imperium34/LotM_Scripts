@@ -81,7 +81,9 @@ import re
 import shutil
 import subprocess
 import sys
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 BETIKLER = Path(__file__).resolve().parent
@@ -219,6 +221,66 @@ def paralel_sayisi(deger, bolum_sayisi: int) -> tuple:
         ust = max(1, int(os.environ.get("LOTM_PARALEL_UST") or 3))
         return max(1, min(bolum_sayisi, ust)), True
     return max(1, int(deger)), False
+
+
+# Bolum ici paralellik (27 Kas): birbirinin ciktisini okumayan model cagrilari
+# ayni anda kosar. Bagimlilik: sadakat girdisi okumanin (iki okuyucunun da)
+# SADAKAT? satirlarini tasir, birlestir hepsini okur; donem, ses_ayari doruk,
+# duzeltme ve triyaj hicbir gecisin ciktisini okumaz. Yani iki dalga:
+#   1) okuma (+ikinci okuyucu), donem, ses_ayari, duzeltme, triyaj
+#   2) okuma bitince sadakat partileri (+ikinci okuyucu); 1'in kalanlari surer
+# sonra birlestir. Girdi/cikti dosyalari ve birlestirme aynidir; yalniz cagri
+# sirasi ve gunlukteki satir sirasi degisir. 'oto': tek bolumde 4, coklu
+# paralel kipin alt surecinde 2 (3 bolum x 2 = en cok 6 cagri). 1 = eskisi gibi
+# sirayla. Hiz siniri gorulunce kalan cagrilar sirayla kosar.
+IC_PARALEL_OTO, IC_PARALEL_COCUK = 4, 2
+
+
+def ic_paralel_sayisi(deger, cocuk: bool = False) -> int:
+    """--ic-paralel degeri -> bolum icinde ayni anda kac model cagrisi. ValueError: bozuk deger."""
+    if str(deger).strip().lower() in ("oto", "auto", ""):
+        return IC_PARALEL_COCUK if cocuk else IC_PARALEL_OTO
+    n = int(deger)
+    if n < 1:
+        raise ValueError(deger)
+    return n
+
+
+# yurut bir cagrinin gecici hiz sinirina takildigini gorunce isaretler.
+HIZ_GORULDU = threading.Event()
+
+
+class Cagrilar:
+    """Bolum ici model cagrilari. sinir 1 (ya da hiz siniri goruldukten sonra):
+    her cagri eklendigi anda, sirayla kosar. bekle(adimlar): o adimlarin
+    cagrilari bitene kadar durur, basarisiz ciktilari dondurur."""
+
+    def __init__(self, sinir: int):
+        self.sinir = sinir
+        self.havuz = ThreadPoolExecutor(max_workers=sinir) if sinir > 1 else None
+        self.isler = []  # (adim, cikti, Future | bool)
+
+    def ekle(self, adim: str, cikti: Path, is_) -> None:
+        if self.havuz is None or HIZ_GORULDU.is_set():
+            if self.havuz is not None:
+                self.bekle()  # hiz siniri: kosanlar bitsin, gerisi sirayla
+            self.isler.append((adim, cikti, bool(is_())))
+        else:
+            self.isler.append((adim, cikti, self.havuz.submit(is_)))
+
+    def bekle(self, adimlar=None) -> set:
+        basarisiz = set()
+        for adim, cikti, f in self.isler:
+            if adimlar is not None and adim not in adimlar:
+                continue
+            ok = f if isinstance(f, bool) else f.result()
+            if not ok:
+                basarisiz.add(cikti)
+        return basarisiz
+
+    def kapat(self) -> None:
+        if self.havuz is not None:
+            self.havuz.shutdown(wait=True)
 
 
 # Iki ayri durum (7 Kas, 20-25 kosusundan: "You've hit your session limit ·
@@ -1778,13 +1840,23 @@ class Bolum:
 # sadakat_motor yazar, inceleme "Sadakat: ikisi|claude|codex" satiri tasir,
 # kararlar Tools/karar_motor.tsv'ye gider. Adil olsun diye sadakat kaynakli
 # hicbir madde KESIN uygulanmaz: hepsi kararla sayilir.
-CIFT = os.environ.get("LOTM_CIFT_SADAKAT", "") not in ("", "0")
+# 27 Kas: iki cift de --otomatik kosularda varsayilan (82-97 verisi: codex'in tek
+# basina buldugu kabul sadakatte 7.4, okumada 7.4/bolum). Kapatmak: --tek-sadakat /
+# --tek-okuma ya da LOTM_CIFT_SADAKAT=0 / LOTM_CIFT_OKUMA=0. Elle kipte (otomatik
+# yok) yalniz bayrak ya da ortam =1 acar; yoksa ikinci cikti beklenip birlestir kurulmazdi.
+def _cift_ortam(ad: str):
+    """'' -> None (varsayilan), '0' -> False, baska -> True."""
+    v = os.environ.get(ad, "")
+    return None if v == "" else v != "0"
+
+
+CIFT = _cift_ortam("LOTM_CIFT_SADAKAT")
 # Cift okuma (22 Kas): ayni okuma girdisi ikinci motorla (varsayilan codex);
 # cikti 1_okuma_cikti.<motor>.md. SADAKAT? sorulari ikisinden toplanir, birlestir
 # her okuma bulgusuna okuma_motor yazar ("Okuma: ikisi|claude|codex"), kararlar
 # karar_motor.tsv'ye 'okuma:<motor>' olarak gider. KESIN okuma maddeleri (1.6)
 # olagan yolundan uygulanir; istatistik yalniz KARAR'lari sayar.
-CIFT_OKUMA = os.environ.get("LOTM_CIFT_OKUMA", "") not in ("", "0")
+CIFT_OKUMA = _cift_ortam("LOTM_CIFT_OKUMA")
 MOTOR_IST = Path(os.environ.get("LOTM_MOTOR_IST") or KOK / "Tools" / "karar_motor.tsv")
 
 
@@ -1799,13 +1871,19 @@ def yurut(girdi: Path, cikti: Path, model: str | None, sure: int,
     if not araclar and os.environ.get("LOTM_DOSYA_NOTU", "1") != "0":
         metin_girdi += DOSYA_ARAMA_NOTU
     # kota=KOTA_DOLU: sonra'nin adi uzerinden (testler S.KOTA_DOLU'yu degistirebilir)
+    bas = time.time()
     s = motorlar.calistir(metin_girdi, motor, model, sure, araclar, cwd=BETIKLER,
                           gecici=cikti, kota=KOTA_DOLU)
+    sure_dk = f"{(time.time() - bas) / 60:.1f} dk"
     if not s.ok:
+        if not s.kota and HIZ_SINIRI.search(s.hata or ""):
+            HIZ_GORULDU.set()
+        print(f"  BITMEDI {motor}: {cikti.name} ({sure_dk})", flush=True)
         return False
     cikti.parent.mkdir(parents=True, exist_ok=True)
     lotm.atomik_yaz(cikti, s.metin)
     motorlar.motor_etiketi_yaz(cikti, s.motor)
+    print(f"  bitti {motor}: {cikti.name} ({sure_dk})", flush=True)
     return True
 
 
@@ -1841,6 +1919,10 @@ def main(argv=None) -> int:
     ap.add_argument("--cift-okuma", action="store_true",
                     help="okumayi ikinci bir motorla da (varsayilan codex; --motor okuma2=...) ayri "
                          "calistir, bulgulari kaynagiyla etiketle (LOTM_CIFT_OKUMA=1 ayni)")
+    ap.add_argument("--tek-sadakat", action="store_true",
+                    help="cift sadakati kapat (--otomatik'te varsayilan acik; LOTM_CIFT_SADAKAT=0 ayni)")
+    ap.add_argument("--tek-okuma", action="store_true",
+                    help="cift okumayi kapat (--otomatik'te varsayilan acik; LOTM_CIFT_OKUMA=0 ayni)")
     ap.add_argument("--donem", action="store_true",
                     help="donem uyumu gecisini ekle (varsayilan zaten acik; LOTM_DONEM=0 iken acar)")
     ap.add_argument("--donem-yok", action="store_true",
@@ -1866,6 +1948,11 @@ def main(argv=None) -> int:
                          "(varsayilan): min(bolum sayisi, LOTM_PARALEL_UST=3), hiz sinirina "
                          "takilinca birer dusurur. 1 = sirayla. Betik zinciri once sirayla "
                          "kosar; --kararlar her zaman sirayla.")
+    ap.add_argument("--ic-paralel", default=os.environ.get("LOTM_IC_PARALEL") or "oto", metavar="N|oto",
+                    help="bir bolumun icinde ayni anda en cok N model cagrisi (LOTM_IC_PARALEL). "
+                         f"'oto' (varsayilan): tek bolumde {IC_PARALEL_OTO}, coklu paralel kipte bolum "
+                         f"basina {IC_PARALEL_COCUK}. 1 = sirayla (eski davranis). okuma bitmeden "
+                         "sadakat, hepsi bitmeden birlestir baslamaz.")
     a = ap.parse_args(argv)
     if a.kuru and (a.bastan or a.inceleme_yenile):
         ap.error("--kuru ile --bastan veya --inceleme-yenile birlikte kullanılamaz")
@@ -1877,6 +1964,10 @@ def main(argv=None) -> int:
         a.paralel, a.paralel_oto = paralel_sayisi(a.paralel, len(nolar))
     except ValueError:
         ap.error(f"--paralel {a.paralel}: bir sayi ya da 'oto' olmali")
+    try:
+        a.ic_paralel = ic_paralel_sayisi(a.ic_paralel, bool(os.environ.get("LOTM_SONRA_COCUK")))
+    except ValueError:
+        ap.error(f"--ic-paralel {a.ic_paralel}: 1 ya da daha buyuk bir sayi ya da 'oto' olmali")
     if a.yanki and len(nolar) > 1:
         ap.error("--yanki giris numaralari bolume ozgudur; tek bolumle verin")
     motor_secimleri = {}
@@ -1925,8 +2016,8 @@ def main(argv=None) -> int:
         return 0
 
     otomatik = None if a.otomatik is None else (a.otomatik or list(MODEL_ADIMLARI) + ["donem", "ses_ayari"])
-    cift = a.cift_sadakat or CIFT
-    cift_okuma = a.cift_okuma or CIFT_OKUMA
+    cift = cift_acik(a.cift_sadakat, a.tek_sadakat, otomatik, CIFT)
+    cift_okuma = cift_acik(a.cift_okuma, a.tek_okuma, otomatik, CIFT_OKUMA)
     donem_etkin = donem_acik(a.donem, a.donem_yok, a.otomatik)
     ses_ayari_etkin = ses_ayari_acik(a.ses_ayari, a.ses_ayari_yok, a.otomatik)
     # Sadakat motoru bir kez secilir: codex/agy yoksa uyari her bolumde tekrarlanmasin.
@@ -1948,6 +2039,8 @@ def main(argv=None) -> int:
             print("  fish: fish_add_path ~/.local/bin")
             print("  ya da LOTM_CLAUDE ile baska bir komut verin. Simdilik yalniz girdiler hazirlaniyor.")
             otomatik = None
+            cift = cift_acik(a.cift_sadakat, a.tek_sadakat, otomatik, CIFT)
+            cift_okuma = cift_acik(a.cift_okuma, a.tek_okuma, otomatik, CIFT_OKUMA)
     ayar = dict(otomatik=otomatik, motor_secimleri=motor_secimleri,
                 cift=cift, donem=donem_etkin, ses_ayari=ses_ayari_etkin, cift_okuma=cift_okuma)
 
@@ -1984,6 +2077,18 @@ def main(argv=None) -> int:
     (RAPOR / "COKLU.md").write_text(rapor, encoding="utf-8")
     print(f"\n{'=' * 60}\n{rapor}-> {RAPOR / 'COKLU.md'}")
     return kod
+
+
+def cift_acik(bayrak: bool, tek: bool, otomatik, ortam) -> bool:
+    """Ikinci okuyucu bu kosuda var mi. --tek-* her seyi ezer; sonra --cift-*;
+    sonra ortam (0/1); yoksa yalniz --otomatik kosularda acik."""
+    if tek:
+        return False
+    if bayrak:
+        return True
+    if ortam is not None:
+        return ortam
+    return bool(otomatik)
 
 
 def donem_acik(donem: bool, donem_yok: bool, otomatik_adimlar, ortam: bool | None = None) -> bool:
@@ -2171,46 +2276,59 @@ def bolum_isle(no: int, a, otomatik, motor_secimleri: dict, cift: bool, donem: b
     sonuc, notlar, hata_var = {}, {}, False
     basarisiz_ciktilar = set()
     acik_motor = {m.partition("=")[0] for m in getattr(a, "motor", [])}
-    for adim in adimlar:
-        if adim == "sadakat":
-            hazir_okumalar = [c for g, c in sonuc["okuma"]
-                              if c not in basarisiz_ciktilar and durum(g, c) == "TAMAM"]
-            ciftler, notlar["sadakat"] = b.sadakat(hazir_okumalar)
-        elif adim == "ses_ayari":
-            ciftler, notlar["ses_ayari"] = b.ses_ayari()
-        elif adim == "birlestir":
-            onceki = [(g, c) for ad in adimlar[:-1] for g, c in sonuc[ad]]
-            if not all(c not in basarisiz_ciktilar and durum(g, c) == "TAMAM" for g, c in onceki):
-                sonuc[adim] = []
-                notlar[adim] = "onceki gecisler bitince (ve guncel olunca) kurulur"
-                continue
-            ciftler = b.birlestir([c for _, c in sonuc["sadakat"]], [c for _, c in sonuc["okuma"]])
-        else:
-            ciftler = getattr(b, adim)()
-        if adim == "sadakat" and cift:
-            ikinci = ikinci_motor(motor_sec("sadakat", motor_secimleri), motor_secimleri)
-            ciftler = ciftler + [(g, c.with_name(f"{c.stem}.{ikinci}.md")) for g, c in ciftler]
-        if adim == "okuma" and cift_okuma:
-            ikinci = ikinci_motor(motor_sec("okuma", motor_secimleri), motor_secimleri, "okuma")
-            ciftler = ciftler + [(g, c.with_name(f"{c.stem}.{ikinci}.md")) for g, c in ciftler]
-        if otomatik and adim in otomatik:
-            araclar = TRIYAJ_ARACLARI if adim == "triyaj" else None
-            motor = motor_sec(adim, motor_secimleri)
-            for girdi, cikti in ciftler:
-                hedef_motor = cikti_motoru(cikti, motor)
-                motor_degisti = (adim in acik_motor and cikti.exists()
-                                 and motorlar.etiket_oku(cikti) != hedef_motor)
-                if durum(girdi, cikti) != "TAMAM" or motor_degisti:
-                    if not yurut(girdi, cikti, a.model, a.sure, araclar, hedef_motor):
-                        hata_var = True
-                        basarisiz_ciktilar.add(cikti)
-        if adim == "duzeltme":
-            notlar[adim] = b.duzeltme_farki()
-        if adim == "donem":
-            notlar[adim] = "istege bagli; ciktisi birlestirmeye girer"
-        # Sira onemli: okuma burada biterse sadakat girdileri ayni turda
-        # onun SADAKAT? satirlariyla kurulur.
-        sonuc[adim] = ciftler
+    # Kurulus/cagri sirasi: ciktisi baska gecise girmeyenler once (ayni anda
+    # kosabilsinler), sadakat okumayi, birlestir hepsini bekler. Rapor yine
+    # 'adimlar' sirasiyla yazilir.
+    sira = [ad for ad in adimlar if ad not in ("sadakat", "birlestir")] + ["sadakat", "birlestir"]
+    cagrilar = Cagrilar(getattr(a, "ic_paralel", 1) if otomatik else 1)
+    try:
+        for adim in sira:
+            if adim == "sadakat":
+                basarisiz_ciktilar |= cagrilar.bekle({"okuma"})
+                hazir_okumalar = [c for g, c in sonuc["okuma"]
+                                  if c not in basarisiz_ciktilar and durum(g, c) == "TAMAM"]
+                ciftler, notlar["sadakat"] = b.sadakat(hazir_okumalar)
+            elif adim == "ses_ayari":
+                ciftler, notlar["ses_ayari"] = b.ses_ayari()
+            elif adim == "birlestir":
+                basarisiz_ciktilar |= cagrilar.bekle()
+                if "duzeltme" in sonuc:
+                    notlar["duzeltme"] = b.duzeltme_farki()
+                onceki = [(g, c) for ad in adimlar[:-1] for g, c in sonuc[ad]]
+                if not all(c not in basarisiz_ciktilar and durum(g, c) == "TAMAM" for g, c in onceki):
+                    sonuc[adim] = []
+                    notlar[adim] = "onceki gecisler bitince (ve guncel olunca) kurulur"
+                    continue
+                ciftler = b.birlestir([c for _, c in sonuc["sadakat"]], [c for _, c in sonuc["okuma"]])
+            else:
+                ciftler = getattr(b, adim)()
+            if adim == "sadakat" and cift:
+                ikinci = ikinci_motor(motor_sec("sadakat", motor_secimleri), motor_secimleri)
+                ciftler = ciftler + [(g, c.with_name(f"{c.stem}.{ikinci}.md")) for g, c in ciftler]
+            if adim == "okuma" and cift_okuma:
+                ikinci = ikinci_motor(motor_sec("okuma", motor_secimleri), motor_secimleri, "okuma")
+                ciftler = ciftler + [(g, c.with_name(f"{c.stem}.{ikinci}.md")) for g, c in ciftler]
+            if otomatik and adim in otomatik:
+                araclar = TRIYAJ_ARACLARI if adim == "triyaj" else None
+                motor = motor_sec(adim, motor_secimleri)
+                for girdi, cikti in ciftler:
+                    hedef_motor = cikti_motoru(cikti, motor)
+                    motor_degisti = (adim in acik_motor and cikti.exists()
+                                     and motorlar.etiket_oku(cikti) != hedef_motor)
+                    if durum(girdi, cikti) != "TAMAM" or motor_degisti:
+                        cagrilar.ekle(adim, cikti,
+                                      lambda g=girdi, c=cikti, m=hedef_motor, ar=araclar:
+                                      yurut(g, c, a.model, a.sure, ar, m))
+            if adim == "birlestir":
+                basarisiz_ciktilar |= cagrilar.bekle({"birlestir"})
+            if adim == "donem":
+                notlar[adim] = "istege bagli; ciktisi birlestirmeye girer"
+            sonuc[adim] = ciftler
+    finally:
+        cagrilar.kapat()
+    hata_var = bool(basarisiz_ciktilar)
+    if "duzeltme" in sonuc and "duzeltme" not in notlar:
+        notlar["duzeltme"] = b.duzeltme_farki()
 
     son = None
     if sonuc["birlestir"] and durum(*sonuc["birlestir"][0]) == "TAMAM":

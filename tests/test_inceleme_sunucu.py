@@ -135,6 +135,38 @@ def test_baglam_grup_cakismaz_ve_kisa_eski_zh_bulur():
     assert "grup" not in sonuc
 
 
+def test_ayni_satirda_yalniz_ortusen_araliklar_baglanir():
+    b = I.Baglam(None)
+    b.metin = "İlk cümle. İkinci cümle.\n\nBağımsız satır."
+    maddeler = [
+        {"k": 1, "p": "1", "eski": "İlk cümle.", "yeni": "İlk söz."},
+        {"k": 2, "p": "7", "eski": "İkinci cümle.", "yeni": "İkinci söz."},
+        {"k": 3, "p": "7", "eski": "cümle. İkinci", "yeni": "cümle. Sonraki"},
+        {"k": 4, "p": "1", "eski": "Bağımsız satır.", "yeni": "Başka satır."},
+    ]
+    b.cakisan_oneriler(maddeler)
+    assert maddeler[0]["cakisanlar"] == [3]
+    assert maddeler[1]["cakisanlar"] == [3]
+    assert maddeler[2]["cakisanlar"] == [1, 2]
+    assert "cakisanlar" not in maddeler[3]
+
+
+def test_eski_incelemede_ayni_paragraf_ve_eski_metin_gerekir():
+    b = I.Baglam(None)
+    b.metin = "Baca orada saklı duruyordu."
+    maddeler = [
+        {"k": 1, "p": "54", "eski": "bükülmenin ardında", "yeni": "orada"},
+        {"k": 2, "p": "54", "eski": "bükülmenin ardında", "yeni": "bükülen yerin ardında"},
+        {"k": 3, "p": "54", "eski": "saklı duruyordu", "yeni": "gizlenmişti"},
+        {"k": 4, "p": "-", "eski": "bükülmenin ardında", "yeni": "orada"},
+        {"k": 5, "p": "-", "eski": "bükülmenin ardında", "yeni": "orada"},
+    ]
+    b.cakisan_oneriler(maddeler)
+    assert maddeler[0]["cakisanlar"] == [2]
+    assert "cakisanlar" not in maddeler[2]
+    assert "cakisanlar" not in maddeler[3] and "cakisanlar" not in maddeler[4]
+
+
 def test_celiskili_post_ve_bitti_sonrasi_cift_uygula_reddedilir(tmp_path, monkeypatch):
     import json
     import threading
@@ -204,3 +236,16 @@ def test_islenmis_baska_bolumun_istatistigiyle_yanilmaz(tmp_path, monkeypatch):
 def test_olmayan_dosya_ve_kisayol_korumasi(tmp_path):
     assert I.main(["--dosya", str(tmp_path / "yok.md"), "--acma"]) == 1
     assert "if(e.ctrlKey||e.metaKey||e.altKey) return;" in I.SAYFA
+
+
+def test_on_isaretli_onay_yazilir_ve_geri_alinir():
+    md = ("## 2. Hızlı\n\n### K1 · Ch_41 · ¶3 · KARAR · okuma 1.1 Zincir\n✗ a; b\n✓ a. B\n"
+          "Kaynak: okuma\nÖn: emsal R2 okuma 1.1 → kabul (1–40: 38/39)\n[x] kabul   [ ] ret   [ ] hep\n")
+    m = I.maddeler(md)[0][0]
+    assert m["on"].startswith("emsal R2") and not m["onay"]
+    md2 = I.madde_yaz(md, 1, kabul=True, ret=False, hep=False, yeni=None, onay=True)
+    assert "→ kabul (1–40: 38/39) · onaylandı\n" in md2 and I.maddeler(md2)[0][0]["onay"]
+    md3 = I.madde_yaz(md2, 1, kabul=False, ret=True, hep=False, yeni=None, onay=True)
+    assert md3.count("onaylandı") == 1 and "[ ] kabul   [x] ret" in md3
+    assert I.madde_yaz(md3, 1, kabul=True, ret=False, hep=False, yeni=None, onay=False) == md
+    assert I.madde_yaz(md, 1, kabul=True, ret=False, hep=False, yeni=None) == md  # onay=None dokunmaz
