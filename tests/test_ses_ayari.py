@@ -154,3 +154,40 @@ def test_celiskili_karar_ve_cikis_kodu_ve_yalniz_taban(tmp_path, monkeypatch):
     sonuc = A.kararlari_isle(99, bolumler / "0099.md", rapor / "Ch_99", kuru=False)
     assert "0 uygulandı" in sonuc and "çelişkili" in sonuc
     assert "Durum kötüydü." in (bolumler / "0099.md").read_text(encoding="utf-8")
+
+
+def _dl(t):
+    return [(d["bas"], d["son"], d["butce"]) for d in A.doruklar(A.tahsis_bolumu("# E\n\n" + t + "\n"))]
+
+
+def test_doruk_yok_basligi_ve_eşik_parcasi():
+    # 92: 'yerleşik' icindeki 'eşik' dorugu aciyordu; baslik 'doruk yok' diyor.
+    assert _dl("- **Gotik sözcük tahsisi:** doruk yok, bütün bölüm aç. ¶45–¶47'deki salon "
+               "yerleşik tarifin sözleriyle kurulur.") == []
+    # 94: 'bir eşiktir' doruk degildir.
+    assert _dl("- **Gotik sözcük tahsisi:** sakin bölüm. ¶69 bir eşiktir, tek ayrıntıyla biter.") == []
+    # 64: 'Duygusal bir doruk yok' bolumun dorugunu silmez.
+    assert _dl("- **Gotik sözcük tahsisi:** tek açık bölge ¶66–¶68: hayalî çağrılar. "
+               "Duygusal bir doruk yok; ¶52 sade kalır.") == [(66, 68, 3)]
+
+
+def test_tavan_satiri_paylasilan_butce():
+    t = ("- **Gotik sözcük tahsisi:**\n"
+         "  - Doruk 1: ¶2–¶5 ve ¶12–¶14 (aynı doruğun iki dalgası). Ayrıntılar: ışık. Tavan ≤5.\n"
+         "  - ¶51–¶56: aynanın içi. Sözcükler karanlığa bağlanır. Tavan ≤4.\n"
+         "  - ¶73 (kıpırtı): ≤2.\n"
+         "  - Aç bırakılacak: ¶1–¶50 ve ¶57–¶72. Duygusal doruk yok.\n")
+    dl = A.doruklar(A.tahsis_bolumu("# E\n\n" + t))
+    assert [(d["bas"], d["son"], d["butce"]) for d in dl] == [
+        (2, 5, 5), (12, 14, 5), (51, 56, 4), (73, 73, 2)]
+    assert dl[0]["grup"] == dl[1]["grup"] != dl[2]["grup"]
+
+
+def test_sablon_haritasi_zh_en_den_zh_tr_ye(monkeypatch):
+    import gruplar as G
+    en = {1: {"ZH": "甲"}, 2: {"ZH": "乙 / 丙"}, 3: {"ZH": "丁"}}
+    tr = {1: {"ZH": "甲 / 乙"}, 2: {"ZH": "丙"}, 3: {"ZH": "丁"}}
+    monkeypatch.setattr(G, "gruplar", lambda no, ikinci="en": en if ikinci == "en" else tr)
+    assert A.sablon_haritasi(9) == {1: [1], 2: [1, 2], 3: [3]}
+    tr[3] = {"ZH": "戊"}
+    assert A.sablon_haritasi(9) is None

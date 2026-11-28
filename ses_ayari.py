@@ -228,11 +228,11 @@ RAKAM = {"bir": 1, "iki": 2, "üç": 3, "dört": 4, "beş": 5, "altı": 6, "yedi
 ARALIK = re.compile(r"¶\s?(\d+)(?:\s*[–-]\s*¶?\s?(\d+))?")
 # Sablon dili serbest; cumle duzeyinde siniflanir. Olumsuz her zaman kazanir.
 OLUMLU = re.compile(r"en (?:çok|fazla)|tavan|harca|bütçe|doruk|tepe|zirve|gotik kayıt|gotik bölge|almalı|"
-                    r"yakışır|izinli|açık bölge|eşik|yükselti|sıçrama", re.I)
-OLUMSUZ = re.compile(r"(?<![\wçğıöşü])aç(?![\wçğıöşü])|sade|orta kayıt|harcanmaz|sıfır|değil|almaz|girmez|"
+                    r"yakışır|izinli|açık bölge|yükselti|sıçrama", re.I)
+OLUMSUZ = re.compile(r"(?<![\wçğıöşü])aç(?![\wçğıöşü])|sade(?!ce)|orta kayıt|harcanmaz|sıfır|değil|almaz|girmez|"
                      r"yasak|yükseltilmez|düz kal|duygusal|hiç|toplam", re.I)
 _R = "|".join(RAKAM)
-BUTCE = re.compile(rf"en (?:çok|fazla) (bir iki|\d+|{_R})|({_R}) ila ({_R})|(tek) bir (?:gotik|sözcük|sıfat|imge|sıçrama|"
+BUTCE = re.compile(rf"tavan\s*(?:≤|<=)?\s*(\d+)|en (?:çok|fazla) (bir iki|\d+|{_R})|({_R}) ila ({_R})|(tek) bir (?:gotik|sözcük|sıfat|imge|sıçrama|"
                    rf"yükselt)|(bir) sıfat yeter", re.I)
 KONU = re.compile(r"gotik|harca|aç|tepe|doruk|zirve|koyu|bölge|tavan|eşik|sade|dönem|yer|¶", re.I)
 
@@ -267,6 +267,28 @@ def _butce(c: str) -> int | None:
     return max(sayi) if sayi else None
 
 
+# 85'ten beri sablonlar her dorugu tek madde satirinda verir: "- Doruk ¶61–¶63:
+# ayrintilar... Tavan ≤4." Satirin araliklari (iki noktadan onceki bas, yoksa
+# ilk cumle) tek doruktur ve tavani paylasir ("¶2–¶5 ve ¶12–¶14 ... Tavan ≤5"
+# toplam 5'tir, her dalga icin ayri 5 degil). Baslik satiri "doruk yok" diyorsa
+# (duygusal doruk degil) bolumde doruk yoktur.
+TAVAN = re.compile(r"(?:tavan\s*)?(?:≤|<=)\s*(\d+)", re.I)  # 74: "- ¶73 (...): ≤2."
+DORUK_YOK = re.compile(r"(?:^|[:.;]\s*)doruk yok", re.I)  # "Duygusal (bir) doruk yok" sayilmaz
+
+
+def _tavan_satiri(satir: str, grup: int) -> list | None:
+    """Tavanli madde satiri -> doruklar; tavansiz ya da 'Aç ...' satiri -> None."""
+    c = satir.replace("**", "").strip(" -")
+    m = TAVAN.search(c)
+    if not m or re.match(r"aç(?![\wçğıöşü])", tr_kucult(c)):
+        return None
+    bas = c.split(":", 1)[0] if ":" in c else ""
+    araliklar = ARALIK.findall(bas) or ARALIK.findall(re.split(r"(?<=[.;])\s", c, maxsplit=1)[0])
+    duz = re.sub(r"\s+", " ", c)
+    return [{"bas": int(a), "son": int(b or a), "butce": int(m.group(1)), "cumle": duz, "grup": grup}
+            for a, b in araliklar if int(a) <= int(b or a) <= int(a) + 30]
+
+
 def doruklar(tahsis: str) -> list:
     """[{"bas", "son", "butce", "cumle"}]: harcama izni verilen araliklar.
 
@@ -274,8 +296,17 @@ def doruklar(tahsis: str) -> list:
     bekler, ardindan gelen araliksiz olumlu cumle ("burada en fazla bir")
     onu doruk yapar. Baska bir dorugun icindeki aralik ayri sayilmaz, acik
     butcesi (daha ozel oldugu icin) dis doruga gecer."""
-    adaylar, bekleyen, son = [], [], []
-    for c in re.split(r"(?<=[.;])\s+|\n", tahsis.replace("**", "")):
+    satirlar = tahsis.splitlines()
+    if satirlar and DORUK_YOK.search(tr_kucult(satirlar[0].replace("**", ""))):
+        return []
+    adaylar, bekleyen, son, kalan = [], [], [], []
+    for i, satir in enumerate(satirlar):
+        d = _tavan_satiri(satir, i)
+        if d is None:
+            kalan.append(satir)
+        else:
+            adaylar += d
+    for c in re.split(r"(?<=[.;])\s+|\n", "\n".join(kalan).replace("**", "")):
         c = c.strip(" -")
         if not c:
             continue
@@ -343,6 +374,26 @@ def cekirdek_parcasi() -> str:
     return f"<cekirdek kaynak=\"{yol.name}\">\n" + "\n\n".join(out) + "\n</cekirdek>"
 
 
+def sablon_haritasi(no: int) -> dict | None:
+    """Sablon ¶ (ZH/EN hizalamasi: sablon ceviriden once yazilir) -> ZH/TR hizalama
+    gruplari. Iki duzen ayni ZH paragraflarini farkli gruplar (98: sablon ¶61 =
+    ZH/TR ¶56). Paragraf dizileri ayni degilse ya da EN yoksa None (¶ oldugu gibi)."""
+    from gruplar import gruplar as _gruplar, AYIRICI
+
+    def duz(g):
+        return [(p, k) for k in sorted(g) for p in g[k]["ZH"].split(AYIRICI) if p.strip()]
+
+    en, tr = duz(_gruplar(no, "en")), duz(_gruplar(no, "tr"))
+    if not en or [p for p, _ in en] != [p for p, _ in tr]:
+        return None
+    harita = {}
+    for (_, ke), (_, kt) in zip(en, tr):
+        harita.setdefault(ke, [])
+        if kt not in harita[ke]:
+            harita[ke].append(kt)
+    return harita
+
+
 def doruk_girdisi(no: int, sablon: str) -> tuple:
     """(girdi metni ya da None, not)."""
     tahsis = tahsis_bolumu(sablon)
@@ -355,17 +406,32 @@ def doruk_girdisi(no: int, sablon: str) -> tuple:
     g = _gruplar(no, "tr")
     if not g:
         return None, "hizalama kurulamadı (ZH ya da TR yok)"
+    # Ayni tavani paylasan araliklar (bir satirdaki dalgalar) tek doruk olarak gider.
+    kumeler = {}
+    for j, d in enumerate(dl):
+        kumeler.setdefault(("g", d["grup"]) if d.get("grup") is not None else ("t", j), []).append(d)
+    harita = sablon_haritasi(no)
     parcalar, harcanabilir = [], 0
-    for i, d in enumerate(dl, 1):
-        nolar = [k for k in range(d["bas"], d["son"] + 1) if k in g]
+    for i, kume in enumerate(kumeler.values(), 1):
+        d = kume[0]
+        sablon_nolar = [k for x in kume for k in range(x["bas"], x["son"] + 1)]
+        if harita is not None:
+            nolar = sorted({t for k in sablon_nolar for t in harita.get(k, [])})
+        else:
+            nolar = [k for k in sablon_nolar if k in g]
         if not nolar:
             continue
+        aralik = ", ".join(f"¶{x['bas']}" if x["bas"] == x["son"] else f"¶{x['bas']}–¶{x['son']}"
+                           for x in kume)
+        if harita is not None and nolar != sablon_nolar:
+            aralik += f" (şablon ¶; bu metinde ¶{nolar[0]}–¶{nolar[-1]})"
         tr = " ".join(g[k]["TR"] for k in nolar)
         harcanan = gotik_say(tr)
-        kalan = max(0, d["butce"] - len(harcanan))
+        butce = min(x["butce"] for x in kume)
+        kalan = max(0, butce - len(harcanan))
         harcanabilir += kalan
         parcalar.append(
-            f"<doruk no=\"{i}\" aralik=\"¶{d['bas']}–¶{d['son']}\" butce=\"{d['butce']}\" "
+            f"<doruk no=\"{i}\" aralik=\"{aralik}\" butce=\"{butce}\" "
             f"harcanan=\"{len(harcanan)}\" kalan=\"{kalan}\">\n"
             f"Şablon: {d['cumle']}\n"
             f"Harcanmış gotik sözcükler (betik sayacı): {', '.join(harcanan) or 'yok'}\n\n"
